@@ -1,0 +1,1204 @@
+[[install-config-master-node-configuration]]
+= Master and Node Configuration
+{product-author}
+{product-version}
+:data-uri:
+:icons:
+:experimental:
+:toc: macro
+:toc-title:
+
+toc::[]
+
+== Overview
+The `openshift start` command is used to launch {product-title} servers. The command
+and its subcommands (`master` to launch a
+xref:../architecture/infrastructure_components/kubernetes_infrastructure.adoc#master[master
+server] and `node` to launch a
+xref:../architecture/infrastructure_components/kubernetes_infrastructure.adoc#node[node
+server]) all take a limited set of arguments that are sufficient for launching
+servers in a development or experimental environment.
+
+However, these arguments are insufficient to describe and control the full set
+of configuration and security options that are necessary in a production
+environment. To provide those options, it is necessary to use the dedicated
+master and node configuration files.
+
+xref:master-configuration-files[Master configuration files] and
+xref:node-configuration-files[node configuration files] are fully specified
+with no default values. Therefore, any empty value indicates that you want to
+start up with an empty value for that parameter. This makes it easy to reason
+about exactly what your configuration is, but it also makes it difficult to
+remember all of the options to specify. To make this easier, the configuration
+files can be created with the `--write-config` option and then used with the
+`--config` option.
+
+[[master-configuration-files]]
+== Master Configuration Files
+This section reviews parameters mentioned in the *_master-config.yaml_* file.
+
+You can xref:creating-new-configuration-files[create a new master configuration
+file] to see the valid options for your installed version of {product-title}.
+
+[IMPORTANT]
+====
+Whenever you modify the *_master-config.yaml_* file, you must restart the master
+for the changes to take effect.
+====
+
+[[master-config-admission-control-config]]
+=== Admission Control Configuration
+
+.Admission Control Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*AdmissionConfig*`
+|Contains admission control plug-in configuration.
+
+|`*APIServerArguments*`
+|Key-value pairs that will be passed directly to the Kube API server that match
+the API servers' command line arguments. These are not migrated, but if you
+reference a value that does not exist the server will not start. These values
+may override other settings in `*KubernetesMasterConfig*`, which may cause
+invalid configurations.
+
+|`*ControllerArguments*`
+|Key-value pairs that will be passed directly to the Kube controller manager
+that match the controller manager's command line arguments. These are not
+migrated, but if you reference a value that does not exist the server will not
+start. These values may override other settings in `*KubernetesMasterConfig*`,
+which may cause invalid configurations.
+
+|`*DefaultAdmissionConfig*`
+|Used to enable or disable various admission plug-ins. When this type is present
+as the *configuration* object under `*pluginConfig*` and if the admission
+plug-in supports it, this will cause an *off by default* admission plug-in to be
+enabled.
+
+|`*PluginConfig*`
+|Allows specifying a configuration file per admission control plug-in.
+
+|`*PluginOrderOverride*`
+|A list of admission control plug-in names that will be installed on the master.
+Order is significant. If empty, a default list of plug-ins is used.
+
+|`*SchedulerArguments*`
+|Key-value pairs that will be passed directly to the Kube scheduler that match
+the scheduler's command line arguments. These are not migrated, but if you
+reference a value that does not exist the server will not start. These values
+may override other settings in `*KubernetesMasterConfig*`, which may cause
+invalid configurations.
+
+|===
+
+
+[[master-config-asset-config]]
+=== Asset Configuration
+
+.Asset Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*AssetConfig*`
+|Holds the necessary configuration options for serving assets.
+
+|`*DisabledFeatures*`
+|A list of features that should not be started. You will likely want to set this
+as *null*. It is very unlikely that anyone will want to manually disable
+features and that is not encouraged.
+
+|`*Extensions*`
+|Files to serve from the asset server file system under a subcontext.
+
+|`*ExtensionDevelopment*`
+|When  set to *true*, tells the asset server to reload extension scripts and
+stylesheets for every request rather than only at startup. It lets you develop
+extensions without having to restart the server for every change.
+
+|`*ExtensionProperties*`
+|Key- (string) and value- (string) pairs that will be injected into the console under
+the global variable `*OPENSHIFT_EXTENSION_PROPERTIES*`.
+
+|`*ExtensionScripts*`
+|File paths on the asset server files to load as scripts when the web console loads.
+
+|`*ExtensionStylesheets*`
+|File paths on the asset server files to load as style sheets when the web console loads.
+
+|`*LoggingPublicURL*`
+|The public endpoint for logging (optional).
+
+|`*LogoutURL*`
+|An optional, absolute URL to redirect web browsers to after logging out of the
+web console. If not specified, the built-in logout page is shown.
+
+|`*MasterPublicURL*`
+|How the web console can access the {product-title} server.
+
+|`*MetricsPublicURL*`
+|The public endpoint for metrics (optional).
+
+|`*PublicURL*`
+|URL of the the asset server.
+
+|===
+
+[[master-config-authentication-authorization-config]]
+=== Authentication and Authorization Configuration
+
+.Authentication and Authorization Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*authConfig*`
+|Holds authentication and authorization configuration options.
+
+|`*AuthenticationCacheSize*`
+|Indicates how many authentication results should be cached. If 0, the default
+cache size is used.
+
+|`*AuthorizationCacheTTL*`
+|Indicates how long an authorization result should be cached. It takes a valid
+time duration string (e.g. "5m"). If empty, you get the default timeout. If zero
+(e.g. "0m"), caching is disabled.
+
+|===
+
+[[master-config-controller-config]]
+=== Controller Configuration
+
+.Controller Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*Controllers*`
+|List of the controllers that should be started. If set to *none*, no
+controllers will start automatically. The default value is * which will start
+all controllers. When using *, you may exclude controllers by prepending a `-`
+in front of their name. No other values are recognized at this time.
+
+|`*ControllerLeaseTTL*`
+|Enables controller election, instructing the master to attempt to acquire a
+lease before controllers start and renewing it within a number of seconds
+defined by this value. Setting this value non-negative forces
+`*pauseControllers=true*`. This value defaults off (0, or omitted) and controller
+election can be disabled with -1.
+
+|`*PauseControllers*`
+|Instructs the master to not automatically start controllers, but instead to
+wait until a notification to the server is received before launching them.
+
+|===
+
+
+[[master-config-etcd]]
+=== etcd Configuration
+
+.etcd Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*Address*`
+|The advertised host:port for client connections to etcd.
+
+|`*etcdClientInfo*`
+|Contains information about how to connect to etcd.
+
+|`*etcdConfig*`
+|Holds the necessary configuration options for connecting with an etcd database.
+
+|`*etcdStorageConfig*`
+|Contains information about how API resources are stored in etcd. These values
+are only relevant when etcd is the backing store for the cluster.
+
+|`*KubernetesStoragePrefix*`
+|The path within etcd that the Kubernetes resources will be rooted under. This
+value, if changed, will mean existing objects in *_etcd_* will no longer be
+located. The default value is *kubernetes.io*.
+
+|`*KubernetesStorageVersion*`
+|The API version that Kubernetes resources in *_etcd_* should be serialized to.
+This value should *not* be advanced until all clients in the cluster that read
+from etcd have code that allows them to read the new version.
+
+|`*OpenShiftStoragePrefix*`
+|The path within etcd that the {product-title} resources will be rooted under.
+This value, if changed, will mean existing objects in etcd will no longer be
+located. The default value is *openshift.io*.
+
+|`*OpenShiftStorageVersion*`
+|API version that OS resources in *_etcd_* should be serialized to. This value
+should *not* be advanced until all clients in the cluster that read from
+*_etcd_* have code that allows them to read the new version.
+
+|`*PeerAddress*`
+|The advertised host:port for peer connections to *_etcd_*.
+
+|`*PeerServingInfo*`
+|Describes how to start serving the *_etcd_* peer.
+
+|`*ServingInfo*`
+|Describes how to start serving the etcd master.
+
+|`*StorageDir*`
+|The path to the *_etcd_* storage directory.
+
+|===
+
+
+[[master-node-config-grant-config]]
+=== Grant Configuration
+
+.Grant Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*GrantConfig*`
+|Describes how to handle grants.
+
+|`*GrantHandlerAuto*`
+|Auto-approves client authorization grant requests.
+
+|`*GrantHandlerDeny*`
+|Auto-denies client authorization grant requests.
+
+|`*GrantHandlerPrompt*`
+|Prompts the user to approve new client authorization grant requests.
+
+|`*Method*`
+a|Determines the default strategy to use when an OAuth client requests a
+grant.This method will be used only if the specific OAuth client does not
+provide a strategy of their own. Valid grant handling methods are:
+
+- auto: always approves grant requests, useful for trusted clients
+- prompt: prompts the end user for approval of grant requests, useful for third-party clients
+- deny: always denies grant requests, useful for black-listed clients
+
+|===
+
+[[master-config-image-config]]
+=== Image Configuration
+
+.Image Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*DisableScheduledImport*`
+|Allows scheduled background import of images to be disabled.
+
+|`*Format*`
+|The format of the name to be built for the system component.
+
+|`*ImageConfig*`
+|Holds options that describe how to build image names for system components.
+
+|`*ImagePolicyConfig*`
+|Controls limits and behavior for importing images.
+
+|`*Latest*`
+|Determines if the latest tag will be pulled from the registry.
+
+|`*MaxImagesBulkImportedPerRepository*`
+|Controls the number of images that are imported when a user does a bulk import
+of a Docker repository. This number defaults to 5 to prevent users from
+importing large numbers of images accidentally. Set *-1* for no limit.
+
+|`*MaxScheduledImageImportsPerMinute*`
+|The maximum number of scheduled image streams that will be imported in the
+background per minute. The default value is 60.
+
+|`*ScheduledImageImportMinimumIntervalSeconds*`
+|The minimum number of seconds that can elapse between when image streams
+scheduled for background import are checked against the upstream repository. The
+default value is 15 minutes.
+
+|===
+
+[[master-node-config-kubernetes-master-config]]
+=== Kubernetes Master Configuration
+
+.Kubernetes Master Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*APILevels*`
+|A list of API levels that should be enabled on startup, v1 as examples.
+
+|`*DisabledAPIGroupVersions*`
+|A map of groups to the versions (or `*`) that should be disabled.
+
+|`*KubeletClientInfo*`
+|Contains information about how to connect to kubelets.
+
+|`*KubernetesMasterConfig*`
+|Holds the necessary configuration options for the Kubernetes master.
+
+|`*MasterCount*`
+|The number of expected masters that should be running. This value defaults to 1
+and may be set to a positive integer, or if set to -1, indicates this is part of
+a cluster.
+
+|`*MasterIP*`
+|The public IP address of Kubernetes resources. If empty, the first result from
+`*net.InterfaceAddrs*` will be used.
+
+|`*MasterKubeConfig*`
+|File name for the *_.kubeconfig_* file that describes how to connect this node to the master.
+
+|`*ServicesNodePortRange*`
+|The range to use for assigning service public ports on a host. Default 30000-32767.
+
+|`*ServicesSubnet*`
+|The subnet to use for assigning service IPs.
+
+|`*StaticNodeNames*`
+|The list of nodes that are statically known.
+
+|===
+
+[[master-node-config-network-config]]
+=== Network Configuration
+
+Choose the CIDRs in the following parameters carefully, because the IPv4 address
+space is shared by all users of the nodes. {product-title} reserves CIDRs from
+the IPv4 address space for its own use, and reserves CIDRs from the IPv4
+address space for addresses that are shared between the external user and the
+cluster.
+
+.Network Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*ClusterNetworkCIDR*`
+|The CIDR string to specify the global overlay network's L3 space. This is
+reserved for the internal use of the cluster networking.
+
+|`*ExternalIPNetworkCIDRs*`
+|Controls what values are acceptable for the service external IP field. If
+empty, no `*externalIP*` may be set. It may contain a list of CIDRs which are
+checked for access. If a CIDR is prefixed with *!*, IPs in that CIDR will be
+rejected. Rejections will be applied first, then the IP checked against one of
+the allowed CIDRs. You must ensure this range does not overlap with your nodes,
+pods, or service CIDRs for security reasons.
+
+|`*HostSubnetLength*`
+|The number of bits to allocate to each host's subnet. For example, 8 would mean a
+/24 network on the host.
+
+|`*IngressIPNetworkCIDR*`
+|Controls the range to assign ingress IPs from for services of type
+*LoadBalancer* on bare metal. It may contain a single CIDR that it will be
+allocated from. By default `172.46.0.0/16` is configured. For security reasons,
+you should ensure that this range does not overlap with the CIDRs reserved for
+external IPs, nodes, pods, or services.
+
+|`*HostSubnetLength*`
+|The number of bits to allocate to each host's subnet. For example, 8 would mean a
+/24 network on the host.
+
+|`*NetworkConfig*`
+|Provides network options for the node.
+
+|`*NetworkPluginName*`
+|The name of the network plug-in to use.
+
+|`*ServiceNetwork*`
+|The CIDR string to specify the service networks.
+
+|===
+
+[[master-config-oath-authentication-config]]
+=== OAuth Authentication Configuration
+
+.OAuth Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*AlwaysShowProviderSelection*`
+|Forces the provider selection page to render even when there is only a single provider.
+
+|`*AssetPublicURL*`
+|Used for building valid client redirect URLs for external access.
+
+|`*Error*`
+|A path to a file containing a go template used to render error pages during the
+authentication or grant flow If unspecified, the default error page is used.
+
+|`*IdentityProviders*`
+|Ordered list of ways for a user to identify themselves.
+
+|`*Login*`
+|A path to a file containing a go template used to render the login page. If
+ unspecified, the default login page is used.
+
+|`*MasterCA*`
+|CA for verifying the TLS connection back to the `*MasterURL*`.
+
+|`*MasterPublicURL*`
+|Used for building valid client redirect URLs for external access.
+
+|`*MasterURL*`
+|Used for making server-to-server calls to exchange authorization codes for
+access tokens.
+
+|`*OAuthConfig*`
+|Holds the necessary configuration options for OAuth authentication.
+
+|`*OAuthTemplates*`
+|Allows for customization of pages like the login page.
+
+|`*ProviderSelection*`
+|A path to a file containing a go template used to render the provider selection
+page. If unspecified, the default provider selection page is used.
+
+|`*SessionConfig*`
+|Holds information about configuring sessions.
+
+|`*Templates*`
+|Allows you to customize pages like the login page.
+
+|`*TokenConfig*`
+|Contains options for authorization and access tokens.
+
+|===
+
+[[master-node-config-project-config]]
+=== Project Configuration
+
+.Project Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*DefaultNodeSelector*`
+|Holds default project node label selector.
+
+|`*ProjectConfig*`
+|Holds information about project creation and defaults.
+
+|`*ProjectRequestMessage*`
+|The string presented to a user if they are unable to request a project via the
+project request API endpoint.
+
+|`*ProjectRequestTemplate*`
+|The template to use for creating projects in response to *projectrequest*. It
+is in the format namespace/template and it is optional. If it is not specified,
+a default template is used.
+
+|===
+
+[[master-node-config-scheduler-config]]
+=== Scheduler Configuration
+
+.Scheduler Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*SchedulerConfigFile*`
+|Points to a file that describes how to set up the scheduler. If empty, you get
+the default scheduling rules
+
+|===
+
+=== Security Allocator Configuration
+
+.Security Allocator Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*MCSAllocatorRange*`
+|Defines the range of MCS categories that will be assigned to namespaces. The
+format is `<prefix>/<numberOfLabels>[,<maxCategory>]`. The default is *s0/2* and
+will allocate from c0 to c1023, which means a total of 535k labels are available
+(1024 choose 2 ~ 535k). If this value is changed after startup, new projects may
+receive labels that are already allocated to other projects. Prefix may be any
+valid SELinux set of terms (including user, role, and type), although leaving
+them as the default will allow the server to set them automatically.
+
+|`*SecurityAllocator*`
+|Controls the automatic allocation of UIDs and MCS labels to a project. If nil,
+allocation is disabled.
+
+|`*UIDAllocatorRange*`
+|Defines the total set of Unix user IDs (UIDs) that will be allocated to
+projects automatically, and the size of the block each namespace gets. For
+example, 1000-1999/10 will allocate ten UIDs per namespace, and will be able to
+allocate up to 100 blocks before running out of space. The default is to
+allocate from 1 billion to 2 billion in 10k blocks (which is the expected size
+of the ranges container images will use once user namespaces are started).
+
+|===
+
+
+[[master-config-service-account-config]]
+=== Service Account Configuration
+
+.Service Account Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*LimitSecretReferences*`
+|Controls whether or not to allow a service account to reference any secret in a
+namespace without explicitly referencing them.
+
+|`*ManagedNames*`
+|A list of service account names that will be auto-created in every namespace.
+If no names are specified, the `*ServiceAccountsController*` will not be
+started.
+
+|`*MasterCA*`
+|The CA for verifying the TLS connection back to the master. The service account
+controller will automatically inject the contents of this file into pods so they
+can verify connections to the master.
+
+|`*PrivateKeyFile*`
+|A file containing a PEM-encoded private RSA key, used to sign service account
+tokens. If no private key is specified, the service account `*TokensController*`
+will not be started.
+
+|`*PublicKeyFiles*`
+|A list of files, each containing a PEM-encoded public RSA key. If any file
+contains a private key, the public portion of the key is used. The list of
+public keys is used to verify presented service account tokens. Each key is
+tried in order until the list is exhausted or verification succeeds. If no keys
+are specified, no service account authentication will be available.
+
+|`*ServiceAccountConfig*`
+|Holds the necessary configuration options for a service account.
+
+|===
+
+[[master-config-serving-information-config]]
+=== Serving Information Configuration
+
+.Serving Information Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*AllowRecursiveQueries*`
+|Allows the DNS server on the master to answer queries recursively. Note that
+open resolvers can be used for DNS amplification attacks and the master DNS
+should not be made accessible to public networks.
+
+|`*BindAddress*`
+|The *ip:port* to serve on.
+
+|`*BindNetwork*`
+|Controls limits and behavior for importing images.
+
+|`*CertFile*`
+|A file containing a PEM-encoded certificate.
+
+|`*CertInfo*`
+|TLS cert information for serving secure traffic.
+
+|`*ClientCA*`
+|The certificate bundle for all the signers that you recognize for incoming
+client certificates.
+
+|`*dnsConfig*`
+|Holds the necessary configuration options for DNS.
+
+|`*DNSDomain*`
+|Holds the domain suffix.
+
+|`*DNSIP*`
+|Holds the IP.
+
+|`*KeyFile*`
+|A file containing a PEM-encoded private key for the certificate specified by
+`*CertFile*`.
+
+|`*MasterClientConnectionOverrides*`
+|Provides overrides to the client connection used to connect to the master.
+
+|`*MaxRequestsInFlight*`
+|The number of concurrent requests allowed to the server. If zero, no limit.
+
+|`*NamedCertificates*`
+|A list of certificates to use to secure requests to specific host names.
+
+|`*RequestTimeoutSecond*`
+|The number of seconds before requests are timed out. The default is 60 minutes.
+If -1, there is no limit on requests.
+
+|`*ServingInfo*`
+|The HTTP serving information for the assets.
+
+|===
+
+[[master-node-config-volume-config]]
+=== Volume Configuration
+
+.Volume Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*DynamicProvisioningEnabled*`
+|A boolean to enable or disable dynamic provisioning. Default is *true*.
+
+|FSGroup
+|Can be specified to enable a quota on local storage use per unique FSGroup ID.
+At present this is only implemented for emptyDir volumes, and if the underlying
+`*volumeDirectory*` is on an XFS filesystem.
+
+|`*LocalQuota*`
+|Contains options for controlling local volume quota on the node.
+
+|`*MasterVolumeConfig*`
+|Contains options for configuring volume plug-ins in the master node.
+
+|`*NodeVolumeConfig*`
+|Contains options for configuring volumes on the node.
+
+|`*VolumeConfig*`
+|Contains options for configuring volumes on the node.
+
+|`*VolumeDirectory*`
+|The directory that volumes are stored under.
+
+|===
+
+[[master-node-config-audit-config]]
+=== Audit Configuration
+
+Audit provides a security-relevant chronological set of records documenting the
+sequence of activities that have affected system by individual users,
+administrators, or other components of the system.
+
+Audit works at the API server level, logging all requests coming to the server.
+Each audit log contains two entries:
+
+. The request line containing:
+.. A Unique ID allowing to match the response line (see #2)
+.. The source IP of the request
+.. The HTTP method being invoked
+.. The original user invoking the operation
+.. The impersonated user for the operation (`self` meaning himself)
+.. The impersonated group for the operation (`lookup` meaning user's group)
+.. The namespace of the request or <none>
+.. The URI as requested
+
+. The response line containing:
+.. The the unique ID from #1
+.. The response code
+
+Example output for user *admin* asking for a list of pods:
+
+----
+AUDIT: id="5c3b8227-4af9-4322-8a71-542231c3887b" ip="127.0.0.1" method="GET" user="admin" as="<self>" asgroups="<lookup>" namespace="default" uri="/api/v1/namespaces/default/pods"
+AUDIT: id="5c3b8227-4af9-4322-8a71-542231c3887b" response="200"
+----
+
+The `openshift_master_audit_config` variable enables API service auditing. It
+takes an array of the following options:
+
+.Audit Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`enabled`
+|A boolean to enable or disable audit logs. Default is `false`.
+
+|`auditFilePath`
+|File path where the requests should be logged to. If not set, logs are printed
+to master logs.
+
+|`maximumFileRetentionDays`
+|Specifies maximum number of days to retain old audit log files based on the time
+stamp encoded in their filename.
+
+|`maximumRetainedFiles`
+|Specifies the maximum number of old audit log files to retain.
+
+|`maximumFileSizeMegabytes`
+|Specifies maximum size in megabytes of the log file before it gets rotated.
+Defaults to 100MB.
+|===
+
+
+.Example Audit Configuration
+----
+auditConfig:
+  auditFilePath: "/var/log/audit-ocp.log"
+  enabled: true
+  maximumFileRetentionDays: 10
+  maximumFileSizeMegabytes: 10
+  maximumRetainedFiles: 10
+----
+
+.Advanced Setup for the Audit Log
+If you want more advanced setup for the audit log, you can use:
+
+----
+openshift_master_audit_config={"enabled": true}
+----
+
+The directory in `auditFilePath` will be created if it does not exist.
+
+----
+openshift_master_audit_config={"enabled": true, "auditFilePath": "/var/log/openpaas-oscp-audit/openpaas-oscp-audit.log", "maximumFileRetentionDays": 14, "maximumFileSizeMegabytes": 500, "maximumRetainedFiles": 5}
+----
+
+[[node-configuration-files]]
+
+== Node Configuration Files
+
+The following *_node-config.yaml_* file is a sample node configuration file that
+was generated with the default values as of writing. You can
+xref:creating-new-configuration-files[create a new node configuration file] to
+see the valid options for your installed version of {product-title}.
+
+.Sample Node Configuration File
+====
+[source,yaml]
+----
+allowDisabledDocker: false
+apiVersion: v1
+authConfig:
+  authenticationCacheSize: 1000
+  authenticationCacheTTL: 5m
+  authorizationCacheSize: 1000
+  authorizationCacheTTL: 5m
+dnsDomain: cluster.local
+dnsIP: 10.0.2.15 <1>
+dockerConfig:
+  execHandlerName: native
+imageConfig:
+  format: openshift/origin-${component}:${version}
+  latest: false
+iptablesSyncPeriod: 5s
+kind: NodeConfig
+masterKubeConfig: node.kubeconfig
+networkConfig:
+  mtu: 1450
+  networkPluginName: ""
+nodeIP: ""
+nodeName: node1.example.com
+podManifestConfig: <2>
+  path: "/path/to/pod-manifest-file" <3>
+  fileCheckIntervalSeconds: 30 <4>
+proxyArguments:
+  proxy-mode:
+  - iptables <5>
+volumeConfig:
+  localQuota:
+   perFSGroup: null<6>
+servingInfo:
+  bindAddress: 0.0.0.0:10250
+  bindNetwork: tcp4
+  certFile: server.crt
+  clientCA: node-client-ca.crt
+  keyFile: server.key
+  namedCertificates: null
+volumeDirectory: /root/openshift.local.volumes
+----
+<1> Configures an IP address to be prepended to a pod's *_/etc/resolv.conf_* by adding the address here.
+<2> Allows pods to be placed directly on certain set of nodes, or on all nodes
+without going through the scheduler. You can then use pods to perform the same
+administrative tasks and support the same services on each node.
+<3> Specifies the path for the
+xref:../architecture/core_concepts/pods_and_services.adoc#pods[pod manifest file]
+or directory. If it is a directory, then it is expected to contain one or more
+manifest files. This is used by the Kubelet to create pods on the node.
+<4> This is the interval (in seconds) for checking the manifest file for new
+data. The interval must be a positive value.
+<5> The xref:../architecture/core_concepts/pods_and_services.adoc#service-proxy-mode[service
+proxy implementation] to use.
+<6> Preliminary support for local emptyDir volume quotas, set this value to a resource
+quantity representing the desired quota per FSGroup, per node. (i.e. 1Gi, 512Mi, etc)
+Currently requires that the *_volumeDirectory_* be on an XFS filesystem mounted
+with the 'gquota' option, and the matching security context contraint's fsGroup
+type set to 'MustRunAs'.
+====
+
+
+[[node-config-pod-and-node-config]]
+=== Pod and Node Configuration
+
+.Pod and Node Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*NodeConfig*`
+|The fully specified configuration starting an {product-title} node.
+
+|`*NodeIP*`
+|Node may have multiple IPs, so this specifies the IP to use for pod traffic
+routing. If not specified, network parse/lookup on the *nodeName* is performed
+and the first non-loopback address is used.
+
+|`*NodeName*`
+|The value used to identify this particular node in the cluster. If possible,
+this should be your fully qualified hostname. If you are describing a set of
+static nodes to the master, this value must match one of the values in the list.
+
+|`*PodEvictionTimeout*`
+|Controls grace period for deleting pods on failed nodes. It takes valid time
+duration string. If empty, you get the default pod eviction timeout.
+
+|`*ProxyClientInfo*`
+|Specifies the client cert/key to use when proxying to pods.
+
+|===
+
+
+[[node-config-docker-config]]
+=== Docker Configuration
+
+.Docker Configuration Parameters
+[cols="3a,6a",options="header"]
+|===
+
+| Parameter Name | Description
+
+|`*AllowDisabledDocker*`
+|If true, the kubelet will ignore errors from Docker. This means that a node can
+start on a machine that does not have docker started.
+
+|`*DockerConfig*`
+|Holds Docker related configuration options
+
+|`*ExecHandlerName*`
+|The handler to use for executing commands in Docker containers.
+
+|===
+
+[[master-node-configuration-parallel-image-pulls-with-docker]]
+=== Parallel Image Pulls with Docker 1.9+
+
+If you are using Docker 1.9+, you may want to consider enabling parallel image
+pulling, as the default is to pull images one at a time.
+
+[NOTE]
+====
+There is a potential issue with data corruption prior to Docker 1.9. However,
+starting with 1.9, the corruption issue is resolved and it is safe to switch to
+parallel pulls.
+====
+
+====
+[source,yaml]
+----
+kubeletArguments:
+  serialize-image-pulls:
+  - "false" <1>
+----
+<1> Change to true to disable parallel pulls. (This is the default config)
+====
+
+[[master-node-configuration-passwords-and-other-data]]
+== Passwords and Other Sensitive Data
+
+For some xref:configuring_authentication.adoc#install-config-configuring-authentication[authentication configurations],
+an LDAP `bindPassword` or OAuth `clientSecret` value is required.
+Instead of specifying these values directly in the master configuration file,
+these values may be provided as environment variables, external files,
+or in encrypted files.
+
+.Environment Variable Example
+[source,yaml]
+----
+  ...
+  bindPassword:
+    env: BIND_PASSWORD_ENV_VAR_NAME
+----
+
+.External File Example
+[source,yaml]
+----
+  ...
+  bindPassword:
+    file: bindPassword.txt
+----
+
+.Encrypted External File Example
+[source,yaml]
+----
+  ...
+  bindPassword:
+    file: bindPassword.encrypted
+    keyFile: bindPassword.key
+----
+
+To create the encrypted file and key file for the above example:
+
+[options="nowrap"]
+----
+$ oadm ca encrypt --genkey=bindPassword.key --out=bindPassword.encrypted
+> Data to encrypt: B1ndPass0rd!
+----
+
+[WARNING]
+====
+Encrypted data is only as secure as the decrypting key. Care should be taken
+to limit filesystem permissions and access to the key file.
+====
+
+[[creating-new-configuration-files]]
+
+== Creating New Configuration Files
+
+When defining an {product-title} configuration from scratch, start by creating
+new configuration files.
+
+For master host configuration files, use the `openshift start` command with the
+`--write-config` option to write the configuration files. For node hosts, use
+the `oadm create-node-config` command to write the configuration files.
+
+The following commands write the relevant launch configuration file(s),
+certificate files, and any other necessary files to the specified
+`--write-config` or `--node-dir` directory.
+
+Generated certificate files are valid for two years, while the certification
+authority (CA) certificate is valid for five years. This can be altered with the
+`--expire-days` and `--signer-expire-days` options, but for security reasons, it
+is recommended to not make them greater than these values.
+
+To create configuration files for an all-in-one server (a master and a node on
+the same host) in the specified directory:
+
+[options="nowrap"]
+----
+$ openshift start --write-config=/openshift.local.config
+----
+
+To create a xref:master-configuration-files[master configuration file] and
+other required files in the specified directory:
+
+[options="nowrap"]
+----
+$ openshift start master --write-config=/openshift.local.config/master
+----
+
+To create a xref:node-configuration-files[node configuration file] and other
+related files in the specified directory:
+
+[options="nowrap"]
+----
+$ oadm create-node-config \
+    --node-dir=/openshift.local.config/node-<node_hostname> \
+    --node=<node_hostname> \
+    --hostnames=<node_hostname>,<ip_address> \
+    --certificate-authority="/path/to/ca.crt" \
+    --signer-cert="/path/to/ca.crt" \
+    --signer-key="/path/to/ca.key"
+    --signer-serial="/path/to/ca.serial.txt"
+    --node-client-certificate-authority="/path/to/ca.crt"
+----
+
+When creating node configuration files, the `--hostnames` option accepts a
+comma-delimited list of every host name or IP address you want server
+certificates to be valid for.
+
+[[launching-servers-using-configuration-files]]
+
+== Launching Servers Using Configuration Files
+Once you have modified the master and/or node configuration files to your
+specifications, you can use them when launching servers by specifying them as an
+argument. Keep in mind that if you specify a configuration file, none of the
+other command line options you pass are respected.
+
+To launch an all-in-one server using a master configuration and a node
+configuration file:
+
+[options="nowrap"]
+----
+$ openshift start --master-config=/openshift.local.config/master/master-config.yaml --node-config=/openshift.local.config/node-<node_hostname>/node-config.yaml
+----
+
+To launch a master server using a master configuration file:
+
+[options="nowrap"]
+----
+$ openshift start master --config=/openshift.local.config/master/master-config.yaml
+----
+
+To launch a node server using a node configuration file:
+
+[options="nowrap"]
+----
+$ openshift start node --config=/openshift.local.config/node-<node_hostname>/node-config.yaml
+----
+
+[[master-node-config-logging-levels]]
+== Configuring Logging Levels
+
+{product-title} uses the `systemd-journald.service` to collect log messages for debugging, using five log message severities. The logging levels are based on Kubernetes logging conventions, as follows:
+
+.Log Level Options
+[cols="3a,6a",options="header"]
+|===
+
+|Option |Description
+
+|0|Errors and warnings only
+|2|Normal information
+|4|Debugging-level information
+|6|API-level debugging information (request / response)
+|8|Body-level API debugging information
+|===
+
+You can control which INFO messages are logged by setting the loglevel option in the in *_/etc/sysconfig/atomic-openshift-node_* or *_/etc/sysconfig/atomic-openshift-master_* file. Configuring the logs to collect all messages can lead to large logs that are difficult to interpret and can take up excessive space. Collecting all messages should only be used in debug situations.
+
+[NOTE]
+====
+Messages with FATAL, ERROR, WARNING and some INFO severities appear in the logs regardless of the log configuration.
+====
+
+You can view logs for the master or the node system using the following command:
+
+----
+# journalctl -r -u <journal_name>
+----
+
+Use the `-r` option to show the newest entries first.
+
+For example:
+
+----
+# journalctl -r -u atomic-openshift-master.service
+# journalctl -r -u atomic-openshift-node.service
+----
+
+To change the logging level:
+
+. Edit the *_/etc/sysconfig/atomic-openshift-master_* file for the master or *_/etc/sysconfig/atomic-openshift-node_* file for the nodes.
+. Enter a value from the *Log Level Options* table above in the `OPTIONS=--loglevel=` field.
++
+For example:
++
+----
+OPTIONS=--loglevel=4
+----
+. Restart the master or node host as appropriate:
+
+----
+# systemctl restart atomic-openshift-master
+# systemctl restart atomic-openshift-node
+----
+
+After the restart, all new log messages will conform to the new setting. Older messages do not change.
+
+[NOTE]
+====
+The default log level can be set using the Advanced Install. For more information, see xref:../install_config/install/advanced_install.adoc#cluster-variables-table[Cluster Variables].
+====
+
+The following examples are excerpts from a master *journald* log at various log levels. Timestamps and system information have been removed from these examples.
+
+.Excerpt of journalctl -u atomic-openshift-master.service output at loglevel=0
+
+----
+fit failure on node: PodFitsHostPorts
+E0222 factory.go:361] Error scheduling default router-1
+I0222 event.go:211] Event(api.ObjectReference
+I0222 start_master.go:644] Started Origin Controllers
+I0222 start_master.go:623] Started Kubernetes Controllers
+I0222 endpoints_controller.go:283] Waiting for pods controller
+I0222 event.go:211] Event(api.ObjectReference{Kind:"Node"
+W0222 nodecontroller.go:671] Missing timestamp for Node
+W0222 nodecontroller.go:671] Missing timestamp for Node
+----
+
+
+.Excerpt of journalctl -u atomic-openshift-master.service output at loglevel=2
+
+----
+E0222 factory.go:361] Error scheduling default router-1
+Always TerminationGracePeriodSeconds:0xc20d819b78 ActiveDeadlineSeconds:<nil>
+I0222 scheduler.go:117] Failed to schedule: &{TypeMeta:
+I0222 event.go:211] Event(api.ObjectReference{Kind:
+I0222 replication_controller.go:434] Too few "default"/"router"
+I0222 start_master.go:644] Started Origin Controllers
+I0222 subnets.go:27] Found existing HostSubnet
+I0222 subnets.go:27] Found existing HostSubnet
+I0222 common.go:79] Initializing single-tenant plugin
+I0222 common.go:54] Starting with configured hostname
+I0222 start_master.go:623] Started Kubernetes Controllers
+I0222 plugins.go:291] Loaded volume plugin "kubernetes.io/nf"
+I0222 plugins.go:291] Loaded volume plugin "kubernetes.io/ho"
+I0222 endpoints_controller.go:283] Waiting for pods controller"
+I0222 endpoints_controller.go:283] Waiting for pods controller"
+W0222 nodecontroller.go:671] Missing timestamp for Node
+I0222 nodecontroller.go:604] Recording Registered Node
+I0222 nodecontroller.go:416] NodeController observed
+----
+
+
+.Excerpt of journalctl -u atomic-openshift-master.service output at loglevel=4
+
+----
+controller_utils.go:592] Ignoring inactive pod default/router-1-0ww1g in state Failed, deletion time <nil>
+I0222 replication_controller.go:497] Finished syncing controller "default/docker-registry-2" (206.507µs)
+I0222 controller_utils.go:592] Ignoring inactive pod default/router-1-zyi9y in state Failed, deletion time <nil>
+I0222 replication_controller.go:497] Finished syncing controller "default/docker-registry-1" (176.748µs)
+I0222 controller_utils.go:160] Controller default/router-1 either never recorded expectations, or the ttl expired.
+I0222 controller_utils.go:160] Controller default/docker-registry-2 either never recorded expectations, or the ttl expired.
+I0222 nodecontroller.go:709] Node dell-r430-20.gsslab.pnq.redhat.com ReadyCondition updated. Updating timestamp.
+I0222 factory.go:474] Backing off 1m0s for pod &{backoff:60000000000 lastUpdate:{sec:636233 loc:0x59a6560} reqInFlight:1}
+; retrying
+fit failure on node (ibm-x3650m4-01-vm-02.lab.eng.bos.redhat.com): PodFitsHostPorts
+E0222 factory.go:361] Error scheduling default router-1-d7svd: pod (router-1-d7svd) failed to fit in any node
+b089d8 ActiveDeadlineSeconds:<nil> DNSPolicy:ClusterFirst NodeSelector:map[region:infra] ServiceAccountName:router NodeName: SecurityContext:0xc20ecd00c0 ImagePullSec
+]} Spec:{Volumes:[{Name:router-token-h6q3n VolumeSource:{HostPath:<nil> EmptyDir:<nil> GCEPersistentDisk:<nil> AWSElasticBlockStore:<nil> GitRepo:<nil> Secret:0xc20eb
+ I0222 factory.go:474] Backing off 16s for pod &{backoff:32000000000 lastUpdate:{sec:63623353879 nsec:506358920 loc:0x59a6560} reqInFlight:1}
+b118b8 ActiveDeadlineSeconds:<nil> DNSPolicy:ClusterFirst NodeSelector:map[region:infra] ServiceAccountName:router NodeName:
+----
+
+
+.Excerpt of journalctl -u atomic-openshift-master.service output at loglevel=8
+
+----
+I0222 round_trippers.go:271] Request Headers:
+I0222 round_trippers.go:264] GET https://dell-r430-20.gsslab
+I0222 round_trippers.go:274]     User-Agent: openshift/v3.2.
+I0222 round_trippers.go:274]     Accept: application/json, *
+I0222 round_trippers.go:271] Request Headers:
+I0222 round_trippers.go:264] GET https://dell-r430-20.gsslab
+I0222 request.go:870] Response Body: {"kind":"ClusterRole","
+I0222 round_trippers.go:295]     Content-Type: application/j
+I0222 round_trippers.go:295]     Cache-Control: no-store
+I0222 round_trippers.go:295]     Content-Length: 898
+I0222 round_trippers.go:295]     Date: Wed, 22 Feb 2017 09:3
+I0222 round_trippers.go:292] Response Headers:
+I0222 round_trippers.go:289] Response Status: 200 OK in 7 mi
+I0222 configgetter.go:127]  using watch cache storage (capacity=1000)
+I0222 controller_utils.go:592] Ignoring inactive pod
+----

@@ -1,0 +1,735 @@
+[[architecture-additional-concepts-authorization]]
+= Authorization
+{product-author}
+{product-version}
+:data-uri:
+:icons:
+:experimental:
+:toc: macro
+:toc-title:
+:prewrap!:
+
+toc::[]
+
+== Overview
+Authorization policies determine whether a user is allowed to perform a given
+xref:action[action] within a project. This allows platform administrators to
+use the xref:cluster-policy-and-local-policy[cluster policy] to control who has
+various access levels to the {product-title} platform itself and all projects. It also
+allows developers to use xref:cluster-policy-and-local-policy[local policy] to
+control who has access to their
+xref:../core_concepts/projects_and_users.adoc#projects[projects]. Note that
+authorization is a separate step from xref:authentication.adoc#architecture-additional-concepts-authentication[authentication],
+which is more about determining the identity of who is taking the action.
+
+Authorization is managed using:
+
+[cols="1,7"]
+|===
+
+|[[rules-def]]*Rules* |Sets of permitted xref:action[verbs] on a set of
+xref:../core_concepts/index.adoc#architecture-core-concepts-index[objects]. For example, whether something can
+`create` pods.
+
+|[[roles-def]]*Roles* |Collections of rules.
+xref:authentication.adoc#users-and-groups[Users and groups] can be associated
+with, or _bound_ to, multiple xref:roles[roles] at the same time.
+
+|[[bindings]]*Bindings* |Associations between users and/or groups with a
+xref:roles[role].
+
+|===
+
+Cluster administrators can visualize rules, roles, and bindings
+ifdef::openshift-enterprise,openshift-origin[]
+xref:../../admin_guide/manage_authorization_policy.adoc#viewing-roles-and-bindings[using
+the CLI].
+endif::[]
+ifdef::openshift-dedicated[]
+using the CLI.
+endif::[]
+For example, consider the following excerpt from viewing a policy, showing rule
+sets for the *admin* and *basic-user* xref:roles[default roles]:
+
+====
+
+[options="nowrap"]
+----
+admin			Verbs					Resources															Resource Names	Extension
+			[create delete get list update watch]	[projects resourcegroup:exposedkube resourcegroup:exposedopenshift resourcegroup:granter secrets]				[]
+			[get list watch]			[resourcegroup:allkube resourcegroup:allkube-status resourcegroup:allopenshift-status resourcegroup:policy]			[]
+basic-user		Verbs					Resources															Resource Names	Extension
+			[get]					[users]																[~]
+			[list]					[projectrequests]														[]
+			[list]					[projects]															[]
+			[create]				[subjectaccessreviews]														[]		IsPersonalSubjectAccessReview
+----
+====
+
+The following excerpt from viewing policy bindings shows the above roles bound
+to various users and groups:
+
+====
+
+[options="nowrap"]
+----
+RoleBinding[admins]:
+				Role:	admin
+				Users:	[alice system:admin]
+				Groups:	[]
+RoleBinding[basic-user]:
+				Role:	basic-user
+				Users:	[joe]
+				Groups:	[devel]
+----
+====
+
+The relationships between the the policy roles, policy bindings, users, and
+developers are illustrated below.
+
+image::authorization.png[{product-title} Authorization Policy]
+
+[[evaluating-authorization]]
+
+== Evaluating Authorization
+
+Several factors are combined to make the decision when {product-title} evaluates
+authorization:
+
+[cols="1,7"]
+|===
+
+|[[identity]]*Identity* |In the context of authorization, both the user name and
+list of groups the user belongs to.
+
+|[[action]]*Action* a|The action being performed. In most cases, this consists of:
+
+[horizontal]
+Project:: The xref:../core_concepts/projects_and_users.adoc#projects[project]
+being accessed.
+Verb:: Can be `get`, `list`, `create`, `update`, `delete`, `deletecollection` or `watch`.
+Resource Name:: The API endpoint being accessed.
+
+|*Bindings* |The full list of xref:bindings[bindings].
+
+|===
+
+{product-title} evaluates authorizations using the following steps:
+
+. The identity and the project-scoped action is used to find all bindings that
+apply to the user or their groups.
+. Bindings are used to locate all the roles that apply.
+. Roles are used to find all the rules that apply.
+. The action is checked against each rule to find a match.
+. If no matching rule is found, the action is then denied by default.
+
+[[cluster-policy-and-local-policy]]
+
+== Cluster Policy and Local Policy
+There are two levels of authorization policy:
+
+[cols="1,4"]
+|===
+
+|*Cluster policy* |xref:roles[Roles] and bindings that are applicable across
+all projects. Roles that exist in the cluster policy are considered _cluster
+roles_. Cluster bindings can only reference cluster roles.
+
+|*Local policy* |xref:roles[Roles] and bindings that are scoped to a given
+project. Roles that exist only in a local policy are considered _local roles_.
+Local bindings can reference both cluster and local roles.
+
+|===
+
+This two-level hierarchy allows re-usability over multiple projects through the
+cluster policy while allowing customization inside of individual projects
+through local policies.
+
+During evaluation, both the cluster bindings and the local bindings are used.
+For example:
+
+. Cluster-wide "allow" rules are checked.
+. Locally-bound "allow" rules are checked.
+. Deny by default.
+
+[[roles]]
+
+== Roles
+Roles are collections of policy xref:rules-def[rules], which are sets of
+permitted verbs that can be performed on a set of resources. {product-title}
+includes a set of default roles that can be added to users and groups in the
+xref:cluster-policy-and-local-policy[cluster policy] or in a
+xref:cluster-policy-and-local-policy[local policy].
+
+ifdef::openshift-origin,openshift-enterprise,openshift-dedicated[]
+[cols="1,4",options="header"]
+|===
+
+|Default Role |Description
+
+|*admin* |A project manager. If used in a
+xref:cluster-policy-and-local-policy[local binding], an *admin* user will have
+rights to view any resource in the project and modify any resource in the
+project except for quota.
+
+|*basic-user* |A user that can get basic information about projects and users.
+
+|*cluster-admin* |A super-user that can perform any action in any project. When
+granted to a user within a local policy, they have full control over quota and
+every action on every resource in the project.
+
+|*cluster-status* |A user that can get basic cluster status information.
+
+|*edit* |A user that can modify most objects in a project, but does not have the
+power to view or modify roles or bindings.
+
+|*self-provisioner* |A user that can create their own projects.
+
+|*view* |A user who cannot make any modifications, but can see most objects in a
+project. They cannot view or modify roles or bindings.
+
+|===
+endif::[]
+
+ifdef::atomic-registry[]
+[cols="1,4",options="header"]
+|===
+
+|Default Role |Description
+
+|*registry-admin* |A registry project manager. If used in a
+xref:cluster-policy-and-local-policy[local binding], a *registry-admin* user will have
+rights to view any resource in the project and modify any resource in the
+project except for role creation and quota. If the *cluster-admin* wants to
+allow a *registry-admin* to modify roles, the *cluster-admin* must create a
+project-scoped `*Policy*` object using JSON.
+
+|*registry-editor* |A user that can modify most objects in a project, but does not have the
+power to view or modify roles or bindings.
+
+|*registry-viewer* |A user who cannot make any modifications, but can see most objects in a
+project, including basic information about projects and users. They
+cannot view or modify roles or bindings.
+
+|*basic-user* |A user that can get basic information about projects and users.
+
+|*self-provisioner* |A user that can create their own projects.
+
+|*cluster-admin* |A super-user that can perform any action in any project. When
+granted to a user within a local policy, they have full control over quota and
+roles and every action on every resource in the project.
+
+|*cluster-status* |A user that can get basic cluster status information.
+
+|===
+endif::[]
+
+TIP: Remember that xref:authentication.adoc#users-and-groups[users
+and groups] can be associated with, or _bound_ to, multiple roles at the same
+time.
+
+Cluster administrators can visualize these roles, including a matrix of the
+verbs and resources each are associated using the CLI to
+ifdef::openshift-enterprise,openshift-origin[]
+xref:../../admin_guide/manage_authorization_policy.adoc#viewing-cluster-roles[view
+the cluster roles].
+endif::[]
+ifdef::openshift-dedicated[]
+view the cluster roles.
+endif::[]
+Additional *system:* roles are listed as well, which
+are used for various {product-title} system and component operations.
+
+By default in a local policy, only the binding for the *admin* role is
+immediately listed when using the CLI to
+ifdef::openshift-enterprise,openshift-origin[]
+xref:../../admin_guide/manage_authorization_policy.adoc#viewing-local-bindings[view
+local bindings].
+endif::[]
+ifdef::openshift-dedicated[]
+view local bindings.
+endif::[]
+However, if other default roles are added to users and groups within a local
+policy, they become listed in the CLI output, as well.
+
+[IMPORTANT]
+====
+The `cluster-` role assigned by the project administrator is limited in a
+project. It is not the same `cluster-` role granted by the *cluster-admin* or
+*system:admin*.
+
+Cluster roles are xref:roles[roles] defined at the cluster level, but can be bound either at
+the cluster level or at the project level.
+====
+
+ifdef::openshift-enterprise,openshift-origin[]
+xref:../../admin_guide/manage_authorization_policy.adoc#manage-authorization-policy-creating-local-role[Learn
+how to create a local role for a project].
+endif::[]
+
+ifdef::openshift-enterprise,openshift-origin[]
+[[updating-cluster-roles]]
+
+=== Updating Cluster Roles
+
+After any xref:../../install_config/upgrading/index.adoc#install-config-upgrading-index[{product-title} cluster
+upgrade], the recommended default roles may have been updated. See
+xref:../../install_config/upgrading/manual_upgrades.adoc#updating-policy-definitions[Updating
+Policy Definitions] for instructions on getting to the new recommendations
+using:
+
+----
+$ oc adm policy reconcile-cluster-roles
+----
+endif::[]
+ifdef::openshift-origin,openshift-enterprise,openshift-dedicated[]
+
+[[security-context-constraints]]
+
+== Security Context Constraints
+In addition to xref:architecture-additional-concepts-authorization[authorization policies] that control what a user
+can do, {product-title} provides _security context constraints_ (SCC) that control the
+actions that a xref:../core_concepts/pods_and_services.adoc#pods[pod] can
+perform and what it has the ability to access. Administrators can
+xref:../../admin_guide/manage_scc.adoc#admin-guide-manage-scc[manage SCCs] using the CLI.
+SCCs are also very useful for
+xref:../../install_config/persistent_storage/pod_security_context.adoc#install-config-persistent-storage-pod-security-context[managing
+access to persistent storage].
+
+SCCs are objects that define a set of conditions that a pod must run with in
+order to be accepted into the system. They allow an administrator to control the
+following:
+endif::[]
+
+ifdef::openshift-enterprise,openshift-origin[]
+. Running of
+xref:../../install_config/install/prerequisites.adoc#security-warning[privileged
+containers].
+endif::[]
+ifdef::openshift-dedicated[]
+. Running of privileged containers.
+endif::[]
+ifdef::openshift-origin,openshift-enterprise,openshift-dedicated[]
+
+. Capabilities a container can request to be added.
+. Use of host directories as volumes.
+. The SELinux context of the container.
+. The user ID.
+. The use of host namespaces and networking.
+. Allocating an `*FSGroup*` that owns the pod's volumes
+. Configuring allowable supplemental groups
+. Requiring the use of a read only root file system
+. Controlling the usage of volume types
+. Configuring allowable seccomp profiles
+
+Seven SCCs are added to the cluster by default, and are viewable by cluster
+administrators using the CLI:
+
+====
+----
+$ oc get scc
+NAME               PRIV      CAPS      SELINUX     RUNASUSER          FSGROUP     SUPGROUP    PRIORITY   READONLYROOTFS   VOLUMES
+anyuid             false     []        MustRunAs   RunAsAny           RunAsAny    RunAsAny    10         false            [configMap downwardAPI emptyDir persistentVolumeClaim secret]
+hostaccess         false     []        MustRunAs   MustRunAsRange     MustRunAs   RunAsAny    <none>     false            [configMap downwardAPI emptyDir hostPath persistentVolumeClaim secret]
+hostmount-anyuid   false     []        MustRunAs   RunAsAny           RunAsAny    RunAsAny    <none>     false            [configMap downwardAPI emptyDir hostPath nfs persistentVolumeClaim secret]
+hostnetwork        false     []        MustRunAs   MustRunAsRange     MustRunAs   MustRunAs   <none>     false            [configMap downwardAPI emptyDir persistentVolumeClaim secret]
+nonroot            false     []        MustRunAs   MustRunAsNonRoot   RunAsAny    RunAsAny    <none>     false            [configMap downwardAPI emptyDir persistentVolumeClaim secret]
+privileged         true      [*]       RunAsAny    RunAsAny           RunAsAny    RunAsAny    <none>     false            [*]
+restricted         false     []        MustRunAs   MustRunAsRange     MustRunAs   RunAsAny    <none>     false            [configMap downwardAPI emptyDir persistentVolumeClaim secret]
+----
+====
+
+The definition for each SCC is also viewable by cluster administrators using the
+CLI. For example, for the privileged SCC:
+
+====
+----
+# oc export scc/privileged
+allowHostDirVolumePlugin: true
+allowHostIPC: true
+allowHostNetwork: true
+allowHostPID: true
+allowHostPorts: true
+allowPrivilegedContainer: true
+allowedCapabilities: <1>
+- '*'
+apiVersion: v1
+defaultAddCapabilities: [] <2>
+fsGroup: <3>
+  type: RunAsAny
+groups: <4>
+- system:cluster-admins
+- system:nodes
+kind: SecurityContextConstraints
+metadata:
+  annotations:
+    kubernetes.io/description: 'privileged allows access to all privileged and host
+      features and the ability to run as any user, any group, any fsGroup, and with
+      any SELinux context.  WARNING: this is the most relaxed SCC and should be used
+      only for cluster administration. Grant with caution.'
+  creationTimestamp: null
+  name: privileged
+priority: null
+readOnlyRootFilesystem: false
+requiredDropCapabilities: [] <5>
+runAsUser: <6>
+  type: RunAsAny
+seLinuxContext: <7>
+  type: RunAsAny
+seccompProfiles:
+- '*'
+supplementalGroups: <8>
+  type: RunAsAny
+users: <9>
+- system:serviceaccount:default:registry
+- system:serviceaccount:default:router
+- system:serviceaccount:openshift-infra:build-controller
+volumes:
+- '*'
+----
+
+<1> A list of capabilities that can be requested by a pod. An empty list means
+that none of capabilities can be requested while the special symbol `***`
+allows any capabilities.
+<2> A list of additional capabilities that will be added to any pod.
+<3> The `FSGroup` strategy which dictates the allowable values for the
+Security Context.
+<4> The groups that have access to this SCC.
+<5> A list of capabilities that will be dropped from a pod.
+<6> The run as user strategy type which dictates the allowable values for the
+Security Context.
+<7> The SELinux context strategy type which dictates the allowable values for
+the Security Context.
+<8> The supplemental groups strategy which dictates the allowable supplemental
+groups for the Security Context.
+<9> The users who have access to this SCC.
+
+====
+
+The `users` and `groups` fields on the SCC control which SCCs can be used.
+By default, cluster administrators, nodes, and the build controller are granted
+access to the privileged SCC. All authenticated users are granted access to the
+restricted SCC.
+
+Docker has a
+link:https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities[default
+list of capabilities] that are allowed for each container of a pod. The
+containers use the capabilities from this default list, but pod manifest authors
+can alter it by requesting additional capabilities or dropping some of
+defaulting. The `allowedCapabilities`, `defaultAddCapabilities`, and
+`requiredDropCapabilities` fields are used to control such requests from the
+pods, and to dictate which capabilities can be requested, which ones must be
+added to each container, and which ones must be forbidden.
+
+The privileged SCC:
+
+- allows privileged pods.
+- allows host directories to be mounted as volumes.
+- allows a pod to run as any user.
+- allows a pod to run with any MCS label.
+- allows a pod to use the host's IPC namespace.
+- allows a pod to use the host's PID namespace.
+- allows a pod to use any FSGroup.
+- allows a pod to use any supplemental group.
+- allows a pod to use any seccomp profiles.
+- allows a pod to request any capabilities.
+
+The restricted SCC:
+
+- ensures pods cannot run as privileged.
+- ensures pods cannot use host directory volumes.
+- requires that a pod run as a user in a pre-allocated range of UIDs.
+- requires that a pod run with a pre-allocated MCS label.
+- allows a pod to use any FSGroup.
+- allows a pod to use any supplemental group.
+
+[NOTE]
+====
+For more information about each SCC, see the *kubernetes.io/description*
+annotation available on the SCC.
+====
+
+SCCs are comprised of settings and strategies that control the security features
+a pod has access to. These settings fall into three categories:
+
+[cols="1,4"]
+|===
+
+|*Controlled by a boolean*
+|Fields of this type default to the most restrictive value. For example,
+`AllowPrivilegedContainer` is always set to *false* if unspecified.
+
+|*Controlled by an allowable set*
+|Fields of this type are checked against the set to ensure their value is
+allowed.
+
+|*Controlled by a strategy*
+a|Items that have a strategy to generate a value provide:
+
+- A mechanism to generate the value, and
+- A mechanism to ensure that a specified value falls into the set of allowable
+values.
+
+|===
+
+[[authorization-SCC-strategies]]
+=== SCC Strategies
+
+[[authorization-RunAsUser]]
+==== RunAsUser
+
+. *MustRunAs* - Requires a `runAsUser` to be configured. Uses the configured
+`runAsUser` as the default. Validates against the configured `runAsUser`.
+. *MustRunAsRange* - Requires minimum and maximum values to be defined if not
+using pre-allocated values. Uses the minimum as the default. Validates against
+the entire allowable range.
+. *MustRunAsNonRoot* - Requires that the pod be submitted with a non-zero
+`runAsUser` or have the `USER` directive defined in the image. No default
+provided.
+. *RunAsAny* - No default provided. Allows any `runAsUser` to be specified.
+
+[[authorization-SELinuxContext]]
+==== SELinuxContext
+
+. *MustRunAs* - Requires `seLinuxOptions` to be configured if not using
+pre-allocated values. Uses `seLinuxOptions` as the default. Validates against
+`*seLinuxOptions*`.
+. *RunAsAny* - No default provided. Allows any `seLinuxOptions` to be
+specified.
+
+[[authorization-SupplementalGroups]]
+==== SupplementalGroups
+
+. *MustRunAs* - Requires at least one range to be specified if not using
+pre-allocated values. Uses the minimum value of the first range as the default.
+Validates against all ranges.
+. *RunAsAny* - No default provided. Allows any `supplementalGroups` to be
+specified.
+
+[[authorization-FSGroup]]
+==== FSGroup
+
+. *MustRunAs* - Requires at least one range to be specified if not using
+pre-allocated values. Uses the minimum value of the first range as the default.
+Validates against the first ID in the first range.
+. *RunAsAny* - No default provided. Allows any `fsGroup` ID to be specified.
+
+[[authorization-controlling-volumes]]
+=== Controlling Volumes
+
+The usage of specific volume types can be controlled by setting the `volumes`
+field of the SCC. The allowable values of this field correspond to the volume
+sources that are defined when creating a volume:
+
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#azurefilevolume[*azureFile*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#azurediskvolume[*azureDisk*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#flocker[*flocker*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#flexvolume[*flexVolume*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#hostpath[*hostPath*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#emptydir[*emptyDir*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#gcepersistentdisk[*gcePersistentDisk*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#awselasticblockstore[*awsElasticBlockStore*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#gitrepo[*gitRepo*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#secret[*secret*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#nfs[*nfs*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#iscsi[*iscsi*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#glusterfs[*glusterfs*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#persistentvolumeclaim[*persistentVolumeClaim*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#rbd[*rbd*]
+* *cinder*
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#cephfs[*cephFS*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#downwardapi[*downwardAPI*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#fc-fibre-channel[*fc*]
+* *configMap*
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#vspherevolume[*vsphereVolume*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#quobyte[*quobyte*]
+* *photonPersistentDisk*
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#projected[*projected*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#portworxvolume[*portworxVolume*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#scaleio[*scaleIO*]
+* link:https://kubernetes.io/docs/concepts/storage/volumes/#storageos[*storageos*]
+* *** (a special value to allow the use of all volume types)
+* *none* (a special value to disallow the use of all volumes types. Exist only for backwards compatibility)
+
+The recommended minimum set of allowed volumes for new SCCs are *configMap*,
+*downwardAPI*, *emptyDir*, *persistentVolumeClaim*, *secret*, and *projected*.
+
+[NOTE]
+====
+The list of allowable volume types is not exhaustive because new types are
+added with each release of {product-title}.
+====
+
+[NOTE]
+====
+For backwards compatibility, the usage of `allowHostDirVolumePlugin` overrides
+settings in the `volumes` field.  For example, if `allowHostDirVolumePlugin`
+is set to false but allowed in the `volumes` field, then the `hostPath`
+value will be removed from `volumes`.
+====
+
+[[authorization-seccomp]]
+=== Seccomp
+
+*SeccompProfiles* lists the allowed profiles that can be set for the pod or
+container's seccomp annotations. An unset (nil) or empty value means that no
+profiles are specified by the pod or container. Use the wildcard `*` to allow
+all profiles. When used to generate a value for a pod, the first non-wildcard
+profile is used as the default.
+
+ifdef::openshift-enterprise,openshift-origin[]
+Refer to the xref:../../admin_guide/seccomp.adoc#admin-guide-seccomp[seccomp documentation] for more information
+about configuring and using custom profiles.
+endif::[]
+
+[[admission]]
+
+=== Admission
+_Admission control_ with SCCs allows for control over the creation of resources
+based on the capabilities granted to a user.
+
+In terms of the SCCs, this means that an admission controller can inspect the
+user information made available in the context to retrieve an appropriate set of
+SCCs. Doing so ensures the pod is authorized to make requests about its
+operating environment or to generate a set of constraints to apply to the pod.
+
+The set of SCCs that admission uses to authorize a pod are determined by the
+user identity and groups that the user belongs to. Additionally, if the pod
+specifies a service account, the set of allowable SCCs includes any constraints
+accessible to the service account.
+
+Admission uses the following approach to create the final security context for
+the pod:
+
+. Retrieve all SCCs available for use.
+. Generate field values for security context settings that were not specified
+on the request.
+. Validate the final settings against the available constraints.
+
+If a matching set of constraints is found, then the pod is accepted. If the
+request cannot be matched to an SCC, the pod is rejected.
+
+A pod must validate every field against the SCC. The following are examples for
+just two of the fields that must be validated:
+
+[NOTE]
+====
+These examples are in the context of a strategy using the preallocated values.
+====
+
+*A FSGroup SCC Strategy of MustRunAs*
+
+If the pod defines a `fsGroup` ID, then that ID must equal the default
+`fsGroup` ID. Otherwise, the pod is not validated by that SCC and the next SCC
+is evaluated.
+
+If the `SecurityContextConstraints.fsGroup` field has value *RunAsAny*
+and the pod specification omits the `Pod.spec.securityContext.fsGroup`,
+then this field is considered valid. Note that it is possible that during
+validation, other SCC settings will reject other pod fields and thus cause the
+pod to fail.
+
+*A SupplementalGroups SCC Strategy of MustRunAs*
+
+If the pod specification defines one or more `supplementalGroups` IDs, then
+the pod's IDs must equal one of the IDs in the namespace's
+*openshift.io/sa.scc.supplemental-groups* annotation. Otherwise, the pod is not
+validated by that SCC and the next SCC is evaluated.
+
+If the `SecurityContextConstraints.supplementalGroups` field has value *RunAsAny*
+and the pod specification omits the `Pod.spec.securityContext.supplementalGroups`,
+then this field is considered valid. Note that it is possible that during
+validation, other SCC settings will reject other pod fields and thus cause the
+pod to fail.
+
+[[scc-prioritization]]
+==== SCC Prioritization
+
+SCCs have a priority field that affects the ordering when attempting to
+validate a request by the admission controller.  A higher priority
+SCC is moved to the front of the set when sorting.  When the complete set
+of available SCCs are determined they are ordered by:
+
+. Highest priority first, nil is considered a 0 priority
+. If priorities are equal, the SCCs will be sorted from most restrictive to least restrictive
+. If both priorities and restrictions are equal the SCCs will be sorted by name
+
+By default, the anyuid SCC granted to cluster administrators is given priority
+in their SCC set.  This allows cluster administrators to run pods as any
+user by without specifying a `RunAsUser` on the pod's `SecurityContext`.  The
+administrator may still specify a `RunAsUser` if they wish.
+
+==== Understanding Pre-allocated Values and Security Context Constraints
+
+The admission controller is aware of certain conditions in the security context
+constraints that trigger it to look up pre-allocated values from a namespace and
+populate the security context constraint before processing the pod. Each SCC
+strategy is evaluated independently of other strategies, with the pre-allocated
+values (where allowed) for each policy aggregated with pod specification values
+to make the final values for the various IDs defined in the running pod.
+
+The following SCCs cause the admission controller to look for pre-allocated
+values when no ranges are defined in the pod specification:
+
+. A `RunAsUser` strategy of *MustRunAsRange* with no minimum or maximum set.
+Admission looks for the *openshift.io/sa.scc.uid-range* annotation to populate
+range fields.
+. An `SELinuxContext` strategy of *MustRunAs* with no level set. Admission
+looks for the *openshift.io/sa.scc.mcs* annotation to populate the level.
+. A `FSGroup` strategy of *MustRunAs*. Admission looks for the
+*openshift.io/sa.scc.supplemental-groups* annotation.
+. A `SupplementalGroups` strategy of *MustRunAs*. Admission looks for the
+*openshift.io/sa.scc.supplemental-groups* annotation.
+
+During the generation phase, the security context provider will default any
+values that are not specifically set in the pod. Defaulting is based on the
+strategy being used:
+
+. `RunAsAny` and `MustRunAsNonRoot` strategies do not provide default
+values. Thus, if the pod needs a field defined (for example, a group ID), this
+field must be defined inside the pod specification.
+. `MustRunAs` (single value) strategies provide a default value which is
+always used. As an example, for group IDs: even if the pod specification defines
+its own ID value, the namespace's default field will also appear in the pod's
+groups.
+. `MustRunAsRange` and `MustRunAs` (range-based) strategies provide the
+minimum value of the range. As with a single value `MustRunAs` strategy, the
+namespace's default value will appear in the running pod. If a range-based
+strategy is configurable with multiple ranges, it will provide the minimum value
+of the first configured range.
+
+[NOTE]
+====
+`FSGroup` and `SupplementalGroups` strategies fall back to the
+*openshift.io/sa.scc.uid-range* annotation if the
+*openshift.io/sa.scc.supplemental-groups* annotation does not exist on the
+namespace. If neither exist, the SCC will fail to create.
+====
+
+[NOTE]
+====
+By default, the annotation-based `FSGroup` strategy configures itself with a
+single range based on the minimum value for the annotation. For example, if your
+annotation reads *1/3*, the `FSGroup` strategy will configure itself with a
+minimum and maximum of *1*. If you want to allow more groups to be accepted for
+the `FSGroup` field, you can configure a custom SCC that does not use the
+annotation.
+====
+
+[NOTE]
+====
+The *openshift.io/sa.scc.supplemental-groups* annotation accepts a comma
+delimited list of blocks in the format of `<start>/<length` or `<start>-<end>`.
+The *openshift.io/sa.scc.uid-range* annotation accepts only a single block.
+====
+endif::[]
+
+ifdef::openshift-online[]
+[[authorization-online-collaboration]]
+== Collaboration
+
+In {product-title} Pro, you can grant roles (like *view* or *edit*) to other
+users or groups for your projects.
+
+In {product-title} Starter, collaboration is not available. 
+endif::[]

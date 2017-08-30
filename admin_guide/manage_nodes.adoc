@@ -1,0 +1,522 @@
+[[admin-guide-manage-nodes]]
+= Managing Nodes
+{product-author}
+{product-version}
+:data-uri:
+:icons:
+:experimental:
+:toc: macro
+:toc-title:
+:prewrap!:
+
+toc::[]
+
+== Overview
+You can manage
+xref:../architecture/infrastructure_components/kubernetes_infrastructure.adoc#node[nodes]
+in your instance using the xref:../cli_reference/index.adoc#cli-reference-index[CLI].
+
+When you perform node management operations, the CLI interacts with
+xref:../architecture/infrastructure_components/kubernetes_infrastructure.adoc#node-object-definition[node objects]
+that are representations of actual node hosts. The
+xref:../architecture/infrastructure_components/kubernetes_infrastructure.adoc#master[master]
+uses the information from node objects to validate nodes with
+xref:../architecture/infrastructure_components/kubernetes_infrastructure.adoc#node[health checks].
+
+[[listing-nodes]]
+== Listing Nodes
+To list all nodes that are known to the master:
+
+====
+----
+$ oc get nodes
+NAME                        STATUS                     AGE
+master.example.com          Ready,SchedulingDisabled   165d
+node1.example.com           Ready                      165d
+node2.example.com           Ready                      165d
+----
+====
+
+To only list information about a single node, replace `<node>` with the full
+node name:
+
+----
+$ oc get node <node>
+----
+
+The `STATUS` column in the output of these commands can show nodes with the
+following conditions:
+
+.Node Conditions [[node-conditions]]
+[cols="3a,8a",options="header"]
+|===
+
+|Condition |Description
+
+|`Ready`
+|The node is passing the health checks performed from the master by returning
+`StatusOK`.
+
+|`NotReady`
+|The node is not passing the health checks performed from the master.
+
+|`SchedulingDisabled`
+|Pods cannot be xref:marking-nodes-as-unschedulable-or-schedulable[scheduled
+for placement] on the node.
+
+|===
+
+NOTE: The `STATUS` column can also show `Unknown` for a node if the CLI cannot
+find any node condition.
+
+To get more detailed information about a specific node, including the reason for
+the current condition:
+
+----
+$ oc describe node <node>
+----
+
+For example:
+
+====
+----
+$ oc describe node node1.example.com
+Name:			node1.example.com
+Labels:			kubernetes.io/hostname=node1.example.com
+CreationTimestamp:	Wed, 10 Jun 2015 17:22:34 +0000
+Conditions:
+  Type		Status	LastHeartbeatTime			LastTransitionTime			Reason					Message
+  Ready 	True 	Wed, 10 Jun 2015 19:56:16 +0000 	Wed, 10 Jun 2015 17:22:34 +0000 	kubelet is posting ready status
+Addresses:	127.0.0.1
+Capacity:
+ memory:	1017552Ki
+ pods:		100
+ cpu:		2
+Version:
+ Kernel Version:		3.17.4-301.fc21.x86_64
+ OS Image:			Fedora 21 (Twenty One)
+ Container Runtime Version:	docker://1.6.0
+ Kubelet Version:		v0.17.1-804-g496be63
+ Kube-Proxy Version:		v0.17.1-804-g496be63
+ExternalID:			node1.example.com
+Pods:				(2 in total)
+  docker-registry-1-9yyw5
+  router-1-maytv
+No events.
+----
+====
+
+[[adding-nodes]]
+== Adding Nodes
+
+To add nodes to your existing {product-title} cluster, you can run an Ansible
+playbook that handles installing the node components, generating the required
+certificates, and other important steps. See the
+xref:../install_config/adding_hosts_to_existing_cluster.adoc#adding-nodes-advanced[advanced
+installation] method for instructions on running the playbook directly.
+
+ifdef::openshift-enterprise[]
+Alternatively, if you used the quick installation method, you can
+xref:../install_config/adding_hosts_to_existing_cluster.adoc#adding-nodes-or-reinstalling-quick[re-run
+the installer to add nodes], which performs the same steps.
+endif::[]
+
+[[deleting-nodes]]
+== Deleting Nodes
+
+When you delete a node using the CLI, the node object is deleted in Kubernetes,
+but the pods that exist on the node itself are not deleted. Any bare pods not
+backed by a replication controller would be inaccessible to {product-title},
+pods backed by replication controllers would be rescheduled to other available
+nodes, and
+xref:../install_config/master_node_configuration.adoc#node-configuration-files[local
+manifest pods] would need to be manually deleted.
+
+To delete a node from the {product-title} cluster:
+
+. xref:evacuating-pods-on-nodes[Evacuate pods] from the node you are preparing
+to delete.
+
+. Delete the node object:
++
+----
+$ oc delete node <node>
+----
+
+. Check that the node has been removed from the node list:
++
+----
+$ oc get nodes
+----
++
+Pods should now be only scheduled for the remaining nodes that are in *Ready*
+state.
+
+. If you want to uninstall all {product-title} content from the node host,
+including all pods and containers, continue to
+xref:../install_config/install/advanced_install.adoc#uninstalling-nodes-advanced[Uninstalling
+Nodes] and follow the procedure using the *_uninstall.yml_* playbook. The
+procedure assumes general understanding of the
+xref:../install_config/install/advanced_install.adoc#install-config-install-advanced-install[advanced installation
+method] using Ansible.
+
+[[updating-labels-on-nodes]]
+== Updating Labels on Nodes
+
+To add or update
+xref:../architecture/core_concepts/pods_and_services.adoc#labels[labels] on a
+node:
+
+----
+$ oc label node <node> <key_1>=<value_1> ... <key_n>=<value_n>
+----
+
+To see more detailed usage:
+
+----
+$ oc label -h
+----
+
+== Listing Pods on Nodes
+To list all or selected pods on one or more nodes:
+
+----
+$ oadm manage-node <node1> <node2> \
+    --list-pods [--pod-selector=<pod_selector>] [-o json|yaml]
+----
+
+To list all or selected pods on selected nodes:
+
+----
+$ oadm manage-node --selector=<node_selector> \
+    --list-pods [--pod-selector=<pod_selector>] [-o json|yaml]
+----
+
+[[marking-nodes-as-unschedulable-or-schedulable]]
+== Marking Nodes as Unschedulable or Schedulable
+
+By default, healthy nodes with a `Ready` xref:node-conditions[status] are
+marked as schedulable, meaning that new pods are allowed for placement on the
+node. Manually marking a node as unschedulable blocks any new pods from being
+scheduled on the node. Existing pods on the node are not affected.
+
+To mark a node or nodes as unschedulable:
+
+----
+$ oadm manage-node <node1> <node2> --schedulable=false
+----
+
+For example:
+
+====
+[options="nowrap"]
+----
+$ oadm manage-node node1.example.com --schedulable=false
+NAME                 LABELS                                        STATUS
+node1.example.com    kubernetes.io/hostname=node1.example.com      Ready,SchedulingDisabled
+----
+====
+
+To mark a currently unschedulable node or nodes as schedulable:
+
+----
+$ oadm manage-node <node1> <node2> --schedulable
+----
+
+Alternatively, instead of specifying specific node names (e.g., `<node1>
+<node2>`), you can use the `--selector=<node_selector>` option to mark selected
+nodes as schedulable or unschedulable.
+
+[[evacuating-pods-on-nodes]]
+== Evacuating Pods on Nodes
+
+Evacuating pods allows you to migrate all or selected pods from a given node or
+nodes. Nodes must first be
+xref:marking-nodes-as-unschedulable-or-schedulable[marked unschedulable] to
+perform pod evacuation.
+
+Only pods backed by a
+xref:../architecture/core_concepts/deployments.adoc#replication-controllers[replication
+controller] can be evacuated; the replication controllers create new pods on
+other nodes and remove the existing pods from the specified node(s). Bare pods,
+meaning those not backed by a replication controller, are unaffected by default.
+
+To list pods that will be migrated without actually performing the evacuation,
+use the `--dry-run` option:
+
+----
+$ oadm manage-node <node1> <node2> \
+    --evacuate --dry-run [--pod-selector=<pod_selector>]
+----
+
+To actually evacuate all or selected pods on one or more nodes:
+
+----
+$ oadm manage-node <node1> <node2> \
+    --evacuate [--pod-selector=<pod_selector>]
+----
+
+You can force deletion of bare pods by using the `--force` option:
+
+----
+$ oadm manage-node <node1> <node2> \
+    --evacuate --force [--pod-selector=<pod_selector>]
+----
+
+Alternatively, instead of specifying specific node names (e.g., `<node1>
+<node2>`), you can use the `--selector=<node_selector>` option to evacuate pods
+on selected nodes.
+
+[[rebooting-nodes]]
+== Rebooting Nodes
+
+To reboot a node without causing an outage for applications running on the
+platform, it is important to first xref:evacuating-pods-on-nodes[evacuate the
+pods]. For pods that are made highly available by the routing tier, nothing
+else needs to be done. For other pods needing storage, typically databases, it
+is critical to ensure that they can remain in operation with one pod
+temporarily going offline. While implementing resiliency for stateful pods
+is different for each application, in all cases it is important to configure
+the scheduler to use xref:scheduler.adoc#anti-affinity[node anti-affinity] to
+ensure that the pods are properly spread across available nodes.
+
+Another challenge is how to handle nodes that are running critical
+infrastructure such as the router or the registry. The same node evacuation
+process applies, though it is important to understand certain edge cases.
+
+[[infrastructure-nodes]]
+=== Infrastructure Nodes
+
+Infrastructure nodes are nodes that are labeled to run pieces of the
+{product-title} environment. Currently, the easiest way to manage node reboots
+is to ensure that there are at least three nodes available to run
+infrastructure. The scenario below demonstrates a common mistake that can lead
+to service interruptions for the applications running on {product-title} when
+only two nodes are available.
+
+- Node A is marked unschedulable and all pods are evacuated.
+- The registry pod running on that node is now redeployed on node B. This means
+node B is now running both registry pods.
+- Node B is now marked unschedulable and is evacuated.
+- The service exposing the two pod endpoints on node B, for a brief period of
+   time, loses all endpoints until they are redeployed to node A.
+
+The same process using three infrastructure nodes does not result in a service
+disruption. However, due to pod scheduling, the last node that is evacuated and
+brought back in to rotation is left running zero registries. The other two nodes
+will run two and one registries respectively. The best solution is to rely on
+pod anti-affinity. This is an alpha feature in Kubernetes that is available for
+testing now, but is not yet supported for production workloads.
+
+[[pod-anti-affinity]]
+=== Using Pod Anti-affinity
+
+xref:../admin_guide/advanced-schduling/pod-affinity#admin-guide-sched-pod-affinity[Pod anti-affinity] is slightly different than
+xref:../admin_guide/advanced-schduling/node-affinity#admin-guide-sched-affinity[node anti-affinity]. Node anti-affinity can be
+violated if there are no other suitable locations to deploy a pod. Pod
+anti-affinity can be set to either required or preferred.
+
+Using the `*docker-registry*` pod as an example, the first step in enabling
+this feature is to set the `*scheduler.alpha.kubernetes.io/affinity*` on the
+pod. Since this pod uses a deployment configuration, the most appropriate
+place to add the annotation is to the pod template's metadata.
+
+====
+----
+$ oc edit dc/docker-registry -o yaml
+
+...
+  template:
+    metadata:
+      annotations:
+        scheduler.alpha.kubernetes.io/affinity: |
+          {
+            "podAntiAffinity": {
+              "requiredDuringSchedulingIgnoredDuringExecution": [{
+                "labelSelector": {
+                  "matchExpressions": [{
+                    "key": "docker-registry",
+                    "operator": "In",
+                    "values":["default"]
+                  }]
+                },
+                "topologyKey": "kubernetes.io/hostname"
+              }]
+            }
+          }
+----
+====
+
+[IMPORTANT]
+====
+`*scheduler.alpha.kubernetes.io/affinity*` is internally stored as a string
+even though the contents are JSON. The above example shows how this string can
+be added as an annotation to a YAML deployment configuration.
+====
+
+This example assumes the Docker registry pod has a label of
+`*docker-registry=default*`. Pod anti-affinity can use any Kubernetes match
+expression.
+
+The last required step is to enable the `*MatchInterPodAffinity*` scheduler
+predicate in *_/etc/origin/master/scheduler.json_*. With this in place, if only
+two infrastructure nodes are available and one is rebooted, the Docker registry
+pod is prevented from running on the other node. `*oc get pods*` reports the pod
+as unready until a suitable node is available. Once a node is available and all
+pods are back in ready state, the next node can be restarted.
+
+[[handling-nodes-running-routers]]
+=== Handling Nodes Running Routers
+
+In most cases, a pod running an {product-title} router will expose a host port.
+The `*PodFitsPorts*` scheduler predicate ensures that no router pods using the
+same port can run on the same node, and pod anti-affinity is achieved. If the
+routers are relying on
+xref:high_availability.adoc#configuring-ip-failover[IP failover]
+for high availability, there is nothing else that is needed. For router pods
+relying on an external service such as AWS Elastic Load Balancing for high
+availability, it is that service's responsibility to react to router pod
+restarts.
+
+In rare cases, a router pod may not have a host port configured. In those cases,
+it is important to follow the xref:infrastructure-nodes[recommended restart
+process] for infrastructure nodes.
+
+[[configuring-node-resources]]
+== Configuring Node Resources
+
+You can configure node resources by adding kubelet arguments to the node
+configuration file (*_/etc/origin/node/node-config.yaml_*). Add the
+`*kubeletArguments*` section and include any desired options:
+
+====
+----
+kubeletArguments:
+  max-pods <1>
+    - "40"
+  resolv-conf <2>
+    - "/etc/resolv.conf"
+  image-gc-high-threshold: <3>
+    - "90"
+  image-gc-low-threshold: <4>
+    - "80"
+----
+
+<1> xref:../admin_guide/manage_nodes.adoc#admin-guide-max-pods-per-node[Maximum number of pods that can run on this kubelet].
+<2> Resolver configuration file used as the basis for the container DNS
+resolution configuration.
+<3> The percent of disk usage after which image garbage collection is always run.
+Default: 90%
+<4> The percent of disk usage before which image garbage collection is never run.
+Lowest disk usage to garbage collect to. Default: 80%
+====
+
+To view all available kubelet options:
+
+----
+$ kubelet -h
+----
+
+This can also be set during an
+xref:../install_config/install/advanced_install.adoc#configuring-ansible[advanced
+installation] using the `*openshift_node_kubelet_args*` variable. For example:
+
+====
+----
+openshift_node_kubelet_args={'max-pods': ['40'], 'resolv-conf': ['/etc/resolv.conf'],  'image-gc-high-threshold': ['90'], 'image-gc-low-threshold': ['80']}
+----
+====
+
+[[admin-guide-max-pods-per-node]]
+=== Setting Maximum Pods Per Node
+
+////
+The following section is included in the Scaling and Performance Guide.
+////
+// tag::admin_guide_manage_nodes[]
+In the *_/etc/origin/node/node-config.yaml_* file, two parameters control the
+maximum number of pods that can be scheduled to a node: `pods-per-core` and
+`max-pods`. When both options are in use, the lower of the two limits the number
+of pods on a node. Exceeding these values can result in:
+
+* Increased CPU utilization on both {product-title} and Docker.
+* Slow pod scheduling.
+* Potential out-of-memory scenarios (depends on the amount of memory in the node).
+* Exhausting the pool of IP addresses.
+* Resource overcommitting, leading to poor user application performance.
+
+[NOTE]
+====
+In Kubernetes, a pod that is holding a single container actually uses two
+containers. The second container is used to set up networking prior to the
+actual container starting. Therefore, a system running 10 pods will actually
+have 20 containers running.
+====
+
+`pods-per-core` sets the number of pods the node can run based on the number of
+processor cores on the node. For example, if `pods-per-core` is set to `10` on
+a node with 4 processor cores, the maximum number of pods allowed on the node
+will be 40.
+
+====
+----
+kubeletArguments:
+  pods-per-core:
+    - "10"
+----
+====
+
+[NOTE]
+====
+Setting `pods-per-core` to 0 disables this limit.
+====
+
+`max-pods` sets the number of pods the node can run to a fixed value, regardless
+of the properties of the node.
+
+====
+----
+kubeletArguments:
+  max-pods:
+    - "250"
+----
+====
+
+Using the above example, the default value for `pods-per-core` is `10` and the
+default value for `max-pods` is `250`. This means that unless the node has 25
+cores or more, by default, `pods-per-core` will be the limiting factor.
+// end::admin_guide_manage_nodes[]
+
+[[manage-node-change-node-traffic-interface]]
+== Changing Node Traffic Interface
+
+By default, DNS routes all node traffic. During node registration, the master
+receives the node IP addresses from the DNS configuration, and therefore
+accessing nodes via DNS is the most flexible solution for most deployments.
+
+If your deployment is using a cloud provider, then the node gets the IP
+information from the cloud provider. However, *openshift-sdn* attempts to
+determine the IP through a variety of methods, including a DNS lookup on the
+nodeName (if set), or on the system hostname (if nodeName is not set).
+
+However, you may need to change the node traffic interface. For example,
+where:
+
+- {product-title} is installed in a cloud provider where internal hostnames are not configured/resolvable by all hosts.
+- The node's IP from the master's perspective is not the same as the node's IP from its own perspective.
+
+Configuring the `*openshift_set_node_ip*` Ansible variable
+forces node traffic through an interface other than the default network
+interface.
+
+To change the node traffic interface:
+
+. Set the `*openshift_set_node_ip*` Ansible variable to `true`.
+. Set the `*openshift_ip*` to the IP address for the node you want to configure.
+[NOTE]
+====
+Although  `*openshift_set_node_ip*` can be useful as a workaround for the
+cases stated in this section, it is generally not suited for production
+environments. This is because the node will no longer function properly if it
+receives a new IP address.
+====
