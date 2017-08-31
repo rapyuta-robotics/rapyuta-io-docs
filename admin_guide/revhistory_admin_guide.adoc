@@ -1,9 +1,0 @@
-[[admin-guide-revhistory-admin-guide]]
-= Revision History: Cluster Administration
-{product-author}
-{product-version}
-:data-uri:
-:icons:
-:experimental:
-
-// do-release: revhist-tables

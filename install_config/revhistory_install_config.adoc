@@ -1,9 +1,0 @@
-[[install-config-revhistory-install-config]]
-= Revision History: Installation and Configuration
-{product-author}
-{product-version}
-:data-uri:
-:icons:
-:experimental:
-
-// do-release: revhist-tables

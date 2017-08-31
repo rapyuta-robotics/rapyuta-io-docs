@@ -1,9 +1,0 @@
-[[architecture-revhistory-security]]
-= Revision History: Container Security Guide
-{product-author}
-{product-version}
-:data-uri:
-:icons:
-:experimental:
-
-// do-release: revhist-tables

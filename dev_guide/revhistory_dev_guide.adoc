@@ -1,9 +1,0 @@
-[[dev-guide-revhistory-dev-guide]]
-= Revision History: Developer Guide
-{product-author}
-{product-version}
-:data-uri:
-:icons:
-:experimental:
-
-// do-release: revhist-tables
