@@ -21,26 +21,102 @@
 # The ordering of the records in this document determines the ordering of the
 # topic groups and topics on the main page.
 ---
-Name: About
-Dir: welcome
-Topics:
-  - Name: Welcome
-    File: index
-  - Name: Legal Notice
-    File: legal_notice
-
----
-Name: What's New?
-Dir: whats_new
+Name: Getting Started
+Dir: getting_started
 Topics:
   - Name: Overview
     File: index
-  - Name: Release Notes
-    File: ose_3_0_release_notes
-    Distros: openshift-enterprise
-  - Name: Applications
-    File: applications
-  - Name: Cartridges vs Images
-    File: carts_vs_images
   - Name: Terminology
     File: terminology
+  - Name: Command-line Walkthrough
+    File: cli_walkthrough
+
+---
+Name: Architecture
+Dir: architecture
+Topics:
+  - Name: Core Concepts
+    Dir: core_concepts
+    Topics:
+      - Name: Packages
+        File: packages
+      - Name: Devices
+        File: devices
+      - Name: Service Catalog
+        File: service_catalog
+      - Name: Build Recipes
+        File: build_recipes
+      - Name: Deployments
+        File: deployments
+      - Name: Users and Groups
+        File: users_groups
+  - Name: Additional Concepts
+    Dir: additional_concepts
+    Topics:
+      - Name: Authentication
+        File: authentication
+      - Name: Authorization
+        File: authorization
+      - Name: Persistent Storage
+        File: persistent_storage
+      - Name: Secrets
+        File: secrets
+      - Name: Resource Quotas
+        File: resource_quotas
+
+---
+Name: CLI Reference
+Dir: cli_reference
+Topics:
+  - Name: Getting Started
+    File: index
+  - Name: Developer CLI Operations
+    Dir: dev_cli_ops
+    Topics:
+      - Name: Basic CLI Operations
+        File: index
+      - Name: Package CLI Operations
+        File: packages
+      - Name: Device CLI Operations
+        File: devices
+      - Name: Deployment CLI Operations
+        File: deployments
+      - Name: Build Recipe CLI Operations
+        File: build_recipes
+      - Name: Image CLI Operations
+        File: images
+
+---
+Name: Developer Guide
+Dir: developer_guide
+Topics:
+  - Name: Robot Enabled Application Developer
+    File: read
+  - Name: Embedded System Software Developer
+    File: essd
+  - Name: Enabling Algorithms and Services Developer
+    File: easd
+  - Name: Hardware-as-a-Service
+    File: haas
+  - Name: Robot Hardware Manufacturer
+    File: rhm
+  - Name: Robot Deployment and Provisioning Engineer
+    File: rdpe
+  - Name: Robot Operator
+    File: ro
+
+---
+Name: Using Platform Supported Packages
+Dir: platform_supported_packages
+Topics:
+  - Name: ROS Websockets Bridge
+    File: ros_websockets_bridge
+  - Name: Janus WebRTC Gateway
+    File: janus_webrtc_gateway
+
+---
+Name: Frequently Asked Questions
+Dir: faqs
+Topics:
+  - Name: FrequentlyAsked Questions
+    File: index

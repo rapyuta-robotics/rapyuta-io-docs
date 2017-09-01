@@ -57,7 +57,7 @@ p{
     background-color: #F7F7F7;
     font-size: 13px;
     width: 300px;
-    padding: 20px 0 20px 10px;
+    padding: 20px 0;
     flex-grow: 0;
     flex-shrink: 0;
 }
@@ -68,7 +68,7 @@ p{
 }
 #sidebar ul{
     list-style: none;
-    padding: 0 0 0 10px;
+    padding: 0 0 0 20px;
     margin: 0;
 }
 #sidebar a{
@@ -77,15 +77,28 @@ p{
     color: inherit;
     padding: 10px 0;
 }
-#sidebar>ul>li>a{
+#sidebar .topicGroupHead{
     color: #444444;
     text-transform: uppercase;
+    cursor: default;
 }
-#sidebar a.active {
-    margin-left: -30px !important;
+#sidebar .topicLink.active, #sidebar .topicLink:hover{
+    padding: 10px 0 10px 35px;
+    margin-left: -40px !important;
     margin-right: 0 !important;
     background-color: #FFFFFF;
-    padding: 10px 0 10px 25px;
+    border-left: 5px solid #E11A27;
+}
+#sidebar .topicSubgroupHead{
+    color: #444444;
+    text-transform: uppercase;
+    cursor: default;
+}
+#sidebar .topicSubgroupLink.active, #sidebar .topicSubgroupLink:hover{
+    padding: 10px 0 10px 55px;
+    margin-left: -60px !important;
+    margin-right: 0 !important;
+    background-color: #FFFFFF;
     border-left: 5px solid #E11A27;
 }
 #headerInner{
