@@ -1,0 +1,22 @@
+{
+  "name": "api_docs",
+  "version": "1.0.0",
+  "description": "Rapyuta IO Frontend generation framework for Swagger API docs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/rapyutians/rapyuta-io-docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/rapyutians/rapyuta-io-docs#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "prismjs": "^1.6.0",
+    "request": "^2.81.0",
+    "swagger-snippet": "^0.5.1"
+  }
+}
