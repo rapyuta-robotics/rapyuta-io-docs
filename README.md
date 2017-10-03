@@ -36,13 +36,6 @@ where all images for that topic are stored.
 /topic_dir/images/imgN.png
 ```
 
-### Opinionated Organization
-The layout of the topic map file combined with the behavior of AsciiBinder implies a specific organization of directories and topic files. 
-
-1. There are no topic files in the root directory of the repo - *The root directory of the repo is reserved for metadata files*.
-2. The maximum depth of topics is **2** directories. - *This may seem like an arbitrary limiting rule but it comes from looking at a real-world use of AsciiBinder, which contains over two hunderd topics*.
-
-
 ### Anatomy of a Build
 
 The documentation build system reads the `_topic_map.yml` metadata file to construct the content from the source files and publish to the relevant site. The build system *only* reads this file to determine which topic files to include. Therefore, all new topics that are created must be included in the `_topic_map.yml` metadata file in order to be processed by the build system.
@@ -89,6 +82,12 @@ Topics:
 **(7)** This topic is actually a topic "subgroup". Instead of a "File" value it includes a "Dir" value and a "Topics" list.
 
 **(8)** This subgroup directory "dev_cli_ops" is expected to be a directory under the parent topic group directory "cli_reference".
+
+### Opinionated Organization
+The layout of the topic map file combined with the behavior of AsciiBinder implies a specific organization of directories and topic files. 
+
+1. There are no topic files in the root directory of the repo - *The root directory of the repo is reserved for metadata files*.
+2. The maximum depth of topics is **2** directories. - *This may seem like an arbitrary limiting rule but it comes from looking at a real-world use of AsciiBinder, which contains over two hunderd topics*.
 
 ## Installation and Author Workflow
 
@@ -145,7 +144,27 @@ live preview capability by running:
 asciibinder watch
 ```
 
-When you do this, a Guard process starts running in the foreground on that terminal. 
+When you do this, a Guard process starts running in the foreground on that terminal. You can see the Guard process command by running: 
+```
+#!shell
+netstat -putln 2>&1 | awk -v GUARD_LIVERELOAD_PORT=35729 '$0 ~ GUARD_LIVERELOAD_PORT { split($7, process, "/"); system("ps -o command= -p "process[1]) }'
+``` 
+
+The Guard configuration file for AsciiBinder is located [here](https://github.com/redhataccess/ascii_binder/blob/master/Guardfile) which in turn uses [this](https://github.com/redhataccess/ascii_binder/blob/master/lib/ascii_binder/tasks/guards.rb) file.
+
+AsciiBinder uses [`guard-livereload`](https://github.com/guard/guard-livereload) guard to provide live reload functionality. 
+
+In order to get everything running in the browser, we use [`rack-livereload`](https://github.com/johnbintz/rack-livereload)
+
+```
+#!shell
+# Rack implements a simple interface that allows Ruby web application servers (like WEBrick, Mongrel, etc.) and 
+# Ruby web frameworks (like Rails, Sinatra, etc.) to interoperate with each other.
+gem install rack
+gem install rack-livereload
+# Run a Rack application behind a WEBrick web application server using 'config.ru' rackup config file. 
+rackup -p 9292 config.ru
+```
 
 ### Cleaning Out Build Artifacts
 
