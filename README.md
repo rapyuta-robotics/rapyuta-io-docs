@@ -150,7 +150,7 @@ When you do this, a Guard process starts running in the foreground on that termi
 netstat -putln 2>&1 | awk -v GUARD_LIVERELOAD_PORT=35729 '$0 ~ GUARD_LIVERELOAD_PORT { split($7, process, "/"); system("ps -o command= -p "process[1]) }'
 ``` 
 
-The Guard configuration file for AsciiBinder is located [here](https://github.com/redhataccess/ascii_binder/blob/master/Guardfile) which in turn uses [this](https://github.com/redhataccess/ascii_binder/blob/master/lib/ascii_binder/tasks/guards.rb) file.
+The Guard configuration file for AsciiBinder is located [here](https://github.com/redhataccess/ascii_binder/blob/master/Guardfile) which in turn uses this [file](https://github.com/redhataccess/ascii_binder/blob/master/lib/ascii_binder/tasks/guards.rb).
 
 AsciiBinder uses [`guard-livereload`](https://github.com/guard/guard-livereload) guard to provide live reload functionality. 
 
@@ -163,7 +163,8 @@ In order to get everything running in the browser, we use [`rack-livereload`](ht
 gem install rack
 gem install rack-livereload
 # Run a Rack application behind a WEBrick web application server using 'config.ru' rackup config file. 
-rackup -p 9292 config.ru
+rackup -p 8000 config.ru
+# Hit http://localhost:8000/rapyuta-io/latest/getting_started/index.html in your favorite browser
 ```
 
 ### Cleaning Out Build Artifacts
