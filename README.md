@@ -74,14 +74,21 @@ Topics:
        File: packages
 ```
 
-**1** Each topic group configuration is preceeded by this three-dash (`---`) record delimiter.
-**2** The display name of this topic group, which will appear in navigation elements.
-**3** The directory of this topic group within the git repo. 
-**4** Each topic group will contain at least one topic (asciidoc file).
-**5** The display name of this topic for use in navigation elements. 
-**6** The filename of the actual asciidoc file (the `.adoc` extension is implictly assumed)
-**7** This topic is actually a topic "subgroup". Instead of a "File" value it includes a "Dir" value and a "Topics" list.
-**8** This subgroup directory "dev_cli_ops" is expected to be a directory under the parent topic group directory "cli_reference".
+**(1)** Each topic group configuration is preceeded by this three-dash (`---`) record delimiter.
+
+**(2)** The display name of this topic group, which will appear in navigation elements.
+
+**(3)** The directory of this topic group within the git repo. 
+
+**(4)** Each topic group will contain at least one topic (asciidoc file).
+
+**(5)** The display name of this topic for use in navigation elements. 
+
+**(6)** The filename of the actual asciidoc file (the `.adoc` extension is implictly assumed)
+
+**(7)** This topic is actually a topic "subgroup". Instead of a "File" value it includes a "Dir" value and a "Topics" list.
+
+**(8)** This subgroup directory "dev_cli_ops" is expected to be a directory under the parent topic group directory "cli_reference".
 
 ## Installation and Author Workflow
 
