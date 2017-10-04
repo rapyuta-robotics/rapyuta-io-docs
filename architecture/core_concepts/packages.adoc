@@ -1,0 +1,40 @@
+= Packages
+
+[source,json]
+----
+{
+	"apiVersion": "v1", <1>
+	"name": "awesome-robot-app", <2>
+	"packageVersion": "1.0.0", <3>
+	"description": "Awesome robot application", <4>
+	"plans": [{ <5>
+		"name": "Enterprise", <6>
+		"metadata": { <7>
+			"ros-distro": "kinetic",
+			"maintainer": "Stark Industries"
+		},
+		"shared": false, <8>
+		"catalogue-components": [{ <9>
+		}],
+		"components": [{ <10>
+		}],
+		"dependencies": [{ <11>
+		}],
+		"exposedParameters": [{ <12>
+		}]
+	}]
+}
+----
+<1> API version of package manifest
+<2> The name of the package 
+<3> The version of the package. Rapyuta IO follows http://semver.org/[semver] for package versioning. 
+<4> A short description of the package
+<5> The list of plans for this package
+<6> The name of the plan
+<7> Metadata associated with the plan
+<8> Indicates if the plan is shared among users 
+<9> List of packages needed from the service catalogue
+<10> List of package components
+<11> List of dependencies between components to decide the launch order
+<12> List of parameters exposed by the package
+

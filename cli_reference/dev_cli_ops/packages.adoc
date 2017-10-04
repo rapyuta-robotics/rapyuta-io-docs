@@ -1,0 +1,14 @@
+= Package CLI Operations
+
+== Create a package from a package manifest file
+
+[source,shell]
+----
+rachna package create -f package.json
+----
+
+== Get package status
+[source,shell]
+----
+rachna package get <PACKAGE-NAME> <PACKAGE-VERSION>
+----
