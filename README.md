@@ -107,6 +107,25 @@ gem install ascii_binder
 git clone git@bitbucket.org:rapyutians/rapyuta-io-docs.git
 ```
 
+### Creating a New Branch
+```
+#!shell
+# git checkout -b docs_my_component
+git checkout -b <your-branch>
+```
+
+In order for the build tool to be able to find and build your new branch, you need to edit the `_distro_map.yml` file. Add the following under the `branches` tag in `_distro_map.yml`
+
+```
+#!shell
+<your-branch>:
+  name: <your-branch>
+  dir: <your-branch>
+```
+
+The HTML output for your branch will be generated in `_preview/rapyuta-io/<your-branch>` directory.
+
+
 ### Building the Docs
 
 Transforming an AsciiBinder repo into a bunch of documentation is pretty easy:
@@ -131,7 +150,7 @@ You can see the HTML produced by the build process under the `_preview` director
 #!shell
 cd rapyuta-io-docs/_preview
 python -m SimpleHTTPServer 8000
-# Hit http://localhost:8000/rapyuta-io/latest/getting_started in your favorite browser
+# Hit http://localhost:8000/rapyuta-io/latest/getting_started (or http://localhost:8000/rapyuta-io/<your_branch>/getting_started if you're using your own branch) in your favorite browser
 ```
 
 ### Instant Preview with Live Reload
@@ -164,7 +183,7 @@ gem install rack
 gem install rack-livereload
 # Run a Rack application behind a WEBrick web application server using 'config.ru' rackup config file. 
 rackup -p 8000 config.ru
-# Hit http://localhost:8000/rapyuta-io/latest/getting_started/index.html in your favorite browser
+# Hit http://localhost:8000/rapyuta-io/latest/getting_started/index.html (or http://localhost:8000/rapyuta-io/<your_branch>/getting_started/index.html if you're using your own branch) in your favorite browser
 ```
 
 ### Cleaning Out Build Artifacts
