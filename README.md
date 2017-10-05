@@ -142,6 +142,22 @@ If you run this from the root directory of your repo, you can simply run:
 asciibinder
 ```
 
+### Password Protect the Docs
+
+Install Node.js dependencies for the project using [Yarn](https://yarnpkg.com)
+
+```
+#!shell
+yarn install
+```
+
+Invoke `staticrypt/index.js` with a passphrase and a directory relative to the project root
+```
+#!shell
+# node staticrypt/index.js --directory=_preview/rapyuta-io/build_staticrypt --passphrase='myfavouritePassPhra$e'
+node staticrypt/index.js --directory=<directory> --passphrase=<passphrase>
+```
+
 ### Viewing the Docs
 
 You can see the HTML produced by the build process under the `_preview` directory in the repo. 
