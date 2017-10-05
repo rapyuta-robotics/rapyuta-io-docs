@@ -1,5 +1,9 @@
 = Packages
 
+Rapyuta IO is designed around the concept of a package, which is the _unit of deployment_ for the platform. Packages are defined using a _package manifest_ file.
+
+== Package Manifest
+
 [source,json]
 ----
 {
@@ -15,26 +19,139 @@
 		},
 		"shared": false, <8>
 		"catalogue-components": [{ <9>
+			"name": "video-server",
+			"packageName": "real-time-video",
+			"planName": "ultra-low-latency",
+			"parameters": [{ <10>
+				"API_SERVER_PORT": 8000,
+				"HTTPS_ENABLE": true,
+			}]
 		}],
-		"components": [{ <10>
+		"components": [{ <11>
+			"name": "web-server", <12>
+			"description": "HTTP(S) web server", <13>
+			"requiredRuntime": "cloud", <14>
+			"executables": [{ <15>
+				"docker": "registry.rapyuta.io/_/nginx:alpine" <16>
+			}],
+			"cloudInfra": { <17>
+				"endpoints": [{ <18>
+					"name": "http", <19>
+					"port": 80, <20>
+					"targetPort": 8080, <21>
+					"exposedExternally": true <22>
+				},
+				{
+					"name": "https",
+					"port": 443,
+					"targetPort": 8443,
+					"exposedExternally": true
+				}],
+				"replicas": 3, <23>
+			},
+		},
+		{
+			"name": "ros-slam-service",
+			"description": "ROS-based SLAM service for robots",
+			"requiredRuntime": "cloud",
+			"executables": [{
+				"git": "https://github.com/rapyuta-robotics/slam"
+			}],
+			"ros": { <24>
+				"topics": [{ <25>
+					"topicName": "/robot/move_command", <26>
+					"qos": "max" <27>
+				}],
+			},
+			"cloudInfra": {
+				"replicas": 2,
+			},
+			"parameters": [{ <28>
+				"name": "SLAM_ALPHA", <29>
+				"description": "Alpha value for SLAM algorithm", <30>
+				"default": 1.2 <31>
+			}]
+		},
+		{
+			"name": "ros-lidar",
+			"description": "ROS-based lidar service",
+			"requiredRuntime": "device",
+			"executables": [{
+				"cmd": "source /opt/ros/$ROS_DISTRO/setup.bash && roslaunch lidar all.launch"
+			}],
+			"ros": {
+				"topics": [{
+					"topicName": "/robot/lidar_pointmap",
+					"qos": "hi"
+				}]
+			},
+			"parameters": [{
+				"name": "LINUX_LIDAR_MODULE",
+				"description": "Linux kernel module to use with Lidar",
+				"default": "rplidar3233"
+			}]
 		}],
-		"dependencies": [{ <11>
-		}],
-		"exposedParameters": [{ <12>
+		"exposedParameters": [{ <32>
+			"scope": "web-server", <33>
+			"param": "API_TOKEN", <34>
+			"targetParam": "API_ACCESS_TOKEN" <35>
 		}]
 	}]
 }
 ----
 <1> API version of package manifest
-<2> The name of the package 
+<2> The name of the package. Package names are automatically scoped by user/group name to avoid name collisions.
 <3> The version of the package. Rapyuta IO follows http://semver.org/[semver] for package versioning. 
 <4> A short description of the package
-<5> The list of plans for this package
+<5> The list of plans for this package. Plans can be used to segregate package offerings based on features, SLAs, customer support, etc.
 <6> The name of the plan
 <7> Metadata associated with the plan
-<8> Indicates if the plan is shared among users 
-<9> List of packages needed from the service catalogue
-<10> List of package components
-<11> List of dependencies between components to decide the launch order
-<12> List of parameters exposed by the package
+<8> Indicates if the plan can be shared between consumers
+<9> List of packages from service catalog used by this package
+<10> List of parameters used to run `video-server` package
+<11> List of package components. Each package component is targeted for a specific runtime and is bound by resource (CPU, memory, etc.) and placement constraints.
+<12> The name of the component
+<13> A short description of the component
+<14> The runtime used for the component. Valid values for runtime include: `cloud` and `device`
+<15> List of executables to run for the component. The platform supports 3 types of executables: `git`, `docker` and `cmd`
+<16> The docker image used for the executable
+<17> The cloud infrastructure settings for component
+<18> List of network endpoints exposed by the component
+<19> The name of the endpoint
+<20> The external port for the endpoint. If omitted, this uses the `targetPort` value
+<21> The internal port for the endpoint
+<22> Indicates if the endpoint is exposed on the public internet
+<23> The number of replicas to run for the component
+<24> ROS settings for the component
+<25> List of ROS topics exposed by the component
+<26> The name of the topic
+<27> Quality of Service (QoS) setting for the topic. Valid values for qos include: `max`, `hi`, `med` and `low`
+<28> List of parameters used to run the component
+<29> The name of the parameter
+<30> A short description of the parameter
+<31> The default value of the parameter
+<32> List of parameters exposed by the package. These parameters allow other packages to use this package as a dependency
+<33> The name of the component whose parameter is referenced in `targetParam` of exposed parameter
+<34> The external name of the parameter. If omitted, this uses the `targetParam` value
+<35> The internal name of the parameter
 
+== Package Plan
+A _package plan_ allows package authors to create https://en.wikipedia.org/wiki/Differentiated_services[differentiated services] (or DiffServ). This is similar to how modern SaaS products tier their service offering to cater to different customer segments. A package plan allows package authors to tier their service offering based on features, device/robot support, SLAs, customer support, etc.
+
+=== Shared Package Plan
+A _shared_ package plan allows consumers of a package plan to share instance(s) of the package between them. The platform doesn't provide any isolation guarantees for shared package plans and such isolation / multi-tenancy features should be implemented within the package itself.
+
+== Package Component
+A package is always composed of one or more package components. Every package component is bound by a set of constraints:
+
+. *Runtime* - targeted for a specific runtime (`cloud` or `device`)
+. *Resource* - bound by compute (CPU, GPU), storage (memory, disk IOPS) and network constraints
+. *Placement* - bound by placement constraints on devices using _affinity_ and _anti-affinity_ labels
+
+=== Affinity and Anti-Affinity Labels
+
+Affinity and anti-affinity labels allow package authors to lay down device placement policies for package components. These labels are composed of simple rules which help the platform choose the right device for a platform component.
+
+
+== Package Dependencies
+A package with multiple components and package dependencies always requires that its components/package depedencies be instantiated in an order that respects the dependency-depedenant relationship. Rapyuta IO creates a dependency graph of components/package dependencies for a package by parsing the package manifest file and uses it to decide the launch order of components/package dependencies.
