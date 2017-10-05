@@ -211,7 +211,17 @@ To clean up the contents of `_preview` directory and start afresh, you can run:
 asciibinder clean
 ```
 
-### Miscellaneous
+## Docker
+
+```
+#!shell
+# Build image from Dockrefile
+docker build --build-arg DOCS_ROOT=<your_branch> -t web-server .
+# Run Docker image
+docker run --rm -it -p 8000:8000 web-server
+```
+
+## Miscellaneous
 
 Use [this](http://asciidoctor.org/docs/asciidoc-syntax-quick-reference) for a quick reference on AsciiDoc syntax.
 
