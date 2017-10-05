@@ -142,16 +142,20 @@ If you run this from the root directory of your repo, you can simply run:
 asciibinder
 ```
 
-### Password protect built docs
+### Password Protect the Docs
 
-Invoke staticrypt/index.js with a passphrase and directory relative to the project root
+Install Node.js dependencies for the project using [Yarn](https://yarnpkg.com)
+
 ```
 #!shell
-# node staticrypt/index.js --directory=<directory> --passphrase=<passphrase>
+yarn install
 ```
-Eg:
+
+Invoke `staticrypt/index.js` with a passphrase and a directory relative to the project root
 ```
-node staticrypt/index.js --directory=_preview/rapyuta-io/build_staticrypt --passphrase='myfavouritePassPhra$e'
+#!shell
+# node staticrypt/index.js --directory=_preview/rapyuta-io/build_staticrypt --passphrase='myfavouritePassPhra$e'
+node staticrypt/index.js --directory=<directory> --passphrase=<passphrase>
 ```
 
 ### Viewing the Docs
