@@ -151,11 +151,11 @@ Install Node.js dependencies for the project using [Yarn](https://yarnpkg.com)
 yarn install
 ```
 
-Invoke `staticrypt/index.js` with a passphrase and a directory relative to the project root
+Invoke `_staticrypt/index.js` with a passphrase and a directory relative to the project root
 ```
 #!shell
-# node staticrypt/index.js --directory=_preview/rapyuta-io/build_staticrypt --passphrase='myfavouritePassPhra$e'
-node staticrypt/index.js --directory=<directory> --passphrase=<passphrase>
+# node _staticrypt/index.js --directory=_preview/rapyuta-io/build_staticrypt --passphrase='myfavouritePassPhra$e'
+node _staticrypt/index.js --directory=<directory> --passphrase=<passphrase>
 ```
 
 ### Viewing the Docs
