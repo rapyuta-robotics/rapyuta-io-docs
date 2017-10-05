@@ -195,6 +195,10 @@ To clean up the contents of `_preview` directory and start afresh, you can run:
 asciibinder clean
 ```
 
+### Miscellaneous
+
+Use [this](http://asciidoctor.org/docs/asciidoc-syntax-quick-reference) for a quick reference on AsciiDoc syntax.
+
 ## Who do I talk to?
 - Chaitanya Deep `<chaitanya.deep@rapyuta-robotics.com>`
 - Bharat Khatri `<bharat.khatri@rapyuta-roboitcs.com>`
