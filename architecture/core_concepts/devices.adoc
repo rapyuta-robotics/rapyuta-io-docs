@@ -1,0 +1,93 @@
+[[core-components-devices]]
+= Device Management
+:toc: macro
+:toc-title:
+:data-uri:
+:experimental:
+:prewrap!:
+:description:
+:keywords:
+
+toc::[]
+
+== Overview
+The Device Management functionality provides the base communication between a device and the cloud
+ platform. This is single point of contact for all device related functions.
+
+== Architecture
+image::device_manager_architecture.png["Device Manager Architecture"]
+
+
+== Communication
+Device Manager Service uses a server-agent communication model. The server component is called the
+ Device Manager, and the agent is called the Device Manager Client (or DM Client). The Device
+ Manager is responsible for sending commands to DM Clients.
+
+==== NAT Traversal
+Connections are initiated by the DM Client, which means that you do not need to open any
+ incoming ports on those systems (hence more security).
+
+==== Communication Channels
+DM communicates with registered devices using a publish-subscribe pattern.
+
+There are two communication channels:
+
+*Control Channel*: This is used to send all the control commands from DM to DM client and receive
+ event messages from DM Client through a persistent connection.
+
+*Metric Channel*: DM Client connects to this channel as required to send all the collected metric
+ data to DM.
+
+== Remote Execution
+Device Manager provides you with the remote execution system which means accessing your device
+ locally which is present at some remote location connected over WAN. You can access it from Web
+ UI using *SSH* tab or *Teminal* tab under Manage (more details in Developer guide). It uses
+ secure Control channel to send your commands to device.
+
+== Remote Monitoring
+Remote Monitoring helps you to get better visibility into your devices wherever they happen to be
+ located. Collect and analyse real-time device data using a DM metric collection and visualization
+ functionality. You can configure what data to collect and how to analyse it. It also allows you to
+ have highly customized _Dashboards_.
+
+
+== Application Deployment
+User Application Deployment is one of the crucial feature of Device Manager service. You can
+ run your applications and manage their lifecycle remotely. It means you can start, stop or get
+ the current status of your application anytime you want. If the device supports container (docker)
+ runtime, Application Deployment includes an extra step of pulling software code to the device
+ (docker pull), thus it also provisions your device for deployment.
+
+==== Support for multiple device runtimes (debian, docker)
+Applications can be provisioned on devices with debian runtime or docker runtime (docker runtime
+ is prefered as it supports software deployment and cleaner process temination). On debian runtime
+ ROSLaunch files are used to group application processes whereas docker runtime uses dockercompose.
+
+==== Software Placement based on current device state and environment
+Device Manager helps application developers in decoupling application’s component placement logic
+ from the software code. Application components are specified in _Application Manifest_ which is a
+ declarative specification of your application whereas placement criteria can be specified at the
+ time of deploying the application. This makes it easier for the application developer to write
+ code which is agnostic (to some extent) to the actual system it will run on.
+
+Placement criteria can include conditions based on the collected _metrics_ or some static properties like
+ device _labels_. You can specify your conditions at the time of deployment on Web UI.
+
+
+== Security
+
+The architecture of Device Manager service includes security aspects to assure that all the data
+ (both control and telemetry) are encrypted when exchanged between components.
+
+==== End to End Encryption
+After a device is successfully registered with DM, all further communication between DM and
+ DM Client is encrypted using AES keys. The AES encryption key uses security algorithms in
+ accordance with the latest accepted version of TLS.
+
+==== Identity validation
+All devices are registered to DM with unique credentials that can only be visible to you.
+ These credentials are used to identify devices across communication channels.
+
+== API Docs
+https://device-manager-staging.ep.rapyuta.io/apidocs/
+

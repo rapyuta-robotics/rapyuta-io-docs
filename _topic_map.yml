@@ -28,6 +28,12 @@ Topics:
     File: index
 
 ---
+Name: Getting Started
+Dir: getting_started
+Topics:
+  - Name: Onboard Device
+    File: onboard_device
+---
 Name: Architecture
 Dir: architecture
 Topics:
@@ -55,6 +61,18 @@ Topics:
         File: authorization
 
 ---
+Name: Developer Guide
+Dir: developer_guide
+Topics:
+  - Name: Device Management Operations
+    Dir: device_management
+    Topics:
+      - Name: WebSSH
+        File: webssh
+      - Name: Metric Collection and Visualization
+        File: device_metric_collection
+
+---
 Name: CLI Reference
 Dir: cli_reference
 Topics:
@@ -63,7 +81,7 @@ Topics:
     Topics:
       - Name: Package CLI Operations
         File: packages
-      
+
 ---
 Name: Frequently Asked Questions
 Dir: faqs
