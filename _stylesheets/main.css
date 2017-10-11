@@ -23,6 +23,18 @@ a{
 p{
     line-height: 1.6;
 }
+table{
+    line-height: 1.6;
+}
+code{
+    line-height: 1.6;
+}
+td{
+    vertical-align: text-top;
+}
+img{
+    max-width: 100%;
+}
 #breadcrumbNav{
     display: flex;
 }
@@ -132,6 +144,9 @@ p{
     margin-left: 15px;
     border-left: 2px solid #F7F7F7;
     padding: 0 20px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: hidden;
 }
 .page-header h1{
     margin: 0;
@@ -191,4 +206,19 @@ p{
     color: #404040;
     font-size: 14px;
     font-family: monospace;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+#toc{
+    background-color: #F7F7F7;
+    padding: 20px 0;
+    margin-top: 10px;
+}
+
+#toc ul{
+    list-style: none;
+    line-height: 1.6;
+    padding: 0 0 0 30px;
+    margin: 0;
 }
