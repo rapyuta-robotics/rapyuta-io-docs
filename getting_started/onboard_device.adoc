@@ -1,0 +1,63 @@
+[[getting-started-onboard-device]]
+= Adding Your First Device
+:toc: macro
+:toc-title:
+:data-uri:
+:experimental:
+:prewrap!:
+:description: This is the getting started experience for Developers, focusing on device onboarding.
+:keywords: getting started, developers, device
+
+toc::[]
+
+[[onboard-device-requirements]]
+== Requirements
+
+*System requirements*
+
+* Python 2.7.8 or higher
+* Linux based OS
+
+*Supported ARMv7 devices*
+
+* Raspberry Pi 2 and 3
+* Apalis iMX6
+
+[[onboard-device-registration]]
+== Registering New Device
+
+To register your device, you must have an Rapyuta IO account.
+
+. Log in to Rapyuta IO web console in your browser using username and password.
+. Go to *Devices* tab and click on *Add New Device*.
+. Type a unique name and description for the new device.
+. Click *Add Device*. You will get your unique device setup link.
+. Copy this link.
++
+
+
+image::create_device.png["Add Device"]
+image::bootstrap_link.png["Copy setup link"]
+
+Next step is to go into the device.
+
+[[onboard-device-setting-up]]
+== Setting Up
+
+Paste and run the device setup link on terminal.
+
+. This will start setting up Rapyuta IO device client.
+. If setup is completed successfully, your device will appear as online (green) on
+ Rapyuta IO console.
++
+You can now manage your device from Web UI.
+
+[NOTE]
+====
+The device setup link expires after 10 minutes. Click on *Token* in Web UI to generate the link
+ again.
+====
+
+This is all you need to do to add your device to Rapyuta IO. To learn more about the things you
+ can do with your device, check out the guide on Device Manager features. For more information
+ on Device Manager concepts, check out the Core Concepts page.

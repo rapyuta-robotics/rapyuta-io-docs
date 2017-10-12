@@ -1,0 +1,23 @@
+= WebSSH
+:toc: macro
+:toc-title:
+:data-uri:
+:experimental:
+:prewrap!:
+:description:
+:keywords:
+
+toc::[]
+
+== Introduction
+The secure shell (SSH) is the industry standard that provides a secure connection to a system.
+ Device Manager provides SSH access to the device using reverse ssh tunnel, thus you do not need
+ to expose SSH ports on your device and compromise security. You can issue small commands, test
+ some code, check system logs and similar operation to debug your applications.
+
+== Start WebSSH session
+To start a SSH session to your device, you need to ensure that your device is online and has ssh
+ service. Just go to *SSH* tab in your device details page and your SSH session will be initiated.
+
+
+image::webssh.png["WebSSH"]

@@ -1,0 +1,48 @@
+= Device Metric Collection and Visualization
+:toc: macro
+:toc-title:
+:data-uri:
+:experimental:
+:prewrap!:
+:description:
+:keywords:
+
+toc::[]
+
+== Introduction
+This functionality enables device to push metric data to Rapyuta IO and visualize the collected data
+ in Web UI.This communication channel is different from what is used to send control commands to
+ device.
+
+image::dashboard.png["Metric Dashboards"]
+
+== Metric Collection
+Metric collection feature can be used to store any telemetry data that is being published by a
+ *ROS topic*. We are working on developing more input plugins.
+
+To enable collection of metrics on the device and storage on Platform, you must change the
+ subscriber settings of device.
+
+. Verify that your telemetry node is running and publishing data.
+. Go to *Devices* tab and click on your device.
+. Go to *Monitor* tab in your device details page.
+. Subscribe to the ROS topics you wish to store and visualize.
+
+Your device metric collector will start pushing this data to Platform. To learn how to visualize
+it, go to next topic.
+
+== Graphs and Dashboards
+You can go to Web UI to see the data being collected. You can choose among various plotting
+ options according to type of data being published. You can also add multiple graph cells. This
+ is persisted as *Dashboards* so that you do not have to configure monitoring graph cells every
+ time you login. These dashboards are shared among the group.
+
+To setup you dashboard:
+
+. Go to *Devices* tab and click on your device.
+. Go to *Monitor* tab in your device details page.
+. Subscribe to the ROS topics you wish to graph out.
+. Click on *Add Cell* and select *Graph*. A graph cell will be added to page.
+. Click on *Edit* from the top right menu and then click on *Add Query*.
+. Select the metric name you subscribed to and the graph type and click on *OK*.
+. The graph cell will start showing plotted data.
