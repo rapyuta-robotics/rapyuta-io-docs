@@ -11,8 +11,7 @@
 toc::[]
 
 == Overview
-The Device Management functionality provides the base communication between a device and the cloud
- platform. This is single point of contact for all device related functions.
+Device Manager is responsible for all communication between the devices and _rapyuta.io_.
 
 == Architecture
 image::device_manager_architecture.png["Device Manager Architecture"]
@@ -20,69 +19,64 @@ image::device_manager_architecture.png["Device Manager Architecture"]
 
 == Communication
 Device Manager Service uses a server-agent communication model. The server component is called the
- Device Manager, and the agent is called the Device Manager Client (or DM Client). The Device
- Manager is responsible for sending commands to DM Clients.
+ *Device Manager*, and the agent is called the *Device Manager Client* (or *DM Client*).
 
 ==== NAT Traversal
-Connections are initiated by the DM Client, which means that you do not need to open any
- incoming ports on those systems (hence more security).
+
+It works behind firewalls, NAT network as the connections are initiated by the DM Client to the Device Manager Server. You do not need to open any ports on your firewall.
 
 ==== Communication Channels
 DM communicates with registered devices using a publish-subscribe pattern.
 
-There are two communication channels:
-
-*Control Channel*: This is used to send all the control commands from DM to DM client and receive
+*Control Channel*: This is used to send all the control commands from DM Service to DM client and receive
  event messages from DM Client through a persistent connection.
 
-*Metric Channel*: DM Client connects to this channel as required to send all the collected metric
- data to DM.
+*Metric Channel*: DM Client connects to this channel as required to send the collected metric
+ data to DM Service.
 
 == Remote Execution
-Device Manager provides you with the remote execution system which means accessing your device
- locally which is present at some remote location connected over WAN. You can access it from Web
- UI using *SSH* tab or *Teminal* tab under Manage (more details in Developer guide). It uses
- secure Control channel to send your commands to device.
+
+You can open an interactive shell to the device through the web browser (link:../../developer_guide/device_management/webssh.html[WebSSH]) or send commands to be individual commands to be executed on the device(sync/async).
+
+Commands can be run on the device independent of the device location and firewall status as it all happens through the browser.
 
 == Remote Monitoring
-Remote Monitoring helps you to get better visibility into your devices wherever they happen to be
- located. Collect and analyse real-time device data using a DM metric collection and visualization
- functionality. You can configure what data to collect and how to analyse it. It also allows you to
- have highly customized _Dashboards_.
+Real time metrics such as cpu usage, memory usage, battery level are streamed from the device to the rapyuta.io platform.
+You can visualize the data on link:../../developer_guide/device_management/device_metric_collection.html[customisable user dashboards].
 
+Custom metrics can also be exported and visualized from the device through ROS topics.
 
 == Application Deployment
-User Application Deployment is one of the crucial feature of Device Manager service. You can
- run your applications and manage their lifecycle remotely. It means you can start, stop or get
- the current status of your application anytime you want. If the device supports container (docker)
- runtime, Application Deployment includes an extra step of pulling software code to the device
- (docker pull), thus it also provisions your device for deployment.
+You can remotely deploy custom user applications on the device and manage it's lifecycle.
+You can start, stop, get status, logs of the running application.
 
-==== Support for multiple device runtimes (debian, docker)
-Applications can be provisioned on devices with debian runtime or docker runtime (docker runtime
- is prefered as it supports software deployment and cleaner process temination). On debian runtime
- ROSLaunch files are used to group application processes whereas docker runtime uses dockercompose.
+The supported application runtime are docker and generic linux. The docker runtime allows for application provisioning on a live device.
 
-==== Software Placement based on current device state and environment
-Device Manager helps application developers in decoupling application’s component placement logic
- from the software code. Application components are specified in _Application Manifest_ which is a
- declarative specification of your application whereas placement criteria can be specified at the
- time of deploying the application. This makes it easier for the application developer to write
- code which is agnostic (to some extent) to the actual system it will run on.
+==== Application Runtime
 
-Placement criteria can include conditions based on the collected _metrics_ or some static properties like
- device _labels_. You can specify your conditions at the time of deployment on Web UI.
+===== Docker
+
+The runtime allows for live provisioning of the application on devices. This runtime is preferred on devices.
+
+===== Generic Linux
+
+Allows you to launch, maintain and watch status of any linux application. Doesn't support live provisioning.
+
+
+== Dynamic Device Selection
+
+Device selection allows you to deploy applications to devices based on various properties. It includes dynamic properties like metrics(battery capacity, wind speed, location, etc) and static properties like labels are also supported.
+
+This can be defined in the link:packages.html[_Package Manifest_] at the time of application deployment.
 
 
 == Security
 
-The architecture of Device Manager service includes security aspects to assure that all the data
- (both control and telemetry) are encrypted when exchanged between components.
+All channels of communication to the device are encrypted with public key cryptography.
 
 ==== End to End Encryption
 After a device is successfully registered with DM, all further communication between DM and
- DM Client is encrypted using AES keys. The AES encryption key uses security algorithms in
- accordance with the latest accepted version of TLS.
+ DM Client is encrypted using public key cryptography.
 
 ==== Identity validation
 All devices are registered to DM with unique credentials that can only be visible to you.
