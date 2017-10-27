@@ -11,71 +11,96 @@
 toc::[]
 
 == Overview
-Device Manager is responsible for all communication between the devices and _rapyuta.io_.
+The Device Manager provides the control-plane and a minimal data-plane
+communication between the device and the platform.
+This is single point of contact for all device related functions.
 
 == Architecture
 image::device_manager_architecture.png["Device Manager Architecture"]
 
 
 == Communication
-Device Manager Service uses a server-agent communication model. The server component is called the
- *Device Manager*, and the agent is called the *Device Manager Client* (or *DM Client*).
+Device Manager Service uses a server-agent communication model. The server
+ component is called the *Device Manager*, and the agent is called the
+  *Device Manager Client* (or *DM Client*).
 
 ==== NAT Traversal
 
-It works behind firewalls, NAT network as the connections are initiated by the DM Client to the Device Manager Server. You do not need to open any ports on your firewall.
+Works behind firewalls, NAT network as the connections are initiated by the
+ DM Client to the Device Manager Service. You do not need to open any incoming
+  ports on your firewall.
 
 ==== Communication Channels
 DM communicates with registered devices using a publish-subscribe pattern.
 
-*Control Channel*: This is used to send all the control commands from DM Service to DM client and receive
- event messages from DM Client through a persistent connection.
+There are two communication channels:
 
-*Metric Channel*: DM Client connects to this channel as required to send the collected metric
- data to DM Service.
+*Control Channel*: This is used to send all the control commands from DM
+Service to DM client and receive event messages from DM Client through
+ a persistent connection.
+
+*Metric Channel*: DM Client connects to this channel as required to send the
+ collected metric data to DM Service.
 
 == Remote Execution
+Device Manager provides you with the remote execution system which means accessing your device
+- locally which is present at some remote location connected over WAN.
+You can open an interactive shell to the device through the web browser
+(link:../../developer_guide/device_management/webssh.html[WebSSH]) or send
+commands to be individual commands to be executed on the device(sync/async).
 
-You can open an interactive shell to the device through the web browser (link:../../developer_guide/device_management/webssh.html[WebSSH]) or send commands to be individual commands to be executed on the device(sync/async).
-
-Commands can be run on the device independent of the device location and firewall status as it all happens through the browser.
+Commands can be run on the device independent of the device location and
+firewall status.
 
 == Remote Monitoring
-Real time metrics such as cpu usage, memory usage, battery level are streamed from the device to the rapyuta.io platform.
-You can visualize the data on link:../../developer_guide/device_management/device_metric_collection.html[customisable user dashboards].
+Remote Monitoring helps you to get better visibility into your devices wherever
+ they happen to be located. DM service enables you to collect and visualize real
+  time metrics such as cpu usage, memory usage, battery level from the device.
 
 Custom metrics can also be exported and visualized from the device through ROS topics.
 
+link:../../developer_guide/device_management/device_metric_collection.html[User Dashboards documentation].
+
 == Application Deployment
-You can remotely deploy custom user applications on the device and manage it's lifecycle.
+You can remotely deploy custom user applications on the device and manage
+ it's lifecycle.
 You can start, stop, get status, logs of the running application.
 
-The supported application runtime are docker and generic linux. The docker runtime allows for application provisioning on a live device.
+The supported application runtime are docker and generic linux. The docker
+runtime allows for application provisioning on a live device.
 
 ==== Application Runtime
 
 ===== Docker
 
-The runtime allows for live provisioning of the application on devices. This runtime is preferred on devices.
+The runtime allows for live provisioning of the application on devices.
 
 ===== Generic Linux
 
-Allows you to launch, maintain and watch status of any linux application. Doesn't support live provisioning.
+Allows you to launch, maintain and watch status of any linux application.
+ Doesn't support live provisioning.
 
 
 == Dynamic Device Selection
 
-Device selection allows you to deploy applications to devices based on various properties. It includes dynamic properties like metrics(battery capacity, wind speed, location, etc) and static properties like labels are also supported.
+Device selection allows you to deploy applications to devices based on various
+properties. It includes dynamic properties like metrics
+(battery capacity, wind speed, location, etc) and static properties like
+ labels are also supported.
 
-This can be defined in the link:packages.html[_Package Manifest_] at the time of application deployment.
+This can be defined in the link:packages.html[_Package Manifest_] at the time
+ of application deployment.
 
 
 == Security
 
-All channels of communication to the device are encrypted with public key cryptography.
+The architecture of Device Manager service includes security aspects to assure
+ that all the data (both control and telemetry) are encrypted when exchanged
+  between components.
 
 ==== End to End Encryption
-After a device is successfully registered with DM, all further communication between DM and
+After a device is successfully registered with DM, all further communication
+ between DM and
  DM Client is encrypted using public key cryptography.
 
 ==== Identity validation
