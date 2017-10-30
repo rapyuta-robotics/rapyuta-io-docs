@@ -32,6 +32,8 @@ Dir: overview
 Topics:
   - Name: Introduction
     File: intro
+  - Name: Application Architecture
+    File: app_arch      
 ---
 Name: Core Concepts
 Dir: core_concepts
@@ -42,23 +44,20 @@ Topics:
 Name: Getting Started
 Dir: getting_started
 Topics:
-  - Name: Adding New Device
-    File: adding_new_device
-  - Name: Creating A Package
+  - Name: Add Device
+    File: add_device
+  - Name: Create Package
     File: create_package
-  - Name: Deploying A Package
+  - Name: Deploy Package
     File: deploy_package
 ---
-Name: Deploying A Package
-Dir: deploy_package
+Name: Device Management Operations
+Dir: device_management
 Topics:
-  - Name: Device Management Operations
-    Dir: device_management
-    Topics:
-      - Name: WebSSH
-        File: webssh
-      - Name: Metric Collection and Visualization
-        File: device_metric_collection
+  - Name: WebSSH
+    File: webssh
+  - Name: Metric Collection and Visualization
+    File: device_metric_collection
 ---
 Name: Rapyuta IO SDK
 Dir: rapyuta_io_sdk
