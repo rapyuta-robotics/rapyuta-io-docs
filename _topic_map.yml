@@ -38,6 +38,10 @@ Dir: getting_started
 Topics:
   - Name: Onboard Device
     File: onboard_device
+  - Name: Create Package
+    File: create_package
+  - Name: Deploy Package
+    File: deploy_package
 ---
 Name: Core Concepts
 Dir: core_concepts

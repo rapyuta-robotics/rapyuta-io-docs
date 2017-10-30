@@ -26,7 +26,14 @@ toc::[]
 [[onboard-device-registration]]
 == Registering New Device
 
+
+
+[TIP]
+====
 To register your device, you must have an Rapyuta IO account.
+====
+
+
 
 . Log in to Rapyuta IO web console in your browser using username and password.
 . Go to *Devices* tab and click on *Add New Device*.
@@ -36,8 +43,8 @@ To register your device, you must have an Rapyuta IO account.
 +
 
 
-image::create_device.png["Add Device"]
-image::bootstrap_link.png["Copy setup link"]
+image::device/create_device.png["Add Device"]
+image::device/bootstrap_link.png["Copy setup link"]
 
 Next step is to go into the device.
 
