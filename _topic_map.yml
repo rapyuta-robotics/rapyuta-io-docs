@@ -33,17 +33,17 @@ Topics:
   - Name: Introduction
     File: intro
 ---
-Name: Getting Started
-Dir: getting_started
-Topics:
-  - Name: Adding New Device
-    File: adding_new_device
----
 Name: Core Concepts
 Dir: core_concepts
 Topics:
   - Name: Device Management
     File: devices
+---
+Name: Getting Started
+Dir: getting_started
+Topics:
+  - Name: Adding New Device
+    File: adding_new_device
 ---
 Name: Developer Guide
 Dir: developer_guide
