@@ -60,6 +60,6 @@ This is all you need to do to add your device to rapyuta.io .
 
 [TIP]
 ====
-To learn more about the things you can do with your device,visit the docs on the link:../../developer_guide/device_management/webssh.html[Device Management Operations] section of the Developer Guide.
-For more information on Device Manager concepts, visit the section on link:../../overview/devices.html[Device Management] in the overview docs.
+To learn more about the things you can do with your device,visit the docs on the link:../developer_guide/device_management/webssh.html[Device Management Operations] section of the Developer Guide.
+For more information on Device Manager concepts, visit the section on link:../overview/devices.html[Device Management] in the overview docs.
 ====

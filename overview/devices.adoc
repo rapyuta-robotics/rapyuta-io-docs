@@ -43,7 +43,7 @@ Service to DM client and receive event messages from DM Client through
 Device Manager provides you with the remote execution system, which means that you can
 access your device even if it is present at some remote location connected over WAN.
 You can open an interactive shell to the device through the web browser
-(link:../../developer_guide/device_management/webssh.html[WebSSH]) or send individual
+(link:../developer_guide/device_management/webssh.html[WebSSH]) or send individual
 shell commands to be executed on the device(sync/async).
 
 == Remote Monitoring
@@ -52,7 +52,7 @@ DM service enables you to collect and visualize real-time metrics such as CPU us
 
 Custom metrics published by ROS topics can also be exported and visualized.
 
-link:../../developer_guide/device_management/device_metric_collection.html[User Dashboards documentation].
+link:../developer_guide/device_management/device_metric_collection.html[User Dashboards documentation].
 
 == Application Deployment
 You can remotely deploy your software applications on the device and manage its lifecycle.
