@@ -83,6 +83,13 @@ Topics:
         File: packages
 
 ---
+Name: Rapyuta IO SDK
+Dir: rapyuta_io_sdk
+Topics:
+  - Name: SDK Docs
+    File: index
+
+---
 Name: Frequently Asked Questions
 Dir: faqs
 Topics:

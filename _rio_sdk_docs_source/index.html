@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to RIO Client’s documentation! &mdash; RIO Client 1.0 documentation</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="_static/css/main.css"/>
+  <link rel="shortcut icon" href="_static/favicon.ico"/>
+</head>
+
+<body>
+  <div id="header">
+    <div id="headerInner">
+      <img id="headerLogo" src="_static/rr_logo.png" alt="Rapyuta robotics logo" />
+      <!---->
+<!--<div role="search">-->
+  <!--<form id="rtd-search-form" class="wy-form" action="search.html" method="get">-->
+    <!--<input type="text" name="q" placeholder="Search docs" />-->
+    <!--<input type="hidden" name="check_keywords" value="yes" />-->
+    <!--<input type="hidden" name="area" value="default" />-->
+  <!--</form>-->
+<!--</div>-->
+<!---->
+    </div>
+  </div>
+  <div id="container">
+          <div id="breadcrumbNav">
+  <ol id="breadcrumb">
+    <li><a href="#">Docs</a></li>
+    
+    <li>Welcome to RIO Client’s documentation!</li>
+  </ol>
+</div>
+    <div id="pageContainer">
+      <div id="sidebar">
+        <ul>
+<li><a class="reference internal" href="#">Welcome to RIO Client’s documentation!</a></li>
+<li><a class="reference internal" href="#rapyuta-io-package">rapyuta_io package</a><ul>
+<li><a class="reference internal" href="#module-rapyuta_io.client">rapyuta_io.client module</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rapyuta-io-clients-package">rapyuta_io.clients package</a><ul>
+<li><a class="reference internal" href="#module-rapyuta_io.clients.catalog">rapyuta_io.clients.catalog module</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+      </div>
+      <div id="pageContents">
+        
+  <div class="section" id="welcome-to-rio-client-s-documentation">
+<h1>Welcome to RIO Client’s documentation!<a class="headerlink" href="#welcome-to-rio-client-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>RIO Client is a python interface for the service provided by Rapyuta IO. It allows developers to write software that makes use of services provided by Rapyuta IO.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="rapyuta-io-package">
+<h1>rapyuta_io package<a class="headerlink" href="#rapyuta-io-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-rapyuta_io.client">
+<span id="rapyuta-io-client-module"></span><h2>rapyuta_io.client module<a class="headerlink" href="#module-rapyuta_io.client" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rapyuta_io.client.Client">
+<em class="property">class </em><code class="descclassname">rapyuta_io.client.</code><code class="descname">Client</code><a class="headerlink" href="#rapyuta_io.client.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Client class provide access to device and package class.
+select_devices and get_package methods can be used to get instance of selected devices and package.</p>
+<dl class="method">
+<dt id="rapyuta_io.client.Client.get_package">
+<code class="descname">get_package</code><span class="sig-paren">(</span><em>package_id</em>, <em>plan_id</em>, <em>auth_token=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rapyuta_io.client.Client.get_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get instance of the package identified by the service_id and plan_id.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>package_id</strong> (<a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) – Package Id</li>
+<li><strong>plan_id</strong> (<a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) – Plan Id</li>
+<li><strong>auth_token</strong> (<a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) – Authorization token</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Instance of <code class="xref py py-class docutils literal"><span class="pre">Package</span></code> class.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rapyuta_io.client.Client.select_devices">
+<code class="descname">select_devices</code><span class="sig-paren">(</span><em>query</em>, <em>auth_token=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rapyuta_io.client.Client.select_devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the devices based on labels and telemetry data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>query</strong> (<a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) – Query is a comma separated set of sub-queries. Each subquery can select the device based on label or
+telemetry data. Label based sub-query will search for the devices based on the device labels for e.g.
+‘label.camera=true’ will search for the devices having label ‘camera:true’.
+Telemetry based sub-query will search for the devices based on the telemetry data for e.g.
+‘measurement.battery&gt;20’ will search for the devices having battery greater than 20%.
+Finally the method will select the devices which meet the criteria of all the sub-queries.</li>
+<li><strong>auth_token</strong> (<a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) – Authorization token to validate the request.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of instances of the selected devices.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="rapyuta-io-clients-package">
+<h1>rapyuta_io.clients package<a class="headerlink" href="#rapyuta-io-clients-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-rapyuta_io.clients.catalog">
+<span id="rapyuta-io-clients-catalog-module"></span><h2>rapyuta_io.clients.catalog module<a class="headerlink" href="#module-rapyuta_io.clients.catalog" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rapyuta_io.clients.catalog.Config">
+<em class="property">class </em><code class="descclassname">rapyuta_io.clients.catalog.</code><code class="descname">Config</code><span class="sig-paren">(</span><em>package</em>, <em>*args</em>, <em>**kargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rapyuta_io.clients.catalog.Config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Config class contain configuration of the components of package.
+You need to provide parameters for each component before you deploy the package.
+The required parameters for each component are present inside the <em>component_parameters</em> attribute of config class.
+<em>component_parameters</em> is a python dictionary in which keys are component names and value is python dictionary
+of the required parameters of the corresponding component.</p>
+<p><strong>In the component name all hyphens(‘-‘) are replaced by underscores(‘_’)</strong></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rapyuta_io.clients.catalog.Package">
+<em class="property">class </em><code class="descclassname">rapyuta_io.clients.catalog.</code><code class="descname">Package</code><span class="sig-paren">(</span><em>*args</em>, <em>**kargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rapyuta_io.clients.catalog.Package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Package class represents a service package. It contains methods to provision, deprovision an instance of
+the package on cloud or on device. It has other utility methods also.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> – Package name.</li>
+<li><strong>package_id</strong> – Id of the package.</li>
+<li><strong>plan_id</strong> – Id of the selected plan.</li>
+<li><strong>bindable</strong> – Boolean representing if the package is bindable.</li>
+<li><strong>description</strong> – Description of the package</li>
+<li><strong>free</strong> – Boolean representing if the selected plan of the package is free.</li>
+<li><strong>config</strong> – Instance 0f <a class="reference internal" href="rapyuta_io.clients.html#rapyuta_io.clients.catalog.Config" title="rapyuta_io.clients.catalog.Config"><code class="xref py py-class docutils literal"><span class="pre">Config</span></code></a> class.</li>
+<li><strong>metadata</strong> – Python dictionary containing metadata of all the components of the package.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="rapyuta_io.clients.catalog.Package.deprovision">
+<code class="descname">deprovision</code><span class="sig-paren">(</span><em>deployment_id</em>, <em>auth_token=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rapyuta_io.clients.catalog.Package.deprovision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deprovision the package instance represented by deprovision Id.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>deployment_id</strong> (<a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) – Id of the deployment to be deprovisioned</li>
+<li><strong>auth_token</strong> (<a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) – Authorization token</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Response string of deprovision api</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rapyuta_io.clients.catalog.Package.get_deployment_status">
+<code class="descname">get_deployment_status</code><span class="sig-paren">(</span><em>deployment_id</em>, <em>auth_token=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rapyuta_io.clients.catalog.Package.get_deployment_status" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>deployment_id</strong> (<a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) – Id of the deployment to get status for</li>
+<li><strong>auth_token</strong> (<a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) – Authorization token to validate the request.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Deployment status - {progress, stopped, running, failed}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rapyuta_io.clients.catalog.Package.get_service_binding">
+<code class="descname">get_service_binding</code><span class="sig-paren">(</span><em>deployment_id</em>, <em>auth_token=None</em>, <em>binding_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rapyuta_io.clients.catalog.Package.get_service_binding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the service bindings of the deployment. You can pass an optional binding_id.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>deployment_id</strong> (<a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) – Id of the deployment to get service binding for</li>
+<li><strong>auth_token</strong> (<a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) – Authorization token</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Response string of service binding api</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rapyuta_io.clients.catalog.Package.provision">
+<code class="descname">provision</code><span class="sig-paren">(</span><em>deployment_id='default'</em>, <em>global_devices=[]</em>, <em>auth_token=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rapyuta_io.clients.catalog.Package.provision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provision the package (represented by the package class). Package can be deployed on device or cloud.
+If the required runtime of the package is device, then specify the device in the package config.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>deployment_id</strong> (<a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) – Deployment Id</li>
+<li><strong>global_devices</strong> (<em>list</em>) – List of global devices.</li>
+<li><strong>auth_token</strong> (<a class="reference external" href="https://docs.python.org/2/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) – Authorization token for validating your request.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Response string of provision api</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+        <footer>
+  <hr/>
+  <div role="contentinfo">
+    <p>
+      &copy; Copyright 2017 Rapyuta Robotics pvt. ltd.
+    </p>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

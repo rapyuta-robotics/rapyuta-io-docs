@@ -1,0 +1,12 @@
+= Rapyuta IO SDK
+
+The SDK helps take the complexity out of coding by providing APIs for many Rapyuta IO services including Service Catalog, Device Manager and more.
+
+.Rapyuta IO SDKs
+|===
+|Language |Documentation Link
+
+| Python
+| link:../rio_sdk_docs/[Docs]
+
+|===
