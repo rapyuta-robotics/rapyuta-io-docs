@@ -1,47 +1,46 @@
 = Introduction to rapyuta.io
 
-rapyuta.io is an enterprise ready cloud robotics platform to help you with every stage of the software development lifecycle (SDLC) for your connected machines. It consists of a number of components and services that help you design, implement, provision, deploy, operate and debug complex distributed robotics applications.
+The rapyuta.io is an enterprise-ready cloud robotics platform to help you with every stage of the software development lifecycle (SDLC) for your connected machines. It consists of a number of components and services that help you design, implement, provision, deploy, operate and debug complex distributed robotics applications.
+
 
 == Key features
 The rapyuta.io platform provides multiple features to help you solve key problems associated with developing and managing connected machines in an enterprise scenario.
 
+=== Application Runtime
+The rapyuta.io platform abstracts away the many complexities associated with managing heterogeneous connected machines, eg: multiple software runtimes & architectures, package definitions & dependency graphs, communication channels, security measures, etc. The platform provides a set of constructs so you as the developer can focus on building the best application for your client.
 
-=== Unified "On-Demand" Compute Environment
-rapyuta.io provides a fully managed compute environment that seamlessly spans the cloud and device. 
-_The platform_ abstracts  packages and device packages with their dependency graphs (which may involve composition of catalog provided components), cloud and device runtimes, communication channels, encryption and other complexity associated with managing heterogeneous connected machines so you can focus on building the best experience for your client. To this end, rapyuta.io gives you:
+The platform aides the developer by providing:
 
-
-
-* An abstraction on the data-center or cloud with built in scalability, fault-tolerance and resiliency.
-* The ability to spin up compute resources and high-intensity network links only when you need to.
-* Declarative manifests to consume platform services and resources in a repeatable way on both device and cloud.
-* Logging and Metric pipelines to help you draw insight into your application when it runs on the platform
-* Isolated data channel for each mission to route application messages across devices and cloud. Critical built-in features include:
-** Application layer white listing to select exactly what information flows over the weak WAN link.
+* Unified way to declare rapyuta.io compatible software packages that span across the cloud and device. 
+* Tools and API to deploy these packages in a deterministic repeatable manner 
+* An abstraction over data-center or cloud infrastructure with built-in scalability, fault-tolerance, and resiliency.
+* Elastic on-demand and compute resources and high-intensity network links to meet changing customer demands
+* Logging and Metric pipelines to help you draw insights into your application when it runs on the platform
+* A bridge across multiple ROS environments in the cloud and on the device for ROS-native constructs like actions, services, and topics. Features of this bridge include:
+** Application layer whitelisting to select exactly what information flows over the weak WAN link.
 ** Tunables for configuring bounds on delays, QoS, TTL per topic.
-** Randomized endpoints and enterprise grade 2048 bit ssl encryption.
-** Over the wire optimization, connection pooling, ordering and compression.
-** Automated ROS schema and metadata discovery.
-
+** Randomized endpoints and enterprise-grade 2048-bit SSL encryption.
+** Over the wire optimization, connection pooling, ordering, and compression.
+** Automated ROS message schema detection and metadata discovery.
 
 === Service Catalog 
+The service catalog is a curated collection of public and private applications and services. The Catalog facilitates the design, implementation, and provisioning stages of complex robotic applications by providing discovery, application composability, and dynamic provisioning. The public services provided by the platform can be used as "building blocks" to accelerate the development of your new applications. A possible list of such services could be:
 
-Creating a new application or service for your end user does not mean reinventing the wheel and writing every single component from scratch. The platform provides an ever growing catalog of building blocks you can use to compose your applications. Possible use-cases include but are not limited to
-
-* A video gateway or basic components for connectivity to a web browser to send user commands
-* Services for storing and processing large amount of binary, log or video data
-* Enabling algorithms and services: develop in-house or acquire machine learning, computer vision, motion planning algorithms
-* Sharing services with other platform users in a controlled and reusable way.
+* A video gateway (Eg. Janus)
+* ROS Navigation stack (http://wiki.ros.org/navigation)
+* ROSBridge suite (http://wiki.ros.org/rosbridge_suite)
+     
+The Service Catalog can also be used to add private applications for in-house development and use.
 
 === Device Management
 
-Developers and operators often face logistical and monetary challenges  in managing a heterogeneous set of robots at client sites or remote locations.
+Developers and operators often face logistical and monetary challenges in managing a heterogeneous set of robots at client sites or remote locations.
 The platform’s device management layer provides the following features:
 
 
-* "Always-On" encrypted communication to and from the device, even behind a firewall!
+* "Always-On" encrypted communication to and from the device, even behind a firewall.
 * Dedicated control and configuration management plane to manage and update your device.
 * Dedicated telemetry channel with dedicated infrastructure to collect vital log and metric data at all times.
 * Full featured remote terminal and quick debug utilities right from your web browser.
-* Flexible fleet management with labels and selectors.
+* Flexible fleet management using a query DSL based on telemetry data and tags.
 * Rich configurable dashboards and visualizations for collected log/metric data.

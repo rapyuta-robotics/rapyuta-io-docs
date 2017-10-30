@@ -4,7 +4,7 @@
 
 [TIP]
 ====
-To deploy your package, you must have an rapyuta.io account.
+To deploy your package, you must have a rapyuta.io account.
 ====
 
 . Log in to rapyuta.io web console in your browser using username and password.
@@ -20,7 +20,7 @@ image::deploy_package/2_deployment_form.png["Deployment Form"]
 image::deploy_package/3_component_selection.png["Component Selection"]
 
 [start=4]
-. You can now choose the device that you want to run each component on. You can also choose to run a component on the cloud, if the package allows it. After that just click on *_Create Deployment_*.
+. You can now choose the device that you want to run each component on. You can also choose to run a component on the cloud if the package allows it. After that just click on *_Create Deployment_*.
 
 image::deploy_package/4_get_deployment_page.png["Get Deployment Page"]
 

@@ -1,7 +1,7 @@
 = Architecture of a rapyuta.io application
 
 === Package
-A Package is a composition of software *_Components_* that can be deployed on devices, cloud or both. A *_Package_* needs to added to the *_Service Catalog_* before it can be deployed. A *_Package_*’s lifecycle can be managed through the platform.
+A Package is a composition of software *_Components_* that can be deployed on devices, cloud or both. A *_Package_* needs to be added to the *_Service Catalog_* before it can be deployed. A *_Package_*’s lifecycle can be managed through the platform.
 
 === Executable
 An Executable refers to a runnable element of a *_Component_*. This runnable element can be
@@ -13,9 +13,9 @@ An Executable refers to a runnable element of a *_Component_*. This runnable ele
 A *_Component_* is a list of *_Executables_* that need to be deployed in unison. A *_Component_* can also refer to an existing *_Package_* from the *_Service Catalog_*.
 
 === Architecture
-rapyuta.io provides a unified *ROS* environment across multiple devices and the cloud. Each rapyuta.io *_Component_* exposes a set of ROS topics, services and actions to the application and receives similarly exposed ROS topics, services and actions from other *_Components_*. 
+rapyuta.io provides a unified *ROS* environment across multiple devices and the cloud. Each rapyuta.io *_Component_* exposes a set of ROS topics, services, and actions to the application and receives similarly exposed ROS topics, services and actions from other *_Components_*. 
 
-This is attained by the *_Cloud Bridge_*, which is rapyuta.io agent that runs with the *_Executables_* of each Component. You can choose the ROS topics, services and actions that are exposed when creating a *_Package_*. 
+This is attained by the *_Cloud Bridge_*, which is rapyuta.io agent that runs with the *_Executables_* of each Component. You can choose the ROS topics, services, and actions that are exposed when creating a *_Package_*. 
 
 [NOTE]
 ====

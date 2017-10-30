@@ -26,7 +26,7 @@ toc::[]
 [[onboard-device-registration]]
 == Registering New Device
 
-To register your device, you must have an rapyuta.io account.
+To register your device, you must have a rapyuta.io account.
 
 . Log in to rapyuta.io web console in your browser using username and password.
 . Go to *Devices* tab and click on *Add New Device*.
@@ -44,20 +44,22 @@ Next step is to go into the device.
 [[onboard-device-setting-up]]
 == Setting Up
 
-Paste and run the device setup link on terminal.
+Paste and run the device setup link on a terminal to the device (eg: Serial TTY/SSH).
 
 . This will start setting up rapyuta.io device client.
-. If setup is completed successfully, your device will appear as online (green) on
- rapyuta.io console.
-+
+. If the setup is completed successfully, your device will appear as online (green) on the rapyuta.io console.
+
 You can now manage your device from Web UI.
 
 [NOTE]
 ====
-The device setup link expires after 10 minutes. Click on *Token* in Web UI to generate the link
- again.
+The device setup link expires after 10 minutes. Click on *Token* in Web UI to generate the link again.
 ====
 
-This is all you need to do to add your device to rapyuta.io . To learn more about the things you
- can do with your device, check out the guide on Device Manager features. For more information
- on Device Manager concepts, check out the Core Concepts page.
+This is all you need to do to add your device to rapyuta.io . 
+
+[TIP]
+====
+To learn more about the things you can do with your device,visit the docs on the link:../../developer_guide/device_management/webssh.html[Device Management Operations] section of the Developer Guide.
+For more information on Device Manager concepts, visit the section on link:../../overview/devices.html[Device Management] in the overview docs.
+====
