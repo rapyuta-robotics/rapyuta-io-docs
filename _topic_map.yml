@@ -26,7 +26,12 @@ Dir: about
 Topics:
   - Name: Welcome
     File: index
-
+---
+Name: Overview
+Dir: overview
+Topics:
+  - Name: Introduction
+    File: intro
 ---
 Name: Getting Started
 Dir: getting_started
@@ -34,32 +39,11 @@ Topics:
   - Name: Onboard Device
     File: onboard_device
 ---
-Name: Architecture
-Dir: architecture
+Name: Core Concepts
+Dir: core_concepts
 Topics:
-  - Name: Core Concepts
-    Dir: core_concepts
-    Topics:
-      - Name: Packages
-        File: packages
-      - Name: Devices
-        File: devices
-      - Name: Service Catalog
-        File: service_catalog
-      - Name: Build Recipes
-        File: build_recipes
-      - Name: Deployments
-        File: deployments
-      - Name: Users and Groups
-        File: users_groups
-  - Name: Additional Concepts
-    Dir: additional_concepts
-    Topics:
-      - Name: Authentication
-        File: authentication
-      - Name: Authorization
-        File: authorization
-
+  - Name: Device Management
+    File: devices
 ---
 Name: Developer Guide
 Dir: developer_guide
@@ -71,27 +55,9 @@ Topics:
         File: webssh
       - Name: Metric Collection and Visualization
         File: device_metric_collection
-
----
-Name: CLI Reference
-Dir: cli_reference
-Topics:
-  - Name: Developer CLI Operations
-    Dir: dev_cli_ops
-    Topics:
-      - Name: Package CLI Operations
-        File: packages
-
 ---
 Name: Rapyuta IO SDK
 Dir: rapyuta_io_sdk
 Topics:
   - Name: SDK Docs
-    File: index
-
----
-Name: Frequently Asked Questions
-Dir: faqs
-Topics:
-  - Name: Frequently Asked Questions
     File: index

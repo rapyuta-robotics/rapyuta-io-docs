@@ -1,0 +1,33 @@
+= Introduction to rapyuta.io
+
+The Rapyuta.IO is enterprise ready cloud robotics platform to help you with every stage of the product lifecycle for your connected machines. 
+It consists of a number of components and services that help you design, build, deploy manage and debug complex distributed robotics applications. 
+
+For example:  Install a ROS Application, build and deploy it across the cloud and device. Then collect logs and monitor your application and services 
+
+== Key features
+
+The Rapyuta.IO platform strives to provide the right tools to solve key problems associated with developing and managing connected machines in an enterprise scenairo.
+
+* *Device Management* 
+Tools for managing remote heterogeneous robots: health monitoring, configuration management, connectivity, field personnel 
+* Data Center Support: choose and manage IaaS platforms, container orchestration, networking
+* Build Tooling: build, deploy, and update code on heterogeneous robots and the data center
+* Remote Messaging: WAN, security, prioritization, QoS
+* Catalog of enabling algorithms and services: develop in-house or acquire machine learning, computer vision, motion planning algorithms
+* Allows for the composition of services and robots 
+* Operations Tools and Dashboards: scalable infrastructure for logging, metrics, and alerts
+* security
+
+
+== Core Components
+
+Rapyuta.io has a microservice-based architecture of smaller, decoupled units that work together. 
+
+* *Device Manager*  provides the base communication between a device and the cloud platform. This is single point of contact for all device related functions.
+* *Build Engine*  converts your application source (ROS, Python, JavaScript, Ruby, etc.) into runnable configuration and images for rapyuta.io.
+* *Communication Bridge* implicitly provides a low-latency high-throughput data-plane between remote ROS environments
+* *Service Catalog* is a curated collection of public and private services and devices developed by the customer segments. The Catalogue provides service discovery, application composability, and dynamic provisioning.
+* *Logging and Metrics Service* provides scalable logging and search, configurable dash boards to visualize
+
+
