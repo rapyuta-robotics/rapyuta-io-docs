@@ -13,16 +13,16 @@ toc::[]
 == Overview
 The Device Manager provides the control-plane and a minimal data-plane
 communication between the device and the platform.
-This is single point of contact for all device related functions.
+This is the single point of contact for all device related functions.
 
 == Architecture
 image::device_manager_architecture.png["Device Manager Architecture"]
 
 
 == Communication
-Device Manager Service uses a server-agent communication model. The server
- component is called the *Device Manager*, and the agent is called the
-  *Device Manager Client* (or *DM Client*).
+The Device Manager Service uses a server-agent communication model. The server side
+ component is called the *Device Manager*, and the agent is called
+  the *Device Manager Client* (or *DM Client*).
 
 ==== NAT Traversal
 
@@ -43,58 +43,53 @@ Service to DM client and receive event messages from DM Client through
  collected metric data to DM Service.
 
 == Remote Execution
-Device Manager provides you with the remote execution system which means accessing your device
-- locally which is present at some remote location connected over WAN.
+Device Manager provides you with the remote execution system, which means that you can
+access your device even if it is present at some remote location connected over WAN.
 You can open an interactive shell to the device through the web browser
-(link:../../developer_guide/device_management/webssh.html[WebSSH]) or send
-commands to be individual commands to be executed on the device(sync/async).
-
-Commands can be run on the device independent of the device location and
-firewall status.
+(link:../../developer_guide/device_management/webssh.html[WebSSH]) or send individual
+shell commands to be executed on the device(sync/async).
 
 == Remote Monitoring
 Remote Monitoring helps you to get better visibility into your devices wherever
  they happen to be located. DM service enables you to collect and visualize real
   time metrics such as cpu usage, memory usage, battery level from the device.
 
-Custom metrics can also be exported and visualized from the device through ROS topics.
+Custom metrics published by ROS topics can also be exported and visualized.
 
 link:../../developer_guide/device_management/device_metric_collection.html[User Dashboards documentation].
 
 == Application Deployment
-You can remotely deploy custom user applications on the device and manage
- it's lifecycle.
-You can start, stop, get status, logs of the running application.
+You can remotely deploy your software applications on the device and manage it's lifecycle.
+You can start, stop, get status and logs of the running applications.
 
-The supported application runtime are docker and generic linux. The docker
-runtime allows for application provisioning on a live device.
+The supported application runtime are *Docker* and *Generic Linux*. The docker
+runtime allows for application provisioning on an online device.
 
 ==== Application Runtime
 
 ===== Docker
 
-The runtime allows for live provisioning of the application on devices.
+This runtime allows for live provisioning (docker pull) of the application on devices.
 
 ===== Generic Linux
 
-Allows you to launch, maintain and watch status of any linux application.
- Doesn't support live provisioning.
+Allows you to launch, manage and watch status of any linux application. It expects the device
+ owner to take care of the provisioning.
 
 
 == Dynamic Device Selection
 
-Device selection allows you to deploy applications to devices based on various
+Device selection allows you to deploy packages on devices based on various
 properties. It includes dynamic properties like metrics
 (battery capacity, wind speed, location, etc) and static properties like
- labels are also supported.
+ device labels.
 
-This can be defined in the link:packages.html[_Package Manifest_] at the time
- of application deployment.
+This can be defined at the time of application deployment.
 
 
 == Security
 
-The architecture of Device Manager service includes security aspects to assure
+The architecture of Device Manager includes security aspects to assure
  that all the data (both control and telemetry) are encrypted when exchanged
   between components.
 
@@ -107,6 +102,4 @@ After a device is successfully registered with DM, all further communication
 All devices are registered to DM with unique credentials that can only be visible to you.
  These credentials are used to identify devices across communication channels.
 
-== API Docs
-https://device-manager-staging.ep.rapyuta.io/apidocs/
 
