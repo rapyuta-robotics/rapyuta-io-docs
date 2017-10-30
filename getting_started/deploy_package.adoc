@@ -1,4 +1,4 @@
-= Deploying your first package
+= Deploying a Package
 
 
 

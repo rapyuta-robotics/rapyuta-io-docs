@@ -34,11 +34,11 @@ Topics:
 Name: Getting Started
 Dir: getting_started
 Topics:
-  - Name: Add Device
+  - Name: Adding a new device
     File: add_device
-  - Name: Create Package
+  - Name: Creating a new Package
     File: create_package
-  - Name: Deploy Package
+  - Name: Deploying a Package
     File: deploy_package
 ---
 Name: Developer Guide

@@ -1,5 +1,5 @@
 [[getting-started-onboard-device]]
-= Adding New Device
+= Adding a new device
 :toc: macro
 :toc-title:
 :data-uri:
@@ -18,13 +18,13 @@ toc::[]
 * Python 2.7.8 or higher
 * Linux based OS
 
-*Supported ARMv7 devices*
+*Currently Supported ARMv7 devices*
 
 * Raspberry Pi 2 and 3
 * Apalis iMX6
 
 [[onboard-device-registration]]
-== Registering New Device
+== Registering a new device
 
 To register your device, you must have a rapyuta.io account.
 

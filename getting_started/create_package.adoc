@@ -1,8 +1,8 @@
-= Creating your first package
+= Creating a new Package
 
 [TIP]
 ====
-To create your package, you must have an rapyuta.io account.
+To create your package, you must have a rapyuta.io account.
 ====
 
 

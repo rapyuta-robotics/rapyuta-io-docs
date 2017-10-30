@@ -10,14 +10,13 @@
 toc::[]
 
 == Introduction
-The secure shell (SSH) is the industry standard that provides a secure connection to a system.
- Device Manager provides SSH access to the device using reverse ssh tunnel so that you do not need
- to expose SSH ports on your device network and compromise security. You can issue simple commands, test
- some code, check system logs and similar operation to debug your applications.
+The Device Manager provides SSH access to a connected device using reverse ssh tunnel so that you do not need
+ to expose SSH ports on your device network and compromise security. 
+ This browser-based terminal is a full-featured TTY that could be used to check system logs or debug your applications.
 
 == Start WebSSH session
-To start a SSH session to your device, you need to ensure that your device is online and has ssh
- service. Just go to *SSH* tab in your device details page and your SSH session will be initiated.
+To start an SSH session to your device, you need to ensure that your device is online and has ssh service.
+Visit the *SSH* tab in your device details page and your SSH session will be initiated.
 
 
 image::webssh.png["WebSSH"]

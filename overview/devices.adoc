@@ -11,24 +11,21 @@
 toc::[]
 
 == Overview
-The Device Manager provides the control-plane and a minimal data-plane
-communication between the device and the platform.
-This is the single point of contact for all device related functions.
+The Device Manager provides the control-plane and a minimal data-plane communication between the device and the platform.
+This is the single point of contact for all device-related functions.
 
 == Architecture
 image::device_manager_architecture.png["Device Manager Architecture"]
 
 
 == Communication
-The Device Manager Service uses a server-agent communication model. The server side
- component is called the *Device Manager*, and the agent is called
-  the *Device Manager Client* (or *DM Client*).
+The Device Manager Service uses a server-agent communication model. 
+The server-side component is called the *Device Manager*, and the agent is called the *Device Manager Client* (or *DM Client*).
 
 ==== NAT Traversal
 
-Works behind firewalls, NAT network as the connections are initiated by the
- DM Client to the Device Manager Service. You do not need to open any incoming
-  ports on your firewall.
+Works behind firewalls, NAT network as the connections are initiated by the DM Client to the Device Manager Service. 
+You do not need to open any incoming ports on your firewall.
 
 ==== Communication Channels
 DM communicates with registered devices using a publish-subscribe pattern.
@@ -50,9 +47,8 @@ You can open an interactive shell to the device through the web browser
 shell commands to be executed on the device(sync/async).
 
 == Remote Monitoring
-Remote Monitoring helps you to get better visibility into your devices wherever
- they happen to be located. DM service enables you to collect and visualize real
-  time metrics such as cpu usage, memory usage, battery level from the device.
+Remote Monitoring helps you to get better visibility into your devices wherever they happen to be located. 
+DM service enables you to collect and visualize real-time metrics such as CPU usage, memory usage, battery level from the device.
 
 Custom metrics published by ROS topics can also be exported and visualized.
 
@@ -62,7 +58,7 @@ link:../../developer_guide/device_management/device_metric_collection.html[User 
 You can remotely deploy your software applications on the device and manage its lifecycle.
 You can start, stop, get status and logs of the running applications.
 
-The supported application runtime are *Docker* and *Generic Linux*. The docker
+The supported application runtimes are *Docker* and *Generic Linux*. The docker
 runtime allows for application provisioning on an online device.
 
 ==== Application Runtime
@@ -73,8 +69,8 @@ This runtime allows for live provisioning (docker pull) of the application on de
 
 ===== Generic Linux
 
-Allows you to launch, manage and watch status of any linux application. It doesn’t support live provisioning
-but expects the device owner to provision the software code on the device.
+Allows you to launch, manage and watch the status of any Linux application. It doesn’t support live provisioning
+but expects the device owner to provision the application on the device.
 
 
 
@@ -82,8 +78,7 @@ but expects the device owner to provision the software code on the device.
 
 Device selection allows you to deploy packages on devices based on various
 properties. It includes dynamic properties like metrics
-(battery capacity, wind speed, location, etc) and static properties like
- device labels.
+(battery capacity, wind speed, location, etc) and static properties like device labels.
 
 This can be defined at the time of application deployment.
 
