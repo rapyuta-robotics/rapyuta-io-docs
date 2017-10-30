@@ -1,33 +1,52 @@
 = Introduction to rapyuta.io
 
-The Rapyuta.IO is enterprise ready cloud robotics platform to help you with every stage of the product lifecycle for your connected machines. 
+The Rapyuta.IO is enterprise ready cloud robotics platform to help you with every stage of the product life cycle for your connected machines. 
 It consists of a number of components and services that help you design, build, deploy manage and debug complex distributed robotics applications. 
-
 For example:  Install a ROS Application, build and deploy it across the cloud and device. Then collect logs and monitor your application and services 
 
 == Key features
-
-The Rapyuta.IO platform strives to provide the right tools to solve key problems associated with developing and managing connected machines in an enterprise scenairo.
-
-* *Device Management* 
-Tools for managing remote heterogeneous robots: health monitoring, configuration management, connectivity, field personnel 
-* Data Center Support: choose and manage IaaS platforms, container orchestration, networking
-* Build Tooling: build, deploy, and update code on heterogeneous robots and the data center
-* Remote Messaging: WAN, security, prioritization, QoS
-* Catalog of enabling algorithms and services: develop in-house or acquire machine learning, computer vision, motion planning algorithms
-* Allows for the composition of services and robots 
-* Operations Tools and Dashboards: scalable infrastructure for logging, metrics, and alerts
-* security
+The rapyuta.io platform strives to provide the right set of tools to solve key problems associated with developing and managing connected machines in an enterprise scenario.
 
 
-== Core Components
+=== Unified "On-Demand" Compute Environment
 
-Rapyuta.io has a microservice-based architecture of smaller, decoupled units that work together. 
+rapyuta.io provides a fully managed compute environment to run your application seamlessly on the cloud and device. 
+Out of the box, the platform abstracts out the complexity associated with managing connected machines so you can concentrate of building the best experience for your client.
 
-* *Device Manager*  provides the base communication between a device and the cloud platform. This is single point of contact for all device related functions.
-* *Build Engine*  converts your application source (ROS, Python, JavaScript, Ruby, etc.) into runnable configuration and images for rapyuta.io.
-* *Communication Bridge* implicitly provides a low-latency high-throughput data-plane between remote ROS environments
-* *Service Catalog* is a curated collection of public and private services and devices developed by the customer segments. The Catalogue provides service discovery, application composability, and dynamic provisioning.
-* *Logging and Metrics Service* provides scalable logging and search, configurable dash boards to visualize
+rapyuta.io provides:
 
+* Abstract away the data-center or cloud with the rapyuta.io platform featuring built in scalablity, fault-tolerance and resiliency. 
+* Spin up compute resources and high-intensity network links only when you need to.
+* Declarative manifests to consume platform services and resources in a repeatable way both on device and cloud.
+* Logging and Metric pipelines to help you draw insight into your application when it runs on the platform
+* Dedicated communication channel to the device featuring:
+** App- layer white listing select exactly what information flows over the weak WAN link.
+** Tunable for configuring bounds on delays, qos, ttl per topic.
+** Randomized endpoints and enterprise grade 2048 bit ssl encryption.
+** Over the wire optimization, connection pooling and compression.
+** Automated ROS schema and meta-data discovery.
 
+=== IO Catalog and Build Service
+
+Building a new application for your end user does not mean reinventing the wheel and writing every tiny component all over again. 
+Additionally it often encumbers the developer with e responsibility of building and releasing the code 
+The platform provides a catalog of building blocks you can use to compose your applications. Possible use-cases include but are not limited to 
+
+* Basic components for command channel connectivity to a web browser or a video gateway 
+* Services for storing and processing large amount of binary, log or video data
+* Enabling algorithms and services: develop in-house or acquire machine learning, computer vision, motion planning algorithms
+
+The Build Engine converts your application source (ROS, Python, JavaScript, Ruby, etc.) into runnable configuration and images for rapyuta.io.
+
+=== Device Management
+
+Tools and utilities in the platform that allow you to manage a heterogeneous set of robots at client sites and remote locations.
+
+A few key features are:
+
+* "Always-On" encrypted communication to and from the device, even behind a firewall!
+* Dedicated control and configuration management plane to manage and update your device.
+* Dedicated telemetry channel with dedicated infrastructure to collect vital log and metric data at all times.
+* Full featured remote terminal and quick debug utilities right from your web browser.
+* Flexible fleet management with labels and selectors.
+* Rich configurable dashboards and visualizations for collected log/metric data.
