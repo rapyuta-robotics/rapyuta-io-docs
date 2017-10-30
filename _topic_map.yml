@@ -33,24 +33,24 @@ Topics:
   - Name: Introduction
     File: intro
 ---
-Name: Getting Started
-Dir: getting_started
-Topics:
-  - Name: Onboard Device
-    File: onboard_device
-  - Name: Create Package
-    File: create_package
-  - Name: Deploy Package
-    File: deploy_package
----
 Name: Core Concepts
 Dir: core_concepts
 Topics:
   - Name: Device Management
     File: devices
 ---
-Name: Developer Guide
-Dir: developer_guide
+Name: Getting Started
+Dir: getting_started
+Topics:
+  - Name: Adding New Device
+    File: adding_new_device
+  - Name: Creating A Package
+    File: create_package
+  - Name: Deploying A Package
+    File: deploy_package
+---
+Name: Deploying A Package
+Dir: deploy_package
 Topics:
   - Name: Device Management Operations
     Dir: device_management
