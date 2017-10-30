@@ -59,7 +59,7 @@ Custom metrics published by ROS topics can also be exported and visualized.
 link:../../developer_guide/device_management/device_metric_collection.html[User Dashboards documentation].
 
 == Application Deployment
-You can remotely deploy your software applications on the device and manage it's lifecycle.
+You can remotely deploy your software applications on the device and manage its lifecycle.
 You can start, stop, get status and logs of the running applications.
 
 The supported application runtime are *Docker* and *Generic Linux*. The docker
@@ -73,8 +73,9 @@ This runtime allows for live provisioning (docker pull) of the application on de
 
 ===== Generic Linux
 
-Allows you to launch, manage and watch status of any linux application. It expects the device
- owner to take care of the provisioning.
+Allows you to launch, manage and watch status of any linux application. It doesn’t support live provisioning
+but expects the device owner to provision the software code on the device.
+
 
 
 == Dynamic Device Selection
