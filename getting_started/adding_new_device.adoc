@@ -1,0 +1,56 @@
+= Adding a new device
+
+== Requirements
+
+=== Device system requirements
+* Python 2.7.8 or higher
+* Linux based OS
+* Curl [_optional_]
+* ROS [_optional_]
+
+=== Currently aupported ARMv7 devices
+
+* Raspberry Pi 2 and 3
+* Apalis iMX6
+
+== Registering a new device
+=== Generate a setup link for the device
+1. Sign in to rapyuta.io console UI.
+2. On the left bar, go to *Devices tab* and click on *Add New Device*.
+3. Type a name and a description for the new device.
+4. Click on *Add Device*. You will get your unique device setup link.
+5. Copy this link using *Copy to Clipboard* icon on the right.
+
+image::adding_new_device/create_device.png["Add Device"]
+image::adding_new_device/bootstrap_link.png["Copy setup link"]
+
+=== Setup your device
+Paste and run the device setup link on a terminal to the device (using for instance serial TTY or SSH). This will start setting up rapyuta.io device client. 
+
+[NOTE]
+The device setup link expires after 10 minutes. Click on *Token* in the UI to generate the link again.
+
+If the setup is completed successfully, your device will appear as online (green) on the rapyuta.io console UI. This is all you need to do to add your device
+to rapyuta.io. You can now manage your device from rapyuta.io console UI.
+
+[IMPORTANT]
+In case of any error, please copy the output of the terminal and contact Rapyuta Robotics support.
+
+[TIP]
+To learn more about the things you can do with your device, visit the link:../developer_guide/device_management_operations/webssh.html[WebSSH] tutorial.
+For more information on device manager concepts, visit the link:../core_concepts/device_management.html[device management] section.
+
+=== Device status page
+
+image::adding_new_device/details.png["Device details page"]
+
+1. UUID: is the unique identifier of a device used by the Platform. 
+2. Status
+* Registered (blue): Device is successfully created on the Platform but has not made a connection yet.
+* Online (green): Device is registered and connected to the platform to receive commands.
+* Offline (gray): Device is registered and was Online at least once but currently is not connected.
+* Rejected (red): Device can be rejected by the user to block its communication with the Platform.
+* Delete (red): Device can be deleted by the user to remove all its data and permanently block its communication with the Platform.
+3. System Information: name, version and other details about the current machine and the operating system running on it. Corresponds with the output of the
+`uname` unix command.
+

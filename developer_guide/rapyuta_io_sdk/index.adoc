@@ -1,5 +1,0 @@
-= Rapyuta IO SDK
-
-The rapyuta.io SDK is a python client library that provides an interface to rapyuta.io services including Service Catalog and Device Manager.
-
-link:../rio_sdk_docs/[PyDoc Reference]

@@ -1,0 +1,22 @@
+= Logging and metrics 
+
+== Logs
+Logs are textual, verbose messages from the applications used for debugging and monitoring. The logs are aggregated across the entire ROS environment
+and available on the rapyuta.io console UI. Every deployment has its own logs. The platform log streaming service is responsible for collecting and
+indexing the data.
+
+When a raptyuta.io package is deployed, the ROS logs from both the cloud deployment and the device deployment are combined and saved into the platform
+data store.
+
+image::logging_metrics.png["ROS logging architecture"]
+
+== Metric		
+We define metric as scalar measurements that change over time such as temperature, remaining battery, etc. Metrics can be used for dynamic device
+selection. The data can be visualized real time on rapyuta.io console UI by adding graphs and dashboards. 
+
+The metric data is stored on a time series database, allowing you to group the data by different time intervals. You can create customized live charts
+from the metric stream. The charts also allow you to choose multiple visualization types (line graph, stack, etc) and to aggregate the values based on
+count, average, min, max, etc.
+
+The platform can collect metrics (humidity, wind speed etc) from a powered on and connected device even when a rapyuta.io package deployment is not being
+executed. This could be useful to gather data and monitor state of a device. 

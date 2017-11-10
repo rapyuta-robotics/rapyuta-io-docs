@@ -1,157 +1,90 @@
+[[core-components-devices]]
 = Packages
+:toc: macro
+:toc-title:
+:data-uri:
+:experimental:
+:prewrap!:
+:description:
+:keywords:
 
-Rapyuta IO is designed around the concept of a package, which is the _unit of deployment_ for the platform. Packages are defined using a _package manifest_ file.
+toc::[]
 
-== Package Manifest
+== Terminology
 
-[source,json]
-----
-{
-	"apiVersion": "v1", <1>
-	"name": "awesome-robot-app", <2>
-	"packageVersion": "1.0.0", <3>
-	"description": "Awesome robot application", <4>
-	"plans": [{ <5>
-		"name": "Enterprise", <6>
-		"metadata": { <7>
-			"ros-distro": "kinetic",
-			"maintainer": "Stark Industries"
-		},
-		"shared": false, <8>
-		"catalogue-components": [{ <9>
-			"name": "video-server",
-			"packageName": "real-time-video",
-			"planName": "ultra-low-latency",
-			"parameters": [{ <10>
-				"API_SERVER_PORT": 8000,
-				"HTTPS_ENABLE": true,
-			}]
-		}],
-		"components": [{ <11>
-			"name": "web-server", <12>
-			"description": "HTTP(S) web server", <13>
-			"requiredRuntime": "cloud", <14>
-			"executables": [{ <15>
-				"docker": "registry.rapyuta.io/_/nginx:alpine" <16>
-			}],
-			"cloudInfra": { <17>
-				"endpoints": [{ <18>
-					"name": "http", <19>
-					"port": 80, <20>
-					"targetPort": 8080, <21>
-					"exposedExternally": true <22>
-				},
-				{
-					"name": "https",
-					"port": 443,
-					"targetPort": 8443,
-					"exposedExternally": true
-				}],
-				"replicas": 3, <23>
-			},
-		},
-		{
-			"name": "ros-slam-service",
-			"description": "ROS-based SLAM service for robots",
-			"requiredRuntime": "cloud",
-			"executables": [{
-				"git": "https://github.com/rapyuta-robotics/slam"
-			}],
-			"ros": { <24>
-				"topics": [{ <25>
-					"topicName": "/robot/move_command", <26>
-					"qos": "max" <27>
-				}],
-			},
-			"cloudInfra": {
-				"replicas": 2,
-			},
-			"parameters": [{ <28>
-				"name": "SLAM_ALPHA", <29>
-				"description": "Alpha value for SLAM algorithm", <30>
-				"default": 1.2 <31>
-			}]
-		},
-		{
-			"name": "ros-lidar",
-			"description": "ROS-based lidar service",
-			"requiredRuntime": "device",
-			"executables": [{
-				"cmd": "source /opt/ros/$ROS_DISTRO/setup.bash && roslaunch lidar all.launch"
-			}],
-			"ros": {
-				"topics": [{
-					"topicName": "/robot/lidar_pointmap",
-					"qos": "hi"
-				}]
-			},
-			"parameters": [{
-				"name": "LINUX_LIDAR_MODULE",
-				"description": "Linux kernel module to use with Lidar",
-				"default": "rplidar3233"
-			}]
-		}],
-		"exposedParameters": [{ <32>
-			"scope": "web-server", <33>
-			"param": "API_TOKEN", <34>
-			"targetParam": "API_ACCESS_TOKEN" <35>
-		}]
-	}]
-}
-----
-<1> API version of package manifest
-<2> The name of the package. Package names are automatically scoped by user/group name to avoid name collisions.
-<3> The version of the package. Rapyuta IO follows http://semver.org/[semver] for package versioning. 
-<4> A short description of the package
-<5> The list of plans for this package. Plans can be used to segregate package offerings based on features, SLAs, customer support, etc.
-<6> The name of the plan
-<7> Metadata associated with the plan
-<8> Indicates if the plan can be shared between consumers
-<9> List of packages from service catalog used by this package
-<10> List of parameters used to run `video-server` package
-<11> List of package components. Each package component is targeted for a specific runtime and is bound by resource (CPU, memory, etc.) and placement constraints.
-<12> The name of the component
-<13> A short description of the component
-<14> The runtime used for the component. Valid values for runtime include: `cloud` and `device`
-<15> List of executables to run for the component. The platform supports 3 types of executables: `git`, `docker` and `cmd`
-<16> The docker image used for the executable
-<17> The cloud infrastructure settings for component
-<18> List of network endpoints exposed by the component
-<19> The name of the endpoint
-<20> The external port for the endpoint. If omitted, this uses the `targetPort` value
-<21> The internal port for the endpoint
-<22> Indicates if the endpoint is exposed on the public internet
-<23> The number of replicas to run for the component
-<24> ROS settings for the component
-<25> List of ROS topics exposed by the component
-<26> The name of the topic
-<27> Quality of Service (QoS) setting for the topic. Valid values for qos include: `max`, `hi`, `med` and `low`
-<28> List of parameters used to run the component
-<29> The name of the parameter
-<30> A short description of the parameter
-<31> The default value of the parameter
-<32> List of parameters exposed by the package. These parameters allow other packages to use this package as a dependency
-<33> The name of the component whose parameter is referenced in `targetParam` of exposed parameter
-<34> The external name of the parameter. If omitted, this uses the `targetParam` value
-<35> The internal name of the parameter
+=== Executable
+An Executable refers to a runnable element. This runnable element can be:
 
-== Package Plan
-A _package plan_ allows package authors to create https://en.wikipedia.org/wiki/Differentiated_services[differentiated services] (or DiffServ). This is similar to how modern SaaS products tier their service offering to cater to different customer segments. A package plan allows package authors to tier their service offering based on features, device/robot support, SLAs, customer support, etc.
+* A Docker image.
+* A Git repository and command to run (the platform builds this into a runnable artifact).
 
-=== Shared Package Plan
-A _shared_ package plan allows consumers of a package plan to share instance(s) of the package between them. The platform doesn't provide any isolation guarantees for shared package plans and such isolation / multi-tenancy features should be implemented within the package itself.
+[[core_concepts-packages-component]]
+=== Component
+A component is a list of executables that need to be deployed in unison. That means that these executables can share a specified file path and can
+communicate via IPC. Also, any executable listening on a port can be accessed by its sibling executables via `localhost`.
 
-== Package Component
-A package is always composed of one or more package components. Every package component is bound by a set of constraints:
+==== Exposing network endpoint from a component
+Components can expose network endpoints. The configuration of these endpoint (exposed port, protocol to be use, etc) can be specified during the creation
+of the package. The supported protocols are TCP and HTTPS.
 
-. *Runtime* - targeted for a specific runtime (`cloud` or `device`)
-. *Resource* - bound by compute (CPU, GPU), storage (memory, disk IOPS) and network constraints
-. *Placement* - bound by placement constraints on devices using _affinity_ and _anti-affinity_ labels
+[NOTE]
+The TCP communication is encrypted via TLS.
 
-=== Affinity and Anti-Affinity Labels
+==== Required Runtime
+The required runtime of a package indicates if the component needs to run on the device or the cloud. The required runtime is optional and can be left
+empty in the cases where the component can run either on the device or the cloud.
 
-Affinity and anti-affinity labels allow package authors to lay down device placement policies for package components. These labels are composed of simple rules which help the platform choose the right device for a platform component.
+==== Parameters
+Each executable might have a list of parameters whose values differ per deployment. These parameters for the entire component are to be listed while
+creating the package along with the default values. When deploying the package, the values of these parameters can be tuned. 
+The values of these parameters are set as environment variables in the runtime and can be read by the executables of the component.
 
+==== ROS configuration
+For ROS applications, each component can share a list of ROS topics, services, and actions with other components. The executables can subscribe to any
+topic or call services or actions that are exposed by other components (see the link:../overview/application_architecture.html[application architecture]).
+This configuration should be specified during the creation of the package. 
 
-== Package Dependencies
-A package with multiple components and package dependencies always requires that its components/package depedencies be instantiated in an order that respects the dependency-depedenant relationship. Rapyuta IO creates a dependency graph of components/package dependencies for a package by parsing the package manifest file and uses it to decide the launch order of components/package dependencies.
+[NOTE]
+The developer does not have to include the ROS master as an executable of a component. The platform manages running ROS master for the developer.
+
+Since this communication can happen over WAN (via the link:../core_concepts/network_layout_communication.html#core_concepts-network-cloud_bridge[cloud bridge])
+the developer can tune the level of reliability for the transport layer. The `QoS` (quality of service) attribute of the package reflects this function.
+For example `max` QoS for a topic indicates that all messages published to a topic are guaranteed to reach the subscribers of the topic. The offered QoS
+values are `max`, `hi`, `med`, `low`. 
+
+.*Why not just use “max” QoS for all topics?*
+[IMPORTANT]
+QoS is proportional to the latency of the message: the average latency of `max` QoS topics is higher than of `med` topics.
+
+== Package
+A Package is the smallest unit of deployment in rapyuta.io. A package is a composition of software components that can be deployed on devices, cloud or both.
+A package needs to be added to the service catalog before it can be deployed. 
+
+=== Plans
+All components are part of a specific plan. A package contains multiple of such plans. Plans allow the author of a package to offer different plans with
+different components and different configuration. When deploying a package, the deployer chooses a plan for the package he/she wants to deploy.
+
+Every plan can expose a set parameters from its components. These parameters can be used when this package (the one that this plan belongs to) is used as
+a dependency. These parameters can be specified in the *exposed parameters* section of a plan.
+
+.*Example*
+[NOTE]
+The author of a ROS talke-listener package can offer two plans, one with a ROSBridge and one without, the user of the package can choose one of these
+plans at the time of deployment.
+
+[TIP]
+As a guideline, applications that are very similar but differ in either configuration or might have/lack an extra component should be described as
+different plans within a package rather than describing them in different packages.
+
+=== Dependencies
+A package can depend on other packages from the service catalog. For example, your ROS application might need to use the ROSBridge suite to push data to a
+web interface. And you might have the ROSBridge suite as a different package in the service catalog. In this case, it can be specified as a dependency of
+the application
+
+When a package *A* is added as a dependency for Package *B*, the *exposed parameters* and *exposed network endpoints* of *A*'s chosen
+plan are added as environment variables for the components of *B*. This ensures that the components of *B* can access the endpoints and parameters exposed
+by *A”*.
+
+[NOTE]
+The components of *B* might have parameters which are also stored as environment variables in the runtime. This leads to a possibility of collisions that
+rapyuta.io does not solve at this point of time.

@@ -25,34 +25,59 @@ Name: Overview
 Dir: overview
 Topics:
   - Name: Introduction
-    File: intro
+    File: introduction
   - Name: Application Architecture
-    File: app_arch 
-  - Name: Device Management
-    File: devices     
+    File: application_architecture
+---
+Name: Core Concepts
+Dir: core_concepts
+Topics:
+  - Name: Resources, users, and groups
+    File: resources_users_groups
+  - Name: Device management
+    File: device_management
+  - Name: Packages
+    File: packages
+  - Name: Service catalog
+    File: service_catalog
+#  - Name: Builds
+#    File: builds
+  - Name: Deployments
+    File: deployments
+  - Name: Loggind and metrics
+    File: logging_metrics
+  - Name: Network layout and communication
+    File: network_layout_communication
 ---
 Name: Getting Started
 Dir: getting_started
 Topics:
+  - Name: Creating users and groups
+    File: creating_users_groups
   - Name: Adding a new device
-    File: add_device
-  - Name: Creating a new Package
-    File: create_package
-  - Name: Deploying a Package
-    File: deploy_package
+    File: adding_new_device
+  - Name: Creating a new package
+    File: creating_new_package
+  - Name: Deploying a package
+    File: deploying_package
 ---
 Name: Developer Guide
 Dir: developer_guide
 Topics:
-  - Name: Device Management Operations
-    Dir: device_management
+  - Name: Tutorials
+    Dir: tutorials
+    Topics:
+      - Name: ROS publisher-subscriber
+        File: ros_publisher_subscriber
+  - Name: Device management operations
+    Dir: device_management_operations
     Topics:
       - Name: WebSSH
         File: webssh
-      - Name: Metric Collection and Visualization
-        File: device_metric_collection
-  - Name: Rapyuta IO SDK
+      - Name: Metric collection and visualization
+        File: device_metric_collection_visualization
+  - Name: rapyuta.io SDK
     Dir: rapyuta_io_sdk
     Topics:
       - Name: SDK Docs
-        File: index
+        File: sdk_docs
