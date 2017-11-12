@@ -1,7 +1,7 @@
 ---
 rapyuta-io:
-  name: Rapyuta IO
-  author: Rapyuta IO Documentation Project <io-devs@rapyuta-robotics.com>
+  name: rapyuta.io
+  author: rapyuta.io Documentation Project <io-devs@rapyuta-robotics.com>
   site: community
   site_name: Documentation
   site_url: https://docs.rapyuta.io/
