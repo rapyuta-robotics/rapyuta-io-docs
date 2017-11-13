@@ -1,16 +1,20 @@
-= TODO update entire section
-= Build Recipes
+= Builds
 
-Build recipes provide a simple and straightforward "`source to Docker image`" capability for your applications. Build recipes encapsulate the build process and setup of platform-supported logging, monitoring and security stack for a particular language runtime
- or framework. 
+An application build converts your source code into runnable rapyuta.io package artifacts. Build recipes are used to tell the build engine
+how to build your source code. Builds are automatically triggered once you specify a build recipe and a source repository during package creation.
 
-The advantages of using build recipes include the following: 
+== Build recipes
+A build recipe contains instructions to build applications of a particular type. For example catkin-based ROS applications, Django applications with
+NGINX web server, etc. They can be used by developers to standarize the build process for applications across a team.
+Build recipes allow the platform to provide tailored build environments for an application type. For example, they can make choices on build tools,
+security policies, logging and monitoring tools, etc.
+	
+An application build is specified during package creation as shown in the example below:
 
-. *Patchability* - Build recipes allow the platform to provide seamless security and performance updates for your language runtime or framework as the output image can be easily patched by updating the base image. 
-. *Ecosystem* - Build recipes encourage a shared ecosystem where you can leverage best practices for your applications.
+image::executables.png["Specifying a new executable from a git repository."]
 
+== Target platforms
+We support building docker containers for the following platforms:
 
-== Build Recipe Detection
-
-The platform performs a deep search on your application repository to determine language runtime and framework and tries to find a matching build recipe. The smart detection can be overridden with user provided build recipes. 
-
+* x86-64
+* ARMv7 (32-bit)

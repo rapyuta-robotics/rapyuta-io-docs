@@ -40,8 +40,8 @@ Topics:
     File: packages
   - Name: Service catalog
     File: service_catalog
-#  - Name: Builds
-#    File: builds
+  - Name: Builds
+    File: builds
   - Name: Deployments
     File: deployments
   - Name: Loggind and metrics
