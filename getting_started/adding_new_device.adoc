@@ -8,16 +8,16 @@
 * Curl [_optional_]
 * ROS [_optional_]
 
-=== Currently aupported ARMv7 devices
+=== Currently supported ARMv7 devices
 
 * Raspberry Pi 2 and 3
 * Apalis iMX6
 
 == Registering a new device
 === Generate a setup link for the device
-1. Sign in to rapyuta.io console UI.
+1. Sign in to https://console.rapyuta.io/login[rapyuta.io console UI].
 2. On the left bar, go to *Devices tab* and click on *Add New Device*.
-3. Type a name and a description for the new device.
+3. Type a name and a description of the new device.
 4. Click on *Add Device*. You will get your unique device setup link.
 5. Copy this link using *Copy to Clipboard* icon on the right.
 
@@ -25,12 +25,21 @@ image::adding_new_device/create_device.png["Add Device"]
 image::adding_new_device/bootstrap_link.png["Copy setup link"]
 
 === Setup your device
-Paste and run the device setup link on a terminal to the device (using for instance serial TTY or SSH). This will start setting up rapyuta.io device client. 
+Paste and run the device setup link on a terminal to the device (using, for instance, serial TTY or SSH). This will start setting up rapyuta.io device client. 
+
+[IMPORTANT]
+Depending on the setup of your device, you might need to run the device setup link with root permissions. Note that the command is of the form
+`curl -s -H "..." https://bootstrap.rapyuta.io/start | bash`. Therefore, you either log as the `root` user or run
+`curl -s -H "..." https://bootstrap.rapyuta.io/start | *sudo* bash`
 
 [NOTE]
 The device setup link expires after 10 minutes. Click on *Token* in the UI to generate the link again.
 
-If the setup is completed successfully, your device will appear as online (green) on the rapyuta.io console UI. This is all you need to do to add your device
+If the setup is completed successfully, you should see the following output:
+
+image::adding_new_device/registered.png["rapyuta.io client properly installed."]
+
+After some seconds, your device will appear as online (green) on the rapyuta.io console UI. This is all you need to do to add your device
 to rapyuta.io. You can now manage your device from rapyuta.io console UI.
 
 [IMPORTANT]
@@ -51,6 +60,6 @@ image::adding_new_device/details.png["Device details page"]
 * Offline (gray): Device is registered and was Online at least once but currently is not connected.
 * Rejected (red): Device can be rejected by the user to block its communication with the Platform.
 * Delete (red): Device can be deleted by the user to remove all its data and permanently block its communication with the Platform.
-3. System Information: name, version and other details about the current machine and the operating system running on it. Corresponds with the output of the
-`uname` unix command.
+3. System Information: name, version and other details about the current machine and the operating system running on it. This information 
+corresponds to the output of the `uname` Unix command.
 

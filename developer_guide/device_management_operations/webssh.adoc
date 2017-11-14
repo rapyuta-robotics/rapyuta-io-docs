@@ -6,6 +6,6 @@ network and compromise security. This browser-based terminal is a full-featured 
 
 == Start WebSSH session
 To start an SSH session to your device, you need to ensure that your device is online and has SSH service.
-Visit the *SSH* tab in your device details page and your SSH session will be initiated.
+Visit the *SSH* tab on your device details page, and your SSH session will be initiated.
 
 image::webssh.png["WebSSH"]
