@@ -5,7 +5,7 @@ how to build your source code. Builds are automatically triggered once you speci
 
 == Build recipes
 A build recipe contains instructions to build applications of a particular type. For example catkin-based ROS applications, Django applications with
-NGINX web server, etc. They can be used by developers to standarize the build process for applications across a team.
+NGINX web server, etc. They can be used by developers to standardize the build process for applications across a team.
 Build recipes allow the platform to provide tailored build environments for an application type. For example, they can make choices on build tools,
 security policies, logging and monitoring tools, etc.
 	

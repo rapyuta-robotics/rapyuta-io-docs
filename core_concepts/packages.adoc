@@ -24,7 +24,7 @@ A component is a list of executables that need to be deployed in unison. That me
 communicate via IPC. Also, any executable listening on a port can be accessed by its sibling executables via `localhost`.
 
 ==== Exposing network endpoint from a component
-Components can expose network endpoints. The configuration of these endpoint (exposed port, protocol to be use, etc) can be specified during the creation
+Components can expose network endpoints. The configuration of these endpoints (exposed port, protocol to be used, etc.) can be specified during the creation
 of the package. The supported protocols are TCP and HTTPS.
 
 [NOTE]
@@ -47,9 +47,9 @@ This configuration should be specified during the creation of the package.
 [NOTE]
 The developer does not have to include the ROS master as an executable of a component. The platform manages running ROS master for the developer.
 
-Since this communication can happen over WAN (via the link:../core_concepts/network_layout_communication.html#core_concepts-network-cloud_bridge[cloud bridge])
+Since this communication can happen over WAN (via the link:../core_concepts/network_layout_communication.html#core_concepts-network-cloud_bridge[cloud bridge]),
 the developer can tune the level of reliability for the transport layer. The `QoS` (quality of service) attribute of the package reflects this function.
-For example `max` QoS for a topic indicates that all messages published to a topic are guaranteed to reach the subscribers of the topic. The offered QoS
+For example, `max` QoS for a topic indicates that all messages published to a topic are guaranteed to reach the subscribers of the topic. The offered QoS
 values are `max`, `hi`, `med`, `low`. 
 
 .*Why not just use “max” QoS for all topics?*
@@ -69,7 +69,7 @@ a dependency. These parameters can be specified in the *exposed parameters* sect
 
 .*Example*
 [NOTE]
-The author of a ROS talke-listener package can offer two plans, one with a ROSBridge and one without, the user of the package can choose one of these
+The author of a ROS talker-listener package can offer two plans, one with a ROSBridge and one without, the user of the package can choose one of these
 plans at the time of deployment.
 
 [TIP]
@@ -79,7 +79,7 @@ different plans within a package rather than describing them in different packag
 === Dependencies
 A package can depend on other packages from the service catalog. For example, your ROS application might need to use the ROSBridge suite to push data to a
 web interface. And you might have the ROSBridge suite as a different package in the service catalog. In this case, it can be specified as a dependency of
-the application
+the application.
 
 When a package *A* is added as a dependency for Package *B*, the *exposed parameters* and *exposed network endpoints* of *A*'s chosen
 plan are added as environment variables for the components of *B*. This ensures that the components of *B* can access the endpoints and parameters exposed
@@ -87,4 +87,4 @@ by *A”*.
 
 [NOTE]
 The components of *B* might have parameters which are also stored as environment variables in the runtime. This leads to a possibility of collisions that
-rapyuta.io does not solve at this point of time.
+rapyuta.io does not solve at this point in time.

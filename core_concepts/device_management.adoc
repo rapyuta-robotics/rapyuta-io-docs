@@ -11,62 +11,78 @@
 toc::[]
 
 == Overview
-The device manager provides an interface to control and manage your device remotely as well as manage the applications running on it. It provides a control-plane and a minimal data-plane communication between the device and the platform. This is the single point of contact for all device-related functions. rapyuta.io device can be an embedded device or a general purpose computer.
+The device manager provides an interface to control and manage your device remotely as well as manage the applications running on it. It provides a
+control-plane and a minimal data-plane communication between the device and the platform. The device manager is the single point of contact for all
+device-related functions. rapyuta.io device can be an embedded device or a general purpose computer.
 
 == Architecture
 image::device_manager_architecture.png["Device manager architecture"]
 
 == Communication
-The device manager service uses a server-agent communication model. The server-side component is called the device manager, and the agent is called the device manager agent.
+The device manager service uses a server-agent communication model. The server-side component is called the device manager, and the agent is called the
+device manager agent.
 
 === NAT traversal
-The communication works behind firewalls and NAT network as the connections are initiated by the device manager agent to the device manager service. You do not need to open any incoming ports on your firewall.
+The communication works behind firewalls and NAT network as the device manager agent is the component initiating the connections to the device manager
+service. You do not need to open any incoming ports on your firewall.
 
 === Communication channels
 The device manager communicates with registered devices using a publish-subscribe pattern. There are two communication channels:
 
-* *Control Channel*: this is used to send all the control commands from the device manager to the device manager agent and receive event messages from the device manager agent through a persistent connection.
+* *Control Channel*: this is used to send all the control commands from the device manager to the device manager agent and receive event messages from
+the device manager agent through a persistent connection.
 * *Metric Channel*: device manager agent connects to this channel as required to send the collected metric data to the device manager service.
 
-For more details please refer the link:network_layout_and_communication.html[network layout and communication] section.
+For more details, please refer the link:network_layout_and_communication.html[network layout and communication] section.
 
 
 == Remote execution
-The device manager provides you with the remote execution system, which means that you can access your device even if it is present at some remote location connected over WAN. You can open an interactive shell to the device through the web browser (link:../developer_guide/device_management_operations/webssh.html[WebSSH]) or send individual shell commands to be executed on the device (sync/async).
+The device manager provides you with the remote execution system, which means that you can access your device even if it is present at some remote location
+connected over WAN. You can open an interactive shell to the device through the web browser
+(link:../developer_guide/device_management_operations/webssh.html[WebSSH]) or send individual shell commands to be executed on the device (sync/async).
 
 
 == Remote monitoring
-Remote Monitoring helps you to get better visibility into your devices wherever they happen to be located. The device manager service enables you to collect and visualize execution metrics such as CPU usage, memory usage, battery level etc from the device.
-Custom metrics published by ROS topics can also be exported and visualized. For more information, visit the link:../developer_guide/device_management_operations/device_metric_collection_visualization.html[device metric collection and visualization] tutorial.
+Remote Monitoring helps you to get better visibility into your devices wherever they are located. The device manager service enables you to collect and
+visualize execution metrics such as CPU usage, memory usage, battery level, etc. from the device.
+Custom metrics published by ROS topics can also be exported and visualized. For more information, visit the
+link:../developer_guide/device_management_operations/device_metric_collection_visualization.html[device metric collection and visualization] tutorial.
 
 == Application deployment
-You can remotely deploy your software applications on the device and manage its lifecycle. You can start, stop, get status and logs of the running applications.
-The supported application runtimes are Docker and Generic Linux.
+You can remotely deploy your software applications on the device and manage its lifecycle. You can start, stop, get status and logs of the running
+applications. The supported application runtimes are Docker and Generic Linux.
 
 * *Docker*: This runtime allows for live provisioning (docker pull) of the application on online devices.
-* *Generic Linux*: Allows you to launch, manage and watch the status of any Linux application. It doesn't support live provisioning but expects the device owner to provision the application on the device.
+* *Generic Linux*: Allows you to launch, manage and watch the status of any Linux application. It doesn't support live provisioning but expects the device
+owner to provision the application on the device.
 
 == Dynamic device selection
-Device selection allows you to deploy packages on devices based on various properties. It includes dynamic properties like metrics (battery capacity, wind speed, location, etc) and static properties like device labels. Examples of possible selection criteria are:
+Device selection allows you to deploy packages on devices based on various properties. It includes dynamic properties like metrics (battery capacity,
+wind speed, location, etc.) and static properties like device labels. Examples of possible selection criteria are:
 
-* Device that is closest to a given point X.
+* Closest device to a given point X.
 * Device which has free memory > 500 MB.
 * Device with label `type=drone`.
 
 === Labels
-Labels are user defined attributes in the form of key value pairs. They are intended to be used to group devices or select devices based on certain criteria. 
+Labels are user-defined attributes in the form of key-value pairs. They are intended to be used to group devices or select devices based on certain criteria.
 
 === Metrics
-Device metrics collected by rapyuta.io can also be useful for finding your intended device for the deployment. This gives the advantage of deploying application only on the devices with desired computing resources (like CPU or memory) or environment (such as wind speed or temperature) available.
+Device metrics collected by rapyuta.io can also be useful for finding your intended device for the deployment. This feature gives the advantage of
+deploying applications only on the devices with desired computing resources (like CPU or memory) or environment (such as wind speed or temperature) available.
 
 === Device Selection 
-Device selection criteria can be declared in the rapyuta.io console UI at the time of deployment. Also rapyuta.io SDK provides you with a programmatic way of integrating it with your application lifecycle. For more details, visit the link:../reference/io_sdk.html[rapyuta.io SDK] documentation.
+Device selection criteria can be declared in the rapyuta.io console UI at the time of deployment. Also rapyuta.io SDK provides you with a programmatic way
+of integrating it with your application lifecycle. For more details, visit the link:../reference/io_sdk.html[rapyuta.io SDK] documentation.
 
 == Security
-The architecture of the device manager includes security aspects to ensure that all the data (both control and telemetry) are encrypted when exchanged between components.
+The architecture of the device manager includes security aspects to ensure that all the data (both control and telemetry) are encrypted when exchanged
+between components.
 
 === End to End Encryption
-After a device is successfully registered with the device manager, all further communication between the server and the agent is encrypted using public key cryptography.
+After a device is successfully registered with the device manager, all further communication between the server and the agent is encrypted using public
+key cryptography.
 
 === Identity validation
-All devices are registered to the device manager with unique credentials that are only visible to you. These credentials are used to identify devices across communication channels.
+All devices are registered to the device manager with unique credentials that are only visible to you. These credentials are used to identify devices
+across communication channels.
