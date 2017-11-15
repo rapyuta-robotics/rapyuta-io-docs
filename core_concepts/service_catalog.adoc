@@ -7,4 +7,4 @@ If a user creates a package in a group, all members of this group have access to
 of any group, only he/she would have access to this package.
 
 == Third Party services
-Some commonly used packages are provided by the rapyuta.io platform. These packages can be used by any user to accelerate their application development. 
+rapyuta.io provides some commonly used packages that any user can use to accelerate their application development. 

@@ -1,7 +1,7 @@
 = Device metric collection and visualization
 
 == Introduction
-This functionality enables a device to push metric data to rapyuta.io and visualize the collected data in the rapyuta.op console UI. This communication
+This functionality enables a device to push metric data to rapyuta.io and visualizes the collected data in the rapyuta.op console UI. This communication
 channel is different from the one used to send control commands to the device.
 
 image::dashboard.png["Metric Dashboards"]
@@ -15,8 +15,8 @@ device and storage on rapyuta.io, you must change the subscriber settings of the
     rostopic pub -r 1 /test_topic std_msgs/Float32 5.0
 
 . Go to the *Devices* tab and click on your device.
-. Go to the *Monitor* tab in your device details page.
-. You should be able to see the list of ROS topics being published. (Try refreshing the screen in case you cannot see the topics.) 
+. Go to the *Monitor* tab on your device details page.
+. You should be able to see the list of ROS topics being published. Try refreshing the screen if you cannot.
 . Click on the *Subscribe* button to subscribe to the ROS topics you wish to store and visualize.
 . Your device metric collector will start pushing this data to rapyuta.io. To learn how to visualize it, go to the next section.
 
@@ -25,18 +25,18 @@ device and storage on rapyuta.io, you must change the subscriber settings of the
 You can go to the rapyuta.io console UI to see the data being collected. You can choose among various plotting options based on the type of data being
 published. You can also add multiple graph cells to your dashboard. The configured dashboard is saved for every user and can be shared among his groups.
 
-To setup your dashboard:
+To set up your dashboard:
 
 . Go to the *Devices* tab and click on your device.
-. Go to the *Monitor* tab in your device details page.
+. Go to the *Monitor* tab on your device details page.
 . Subscribe to the ROS topics you wish to graph out.
 . Click on the *Add Cell* button and select *Graph*. A graph cell will be added to the page.
 . On the top right menu, click on the *Edit* button and then click on *Add Query*.
 . Select the metric name you subscribed to and the graph type and click on *OK*.
 . The graph cell will start showing plotted data.
 
-Metrics are stored in a time series database, allowing you to plot the metrics over time. You can apply mean, median, count, min, stddev etc. functions to
-the data and group it into time intervals. 
+Metrics are stored in a time series database, allowing you to plot the metrics over time. You can apply mean, median, count, min, standard deviation, etc.
+functions to the data and group it into time intervals. 
 
 The supported visualization types are line, stacked, and step-plot. You can plot multiple metrics in one chart and also add multiple charts.
 

@@ -8,7 +8,7 @@ To create a new package, you must have a rapyuta.io account.
 
 image::creating_new_package/create_pkg.png["Create Package"]
 [start=3]
-. Write basic information about the package: name, version, description and plan information. If you want to add additional plan,
+. Write basic information about the package: name, version, description and plan information. If you want to add a plan,
 click on *Add Another Plan*.
 
 image::creating_new_package/add_plan.png["Add Another Plan"]
@@ -23,4 +23,4 @@ image::creating_new_package/add_catalog_component.png["Add Catalog Component"]
 . Once the package has been created, you will be redirected to package page.
 
 [TIP]
-Create a package composed of common applications, so that they can be reused by other packages, and therefore making application composition easier
+Create a package composed of common applications, so that other packages can reuse it, and therefore making application composition easier.

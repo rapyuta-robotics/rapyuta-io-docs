@@ -2,7 +2,7 @@
 
 == Creating a user
 1. Visit the https://console.rapyuta.io/login[rapyuta.io Console login page].
-2. Ensure the `Register` checkbox is checked
+2. Ensure the `Register` checkbox is checked.
 3. Enter username, password and invite code provided.
 4. Click on the *Register* button.
 
@@ -16,4 +16,4 @@ The page shall automatically login and redirect to the dashboard on successful r
 
 image::creating_users_groups/group_creation.png["Creating a group"]
 
-The newly created group shall show up in the table on successful creation
+The newly created group shall show up in the table on successful creation.

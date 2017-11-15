@@ -5,7 +5,7 @@ To deploy a package, you must have a rapyuta.io account.
 
 . Log in to rapyuta.io console UI in your browser using username and password.
 . Go to *Catalog* tab and select the package you just added.
-. Click on *Deploy Package* button to deploy the pacakge.
+. Click on *Deploy Package* button to deploy the package.
 
 image::deploying_package/1_get_pkg_page.png["Get Package Page"]
 
@@ -28,4 +28,3 @@ deployment. Dependent deployments refer to the deployments of any other packages
 . Deployment logs can be seen in the *Logs* tab. 
 
 image::deploying_package/5_deployment_logs.png["Deployment Logs"]
-
