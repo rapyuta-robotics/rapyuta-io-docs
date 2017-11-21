@@ -32,3 +32,6 @@ Each Deployment goes through multiple stages, at a single point it can be either
 * Running
 * Stopped
 * Error
+
+[TIP]
+To learn how to deploy packages, visit link:../getting_started/deploying_package.html[this page].

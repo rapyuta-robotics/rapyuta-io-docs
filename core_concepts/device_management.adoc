@@ -86,3 +86,7 @@ key cryptography.
 === Identity validation
 All devices are registered to the device manager with unique credentials that are only visible to you. These credentials are used to identify devices
 across communication channels.
+
+[TIP]
+Test the rapyuta.io device manager. Learn how to link:../getting_started/adding_new_device.html[add a new device] and
+link:../developer_guide/device_management_operations/webssh.html[SSH into them from your browser].

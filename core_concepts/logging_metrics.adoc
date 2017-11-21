@@ -20,3 +20,7 @@ the count, average, min, max, etc.
 
 The platform can collect metrics (humidity, wind speed, etc.) from a powered-on and connected device even when a rapyuta.io package deployment is not being
 executed. This could be useful to gather data and monitor state of a device.
+
+[TIP]
+Follow link:../developer_guide/device_management_operations/device_metric_collection_visualization.html[these instructions] to collect and visualize your
+log data.
