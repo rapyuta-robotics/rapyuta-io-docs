@@ -1,4 +1,4 @@
-= Rapyuta IO SDK
+= rapyuta.io SDK
 :toc: macro
 :toc-title:
 :data-uri:

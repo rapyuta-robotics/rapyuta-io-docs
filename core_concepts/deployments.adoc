@@ -1,6 +1,6 @@
 = Deployments
 
-A Deployment is a running instance of a package on the platform. A deployment can be triggered from the rapyuta.io console UI, RIO SDK or directly using 
+A Deployment is a running instance of a package on the platform. A deployment can be triggered from the rapyuta.io console UI, link:../developer_guide/rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK], or directly using 
 REST API endpoints. While deploying a package, the platform is responsible for:
 
 * Resolving all specified package dependencies for a package. 
