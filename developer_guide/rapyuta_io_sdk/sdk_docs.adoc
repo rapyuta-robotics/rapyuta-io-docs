@@ -51,7 +51,7 @@ the provision call. The following snippet shows an example provisioning the same
 query = 'label.camera=true, measurement.battery.value>20'
 devices = client.select_devices(query, auth_token=auth_token)
 pkg.config.component_parameters.my_component_name.device_id = devices[0].uuid // <1>
-deployment_dev = pkg.provision(deployment_id=deployment_id, global_devices=devices) // <2>
+deployment_dev = pkg.provision(deployment_id=deployment_id, devices=devices) // <2>
 ----
 <1> `my_component_name` is the name of the component you want to run on the device, given while creating the package. In this line, such component is assigned to the first device that
 satisfy the query, where it will be deployed.
