@@ -12,7 +12,8 @@ toc::[]
 
 This tutorial will show you how to deploy a basic ROS package with a ROS publisher running in the cloud and a ROS subscriber running on a Raspberry Pi. 
 The ROS publisher sits in a public git repository and is built into a docker container on the fly using `ros-indigo-catkin` build recipe.
-The ROS subscriber is assumed to be downloaded on Raspberry Pi and is launched when the package is deployed using rapyuta.io console UI or SDK.
+The ROS subscriber is assumed to be downloaded on Raspberry Pi and is launched when the package is deployed using rapyuta.io console UI or the
+link:../rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK].
 
 == Prerequisites
 To complete this tutorial, you should have the following:
@@ -79,7 +80,7 @@ TODO - Instert image
 image::ros_pub_sub/create_pkg.png["Creating the package"]
 
 == Deploying the package
-There are two possible ways of deplying the package: using the rapyuta.io console UI or the SDK.
+There are two possible ways of deplying the package: using the rapyuta.io console UI or the link:../rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK].
 
 === Deploy the package from the rapyuta.io console UI
 The instructions to follow are the same as shown in the link:../../getting_started/deploying_package.html[package deployment page]. The only difference
@@ -88,7 +89,7 @@ is that you should select different devides for the talker and listener componen
 image::ros_pub_sub/deploy_1.png["Available devices"]
 image::ros_pub_sub/deploy_2.png["Assign components to devices"]
 
-=== Deploy the package from the rapyuta.io SDK
+=== Deploy the package from the link:../rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK]
 [source,python]
 from rapyuta_io import Client
 client = Client()

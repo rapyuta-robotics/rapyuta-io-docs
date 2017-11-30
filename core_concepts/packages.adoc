@@ -88,3 +88,6 @@ by *A”*.
 [NOTE]
 The components of *B* might have parameters which are also stored as environment variables in the runtime. This leads to a possibility of collisions that
 rapyuta.io does not solve at this point in time.
+
+[TIP]
+Create your own packages following link:../getting_started/creating_new_package.html[these instructions].

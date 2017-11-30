@@ -18,3 +18,6 @@ console UI and add or remove users and resources in that group.
 An organization `Rapyuta` has two teams. `Team1` works on drones and `Team2` works on droids. Each team can make a group dedicated to their team members.
 Each team member will only be able to access devices (or other resources) added to their group. If an engineer works with both teams, he/she can be added
 to both the groups.
+
+[TIP]
+Try creating users and groups. Learn how link:../getting_started/creating_users_groups.html[here].
