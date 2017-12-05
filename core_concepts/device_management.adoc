@@ -72,8 +72,8 @@ Device metrics collected by rapyuta.io can also be useful for finding your inten
 deploying applications only on the devices with desired computing resources (like CPU or memory) or environment (such as wind speed or temperature) available.
 
 === Device Selection 
-Device selection criteria can be declared in the rapyuta.io console UI at the time of deployment. Also rapyuta.io SDK provides you with a programmatic way
-of integrating it with your application lifecycle. For more details, visit the link:../reference/io_sdk.html[rapyuta.io SDK] documentation.
+Device selection criteria can be declared in the rapyuta.io console UI at the time of deployment. Also link:../developer_guide/rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK] provides you
+with a programmatic way of integrating it with your application lifecycle.
 
 == Security
 The architecture of the device manager includes security aspects to ensure that all the data (both control and telemetry) are encrypted when exchanged
@@ -86,3 +86,7 @@ key cryptography.
 === Identity validation
 All devices are registered to the device manager with unique credentials that are only visible to you. These credentials are used to identify devices
 across communication channels.
+
+[TIP]
+Test the rapyuta.io device manager. Learn how to link:../getting_started/adding_new_device.html[add a new device] and
+link:../developer_guide/device_management_operations/webssh.html[SSH into them from your browser].
