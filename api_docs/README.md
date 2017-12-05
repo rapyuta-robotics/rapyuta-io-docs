@@ -1,6 +1,10 @@
 ## Open the project
-- Set env variable for the spec endpoint  
-  Eg: `export SPEC_ENDPOINT='https://device-manager.ep.rapyuta.io/v0/spec'`
+- Set env variable for the spec endpoint and endpoint string to be replaced
+  Eg:
+  ```
+  export SPEC_ENDPOINT='https://device-manager.ep.rapyuta.io/v0/spec'
+  export REPLACE_STRING='http://localhost:5600undefined'`
+  ```
 
 - Run the node script  
   `node index.js`

@@ -13,6 +13,7 @@ require('./script/prism-clike');
 require('./script/prism-javascript');
 
 var swaggerSpecLink = process.env.SPEC_ENDPOINT;
+var replaceString = process.env.REPLACE_STRING;
 var targets = ['shell_curl', 'go_native', 'python_python3', 'c_libcurl', 'javascript_xhr'];
 
 var schemaTypesToPlaceholder = {
@@ -81,7 +82,7 @@ var swaggerSuccessCallback = function(swaggerSpec){
   var results = _.groupBy(
     SwaggerSnippet.getSwaggerSnippets(swaggerSpec, targets),
     function(item){
-      return _.replace(item.url, 'http://undefinedundefined', '');
+      return _.replace(item.url, replaceString, '');
     }
   );
   var sidebarHtml = '';
@@ -105,7 +106,7 @@ var swaggerSuccessCallback = function(swaggerSpec){
         "        <h3 class=\"apiItemHead\">\n" +
         "        <span class=\"methodSpan "+(method.toLowerCase())+"\">"+method+"</span>"+specKey+"</h3>\n" +
         "        <p class=\"apiDetails\">\n" +
-        "          "+(_.replace(url, 'undefinedundefined', '&lt;HOST&gt;:&lt;PORT&gt;'))+"<br />\n" +
+        "          "+(_.replace(url, replaceString, '&lt;HOST&gt;:&lt;PORT&gt;'))+"<br />\n" +
         "          "+description+"\n" +
         "        </p>\n" +
         "        <p>\n" +
