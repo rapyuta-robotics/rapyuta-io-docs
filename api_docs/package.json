@@ -17,6 +17,7 @@
     "lodash": "^4.17.4",
     "prismjs": "^1.6.0",
     "request": "^2.81.0",
+    "swagger-parser": "^4.0.1",
     "swagger-snippet": "^0.5.1"
   }
 }
