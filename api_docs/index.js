@@ -14,7 +14,6 @@ require('./script/prism-python');
 require('./script/prism-clike');
 require('./script/prism-javascript');
 var swaggerSpecLink = process.env.SPEC_ENDPOINT;
-var replaceString = process.env.REPLACE_STRING;
 var targets = ['shell_curl', 'go_native', 'python_python3', 'c_libcurl', 'javascript_xhr'];
 
 var schemaTypesToPlaceholder = {
@@ -51,6 +50,38 @@ var formatParams = function(paramArray, paramType) {
   paramString += '</div>';
   return paramString;
 };
+
+/**
+ * figures out the protocol in the url to be replaced by spec host
+ * @param {Object} spec 
+ * @param {string} url 
+ */
+function resolveProtocol(spec, url) {
+  if (!spec.host) {
+    console.error('the spec does not contain a host field');
+    return 'http'; // default return
+  }
+
+  if (Array.isArray(spec.host)) {
+    if (spec.host.indexOf('https') !== -1 && url.includes('https')) {
+      return 'https';
+    }
+
+    if (spec.host.indexOf('http') !== -1 && url.includes('http')) {
+      return 'http';
+    }
+
+    console.log(
+      'could not resolve spec host to url \nPlease refer to the resolveProtocol function'
+    );
+
+    return 'http'; //default return
+  }
+
+  if (spec.host === 'https' && url.includes('https')) {
+    return 'https';
+  } else return 'http'; // default return
+} // resolveProtocol
 
 /**
  * A utility function to append the tag multiple times
@@ -148,7 +179,11 @@ var formatBodyParams = function(paramArray, paramType) {
 
 var swaggerSuccessCallback = function(swaggerSpec) {
   var results = _.groupBy(SwaggerSnippet.getSwaggerSnippets(swaggerSpec, targets), function(item) {
-    return _.replace(item.url, replaceString, '');
+    return _.replace(
+      item.url,
+      resolveProtocol(swaggerSpec, item.url) + '://' + swaggerSpec.host,
+      ''
+    );
   });
   var sidebarHtml = '';
   var pageContentsHtml = '';
@@ -192,7 +227,11 @@ var swaggerSuccessCallback = function(swaggerSpec) {
         '</h3>\n' +
         '        <p class="apiDetails">\n' +
         '          ' +
-        _.replace(url, replaceString, '&lt;HOST&gt;:&lt;PORT&gt;') +
+        _.replace(
+          url,
+          resolveProtocol(swaggerSpec, url) + '://' + swaggerSpec.host,
+          '&lt;HOST&gt;:&lt;PORT&gt;'
+        ) +
         '<br />\n' +
         '          ' +
         description +
