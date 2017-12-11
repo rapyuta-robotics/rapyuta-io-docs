@@ -216,6 +216,7 @@ var swaggerSuccessCallback = function(swaggerSpec) {
                 ${_.has(params, 'path') ? formatParams(params.path, 'Path') : ''}
                 ${_.has(params, 'query') ? formatParams(params.query, 'Query') : ''}
                 ${_.has(params, 'body') ? formatBodyParams(params.body, 'Body') : ''}
+                ${JSON.stringify(swaggerSpec.paths[specKey][method.toLowerCase()].responses)}
                 
             </p>
 
@@ -335,6 +336,8 @@ try {
           });
         });
       }
+    } else {
+      console.log('failed to retrieve the spec. Env variable SPEC_ENDPOINT maynot be set.');
     }
   });
 } catch (err) {
