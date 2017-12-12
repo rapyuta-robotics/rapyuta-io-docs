@@ -16,7 +16,9 @@ require('./script/prism-python');
 require('./script/prism-clike');
 require('./script/prism-javascript');
 
-const swaggerSpecLink = process.env.SPEC_ENDPOINT;
+const config = require('./config.json');
+
+const swaggerSpecLink = config.SPEC_ENDPOINT;
 const targets = ['shell_curl', 'go_native', 'python_python3', 'c_libcurl', 'javascript_xhr'];
 
 // const schemaTypesToPlaceholder = {
@@ -252,21 +254,22 @@ const targets = ['shell_curl', 'go_native', 'python_python3', 'c_libcurl', 'java
 //   };
 // };
 
-const parseSwagger = async body => new Promise((resolve, reject) => {
-  SwaggerParser.validate(JSON.parse(body), (err, spec) => {
-    if (err) {
-      reject({
-        success: false,
-        err,
-      });
-    } else {
-      resolve({
-        success: true,
-        spec,
-      });
-    }
+const parseSwagger = async body =>
+  new Promise((resolve, reject) => {
+    SwaggerParser.validate(JSON.parse(body), (err, spec) => {
+      if (err) {
+        reject({
+          success: false,
+          err,
+        });
+      } else {
+        resolve({
+          success: true,
+          spec,
+        });
+      }
+    });
   });
-});
 
 const index = async () => {
   try {
@@ -274,20 +277,16 @@ const index = async () => {
     fs.copySync(path.join(__dirname, 'src'), path.join(__dirname, 'build'));
     console.log('Copied src folder to build');
 
+    console.log('Swagger spec link', swaggerSpecLink);
+
     // Get swagger spec from url
-    const {
-      statusCode,
-      error,
-      body,
-    } = await request(swaggerSpecLink, {
+    const { statusCode, error, body } = await request(swaggerSpecLink, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
     });
-    if (
-      ([200, 201].indexOf(statusCode) < 0)
-    ) {
+    if ([200, 201].indexOf(statusCode) < 0) {
       console.log('Swagger spec call status code not 200, 201');
       return;
     }
@@ -297,11 +296,7 @@ const index = async () => {
     }
 
     // Parse swagger spec json
-    const {
-      err,
-      spec,
-      success,
-    } = await parseSwagger(body);
+    const { err, spec, success } = await parseSwagger(body);
     if (!success) {
       console.error(`Error in parsing swagger: ${err}`);
       return;
@@ -317,16 +312,14 @@ const index = async () => {
     const renderedHtml = _.replace(
       templateContents,
       '<!-- root_component_mount -->',
-      ReactDOMServer.renderToString(<RootComponent testProps="My test props" />),
+      ReactDOMServer.renderToString(<RootComponent swaggerSpec={spec} targets={targets} />),
     );
-    fs.writeFileSync(
-      path.join(__dirname, 'build/index.html'),
-      renderedHtml,
-    );
+    console.log('path:', path.join(__dirname, 'build/index.html'));
+    fs.writeFileSync(path.join(__dirname, 'build/index.html'), renderedHtml);
     console.log('File written successfully');
     // const swaggerHtml = swaggerSuccessCallback(api);
   } catch (err) {
-    // console.error(err);
+    console.error(err);
   }
 };
 
