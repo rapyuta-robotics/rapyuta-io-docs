@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 import Parameter from './parameter';
 import RequestBody from './requestBody';
+import ResponseBody from './responseBody';
 
 export default class Contents extends Component {
   render() {
@@ -23,19 +24,26 @@ export default class Contents extends Component {
           </h3>
 
           <p className="apiDetails">
-            {_.replace(
-                url,
-                `${swaggerSpec.schemes[0]}://${swaggerSpec.host}`,
-                '<HOST><PORT>',
-              )}
+            {_.replace(url, `${swaggerSpec.schemes[0]}://${swaggerSpec.host}`, '<HOST><PORT>')}
             <br />
             {description}
           </p>
 
           <p>
-            {_.has(params, 'path') ? <Parameter paramArray={params.path} paramType={'Path'}/> : null}
-            {_.has(params, 'query') ? <Parameter paramArray={params.query} paramType={'Query'}/> : null}
-            {_.has(params, 'body') ? <RequestBody paramArray={params.body} paramType={'Body'}/> : null}
+            {_.has(params, 'path') ? (
+              <Parameter paramArray={params.path} paramType="Path" />
+              ) : null}
+            {_.has(params, 'query') ? (
+              <Parameter paramArray={params.query} paramType="Query" />
+              ) : null}
+            {_.has(params, 'body') ? (
+              <RequestBody paramArray={params.body} paramType="Body" />
+              ) : null}
+            {
+              <ResponseBody
+                responses={swaggerSpec.paths[specKey][method.toLowerCase()].responses}
+              />
+              }
           </p>
 
           <div className="apiCodeEmbed">
@@ -134,14 +142,10 @@ export default class Contents extends Component {
               </div>
             </div>
           </div>
-        </div>);
+                          </div>);
       });
     });
 
-    return (
-      <p>
-        {pageContents}
-      </p>
-    );
+    return <p>{pageContents}</p>;
   }
 }
