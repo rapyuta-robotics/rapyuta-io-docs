@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import _ from 'lodash';
-import Prism from 'prismjs';
 
-import Parameter from './parameter';
+import Parameter from './parameterItem';
 import RequestBody from './requestBody';
+// import Parameters from './parameters';
 import ResponseBody from './responseBody';
+import CodeSnippets from './codeSnippets';
 
 const Contents = ({ spec, swaggerSpec }) => {
   const pageContents = _.map(spec, (resultSpecItem, specKey) =>
@@ -22,78 +23,41 @@ const Contents = ({ spec, swaggerSpec }) => {
           </h3>
 
           <p className="apiDetails">
-            {_.replace(url, `${swaggerSpec.schemes[0]}://${swaggerSpec.host}`, '<HOST><PORT>')}
+            {_.replace(url, `${swaggerSpec.schemes[0]}://${swaggerSpec.host}`, '<HOST>:<PORT>')}
             <br />
             {description}
           </p>
 
           <p>
-            {_.has(params, 'path') ? <Parameter paramArray={params.path} paramType="Path" /> : null}
-            {_.has(params, 'query') ? (
-              <Parameter paramArray={params.query} paramType="Query" />
-            ) : null}
-            {_.has(params, 'body') ? (
-              <RequestBody paramArray={params.body} paramType="Body" />
-            ) : null}
             {
-              <ResponseBody
-                responses={swaggerSpec.paths[specKey][method.toLowerCase()].responses}
-              />
+              _.has(params, 'path') && (
+                <Parameter paramArray={params.path} paramType="Path" />
+              )
+            }
+            {
+              _.has(params, 'query') && (
+                <Parameter paramArray={params.query} paramType="Query" />
+              )
+            }
+            {
+              _.has(params, 'body') && (
+                <div>
+                  <h3>Body params</h3>
+                  <div className="paramBody">
+                    <RequestBody paramArray={params.body} />
+                  </div>
+                </div>
+              )
             }
           </p>
 
-          <div className="apiCodeEmbed">
-            <ul>
-              {_.map(
-                {
-                  bash: 'Shell',
-                  go: 'Go',
-                  python: 'Python',
-                  clike: 'C',
-                  javascript: 'Javascript',
-                },
-                (lang, idx, obj) => {
-                  const keys = Object.keys(obj);
-                  return (
-                    <li className="tabHeaderItem active" data-id={`${keys.indexOf(idx)}`}>
-                      {lang}
-                    </li>
-                  );
-                },
-              )}
-            </ul>
+          <h3>Responses</h3>
+          <ResponseBody
+            responses={swaggerSpec.paths[specKey][method.toLowerCase()].responses}
+          />
 
-            <div>
-              {_.map(
-                {
-                  bash: 'Shell',
-                  go: 'Go',
-                  python: 'Python',
-                  clike: 'C',
-                  javascript: 'Javascript',
-                },
-                (lang, idx, obj) => {
-                  const keys = Object.keys(obj);
-                  return (
-                    <div className={`tabContentItem ${keys.indexOf(idx) === 0 ? 'active' : ''}`}>
-                      <pre>
-                        <code>
-                          {_.replace(
-                            Prism.highlight(
-                              decodeURIComponent(snippets[keys.indexOf(idx)].content),
-                              Prism.languages[idx],
-                            ),
-                            'undefinedundefined',
-                            '&lt;HOST&gt;:&lt;PORT&gt;',
-                          )}
-                        </code>
-                      </pre>
-                    </div>
-                  );
-                },
-              )}
-            </div>
-          </div>
+          <h3>Code snippets</h3>
+          <CodeSnippets snippets={snippets} />
         </div>
       );
     }));

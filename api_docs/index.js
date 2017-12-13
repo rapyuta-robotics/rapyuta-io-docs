@@ -4,17 +4,9 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import _ from 'lodash';
 import request from 'async-request';
-import Prism from 'prismjs';
-import SwaggerSnippet from 'swagger-snippet';
 import SwaggerParser from 'swagger-parser';
 
 import RootComponent from './components/index';
-
-require('./script/prism-bash');
-require('./script/prism-go');
-require('./script/prism-python');
-require('./script/prism-clike');
-require('./script/prism-javascript');
 
 const config = require('./config.json');
 
@@ -80,7 +72,13 @@ const index = async () => {
     const renderedHtml = _.replace(
       templateContents,
       '<!-- root_component_mount -->',
-      ReactDOMServer.renderToString(<RootComponent swaggerSpec={spec} targets={targets} title={documentTitle} />),
+      ReactDOMServer.renderToString(
+        <RootComponent
+          swaggerSpec={spec}
+          targets={targets}
+          title={documentTitle}
+        />,
+      ),
     );
     console.log('path:', path.join(__dirname, 'build/index.html'));
     fs.writeFileSync(path.join(__dirname, 'build/index.html'), renderedHtml);

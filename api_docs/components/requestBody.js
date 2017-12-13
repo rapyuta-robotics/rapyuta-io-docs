@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import _ from 'lodash';
 
-import Parameter from './parameter';
+import Parameter from './parameterItem';
 
 const schemaTypesToPlaceholder = {
   object: '{}',
@@ -11,44 +11,7 @@ const schemaTypesToPlaceholder = {
   integer: 'integer',
 };
 
-export default class RequestBody extends Component {
-  render() {
-    const { paramArray, paramType } = this.props;
-    let paramItems = [];
-
-    if (_.has(paramArray[0], 'schema')) {
-      _.each(paramArray, (paramItem) => {
-        paramItems.push(<div className="paramBodyItem">
-          <div className="paramName">
-            {paramItem.name}
-            <div className="paramRequired">{paramItem.required ? 'required' : ''}</div>
-          </div>
-          <div className="paramType">
-              json
-            <div className="paramDescription">
-              {paramItem.description || ''}
-              <br />
-              <pre>
-                <code>{JSON.stringify(getBodyParams(paramArray[0].schema), null, 2)}</code>
-              </pre>
-            </div>
-          </div>
-                        </div>);
-      });
-    } else {
-      paramItems = <Parameter paramArray={paramArray} paramItem={paramItem} />;
-    }
-
-    return (
-      <div>
-        <h3>{`${paramType} params`}</h3>
-        <div className="paramBody">{paramItems}</div>
-      </div>
-    );
-  }
-}
-
-function getBodyParams(schemaProperties) {
+const getBodyParams = (schemaProperties) => {
   const params = {};
 
   if (_.has(schemaProperties, 'properties')) {
@@ -65,4 +28,46 @@ function getBodyParams(schemaProperties) {
     return [schemaTypesToPlaceholder[schemaProperties.items.type]];
   }
   return params;
-}
+};
+
+const RequestBody = ({ paramArray, paramType }) => {
+  let paramItems;
+
+  if (_.has(paramArray[0], 'schema')) {
+    paramItems = _.map(paramArray, (paramItem) => {
+      const {
+        name,
+        required,
+        description,
+      } = paramItem;
+      return (
+        <div className="paramBodyItem">
+          <div className="paramName">
+            {name}
+            {
+              required && (
+                <div className="paramRequired">required</div>
+              )
+            }
+          </div>
+          <div className="paramType">
+            json
+            <div className="paramDescription">
+              {description || ''}
+              <br />
+              <pre>
+                <code>{JSON.stringify(getBodyParams(paramArray[0].schema), null, 2)}</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      );
+    });
+  } else {
+    paramItems = <Parameter paramArray={paramArray} paramType={paramType} />;
+  }
+
+  return paramItems;
+};
+
+export default RequestBody;

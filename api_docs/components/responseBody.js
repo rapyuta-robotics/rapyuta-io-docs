@@ -1,33 +1,64 @@
-import React, { Component } from 'react';
+import React from 'react';
+import _ from 'lodash';
+import classnames from 'classnames';
 
-export default class ResponseBody extends Component {
-  render() {
-    const { responses } = this.props;
-    const responseCodes = Object.keys(responses);
-    const result = [];
+const ResponseBody = ({ responses }) => {
+  const responsesArray = _.map(responses, (response, code) => ({
+    response,
+    code,
+  }));
 
-    for (const code in responseCodes) {
-      result.push(<div className="paramBodyItem">
-        <div className="paramName">
-            status
-          <div className="paramRequired" />
-        </div>
-        <div className="paramType">
-          {responseCodes[code]}
-          <div className="paramDescription">
-            <pre>
-              <code>{JSON.stringify(responses[responseCodes[code]], null, 2)}</code>
-            </pre>
-          </div>
-        </div>
-                  </div>);
-    }
+  return (
+    <div className="apiCodeEmbed">
+      <ul>
+        {
+          _.map(responsesArray, ({
+            code,
+            response: {
+              description,
+            },
+          }, index) => (
+            <li
+              className={classnames({
+                tabHeaderItem: true,
+                active: (index === 0),
+              })}
+              data-id={index}
+            >
+              {code}{description && (` (${description})`)}
+            </li>
+          ))
+        }
+      </ul>
 
-    return (
       <div>
-        <h3>Responses</h3>
-        {result}
+        {
+          _.map(responsesArray, ({
+            response: {
+              schema,
+            },
+          }, index) => (
+            <div
+              className={classnames({
+                tabContentItem: true,
+                active: (index === 0),
+              })}
+            >
+              <pre>
+                <code>
+                  {
+                    schema ?
+                      JSON.stringify(schema, null, 2) :
+                      <i>Empty response body</i>
+                  }
+                </code>
+              </pre>
+            </div>
+          ))
+        }
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default ResponseBody;
