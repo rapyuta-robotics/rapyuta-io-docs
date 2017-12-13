@@ -1,10 +1,11 @@
 import React from 'react';
-import Leftbar from './leftbar';
-import PageContents from './pageContents';
 import _ from 'lodash';
 import SwaggerSnippet from 'swagger-snippet';
 
-const RootComponent = ({ swaggerSpec, targets }) => {
+import Leftbar from './leftbar';
+import PageContents from './pageContents';
+
+const RootComponent = ({ swaggerSpec, targets, title }) => {
   const formattedSpec = _.groupBy(SwaggerSnippet.getSwaggerSnippets(swaggerSpec, targets), item =>
     _.replace(item.url, `${swaggerSpec.schemes[0]}://${swaggerSpec.host}`, ''));
 
@@ -24,7 +25,7 @@ const RootComponent = ({ swaggerSpec, targets }) => {
           </div>
           <div id="pageContents">
             <div className="page-header">
-              <h1>Rapyuta IO Core</h1>
+              <h1>{`${title} Documentation`}</h1>
             </div>
             <PageContents spec={formattedSpec} swaggerSpec={swaggerSpec} />
           </div>

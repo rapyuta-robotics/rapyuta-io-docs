@@ -19,6 +19,7 @@ require('./script/prism-javascript');
 const config = require('./config.json');
 
 const swaggerSpecLink = config.SPEC_ENDPOINT;
+const documentTitle = config.TITLE;
 const targets = ['shell_curl', 'go_native', 'python_python3', 'c_libcurl', 'javascript_xhr'];
 
 // const schemaTypesToPlaceholder = {
@@ -312,12 +313,11 @@ const index = async () => {
     const renderedHtml = _.replace(
       templateContents,
       '<!-- root_component_mount -->',
-      ReactDOMServer.renderToString(<RootComponent swaggerSpec={spec} targets={targets} />),
+      ReactDOMServer.renderToString(<RootComponent swaggerSpec={spec} targets={targets} title={documentTitle} />),
     );
     console.log('path:', path.join(__dirname, 'build/index.html'));
     fs.writeFileSync(path.join(__dirname, 'build/index.html'), renderedHtml);
     console.log('File written successfully');
-    // const swaggerHtml = swaggerSuccessCallback(api);
   } catch (err) {
     console.error(err);
   }

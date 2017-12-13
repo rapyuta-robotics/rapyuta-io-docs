@@ -1,30 +1,22 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 
-class Leftbar extends Component {
-  render() {
-    const { swaggerSpec, spec } = this.props;
-    const sidebarArray = [];
+const Leftbar = ({ spec, swaggerSpec }) => {
+  const sidebarArray = _.map(spec, (resultSpecItem, specKey) =>
+    _.map(resultSpecItem, ({ method }, idx) => {
+      const params = _.groupBy(swaggerSpec.paths[specKey][method.toLowerCase()].parameters, 'in');
 
-    _.each(spec, (resultSpecItem, specKey) => {
-      _.each(resultSpecItem, (resultItem) => {
-        const {
-          method, description, url, snippets,
-        } = resultItem;
-
-        const params = _.groupBy(swaggerSpec.paths[specKey][method.toLowerCase()].parameters, 'in');
-
-        sidebarArray.push(<li>
+      return (
+        <li key={`${specKey}_${idx}`}>
           <a href={`#${method}_${specKey}`}>
             <span className={`methodSpan ${method.toLowerCase()}`}>{method}</span>
             {specKey}
           </a>
-                          </li>);
-      });
-    });
+        </li>
+      );
+    }));
 
-    return <p>{sidebarArray}</p>;
-  }
-}
+  return <p>{sidebarArray}</p>;
+};
 
 export default Leftbar;

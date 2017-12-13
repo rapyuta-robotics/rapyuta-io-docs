@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import Prism from 'prismjs';
 
 import Parameter from './parameter';
 import RequestBody from './requestBody';
 import ResponseBody from './responseBody';
 
-export default class Contents extends Component {
-  render() {
-    const { spec, swaggerSpec } = this.props;
-    const pageContents = [];
+const Contents = ({ spec, swaggerSpec }) => {
+  const pageContents = _.map(spec, (resultSpecItem, specKey) =>
+    _.map(resultSpecItem, (resultItem) => {
+      const {
+        method, description, url, snippets,
+      } = resultItem;
+      const params = _.groupBy(swaggerSpec.paths[specKey][method.toLowerCase()].parameters, 'in');
 
-    _.each(spec, (resultSpecItem, specKey) => {
-      _.each(resultSpecItem, (resultItem) => {
-        const {
-          method, description, url, snippets,
-        } = resultItem;
-        const params = _.groupBy(swaggerSpec.paths[specKey][method.toLowerCase()].parameters, 'in');
-
-        pageContents.push(<div className="apiItem" id={`${method}_${specKey}`}>
+      return (
+        <div className="apiItem" id={`${method}_${specKey}`}>
           <h3 className="apiItemHead">
             <span className={`methodSpan ${method.toLowerCase()}`}>{method}</span>
             {specKey}
@@ -30,122 +28,77 @@ export default class Contents extends Component {
           </p>
 
           <p>
-            {_.has(params, 'path') ? (
-              <Parameter paramArray={params.path} paramType="Path" />
-              ) : null}
+            {_.has(params, 'path') ? <Parameter paramArray={params.path} paramType="Path" /> : null}
             {_.has(params, 'query') ? (
               <Parameter paramArray={params.query} paramType="Query" />
-              ) : null}
+            ) : null}
             {_.has(params, 'body') ? (
               <RequestBody paramArray={params.body} paramType="Body" />
-              ) : null}
+            ) : null}
             {
               <ResponseBody
                 responses={swaggerSpec.paths[specKey][method.toLowerCase()].responses}
               />
-              }
+            }
           </p>
 
           <div className="apiCodeEmbed">
             <ul>
-              <li className="tabHeaderItem active" data-id="0">
-                  Shell
-              </li>
-              <li className="tabHeaderItem" data-id="1">
-                  Go
-              </li>
-              <li className="tabHeaderItem" data-id="2">
-                  Python
-              </li>
-              <li className="tabHeaderItem" data-id="3">
-                  C
-              </li>
-              <li className="tabHeaderItem" data-id="4">
-                  Javascript
-              </li>
+              {_.map(
+                {
+                  bash: 'Shell',
+                  go: 'Go',
+                  python: 'Python',
+                  clike: 'C',
+                  javascript: 'Javascript',
+                },
+                (lang, idx, obj) => {
+                  const keys = Object.keys(obj);
+                  return (
+                    <li className="tabHeaderItem active" data-id={`${keys.indexOf(idx)}`}>
+                      {lang}
+                    </li>
+                  );
+                },
+              )}
             </ul>
 
             <div>
-              <div className="tabContentItem active">
-                <pre>
-                  <code>
-                    {_.replace(
-                        Prism.highlight(
-                          decodeURIComponent(snippets[0].content),
-                          Prism.languages.bash,
-                        ),
-                        'undefinedundefined',
-                        '&lt;HOST&gt;:&lt;PORT&gt;',
-                      )}
-                  </code>
-                </pre>
-              </div>
-
-              <div className="tabContentItem">
-                <pre>
-                  <code>
-                    {_.replace(
-                        Prism.highlight(
-                          decodeURIComponent(snippets[1].content),
-                          Prism.languages.go,
-                        ),
-                        'undefinedundefined',
-                        '&lt;HOST&gt;:&lt;PORT&gt;',
-                      )}
-                  </code>
-                </pre>
-              </div>
-
-              <div className="tabContentItem">
-                <pre>
-                  <code>
-                    {_.replace(
-                        Prism.highlight(
-                          decodeURIComponent(snippets[2].content),
-                          Prism.languages.python,
-                        ),
-                        'undefinedundefined',
-                        '&lt;HOST&gt;:&lt;PORT&gt;',
-                      )}
-                  </code>
-                </pre>
-              </div>
-
-              <div className="tabContentItem">
-                <pre>
-                  <code>
-                    {_.replace(
-                        Prism.highlight(
-                          decodeURIComponent(snippets[3].content),
-                          Prism.languages.clike,
-                        ),
-                        'undefinedundefined',
-                        '&lt;HOST&gt;:&lt;PORT&gt;',
-                      )}
-                  </code>
-                </pre>
-              </div>
-
-              <div className="tabContentItem">
-                <pre>
-                  <code>
-                    {_.replace(
-                        Prism.highlight(
-                          decodeURIComponent(snippets[4].content),
-                          Prism.languages.javascript,
-                        ),
-                        'undefinedundefined',
-                        '&lt;HOST&gt;:&lt;PORT&gt;',
-                      )}
-                  </code>
-                </pre>
-              </div>
+              {_.map(
+                {
+                  bash: 'Shell',
+                  go: 'Go',
+                  python: 'Python',
+                  clike: 'C',
+                  javascript: 'Javascript',
+                },
+                (lang, idx, obj) => {
+                  const keys = Object.keys(obj);
+                  return (
+                    <div className={`tabContentItem ${keys.indexOf(idx) === 0 ? 'active' : ''}`}>
+                      <pre>
+                        <code>
+                          {_.replace(
+                            Prism.highlight(
+                              decodeURIComponent(snippets[keys.indexOf(idx)].content),
+                              Prism.languages[idx],
+                            ),
+                            'undefinedundefined',
+                            '&lt;HOST&gt;:&lt;PORT&gt;',
+                          )}
+                        </code>
+                      </pre>
+                    </div>
+                  );
+                },
+              )}
             </div>
           </div>
-                          </div>);
-      });
-    });
+        </div>
+      );
+    }));
 
-    return <p>{pageContents}</p>;
-  }
-}
+  return <p>{pageContents}</p>;
+};
+
+export default Contents;
