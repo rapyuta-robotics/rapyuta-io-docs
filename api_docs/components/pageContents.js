@@ -40,6 +40,11 @@ const Contents = ({ spec, swaggerSpec }) => {
               )
             }
             {
+              _.has(params, 'header') && (
+                <Parameter paramArray={params.header} paramType="Header" />
+              )
+            }
+            {
               _.has(params, 'body') && (
                 <div>
                   <h3>Body params</h3>
