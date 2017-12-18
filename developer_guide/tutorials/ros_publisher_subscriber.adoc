@@ -11,7 +11,7 @@
 toc::[]
 
 This tutorial will show you how to deploy a basic ROS package with a ROS publisher running in the cloud and a ROS subscriber running on a Raspberry Pi. 
-The ROS publisher sits in a public git repository and is built into a docker container on the fly using `ros-indigo-catkin` build recipe.
+The ROS publisher sits in a public git repository and is built into a Docker container on the fly using `ros-indigo-catkin` build recipe.
 The ROS subscriber is assumed to be downloaded on Raspberry Pi and is launched when the package is deployed using rapyuta.io console UI or the
 link:../rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK].
 
@@ -105,9 +105,9 @@ image::ros_pub_sub/pkg_1.png["Package configuration."]
 
 5. The package will have two components: the talker running on the cloud and the listener running on the device:
 .. Talker component:
-... Select a name and a description for the `talker` componenet. Select `Cloud` as required runtime and check `Is ROS` box.
-... In this case, we will have one executable from a git repsitory. Therefore, select git and add this URL: https://github.com/khatribharat/ros-talker
-... This executable will publish a topic `/telemetry`. We want this topic to arrive to the device. Therefore, add the `/telemetry` topic with max QoS
+... Select a name and a description for the `talker` component. Select `Cloud` as required runtime and check `Is ROS` box.
+... In this case, we will have one executable from a git repository. Therefore, select git and add this URL: https://github.com/khatribharat/ros-talker
+... This executable will publish a topic `/telemetry`. We want this topic to arrive at the device. Therefore, add the `/telemetry` topic with max QoS
 (usually a telemetry topic would not have max QoS, take this as an example), and leave the scope as global.
 ... Finally, rapyuta.io needs to know what to launch from that repository, as it might have many packages and roslaunch files. Therefore, add
 the parameters `ROS_PKG` and `ROS_LAUNCH_FILE` with default values `talker` and `talker.launch` respectively. These values can be changed
@@ -116,12 +116,12 @@ while deploying the package.
 image::ros_pub_sub/pkg_2.png["Talker component."]
 
 .. Listener component:
-... Select a name and a description for the `talker` componenet. Select `Device` as required runtime and check `Is ROS` box.
+... Select a name and a description for the `talker` component. Select `Device` as required runtime and check `Is ROS` box.
 ... The code is already on the device. We simply have to tell rapyuta.io what to run on the device:
 
     source ~/catkin_ws/devel/setup.bach && roslaunch listener listener.launch
 
-... No other paratemers or topics need to be specified. rapyuta.io will expose the `/telemetry` topic here from the cloud via the cloud bridge.
+... No other parameters or topics need to be specified. rapyuta.io will expose the `/telemetry` topic here from the cloud via the cloud bridge.
 
 image::ros_pub_sub/pkg_3.png["Listener component."]
 
@@ -133,27 +133,37 @@ image::ros_pub_sub/pkg_ok.png["Package created successfully."]
 
 
 == Deploying the package
+There are two ways of deploying a package: using the rapyuta.io console UI or using the link:../rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK]
+
 === Deploy the package from the rapyuta.io console UI
+1. On the left bar, go to the *Catalog* tab and click on the package you just created.
+2. Click on `*Deploy package*.
+3. We do not need to select the plan, as we only have one. Click on *Get devices*. After some seconds, your online devices should appear. Then, click *Continue*.
+
+image::ros_pub_sub/dep_1.png["Devices available for the deployment."]
+
+4. For the `talker` component, nothing has to be done. For the `listener`, select the device you want to use.
+5. Also on the `listener` component, add two `ROS Setup Scripts`:
+
+    /opt/ros/kinetic/setup.bash
+    /opt/rapyuta/catkin/devel/setup.bash
+
+6. Click on create deployment.
+
+image::ros_pub_sub/dep_2.png["Selecting runtime and adding ROS Setup Scripts."]
+
+The deployment status indicator will blink yellow for some seconds. Once the deployment is finished, you should see it green.
+
+To check that everything is working, you can SSH into your device and do:
+
+
+
+
 === Deploy the package from the link:../rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK]
 
 
 
 = OLD
-
-== Creating the package
-
-TODO - Instert image
-image::ros_pub_sub/create_pkg.png["Creating the package"]
-
-== Deploying the package
-There are two possible ways of deplying the package: using the rapyuta.io console UI or the link:../rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK].
-
-=== Deploy the package from the rapyuta.io console UI
-The instructions to follow are the same as shown in the link:../../getting_started/deploying_package.html[package deployment page]. The only difference
-is that you should select different devides for the talker and listener components.
-
-image::ros_pub_sub/deploy_1.png["Available devices"]
-image::ros_pub_sub/deploy_2.png["Assign components to devices"]
 
 === Deploy the package from the link:../rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK]
 [source,python]
