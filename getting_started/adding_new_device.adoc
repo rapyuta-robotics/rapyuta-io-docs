@@ -16,7 +16,7 @@
 == Registering a new device
 === Generate a setup link for the device
 1. Sign in to https://console.rapyuta.io/login[rapyuta.io console UI].
-2. On the left bar, go to *Devices tab* and click on *Add New Device*.
+2. On the left bar, go to *Devices* tab and click on *Add New Device*.
 3. Type a name and a description of the new device.
 4. Click on *Add Device*. You will get your unique device setup link.
 5. Copy this link using *Copy to Clipboard* icon on the right.
@@ -39,7 +39,7 @@ If the setup is completed successfully, you should see the following output:
 
 image::adding_new_device/registered.png["rapyuta.io client properly installed."]
 
-After some seconds, your device will appear as online (green) on the rapyuta.io console UI. This is all you need to do to add your device
+After some seconds, your device will appear as online (green) on the rapyuta.io console UI (you might need to refresh the page). This is all you need to do to add your device
 to rapyuta.io. You can now manage your device from rapyuta.io console UI.
 
 [IMPORTANT]
