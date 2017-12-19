@@ -3,8 +3,13 @@
   Eg:
   ```
   export SPEC_ENDPOINT='https://device-manager.ep.rapyuta.io/v0/spec'
-  export REPLACE_STRING='http://localhost:5600undefined'`
   ```
+- Make sure that the spec follows Open API Specification and has the below fields
+    host - eg.`localhost:8080`
+    basePath - eg.`/`
+    schemes: {
+        'http',
+    }
 
 - Run the node script  
   `node index.js`
