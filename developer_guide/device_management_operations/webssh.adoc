@@ -12,7 +12,6 @@ service. To enable ssh on Ubuntu:
     sudo systemctl status ssh
 ....
 
-To start an SSH session to your device, you need to ensure that your device is online and has SSH service.
 Visit the *SSH* tab on your device details page, and your SSH session will be initiated.
 
 image::webssh.png["WebSSH"]
