@@ -18,3 +18,74 @@ We support building docker containers for the following platforms:
 
 * x86-64
 * ARMv7 (32-bit)
+
+
+== Using private repositories
+rapyuta.io Build Engine requires access to any Git repositories defined as source
+for a Package. *Source secrets* are used to provide the Build Engine with access
+to private repositories or repositories with self-signed or untrusted SSL
+certificates. You can create these secrets from _Source secrets_ tab.
+
+The following source secret types are supported. You can also use a
+combination of these configurations.
+
+
+* *Basic Authentication*
+
+Basic authentication requires either a combination of username and password,
+or a token to authenticate against the SCM server.
+
+
+* *SSH Key Authentication*
+
+SSH key based authentication requires a private SSH key. Follow this
+https://help.github.com/articles/connecting-to-github-with-ssh/[link] to add
+ SSH keys for your GitHub repository
+[NOTE]
+Build engine will fail for the SSH keys with passphrase. When creating your SSH
+key, leave the passphrase blank.
+
+* *Trusted Certificate Authorities*
+
+If your Git server uses a self-signed or untrusted certificate,
+ you can use this option.
+
+
+*Source URIs*
+
+You can specify your Git server url patterns using Source URI field. Build engine
+will match the Git source given in the Package definition to these source URIs and
+will then use the containing source secret to build the package.
+
+A URI pattern must consist of:
+
+* a valid scheme (*://, git://, http://, https:// or ssh://).
+
+* a host (* or a valid hostname or IP address optionally preceded by *.).
+
+* a path (/* or / followed by any characters optionally including * characters).
+
+In all of the above, a * character is interpreted as a wildcard.
+
+URI patterns only match Git source URIs which are conformant to RFC3986. For
+example, https://github.com/rapyuta/sample.git. They do not match the
+alternate SSH style that Git also uses. For example,
+git@github.com:rapyuta/sample.git. It is also not valid to include a
+username/password component in a URI pattern.
+
+[NOTE]
+Package source fields support only RFC3986 style and SSH style urls. It does not
+support git:// pattern
+
+If multiple secrets match the Git source of a particular Package, Build Engine will
+select the secret with the longest match. This allows for basic overriding. For
+example, secret with source URI https://\*.mycorp.com/* will match with any SCM
+server in the domain mycorp.com accessed over HTTPS but secret with source URI
+https://mydev1.mycorp.com/* will override configurations for mydev1.mycorp.com
+
+
+
+
+
+
+
