@@ -4,7 +4,7 @@ import _ from 'lodash';
 import getBodyParams from './schema2body';
 import Parameter from './parameterItem';
 
-const RequestBody = ({ paramArray, paramType }) => {
+const RequestBody = ({ paramArray, paramType, definitions }) => {
   let paramItems;
 
   if (_.has(paramArray[0], 'schema')) {
@@ -22,7 +22,7 @@ const RequestBody = ({ paramArray, paramType }) => {
               {description || ''}
               <br />
               <pre>
-                <code>{JSON.stringify(getBodyParams(paramArray[0].schema), null, 2)}</code>
+                <code>{JSON.stringify(getBodyParams(paramArray[0].schema, definitions), null, 2)}</code>
               </pre>
             </div>
           </div>

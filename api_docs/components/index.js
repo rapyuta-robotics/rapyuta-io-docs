@@ -6,14 +6,26 @@ import Leftbar from './leftbar';
 import PageContents from './pageContents';
 
 const RootComponent = ({ swaggerSpec, targets, title }) => {
-  const formattedSpec = _.groupBy(SwaggerSnippet.getSwaggerSnippets(swaggerSpec, targets), item =>
-    _.replace(item.url, `${swaggerSpec.schemes[0]}://${swaggerSpec.host}`, ''));
-
+  const swaggerSnippetsMock = [];
+  _.each(swaggerSpec.paths, (methodObject, methodPath) => {
+    _.each(methodObject, (methodJson, methodType) => {
+      swaggerSnippetsMock.push({
+        method: _.upperCase(methodType),
+        url: `${swaggerSpec.schemes[0]}://${swaggerSpec.host}${methodPath}`,
+        description: methodJson.description || 'No description available',
+      });
+    });
+  });
+  const formattedSpec = _.groupBy(
+    // SwaggerSnippet.getSwaggerSnippets(swaggerSpec, targets),
+    swaggerSnippetsMock,
+    item => _.replace(item.url, `${swaggerSpec.schemes[0]}://${swaggerSpec.host}`, ''),
+  );
   return (
     <div>
       <div id="header">
         <div id="headerInner">
-          <img id="headerLogo" src="/rr_logo.png" alt="Rapyuta robotics logo" />
+          <img id="headerLogo" src="../rr_logo.png" alt="Rapyuta robotics logo" />
         </div>
       </div>
       <div id="container">

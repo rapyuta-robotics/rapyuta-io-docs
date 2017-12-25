@@ -7,14 +7,15 @@ import request from 'async-request';
 import SwaggerParser from 'swagger-parser';
 
 import RootComponent from './components/index';
-
 const configuration = require('./config.json');
 
-function generateSpecPage(config) {
-  const swaggerSpecLink = config.SPEC_ENDPOINT;
-  const documentTitle = config.TITLE;
-  const targets = ['shell_curl', 'go_native', 'python_python3', 'c_libcurl', 'javascript_xhr'];
+const targets = ['shell_curl', 'go_native', 'python_python3', 'c_libcurl', 'javascript_xhr'];
 
+function generateSpecPage({
+  SPEC_ENDPOINT: swaggerSpecLink,
+  TITLE: documentTitle,
+  PATH: folderName,
+}) {
   const parseSwagger = async body =>
     new Promise((resolve, reject) => {
       SwaggerParser.parse(JSON.parse(body), (err, spec) => {
@@ -37,8 +38,6 @@ function generateSpecPage(config) {
       // Copy src to build
       fs.copySync(path.join(__dirname, 'src'), path.join(__dirname, 'build'));
       console.log('Copied src folder to build');
-
-      console.log('Swagger spec link', swaggerSpecLink);
 
       // Get swagger spec from url
       const { statusCode, error, body } = await request(swaggerSpecLink, {
@@ -75,8 +74,7 @@ function generateSpecPage(config) {
         '<!-- root_component_mount -->',
         ReactDOMServer.renderToString(<RootComponent swaggerSpec={spec} targets={targets} title={documentTitle} />),
       );
-      console.log('path:', path.join(__dirname, `build/${config.PATH}/index.html`));
-      fs.writeFileSync(path.join(__dirname, `build/${config.PATH}/index.html`), renderedHtml);
+      fs.writeFileSync(path.join(__dirname, `build/${folderName}/index.html`), renderedHtml);
       console.log('File written successfully');
     } catch (err) {
       console.error(err);
@@ -86,4 +84,4 @@ function generateSpecPage(config) {
   index();
 }
 
-_.forEach(configuration.specs, generateSpecPage);
+_.each(configuration.specs, generateSpecPage);

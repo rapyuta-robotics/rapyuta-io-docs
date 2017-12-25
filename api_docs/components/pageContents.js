@@ -7,13 +7,21 @@ import RequestBody from './requestBody';
 import ResponseBody from './responseBody';
 import CodeSnippets from './codeSnippets';
 
-const Contents = ({ spec, swaggerSpec }) => {
+const Contents = ({
+  spec,
+  swaggerSpec: {
+    paths,
+    schemes,
+    host,
+    definitions,
+  },
+}) => {
   const pageContents = _.map(spec, (resultSpecItem, specKey) =>
     _.map(resultSpecItem, (resultItem) => {
       const {
-        method, description, url, snippets,
+        method, description, url,
       } = resultItem;
-      const params = _.groupBy(swaggerSpec.paths[specKey][method.toLowerCase()].parameters, 'in');
+      const params = _.groupBy(paths[specKey][method.toLowerCase()].parameters, 'in');
 
       return (
         <div className="apiItem" id={`${method}_${specKey}`}>
@@ -23,7 +31,7 @@ const Contents = ({ spec, swaggerSpec }) => {
           </h3>
 
           <p className="apiDetails">
-            {_.replace(url, `${swaggerSpec.schemes[0]}://${swaggerSpec.host}`, '<HOST>:<PORT>')}
+            {_.replace(url, `${schemes[0]}://${host}`, '<HOST>:<PORT>')}
             <br />
             {description}
           </p>
@@ -49,7 +57,7 @@ const Contents = ({ spec, swaggerSpec }) => {
                 <div>
                   <h3>Body params</h3>
                   <div className="paramBody">
-                    <RequestBody paramArray={params.body} />
+                    <RequestBody paramArray={params.body} definitions={definitions} />
                   </div>
                 </div>
               )
@@ -58,11 +66,12 @@ const Contents = ({ spec, swaggerSpec }) => {
 
           <h3>Responses</h3>
           <ResponseBody
-            responses={swaggerSpec.paths[specKey][method.toLowerCase()].responses}
+            definitions={definitions}
+            responses={paths[specKey][method.toLowerCase()].responses}
           />
 
-          <h3>Code snippets</h3>
-          <CodeSnippets snippets={snippets} />
+          {/*<h3>Code snippets</h3>*/}
+          {/*<CodeSnippets snippets={snippets} />*/}
         </div>
       );
     }));

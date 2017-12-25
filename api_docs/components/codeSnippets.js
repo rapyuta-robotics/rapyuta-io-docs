@@ -45,6 +45,7 @@ const CodeSnippets = ({ snippets }) => (
               tabHeaderItem: true,
               active: (index === 0),
             })}
+            key={name}
             data-id={index}
           >
             {name}
