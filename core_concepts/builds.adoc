@@ -35,6 +35,7 @@ combination of these configurations.
 Basic authentication requires either a combination of username and password,
 or a token to authenticate against the SCM server.
 
+image::source_secrets_basic.png["Specifying a new source secret with basic authentication."]
 
 * *SSH Key Authentication*
 
@@ -44,6 +45,8 @@ https://help.github.com/articles/connecting-to-github-with-ssh/[link] to add
 [NOTE]
 Build engine will fail for the SSH keys with passphrase. When creating your SSH
 key, leave the passphrase blank.
+
+image::source_secrets_ssh.png["Specifying a new source secret with SSH key authentication."]
 
 * *Trusted Certificate Authorities*
 
