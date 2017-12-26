@@ -39,9 +39,9 @@ image::source_secrets_basic.png["Specifying a new source secret with basic authe
 
 * *SSH Key Authentication*
 
-SSH key based authentication requires a private SSH key. Follow this
-https://help.github.com/articles/connecting-to-github-with-ssh/[link] to add
- SSH keys for your GitHub repository
+SSH key based authentication requires a private SSH key. Follow these tutorials
+to add SSH keys for your https://help.github.com/articles/connecting-to-github-with-ssh/[GitHub] or
+https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html[Bitbucket] repository.
 [NOTE]
 Build engine will fail for the SSH keys with passphrase. When creating your SSH
 key, leave the passphrase blank.
@@ -50,15 +50,15 @@ image::source_secrets_ssh.png["Specifying a new source secret with SSH key authe
 
 * *Trusted Certificate Authorities*
 
-If your Git server uses a self-signed or untrusted certificate,
- you can use this option.
+If your Git server uses a self-signed or untrusted certificate, you can use this
+ option. Password or token fields are optional, if ca.crt is given.
 
 
-*Source URIs*
+*Source URI patterns*
 
-You can specify your Git server url patterns using Source URI field. Build engine
-will match the Git source given in the Package definition to these source URIs and
-will then use the containing source secret to build the package.
+You can specify your Git server url patterns using _Source URI patterns_ field.
+Build engine will match the Git source given in the Package definition to these
+source URIs and will then use the containing source secret to build the package.
 
 A URI pattern must consist of:
 
@@ -76,15 +76,12 @@ alternate SSH style that Git also uses. For example,
 git@github.com:rapyuta/sample.git. It is also not valid to include a
 username/password component in a URI pattern.
 
-[NOTE]
-Package source fields support only RFC3986 style and SSH style urls. It does not
-support git:// pattern
 
 If multiple secrets match the Git source of a particular Package, Build Engine will
 select the secret with the longest match. This allows for basic overriding. For
-example, secret with source URI https://\*.mycorp.com/* will match with any SCM
-server in the domain mycorp.com accessed over HTTPS but secret with source URI
-https://mydev1.mycorp.com/* will override configurations for mydev1.mycorp.com
+example, secret with source URI https://\*.rapyuta-robotics.com/* will match with any SCM
+server in the domain rapyuta-robotics.com accessed over HTTPS but secret with source URI
+https://ioconsole.rapyuta-robotics.com/* will override configurations for ioconsole.rapyuta-robotics.com
 
 
 
