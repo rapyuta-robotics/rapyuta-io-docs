@@ -35,7 +35,7 @@ combination of these configurations.
 Basic authentication requires either a combination of username and password,
 or a token to authenticate against the SCM server.
 
-image::source_secrets_basic.png["Specifying a new source secret with basic authentication."]
+image::source_secrets_basic.png["Specifying a new source secret with basic authentication.",650]
 
 * *SSH Key Authentication*
 
@@ -46,19 +46,22 @@ https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html[Bitb
 Build engine will fail for the SSH keys with passphrase. When creating your SSH
 key, leave the passphrase blank.
 
-image::source_secrets_ssh.png["Specifying a new source secret with SSH key authentication."]
+image::source_secrets_ssh.png["Specifying a new source secret with SSH key authentication.",650]
 
 * *Trusted Certificate Authorities*
 
 If your Git server uses a self-signed or untrusted certificate, you can use this
  option. Password or token fields are optional, if ca.crt is given.
 
+image::source_secrets_ca_crt.png["Specifying a new source secret with ca.crt",650]
 
 *Source URI patterns*
 
 You can specify your Git server url patterns using _Source URI patterns_ field.
 Build engine will match the Git source given in the Package definition to these
 source URIs and will then use the containing source secret to build the package.
+
+image::source_secrets_uri_patterns.png["URI patterns for source secrets",650]
 
 A URI pattern must consist of:
 
