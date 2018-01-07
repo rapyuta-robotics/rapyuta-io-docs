@@ -24,10 +24,10 @@ In this example, the package is already created using the rapyuta.io console UI.
 from rapyuta_io import Client
 client = Client()
 package_id = 'my_package_id'    // <1>
-plan_id = 'my_plan_id'          // <1>
-auth_token = 'my_auth_token'    // <1>
+plan_id = 'my_plan_id'          // <2>
+auth_token = 'my_auth_token'    // <3>
 pkg = client.get_package(package_id=package_id, plan_id=plan_id, auth_token=auth_token)
-deployment_id = 'my_deployment_id' // <1>
+deployment_id = 'my_deployment_id' // <4>
 deployment = pkg.provision(deployment_id=deployment_id)
 ----
 <1> 'package_id' is given while creating the package.
