@@ -44,7 +44,7 @@ Topics:
     File: builds
   - Name: Deployments
     File: deployments
-  - Name: Loggind and metrics
+  - Name: Logging and metrics
     File: logging_metrics
   - Name: Network layout and communication
     File: network_layout_communication
