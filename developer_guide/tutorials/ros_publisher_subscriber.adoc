@@ -119,7 +119,7 @@ image::ros_pub_sub/pkg_2.png["Talker component."]
 ... Select a name and a description for the `talker` component. Select `Device` as required runtime and check `Is ROS` box.
 ... The code is already on the device. We simply have to tell rapyuta.io what to run on the device:
 
-    source ~/catkin_ws/devel/setup.bach && roslaunch listener listener.launch
+    source ~/catkin_ws/devel/setup.bash && roslaunch listener listener.launch
 
 ... No other parameters or topics need to be specified. rapyuta.io will expose the `/telemetry` topic here from the cloud via the cloud bridge.
 
@@ -137,13 +137,13 @@ There are two ways of deploying a package: using the rapyuta.io console UI or us
 
 === Deploy the package from the rapyuta.io console UI
 1. On the left bar, go to the *Catalog* tab and click on the package you just created.
-2. Click on `*Deploy package*.
+2. Click on *Deploy package*.
 3. We do not need to select the plan, as we only have one. Click on *Get devices*. After some seconds, your online devices should appear. Then, click *Continue*.
 
 image::ros_pub_sub/dep_1.png["Devices available for the deployment."]
 
 4. For the `talker` component, nothing has to be done. For the `listener`, select the device you want to use.
-5. Also on the `listener` component, add two `ROS Setup Scripts`:
+5. Also on the `listener` component, add two `ROS Setup Scripts` (the order is important):
 
     /opt/ros/kinetic/setup.bash
     /opt/rapyuta/catkin/devel/setup.bash
@@ -152,20 +152,20 @@ image::ros_pub_sub/dep_1.png["Devices available for the deployment."]
 
 image::ros_pub_sub/dep_2.png["Selecting runtime and adding ROS Setup Scripts."]
 
-The deployment status indicator will blink yellow for some seconds. Once the deployment is finished, you should see it green.
+The deployment status indicator will blink yellow for some seconds. Once the deployment is finished, it will become green.
 
 To check that everything is working, you can SSH into your device and do:
 
 
+    source ~/catkin_ws/devel/setup.bash
+    rostopic echo /telemetry
+
+
+You should see "Hello world" messages with a timestamp attached at approximately 10 Hz.
 
 
 === Deploy the package from the link:../rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK]
 
-
-
-= OLD
-
-=== Deploy the package from the link:../rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK]
 [source,python]
 from rapyuta_io import Client
 client = Client()
@@ -175,8 +175,3 @@ auth_token = 'my_auth_token'    # change with your auth_token
 pkg = client.get_package(package_id=package_id, plan_id=plan_id, auth_token=auth_token)
 deployment = pkg.provision(deployment_id=deployment_id)
 deployment_info = pkg.get_deployment_info(deployment['deployment_id'])
-
-=== Adding a ROSBridge to this deployment
-If you want to add a ROSBridge from the service catalog to your application, you can do so by creating a new deployment of the ROSBridge package from the
-service catalog and adding the *DeploymentID* of your previous section in the dependent deployments section of the package creation step. The lifecycle
-of the entire deployment (ROSBridge + publisher + subscriber) through the new Deployment.
