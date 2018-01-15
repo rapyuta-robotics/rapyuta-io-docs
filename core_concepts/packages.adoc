@@ -40,7 +40,7 @@ These are modelled as environment variables owing to the cloud native design of 
 The key is injected into the IO Package execution environment and can be read by the code of any executable through standard environment lookup techniques (eg in python one could use `os.environ`)
 Environment variables for the entire component are to be listed while creating the package along with the default values. 
 [NOTE]
-The environment variables listed at the time of package creation are used in package introspection and the API, UI and SDK leverage this to ensure any required parameters are provided by the user at deployment time.
+The environment variables listed at the time of package creation can be allowed to bubble up using the *exposed environment variables* section of the plan and are used for introspection. The platform API, UI and SDK leverage this to ensure any required values are provided by the user at deployment time.
 
 ==== ROS configuration
 For ROS applications, each component can share a list of ROS topics, services, and actions with other components. The executables can subscribe to any
@@ -71,8 +71,8 @@ A package needs to be added to the service catalog before it can be deployed.
 All components are part of a specific plan. A package contains multiple of such plans. Plans allow the author of a package to offer different plans with
 different components and different configuration. When deploying a package, the user deploying the package chooses a plan for the package he/she wants to deploy.
 
-Every plan can expose a set parameters from its components. These parameters can be used when this package (the one that this plan belongs to) is used as
-a dependency. These parameters can be specified in the *exposed parameters* section of a plan.
+Every plan can expose a set environment variables from its components. These can be used when this package (the one that this plan belongs to) is used as
+a dependency. These variables can be allowed to bubble up to the plan level by specifying them in the *exposed environment variables* section of a plan.
 
 .*Example*
 [NOTE]
