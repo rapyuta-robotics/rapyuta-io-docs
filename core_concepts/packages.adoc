@@ -34,15 +34,22 @@ The TCP communication is encrypted via TLS.
 The required runtime of a package indicates if the component needs to run on the device or the cloud. The required runtime is optional and can be left
 empty in the cases where the component can run either on the device or the cloud.
 
-==== Parameters
-Each executable might have a list of parameters whose values differ per deployment. These parameters for the entire component are to be listed while
-creating the package along with the default values. When deploying the package, the values of these parameters can be tuned. 
-The values of these parameters are set as environment variables in the runtime and can be read by the executables of the component.
+==== Environment Variables
+The package creator may want to alter certain behavior of the program based on user/system provided values at run-time.
+These are modelled as environment variables owing to the cloud native design of rapyuta.io. 
+The key is injected into the IO Package execution environment and can be read by the code of any executable through standard environment lookup techniques (eg in python one could use `os.environ`)
+Environment variables for the entire component are to be listed while creating the package along with the default values. 
+[NOTE]
+The environment variables listed at the time of package creation are used in package introspection and the API, UI and SDK leverage this to ensure any required parameters are provided by the user at deployment time.
 
 ==== ROS configuration
 For ROS applications, each component can share a list of ROS topics, services, and actions with other components. The executables can subscribe to any
 topic or call services or actions that are exposed by other components (see the link:../overview/application_architecture.html[application architecture]).
 This configuration should be specified during the creation of the package. 
+
+===== Inbound configuration
+In the case where the package is going to be used with another package as a part of an included dependency or be bound at runtime the user must define a set of topics, actions and services that are allowed to be published into the package form the child package. Please refer to the design patterns section of the link:service_catalog.html[service catalog] docs for more details on composition using packages.
+
 
 [NOTE]
 The developer does not have to include the ROS master as an executable of a component. The platform manages running ROS master for the developer.
@@ -62,7 +69,7 @@ A package needs to be added to the service catalog before it can be deployed.
 
 === Plans
 All components are part of a specific plan. A package contains multiple of such plans. Plans allow the author of a package to offer different plans with
-different components and different configuration. When deploying a package, the deployer chooses a plan for the package he/she wants to deploy.
+different components and different configuration. When deploying a package, the user deploying the package chooses a plan for the package he/she wants to deploy.
 
 Every plan can expose a set parameters from its components. These parameters can be used when this package (the one that this plan belongs to) is used as
 a dependency. These parameters can be specified in the *exposed parameters* section of a plan.
@@ -76,18 +83,10 @@ plans at the time of deployment.
 As a guideline, applications that are very similar but differ in either configuration or might have/lack an extra component should be described as
 different plans within a package rather than describing them in different packages.
 
-=== Dependencies
-A package can depend on other packages from the service catalog. For example, your ROS application might need to use the ROSBridge suite to push data to a
-web interface. And you might have the ROSBridge suite as a different package in the service catalog. In this case, it can be specified as a dependency of
-the application.
-
-When a package *A* is added as a dependency for Package *B*, the *exposed parameters* and *exposed network endpoints* of *A*'s chosen
-plan are added as environment variables for the components of *B*. This ensures that the components of *B* can access the endpoints and parameters exposed
-by *A”*.
-
-[NOTE]
-The components of *B* might have parameters which are also stored as environment variables in the runtime. This leads to a possibility of collisions that
-rapyuta.io does not solve at this point in time.
 
 [TIP]
 Create your own packages following link:../getting_started/creating_new_package.html[these instructions].
+
+=== Dependencies and Composition
+Rapyuta.io allows for a number of design patterns that help you compose an application using a combination of one or more packages. Please refer to the design patterns section of the link:service_catalog.html[service catalog] docs for a overview.
+
