@@ -26,12 +26,34 @@ Additionally, imagine another package `visualizer` which uses the `map_generator
 same `map_generator` if it is configured as shared.
 
 == Lifecycle
-Each Deployment goes through multiple stages, at a single point it can be either:
+Each Deployment goes through multiple phases in its lifecycle. Phase is tightly coupled with start/stop of the deployment and it will only be updated at the time of starting or stopping the deployment. 
+For example while starting the deployment, if the deployment started successfully the phase will me marked as succeeded otherwise it will be marked as failed. When you stop the deployment, the phase will be marked as stopped.
 
-* In progress
-* Running
-* Stopped
-* Error
+Following are the phases of deloyment along with their description:
+
+* `In progress` Waiting for deployment to start.
+* `Succeeded`   Deployment started successfully.
+* `Failed`      Deployment not able to start due to some error
+* `Stopped`     Deployment stopped.
+
+You can also check for the live status of the deployment. Live status of the deployment gives the status of each component of the deployment. 
+Depending on the status of components of the deployment, the final status of deployment can be:
+
+* `In progress` Waiting for deployment to start.
+* `Running`     All the components of the deployment are running.
+* `Unknown`     Status of one or more components is unknown.
+* `Error`       One or more components are facing some error.
+* `Stopped`     Deployment stopped.
+
+In error state, the deployment status contains a error code which specifies the cause of error. The error code helps user and support team to quickly figure out the cause of error.
+In case of internal system errors, you should report the error to support team along with the error code you are getting.
+
+Following are the error codes and their description.
+
+* `DEP_E151` Device was unavailable for deployment
+* `DEP_E152` User application failed with errors
+* `DEP_E2XX` Internal system error. Used for the components deployed on the cloud
+* `DEP_E3XX` Internal system error. Used for the components deployed on device
 
 [TIP]
 To learn how to deploy packages, visit link:../getting_started/deploying_package.html[this page].
