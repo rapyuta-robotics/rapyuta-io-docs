@@ -17,8 +17,8 @@ const RootComponent = ({ swaggerSpec, targets, title }) => {
     });
   });
   const formattedSpec = _.groupBy(
-    // SwaggerSnippet.getSwaggerSnippets(swaggerSpec, targets),
-    swaggerSnippetsMock,
+    SwaggerSnippet.getSwaggerSnippets(swaggerSpec, targets),
+    // swaggerSnippetsMock,
     item => _.replace(item.url, `${swaggerSpec.schemes[0]}://${swaggerSpec.host}`, ''),
   );
   return (

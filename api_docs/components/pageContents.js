@@ -19,7 +19,7 @@ const Contents = ({
   const pageContents = _.map(spec, (resultSpecItem, specKey) =>
     _.map(resultSpecItem, (resultItem) => {
       const {
-        method, description, url,
+        method, description, url, snippets,
       } = resultItem;
       const params = _.groupBy(paths[specKey][method.toLowerCase()].parameters, 'in');
 
@@ -70,8 +70,8 @@ const Contents = ({
             responses={paths[specKey][method.toLowerCase()].responses}
           />
 
-          {/*<h3>Code snippets</h3>*/}
-          {/*<CodeSnippets snippets={snippets} />*/}
+          <h3>Code snippets</h3>
+          <CodeSnippets snippets={snippets} />
         </div>
       );
     }));
