@@ -34,25 +34,35 @@ image::ros_pub_sub/etcher.png["Flashing the SD card with Etcher"]
 
 [start=4]
 4. Insert the micro SD card on the Raspberry Pi micro SD card slot and power it.
-5. Connect the Ethernet port of the Raspberry Pi to a router that provides internet access. To
-know the assigned IP, you can connect a display and keyboard. We use `nmap` to know what is the device IP:
+5. Connect the Ethernet port of the Raspberry Pi to a router that provides internet access. 
 
+[TIP]
+====
+    You could use `nmap` to find the device IP:
     nmap -sn 1.2.3.0/24 // replace 1.2.3 for your local IP address.
+====
 
+[start=6]
 5. To make sure that everything is OK so far, try to ssh into the Raspberry Pi. Default user and password are `ubuntu`. You will be required
 to change the password as soon as you log in.
 
     ssh ubuntu@<device IP>
 
-6. Some more configuration is required to avoid problems in the future. Open with root permissions the file `/etc/default/locale` and add the following line:
+[TIP]
+Alternatively you may use as serial terminal to achieve the same result. 
+[CAUTION]
+The actual on-boarding requires connectivity to rapyuta.io to 
+
+[start=7]
+7. Some more configuration is required to avoid problems in the future. Open with root permissions the file `/etc/default/locale` and add the following line:
 
     LC_ALL=C
 
-6. In the `/etc/hosts` file of the Raspberry Pi, add the following line:
+8. In the `/etc/hosts` file of the Raspberry Pi, add the following line:
 
     127.0.1.1 ubuntu 
 
-7. Install ROS on the Raspberry Pi following the link:http://wiki.ros.org/kinetic/Installation/Ubuntu[official instructions]. We recommend installing
+9. Install ROS on the Raspberry Pi following the link:http://wiki.ros.org/kinetic/Installation/Ubuntu[official instructions]. We recommend installing
 *ROS-Base*.
 
 10. Currently, rapyuta.io does not install the components on the device. Therefore, you have to get and compile the `listener` package that will run on the device. For this:
