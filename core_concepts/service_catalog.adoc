@@ -10,14 +10,15 @@ of any group, only he/she would have access to this package.
 == Design Patterns with RapyutaIO
 
 == Overview
-Re-using code libraries is common in software development. Often in building complex robotic applications this may be practical and insufficient. 
+Reusing code libraries is common in software development. Often in building complex robotic applications this may be practical and insufficient. 
 Different parts of the application are developed in completely different process, using different languages and often by people form different domains
 For instance the front-end team may use ReactJS and are web developers, the onboard team uses C/C++ and are hardware experts and the navigation and task planning team may write software that lives in the cloud and use OpenCL, Python and Java. These teams have different needs, different development cycles and depend on complete running components (including the version and deployment life-cycle) for the final product to actually work.
 
-There are two key design patterns rapyuta IO enables.
+There are *two* key design patterns rapyuta IO enables.
 
-=== Including Components
-A package can include another package from the service catalog. For example, your fancy robot teleop package may require a real-time video gateway.
+=== Inheriting Packages
+A package can include another package from the service catalog. 
+For example, your fancy robot teleop package may require a real-time video gateway.
 It makes sense to abstract out the video streaming logic and all the underlying complex infrastructure into a `simple_video_gateway` use this for different kinds of robots - perhaps an AGV and a drone. For example You could also use this for a simple `AGV_teleop` that moves a AGV about in a 2D plane and simply include the `simple_video_gateway`. You could now focus on writing the `drone_teleop` code that controls the direction, altitude and  gimbal pose and simply include the `simple_video_gateway` and have that provide the required interfaces.
 
 Here you essentially provision an instance of `simple_video_gateway` every time you provision an instance of either `'agv_teleop` or `drone_teleop`. This may be a sane choice given the compute and latency requirements of typical infrastructure that handles video streaming. 

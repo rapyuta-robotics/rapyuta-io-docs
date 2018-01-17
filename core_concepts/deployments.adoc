@@ -1,7 +1,8 @@
 = Deployments
 
-A Deployment is a running instance of a package on the platform. A deployment can be triggered from the rapyuta.io console UI, link:../developer_guide/rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK], or directly using 
-REST API endpoints. While deploying a package, the platform is responsible for:
+A Deployment is a running instance of a package on the platform. 
+A deployment can be triggered from the rapyuta.io console UI, link:../developer_guide/rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK], 
+or directly using REST API endpoints. While deploying a package, the platform is responsible for:
 
 * Resolving all specified package dependencies for a package. 
 * Ensuring availability of all required catalog dependencies and then initializing and injecting them into the component.
@@ -13,7 +14,10 @@ also be checked from the rapyuta.io console UI. The deployment is considered com
 successfully.
 
 == Singleton Deployment
-In some packages, certain plans may support deployment in a Singleton configuration. A particular deployment may be a dependency for multiple other deployments that consume its data and services. This is indicated by the *_singeleton_* attribute of a plan being set to `True`. Please refer to the design patterns section of the link:service_catalog.html[service catalog] docs for a overview.
+In some packages, certain plans may support deployment in a Singleton configuration. 
+A particular deployment may be a dependency for multiple other deployments that consume its data and services.
+This is indicated by the *_singeleton_* attribute of a plan being set to `True`. 
+Please refer the design patterns section of the link:service_catalog.html[service catalog] docs for a overview.
 
 
 
