@@ -11,8 +11,8 @@ of any group, only he/she would have access to this package.
 
 == Overview
 Reusing code libraries is common in software development. Often in building complex robotic applications this may be practical and insufficient. 
-Different parts of the application are developed in completely different process, using different languages and often by people form different domains
-For instance the front-end team may use ReactJS and are web developers, the onboard team uses C/C++ and are hardware experts and the navigation and task planning team may write software that lives in the cloud and use OpenCL, Python and Java. These teams have different needs, different development cycles and depend on complete running components (including the version and deployment life-cycle) for the final product to actually work.
+Different parts of the application are developed in completely different processes, using different languages and often by people form different domains
+For instance the front-end team may use ReactJS and is comprised of mainly web developers, while the onboard team uses C/C++ and hosts many hardware experts and the navigation and task planning team may write software that lives in the cloud and use OpenCL, Python or Java. These teams have different needs, different development cycles and depend on complete running components (including the version and deployment life-cycle) for the final product to actually work.
 
 There are *two* key design patterns rapyuta IO enables.
 
@@ -30,7 +30,7 @@ Here you essentially provision an instance of `simple_video_gateway` every time 
 
 
 [NOTE]
-The components of *B* might have parameters which are also stored as environment variables in the runtime. This leads to a possibility of collisions that
+The components of *B* included in this way might have parameters which are also stored as environment variables in the runtime. This leads to a possibility of collisions that
 rapyuta.io does not solve at this point in time.
 
 ==== Singleton Packages 
@@ -38,9 +38,11 @@ The platform also allows you a choice to declare a package as a `singleton` supp
 
 === Dependant Deployments
 
-This is a common design pattern where you wish to control the life-cycle of a set of components independently and `bind` them at runtime. A good  example would be a `cloud_mapping_service` which is a component that maintains a global map of your warehouse, this is a long running service. Multiple robots use this to reason get information about the map environment around them and update it with obstacles that other may use. When a robot comes online its `cool_agv_bot` component connects to the `cloud_mapping_service` to the service and proceeds to do its missions.
+Dependant deployments are a common design pattern where you wish to control the life-cycle of a set of components independently and `bind` them at runtime. A good  example would be a `cloud_mapping_service` which is a component that maintains a global map of your warehouse, this is a long running service. Multiple robots use this to reason get information about the map environment around them and update it with obstacles that other may use. When a robot comes online its `cool_agv_bot` component connects to the `cloud_mapping_service` to the service and proceeds to do its missions.
+ Each running deployment is identified by a `deployment_id`. This is id is exposed to formulate dependencies on this deployment instance. 
 
-At this point you could start the catalog package you built called `cloud_mapping_service` and grab its deployment_id (the id of the running instance of the package). You can now make new instantiations of `cool_agv_bot` depend on the deployment_id of the `cloud_mapping_service`.
+A good example is a component that maintains a global map of your warehouse, called a `cloud_mapping_service`. This is a long running service.
+Multiple robots use this to retrieve information about the environment around them and update it with obstacles that other robots may use. When a robot comes online its `cool_agv_bot` component connects to the `cloud_mapping_service` service and proceeds to do its missions.
 
 At this point all topics, services and actions provided by `cloud_mapping_service` are locally available in each instance of `cool_agv_bot`. 
 However the *inboundROSinterfaces* field in the `cloud_mapping_service` require the developer to provide a whitelist of topics, actions and services allowed from the child deployments i.e (`cool_agv_bot`)
