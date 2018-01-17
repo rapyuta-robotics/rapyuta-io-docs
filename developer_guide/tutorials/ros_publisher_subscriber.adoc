@@ -59,7 +59,7 @@ to change the password as soon as you log in.
 
 .. On your device, create a catkin workspace under the `home` folder (both Catkin and Catkin tools are OK):
 
-    cd ~
+    cd $HOME
     mkdir -p catkin_ws/src
     cd catkin_ws/src
     source /opt/rapyuta/catkin/devel/setup.bash
@@ -102,7 +102,7 @@ The packages have to be created from the rapyuta.io Console UI:
 
 image::ros_pub_sub/pkg_1.png["Package configuration."]
 
-
+[start=5]
 5. The package will have two components: the talker running on the cloud and the listener running on the device:
 .. Talker component:
 ... Select a name and a description for the `talker` component. Select `Cloud` as required runtime and check `Is ROS` box.
@@ -112,8 +112,9 @@ image::ros_pub_sub/pkg_1.png["Package configuration."]
 ... Finally, rapyuta.io needs to know what to launch from that repository, as it might have many packages and roslaunch files. Therefore, add
 the parameters `ROS_PKG` and `ROS_LAUNCH_FILE` with default values `talker` and `talker.launch` respectively. These values can be changed
 while deploying the package.
-
++
 image::ros_pub_sub/pkg_2.png["Talker component."]
+
 
 .. Listener component:
 ... Select a name and a description for the `talker` component. Select `Device` as required runtime and check `Is ROS` box.
@@ -125,7 +126,7 @@ image::ros_pub_sub/pkg_2.png["Talker component."]
 
 image::ros_pub_sub/pkg_3.png["Listener component."]
 
-
+[start=6]
 6. Click on submit. After this, rapyuta.io will process and prepare the package for future deployments. If everything is OK you should see the
 status indicator as green on the package information page. 
 
@@ -142,6 +143,7 @@ There are two ways of deploying a package: using the rapyuta.io console UI or us
 
 image::ros_pub_sub/dep_1.png["Devices available for the deployment."]
 
+[start=4]
 4. For the `talker` component, nothing has to be done. For the `listener`, select the device you want to use.
 5. Also on the `listener` component, add two `ROS Setup Scripts` (the order is important):
 
