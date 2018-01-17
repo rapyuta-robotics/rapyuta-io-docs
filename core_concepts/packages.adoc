@@ -51,7 +51,8 @@ topic or call services or actions that are exposed by other components (see the 
 This configuration should be specified during the creation of the package. 
 
 ===== Inbound configuration
-In the case where the package is going to be used with another package as a part of an included dependency or be bound at runtime the user must define a set of topics, actions and services that are allowed to be published into the package form the child package. Please refer to the design patterns section of the link:service_catalog.html[service catalog] docs for more details on composition using packages.
+In the case where the package is going to be used with another package as a part of an included dependency or be bound at runtime the user must define a set of topics, actions and services that are allowed to be published into the package form the child package.
+Please refer to the design patterns section of the link:service_catalog.html[service catalog] docs for more details on composition using packages.
 
 
 [NOTE]
