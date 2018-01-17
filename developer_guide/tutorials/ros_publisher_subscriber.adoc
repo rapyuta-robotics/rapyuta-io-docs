@@ -51,7 +51,7 @@ to change the password as soon as you log in.
 [TIP]
 Alternatively you may use as serial terminal to achieve the same result. 
 [CAUTION]
-The actual on-boarding requires connectivity to rapyuta.io to 
+The actual on-boarding requires connectivity to rapyuta.io
 
 [start=7]
 7. Some more configuration is required to avoid problems in the future. Open with root permissions the file `/etc/default/locale` and add the following line:
