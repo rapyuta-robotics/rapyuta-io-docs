@@ -35,14 +35,15 @@ The required runtime of a package indicates if the component needs to run on the
 empty in the cases where the component can run either on the device or the cloud.
 
 ==== Environment Variables
-The package creator may want to alter certain behavior of the program based on user provided values at run-time.
+The package creator may want to allow the user to provide values at run-time that are passed on to the application.
 These are modelled and  injected into the IO Package execution environment -
  the provided *key* maps to the name of the ENVIRONMENT VARIABLE and the provided *value* maps to the corresponding value.
- and can be read by the code of any executable through standard environment lookup techniques (eg in python one could use `os.environ`)
+These can be read by the code of any executable through standard environment lookup techniques (eg in python one could use `os.environ`).
 Environment variables for the entire component are to be listed while creating the package along with the default values. 
 
 [NOTE]
-The environment variables listed at the time of package creation can be allowed to bubble up using the *exposed environment variables* section of the plan and are used for introspection. The platform API, UI and SDK leverage this to ensure any required values are provided by the user at deployment time.
+The environment variables listed at the time of package creation can be allowed to bubble up using the *exposed environment variables* section of the plan and are used for introspection. 
+The platform API, UI and SDK leverage this to ensure any required values are provided by the user at deployment time.
 
 ==== ROS configuration
 For ROS applications, each component can share a list of ROS topics, services, and actions with other components. The executables can subscribe to any
