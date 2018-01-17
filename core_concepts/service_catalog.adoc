@@ -21,7 +21,7 @@ including the version and deployment life-cycle). It is vital that the platform 
 There are two key design patterns rapyuta IO enables.
 
 === Package  Inheritance
-A package can *include* a package from the service catalog into another package to arrive at the resultant result.
+A package may *include* another package from the service catalog to achieve the required composition.
 
 For instance, a fancy *robot teleop* package may require a real-time video gateway.
 
