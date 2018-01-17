@@ -1,0 +1,3 @@
+[submodule "api_docs/openapi-codegen"]
+	path = api_docs/openapi-codegen
+	url = git@bitbucket.org:rapyutians/openapi-codegen.git
