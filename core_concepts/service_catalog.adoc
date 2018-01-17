@@ -17,20 +17,23 @@ For instance the front-end team may use ReactJS and are web developers, the onbo
 There are *two* key design patterns rapyuta IO enables.
 
 === Package  Inheritance
-A package can include another package from the service catalog. 
-For example, your fancy robot `teleop` package may require a real-time video gateway.
+A package can *include* a package from the service catalog into another package to arrive at the resultant result.
+
+For instance, a fancy *robot teleop* package may require a real-time video gateway.
 
 It makes sense to abstract out the video streaming logic and all the underlying complex infrastructure into a `simple_video_gateway` use this for different kinds of robots - perhaps an AGV and a drone.
-For example You could also use this for a simple `AGV_teleop` that moves a AGV about in a 2D plane and simply include the `simple_video_gateway`. You could now focus on writing the `drone_teleop` code that controls the direction, altitude and  gimbal pose and simply include the `simple_video_gateway` and have that provide the required interfaces.
 
-Here you essentially provision an instance of `simple_video_gateway` every time you provision an instance of either `'agv_teleop` or `drone_teleop`. This may be a sane choice given the compute and latency requirements of typical infrastructure that handles video streaming. 
+For example You could also use this for a simple `AGV_teleop` that moves a AGV about in a 2D plane and simply include the `simple_video_gateway`. 
+You could now focus on writing the `drone_teleop` code that controls the direction, altitude and  gimbal pose and simply include the `simple_video_gateway` and have that provide the required interfaces.
+
+Here you essentially provision an instance of `simple_video_gateway` every time you provision an instance of either `agv_teleop` or `drone_teleop`. This may be a sane choice given the compute and latency requirements of typical infrastructure that handles video streaming. 
 
 
 [NOTE]
 The components of *B* might have parameters which are also stored as environment variables in the runtime. This leads to a possibility of collisions that
 rapyuta.io does not solve at this point in time.
 
-==== Singleton Package
+==== Singleton Packages 
 The platform also allows you a choice to declare a package as a `singleton` suppose you had a fancy `video_streaming` algorithm that supported multiple endpoints and did all the muxing required you could use this. The package `fancy_video_gateway` would be instantiated only on the first requests and further requests would implicitly bind to the existing instance achieving the desired result. Without you having to explicitly control this. The actual mechanics would be handled similar to the Dependant deployment technique illustrated in the next section. The deployment binding id would be implicitly handled by the system
 
 === Dependant Deployments
