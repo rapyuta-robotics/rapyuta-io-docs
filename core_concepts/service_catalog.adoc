@@ -10,11 +10,15 @@ of any group, only he/she would have access to this package.
 == Design Patterns with RapyutaIO
 
 == Overview
-Reusing code libraries is common in software development. Often in building complex robotic applications this may be practical and insufficient. 
-Different parts of the application are developed in completely different processes, using different languages and often by people form different domains
-For instance the front-end team may use ReactJS and is comprised of mainly web developers, while the onboard team uses C/C++ and hosts many hardware experts and the navigation and task planning team may write software that lives in the cloud and use OpenCL, Python or Java. These teams have different needs, different development cycles and depend on complete running components (including the version and deployment life-cycle) for the final product to actually work.
+Often while building complex robotic applications different parts of the application are developed in completely different processes, 
+using different languages and often by people form different domains
+For instance the front-end team may use ReactJS and is comprised of mainly web developers, 
+while the onboard team uses C/C++ and hosts many hardware experts and 
+on the other hand the navigation and task planning team may write software that lives in the cloud and use OpenCL, Python or Java. 
+These teams have different needs, different development cycles and depend on *complete* running instances of each others components, 
+including the version and deployment life-cycle). It is vital that the platform allows for these scenarios.
 
-There are *two* key design patterns rapyuta IO enables.
+There are two key design patterns rapyuta IO enables.
 
 === Package  Inheritance
 A package can *include* a package from the service catalog into another package to arrive at the resultant result.
