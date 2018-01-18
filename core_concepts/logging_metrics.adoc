@@ -8,6 +8,9 @@ indexing the data.
 When a rapyuta.io package is deployed, the ROS logs from both the cloud deployment and the device deployment are combined and saved into the platform
 data store.
 
+[NOTE] 
+The delay in relaying, indexing and rendering logs in rapyuta.io could be as high as 5s. 
+
 image::logging_metrics.png["ROS logging architecture"]
 
 == Metric
@@ -20,6 +23,9 @@ the count, average, min, max, etc.
 
 The platform can collect metrics (humidity, wind speed, etc.) from a powered-on and connected device even when a rapyuta.io package deployment is not being
 executed. This could be useful to gather data and monitor state of a device.
+
+[NOTE] 
+The delay in relaying, indexing and rendering metrics in rapyuta.io could be as high as 5s. 
 
 [TIP]
 Follow link:../developer_guide/device_management_operations/device_metric_collection_visualization.html[these instructions] to collect and visualize your
