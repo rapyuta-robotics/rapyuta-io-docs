@@ -64,11 +64,13 @@ Topics:
 Name: Developer Guide
 Dir: developer_guide
 Topics:
-  #- Name: Tutorials
-  #  Dir: tutorials
-  #  Topics:
-  #    - Name: ROS publisher-subscriber
-  #      File: ros_publisher_subscriber
+  - Name: Tutorials
+    Dir: tutorials
+    Topics:
+      - Name: ROS publisher-subscriber
+        File: ros_publisher_subscriber
+      - Name: Depenedent Map Server
+        File: dependent_map_server
   - Name: Device management operations
     Dir: device_management_operations
     Topics:
