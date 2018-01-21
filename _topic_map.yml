@@ -69,7 +69,7 @@ Topics:
     Topics:
       - Name: ROS publisher-subscriber
         File: ros_publisher_subscriber
-      - Name: Depenedent Map Server
+      - Name: Dependent Map Server
         File: dependent_map_server
   - Name: Device management operations
     Dir: device_management_operations

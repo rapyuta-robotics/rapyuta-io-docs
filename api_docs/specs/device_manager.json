@@ -1863,13 +1863,11 @@
             "in":"query",
             "description":"Specifies the download type, either config zip or script",
             "name":"download_type",
-            "schema":{
-              "enum":[
+            "type":"string",
+            "enum":[
                 "zip",
                 "script"
-              ],
-              "type":"string"
-            }
+            ]
           }
         ],
         "tags":[

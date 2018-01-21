@@ -1,2 +1,2 @@
-= Dependant Deployment Map Server
+= Dependent Deployments - Map Server
 
