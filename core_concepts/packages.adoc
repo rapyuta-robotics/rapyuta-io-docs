@@ -34,15 +34,15 @@ The TCP communication is encrypted via TLS.
 The required runtime of a package indicates if the component needs to run on the device or the cloud. The required runtime is optional and can be left
 empty in the cases where the component can run either on the device or the cloud.
 
-==== Environment Variables
-The package creator may want to allow the user to provide values at run-time that are passed on to the application.
+==== Configuration Parameters
+The package author may want to allow the user to provide values at run-time that are passed on to the application.
 These are modelled and  injected into the IO Package execution environment -
  the provided *key* maps to the name of the ENVIRONMENT VARIABLE and the provided *value* maps to the corresponding value.
 These can be read by the code of any executable through standard environment lookup techniques (eg in python one could use `os.environ`).
-Environment variables for the entire component are to be listed while creating the package along with the default values. 
+Configuration Parameters for the entire component are to be listed while creating the package along with the default values. 
 
 [NOTE]
-The environment variables listed at the time of package creation can be allowed to bubble up using the *exposed environment variables* section of the plan and are used for introspection. 
+The environment variables listed at the time of package creation can be allowed to bubble up using the *exposed configuration parameters* section of the plan and are used for introspection. 
 The platform API, UI and SDK leverage this to ensure any required values are provided by the user at deployment time.
 
 ==== ROS configuration
@@ -92,5 +92,6 @@ different plans within a package rather than describing them in different packag
 Create your own packages following link:../getting_started/creating_new_package.html[these instructions].
 
 === Dependencies and Composition
-Rapyuta.io allows for a number of design patterns that help you compose an application using a combination of one or more packages. Please refer to the design patterns section of the link:service_catalog.html[service catalog] docs for a overview.
+Rapyuta.io allows for a number of design patterns that help you compose an application using a combination of one or more packages. 
+Please refer to the design patterns section of the link:service_catalog.html[service catalog] docs for a overview.
 
