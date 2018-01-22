@@ -87,7 +87,10 @@ image::dependent_map_server/get-devices-1.png[]
 Here is where you will finally add the map server as a dependent
 deployment. 
 
-First though, add the following 'ROS Setup Script': /opt/ros/kinetic/setup.bash.
+First, add the following scripts to 'ROS Setup Script' section. Order is important!
+
+    /opt/ros/kinetic/setup.bash
+    /opt/rapyuta/catkin/devel/setup.bash
 
 Now, add a dependent deployment and enter the id of the dynamic-map-server deployment
 that you noted above.
