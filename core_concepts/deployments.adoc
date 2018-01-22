@@ -1,5 +1,14 @@
 = Deployments
+:toc: macro
+:toc-title:
+:data-uri:
+:experimental:
+:prewrap!:
+:description:
+:keywords:
 
+toc::[]
+= Overview
 A Deployment is a running instance of a package on the platform. 
 A deployment can be triggered from the rapyuta.io console UI, link:../developer_guide/rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK], 
 or directly using REST API endpoints. While deploying a package, the platform is responsible for:
@@ -13,14 +22,6 @@ The platform handles the deployments requests asynchronously and provides REST A
 also be checked from the rapyuta.io console UI. The deployment is considered complete only when all the underlying components and dependencies are deployed
 successfully.
 
-== Singleton Deployment
-In some packages, certain plans may support deployment in a Singleton configuration. 
-A particular deployment may be a dependency for multiple other deployments that consume its data and services.
-This is indicated by the *_singeleton_* attribute of a plan being set to `True`. 
-Please refer the design patterns section of the link:service_catalog.html[service catalog] docs for a overview.
-
-
-
 == Lifecycle
 Each Deployment goes through multiple stages, at a single point it can be either:
 
@@ -31,3 +32,12 @@ Each Deployment goes through multiple stages, at a single point it can be either
 
 [TIP]
 To learn how to deploy packages, visit link:../getting_started/deploying_package.html[this page].
+
+
+=== Singleton Deployment
+Certain package link:packages.html#plans[plans] may need to be instantiated only once for a particular user/group. 
+The author can choose to use the *singleton* flag to indicate this while creating the package. 
+In these cases the only the first request to provision the chosen package plan results in a deployment being instantiated. 
+Subsequent calls do not re-create the deployment and only return the expected response that can be consumed by the caller. 
+
+Please refer the design patterns section of the link:service_catalog.html#dependant-deployments[service catalog] docs for a overview.
