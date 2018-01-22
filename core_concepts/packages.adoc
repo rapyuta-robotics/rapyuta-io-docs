@@ -11,33 +11,7 @@
 
 toc::[]
 
-= Packages
-A Package is the smallest unit of deployment in rapyuta.io. 
-A package is a composition of software components that can be deployed on devices, cloud or both.
-A package needs to be added to the service catalog before it can be deployed. 
-*A package may hold one or more link:#plans[plans]*
-
-
-== Plans
-Plans allow the author of a package to offer different plans with different components and different configuration. 
-
-When deploying a package, the user deploying the package chooses a plan for the package he/she wants to deploy.
-*A plan can be composed of multiple link:#components[components].*
-
-
-For instance, the author of a ROS talker-listener package can offer two plans, one with a ROSBridge and one without,
-the user of the package can choose one of these plans at the time of deployment.
-
-[TIP]
-As a guideline, applications that are very similar but differ in either configuration or might have/lack an 
-extra component should be described as different plans within a package rather than describing them in different packages.
-
-=== Components
-*A component is a list of link:#executables[executables]* that need to be deployed in unison at a desired target link:#required-runtime[runtime] That means that these executables can share a specified file path and can
-communicate via IPC. Also, any executable listening on a port can be accessed by its sibling executables via `localhost`.
-
-[TIP]
-Create your own packages following link:../getting_started/creating_new_package.html[these instructions].
+== Terminology
 
 ==== Executables
 An Executable refers to a runnable element. This runnable element can be:
@@ -47,20 +21,33 @@ An Executable refers to a runnable element. This runnable element can be:
 
 [[core_concepts-packages-component]]
 
+=== Components
+*A component is a list of link:#executables[executables]* that need to be deployed in unison at a desired target link:#required-runtime[runtime] That means that these executables can share a specified file path and can
+communicate via IPC. Also, any executable listening on a port can be accessed by its sibling executables via `localhost`.
 
-==== Exposing Network Endpoints from a component
+[TIP]
+Create your own packages following link:../getting_started/creating_new_package.html[these instructions].
+
+== Packages
+A Package is the smallest unit of deployment in rapyuta.io. 
+A package is a composition of software components that can be deployed on devices, cloud or both.
+A package needs to be added to the service catalog before it can be deployed. 
+Packages support multiple configurations by using link:#plans[plans]. *A package must hold at least one plan.*
+
+
+=== Exposing Network Endpoints from a component
 Components can expose network endpoints. The configuration of these endpoints (exposed port, protocol to be used, etc.) 
 can be specified during the creation of the package. The supported protocols are TLS/SNI and HTTP[S].
 
 [NOTE]
 The TLS/SNI endpoint uses link:https://en.wikipedia.org/wiki/Server_Name_Indication[SNI] headers for routing the request to the desired backend.
 
-==== Required Runtime
+=== Required Runtime
 The required runtime of a package indicates where the package can run on the device or the cloud. 
 This allows the author to decouple the act of defining a component independent of the runtime and allowing that choice to be made at provision time.
 The required runtime is optional and can be left empty in the cases where the component can run either on the device or the cloud.
 
-==== Configuration Parameters
+=== Configuration Parameters
 The package author may want to allow the user to provide values at run-time that are passed on to the application component.
 
 Each parameter comprises of a key, a value and a description. 
@@ -77,7 +64,7 @@ This information is also used by the SDK, API, Console-UI and in link:service_ca
 [NOTE]
 Configuration Parameters for the entire component are to be listed while creating the package along with the default values. 
 
-==== ROS Configuration
+=== ROS Configuration
 For ROS applications, each component can share a list of ROS topics, services, and actions with other components. The executables can subscribe to any
 topic or call services or actions that are exposed by other components (see the link:../overview/application_architecture.html[application architecture]).
 This configuration should be specified during the creation of the package. 
@@ -94,7 +81,7 @@ values are `max`, `hi`, `med`, `low`.
 [IMPORTANT]
 QoS is proportional to the latency of the message: the average latency of `max` QoS topics is higher than of `med` topics.
 
-==== Inbound ROS Interfaces
+=== Inbound ROS Interfaces
 In the case where the package is going to be used with another package as a part of an included dependency or be bound at runtime,
 the user must define a set of topics, actions and services that are allowed to be published into the package form the child package.
 Please refer to the design patterns section of the link:service_catalog.html#dependant-deployments[service catalog] docs for more details on composition using packages.
