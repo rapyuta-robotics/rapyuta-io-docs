@@ -10,26 +10,35 @@
 toc::[]
 
 The service catalog is a curated collection of public and private packages. It can be used to accelerate development by focusing on modularity and
-reusability of packages. The design patterns section helps get you started with composing your applications.
+reusability of packages. The design patterns section helps get you started with designing packages using composition through service catalog.
 
 [NOTE]
 If a user creates a package in a group, all members of this group have access to this package. If he/she were to create a package outside the scope
 of any group, only he/she would have access to this package.
 
-== Design Patterns with Rapyuta.IO
+== Design Patterns with rapyuta.io
 
 == Overview
 Often while building complex robotic applications, different parts of the application are developed in completely different processes, 
-using different languages and often by people form different domains.
-For instance, the front-end team may use ReactJS, the device development team uses C/C++, and the navigation and task planning team may write software that lives in the cloud and use OpenCL, Python or Java. 
-These teams have different needs, different development cycles and depend on *complete* running versioned instances of each others components. 
+using different languages and often by people from different domains.
+For instance, the front-end team may use ReactJS, the device development team may use C/C++, and the navigation and task planning team may write software that lives in the cloud and use OpenCL, Python or Java.
+These teams have different needs, different development cycles and depend on *complete* running versioned instances of each others' components.
 It is vital that the platform allows for these scenarios.
+
+== Package Binding
+The service catalog provides package composition through the concept of _package binding_. When a package depends on another package or deployment, rapyuta.io internally uses _package bindings_ to link dependant package with its dependencies.
+
+A _package binding_ is basically a set of parameters exposed by a package for consumption by its dependencies, rapyuta.io then implicitly injects these parameters as environment variables in dependant packages.
+
+For example, a *database* package would expose its *_host_*, *_port_*, *_user_*, *_password_* and *_database name_* as package binding for dependant packages to utilize the database. Now when a *robot_management* package uses the *database* package as its dependency, rapyuta.io
+will automatically inject the *database* package's _package binding_ as environment variables in *robot_management* package. This implies  *robot_management* package's executables will be able to consume the *database* package's *_host_*, *_port_*, *_user_*, *_password_* and *_database name_* as environment variables.
+We then say that the *robot_management* package *_binds_* to the *database* package.
 
 rapyuta.io enables two key design patterns.
 
-=== Package  Inheritance
-A package may *include* another package from the service catalog when being declared to achieve the required composition. 
-This is the suggested pattern when the developer needs to compose the desired behavior from one or more packages 
+=== Package  Includes
+A package may *include* another package from the service catalog during package creation to achieve the required composition.
+This is the suggested design pattern when the developer needs to compose the desired behavior from one or more packages
 and requires tight one-to-one coupling between the packages and their instantiation and life-cycle. 
 
 image::package_include.png["Catalog Include"]
@@ -57,12 +66,12 @@ the author can choose to declare the package plan as a *singleton*.
 The platform would only instantiate the package plan on the first deployment request. 
 
 ====
-When a package *PkgA* is included in Package *PkgB*, the *exposed configuration parameters* and *exposed network endpoints* of *PkgA*'s 
+When a package *PkgA* is included in package *PkgB*, the *exposed configuration parameters* and *exposed network endpoints* of *PkgA*'s
 chosen plans are added as environment variables for the components of *PkgB*. 
 This ensures that the components of *PkgB* can access the endpoints and parameters exposed by *PkgA*.
 
 [WARNING]
-The components of *B* might have configuration parameters which are also stored as environment variables in the runtime. 
+The components of *PkgB* might have configuration parameters which are also stored as environment variables in the runtime.
 This leads to a possibility of collisions that rapyuta.io does not solve at this point in time.
 
 
@@ -72,14 +81,14 @@ This leads to a possibility of collisions that rapyuta.io does not solve at this
 "Dependant Deployments" is a design pattern which allows the user to control the life-cycle of a set of components independently and *bind* 
 them at the package instantiation.
 This is the suggested pattern when the developer needs to compose the desired behavior by loosely coupling packages that follow different life-cycles,
- for instance the coupling between multiple short lived agents and a long running/stateful shared (many-to-one).
+ for instance the coupling between multiple short lived agents and a long running/stateful shared service (many-to-one).
 
 image::dependant_deploy.png["Dependant Deployment"]
 
 A good example is a component that maintains a global map of your warehouse, called a *cloud_mapping_service*. This is a long running service.
 Multiple robots use this to retrieve information about the environment around them and update it with obstacles that other robots may use. 
-When a robot comes online its *agv_bot* component connects to the *cloud_mapping_service* service and proceeds to do its missions.
-Each running deployment is identified by a *deployment_id*. This is id is exposed to formulate dependencies on this deployment instance. 
+When a robot comes online its *agv_bot* component binds to the *cloud_mapping_service* service and proceeds to do its missions.
+Each running deployment is identified by a *deployment_id*. This *deployment id* is exposed to formulate dependencies on this deployment instance.
 
 At this point *all* topics, services and actions provided by *cloud_mapping_service* are locally available in every instance of *agv_bot*. 
 However the *inboundROSinterfaces* field in the *cloud_mapping_service* require the developer to provide a whitelist of topics, 
