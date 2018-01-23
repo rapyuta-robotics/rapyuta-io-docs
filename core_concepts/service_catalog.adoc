@@ -9,23 +9,25 @@
 
 toc::[]
 
-The service catalog is a curated collection of public and private packages. It can be used to accelerate development by focusing on modularity and
-reusability of packages. The design patterns section helps get you started with composing your applications.
+The service catalog is a curated collection of public and private packages. It can be used to accelerate development by
+focusing on modularity and re-usability of packages. The design patterns section helps get you started with composing
+your applications.
 
 [NOTE]
-If a user creates a package in a group, all members of this group have access to this package. If he/she were to create a package outside the scope
-of any group, only he/she would have access to this package.
+If a user creates a package in a group, all members of this group have access to this package. If he/she were to create
+a package outside the scope of any group, only he/she would have access to this package.
 
 == Design Patterns with Rapyuta.IO
 
 == Overview
-Often while building complex robotic applications, different parts of the application are developed in completely different processes, 
-using different languages and often by people form different domains.
-For instance, the front-end team may use ReactJS, the device development team uses C/C++, and the navigation and task planning team may write software that lives in the cloud and use OpenCL, Python or Java. 
-These teams have different needs, different development cycles and depend on *complete* running versioned instances of each others components. 
-It is vital that the platform allows for these scenarios.
+Often, while building complex robotic applications, different parts of the application are developed in completely
+different engineering processes, using different languages and often by people form different domains.
+For instance, the front-end team may use ReactJS, the device development team uses C/C++, and the navigation/task
+planning team may write software that lives in the cloud and use OpenCL, Python or Java. These teams have different
+development cycles and depend on *complete* running versioned instances of each others components.
 
-rapyuta.io enables two key design patterns.
+Rapyuta.io enables developers to achieve the above by allowing for modularity in application design. Two key design
+patterns listed below to facilitate modular application architecture.
 
 === Package  Inheritance
 A package may *include* another package from the service catalog when being declared to achieve the required composition. 
@@ -39,11 +41,11 @@ For instance, a fancy *robot_teleop* package may require a "real-time video gate
 It would be useful to abstract out the video streaming logic and all the underlying complex infrastructure into a *simple_video_gateway* 
 and re-use this for different kinds of robots - perhaps an AGV and a drone.
 
-The developer of the *agv_teleop* package can quickly build a package that controls the motion of an AGV in a 2D plane and 
-include the *simple_video_gateway*  without having to deal with the added complexities of real-time video streaming.
+The developer of the *agv_teleop* package can quickly build a package that controls the motion of an AGV in a 2D plane
+and include the *simple_video_gateway*  without having to deal with the added complexities of real-time video streaming.
 
-Meanwhile the developer of a more complex  *drone_teleop* package can focus on the complexities associated with getting precise direction, altitude and  gimbal pose control 
-and include the *simple_video_gateway* to achieve the desired result.
+Meanwhile the developer of a more complex *drone_teleop* package can focus on the complexities associated with getting
+precise direction, altitude and gimbal pose control and include the *simple_video_gateway* to achieve the desired result.
 
 
 On every deployment request of either *agv_teleop* or *drone_teleop* the rapyuta.io platform implicitly provisions a new instance of *simple_video_gateway*.
@@ -64,7 +66,6 @@ This ensures that the components of *PkgB* can access the endpoints and paramete
 [WARNING]
 The components of *B* might have configuration parameters which are also stored as environment variables in the runtime. 
 This leads to a possibility of collisions that rapyuta.io does not solve at this point in time.
-
 
 
 === Dependant Deployments
