@@ -24,9 +24,9 @@ Often, while building complex robotic applications, different parts of the appli
 different engineering processes, using different languages and often by people from different domains.
 For instance, the front-end team may use ReactJS, the device development team may use C/C++, and the navigation/task
 planning team may write software that lives in the cloud and use OpenCL, Python or Java. These teams have different
-development cycles and depend on *complete* running versioned instances of each others' components.
+development cycles and depend on *complete* running versioned instances of each other's components.
 
-Rapyuta.io enables developers to achieve the above by allowing for modularity in application design. Two key design
+rapyuta.io enables developers to achieve the above by allowing for modularity in application design. Two key design
 patterns are listed link:#design-patterns[below] facilitate modular application architecture. These two patterns rely
 on the concept of _Package Bindings_ explained below.
 
@@ -40,7 +40,7 @@ link:../core_concepts/packages.html#exposing-network-endpoints-from-a-component[
 package for consumption by its dependencies, rapyuta.io then implicitly injects these parameters as environment
 variables in dependent packages.
 
-For example, a *database* package whas an exposed network endpoint named *HOST_AND_PORT* (the network endpoint also
+For example, a *database* package has an exposed network endpoint named *HOST_AND_PORT* (the network endpoint also
 includes the port) and exposed parameters *USER*, *PASSWORD*, and *DATABASE_NAME* for dependent packages to utilize the
 database as a dependency. Now, when a *robot_management* package uses the *database* package as its dependency,
 rapyuta.io will automatically inject the *database* package's _package bindings_ as environment variables in the
@@ -60,7 +60,7 @@ image::package_include.png["Catalog Include"]
 For instance, a *robot_teleop* package may require a "real-time video gateway".
 
 It would be useful to abstract out the video streaming logic and all the underlying complex infrastructure into a *simple_video_gateway* 
-and re-use this for different kinds of robots - perhaps an AGV and a drone.
+and re-use this for different kinds of robots - perhaps an link:https://en.wikipedia.org/wiki/Automated_guided_vehicle[AGV] and a drone.
 
 The developer of the *agv_teleop* package can quickly build a package that controls the motion of an AGV in a 2D plane
 and include the *simple_video_gateway*  without having to deal with the added complexities of real-time video streaming.

@@ -67,9 +67,9 @@ link:#core_concepts-packages-component[Components] can expose network endpoints.
 are TLS/SNI and HTTP[S].
 
 
-During deployment, rapyuta.io creates an accessible network endpoint for each exposed network endpoint automatically.
+During deployment, rapyuta.io creates an accessible public network endpoint for each exposed network endpoint automatically.
 The actual link:https://en.wikipedia.org/wiki/Fully_qualified_domain_name[FQDN] of this endpoint can be observed from
-the deployment page of the console.
+the deployment page of the console UI.
 
 [NOTE]
 The TLS/SNI endpoint uses link:https://en.wikipedia.org/wiki/Server_Name_Indication[SNI] headers for routing the
@@ -134,7 +134,7 @@ Please refer to the design patterns section on the
 link:service_catalog.html#dependant-deployments[service catalog] for more details on composition using packages.
 
 == Dependencies and Composition
-Rapyuta.io allows for a number of design patterns that help you compose an application using a combination of one or
+rapyuta.io allows for a number of design patterns that help you compose an application using a combination of one or
 more packages. Please refer to the design patterns section of the
 link:service_catalog.html#design-patterns-with-rapyuta-io[service catalog] docs for an overview.
 
