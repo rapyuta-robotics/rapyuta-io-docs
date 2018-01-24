@@ -36,9 +36,9 @@ another package or deployment, rapyuta.io internally uses _package bindings_ to 
 dependencies.
 
 A _package binding_ is a set of link:../core_concepts/packages.html#exposed-parameters[Exposed Parameters] and
-link:../core_concepts/packages.html#exposing-network-endpoints-from-a-component[Exposed Network Endpoint] exposed by a
-package for consumption by its dependencies, rapyuta.io then implicitly injects these parameters as environment
-variables in dependent packages.
+link:../core_concepts/packages.html#exposing-network-endpoints-from-a-component[Exposed Network Endpoints] exposed by a
+package for consumption by its dependencies, rapyuta.io then implicitly injects these parameters and endpoints as
+environment variables in dependent packages.
 
 For example, a *database* package has an exposed network endpoint named *HOST_AND_PORT* (the network endpoint also
 includes the port) and exposed parameters *USER*, *PASSWORD*, and *DATABASE_NAME* for dependent packages to utilize the
