@@ -15,7 +15,7 @@ image::creating_users_groups/register.png["Register page - creating a new user"]
 . Verification email will be sent to the Email address entered. To proceed further, you will have to click on the
 verification link in the email.
 . After the email address verification is done, you can login with your Email address and Password.
-. Since you are visiting rapyuta.io console for the first time with your credentials, you will have to enter the
+. Since you would be visiting rapyuta.io console for the first time with your credentials, you will have to enter the
 Invite Code that was provided to you and click *Submit*.
 
 image::creating_users_groups/invitecode.png["Register page - enter invite code"]
