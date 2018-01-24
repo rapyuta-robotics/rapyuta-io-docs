@@ -1,7 +1,17 @@
 = Deployments
+:toc: macro
+:toc-title:
+:data-uri:
+:experimental:
+:prewrap!:
+:description:
+:keywords:
 
-A Deployment is a running instance of a package on the platform. A deployment can be triggered from the rapyuta.io console UI, link:../developer_guide/rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK], or directly using 
-REST API endpoints. While deploying a package, the platform is responsible for:
+toc::[]
+= Overview
+A Deployment is a running instance of a package on the platform. 
+A deployment can be triggered from the rapyuta.io console UI, link:../developer_guide/rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK], 
+or directly using REST API endpoints. While deploying a package, the platform is responsible for:
 
 * Resolving all specified package dependencies for a package. 
 * Ensuring availability of all required catalog dependencies and then initializing and injecting them into the component.
@@ -11,19 +21,6 @@ REST API endpoints. While deploying a package, the platform is responsible for:
 The platform handles the deployments requests asynchronously and provides REST API endpoints for retrieving the current deployment progress. The progress can
 also be checked from the rapyuta.io console UI. The deployment is considered complete only when all the underlying components and dependencies are deployed
 successfully.
-
-== Shared deployment
-In some packages, certain plans may support deployment in a shared configuration. A particular deployment may be a dependency for multiple other
-deployments that consume its data and services. This is indicated by the *_shared_* attribute of a plan being set to `True`. For more details,
-visit the link:packages.html[packages] section.
-
-.*Example*
-[NOTE]
-Imagine that rapyuta.io provides the `robomapper` package, which consists of the `robot_controller` and `map_genetator` components. Your application wants to
-use many robots to build a map. For them to collaborate, they should share the `map_generator`. For this, you could use a plan for the `map_generator`
-component that supports the shared mode. All deployments of `robomapper` would then share a common `map_generator` while using independent `robot_controller`.
-Additionally, imagine another package `visualizer` which uses the `map_generator` data and a `map_visualizer` interface. This package would also share the
-same `map_generator` if it is configured as shared.
 
 == Lifecycle
 Each Deployment goes through multiple stages, at a single point it can be either:
@@ -35,3 +32,12 @@ Each Deployment goes through multiple stages, at a single point it can be either
 
 [TIP]
 To learn how to deploy packages, visit link:../getting_started/deploying_package.html[this page].
+
+
+=== Singleton Deployment
+Certain package link:packages.html#plans[plans] may need to be instantiated only once for a particular user/group. 
+The author can choose to use the *singleton* flag to indicate this while creating the package. 
+In these cases the only the first request to provision the chosen package plan results in a deployment being instantiated. 
+Subsequent calls do not re-create the deployment and only return the expected response that can be consumed by the caller. 
+
+Please refer the design patterns section of the link:service_catalog.html#dependant-deployments[service catalog] docs for a overview.

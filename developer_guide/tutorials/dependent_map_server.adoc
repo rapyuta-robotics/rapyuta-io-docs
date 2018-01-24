@@ -1,0 +1,113 @@
+= Dependent Deployments - Map Server
+
+== Overview
+
+In this tutorial we will create a dynamic_map_server cloud deployment
+which will serve a map to dependent deployments. Dependent deployments
+bind to their dependencies at run-time and have access to their exposed
+topics, services and actions.
+
+== Creating the dynamic_map_server
+
+First we will create the dynamic_map_server package and deployment. The
+dynamic_map_server is a modified http://wiki.ros.org/map_server[map_server]
+which exposes an additional service */set_map*. The */set_map* service
+is used to replace the map that is published on the */map* topic.
+
+Go to 'Catalog' in the left sidebar and then click 'Add New Package'.
+
+
+Fill in the package name, version, and git URL. We will leave the
+command field empty and use parameters to launch the package instead.
+
+image::dependent_map_server/package-1.png[]
+
+Next, we need to expose the */map* and */map_metadata* topics.
+
+image::dependent_map_server/topics-1.png[]
+
+Now expose the */set_map* service.
+
+image::dependent_map_server/services-1.png[]
+
+Finally, we need to tell rapyuta.io which package and which launchfile to
+execute from inside the github repository.
+
+image::dependent_map_server/parameters-1.png[]
+
+Now you can click 'submit'. 
+
+In the 'Catalog', click your new package (dynamic-map-server-5 below), 
+and then click 'Deploy Package'. 
+
+image::dependent_map_server/catalog-1.png[]
+image::dependent_map_server/deploy-button-1.png[]
+
+Go to the 'deployments' page and make a note of the deployment id of the 
+dynamic-map-server deployment.
+
+image::dependent_map_server/deployments-1.png[]
+
+== Creating a dependent deployment
+
+In this section, we will create a dummy-subscriber which simply starts
+ROS on your device. By adding the dynamic_map_server as a dependent
+deployment, when ROS is launched, the cloud bridge will automatically
+be launched and the topics and services of the dynamic_map_server
+will be automatically exposed.
+
+Once again, go to 'Catalog' in the left sidebar and then click
+'Add New Package'. This time, change the package creation
+UI from 'Simple' to 'Advanced'. Fill in the name, version
+and description.
+
+image::dependent_map_server/package-2.png[]
+
+Next, go to the 'components' section and change the component from 'Cloud'
+to 'Device'. Name the component 'subscriber' and set the executable 
+field to 'source /opt/ros/kinetic/setup.bash && roscore'.
+
+image::dependent_map_server/component-2.png[]
+
+Notice that we are leaving the 'dependent deployments' field blank.
+We will specify the dependent deployment during deployment of our subscriber
+package instead.
+
+image::dependent_map_server/dependent-deployments-1.png[]
+
+Now you can click 'submit'.
+
+In 'Catalog', click your new package, and then click 'Deploy Package'.
+You will see the 'Select plan' modal. Keep the default plan.
+Underneath, click 'Get Devices' and make sure you can see the device
+you previously added. Now click 'continue',
+
+image::dependent_map_server/get-devices-1.png[]
+
+Here is where you will finally add the map server as a dependent
+deployment. 
+
+First, add the following scripts to 'ROS Setup Script' section. Order is important!
+
+    /opt/ros/kinetic/setup.bash
+    /opt/rapyuta/catkin/devel/setup.bash
+
+Now, add a dependent deployment and enter the id of the dynamic-map-server deployment
+that you noted above.
+
+image::dependent_map_server/dependent-deployments-2.png[]
+
+Finally, click 'Create Deployment' and you are done!
+
+== Usage
+
+Go to your device and source the ROS setup script: '/opt/ros/kinetic/setup.bash'.
+
+Wait for ROS to be started by rapyuta.io. It shouldn't take too long. Look for the '/map'
+topic by executing 'rostopic list'.
+
+Once you can see the */map* topic, try viewing the map data by typing 'rostopic echo /map'.
+
+Finally, try modifying the map. Type 'rosservice call /set_map' and tab complete to a default
+message. Modify the 'data' field and hit enter. Verify the map changed by echoing the */map*
+topic once again.

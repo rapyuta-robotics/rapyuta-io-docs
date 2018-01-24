@@ -81,7 +81,7 @@ topics.
 
 ==== Key features
 
-* Full-text” search and filtering on log data
+* Full-text search and filtering on log data
 * Rich support for time series metrics with adjustable grouping intervals, aggregation (min, max, count, etc.)
 * Configurable dashboards for graphs and logs per device or deployment with autorefresh and visual correlation among all sub-plots
 * Multiple visualization types (Line graph, bar graph, stacked, single value, etc.)
