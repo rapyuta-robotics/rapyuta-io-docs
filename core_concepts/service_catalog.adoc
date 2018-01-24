@@ -11,7 +11,7 @@ toc::[]
 
 The service catalog is a curated collection of public and private packages. It can be used to accelerate development by
 focusing on modularity and re-usability of packages. The design patterns section helps get you started with designing
-packages using composition through service catalog.
+packages using composition through the service catalog.
 
 [NOTE]
 If a user creates a package in a group, all members of this group have access to this package. If he/she were to create
@@ -19,33 +19,45 @@ a package outside the scope of any group, only he/she would have access to this 
 
 == Design Patterns with rapyuta.io
 
-== Overview
+=== Overview
 Often, while building complex robotic applications, different parts of the application are developed in completely
 different engineering processes, using different languages and often by people from different domains.
 For instance, the front-end team may use ReactJS, the device development team may use C/C++, and the navigation/task
 planning team may write software that lives in the cloud and use OpenCL, Python or Java. These teams have different
 development cycles and depend on *complete* running versioned instances of each others' components.
 
-== Package Binding
-The service catalog provides package composition through the concept of _package binding_. When a package depends on another package or deployment, rapyuta.io internally uses _package bindings_ to link dependant package with its dependencies.
+Rapyuta.io enables developers to achieve the above by allowing for modularity in application design. Two key design
+patterns are listed link:#design-patterns[below] facilitate modular application architecture. These two patterns rely
+on the concept of _Package Bindings_ explained below.
 
-A _package binding_ is basically a set of parameters exposed by a package for consumption by its dependencies, rapyuta.io then implicitly injects these parameters as environment variables in dependant packages.
+=== Package Binding
+The service catalog provides package composition through the concept of _package binding_. When a package depends on
+another package or deployment, rapyuta.io internally uses _package bindings_ to link dependent package with its
+dependencies.
 
-For example, a *database* package would expose its *_host_*, *_port_*, *_user_*, *_password_* and *_database name_* as package binding for dependant packages to utilize the database. Now when a *robot_management* package uses the *database* package as its dependency, rapyuta.io
-will automatically inject the *database* package's _package binding_ as environment variables in *robot_management* package. This implies  *robot_management* package's executables will be able to consume the *database* package's *_host_*, *_port_*, *_user_*, *_password_* and *_database name_* as environment variables.
-We then say that the *robot_management* package *_binds_* to the *database* package.
+A _package binding_ is a set of link:../core_concepts/packages.html#exposed-parameters[Exposed Parameters] and
+link:../core_concepts/packages.html#exposing-network-endpoints-from-a-component[Exposed Network Endpoint] exposed by a
+package for consumption by its dependencies, rapyuta.io then implicitly injects these parameters as environment
+variables in dependent packages.
 
-rapyuta.io enables developers to achieve the above by allowing for modularity in application design. Two key design
-patterns listed below facilitate modular application architecture.
+For example, a *database* package whas an exposed network endpoint named *HOST_AND_PORT* (the network endpoint also
+includes the port) and exposed parameters *USER*, *PASSWORD*, and *DATABASE_NAME* for dependent packages to utilize the
+database as a dependency. Now, when a *robot_management* package uses the *database* package as its dependency,
+rapyuta.io will automatically inject the *database* package's _package bindings_ as environment variables in the
+run-time of the *robot_management* package's deployment. This implies  *robot_management* package's executables will be
+able to consume the *database* package's *HOST_AND_PORT*, *USER*, *PASSWORD*, and *DATABASE_NAME* as
+environment variables. We then say that the *robot_management* package *_binds_* to the *database* package.
+
+== Design Patterns
 
 === Package  Includes
-A package may *include* another package from the service catalog during package creation to achieve the required composition.
-This is the suggested design pattern when the developer needs to compose the desired behavior from one or more packages
-and requires tight one-to-one coupling between the packages and their instantiation and life-cycle. 
+A package may *include* another package from the service catalog during package creation to achieve the required
+composition. This is the suggested design pattern when the developer needs to compose the desired behavior from one or
+more packages and requires tight one-to-one coupling between the packages and their instantiation and life-cycle.
 
 image::package_include.png["Catalog Include"]
 
-For instance, a fancy *robot_teleop* package may require a "real-time video gateway".
+For instance, a *robot_teleop* package may require a "real-time video gateway".
 
 It would be useful to abstract out the video streaming logic and all the underlying complex infrastructure into a *simple_video_gateway* 
 and re-use this for different kinds of robots - perhaps an AGV and a drone.
@@ -53,11 +65,11 @@ and re-use this for different kinds of robots - perhaps an AGV and a drone.
 The developer of the *agv_teleop* package can quickly build a package that controls the motion of an AGV in a 2D plane
 and include the *simple_video_gateway*  without having to deal with the added complexities of real-time video streaming.
 
-Meanwhile the developer of a more complex *drone_teleop* package can focus on the complexities associated with getting
-precise direction, altitude and gimbal pose control and include the *simple_video_gateway* to achieve the desired result.
+Meanwhile, the developer of a more complex *drone_teleop* package can focus on the complexities associated with getting
+precise direction, altitude and gimbal pose control and includes the *simple_video_gateway* to achieve the desired result.
 
 
-On every deployment request of either *agv_teleop* or *drone_teleop* the rapyuta.io platform implicitly provisions a new instance of *simple_video_gateway*.
+On every deployment request of either *agv_teleop* or *drone_teleop*, rapyuta.io implicitly provisions a new instance of *simple_video_gateway*.
 
 [NOTE]
 ====
@@ -82,7 +94,7 @@ This leads to a possibility of collisions that rapyuta.io does not solve at this
 "Dependant Deployments" is a design pattern which allows the user to control the life-cycle of a set of components independently and *bind* 
 them at the package instantiation.
 This is the suggested pattern when the developer needs to compose the desired behavior by loosely coupling packages that follow different life-cycles,
- for instance the coupling between multiple short lived agents and a long running/stateful shared service (many-to-one).
+ for instance the coupling between multiple short lived agents and a long-running/stateful shared service (many-to-one).
 
 image::dependant_deploy.png["Dependant Deployment"]
 
@@ -91,9 +103,9 @@ Multiple robots use this to retrieve information about the environment around th
 When a robot comes online its *agv_bot* component binds to the *cloud_mapping_service* service and proceeds to do its missions.
 Each running deployment is identified by a *deployment_id*. This *deployment id* is exposed to formulate dependencies on this deployment instance.
 
-At this point *all* topics, services and actions provided by *cloud_mapping_service* are locally available in every instance of *agv_bot*. 
-However the *inboundROSinterfaces* field in the *cloud_mapping_service* require the developer to provide a whitelist of topics, 
-actions and services allowed from the child deployments i.e (`agv_bot`)
+At this point, *all* topics, services, and actions provided by *cloud_mapping_service* are locally available in every instance of *agv_bot*.
+However, the *inboundROSinterfaces* field in the *cloud_mapping_service* require the developer to provide a whitelist of topics,
+actions, and services allowed from the child deployments i.e (`agv_bot`)
 
 == Third Party Services
 rapyuta.io provides some commonly used packages that any user can use to accelerate their application development. 
