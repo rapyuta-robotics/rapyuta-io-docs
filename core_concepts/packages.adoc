@@ -34,10 +34,10 @@ run-time where the command is expected to run.
 [[core_concepts-packages-component]]
 
 === Components
-A component is a set of link:#executables[executables] that need to be deployed in unison on a desired
-target link:#required-runtime[runtime] This means that these executables can share a specified file path and can
-communicate via IPC. Also, any executable listening on a port can be accessed by its sibling executables via
-`localhost`.
+A component is a set of link:#executables[executables] that need to be deployed in unison on the desired target
+link:#required-runtime[runtime] This means that these executables can share a specified file system ensuring data
+locality, and can communicate via IPC. Also, any executable listening on a port can be accessed by its sibling
+executables via `localhost`.
 
 [TIP]
 Create your own packages following link:../getting_started/creating_new_package.html[these instructions].
@@ -63,8 +63,13 @@ packages.
 
 === Exposing Network Endpoints from a component
 link:#core_concepts-packages-component[Components] can expose network endpoints. The configuration of these endpoints
-(exposed port, protocol to be used, etc.) can be specified during the creation of the package. The supported protocols
+(exposed port, the protocol to be used, etc.) can be specified during the creation of the package. The supported protocols
 are TLS/SNI and HTTP[S].
+
+
+During deployment, rapyuta.io creates an accessible public network endpoint for each exposed network endpoint automatically.
+The actual link:https://en.wikipedia.org/wiki/Fully_qualified_domain_name[FQDN] of this endpoint can be observed from
+the deployment page of the console UI.
 
 [NOTE]
 The TLS/SNI endpoint uses link:https://en.wikipedia.org/wiki/Server_Name_Indication[SNI] headers for routing the
@@ -77,7 +82,7 @@ vice versa. The required runtime is optional and can be left empty in the cases 
 run on either the device or the cloud.
 
 === Configuration Parameters
-The configuration needed for running a link:#core_concepts-packages-component[components] can be specified during
+The configuration needed for running a link:#core_concepts-packages-component[component] can be specified during
 package creation in the "Configuration Parameters" section of the component in the package creation form. The author
 needs to specify the needed Configuration Parameters as string keys, also adding defaults values for these keys. The
 final values of these parameters are specified while deploying the package. These values override the defaults
@@ -103,7 +108,7 @@ specified during the creation of the package.
 [NOTE]
 The author does not have to include the ROS master as an executable of a component if it is meant to run on the
 cloud. The platform manages running ROS master for the author on the cloud. Starting the ROS master on the devices
-whenever necessary needs to done by the author, by including it as a executable.
+whenever necessary needs to done by the author, by including it as an executable.
 
 Since this communication can happen over WAN
 (via the link:../core_concepts/network_layout_communication.html#core_concepts-network-cloud_bridge[cloud bridge]),
@@ -129,7 +134,7 @@ Please refer to the design patterns section on the
 link:service_catalog.html#dependant-deployments[service catalog] for more details on composition using packages.
 
 == Dependencies and Composition
-Rapyuta.io allows for a number of design patterns that help you compose an application using a combination of one or
+rapyuta.io allows for a number of design patterns that help you compose an application using a combination of one or
 more packages. Please refer to the design patterns section of the
-link:service_catalog.html#design-patterns-with-rapyuta-io[service catalog] docs for a overview.
+link:service_catalog.html#design-patterns-with-rapyuta-io[service catalog] docs for an overview.
 
