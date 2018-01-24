@@ -36,7 +36,7 @@ run-time where the command is expected to run.
 === Components
 A component is a set of link:#executables[executables] that need to be deployed in unison on the desired target
 link:#required-runtime[runtime] This means that these executables can share a specified file system ensuring data
-locality and can communicate via IPC. Also, any executable listening on a port can be accessed by its sibling
+locality, and can communicate via IPC. Also, any executable listening on a port can be accessed by its sibling
 executables via `localhost`.
 
 [TIP]
