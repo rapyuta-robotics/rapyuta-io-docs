@@ -16,12 +16,11 @@ is used to replace the map that is published on the */map* topic.
 
 Go to 'Catalog' in the left sidebar and then click 'Add New Package'.
 
-
 Fill in the package name, version, and git URL. We will leave the
 command field empty and use parameters to launch the package instead.
 Use the following git URL:
 
-    https://github.com/rapyuta/ros-navigation
+    https://github.com/rapyuta/io_tutorials
 
 image::dependent_map_server/package-1.png[]
 
@@ -53,22 +52,29 @@ image::dependent_map_server/deployments-1.png[]
 
 == Creating a dependent deployment
 
-In this section, we will create a dummy-subscriber which simply starts
-ROS on your device. By adding the dynamic_map_server as a dependent
-deployment, when ROS is launched, the cloud bridge will automatically
-be launched and the topics and services of the dynamic_map_server
-will be automatically exposed.
+In this section, we will launch a map_listener node on the device. 
+By adding the dynamic_map_server as a dependent deployment, when ROS is 
+launched, the cloud bridge will automatically be launched and the topics and 
+services of the dynamic_map_server will be exposed.
 
-Once again, go to 'Catalog' in the left sidebar and then click
-'Add New Package'. This time, change the package creation
-UI from 'Simple' to 'Advanced'. Fill in the name, version
-and description.
+First, let's set up the device. On the device, execute the following commands:
+
+    cd ~
+    mkdir -p catkin_ws/src
+    cd catkin_ws
+    git clone https://github.com/rapyuta/io_tutorials/ src/io_tutorials/
+    catkin build map_listener
+
+Now let's create the package. Once again, go to 'Catalog' in the left sidebar 
+and then click 'Add New Package'. This time, change the package creation
+UI from 'Simple' to 'Advanced'. Fill in the name, version and description.
 
 image::dependent_map_server/package-2.png[]
 
 Next, go to the 'components' section and change the component from 'Cloud'
-to 'Device'. Name the component 'subscriber' and set the executable 
-field to 'source /opt/ros/kinetic/setup.bash && roscore'.
+to 'Device'. Name the component and set the executable field to the following.
+
+    source ~/catkin_ws/devel/setup.bash && roslaunch map_listener listener.launch
 
 image::dependent_map_server/component-2.png[]
 
@@ -83,7 +89,7 @@ Now you can click 'submit'.
 In 'Catalog', click your new package, and then click 'Deploy Package'.
 You will see the 'Select plan' modal. Keep the default plan.
 Underneath, click 'Get Devices' and make sure you can see the device
-you previously added. Now click 'continue',
+you previously added. Now click 'continue'.
 
 image::dependent_map_server/get-devices-1.png[]
 
@@ -100,17 +106,26 @@ that you noted above.
 
 image::dependent_map_server/dependent-deployments-2.png[]
 
-Finally, click 'Create Deployment' and you are done!
+Finally, click 'Create Deployment'.
 
-== Usage
+To check the map_listener node received map data, type the following:
 
-Go to your device and source the ROS setup script: '/opt/ros/kinetic/setup.bash'.
+    tail ~/.ros/log/latest/rosout.log
 
-Wait for ROS to be started by rapyuta.io. It shouldn't take too long. Look for the '/map'
-topic by executing 'rostopic list'.
+You should see text similar to the following:
 
-Once you can see the */map* topic, try viewing the map data by typing 'rostopic echo /map'.
+    1516930099.424017906 INFO [listener.py:7(callback) [topics: /rosout, /map] Received map data
+    1516930099.426506996 INFO [listener.py:11(callback) [topics: /rosout, /map] Read a 4000 X 4000 map @ 0.0500000007451 m/cell
 
-Finally, try modifying the map. Type 'rosservice call /set_map' and tab complete to a default
-message. Modify the 'data' field and hit enter. Verify the map changed by echoing the */map*
-topic once again.
+== Updating the map
+
+In a terminal connected to the device, type the following:
+
+    tail -f ~/.ros/log/latest/rosout.log
+
+Open a separate terminal to the device and type the following:
+
+    source ~/catkin_ws/devel/setup.bash
+    rosservice call /set_map <tab-complete>
+
+In the first terminal, you should see the map_listener receive a new map.
