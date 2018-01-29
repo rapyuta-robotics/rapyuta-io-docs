@@ -32,8 +32,10 @@ Now expose the */set_map* service.
 
 image::dependent_map_server/services-1.png[]
 
-Finally, we need to tell rapyuta.io which package and which launchfile to
-execute from inside the github repository.
+Finally, we will use parameters to tell rapyuta.io which package and which 
+launchfile to execute from inside the github repository. Add two parameters 
+fields. Set 'ROS_PKG' to 'dynamic_map_server' and set 'ROS_LAUNCH_FILE' to 
+'map_server.launch' 
 
 image::dependent_map_server/parameters-1.png[]
 
@@ -63,9 +65,10 @@ First, let's set up the device. On the device, execute the following commands:
     mkdir -p catkin_ws/src
     cd catkin_ws
     git clone https://github.com/rapyuta/io_tutorials/ src/io_tutorials/
+    source /opt/ros/kinetic/setup.bash
     catkin build map_listener
 
-Now let's create the package. Once again, go to 'Catalog' in the left sidebar 
+Now create the package. Once again, go to 'Catalog' in the left sidebar 
 and then click 'Add New Package'. This time, change the package creation
 UI from 'Simple' to 'Advanced'. Fill in the name, version and description.
 
@@ -110,12 +113,12 @@ Finally, click 'Create Deployment'.
 
 To check the map_listener node received map data, type the following:
 
-    tail ~/.ros/log/latest/rosout.log
+    tail ~/.ros/log/latest/map_listener-2.log
 
 You should see text similar to the following:
 
-    1516930099.424017906 INFO [listener.py:7(callback) [topics: /rosout, /map] Received map data
-    1516930099.426506996 INFO [listener.py:11(callback) [topics: /rosout, /map] Read a 4000 X 4000 map @ 0.0500000007451 m/cell
+    [rosout][INFO] 2018-01-26 06:18:56,565: Received map data
+    [rosout][INFO] 2018-01-26 06:18:56,578: Read a 4000 X 4000 map @ 0.0500000007451 m/cell
 
 == Updating the map
 
