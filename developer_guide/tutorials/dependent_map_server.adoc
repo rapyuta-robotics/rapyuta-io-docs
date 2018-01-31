@@ -59,7 +59,9 @@ By adding the dynamic_map_server as a dependent deployment, when ROS is
 launched, the cloud bridge will automatically be launched and the topics and 
 services of the dynamic_map_server will be exposed.
 
-First, let's set up the device. On the device, execute the following commands:
+A device should already be prepared and added. 
+(See link:../../getting_started/adding_new_device.html[adding a new device]).
+On the device, execute the following commands:
 
     cd ~
     mkdir -p catkin_ws/src
@@ -69,8 +71,8 @@ First, let's set up the device. On the device, execute the following commands:
     catkin build map_listener
 
 Now create the package. Once again, go to 'Catalog' in the left sidebar 
-and then click 'Add New Package'. This time, change the package creation
-UI from 'Simple' to 'Advanced'. Fill in the name, version and description.
+and then click 'Add New Package'. Move to the advanced section tab. 
+Fill in the name, version and description.
 
 image::dependent_map_server/package-2.png[]
 
