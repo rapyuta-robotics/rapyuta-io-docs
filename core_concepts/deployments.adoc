@@ -14,8 +14,8 @@ console UI, link:../developer_guide/rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK]
 While deploying a package, the platform is responsible for:
 
 * Resolving all specified package dependencies for a package. 
-* Injecting result of package bindings of the dependencies into the specified packages components and spawning these
-components on the requested cloud or device run-time.
+* Injecting result of package bindings of the dependencies into the specified package's components and spawning these
+components on the requested cloud or device runtime.
 * Creating and exposing all required network endpoints.
 * Deploying any components needed by the platform (e.g., cloud bridge, ROS master).
 

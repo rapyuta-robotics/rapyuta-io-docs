@@ -29,7 +29,7 @@ runnable artifact). The command specified with this repository is run with the a
 * A bash command: A simple bash shell command as an executable. *If a git or docker reference is not provided, just the
 command can form an executable. In this case, the executable can only run on a device environment (not the cloud).*
 Rapyuta.io assumes that all dependencies that are required to run this command are already present in the device
-run-time where the command is expected to run.
+runtime where the command is expected to run.
 
 [[core_concepts-packages-component]]
 
@@ -76,7 +76,7 @@ The TLS/SNI endpoint uses link:https://en.wikipedia.org/wiki/Server_Name_Indicat
 request to the desired backend.
 
 === Required Runtime
-The required runtime allows the author of the package to restrict the run-time of a component to either device or the
+The required runtime allows the author of the package to restrict the runtime of a component to either device or the
 cloud. This allows the author to restrict components designed to run on a device from being deployed on the cloud and
 vice versa. The required runtime is optional and can be left empty in the cases where its possible for the component to
 run on either the device or the cloud.
@@ -88,7 +88,7 @@ needs to specify the needed Configuration Parameters as string keys, also adding
 final values of these parameters are specified while deploying the package. These values override the defaults
 specified during package creation.
 
-The Configuration Parameters are injected into the run-time of the component as environment variables. The name of the
+The Configuration Parameters are injected into the runtime of the component as environment variables. The name of the
 environment variable will be the string key specified during package creation and the value of this environment
 variable will be the value specified during deployment or the default specified during package creation(if no value was
 specified during deployment). The executables can now consume these through standard environment lookup techniques (eg
