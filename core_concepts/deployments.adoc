@@ -1,58 +1,123 @@
 = Deployments
 
-A Deployment is a running instance of a package on the platform. A deployment can be triggered from the rapyuta.io console UI, link:../developer_guide/rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK], or directly using 
-REST API endpoints. While deploying a package, the platform is responsible for:
+A Deployment is a running instance of a package on the platform. A deployment can be triggered from the rapyuta.io
+console UI, link:../developer_guide/rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK], or directly using REST API endpoints.
+While deploying a package, the platform is responsible for:
 
 * Resolving all specified package dependencies for a package. 
-* Ensuring availability of all required catalog dependencies and then initializing and injecting them into the component.
+* Ensuring availability of all required catalog dependencies and then initializing and injecting them into the
+component.
 * Creating and exposing all required network endpoints.
 * Deploying any components needed by the platform (e.g., cloud bridge, ROS master).
 
-The platform handles the deployments requests asynchronously and provides REST API endpoints for retrieving the current deployment progress. The progress can
-also be checked from the rapyuta.io console UI. The deployment is considered complete only when all the underlying components and dependencies are deployed
-successfully.
+The platform handles the deployments requests asynchronously and provides REST API endpoints for retrieving the current
+deployment progress. The progress can also be checked from the rapyuta.io console UI. The deployment is considered
+complete only when all the underlying components and dependencies are deployed successfully.
 
 == Shared deployment
-In some packages, certain plans may support deployment in a shared configuration. A particular deployment may be a dependency for multiple other
-deployments that consume its data and services. This is indicated by the *_shared_* attribute of a plan being set to `True`. For more details,
-visit the link:packages.html[packages] section.
+In some packages, certain plans may support deployment in a shared configuration. A particular deployment may be a
+dependency for multiple other deployments that consume its data and services. This is indicated by the *shared*
+attribute of a plan being set to `True`. For more details, visit the link:packages.html[packages] section.
 
 .*Example*
 [NOTE]
-Imagine that rapyuta.io provides the `robomapper` package, which consists of the `robot_controller` and `map_genetator` components. Your application wants to
-use many robots to build a map. For them to collaborate, they should share the `map_generator`. For this, you could use a plan for the `map_generator`
-component that supports the shared mode. All deployments of `robomapper` would then share a common `map_generator` while using independent `robot_controller`.
-Additionally, imagine another package `visualizer` which uses the `map_generator` data and a `map_visualizer` interface. This package would also share the
-same `map_generator` if it is configured as shared.
+Imagine that rapyuta.io provides the `robomapper` package, which consists of the `robot_controller` and `map_genetator`
+components. Your application wants to use many robots to build a map. For them to collaborate, they should share the
+`map_generator`. For this, you could use a plan for the `map_generator` component that supports the shared mode. All
+deployments of `robomapper` would then share a common `map_generator` while using independent `robot_controller`.
+Additionally, imagine another package `visualizer` which uses the `map_generator` data and a `map_visualizer`
+interface. This package would also share the same `map_generator` if it is configured as shared.
 
-== Lifecycle
-Each Deployment goes through multiple phases in its lifecycle. Phase is tightly coupled with start/stop of the deployment and it will only be updated at the time of starting or stopping the deployment. 
-For example while starting the deployment, if the deployment started successfully the phase will me marked as {Started successfully} otherwise it will be marked as {Failed to start}. When you stop the deployment, the phase will be marked as {Deployment stopped}.
+== Deployment Phase
+Each Deployment goes through multiple phases in its lifecycle. The *Phase* of the deployment indicates the current
+lifecycle phase of the deployment. For example, after a deployment of a package starts successfully, its *Phase* will be
+marked as *Started successfully*. If the deployment creation were to fail, the phase of the deployment would have been
+marked as *Failed to start*. When the user stops a running deployment, the phase will be marked as *Deployment stopped*.
 
-Following are the phases of deloyment along with their description:
+Following are the phases of deployment along with their description:
 
-* `In progress` 		   Waiting for deployment to start.
-* `Started successfully`   Deployment started successfully.
-* `Failed to start`        Deployment not able to start due to some error
-* `Deployment stopped`     Deployment stopped.
+[%header,cols=2*]
+|===
+|Deployment Phase
+|Description
 
-You can also check for the live status of the deployment, if it started successfully. Live status of the deployment gives the status of each component of the deployment. 
-Depending on the status of components of the deployment, the final status of deployment can be:
+|In progress
+|Waiting for deployment to start
 
-* `Running`     			  All the components of the deployment are running.
-* `Unknown`     			  Status of one or more components is unknown.
-* `Error`       			  One or more components are facing some error.
-* `Deployment not running`    Deployment was unable to start due to some error.
+|Started successfully
+|Deployment started successfully
 
-In error state, the deployment status contains a error code which specifies the cause of error. The error code helps user and support team to quickly figure out the cause of error.
-In case of internal system errors, you should report the error to support team along with the error code you are getting.
+|Failed to start
+|Deployment unable to start due to an error
 
-Following are the error codes and their description.
+|Deployment stopped
+|Deployment de-provisioned by the user
+|===
 
-* `DEP_E151` Device was unavailable for deployment
-* `DEP_E152` User application failed with errors
-* `DEP_E2XX` Internal system error. Used for the components deployed on the cloud
-* `DEP_E3XX` Internal system error. Used for the components deployed on device
+== Live status
+rapyuta.io allows the user to monitor the current status of the components that were deployed as parts of a deployment.
+*Live status* depicts this information of a deployment once deployment starts successfully (*Phase* is *Started
+successfully*). rapyuta.io on the on the status of components of the deployment, the final status of deployment can be:
+
+[%header,cols=2*]
+|===
+|Live status
+|Description
+
+|Initializing
+|Deployment started successfully and components coming up
+
+|Running
+|All the components of the deployment are running
+
+|Unknown
+|Status of one or more components is unknown
+
+|Error
+|One or more components are facing an error
+|===
+
+If the *Live Status* is *Error*, the deployment status contains an error code which specifies the cause of the error.
+system errors, you should report the error to support team along with the error code.
+
+Following are the error codes, descriptions, and the recommended actions when faced with the error code.
+
+[%header,cols=3*]
+|===
+|Error Code
+|Description
+|Recommended Action
+
+|DEP_E151
+|Device offline/not reachable
+|Check the device's internet connectivity
+
+|DEP_E152
+|Component executables on the device either exited too quickly or failed with errors
+|Troubleshoot the failing component using component logs
+
+|DEP_E153
+|Could not pull either the docker image or the built package artifact for the component on the cloud
+|Verify that the docker container submitted at package creation still exists at the specified registry endpoint
+
+|DEP_E154
+|Component executables on the cloud exited too quickly
+|Troubleshoot the failing component using component logs
+
+|DEP_E155
+|Component executables on the cloud failing with errors
+|Troubleshoot the failing component using component logs
+
+|DEP_E2xx
+|Internal rapyuta.io error in the components deployed on the cloud
+|Report the issue with details to the support team using an email or a
+link:https://rapyutarobotics.freshdesk.com[freshdesk] ticket
+
+|DEP_E3xx
+|Internal rapyuta.io error in the components deployed on device
+|Report the issue with details to the support team using an email or a
+link:https://rapyutarobotics.freshdesk.com[freshdesk] ticket
+|===
 
 [TIP]
 To learn how to deploy packages, visit link:../getting_started/deploying_package.html[this page].
