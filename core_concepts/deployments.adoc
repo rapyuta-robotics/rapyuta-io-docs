@@ -69,7 +69,7 @@ successfully*). rapyuta.io on the on the status of components of the deployment,
 |Description
 
 |Initializing
-|Deployment started successfully and components coming up
+|Deployment started successfully and the components are coming up
 
 |Running
 |All the components of the deployment are running
