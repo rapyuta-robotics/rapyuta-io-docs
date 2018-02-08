@@ -77,12 +77,12 @@ The actual on-boarding requires connectivity to rapyuta.io
 
 .. Get the code for the ROS listener:
 
-    git clone https://github.com/khatribharat/ros-listener
+    git clone https://github.com/rapyuta/io_tutorials
     cd ..
 
 .. Compile the package:
 
-    catkin_make
+    catkin build listener
 
 Once the compilation is finished, you can check that everything is correct:
 
@@ -116,7 +116,7 @@ image::ros_pub_sub/pkg_1.png["Package configuration."]
 5. The package will have two components: the talker running on the cloud and the listener running on the device:
 .. Talker component:
 ... Select a name and a description for the `talker` component. Select `Cloud` as required runtime and check `Is ROS` box.
-... In this case, we will have one executable from a git repository. Therefore, select git and add this URL: https://github.com/khatribharat/ros-talker
+... In this case, we will use the executable `talker` from the io_tutorials git repository. Therefore, select git and add this URL: https://github.com/rapyuta/io_tutorials
 ... This executable will publish a topic `/telemetry`. We want this topic to arrive at the device. Therefore, add the `/telemetry` topic with max QoS
 (usually a telemetry topic would not have max QoS, take this as an example), and leave the scope as global.
 ... Finally, rapyuta.io needs to know what to launch from that repository, as it might have many packages and roslaunch files. Therefore, add
