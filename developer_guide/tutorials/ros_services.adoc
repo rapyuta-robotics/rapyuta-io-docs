@@ -23,7 +23,7 @@ To complete this tutorial, you should have the following:
 
 If your device is not yet added to the platform, follow the getting started steps http://localhost:8000/rapyuta-io/hs_consolidate_repos/getting_started/adding_new_device.html[here].
 
-== Preparing the device
+== Preparing the Device
 
 . On the device, we firstly setup a ros workspace:
 
