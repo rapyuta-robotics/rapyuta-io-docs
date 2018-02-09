@@ -64,7 +64,7 @@ packages.
 === Exposing Network Endpoints from a component
 link:#core_concepts-packages-component[Components] can expose network endpoints. The configuration of these endpoints
 (exposed port, the protocol to be used, etc.) can be specified during the creation of the package. The supported protocols
-are TLS/SNI and HTTP[S].
+are Secure TCP(TLS/SNI), HTTP/Websocket, and HTTPS/Websocket-Secure.
 
 
 During deployment, rapyuta.io creates an accessible public network endpoint for each exposed network endpoint automatically.
@@ -72,7 +72,7 @@ The actual link:https://en.wikipedia.org/wiki/Fully_qualified_domain_name[FQDN] 
 the deployment page of the console UI.
 
 [NOTE]
-The TLS/SNI endpoint uses link:https://en.wikipedia.org/wiki/Server_Name_Indication[SNI] headers for routing the
+The Secure TCP(TLS/SNI) endpoint uses link:https://en.wikipedia.org/wiki/Server_Name_Indication[SNI] headers for routing the
 request to the desired backend.
 
 === Required Runtime

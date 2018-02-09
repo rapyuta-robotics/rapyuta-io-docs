@@ -2,7 +2,7 @@
 
 A rapyuta.io link:../core_concepts/packages.html#core_concepts-packages-component[component] is either a generic component or a ROS component.
 
-The platform provides ways to expose TCP and HTTP endpoints when deployed on the cloud. Both ROS and generic components can leverage these types of endpoints.
+The platform provides ways to expose Secure TCP(TLS/SNI), HTTP/Websocket, and HTTPS/Websocket-Secure endpoints when deployed on the cloud. Both ROS and generic components can leverage these types of endpoints.
 
 image::application_architecture.png["Generic application architecture"]
 
