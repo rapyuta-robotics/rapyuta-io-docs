@@ -1,0 +1,112 @@
+[[core-components-devices]]
+= ROS publisher-subscriber
+:toc: macro
+:toc-title:
+:data-uri:
+:experimental:
+:prewrap!:
+:description:
+:keywords:
+
+toc::[]
+
+Besides the publisher subscriber model, rapyuta.io also supports ROS services.
+We discuss the concept of services analogous to the service tutorial on the ROS sites http://wiki.ros.org/ROS/Tutorials/WritingServiceClient%28c%2B%2B%29[here].
+
+
+== Prerequisites
+
+To complete this tutorial, you should have the following:
+
+* A device, such as a Raspberry Pi 3, registered and ready to go with rapyuta.io.
+* A working internet connection.
+
+If your device is not yet added to the platform, follow the getting started steps http://localhost:8000/rapyuta-io/hs_consolidate_repos/getting_started/adding_new_device.html[here].
+
+== Preparing the device
+
+. On the device, we firstly setup a ros workspace:
+
+	cd $HOME
+	mkdir -p ws/src
+	cd ws/src
+	source /opt/rapyuta/catkin/devel/setup.bash
+	catkin_init_workspace
+
+. The empty workspace is quickly populated with a hands-on example from the ros tutorials (residing https://github.com/fairlight1337/ros_service_examples/[here]).
+
+	git clone https://github.com/fairlight1337/ros_service_examples
+
+. Make sure the example builds:
+
+	cd ../..
+	catkin build
+
+
+The build should succeed without errors.
+
+
+== Creating a Manifest
+
+The manifest informs rapyuta.io about a set of components that belong together, whether they run in the cloud or on a device. Here we create a package consisting of two components, namely the server component in the cloud and a client on a device.
+
+. In the Console, go to CATALOG and click add new package. Switch the view to advanced. Let's call this package "Mp3 Example".
+
+. Our first component is the cloud-based inventory service. 
+** Fill in the name "Mp3 Inventory", or any other;
+** the git repository https://github.com/fairlight1337/ros_service_examples/
+** Expose the service "*mp3_inventory_interaction*". This informs rapyuta.io that the service can be adressed from other components as well.
+** Finally, as command we use
+
+    roscd ros_service_examples && rosrun ros_service_examples mp3_inventory
++
+This allows the inventory to be loaded from the packages directory.
+
+image::ros_services/cloud_component.png["Cloud component holding the inventory service."]
+
+[start=3]
+. Next, we create another component to describe the controller on our device.
+** Folowing the example, we name it "Mp3 Controller"
+** Make sure the required runtime is set to "Device".
+** The mp3_controller is a one-shot executable, meaning it will terminate immediately. To emulate its usage in a more complex environment, we built a quick loop around it in the *command*:
+
+    source ~/ws/devel/setup.bash && roscore& while true; do sleep 2 && rosrun ros_service_examples mp3_controller; done
+
+image::ros_services/device_component.png["Device component holding the client."]
+
+[start=4]
+. Once the package has been build, we can move on to a deployment.
+
+[IMPORTANT]
+====
+Do not forget to add the two setup scripts:
+
+** /opt/ros/kinetic/setup.bash
+** /opt/rapyuta/catkin/devel/setup.bash
+====
+
+image::ros_services/deploy.png["Deployment dialogue"]
+
+
+You can observe the controller's output on rosout either directly on the device or via the "Logs" tab of the deployment:
+
+	[ INFO] [1518156718.991153192]: OK, sent. Here is the answer:
+	[ INFO] [1518156718.991202957]:  - Response string: 'album_list'
+	[ INFO] [1518156718.991214301]:  - Albums:
+	[ INFO] [1518156718.991227760]:    * album_1
+	[ INFO] [1518156719.000830586]:      Titles:
+	[ INFO] [1518156719.000886080]:        o title_1
+	[ INFO] [1518156719.000912773]:        o title_2
+	[ INFO] [1518156719.000929163]:        o title_3
+	[ INFO] [1518156719.000946194]:        o title_4
+	[ INFO] [1518156719.000966079]:    * album_2
+	[ INFO] [1518156719.011865457]:      Titles:
+	[ INFO] [1518156719.011911485]:        o title_1
+	[ INFO] [1518156719.011926135]:        o title_2
+	[ INFO] [1518156719.011943607]:    * album_3
+	[ INFO] [1518156719.025240675]:      Titles:
+	[ INFO] [1518156719.025361034]:        o title_1
+	[ INFO] [1518156719.025506192]:        o title_2
+	[ INFO] [1518156719.025554501]:        o title_3
+	[ INFO] [1518156719.025598240]:        o title_4
+	[ INFO] [1518156719.025651930]:        o title_5
