@@ -79,7 +79,7 @@ image::dependent_map_server/package-2.png[]
 Next, go to the 'components' section and change the component from 'Cloud'
 to 'Device'. Name the component and set the executable field to the following.
 
-    source ~/catkin_ws/devel/setup.bash && roslaunch map_listener listener.launch
+    source /home/ubuntu/catkin_ws/devel/setup.bash && roslaunch map_listener listener.launch
 
 image::dependent_map_server/component-2.png[]
 

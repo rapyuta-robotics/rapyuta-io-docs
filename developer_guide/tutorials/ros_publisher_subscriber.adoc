@@ -72,17 +72,16 @@ The actual on-boarding requires connectivity to rapyuta.io
     cd $HOME
     mkdir -p catkin_ws/src
     cd catkin_ws/src
-    source /opt/rapyuta/catkin/devel/setup.bash
-    catkin_init_workspace
+    source /opt/ros/kinetic/setup.bash
 
 .. Get the code for the ROS listener:
 
     git clone https://github.com/khatribharat/ros-listener
     cd ..
 
-.. Compile the package:
+.. Build the package:
 
-    catkin_make
+    catkin build listener
 
 Once the compilation is finished, you can check that everything is correct:
 
@@ -128,11 +127,12 @@ image::ros_pub_sub/pkg_2.png["Talker component."]
 
 .. Listener component:
 ... Select a name and a description for the `talker` component. Select `Device` as required runtime and check `Is ROS` box.
-... The code is already on the device. We simply have to tell rapyuta.io what to run on the device:
+... The code is already on the device. We simply have to tell rapyuta.io what to run on the device, just make sure to use absolute path of your catkin workspace:
 
-    source ~/catkin_ws/devel/setup.bash && roslaunch listener listener.launch
+    source /home/ubuntu/catkin_ws/devel/setup.bash && roslaunch listener listener.launch
 
 ... No other parameters or topics need to be specified. rapyuta.io will expose the `/telemetry` topic here from the cloud via the cloud bridge.
+
 
 image::ros_pub_sub/pkg_3.png["Listener component."]
 
