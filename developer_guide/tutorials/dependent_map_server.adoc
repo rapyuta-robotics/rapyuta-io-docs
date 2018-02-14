@@ -32,46 +32,47 @@ Now expose the */set_map* service.
 
 image::dependent_map_server/services-1.png[]
 
-Finally, we will use parameters to tell rapyuta.io which package and which 
-launchfile to execute from inside the github repository. Add two parameters 
-fields. Set 'ROS_PKG' to 'dynamic_map_server' and set 'ROS_LAUNCH_FILE' to 
+Finally, we will use parameters to tell rapyuta.io which package and which
+launchfile to execute from inside the github repository. Add two parameters
+fields. Set 'ROS_PKG' to 'dynamic_map_server' and set 'ROS_LAUNCH_FILE' to
 'map_server.launch'.
 
 image::dependent_map_server/parameters-1.png[]
 
-Now you can click 'submit'. 
+Now you can click 'submit'.
 
-In the 'Catalog', click your new package (dynamic-map-server-5 below), 
-and then click 'Deploy Package'. 
+In the 'Catalog', click your new package (dynamic-map-server-5 below),
+and then click 'Deploy Package'.
 
 image::dependent_map_server/catalog-1.png[]
 image::dependent_map_server/deploy-button-1.png[]
 
-Go to the 'deployments' page and make a note of the deployment id of the 
+Go to the 'deployments' page and make a note of the deployment id of the
 dynamic-map-server deployment.
 
 image::dependent_map_server/deployments-1.png[]
 
 == Creating a dependent deployment
 
-In this section, we will launch a map_listener node on the device. 
-By adding the dynamic_map_server as a dependent deployment, when ROS is 
-launched, the cloud bridge will automatically be launched and the topics and 
+In this section, we will launch a map_listener node on the device.
+By adding the dynamic_map_server as a dependent deployment, when ROS is
+launched, the cloud bridge will automatically be launched and the topics and
 services of the dynamic_map_server will be exposed.
 
-A device should already be prepared and added. 
+A device should already be prepared and added.
 (See link:../../getting_started/adding_new_device.html[adding a new device]).
 On the device, execute the following commands:
 
     cd ~
     mkdir -p catkin_ws/src
-    cd catkin_ws
-    git clone https://github.com/rapyuta/io_tutorials/ src/io_tutorials/
+    cd catkin_ws/src
+    git clone https://github.com/rapyuta/io_tutorials
+    cd ..
     source /opt/ros/kinetic/setup.bash
     catkin build map_listener
 
-Now create the package. Once again, go to 'Catalog' in the left sidebar 
-and then click 'Add New Package'. Move to the advanced section tab. 
+Now create the package. Once again, go to 'Catalog' in the left sidebar
+and then click 'Add New Package'. Move to the advanced section tab.
 Fill in the name, version and description.
 
 image::dependent_map_server/package-2.png[]
@@ -99,7 +100,7 @@ you previously added. Now click 'continue'.
 image::dependent_map_server/get-devices-1.png[]
 
 Here is where you will finally add the map server as a dependent
-deployment. 
+deployment.
 
 First, add the following scripts to 'ROS Setup Script' section. Order is important!
 
@@ -115,7 +116,7 @@ Finally, click 'Create Deployment'.
 
 To check the map_listener node received map data, type the following:
 
-    tail ~/.ros/log/latest/map_listener-2.log
+    sudo tail /root/.ros/log/latest/map_listener-2.log
 
 You should see text similar to the following:
 
@@ -126,7 +127,7 @@ You should see text similar to the following:
 
 In a terminal connected to the device, type the following:
 
-    tail -f ~/.ros/log/latest/rosout.log
+    sudo tail -f /root/.ros/log/latest/rosout.log
 
 Open a separate terminal to the device and type the following:
 
