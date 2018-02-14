@@ -63,7 +63,7 @@ The actual on-boarding requires connectivity to rapyuta.io
     127.0.1.1 ubuntu 
 
 9. Install ROS on the Raspberry Pi following the link:http://wiki.ros.org/kinetic/Installation/Ubuntu[official instructions]. We recommend installing
-*ROS-Base*.
+*ROS-Base*. Also please make sure that you have link:http://catkin-tools.readthedocs.io/en/latest/installing.html[catkin tools] present on your device
 
 10. Currently, rapyuta.io does not install the components on the device. Therefore, you have to get and compile the `listener` package that will run on the device. For this:
 
