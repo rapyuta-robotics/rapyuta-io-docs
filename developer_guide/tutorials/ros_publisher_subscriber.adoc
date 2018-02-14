@@ -10,7 +10,7 @@
 
 toc::[]
 
-This tutorial will show you how to deploy a basic ROS package with a ROS publisher running in the cloud and a ROS subscriber running on a Raspberry Pi. 
+This tutorial will show you how to deploy a basic ROS package with a ROS publisher running in the cloud and a ROS subscriber running on a Raspberry Pi.
 The ROS publisher sits in a public git repository and is built into a Docker container on the fly using `ros-indigo-catkin` build recipe.
 The ROS subscriber is assumed to be downloaded on Raspberry Pi and is launched when the package is deployed using rapyuta.io console UI or the
 link:../rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK].
@@ -25,7 +25,7 @@ To complete this tutorial, you should have the following:
 == Preparing the Raspberry Pi 3
 We are going to use Ubuntu 16.04 on the Raspberry Pi. It is not officially supported, but there is an image available that we will use for this tutorial.
 
-1. Download the image `ubuntu-16.04-preinstalled-server-armhf+raspi3.img.xz` from link:https://ubuntu-pi-flavour-maker.org/download/[here] or 
+1. Download the image `ubuntu-16.04-preinstalled-server-armhf+raspi3.img.xz` from link:https://ubuntu-pi-flavour-maker.org/download/[here] or
 link:https://wiki.ubuntu.com/ARM/RaspberryPi[here].
 2. To make the SD card flashing easier, download and install link:https://etcher.io/[Etcher].
 3. Mount the micro SD card on your computer and flash it using Etcher.
@@ -34,7 +34,7 @@ image::ros_pub_sub/etcher.png["Flashing the SD card with Etcher"]
 
 [start=4]
 4. Insert the micro SD card on the Raspberry Pi micro SD card slot and power it.
-5. Connect the Ethernet port of the Raspberry Pi to a router that provides internet access. 
+5. Connect the Ethernet port of the Raspberry Pi to a router that provides internet access.
 
 [TIP]
 ====
@@ -49,7 +49,7 @@ to change the password as soon as you log in.
     ssh ubuntu@<device IP>
 
 [TIP]
-Alternatively you may use as serial terminal to achieve the same result. 
+Alternatively you may use as serial terminal to achieve the same result.
 [CAUTION]
 The actual on-boarding requires connectivity to rapyuta.io
 
@@ -60,7 +60,7 @@ The actual on-boarding requires connectivity to rapyuta.io
 
 8. In the `/etc/hosts` file of the Raspberry Pi, add the following line:
 
-    127.0.1.1 ubuntu 
+    127.0.1.1 ubuntu
 
 9. Install ROS on the Raspberry Pi following the link:http://wiki.ros.org/kinetic/Installation/Ubuntu[official instructions]. We recommend installing
 *ROS-Base*. Also please make sure that you have link:http://catkin-tools.readthedocs.io/en/latest/installing.html[catkin tools] present on your device
@@ -76,7 +76,7 @@ The actual on-boarding requires connectivity to rapyuta.io
 
 .. Get the code for the ROS listener:
 
-    git clone https://github.com/khatribharat/ros-listener
+    git clone https://github.com/rapyuta/io_tutorials
     cd ..
 
 .. Build the package:
@@ -86,7 +86,7 @@ The actual on-boarding requires connectivity to rapyuta.io
 Once the compilation is finished, you can check that everything is correct:
 
     source devel/setup.bash
-    roslaunch listener listener.launch  
+    roslaunch listener listener.launch
 
 image::ros_pub_sub/comp_ok.png["Listener correctly running on the Raspberry Pi"]
 
@@ -115,7 +115,7 @@ image::ros_pub_sub/pkg_1.png["Package configuration."]
 5. The package will have two components: the talker running on the cloud and the listener running on the device:
 .. Talker component:
 ... Select a name and a description for the `talker` component. Select `Cloud` as required runtime and check `Is ROS` box.
-... In this case, we will have one executable from a git repository. Therefore, select git and add this URL: https://github.com/khatribharat/ros-talker
+... In this case, we will have one executable from a git repository. Therefore, select git and add this URL: https://github.com/rapyuta/io_tutorials
 ... This executable will publish a topic `/telemetry`. We want this topic to arrive at the device. Therefore, add the `/telemetry` topic with max QoS
 (usually a telemetry topic would not have max QoS, take this as an example), and leave the scope as global.
 ... Finally, rapyuta.io needs to know what to launch from that repository, as it might have many packages and roslaunch files. Therefore, add
@@ -138,7 +138,7 @@ image::ros_pub_sub/pkg_3.png["Listener component."]
 
 [start=6]
 6. Click on submit. After this, rapyuta.io will process and prepare the package for future deployments. If everything is OK you should see the
-status indicator as green on the package information page. 
+status indicator as green on the package information page.
 
 image::ros_pub_sub/pkg_ok.png["Package created successfully."]
 
