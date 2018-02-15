@@ -9,6 +9,7 @@ To start an SSH session to your device, you need to ensure that your device is o
 service. To enable ssh on Ubuntu:
 ....
     sudo apt-get install openssh-server
+    sudo systemctl start ssh
     sudo systemctl status ssh
 ....
 
