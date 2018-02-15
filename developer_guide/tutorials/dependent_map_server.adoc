@@ -32,8 +32,8 @@ Now expose the */set_map* service.
 
 image::dependent_map_server/services-1.png[]
 
-Finally, we will use parameters to tell rapyuta.io which package and which
-launchfile to execute from inside the github repository. Add two parameters
+Finally, we will use configuration parameters to tell rapyuta.io which package and which
+launchfile to execute from inside the github repository. Add two configuration parameters
 fields. Set 'ROS_PKG' to 'dynamic_map_server' and set 'ROS_LAUNCH_FILE' to
 'map_server.launch'.
 
@@ -41,7 +41,7 @@ image::dependent_map_server/parameters-1.png[]
 
 Now you can click 'submit'.
 
-In the 'Catalog', click your new package (dynamic-map-server-5 below),
+In the 'Catalog' tab of rapyuta.io UI console, click your new package (dynamic-map-server-5 below),
 and then click 'Deploy Package'.
 
 image::dependent_map_server/catalog-1.png[]
@@ -71,7 +71,7 @@ On the device, execute the following commands:
     source /opt/ros/kinetic/setup.bash
     catkin build map_listener
 
-Now create the package. Once again, go to 'Catalog' in the left sidebar
+Now, create the package. Once again, go to 'Catalog' in the left sidebar
 and then click 'Add New Package'. Move to the advanced section tab.
 Fill in the name, version and description.
 
