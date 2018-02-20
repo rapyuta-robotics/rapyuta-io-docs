@@ -21,7 +21,7 @@ We support building docker containers for the following platforms:
 
 == Git Branches and Tags
 
-For building from a specific tag or branch, you can use https://en.wikipedia.org/wiki/Fragment_identifier[URL fragments] to indicate it.
+For building from a specific tag or branch, you can use https://en.wikipedia.org/wiki/Fragment_identifier[URL fragments] in the Executables field of the package manifest.
 
 Example:
 
