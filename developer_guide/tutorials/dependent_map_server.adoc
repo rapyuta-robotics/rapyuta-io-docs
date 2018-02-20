@@ -16,8 +16,7 @@ is used to replace the map that is published on the */map* topic.
 
 Go to 'Catalog' in the left sidebar and then click 'Add New Package'.
 
-Fill in the package name, version, and git URL. We will leave the
-command field empty and use parameters to launch the package instead.
+Fill in the package name, version, and git URL.
 Use the following git URL:
 
     https://github.com/rapyuta/io_tutorials
