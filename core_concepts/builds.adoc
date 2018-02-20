@@ -8,7 +8,7 @@ A build recipe contains instructions to build applications of a particular type.
 NGINX web server, etc. They can be used by developers to standardize the build process for applications across a team.
 Build recipes allow the platform to provide tailored build environments for an application type. For example, they can make choices on build tools,
 security policies, logging and monitoring tools, etc.
-	
+
 An application build is specified during package creation as shown in the example below:
 
 image::executables.png["Specifying a new executable from a git repository."]
@@ -18,6 +18,18 @@ We support building docker containers for the following platforms:
 
 * x86-64
 * ARMv7 (32-bit)
+
+== Git Branches and Tags
+
+For building from a specific tag or branch, you can use https://en.wikipedia.org/wiki/Fragment_identifier[URL fragments] to indicate it.
+
+Example:
+
+https://github.com/rapyuta/io_tutorials.git#branch_name
+
+or
+
+https://github.com/rapyuta/io_tutorials.git#40faccd8b4d1e92636fa229258005caa4718c966
 
 
 == Using private repositories
