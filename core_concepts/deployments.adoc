@@ -61,7 +61,7 @@ Following are the phases of deployment along with their description:
 == Live status
 rapyuta.io allows the user to monitor the current status of the components that were deployed as parts of a deployment.
 *Live status* depicts this information of a deployment once deployment starts successfully (*Phase* is *Started
-successfully*). rapyuta.io on the on the status of components of the deployment, the final status of deployment can be:
+successfully*). Depending on the status of components of the deployment, the final status of deployment can be:
 
 [%header,cols=2*]
 |===
@@ -81,8 +81,8 @@ successfully*). rapyuta.io on the on the status of components of the deployment,
 |One or more components are facing an error
 |===
 
-If the *Live Status* is *Error*, the deployment status contains an error code which specifies the cause of the error.
-system errors, you should report the error to support team along with the error code.
+If the *Live Status* is *Error* or *Unknown*, the deployment status contains an error code which specifies the cause of the error.
+In case of system errors, you should report the error to support team along with the error code.
 
 Following are the error codes, descriptions, and the recommended actions when faced with the error code.
 
@@ -111,6 +111,10 @@ Following are the error codes, descriptions, and the recommended actions when fa
 |DEP_E155
 |Component executables on the cloud failing with errors
 |Troubleshoot the failing component using component logs
+
+|DEP_E156
+|Dependent deployment is in error state
+|Troubleshoot the dependent deployment which is in error state
 
 |DEP_E2xx
 |Internal rapyuta.io error in the components deployed on the cloud
