@@ -54,8 +54,11 @@ Following are the phases of deployment along with their description:
 |Failed to start
 |Deployment unable to start due to an error
 
+|Partially deprovisioned
+|Deployment de-provisioned by the user but some components are not stopped. User can de-provision again to stop the remaining components.
+
 |Deployment stopped
-|Deployment de-provisioned by the user
+|Deployment de-provisioned by the user and all components are stopped
 |===
 
 == Live status
