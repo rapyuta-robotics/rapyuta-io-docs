@@ -44,7 +44,7 @@ For example, a *database* package has an exposed network endpoint named *HOST_AN
 includes the port) and exposed parameters *USER*, *PASSWORD*, and *DATABASE_NAME* for dependent packages to utilize the
 database as a dependency. Now, when a *robot_management* package uses the *database* package as its dependency,
 rapyuta.io will automatically inject the *database* package's _package bindings_ as environment variables in the
-run-time of the *robot_management* package's deployment. This implies  *robot_management* package's executables will be
+runtime of the *robot_management* package's deployment. This implies  *robot_management* package's executables will be
 able to consume the *database* package's *HOST_AND_PORT*, *USER*, *PASSWORD*, and *DATABASE_NAME* as
 environment variables. We then say that the *robot_management* package *_binds_* to the *database* package.
 
