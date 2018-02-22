@@ -55,8 +55,7 @@ Following are the phases of deployment along with their description:
 |Deployment could not be started due to an error
 
 |Partially deprovisioned
-|Deployment de-provisioned by the user but some components could not be stopped due to an error. User can try
-deprovisioning again to stop the remaining components
+|Deployment deprovisioned by the user but some components could not be stopped due to an error. User can retry to stop the remaining components
 
 |Deployment stopped
 |Deployment deprovisioned by the user and all components were stopped
