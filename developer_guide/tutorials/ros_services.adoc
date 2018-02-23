@@ -68,9 +68,10 @@ image::ros_services/cloud_component.png["Cloud component holding the inventory s
 . Next, we create another component to describe the controller on our device.
 ** Folowing the example, we name it "Mp3 Controller"
 ** Make sure the required runtime is set to "Device".
-** The mp3_controller is a one-shot executable, meaning it will terminate immediately. To emulate its usage in a more complex environment, we built a quick loop around it in the *command*:
+** On the device, we have to explicitly start the roscore, so we use two executables. One for the roscore, one for our node.
+** The mp3_controller is a one-shot executable, meaning it will terminate immediately. To emulate its usage in a more complex environment, we built a quick loop around it:
 
-    source ~/ws/devel/setup.bash && roscore& while true; do sleep 2 && rosrun ros_service_examples mp3_controller; done
+    source ~/ws/devel/setup.bash && while true; do sleep 2 && rosrun ros_service_examples mp3_controller; done
 
 image::ros_services/device_component.png["Device component holding the client."]
 
