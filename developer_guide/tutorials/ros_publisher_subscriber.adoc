@@ -118,8 +118,7 @@ image::ros_pub_sub/pkg_1.png["Package configuration."]
 ... In this case, we will have one executable from a git repository. Therefore, select git and add this URL: https://github.com/rapyuta/io_tutorials
 ... This executable will publish a topic `/telemetry`. We want this topic to arrive at the device. Therefore, add the `/telemetry` topic with max QoS
 (usually a telemetry topic would not have max QoS, take this as an example), and leave the scope as global.
-... Finally, rapyuta.io needs to know what to launch from the repository, as it might have many packages and roslaunch files. Therefore, add
-the command `roslaunch talker talker.launch` in the command field.
+... Finally, rapyuta.io needs to know what to launch from the repository, as it might have many packages and roslaunch files. Therefore, add *_roslaunch talker talker.launch_* in the *Command* field of the form.
 +
 image::ros_pub_sub/pkg_2.png["Talker component."]
 

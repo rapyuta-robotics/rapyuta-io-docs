@@ -21,8 +21,9 @@ Use the following git URL:
 
     https://github.com/rapyuta/io_tutorials
 
-We will use the command `roslaunch dynamic_map_server map_server.launch` in the command field to tell rapyuta.io which package and which
-launchfile to execute from inside the github repository.
+
+Fill in *_roslaunch dynamic_map_server map_server.launch_* in the *Command* field of the form. This conveys the ROS launch file and the ROS package name to launch.
+
 
 image::dependent_map_server/package-1.png[]
 
