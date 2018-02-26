@@ -16,11 +16,14 @@ is used to replace the map that is published on the */map* topic.
 
 Go to 'Catalog' in the left sidebar and then click 'Add New Package'.
 
-Fill in the package name, version, and git URL. We will leave the
-command field empty and use parameters to launch the package instead.
+Fill in the package name, version, and git URL.
 Use the following git URL:
 
     https://github.com/rapyuta/io_tutorials
+
+
+Fill in *_roslaunch dynamic_map_server map_server.launch_* in the *Command* field of the form. This conveys the ROS launch file and the ROS package name to launch.
+
 
 image::dependent_map_server/package-1.png[]
 
@@ -31,13 +34,6 @@ image::dependent_map_server/topics-1.png[]
 Now expose the */set_map* service.
 
 image::dependent_map_server/services-1.png[]
-
-Finally, we will use configuration parameters to tell rapyuta.io which package and which
-launchfile to execute from inside the github repository. Add two configuration parameters
-fields. Set 'ROS_PKG' to 'dynamic_map_server' and set 'ROS_LAUNCH_FILE' to
-'map_server.launch'.
-
-image::dependent_map_server/parameters-1.png[]
 
 Now you can click 'submit'.
 
