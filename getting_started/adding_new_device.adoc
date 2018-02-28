@@ -27,6 +27,7 @@ image::adding_new_device/bootstrap_link.png["Copy setup link"]
 === Setup your device
 Paste and run the device setup link on a terminal to the device (using, for instance, serial TTY or SSH). This will start setting up rapyuta.io device client. 
 
+
 [IMPORTANT]
 Depending on the setup of your device, you might need to run the device setup link with root permissions. Note that the command is of the form
 `curl -s -H "..." https://bootstrap.rapyuta.io/start | bash`. Therefore, you either log as the `root` user or run
@@ -48,6 +49,16 @@ In case of any error, please copy the output of the terminal and contact Rapyuta
 [TIP]
 To learn more about the things you can do with your device, visit the link:../developer_guide/device_management_operations/webssh.html[WebSSH] tutorial.
 For more information on device manager concepts, visit the link:../core_concepts/device_management.html[device management] section.
+
+[NOTE]
+If the setup is not completed sucessfully and the error message `locale: Cannot set LC_ALL to default locale: No such file or directory`
+is displayed, then please logout of your device and login to your device after disabling the forwarding of locale settings by your SSH client.
+
+====To disable the forwarding of locale settings by your SSH client.
+
+1. Make a copy of the system SSH client configuration 'cp /etc/ssh/ssh_config ~/.ssh/config'
+2. Modify to the copy of the SSH client configuration to disable forwarding environmnet variables  'sed -i '/SendEnv/s/^/#/' ~/.ssh/config'
+3. Login into your device using the modified configuration file 'ssh -F ~/.ssh/config your_user@your_host'
 
 === Device status page
 
