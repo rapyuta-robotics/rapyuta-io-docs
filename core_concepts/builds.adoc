@@ -7,7 +7,7 @@ image::executables.png["Specifying a new executable from a git repository."]
 
 [NOTE]
 rapyuta.io currently only supports docker images for components for *Cloud* runtime. You can submit any x86_64 docker
-images during the package creation by referring to the images's registry address.
+images during the package creation by referring to the images's URL.
 
 = Secrets
 A secret is an object which consists of sensitive data such as a password, SSH private key, SSL certificate needed by
@@ -17,8 +17,6 @@ to manage this data from the *Secrets* tab in the console UI.
 
 [TIP]
 A Secret provides a layer of abstraction between the container and a set of credentials.
-
-You can create these secrets from Secrets tab in the console UI.
 
 == Secret Types
 
