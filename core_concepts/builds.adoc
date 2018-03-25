@@ -7,7 +7,8 @@ image::executables.png["Specifying a new executable from a git repository."]
 
 [NOTE]
 rapyuta.io currently only supports docker images for components for *Cloud* runtime. You can submit any x86_64 docker
-images during the package creation by referring to the images's URL.
+images during the package creation by referring to the images' URL. The same is true of git repositories; rapyuta.io
+currently only supports git repositories for components for *Cloud* runtime.
 
 = Secrets
 A secret is an object which consists of sensitive data such as a password, SSH private key, SSL certificate needed by
@@ -40,9 +41,9 @@ There are two types of Docker Pull Secrets:
 ==== Step-by-Step Instructions
 
 To use docker images from a private docker registry in rapyuta.io *Packages*, the user only has to create a
-*Docker pull secret* for the docker registry. After creating the *Docker pull secret*, the user can use any docker
-image in the registry for *Package* creation. rapyuta.io will use the information from the Docker pull secret to pull
-and use these docker images.
+*Docker pull secret* for the docker registry. After creating the *Docker pull secret*, the user can create rapyuta.io
+*Packages* that use any docker images of this registry. rapyuta.io will use the information from the Docker pull secret
+to pull and use these docker images.
 
 The steps given below will help you add a Docker Pull Secret:
 
@@ -60,13 +61,15 @@ the image below:
 +
 image::create_docker_secret.png["Creating Docker pull secret",650]
 4. Fill in the form with the particulars of the docker registry and click *Submit*. In the case of a private registry,
-click the checkbox for link:#core_concepts-builds-docker_secret_type[Private registry]. In this case, you also have to
+click the radio button for link:#core_concepts-builds-docker_secret_type[Private registry]. In this case, you also have to
 fill in the registry url in the *Registry Url* part of the form. The other fields are described below:
 +
 * Username: This is your user ID for Docker Hub or the private registry
-* Password: This is your password for the docker registry
-* Email: This is the email address used for the docker registry
+* Password: This is your password for Docker Hub or the private registry
+* Email: This is the email address used for Docker Hub or the private registry
 
+[NOTE]
+rapyuta.io does not support docker registries that do not use TLS.
 //TODO:improve image resolution
 //image::docker_hub.png["Docker Hub",650]
 //TODO: improve image resolution
@@ -75,7 +78,7 @@ fill in the registry url in the *Registry Url* part of the form. The other field
 [[core_concepts-builds-source_secret]]
 
 == Source Secret
-When using source code from a private git repository to create a package, access to the registry is required by
+When using source code from a private git repository to create a package, access to the repository is required by
 rapyuta.io. Source secrets are used to provide rapyuta.io with access to private git repositories or git repositories
 with self-signed or untrusted SSL certificates.
 
