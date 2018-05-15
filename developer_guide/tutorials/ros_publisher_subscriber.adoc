@@ -27,6 +27,12 @@ We are going to use Ubuntu 16.04 on the Raspberry Pi. It is not officially suppo
 
 1. Download the image `ubuntu-16.04-preinstalled-server-armhf+raspi3.img.xz` from link:https://ubuntu-pi-flavour-maker.org/download/[here] or
 link:https://wiki.ubuntu.com/ARM/RaspberryPi[here].
+
+[TIP]
+====
+If you use this image link:https://drive.google.com/file/d/14jAm71TMTEcwd-VDagovpIhQMmQKhWJC/view[here] you can skip after step 6.
+====
+
 2. To make the SD card flashing easier, download and install link:https://etcher.io/[Etcher].
 3. Mount the micro SD card on your computer and flash it using Etcher.
 

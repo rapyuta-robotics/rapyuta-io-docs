@@ -17,19 +17,22 @@ toc::[]
 An Executable refers to a runnable element. This runnable element can be:
 
 * A Docker image: The docker registry endpoint is accepted as an executable. Rapyuta.io pulls this image from the docker
-registry when a link:../core_concepts/deployments.html[deployment] is triggered. An additional bash shell command can
-be specified, in which case, this shell command overrides the
-link:https://docs.docker.com/engine/reference/run/#entrypoint-default-command-to-execute-at-runtime[entry-point] of the
-docker container.
+registry when a link:../core_concepts/deployments.html[deployment] is triggered.
 
 * A Git repository: A git repository is accepted as an executable. Rapyuta.io builds this code to generate the
 executable. Look at link:../core_concepts/builds.html[builds] for more information (the platform builds this into a
 runnable artifact). The command specified with this repository is run with the artifact.
 
-* A bash command: A simple bash shell command as an executable. *If a git or docker reference is not provided, just the
-command can form an executable. In this case, the executable can only run on a device environment (not the cloud).*
-Rapyuta.io assumes that all dependencies that are required to run this command are already present in the device
-runtime where the command is expected to run.
+* A command: A simple shell command as an executable. *If a git or docker reference is provided, this shell command overrides
+the link:https://docs.docker.com/engine/reference/run/#cmd-default-command-or-options[CMD] of the docker container while we
+ don't allow the overwriting of entry-point. Otherwise, if no git or docker reference is provided, just the command can
+ form an executable. But in this case, the executable can only run on a device environment (not the cloud).* Rapyuta.io
+ assumes that all dependencies that are required to run this command are already present in the device runtime where the
+ command is expected to run.
+
+[TIP]
+When using the bash option with container, the specified command is executed with an invocation of the shell using /bin/bash -c.
+But make sure it does contain the bash.
 
 [[core_concepts-packages-component]]
 
@@ -137,4 +140,3 @@ link:service_catalog.html#dependant-deployments[service catalog] for more detail
 rapyuta.io allows for a number of design patterns that help you compose an application using a combination of one or
 more packages. Please refer to the design patterns section of the
 link:service_catalog.html#design-patterns-with-rapyuta-io[service catalog] docs for an overview.
-
