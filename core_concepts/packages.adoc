@@ -33,7 +33,7 @@ the link:https://docs.docker.com/engine/reference/run/#cmd-default-command-or-op
  to run this command are already present in the device runtime where the command is expected to run.
 
 [TIP]
-If the 'Run command from bash shell' box is checked, the specified command is executed  with an invocation of the shell using `/bin/bash -c`.
+If the 'Run command from bash shell' box is checked, the specified command is executed with an invocation of the shell using `/bin/bash -c`.
 Make sure bash binary is present in the docker image.
 
 image::executable.png["Executable"]
