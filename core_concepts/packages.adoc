@@ -16,23 +16,27 @@ toc::[]
 === Executables
 An Executable refers to a runnable element. This runnable element can be:
 
-* A Docker image: The docker registry endpoint is accepted as an executable. Rapyuta.io pulls this image from the docker
+* Name: A name is an identifier for your executable.
+
+* A Docker image: The docker registry endpoint is accepted as an executable. rapyuta.io pulls this image from the docker
 registry when a link:../core_concepts/deployments.html[deployment] is triggered.
 
-* A Git repository: A git repository is accepted as an executable. Rapyuta.io builds this code to generate the
-executable. Look at link:../core_concepts/builds.html[builds] for more information (the platform builds this into a
-runnable artifact). The command specified with this repository is run with the artifact.
+* A Git repository: A git repository is accepted as an executable. Rapyuta.io builds this code to generate the docker
+executable. Refer to link:../core_concepts/builds.html[builds] for more information (the platform builds this into a
+runnable docker image). The command specified with this repository is run with the generated docker image.
 
-* A command: A simple shell command as an executable. *If a git or docker reference is provided, this shell command overrides
-the link:https://docs.docker.com/engine/reference/run/#cmd-default-command-or-options[CMD] of the docker container while we
- don't allow the overwriting of entry-point. Otherwise, if no git or docker reference is provided, just the command can
- form an executable. But in this case, the executable can only run on a device environment (not the cloud).* Rapyuta.io
- assumes that all dependencies that are required to run this command are already present in the device runtime where the
- command is expected to run.
+* A command: A simple shell command is accepted as an executable. If a git or docker reference is provided, this shell command overrides
+the link:https://docs.docker.com/engine/reference/run/#cmd-default-command-or-options[CMD] of the docker image while we
+ don't allow the overriding of link:https://docs.docker.com/engine/reference/run/#entrypoint-default-command-to-execute-at-runtime[entry-point].
+ *Otherwise, if no git or docker reference is provided, just the command can form an executable. In this case, the
+ executable can only run on a device environment (not the cloud).* Rapyuta.io assumes that all dependencies required
+ to run this command are already present in the device runtime where the command is expected to run.
 
 [TIP]
-When using the bash option with container, the specified command is executed with an invocation of the shell using /bin/bash -c.
-But make sure it does contain the bash.
+If the 'Run command from bash shell' box is checked, the specified command is executed  with an invocation of the shell using `/bin/bash -c`.
+Make sure bash binary is present in the docker image.
+
+image::executable.png["Executable"]
 
 [[core_concepts-packages-component]]
 
