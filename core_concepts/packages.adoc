@@ -18,7 +18,7 @@ An Executable refers to a runnable element. This runnable element can be:
 
 * Name: A name is an identifier for your executable.
 
-* A Docker image: The docker registry endpoint is accepted as an executable. rapyuta.io pulls this image from the docker
+* A Docker image: The docker registry endpoint is accepted as an executable. Rapyuta.io pulls this image from the docker
 registry when a link:../core_concepts/deployments.html[deployment] is triggered.
 
 * A Git repository: A git repository is accepted as an executable. Rapyuta.io builds this code to generate the docker
