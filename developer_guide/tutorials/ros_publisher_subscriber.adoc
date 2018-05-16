@@ -25,8 +25,17 @@ To complete this tutorial, you should have the following:
 == Preparing the Raspberry Pi 3
 We are going to use Ubuntu 16.04 on the Raspberry Pi. It is not officially supported, but there is an image available that we will use for this tutorial.
 
-1. Download the image `ubuntu-16.04-preinstalled-server-armhf+raspi3.img.xz` from link:https://ubuntu-pi-flavour-maker.org/download/[here] or
-link:https://wiki.ubuntu.com/ARM/RaspberryPi[here].
+1. Download one of the following images
+* link:https://drive.google.com/file/d/14jAm71TMTEcwd-VDagovpIhQMmQKhWJC/view[custom rapyuta.io image]
+* link:https://ubuntu-pi-flavour-maker.org/download/[ubuntu pi flavour]
+* link:https://wiki.ubuntu.com/ARM/RaspberryPi[ubuntu classic].
+
+[TIP]
+====
+Our link:https://drive.google.com/file/d/14jAm71TMTEcwd-VDagovpIhQMmQKhWJC/view[custom rapyuta.io image] comes with ROS, catkin and rapyuta.io
+tutorials pre-installed. If you use this image, you can skip step 6 to 10 from the below mentioned steps.
+====
+
 2. To make the SD card flashing easier, download and install link:https://etcher.io/[Etcher].
 3. Mount the micro SD card on your computer and flash it using Etcher.
 

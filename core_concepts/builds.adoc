@@ -26,6 +26,8 @@ rapyuta.io provides two secret types:
 * *Docker Pull Secret*
 * *Source Secret*
 
+[[core_concepts-secrets_docker_pull_secret]]
+
 == Docker Pull Secret
 
 When the user wants to use a docker image from his private docker registry to create a package, access to the registry

@@ -14,22 +14,32 @@ toc::[]
 == Terminology
 
 === Executables
-An Executable refers to a runnable element. This runnable element can be:
+These are the attributes of the executable:
 
-* A Docker image: The docker registry endpoint is accepted as an executable. Rapyuta.io pulls this image from the docker
-registry when a link:../core_concepts/deployments.html[deployment] is triggered. An additional bash shell command can
-be specified, in which case, this shell command overrides the
-link:https://docs.docker.com/engine/reference/run/#entrypoint-default-command-to-execute-at-runtime[entry-point] of the
-docker container.
+* Name: A name is an identifier for your executable.
 
-* A Git repository: A git repository is accepted as an executable. Rapyuta.io builds this code to generate the
-executable. Look at link:../core_concepts/builds.html[builds] for more information (the platform builds this into a
-runnable artifact). The command specified with this repository is run with the artifact.
+* You can pick either docker image or git repository:
 
-* A bash command: A simple bash shell command as an executable. *If a git or docker reference is not provided, just the
-command can form an executable. In this case, the executable can only run on a device environment (not the cloud).*
-Rapyuta.io assumes that all dependencies that are required to run this command are already present in the device
-runtime where the command is expected to run.
+** A Docker image: rapyuta.io pulls this image from the docker
+registry when a link:../core_concepts/deployments.html[deployment] is triggered. If it is a private docker image,
+ you need to create a link:../core_concepts/builds.html#core_concepts-secrets_docker_pull_secret[Docker Pull Secret].
+
+** A Git repository: rapyuta.io builds this code to docker image executable. Refer to link:../core_concepts/builds.html[builds]
+for more information. If it is private git repository, you need to create link:../core_concepts/builds.html#core_concepts-builds-source_secret[Source Secret].
+
+* A command: The final runnable artifact when either git or docker is provided is a docker image. The shell command provided in the
+command field of executable overrides the link:https://docs.docker.com/engine/reference/run/#cmd-default-command-or-options[CMD] of
+the docker image. We don't allow the overriding of link:https://docs.docker.com/engine/reference/run/#entrypoint-default-command-to-execute-at-runtime[ENTRY POINT].
++
+If neither git, nor docker image is provided, the executable will only run on a device runtime. In this case, rapyuta.io assumes that all
+dependencies required to run this command are already present in the device runtime where the command is expected to run.
++
+
+[TIP]
+If the 'Run command from bash shell' box is checked, the specified command is executed with an invocation of the shell using `/bin/bash -c`.
+Make sure bash binary is present in the docker image.
+
+image::executable.png["Executable"]
 
 [[core_concepts-packages-component]]
 
@@ -137,4 +147,3 @@ link:service_catalog.html#dependant-deployments[service catalog] for more detail
 rapyuta.io allows for a number of design patterns that help you compose an application using a combination of one or
 more packages. Please refer to the design patterns section of the
 link:service_catalog.html#design-patterns-with-rapyuta-io[service catalog] docs for an overview.
-
