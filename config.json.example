@@ -1,0 +1,4 @@
+{
+  "RIO_CORE_ROOT_URL": "https://v4-deltaapiserver.apps.v39.rapyuta.io",
+  "AUTH_FRONTEND_URL": "https://v4-deltaauthconsole.apps.v39.rapyuta.io"
+}
