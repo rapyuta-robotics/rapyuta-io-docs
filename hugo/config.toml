@@ -1,0 +1,85 @@
+baseurl = "/"
+languageCode = "en-us"
+languageLang = "en"
+defaultContentLanguage = "en"
+
+title = "Rapyuta IO Documentation"
+theme = "hugo-material-docs"
+metadataformat = "yaml"
+# Enable Google Analytics by entering your tracking id
+#googleAnalytics = ""
+
+[params]
+	# General information
+	author = "Rapyuta IO"
+	description = "Making robots more accessible to enterprise-level customers"
+	copyright = ""
+
+	# Repository
+#	provider = "GitHub"
+#	repo_url = "https://github.com/rapyuta-robotics"
+
+	version = "1.0.0"
+	logo = "images/logo.png"
+	favicon = ""
+
+	permalink = "#"
+
+	# Custom assets
+	custom_css = []
+	custom_js  = []
+
+	# Syntax highlighting theme
+	highlight_css  = ""
+
+	[params.palette]
+    	primary = "red"
+    	accent  = "teal"
+
+    [params.font]
+    	text = "Source Sans Pro"
+    	code = "Source Code Pro"
+
+
+[social]
+	twitter = ""
+	github  = ""
+	email   = ""
+
+[[menu.main]]
+    identifier = "home"
+	name   = "Rapyuta IO Documentation"
+	url    = "/"
+	weight = "1"
+
+[[menu.main]]
+    identifier = "getting-started"
+	name   = "Getting started"
+	url    = "/getting-started/"
+	weight = "2"
+
+[[menu.main]]
+    identifier = "adding-a-new-device"
+    parent = "getting-started"
+	name   = "Adding A New Device"
+	url    = "/getting-started/adding-a-new-device/"
+	weight = "21"
+
+[[menu.main]]
+    identifier = "creating-a-new-package"
+    parent = "getting-started"
+	name   = "Creating a New Package"
+	url    = "/getting-started/creating-a-new-package/"
+	weight = "22"
+
+[[menu.main]]
+    identifier = "core-concepts"
+	name   = "Core concepts"
+	url    = "/core-concepts/"
+	weight = "3"
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true
