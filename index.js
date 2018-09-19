@@ -18,7 +18,7 @@ function parseCookies (request) {
 }
 
 
-const getUserDetails = (token) => http.get({
+const getUserDetails = async (token) => http.get({
   hostname: config.RIO_CORE_ROOT_URL,
   path: `/api/user/me/get`,
   headers: {
