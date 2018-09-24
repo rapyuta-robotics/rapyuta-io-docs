@@ -30,7 +30,7 @@ const server = http.createServer(async function onRequest (req, res) {
   const { token } = parseCookies(req);
   if(!token) {
     res.writeHead(302, {
-      'Location': `${config.AUTH_FRONTEND_URL}/login/?redirectUrl=//${req.headers.host}`,
+      'Location': `${config.AUTH_FRONTEND_URL}/login/?redirectUrl=//${req.headers.host}${req.url}`,
     });
     res.end();
   }

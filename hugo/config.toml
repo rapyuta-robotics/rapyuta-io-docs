@@ -46,17 +46,17 @@ metadataformat = "yaml"
 	github  = ""
 	email   = ""
 
-[[menu.main]]
-    identifier = "home"
-	name   = "Rapyuta IO Documentation"
-	url    = "/"
-	weight = "1"
+#[[menu.main]]
+#    identifier = "home"
+#	name   = "Rapyuta IO Documentation"
+#	url    = "/"
+#	weight = "10"
 
 [[menu.main]]
     identifier = "getting-started"
 	name   = "Getting started"
 	url    = "/getting-started/"
-	weight = "2"
+	weight = "20"
 
 [[menu.main]]
     identifier = "adding-a-new-device"
@@ -76,7 +76,7 @@ metadataformat = "yaml"
     identifier = "core-concepts"
 	name   = "Core concepts"
 	url    = "/core-concepts/"
-	weight = "3"
+	weight = "31"
 
 [blackfriday]
 	smartypants	= true
