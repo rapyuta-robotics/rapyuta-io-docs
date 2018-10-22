@@ -72,11 +72,45 @@ metadataformat = "yaml"
 	url    = "/getting-started/creating-a-new-package/"
 	weight = "22"
 
+	[[menu.main]]
+	    identifier = "deploy-package"
+	    parent = "getting-started"
+		name   = "Deploying a Package"
+		url    = "/getting-started/deploy-package/"
+		weight = "24"
+
+	[[menu.main]]
+	    identifier = "create-new-user"
+	    parent = "getting-started"
+		name   = "Creating a new user"
+		url    = "/getting-started/create-new-user/"
+		weight = "23"
+
 [[menu.main]]
     identifier = "core-concepts"
 	name   = "Core concepts"
 	url    = "/core-concepts/"
 	weight = "31"
+
+# [[menu.main]]
+# 	   identifier = "developer-guide"
+# 	name   = "Developer Guide"
+# 	url    = "/developer-guide/"
+# 	weight = "40"
+
+[[menu.main]]
+		   identifier = "tutorials"
+			 # parent = "developer-guide"
+		name   = "Tutorials"
+		url    = "/developer-guide/tutorials/"
+		weight = "41"
+
+[[menu.main]]
+				  identifier = "ros-pub-subscriber"
+					parent = "tutorials"
+			name   = "ROS publisher subscriber"
+			url    = "/developer-guide/tutorials/ros-pub-sub"
+			weight = "42"
 
 [blackfriday]
 	smartypants	= true
