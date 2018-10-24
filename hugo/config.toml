@@ -59,58 +59,59 @@ metadataformat = "yaml"
 	weight = "20"
 
 [[menu.main]]
+		  identifier = "create-new-user"
+		  parent = "getting-started"
+	name   = "Creating a new user"
+	url    = "/getting-started/create-new-user/"
+	weight = "21"
+
+[[menu.main]]
     identifier = "adding-a-new-device"
     parent = "getting-started"
 	name   = "Adding A New Device"
 	url    = "/getting-started/adding-a-new-device/"
-	weight = "21"
+	weight = "22"
+
+[[menu.main]]
+		identifier = "prepare-raspberry-pi"
+		parent = "getting-started"
+	name = "Preparing Raspberry PI"
+	url = "/getting-started/prepare-raspberry-pi/"
+	weight = "23"
+
+[[menu.main]]
+		identifier = "prepare-up-board"
+		parent = "getting-started"
+	name = "Preparing UP Board"
+	url = "/getting-started/prepare-up-board"
+	weight = "24"
 
 [[menu.main]]
     identifier = "creating-a-new-package"
     parent = "getting-started"
 	name   = "Creating a New Package"
 	url    = "/getting-started/creating-a-new-package/"
-	weight = "22"
+	weight = "25"
 
-	[[menu.main]]
-	    identifier = "deploy-package"
-	    parent = "getting-started"
-		name   = "Deploying a Package"
-		url    = "/getting-started/deploy-package/"
-		weight = "24"
+[[menu.main]]
+	   identifier = "deploy-package"
+	   parent = "getting-started"
+	name   = "Deploying a Package"
+	url    = "/getting-started/deploy-package/"
+	weight = "26"
 
-	[[menu.main]]
-	    identifier = "create-new-user"
-	    parent = "getting-started"
-		name   = "Creating a new user"
-		url    = "/getting-started/create-new-user/"
-		weight = "23"
+[[menu.main]]
+			identifier = "how-to-webssh"
+			parent = "getting-started"
+		name = "How to WebSSH"
+		url = "/getting-started/how-to-webssh"
+		weight = "27"
 
 [[menu.main]]
     identifier = "core-concepts"
 	name   = "Core concepts"
 	url    = "/core-concepts/"
 	weight = "31"
-
-# [[menu.main]]
-# 	   identifier = "developer-guide"
-# 	name   = "Developer Guide"
-# 	url    = "/developer-guide/"
-# 	weight = "40"
-
-[[menu.main]]
-		   identifier = "tutorials"
-			 # parent = "developer-guide"
-		name   = "Tutorials"
-		url    = "/developer-guide/tutorials/"
-		weight = "41"
-
-[[menu.main]]
-				  identifier = "ros-pub-subscriber"
-					parent = "tutorials"
-			name   = "ROS publisher subscriber"
-			url    = "/developer-guide/tutorials/ros-pub-sub"
-			weight = "42"
 
 [blackfriday]
 	smartypants	= true
