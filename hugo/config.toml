@@ -113,6 +113,33 @@ metadataformat = "yaml"
 	url    = "/core-concepts/"
 	weight = "31"
 
+[[menu.main]]
+		identifier = "python-sdk"
+	name = "rapyuta_io Python SDK"
+	url = "/python-sdk/"
+	weight = "40"
+
+[[menu.main]]
+		identifier = "sdk-introduction"
+		parent = "python-sdk"
+	name = "rapyuta_io Python SDK overview"
+	url = "/python-sdk/introduction/"
+	weight = "41"
+
+[[menu.main]]
+		identifier = "talker-listener-sdk"
+		parent = "python-sdk"
+	name = "Talker listener tutorial"
+	url = "/python-sdk/talker-listener/"
+	weight = "42"
+
+[[menu.main]]
+		identifier = "persistent-vol-sdk"
+		parent = "python-sdk"
+	name = "Persistent volume tutorial"
+	url = "/python-sdk/persistent-volume/"
+	weight = "43"
+
 [blackfriday]
 	smartypants	= true
 	fractions = true
