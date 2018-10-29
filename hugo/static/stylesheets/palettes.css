@@ -6,6 +6,10 @@
 
 /* red: e84e40 */
 
+.article {
+    padding-bottom: 50px;
+}
+
 .palette-primary-red .footer, .palette-primary-red .header {
     background: #dc1d30
 }
