@@ -51,6 +51,11 @@ metadataformat = "yaml"
 #	name   = "Rapyuta IO Documentation"
 #	url    = "/"
 #	weight = "10"
+[[menu.main]]
+    identifier = "core-concepts"
+	name   = "Core concepts"
+	url    = "/core-concepts/"
+	weight = "10"
 
 [[menu.main]]
     identifier = "getting-started"
@@ -59,8 +64,8 @@ metadataformat = "yaml"
 	weight = "20"
 
 [[menu.main]]
-		  identifier = "create-new-user"
-		  parent = "getting-started"
+	identifier = "create-new-user"
+	parent = "getting-started"
 	name   = "Creating a new user"
 	url    = "/getting-started/create-new-user/"
 	weight = "21"
@@ -73,15 +78,15 @@ metadataformat = "yaml"
 	weight = "22"
 
 [[menu.main]]
-		identifier = "prepare-raspberry-pi"
-		parent = "getting-started"
+	identifier = "prepare-raspberry-pi"
+	parent = "getting-started"
 	name = "Preparing Raspberry PI"
 	url = "/getting-started/prepare-raspberry-pi/"
 	weight = "23"
 
 [[menu.main]]
-		identifier = "prepare-up-board"
-		parent = "getting-started"
+	identifier = "prepare-up-board"
+	parent = "getting-started"
 	name = "Preparing UP Board"
 	url = "/getting-started/prepare-up-board"
 	weight = "24"
@@ -94,48 +99,76 @@ metadataformat = "yaml"
 	weight = "25"
 
 [[menu.main]]
-	   identifier = "deploy-package"
-	   parent = "getting-started"
+	identifier = "deploy-package"
+	parent = "getting-started"
 	name   = "Deploying a Package"
 	url    = "/getting-started/deploy-package/"
 	weight = "26"
 
 [[menu.main]]
-			identifier = "how-to-webssh"
-			parent = "getting-started"
-		name = "How to WebSSH"
-		url = "/getting-started/how-to-webssh"
-		weight = "27"
+	identifier = "how-to-webssh"
+	parent = "getting-started"
+	name = "How to WebSSH"
+	url = "/getting-started/how-to-webssh/"
+	weight = "27"
 
 [[menu.main]]
-    identifier = "core-concepts"
-	name   = "Core concepts"
-	url    = "/core-concepts/"
+	identifier = "dev-tutorials"
+	name = "Developer tutorials"
+	url = "/dev-tutorials/"
+	weight = "30"
+
+[[menu.main]]
+	identifier = "ros-pub-sub"
+	parent = "dev-tutorials"
+	name = "ROS publisher subscriber"
+	url = "/dev-tutorials/ros-publisher-subscriber/"
 	weight = "31"
 
 [[menu.main]]
-		identifier = "python-sdk"
+	identifier = "docker-pub-sub"
+	parent = "dev-tutorials"
+	name = "Docker publisher subscriber"
+	url = "/dev-tutorials/docker-publisher-subscriber/"
+	weight = "32"
+
+[[menu.main]]
+	identifier = "dynamic-map-server"
+	parent = "dev-tutorials"
+	name = "Dynamic map server"
+	url = "/dev-tutorials/dynamic-map-server/"
+	weight = "33"
+
+[[menu.main]]
+	identifier = "turtlesim"
+	parent = "dev-tutorials"
+	name = "Turtlesim"
+	url = "dev-tutorials/turtlesim/"
+	weight = "34"
+
+[[menu.main]]
+	identifier = "python-sdk"
 	name = "rapyuta_io Python SDK"
 	url = "/python-sdk/"
 	weight = "40"
 
 [[menu.main]]
-		identifier = "sdk-introduction"
-		parent = "python-sdk"
+	identifier = "sdk-introduction"
+	parent = "python-sdk"
 	name = "Overview of rapyuta_io Python SDK"
 	url = "/python-sdk/introduction/"
 	weight = "41"
 
 [[menu.main]]
-		identifier = "talker-listener-sdk"
-		parent = "python-sdk"
+	identifier = "talker-listener-sdk"
+	parent = "python-sdk"
 	name = "Talker listener"
 	url = "/python-sdk/talker-listener/"
 	weight = "42"
 
 [[menu.main]]
-		identifier = "persistent-vol-sdk"
-		parent = "python-sdk"
+	identifier = "persistent-vol-sdk"
+	parent = "python-sdk"
 	name = "Persistent volume"
 	url = "/python-sdk/persistent-volume/"
 	weight = "43"
