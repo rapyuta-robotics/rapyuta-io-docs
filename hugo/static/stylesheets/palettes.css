@@ -14,6 +14,10 @@
     background: #dc1d30
 }
 
+.drawer .toc li a {
+    cursor: pointer;
+}
+
 .palette-primary-red .drawer .toc a.current, .palette-primary-red .drawer .toc a:focus, .palette-primary-red .drawer .toc a:hover {
     color: #dc1d30
 }
