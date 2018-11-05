@@ -142,6 +142,48 @@ metadataformat = "yaml"
 	weight = "13"
 
 [[menu.main]]
+	identifier = "deployments"
+	parent = "core-concepts"
+	name = "Deployments"
+	url = "/core-concepts/deployments/"
+	weight = "14"
+
+[[menu.main]]
+	identifier = "persistent-volume-storage"
+	parent = "core-concepts"
+	name = "Persistent volume/storage"
+	url = "/core-concepts/persistent-volume-storage/"
+	weight = "15"
+
+[[menu.main]]
+	identifier = "logging-introduction"
+	parent = "core-concepts"
+	name = "Introduction to logging"
+	url = "/core-concepts/logging-introduction/"
+	weight = "16"
+
+[[menu.main]]
+	identifier = "build-logs"
+	parent = "core-concepts"
+	name = "Build logs"
+	url = "/core-concepts/build-logs/"
+	weight = "17"
+
+[[menu.main]]
+	identifier = "deployment-logs"
+	parent = "core-concepts"
+	name = "Deployment logs"
+	url = "/core-concepts/deployment-logs/"
+	weight = "18"
+
+[[menu.main]]
+	identifier = "device-logs"
+	parent = "core-concepts"
+	name = "Device logs"
+	url = "/core-concepts/device-logs/"
+	weight = "19"
+
+[[menu.main]]
     identifier = "getting-started"
 	name   = "Getting started"
 	url    = "/getting-started/"
