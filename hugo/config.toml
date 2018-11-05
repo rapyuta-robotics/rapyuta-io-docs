@@ -46,11 +46,6 @@ metadataformat = "yaml"
 	github  = ""
 	email   = ""
 
-#[[menu.main]]
-#    identifier = "home"
-#	name   = "Rapyuta IO Documentation"
-#	url    = "/"
-#	weight = "10"
 [[menu.main]]
     identifier = "core-concepts"
 	name   = "Core concepts"
