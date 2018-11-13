@@ -1,8 +1,10 @@
 ---
 title: "Deploying a package"
-date: 2018-10-22T10:58:48+05:30
-weight: 24
+url: "/getting-started/deploy-package/"
+pre: "f. "
+weight: 46
 ---
+
 To deploy a package in rapyuta.io using the [console](https://closed-beta.rapyuta.io), follow the steps:
 
 1. On the left navigation bar, click **CATALOG**.

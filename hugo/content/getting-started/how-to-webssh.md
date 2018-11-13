@@ -1,8 +1,10 @@
 ---
 title: "How to WebSSH"
-date:
-weight: 25
+url: "/getting-started/how-to-webssh/"
+pre: "g. "
+weight: 47
 ---
+
 The device manager provides SSH access to a connected device through a reverse
 ssh tunnel. The WebSSH feature secures you from exposing SSH ports on your device
 network and from compromising security. This is a fully featured, browser-based

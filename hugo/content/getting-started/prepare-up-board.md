@@ -1,8 +1,10 @@
 ---
-title: "Preparing UP Board"
-date:
-weight: 24
+title: "Preparing UP board"
+url: "/getting-started/prepare-up-board/"
+pre: "d. "
+weight: 44
 ---
+
 ## Prerequisites
 - [UP board](https://www.up-board.org/up/)
 - DC power supply rated 5V/4A

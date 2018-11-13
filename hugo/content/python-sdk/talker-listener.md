@@ -1,8 +1,10 @@
 ---
-title: "Talker listener"
-date:
-weight: "42"
+title: "Talker Listener"
+url: "/python-sdk/talker-listener/"
+pre: "b. "
+weight: "82"
 ---
+
 ## Learning objectives
 The tutorial will show you how to:
 

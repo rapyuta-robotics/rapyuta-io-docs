@@ -1,8 +1,10 @@
 ---
-title: "Overview of rapyuta_io Python SDK"
-date:
-weight: "40"
+title: "Overview of Python SDK"
+url: "/python-sdk/introduction/"
+pre: "a. "
+weight: "81"
 ---
+
 rapyuta.io's Python SDK enables you to provision packages either on the cloud or
 on a device, add a dependent deployment, and access various rapyuta.io resources
 and services in your python applications.

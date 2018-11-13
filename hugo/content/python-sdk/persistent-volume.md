@@ -1,7 +1,8 @@
 ---
-title: "Persistent volume"
-date:
-weight: "43"
+title: "Persistent Volume"
+url: "/python-sdk/persistent-volume/"
+pre: "c. "
+weight: "83"
 ---
 ## Learning objectives
 

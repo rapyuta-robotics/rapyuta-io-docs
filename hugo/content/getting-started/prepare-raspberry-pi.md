@@ -1,8 +1,10 @@
 ---
 title: "Preparing Raspberry PI"
-date:
-weight: 23
+url: "/getting-started/prepare-raspberry-pi/"
+pre: "c. "
+weight: 43
 ---
+
 ## Prerequisites
 
 1. Raspberry PI 2 or 3

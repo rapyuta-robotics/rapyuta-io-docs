@@ -1,7 +1,8 @@
 ---
 title: "Creating a new user"
-date:
-weight:
+url: "/getting-started/create-new-user/"
+pre: "a. "
+weight: 41
 ---
 
 To create a new user using the rapyuta.io [console](https://closed-beta.rapyuta.io), follow the steps:

@@ -1,8 +1,10 @@
 ---
-title: "Adding a New Device"
-date: 2018-09-12T10:37:03+05:30
-weight: 21
+title: "Adding a new device"
+url: "/getting-started/adding-a-new-device/"
+pre: "b. "
+weight: 42
 ---
+
 Device requirements
 
 * Mandatory

@@ -1,8 +1,10 @@
 ---
 title: "Docker publisher subscriber"
-date:
-weight: "32"
+url: "/dev-tutorials/docker-publisher-subscriber/"
+pre: "b. "
+weight: "62"
 ---
+
 A _ROS publisher_ is part of a ROS package. It is a public git repository, which
 is built into a docker container on the fly when the package is being deployed.
 A _ROS subscriber_ is also a part of the same ROS package. It is downloaded on a

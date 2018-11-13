@@ -1,8 +1,10 @@
 ---
 title: "Dynamic map server"
-date:
-weight: "33"
+url: "/dev-tutorials/dynamic-map-server/"
+pre: "c. "
+weight: "63"
 ---
+
 A deployment may depend on other deployments, and it can access all of the
 exposed topics, services, actions, endpoints and configuration parameters of
 other deployments at runtime.

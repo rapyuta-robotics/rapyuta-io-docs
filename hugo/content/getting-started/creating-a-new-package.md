@@ -1,8 +1,10 @@
 ---
 title: "Creating a new package"
-date: 2018-09-12T10:58:48+05:30
-weight: 22
+url: "/getting-started/creating-a-new-package/"
+pre: "e. "
+weight: 45
 ---
+
 To create a new rapyuta.io package using the [console](https://closed-beta.rapyuta.io), follow the steps:
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
