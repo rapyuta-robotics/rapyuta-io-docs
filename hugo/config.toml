@@ -46,16 +46,137 @@ metadataformat = "yaml"
 	github  = ""
 	email   = ""
 
-#[[menu.main]]
-#    identifier = "home"
-#	name   = "Rapyuta IO Documentation"
-#	url    = "/"
-#	weight = "10"
 [[menu.main]]
     identifier = "core-concepts"
 	name   = "Core concepts"
 	url    = "/core-concepts/"
+	weight = "1"
+
+[[menu.main]]
+	identifier = "resource-user-group"
+	parent = "core-concepts"
+	name = "Resources, users and groups"
+	url = "/core-concepts/resource-user-group/"
+	weight = "2"
+
+[[menu.main]]
+	identifier = "create-new-group"
+	parent = "core-concepts"
+	name = "Creating a new group"
+	url = "/core-concepts/create-new-group/"
+	weight = "3"
+
+[[menu.main]]
+	identifier = "switch-between-user-group"
+	parent = "core-concepts"
+	name = "Switching between user and group"
+	url = "/core-concepts/switch-between-user-group/"
+	weight = "4"
+
+[[menu.main]]
+	identifier = "organisation"
+	parent = "core-concepts"
+	name = "Organisation"
+	url = "/core-concepts/organisation/"
+	weight = "5"
+
+[[menu.main]]
+	identifier = "packages"
+	parent = "core-concepts"
+	name = "Packages"
+	url = "/core-concepts/packages"
+	weight = "6"
+
+[[menu.main]]
+	identifier = "catalog"
+	parent = "core-concepts"
+	name = "Catalog"
+	url = "/core-concepts/catalog"
+	weight = "7"
+
+[[menu.main]]
+	identifier = "builds"
+	parent = "core-concepts"
+	name = "Builds"
+	url = "/core-concepts/builds/"
+	weight = "8"
+
+[[menu.main]]
+	identifier = "dockerfile-build-strategy"
+	parent = "core-concepts"
+	name = "Dockerfile build strategy"
+	url = "/core-concepts/dockerfile-build-strategy/"
+	weight = "9"
+
+[[menu.main]]
+	identifier = "secrets"
+	parent = "core-concepts"
+	name = "Secrets"
+	url = "/core-concepts/secrets/"
 	weight = "10"
+
+[[menu.main]]
+	identifier = "docker-pull-secret"
+	parent = "core-concepts"
+	name = "Docker pull secret"
+	url = "/core-concepts/docker-pull-secret/"
+	weight = "11"
+
+[[menu.main]]
+	identifier = "auth-token-docker-creds"
+	parent = "core-concepts"
+	name = "Authorisation token for docker credentials"
+	url = "/core-concepts/auth-token-docker-creds/"
+	weight = "12"
+
+[[menu.main]]
+	identifier = "source-secret"
+	parent = "core-concepts"
+	name = "Source secret"
+	url = "/core-concepts/source-secret/"
+	weight = "13"
+
+[[menu.main]]
+	identifier = "deployments"
+	parent = "core-concepts"
+	name = "Deployments"
+	url = "/core-concepts/deployments/"
+	weight = "14"
+
+[[menu.main]]
+	identifier = "persistent-volume-storage"
+	parent = "core-concepts"
+	name = "Persistent volume/storage"
+	url = "/core-concepts/persistent-volume-storage/"
+	weight = "15"
+
+[[menu.main]]
+	identifier = "logging-introduction"
+	parent = "core-concepts"
+	name = "Introduction to logging"
+	url = "/core-concepts/logging-introduction/"
+	weight = "16"
+
+[[menu.main]]
+	identifier = "build-logs"
+	parent = "core-concepts"
+	name = "Build logs"
+	url = "/core-concepts/build-logs/"
+	weight = "17"
+
+[[menu.main]]
+	identifier = "deployment-logs"
+	parent = "core-concepts"
+	name = "Deployment logs"
+	url = "/core-concepts/deployment-logs/"
+	weight = "18"
+
+[[menu.main]]
+	identifier = "device-logs"
+	parent = "core-concepts"
+	name = "Device logs"
+	url = "/core-concepts/device-logs/"
+	weight = "19"
 
 [[menu.main]]
     identifier = "getting-started"
