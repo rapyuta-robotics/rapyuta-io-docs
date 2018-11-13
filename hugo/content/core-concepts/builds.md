@@ -1,8 +1,10 @@
 ---
 title: "Builds"
-date:
-weight: "8"
+url: "/core-concepts/builds/"
+pre: "g. "
+weight: 27
 ---
+
 An application build is the result of building source code into runnable docker
 container. The _Build Engine_ uses a build recipe to build your source code.
 Builds are automatically triggered once you specify a build recipe and a git

@@ -1,8 +1,10 @@
 ---
 title: "Docker pull secret"
-date:
-weight: "11"
+url: "/core-concepts/docker-pull-secret/"
+pre: "j. "
+weight: 30
 ---
+
 When you want to use a docker image from your private (docker) registry, you
 grant rapyuta.io access to your private registry via a docker secret.
 

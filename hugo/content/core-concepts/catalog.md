@@ -1,8 +1,10 @@
 ---
 title: "Catalog"
-date:
-weight: "7"
+url: "/core-concepts/catalog"
+pre: "f. "
+weight: 26
 ---
+
 Catalog is a curated collection of _storage_ and _default_ packages. It helps
 accelerate software application development by allowing you to combine modular
 and reusable packages.

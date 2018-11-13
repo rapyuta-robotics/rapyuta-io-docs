@@ -1,8 +1,10 @@
 ---
 title: "Source secret"
-date:
-weight: "13"
+url: "/core-concepts/source-secret/"
+pre: "l. "
+weight: 32
 ---
+
 You can create packages using the source code from a private git repository.
 A source secret allows rapyuta.io to access a private git repository or a git
 repository with self assigned or untrusted SSL certificate.

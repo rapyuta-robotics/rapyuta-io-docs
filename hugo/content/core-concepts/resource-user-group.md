@@ -1,8 +1,10 @@
 ---
 title: "Resources, users and groups"
-date: ""
-weight: "2"
+url: "/core-concepts/resource-user-group/"
+pre: "a. "
+weight: 21
 ---
+
 A resource is an entity that can be managed by rapyuta.io. It can be a device
 that is already integrated into the platform, a package that is added to the
 platform, a deployment or a build. Resources are also scoped by a user or a group.

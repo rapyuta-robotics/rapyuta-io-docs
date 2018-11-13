@@ -1,8 +1,10 @@
 ---
 title: "Switching between user and group"
-date:
-weight: "4"
+url: "/core-concepts/switch-between-user-group/"
+pre: "c. "
+weight: 23
 ---
+
 ## From user to group
 To switch from user to group, follow these steps:
 

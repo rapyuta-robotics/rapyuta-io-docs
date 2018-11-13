@@ -1,8 +1,10 @@
 ---
 title: "Dockerfile build strategy"
-date:
-weight: "9"
+url: "/core-concepts/dockerfile-build-strategy/"
+pre: "h. "
+weight: 28
 ---
+
 When you create a package, you can either provide a _git repository_ url or a
 _docker image_ as an executable of the package irrespective of a component's runtime.
 

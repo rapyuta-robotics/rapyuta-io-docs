@@ -1,3 +1,10 @@
+---
+title: "Logging introduction"
+url: "/core-concepts/logging-introduction/"
+pre: "o. "
+weight: 35
+---
+
 Logging Introduction
 
 Logs are verbose text messages and are used for debugging and monitoring.

@@ -1,8 +1,10 @@
 ---
-title: "Persistent volume/storage"
-date:
-weight: "15"
+title: "Persistent volume/Storage"
+url: "/core-concepts/persistent-volume-storage/"
+pre: "n. "
+weight: 34
 ---
+
 Cloud components can use persistent [block storage](https://en.wikipedia.org/wiki/Block-level_storage).
 **Rapyuta IO Persistent Volume** is a storage package. A storage package is a
 public package which is available to all users out of the box. You cannot delete

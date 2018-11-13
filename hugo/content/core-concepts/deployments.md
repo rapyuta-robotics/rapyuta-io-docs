@@ -1,8 +1,10 @@
 ---
 title: "Deployments"
-date:
-weight: "14"
+url: "/core-concepts/deployments/"
+pre: "m. "
+weight: 33
 ---
+
 A deployment is a running instance of a package. You can deploy a package using
 the rapyuta.io console. While deploying a package, rapyuta.io will:
 

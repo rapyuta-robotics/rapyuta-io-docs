@@ -1,8 +1,10 @@
 ---
 title: "Creating a new group"
-date:
-weight: "3"
+url: "/core-concepts/create-new-group/"
+pre: "b. "
+weight: 22
 ---
+
 A [group](../resource-user-group) is a collection of arbitrary number of users
 belonging to the same organisation. To create a new group, follow these steps:
 

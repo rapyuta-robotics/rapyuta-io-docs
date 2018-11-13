@@ -1,8 +1,10 @@
 ---
 title: "Deployment logs"
-date:
-weight: "18"
+url: "/core-concepts/deployment-logs/"
+pre: "q. "
+weight: 37
 ---
+
 You can ensure that the deployment logs are running by checking whether the
 **DEPLOYMENT PHASE** is **Started successfully** and the **STATUS** is **Running**.
 

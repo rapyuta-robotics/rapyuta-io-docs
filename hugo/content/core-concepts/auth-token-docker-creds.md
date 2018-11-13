@@ -1,8 +1,10 @@
 ---
 title: "Authorisation token for docker credentials"
-date:
-weight: "12"
+url: "/core-concepts/auth-token-docker-creds/"
+pre: "k. "
+weight: 31
 ---
+
 When you create a docker pull secret for a private registry, rapyuta.io stores
 your docker credentials (that is, username and password) in base64-encoded
 format. This encoded data is the _authorisation token_ which gives access to

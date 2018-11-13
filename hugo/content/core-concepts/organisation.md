@@ -1,8 +1,10 @@
 ---
 title: "Organisation"
-date:
-weight: "5"
+url: "/core-concepts/organisation/"
+pre: "d. "
+weight: 24
 ---
+
 A _partner organisation_ receives an email with links to [rapyuta.io console](https://closed-beta.rapyuta.io),
 this documentation and an unique _invite code_. You (a user of rapyuta.io console from
 a partner organisation) must use this _invite code_ to register and access the

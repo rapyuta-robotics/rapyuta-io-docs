@@ -1,8 +1,10 @@
 ---
 title: "Device logs"
-date:
-weight: "19"
+url: "/core-concepts/device-logs/"
+pre: "r. "
+weight: 38
 ---
+
 By default, device logs are not collected until you explicitly subscribe to a
 ROS topic. Once you subscribe to a topic, the device logs are displayed in the
 logging area (a terminal-like window).

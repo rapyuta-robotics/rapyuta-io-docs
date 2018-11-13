@@ -1,8 +1,10 @@
 ---
 title: "Build logs"
-date:
-weight: "17"
+url: "/core-concepts/build-logs/"
+pre: "p. "
+weight: 36
 ---
+
 An executable of a rapyuta.io package is either a git repository or a docker image.
 Build logs are generated when rapyuta.io converts the source code of a git repository
 into a runnable docker image.
