@@ -1,0 +1,3 @@
+[submodule "hugo/themes/learn"]
+	path = hugo/themes/learn
+	url = git@bitbucket.org:rapyutians/hugo-theme-learn.git
