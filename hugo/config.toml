@@ -25,3 +25,5 @@ disableSearch = false
     url = "https://www.rapyuta-robotics.com/"
     weight = 11
 
+[blackfriday]
+    hrefTargetBlank = true

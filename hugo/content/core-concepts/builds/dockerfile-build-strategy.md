@@ -1,10 +1,11 @@
 ---
-title: "Dockerfile build strategy"
-url: "/core-concepts/dockerfile-build-strategy/"
-pre: "h. "
-weight: 28
+title: "Dockerfile Build Strategy"
+description:
+type: core-concepts
+date: 2018-11-15T14:01:53+05:30
+draft: true
+weight: 11
 ---
-
 When you create a package, you can either provide a _git repository_ url or a
 _docker image_ as an executable of the package irrespective of a component's runtime.
 
@@ -18,5 +19,6 @@ When the build fails, you should inspect the corresponding build logs and/or
 properly validate the _Dockerfile_ present in the git repository. If you continue
 to see the error, contact the support team.
 
-You can explicitly specify the absolute path of [_Dockerfile_](https://docs.docker.com/engine/reference/builder/)
-in a git repository.
+You can explicitly specify the absolute path of
+[_Dockerfile_](https://docs.docker.com/engine/reference/builder/) in a git
+repository.
