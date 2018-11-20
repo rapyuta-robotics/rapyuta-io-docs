@@ -1,5 +1,5 @@
 ---
-title: "Control Onboard Led"
+title: "Controlling on-board LED"
 description:
 type: core-concepts
 date: 2018-11-15T10:06:24+05:30

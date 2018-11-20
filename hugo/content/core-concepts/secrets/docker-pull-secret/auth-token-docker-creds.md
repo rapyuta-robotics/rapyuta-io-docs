@@ -1,5 +1,5 @@
 ---
-title: "Auth Token Docker Creds"
+title: "Authorisation Token for Docker Credentials"
 description:
 type: core-concepts
 date: 2018-11-15T14:20:21+05:30

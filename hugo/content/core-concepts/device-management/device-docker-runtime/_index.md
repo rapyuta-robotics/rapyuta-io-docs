@@ -1,5 +1,5 @@
 ---
-title: "Device Docker Runtime"
+title: "Docker Runtime for Device"
 description:
 type: core-concepts
 date: 2018-11-15T10:06:04+05:30

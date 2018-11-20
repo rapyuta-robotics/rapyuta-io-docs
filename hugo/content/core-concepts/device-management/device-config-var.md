@@ -1,5 +1,5 @@
 ---
-title: "Device Config Var"
+title: "Device Config Variables"
 description:
 type: core-concepts
 date: 2018-11-15T10:05:11+05:30
