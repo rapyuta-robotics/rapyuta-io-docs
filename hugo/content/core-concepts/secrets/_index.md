@@ -12,5 +12,5 @@ source code in private git repositories or use private docker images.
 
 There are two types of secrets available for you on rapyuta.io:
 
-1. [Docker pull secret](./docker-pull-secret/_index.md)
+1. [Docker pull secret](./docker-pull-secret/)
 2. [Source secret](./source-secret)
