@@ -3,8 +3,7 @@ title: "Device Config Var"
 description:
 type: core-concepts
 date: 2018-11-15T10:05:11+05:30
-draft: true
-weight: 5
+weight: 40
 ---
 Device configuration variables are environment variables that allow you to
 correctly configure a device on rapyuta.io using the [console](https://closed-beta.rapyuta.io).

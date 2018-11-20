@@ -3,8 +3,7 @@ title: "Auth Token Docker Creds"
 description:
 type: core-concepts
 date: 2018-11-15T14:20:21+05:30
-draft: true
-weight: 14
+weight: 140
 ---
 When you create a docker pull secret for a private registry, rapyuta.io stores
 your docker credentials (that is, username and password) in base64-encoded

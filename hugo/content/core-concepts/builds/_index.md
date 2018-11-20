@@ -4,7 +4,7 @@ description:
 type: core-concepts
 date: 2018-11-15T14:01:26+05:30
 draft: true
-weight: 10
+weight: 100
 ---
 An application build is the result of building source code into runnable docker
 container. The _Build Engine_ uses a build recipe to build source code.

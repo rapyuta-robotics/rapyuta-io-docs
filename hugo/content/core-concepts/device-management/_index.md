@@ -3,8 +3,7 @@ title: "Device Management"
 description:
 type: core-concepts
 date: 2018-11-15T10:02:42+05:30
-draft: true
-weight: 4
+weight: 30
 ---
 ## Overview
 The device manager is an interface for remotely controlling and managing your

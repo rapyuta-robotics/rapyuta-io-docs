@@ -4,7 +4,7 @@ description:
 type: core-concepts
 date: 2018-11-15T14:01:53+05:30
 draft: true
-weight: 11
+weight: 110
 ---
 When you create a package, you can either provide a _git repository_ url or a
 _docker image_ as an executable of the package irrespective of a component's runtime.

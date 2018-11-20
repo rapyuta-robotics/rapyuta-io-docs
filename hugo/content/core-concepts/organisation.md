@@ -2,10 +2,8 @@
 title: "Organisation"
 description:
 type: core-concepts
-pre: "b. "
 date: 2018-11-15T09:49:07+05:30
-draft: true
-weight: 3
+weight: 20
 ---
 A _partner organisation_ receives an email with links to [rapyuta.io console](https://closed-beta.rapyuta.io),
 this documentation and an unique _invite code_. You (a user of rapyuta.io console from

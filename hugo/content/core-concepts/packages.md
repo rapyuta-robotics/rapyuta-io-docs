@@ -3,8 +3,7 @@ title: "Packages"
 description:
 type: core-concepts
 date: 2018-11-15T13:41:10+05:30
-draft: true
-weight: 8
+weight: 80
 ---
 A package is the smallest unit of deployment in rapyuta.io. It is composed of
 components, which are in turn made of executables. The components are deployed
