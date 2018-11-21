@@ -11,9 +11,9 @@ by a device and during the life cycle of deployment.
 
 rapyuta.io collects and indexes log data. There are three types of logs produced:
 
-1. [Build Logs](./build-logs.md)
-2. [Deployment Logs](./deployment-logs.md)
-3. [Device Logs](./device-logs.md)
+1. [Build Logs](./build-logs/)
+2. [Deployment Logs](./deployment-logs/)
+3. [Device Logs](./device-logs/)
 
 All types of logs are only available for seven days, after which they are
 automatically destroyed.

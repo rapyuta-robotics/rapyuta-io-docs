@@ -3,7 +3,7 @@ title: "Device Logs"
 description:
 type: core-concepts
 date: 2018-11-20T18:51:11+05:30
-weight: 121
+weight: 210
 ---
 By default, device logs are not collected until you explicitly subscribe to a
 ROS topic.
