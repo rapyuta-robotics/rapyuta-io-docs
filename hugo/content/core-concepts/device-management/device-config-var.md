@@ -28,9 +28,8 @@ The above predefined configuration variables are found on the device's
 
 To create additional device configuration variables, such as `ros_package_path`,
 click **Add Config Variable**.
-<!-->
-Insert Add config variable image
-<-->
+
+![Device Config Variables](../../../static/images/add-device-config-var.png?width=50px)
 
 You can override the predefined value of a device configuration variable while
 creating a package deployment. For instance, you may change `ros_workspace`

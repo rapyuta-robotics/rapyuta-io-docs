@@ -12,9 +12,7 @@ data-plane communication between rapyuta.io and the device. It is the single
 point of contact for all device related functions.
 
 ## Architecture
-<!-->
-insert architecture image
-<-->
+![DM-arch](/Users/pooja/rapyuta-io-docs/hugo/static/images/core-concepts/device-management/architecture.png)
 
 ## Communication
 The device manager service uses the server-agent communication model where the
