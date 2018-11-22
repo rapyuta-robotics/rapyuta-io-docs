@@ -1,23 +1,23 @@
 ---
 title: "Packages"
-url: "/core-concepts/packages"
-pre: "e. "
-weight: 25
+description:
+type: core-concepts
+date: 2018-11-15T13:41:10+05:30
+weight: 80
 ---
-
 A package is the smallest unit of deployment in rapyuta.io. It is composed of
 components, which are in turn made of executables. The components are deployed
 either on a device or the cloud. Before a package is deployed, it must be added
-to the service catalog. By default, any package that you deploy holds exactly
-one plan.
+to the catalog. By default, any package that you deploy holds exactly one plan.
 
 ## Executable
 An executable is a runnable entity such as:
 
 1. **Docker image**    
-A docker image is used as an executable. When a deployment is triggered rapyuta.io
+A docker image is used as an executable. When a deployment is triggered, rapyuta.io
 pulls a docker image from the docker registry. Additionally, you may specify a
-bash shell command, which overrides the [entry point](https://docs.docker.com/engine/reference/run/#cmd-default-command-or-options)
+bash shell command, which overrides the
+[entry point](https://docs.docker.com/engine/reference/run/#cmd-default-command-or-options)
 of the docker container.
 2. **Git repository**    
 You may provide a git repository for an executable. rapyuta.io builds the source
@@ -37,24 +37,25 @@ file system (ensures data locality) and communicate via Inter Process Communicat
 An executable listening on a port is accessible to its sibling executables via localhost.
 
 ## Plan
-A plan represents a different configuration of a package. A package can have
-multiple plans. When you add a new package, there is always a single plan
-associated with that package. A plan is uniquely identified by its plan ID.
+A plan represents a different configuration of a package. When you add a new
+package, there is always a single plan associated with the package. A plan is
+uniquely identified by its plan ID.
 
 ## Endpoint
-Components can externally expose network endpoints. While creating a package,
-you may provide a name for the endpoint; select the desired protocol and specify
+Components can externally expose network endpoints. While creating a package
+you may provide a name for the endpoint, select the desired protocol and specify
 a target port. The supported protocols are Secure TCP(TLS/SNI), HTTP/Websocket,
 and HTTPS/WSS. For HTTPS/WSS and Secure TCP(TLS/SNI), the value of **Port** is
-defaulted to 443, whereas for HTTP/Websocket the value of **Port** is set to 80. You
-can view the FQDN of the endpoint during the deployment process.
+defaulted to 443, whereas for HTTP/Websocket the value of **Port** is set to 80.
+You can view the FQDN of the endpoint during the deployment process.
 rapyupta.io automatically creates an accessible public network endpoint for each
-exposed network endpoint. The Secure TCP(TLS/SNI) endpoint uses [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication) headers for
-routing the request to the desired backend.
+exposed network endpoint.    
+The Secure TCP(TLS/SNI) endpoint uses [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication)
+headers for routing the request to the desired backend.
 
 ## Component runtime
 A component of a package may be deployed either on the cloud or on a device.
-When deployed on the cloud, the component has cloud runtime. While, the component
+When deployed on the cloud, the component has cloud runtime. Whereas, the component
 deployed on a device has device runtime.
 
 ## Configuration parameters
@@ -94,9 +95,9 @@ A deployment of a package may depend on a deployment of another package. If you
 intend to add a deployment of another package as a dependent deployment of the
 current package, the inbound ROS interface could be a:
 
-1. ROS topic that a dependent deployment publishes to the current package.
-2. ROS service or ROS action of the dependent deployment, and the current package
-is allowed to call that ROS action and/or ROS service.
+* ROS topic that a dependent deployment publishes to the current package.
+* ROS service or ROS action of the dependent deployment, and the current package
+  is allowed to call that ROS action and/or ROS service.
 
 ## Volumes
 While adding a new package to rapyuta.io, you may also add a volume to the package
@@ -156,6 +157,8 @@ To add a set of catkin build parameters, click **Add Parameter** against
 
 You may provide multiple sets of catkin build parameters for a single ROS package,
 thus you can run multiple catkin builds on a ROS package.
+
+![Catkin build parameters](/images/core-concepts/packages/multiple-sets-catkin-build-params.png?classes=border)
 
 ## Dependencies and composition
 rapyuta.io allows for a number of design patterns to help you compose an

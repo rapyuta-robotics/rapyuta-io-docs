@@ -1,21 +1,21 @@
 ---
 title: "Catalog"
-url: "/core-concepts/catalog"
-pre: "f. "
-weight: 26
+description:
+type: core-concepts
+date: 2018-11-15T13:43:59+05:30
+weight: 85
 ---
-
 Catalog is a curated collection of _storage_ and _default_ packages. It helps
 accelerate software application development by allowing you to combine modular
 and reusable packages.
 
 When you create a package in a group, the package has the scope of the group.
-All of the members of the group can access the package. However, if you create a
+All members of the group can access the package. However, if you create a
 package outside of the scope of any group, only you can access the package.
 
 ## Design patterns
 Complex robotic applications are often built using more than one programming
-language, in varied development environments and by people from distinct domains.
+language, in varied development environments, and by people from distinct domains.
 For example, the interactive; user facing (frontend) part of an application is
 built using React JS (JavaScript framework) while the application's device
 component is developed in C/C++, and navigation algorithms are implemented in
