@@ -14,9 +14,7 @@ For instance, rapyuta.io Build Engine builds the source code to a docker image.
 To set docker compose as the default runtime on a device, select
 Use docker compose as default runtime checkbox while adding the device.
 
-<!-->
-insert selectingdocker compose image
-<-->
+![Dockercompose runtime for device](/images/core-concepts/device-management/device-docker-runtime.png?classes=border)
 
 When a package is deployed on a device, each executable in the package becomes a
 separate docker container. If your application is a ROS package, a

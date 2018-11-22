@@ -26,14 +26,11 @@ The below table lists the phases of deployment as they appear in the lifecycle:
 | Deployment phase | Description |
 | ---------------- | ----------- |
 | In progress | accepts request to deploy package and starts deployment process |
-| Provisioning | pulls a docker image and creates a running instance of the image
- (docker container) for each executable of the component |
+| Provisioning | pulls a docker image and creates a running instance of the image (docker container) for each executable of the component |
 | Succeeded | each executable of every component is successfully started |
 | Failed to start | error occurred during In progress phase |
-| Partially deprovisioned | you deprovisioned a deployment, but there is at least
-one component that could not be deprovisioned |
-| Deployment stopped | you deprovisioned a deployment, and all of its components
-are stopped |
+| Partially deprovisioned | you deprovisioned a deployment, but there is at least one component that could not be deprovisioned |
+| Deployment stopped | you deprovisioned a deployment, and all of its components are stopped |
 
 ## Status
 rapyuta.io enables you to monitor the current status of each executable of a
@@ -52,53 +49,46 @@ deployment phase:
 The following table lists the statuses you may see during the **Succeeded**
 deployment phase:
 
-
 | Status | Description |
 | ------ | ----------- |
 | Running | executables of components are running |
-| Pending | restarting executable due to runtime error in the application or
-rapyuta.io software |
+| Pending | restarting executable due to runtime error in the application or rapyuta.io software |
 | Error | runtime error occurred |
 | Unknown | rapyuta.io is unaware of the current status |
 
 If the status of an executable reads **Pending** or **Error**, you are provided
 the cause of the status as **Reason**.
 
+![Reason field](/images/core-concepts/deployments/reason-field.png?classes=border)
+
 If the overall deployment **STATUS** is **Error**, the [console](https://closed-beta.rapyuta.io)
 displays an error code along with a brief description of the error.
 The following table lists the error codes that are available, short descriptions
 and the recommendations you should take:
 
-
 | Error code | Description | Recommended action |
 | ---------- | ----------- | ------------------ |
-| DEP_E151 | device is either offline or not reachable | check the internet connection
-of the device |
-| DEP_E152 | executables of the component deployed on the device either exited too
-early or failed | troubleshoot the failed component by analysing deployment logs |
-| DEP_E153 | unable to either pull the docker image or build the source code for
-the component deployed on cloud | verify that the docker image provided while
-adding the package still exists at the specified registry endpoint |
-| DEP_E154 | executables of the component deployed on cloud exited too early |
-troubleshoot the failed component by analysing deployment logs |
-| DEP_E155 | executables of the component deployed on cloud failed |
-troubleshoot the failed component by analysing deployment logs |
-| DEP_E156 | dependent deployment is in error state | troubleshoot the dependent
-deployment that is in error state |
-| DEP_E161 | docker image is not found for executables of components deployed on device |
-verify that the path of the docker image is valid |
-| DEP_E2xx | internal rapyuta.io error in the components deployed on cloud |
-report the issue together with the relevant details to the support team |
-| DEP_E3xx | internal rapyuta.io error in the components deployed on a device |
-report the issue together with the relevant details to the support team |
+| DEP_E151 | device is either offline or not reachable | check the internet connection of the device |
+| DEP_E152 | executables of the component deployed on the device either exited too early or failed | troubleshoot the failed component by analysing deployment logs |
+| DEP_E153 | unable to either pull the docker image or build the source code for the component deployed on cloud | verify that the docker image provided while adding the package still exists at the specified registry endpoint |
+| DEP_E154 | executables of the component deployed on cloud exited too early | troubleshoot the failed component by analysing deployment logs |
+| DEP_E155 | executables of the component deployed on cloud failed | troubleshoot the failed component by analysing deployment logs |
+| DEP_E156 | dependent deployment is in error state | troubleshoot the dependent deployment that is in error state |
+| DEP_E161 | docker image is not found for executables of components deployed on device | verify that the path of the docker image is valid |
+| DEP_E2xx | internal rapyuta.io error in the components deployed on cloud | report the issue together with the relevant details to the support team |
+| DEP_E3xx | internal rapyuta.io error in the components deployed on a device | report the issue together with the relevant details to the support team |
 
 ## Shell access
 rapyuta.io lets you **SSH** into the environment of a running executable.
 On the **Shell Access** tab, click **SSH**.
 
+![Shell access ssh](/images/core-concepts/deployments/shell-access-ssh.png?classes=border)
+
 Once you SSH into the environment of an executable, you can execute shell
 commands such as `pwd`, `ls -l` at the terminal's prompt. This is helpful in
 debugging the environment.
+
+![Execute shell commands](/images/core-concepts/deployments/execute-shell-commands.png?classes=border)
 
 To go back to the list of all running containers, click **Back**.
 

@@ -20,12 +20,16 @@ It publishes `/telemetry` ROS topic with **High** **QoS**.
    Ensure the status of the subscribed topic(s) is **Subscribed** and is highlighted
    in green.
 
+![To subscribe](/images/core-concepts/logging/device-logs/yet-to-subscribe.png?classes=border)
+
 Once you subscribe to a topic, the device logs are displayed in the
 _logging area_ (a terminal-like window).
 
 Initially, you will see the latest 500 logs in the logging area. As you scroll
 up to the top of the terminal window previous 500 logs are displayed. You may
 continue scrolling up till all the logs are exhausted.
+
+![Logging Area](/images/core-concepts/logging/device-logs/logging-terminal-window.png?classes=border)
 
 To get updated logs, scroll down to the bottom of the logging area, and then
 click **Get recent logs**.

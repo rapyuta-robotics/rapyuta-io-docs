@@ -3,7 +3,6 @@ title: "Dockerfile Build Strategy"
 description:
 type: core-concepts
 date: 2018-11-15T14:01:53+05:30
-draft: true
 weight: 110
 ---
 When you create a package, you can either provide a _git repository_ url or a
@@ -20,5 +19,5 @@ properly validate the _Dockerfile_ present in the git repository. If you continu
 to see the error, contact the support team.
 
 You can explicitly specify the absolute path of
-[_Dockerfile_](https://docs.docker.com/engine/reference/builder/) in a git
+[Dockerfile](https://docs.docker.com/engine/reference/builder/) in a git
 repository.

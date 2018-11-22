@@ -87,3 +87,5 @@ is working good.
 
 To verify that everything is working correctly, you should observe the trigger
 of the on-board LED(ACT/LED0) on Raspberry PI 2 or 3 switch to heartbeat.
+
+![Onboard LED](/images/core-concepts/device-management/control-onboard-led.gif)

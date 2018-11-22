@@ -29,6 +29,8 @@ you'll see a **Logs streaming ended** status (top left corner of the terminal
 window). If you see an error and the logs are not being generated,
 click **Refresh**.
 
+![build Logs](/images/core-concepts/logging/build-logs/build-logs.png?classes=border)
+
 You can see the name of the executable together with the name of its component
 whose build logs you're currently viewing. To view build logs of another executable,
 click the executable drop-down list (top right corner of the terminal window).

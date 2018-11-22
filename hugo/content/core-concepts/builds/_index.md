@@ -3,7 +3,6 @@ title: "Builds"
 description:
 type: core-concepts
 date: 2018-11-15T14:01:26+05:30
-draft: true
 weight: 100
 ---
 An application build is the result of building source code into runnable docker
@@ -51,9 +50,7 @@ package, you may also view details such as the git repository url where the
 source code is hosted, the latest commit SHA number, the commit message and
 the commit owner’s name by clicking **View details/logs**.
 
-<!--->
-insert view details/logs image
-<--->
+![View details or logs](/images/core-concepts/builds/trigger-rollback-view-deails.png?classes=border)
 
 You may also **Rollback** to a previous build generation number, if there is any,
 irrespective of the previous build status. Rollbacking to a previous build does
@@ -61,17 +58,14 @@ not restart the build process. Instead, it would run the corresponding docker
 container that was created for that build generation.
 
 The **Current build generation** number is shown below the package ID.
-<!--->
-insert build generation image
-<--->
+
+![Current build generation number](/images/core-concepts/builds/current-build-number.png?classes=border)
 
 When you deploy a package, the deployment process automatically chooses the
 current build generation number. Once a package is deployed, the build generation
 number used in the deployment process is displayed adjacent to the package name.
 
-<!--->
-insert build number after package deployment image
-<--->
+![Build generation number during deployment](/images/core-concepts/builds/build-number-deploy.png?classes=border)
 
 The builds are automatically restarted on software infrastructure failures.
 If you observe that the build logs are abruptly disconnected or stopped,

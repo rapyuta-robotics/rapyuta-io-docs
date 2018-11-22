@@ -25,7 +25,7 @@ To create a docker pull secret for a private docker registry, follow the steps:
    consist of lower case alphanumeric characters or hypen -, and it must begin
    and end with an alphanumeric character.
 4. If your docker registry is [Docker Hub](https://hub.docker.com/),
-   select [**Dockerhub**](https://hub.docker.com). Skip to step 6.
+   select **Dockerhub**. Skip to step 6.
 5. Otherwise if you intend to use a private (docker) registry, select
    **Private registry**. Provide the private (docker) registry url in the
    **Registry Url** box. It is mandatory to provide the registry url.
