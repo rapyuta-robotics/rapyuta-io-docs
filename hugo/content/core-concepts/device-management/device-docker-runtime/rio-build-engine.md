@@ -3,7 +3,7 @@ title: "rapyuta.io Build Engine"
 description:
 type: core-concepts
 date: 2018-11-15T10:06:45+05:30
-weight: 70
+weight: 75
 ---
 The rapyuta.io _Build Engine_ builds source code into a docker image based on the
 chosen builder. It supports source, [Dockerfile](https://docs.docker.com/engine/reference/builder/)

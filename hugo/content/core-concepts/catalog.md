@@ -3,7 +3,7 @@ title: "Catalog"
 description:
 type: core-concepts
 date: 2018-11-15T13:43:59+05:30
-weight: 90
+weight: 85
 ---
 Catalog is a curated collection of _storage_ and _default_ packages. It helps
 accelerate software application development by allowing you to combine modular

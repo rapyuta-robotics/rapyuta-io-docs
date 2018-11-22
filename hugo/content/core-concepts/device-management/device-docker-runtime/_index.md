@@ -3,7 +3,7 @@ title: "Docker Runtime for Device"
 description:
 type: core-concepts
 date: 2018-11-15T10:06:04+05:30
-weight: 50
+weight: 65
 ---
 rapyuta.io leverages docker containers for managing applications.
 You can build, provision and remotely manage applications on your devices on

@@ -3,7 +3,7 @@ title: "Deployments"
 description:
 type: core-concepts
 date: 2018-11-19T17:01:38+05:30
-weight: 160
+weight: 120
 ---
 A deployment is a running instance of a package. You can deploy a package using
 the [rapyuta.io console](https://closed-beta.rapyuta.io).
