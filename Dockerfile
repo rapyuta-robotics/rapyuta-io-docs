@@ -21,10 +21,11 @@ RUN /bin/bash -c "source $NVM_DIR/nvm.sh \
     && nvm use default"
 
 
-
 COPY . /appsrc
 WORKDIR /appsrc
-RUN npm install && (cd /appsrc/hugo && hugo -v )
+RUN git submodule init && git submodule update \
+    && npm install \
+    && cd hugo && hugo -v
 
 EXPOSE 3000
 CMD ["node", "index.js"]
