@@ -1,8 +1,8 @@
 ---
 title: "Persistent Volume"
-url: "/python-sdk/persistent-volume/"
+description:
 pre: "c. "
-weight: "83"
+weight: 410
 ---
 ## Learning objectives
 
@@ -10,7 +10,7 @@ weight: "83"
 2. Mount the persistent volume on a component of a deployment
 3. Deploy a package with the mounted persistent volume
 
-using [rapyuta_io Python SDK](../introduction) in your Python application.
+using [rapyuta_io Python SDK](/python-sdk) in your Python application.
 
 ## Prerequisites
 
