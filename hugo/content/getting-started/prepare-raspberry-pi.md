@@ -1,10 +1,10 @@
 ---
-title: "Preparing Raspberry PI"
-url: "/getting-started/prepare-raspberry-pi/"
-pre: "c. "
-weight: 43
+title: "Prepare Raspberry Pi"
+description:
+type: getting-started
+date: 2018-11-26T15:02:22+05:30
+weight: 225
 ---
-
 ## Prerequisites
 
 1. Raspberry PI 2 or 3
@@ -12,15 +12,16 @@ weight: 43
 3. Internet connection over ethernet
 
 ## Procedure
-To prepare your device, follow the instructions step-wise:
+To prepare the device, follow the instructions step-wise:
 
 1. You may download either [rapyuta.io reference Board Support Package (BSP)
-image](https://storage.googleapis.com/io-reference-bsp-images/raspberrypi/ubuntu/2018-07-14-rapyuta-robotics-xenial-ros-raspberry-pi-armhf.img.xz) (arm32v7 CPU architecture) for Raspberry PI 2 and 3, or [rapyuta.io reference
-BSP image](https://storage.googleapis.com/io-reference-bsp-images/raspberrypi/ubuntu/2018-07-18-rapyuta-robotics-xenial-ros-raspberry-pi-arm64.img.xz) (arm64v8 CPU architecture) for only Raspberry PI 3.  
-The custom rapyuta.io images come with [Ubuntu Xenial](http://releases.ubuntu.com/xenial/) OS and [ROS kinetic](http://wiki.ros.org/kinetic) software
-installed on them. Moreover, [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tutorials) are also installed on these
-custom images.
-2. You can easily flash the SD card using Etcher or other [options](https://www.raspberrypi.org/documentation/installation/installing-images/).
+image](https://storage.googleapis.com/io-reference-bsp-images/raspberrypi/ubuntu/2018-07-14-rapyuta-robotics-xenial-ros-raspberry-pi-armhf.img.xz) (arm32v7 CPU architecture) for Raspberry PI 2 and 3,
+or [rapyuta.io reference BSP image](https://storage.googleapis.com/io-reference-bsp-images/raspberrypi/ubuntu/2018-07-18-rapyuta-robotics-xenial-ros-raspberry-pi-arm64.img.xz) (arm64v8 CPU architecture) for only Raspberry PI 3.  
+The custom rapyuta.io images come with [Ubuntu Xenial](http://releases.ubuntu.com/xenial/)
+OS and [ROS kinetic](http://wiki.ros.org/kinetic) software installed on them.
+Moreover, [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tutorials)
+are also installed on these custom images.
+2. You can easily flash the SD card using [Etcher](https://etcher.io) or other [options](https://www.raspberrypi.org/documentation/installation/installing-images/).
 3. Insert the microSD card into the Raspberry PI microSD slot and power the device.
 4. Connect the ethernet port of the Raspberry PI to a router to access internet.  
 You may use `nmap` to determine the device IP:
