@@ -1,12 +1,11 @@
 ---
-title: "Getting started"
-url: "/getting-started/"
+title: "Getting Started"
+date: 2018-11-26T14:23:52+05:30
 chapter: true
 pre: "<b>2. </b>"
-weight: 40
+weight: 200
 ---
 
 ### Category
 
-# Getting started
-
+# Getting Started Guides
