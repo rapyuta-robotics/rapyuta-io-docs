@@ -1,8 +1,9 @@
 ---
-title: "Prepare Up Board"
+title: "Preparing Up Board"
 description:
 type: getting-started
 date: 2018-11-26T15:03:30+05:30
+pre: "<b>f. </b>"
 weight: 230
 ---
 ## Prerequisites

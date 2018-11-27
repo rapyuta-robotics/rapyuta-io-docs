@@ -1,7 +1,7 @@
 ---
 title: "Persistent Volume"
 description:
-pre: "c. "
+pre: "<b>* </b>"
 weight: 410
 ---
 ## Learning objectives

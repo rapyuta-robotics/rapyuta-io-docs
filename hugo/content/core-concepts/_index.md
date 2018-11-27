@@ -1,8 +1,8 @@
 ---
-title: "Core concepts"
+title: "Core Concepts"
 chapter: true
-pre: "<b>1. </b>"
-weight: 40
+pre: "<b>2. </b>"
+weight: 100
 ---
 
 ### Category
