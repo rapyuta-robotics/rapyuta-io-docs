@@ -47,7 +47,6 @@ default disk type, `DiskType.DEFAULT`. You may also choose the **_SSD_** type fo
 disk, `DiskType.SSD`
 ```python
 # Create Volume code snippet
-from rapyuta_io import Client
 persistent_volume = Client.get_persistent_volume()
 volume_instance = persistent_volume.create_volume_instance("my_sample_volume", 1,
                                                            DiskType.DEFAULT)
@@ -101,6 +100,6 @@ At the terminal prompt, run the program using the command:
 $ python persistent-volume.py
 ```
 
-The output is an object of the class [`DeploymentStatus`](https://closed-betadocs.ep.rapyuta.io/#rapyuta_io.clients.deployment.DeploymentStatus),
+The output is an object of the class [DeploymentStatus](https://closed-betadocs.ep.rapyuta.io/#rapyuta_io.clients.deployment.DeploymentStatus),
 which contains values such as deployment ID, deployment name, deployment status,
 deployment phase, package ID and other details.

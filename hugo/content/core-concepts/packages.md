@@ -165,4 +165,5 @@ thus you can run multiple catkin builds on a ROS package.
 rapyuta.io allows for a number of design patterns to help you compose an
 application using a combination of one or more packages.
 
-Read about design patterns for more details on package composition.
+Read about [design patterns](/core-concepts/catalog/#design-patterns) for more
+details on package composition.

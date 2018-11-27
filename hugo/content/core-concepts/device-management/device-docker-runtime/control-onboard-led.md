@@ -31,9 +31,9 @@ Learn how to prepare your Raspberry PI.
 ## Setting up Raspberry PI
 To integrate the device into rapyuta.io using the [console](https://closed-beta.rapyuta.io):
 
-1. [Create a user account](../getting-started/create-new-user) if you do not
+1. [Create a user account](/getting-started/create-new-user) if you do not
    have one yet.
-2. [Add the device](../getting-started/adding-a-new-device) to the console.
+2. [Add the device](/getting-started/add-new-device) to the console.
    Ensure that you select the **Use docker compose as default runtime** checkbox
    while adding the device.
 
@@ -56,7 +56,10 @@ To create *led_trigger* package, follow the steps:
 12. Click **Docker** for **Executable Type** as the executable is a docker image.
 13. In the **Docker image** box, specify the docker image - *rrdockerhub/led_trigger*
 14. In the **Command to run in the docker container** box, enter the command:
-    `led_trigger led0 heartbeat`
+	```bash
+	led_trigger led0 heartbeat
+	```
+
 15. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 The package is successfully built and is ready to be deployed
@@ -83,8 +86,8 @@ yellow dot flickers against the deployment name indicating that the deployment
 is in progress. Once the dot turns green, it implies that the **DEPLOYMENT PHASE**
 has **Succeeded** and the **STATUS** is **running**.
 
-You may also analyse the corresponding deployment logs to check if everything
-is working good.
+You may also analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs)
+to check if everything is working good.
 
 To verify that everything is working correctly, you should observe the trigger
 of the on-board LED(ACT/LED0) on Raspberry PI 2 or 3 switch to heartbeat.

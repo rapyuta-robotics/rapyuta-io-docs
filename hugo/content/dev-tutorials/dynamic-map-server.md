@@ -140,7 +140,7 @@ cd ..
 source /opt/ros/kinetic/setup.#!/usr/bin/env bash
 catkin_make --pkg map_listener
 ```
-And then, you will [add the device](/getting-started/adding-a-new-device)
+And then, you will [add the device](/getting-started/add-new-device)
 to rapyuta.io using the console. Ensure that **Use docker compose as default runtime**
 checkbox is not selected.
 

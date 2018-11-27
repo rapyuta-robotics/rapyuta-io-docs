@@ -31,7 +31,8 @@ You may use `nmap` to determine the device IP:
 nmap -sn 1.2.3.0/24     # replace 1.2.3.0/24 with your local IP address
 ```
 To ensure that everything is working OK, SSH into the Raspberry PI using
-the default username and password. Both the default username and password is `rapyuta`.
+the default username and password. Both the default username and password is
+`rapyuta`.
 
 You are required to change the password as soon as you sign in.
 

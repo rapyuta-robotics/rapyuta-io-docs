@@ -7,7 +7,7 @@ pre: "<b>* </b>"
 weight: 194
 ---
 Add a _ROS Publisher Exclusive_ package that has a _Talker_ component with cloud runtime.
-It publishes `/telemetry` ROS topic with **High** **QoS**. Deploy the package
+It publishes `\telemetry` ROS topic with **High** **QoS**. Deploy the package
 on the cloud by the name _ROS publisher exclusive deployment_
 
 1. On the left navigation bar, click **DEPLOYMENTS**.
