@@ -36,7 +36,8 @@ indicating that the deployment is currently running.
 Furthermore, if dependent deployments are added then each dependency's **STATUS**
 must read **running**.
 
-You may analyse all of the logs generated while deploying a package.
+You may analyse all of the corresponding [logs](/core-concepts/logging/deployment-logs)
+generated while deploying a package.
 
 If a deployment fails, the **DEPLOYMENT PHASE** will read **Failed to start**.
 You may have to click **Deprovision Deployment**, delete the corresponding

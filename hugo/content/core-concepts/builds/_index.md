@@ -15,12 +15,12 @@ If the **Executable Type** is **Git**, you must provide a git repository url add
 rapyuta.io builds the source code in the git repository into an executable
 docker container.
 
-Suppose you want to add a git repository url - https://github.com/rapyuta-robotics/io_tutorials,
+Suppose you want to add a git repository url: https://github.com/rapyuta-robotics/io_tutorials,
 where *io_tutorials* is the project repository (folder) containing source code on
 the master branch and is hosted on GitHub.
 
 If you want to add source code located on a different branch say *io_turtlesim_qos*
-of the same project, your git repository url will look like -  https://github.com/rapyuta-robotics/io_tutorials#io_turtlesim_qos
+of the same project, your git repository url will look like:  https://github.com/rapyuta-robotics/io_tutorials#io_turtlesim_qos
 
 ### Trigger new builds and Rollback to previous builds
 Consider a package whose executable is a git repository. The source code in the
@@ -72,4 +72,5 @@ The builds are automatically restarted on software infrastructure failures.
 If you observe that the build logs are abruptly disconnected or stopped,
 click **Refresh**.
 
-When a build fails, you should analyse the corresponding build logs for debugging.
+When a build fails, you should analyse the corresponding [build logs](/core-concepts/logging/build-logs)
+for debugging.

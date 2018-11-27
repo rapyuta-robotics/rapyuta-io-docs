@@ -74,7 +74,7 @@ OS and [ROS kinetic](http://wiki.ros.org/kinetic) software installed on them.
 Moreover, the [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tutorials)
 are also installed on these custom images.
 
-Learn how to prepare Raspberry PI
+Learn how to [prepare Raspberry PI](/getting-started/prepare-raspberry-pi)
 
 If you are not using any of the custom rapyuta.io images on the _Publisher
 Device_, you should execute the following commands on the device's terminal
@@ -129,7 +129,7 @@ OS and [ROS kinetic](http://wiki.ros.org/kinetic) software installed on them.
 Moreover, the [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tutorials)
 are also installed on these custom images.
 
-Learn how to prepare Raspberry PI
+Learn how to [prepare Raspberry PI](/getting-started/prepare-raspberry-pi)
 
 If you are not using any of the custom rapyuta.io images on the
 _Subscriber Device_, you should execute the following commands on the

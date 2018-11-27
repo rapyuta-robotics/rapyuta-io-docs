@@ -79,4 +79,5 @@ exchanged between various components is encrypted.
   credentials that are visible only to you. These credentials are used to
   identify devices across communication channels.
 
-Learn how to add a new device and SSH into them from your browser.
+Learn how to [add a new device](/getting-started/add-new-device) and SSH into
+them from your browser.

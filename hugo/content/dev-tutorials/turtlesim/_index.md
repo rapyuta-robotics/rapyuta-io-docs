@@ -31,7 +31,7 @@ learn how to:
    is installed on it.
 3. You should be familiar with the [core concepts](/core-concepts/) of rapyuta.io
 4. You should be familiar with the following tools:
-	* [git](https://git-scm.com/doc)
+	* [Git](https://git-scm.com/doc)
 	* [Docker](https://docs.docker.com/get-started/)
 	* Robot Operating System ([ROS](http://wiki.ros.org/kinetic)) and its
 	[topics](http://wiki.ros.org/Topics), [nodes](http://wiki.ros.org/Nodes)
@@ -254,7 +254,7 @@ To add _Command Center_ package, follow the steps:
    The name of an executable must consist of alphabets [A-Z, a-z],
    digits [0-9] and _ character, and must not start with a digit.
 8. For **Executable type**, click **Git**.
-9. In the **Git Repository** box, enter the url address of the git repository   https://github.com/rapyuta-robotics/io_tutorials
+9. In the **Git Repository** box, enter the url address of the git repository:      https://github.com/rapyuta-robotics/io_tutorials
 10. In the **Command to run in the docker container** box, enter the command:
     ```bash
     roslaunch io_turtle_command_center command_center.launch

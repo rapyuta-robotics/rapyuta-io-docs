@@ -105,4 +105,5 @@ The device's **Details** tab displays a summary of the device:
 8. LABELS
 9. CONFIG VARIABLES
 
-Read device management section to learn more about device manager concepts.
+Read [device management](/core-concepts/device-management) section to learn more
+about device manager concepts.

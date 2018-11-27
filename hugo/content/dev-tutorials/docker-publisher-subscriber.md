@@ -46,7 +46,7 @@ To integrate the device into rapyuta.io using the [console](https://closed-beta.
 
 1. [Create a user account](/getting-started/create-new-user) if you do not
 have one yet.
-2. [Add the device](/getting-started/adding-a-new-device) to the console.
+2. [Add the device](/getting-started/add-new-device) to the console.
 Ensure that you select the **Use docker compose as default runtime** checkbox
 while adding the device.
 
@@ -81,8 +81,8 @@ The package has two components: the **talker** running on the cloud and the
 	   The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9]
 	   and an underscore _ character, and must not start with a digit.
 	6. For **Executable Type**, click **Git**.
-	7. In the **Git repository** box, enter the url address
-	*https://github.com/rapyuta/io_tutorials*
+	7. In the **Git repository** box, enter the url address:
+	https://github.com/rapyuta/io_tutorials
 	8. In the **Command to run in the docker container** box, enter the command:
 		```bash
 		roslaunch talker talker.launch
@@ -108,7 +108,7 @@ The package has two components: the **talker** running on the cloud and the
 	   The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
 	   and an underscore _ character, and must not begin with a digit.
 	7. For **Executable Type**, select **Git**.
-	8. In the **Git repository** box, enter the url address https://github.com/rapyuta/io_tutorials
+	8. In the **Git repository** box, enter the url address: https://github.com/rapyuta/io_tutorials
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
 		roslaunch listener listener.launch

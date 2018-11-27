@@ -15,7 +15,7 @@ A user is an entity responsible for creating and managing resources
 (device, package, deployment etc.) using rapyuta.io. An authenticated user can
 access a set of available resources.    
 
-Learn how to [create a new user](../getting-started/create-new-user).
+Learn how to [create a new user](/getting-started/create-new-user).
 
 ## Groups
 A group is a collection of arbitrary number of users belonging to the same
@@ -34,6 +34,6 @@ _Team2_ creates _Group2_ with all of its members. If an engineer collaborates
 with both the teams, they are a member of both the groups. A member of a group
 can access only the resources shared in that group.
 
-Learn how to [create a new group](../getting-started/create-new-group).
+Learn how to [create a new group](/getting-started/create-new-group).
 
-Learn how to [switch between user and group](../getting-started/switch-between-user-group).
+Learn how to [switch between user and group](/getting-started/switch-between-user-group).

@@ -55,7 +55,7 @@ device = client.get_device(DEVICE_ID)
 talker_configuration = talker_package.get_provision_configuration(DEVICE_TALKER_PLAN_ID)
 talker_configuration.add_device(TALKER, device)
 device_talker_deployment = talker_package.provision(deployment_name = "device_talker",
-						   provision_configuration = talker_configuration)
+						provision_configuration = talker_configuration)
 print device_talker_deployment.get_status()
 ```
 
@@ -70,7 +70,7 @@ listener_package = client.get_package(CLOUD_LISTENER_PACKAGE_ID)
 listener_configuration = listener_package.get_provision_configuration(CLOUD_LISTENER_PLAN_ID)
 listener_configuration.add_dependent_deployment(device_talker_deployment)
 cloud_listener_deployment = listener_package.provision(deployment_name = 'cloud_listener',
-							provision_configuration = listener_configuration)
+				provision_configuration = listener_configuration)
 print cloud_listener_deployment.get_status()
 ```
 
@@ -88,14 +88,15 @@ device = client.get_device(DEVICE_ID)
 talker_configuration = talker_package.get_provision_configuration(DEVICE_TALKER_PLAN_ID)
 talker_configuration.add_device(TALKER, device)
 device_talker_deployment = talker_package.provision(deployment_name = "device_talker",
-						   provision_configuration = talker_configuration)
+						 provision_configuration = talker_configuration)
 print device_talker_deployment.get_status()
+
 
 listener_package = client.get_package(CLOUD_LISTENER_PACKAGE_ID)
 listener_configuration = listener_package.get_provision_configuration(CLOUD_LISTENER_PLAN_ID)
 listener_configuration.add_dependent_deployment(device_talker_deployment)
 cloud_listener_deployment = listener_package.provision(deployment_name = "cloud_listener",
-							provision_configuration = listener_configuration)
+					provision_configuration = listener_configuration)
 print cloud_listener_deployment.get_status()
 ```
 
@@ -104,6 +105,6 @@ At the terminal prompt, run the program using the command:
 $ python talker-listener.py
 ```
 
-The output is an object of the class [`DeploymentStatus`](https://closed-betadocs.ep.rapyuta.io/#rapyuta_io.clients.deployment.DeploymentStatus),
+The output is an object of the class [DeploymentStatus](https://closed-betadocs.ep.rapyuta.io/#rapyuta_io.clients.deployment.DeploymentStatus),
 which contains values such as deployment ID, deployment name, deployment status,
 deployment phase, package ID and other details.

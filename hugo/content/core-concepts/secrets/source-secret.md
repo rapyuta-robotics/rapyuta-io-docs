@@ -41,7 +41,7 @@ want to use for creating a package, follow the steps:
 6. If you want to grant access via SSH key of your git repository, select **SSH
    Authentication** from the **Authentication Type** drop-down list.
 	1. In the **SSH Key** box, provide the private SSH key of your git repository.
-    ![](/images/core-concepts/source-secret/sshauth.png?classes=border)
+    ![SSH authentication](/images/core-concepts/source-secret/sshauth.png?classes=border)
 7. The **Source URL patterns** is a three part value.
 	1. The first part is the protocol of your git server. You can choose from
 	   distinct protocols such as **\*://** , **git://** , **http://** ,
@@ -69,6 +69,6 @@ A source url pattern consists of the following segments:
 The character * is a wild card character popular in regular expressions.
 
 Source url patterns match only git repository urls that conform to [RFC3986](https://tools.ietf.org/html/rfc3986).
-For example https://github.com/rapyuta/sample.git is a valid match,
+For example https://github.com/rapyuta/io_tutorials.git is a valid match,
 whereas _git@github.com:rapyuta/sample.git_ is an invalid match. Moreover, it is
 discouraged to include a username and password components in a url pattern.
