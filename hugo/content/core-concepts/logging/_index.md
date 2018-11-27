@@ -3,7 +3,8 @@ title: "Logging"
 description:
 type: core-concepts
 date: 2018-11-20T18:06:42+05:30
-weight: 130
+pre: "<b>j. </b>"
+weight: 190
 ---
 Logs are verbose text messages, and are used for debugging and monitoring.
 Logs are generated when rapyuta.io builds the source code of a git repository,

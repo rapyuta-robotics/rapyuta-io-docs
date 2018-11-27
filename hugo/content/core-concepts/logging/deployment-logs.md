@@ -3,7 +3,8 @@ title: "Deployment Logs"
 description:
 type: core-concepts
 date: 2018-11-20T18:49:43+05:30
-weight: 145
+pre: "<b>* </b>"
+weight: 194
 ---
 Add a _ROS Publisher Exclusive_ package that has a _Talker_ component with cloud runtime.
 It publishes `/telemetry` ROS topic with **High** **QoS**. Deploy the package

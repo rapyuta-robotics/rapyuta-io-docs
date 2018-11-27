@@ -1,7 +1,7 @@
 ---
 title: "Talker Listener"
 description:
-pre: "b. "
+pre: "<b>* </b>"
 weight: 405
 ---
 
