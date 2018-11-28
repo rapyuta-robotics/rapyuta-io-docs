@@ -97,14 +97,21 @@ require you to provide a white list of ROS topics, ROS actions, and ROS services
 that are allowed from the deployments of *agv_bot*.
 
 ## Package category
-rapyuta.io divides all packages in _Catalog_ into two categories:
+rapyuta.io divides all packages in _Catalog_ into following categories:
 
-1. **Storage packages**    
-rapyuta.io provides public packages to its users. They are available for every
-user and group for deployment. You cannot delete and/or clone storage packages.
-For example, **Rapyuta IO Persistent Volume** is a storage package.    
-Packages that perform disk read/write operations, represent databases,
-execute storage related operations and implement other common use cases are
-usually categorised as storage packages.
+1. **Public packages**     
+   rapyuta.io provides public packages to its users. They are available to
+   every user and group for deployment. You cannot delete and/or clone
+   public packages.
+   	* **Storage packages**    
+	  Packages that perform disk read/write operations, represent databases,
+	  execute storage related operations and implement other common use cases
+	  are usually categorised as storage packages.For example,
+	  **Rapyuta IO Persistent Volume** is a storage package.
+	* **Communication packages**    
+	  Packages that help in multi-device communication within the same network
+	  are categorised as communication packages. For example,
+	  **Rapyuta IO Communication Broker** is a communication package.
 2. **Default packages**    
-The packages that you add to rapyuta.io are grouped as default packages.
+   The packages that you add to rapyuta.io are grouped as default packages.
+   You can delete and/or clone default packages.

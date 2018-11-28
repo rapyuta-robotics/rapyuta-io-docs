@@ -42,6 +42,18 @@ A plan represents a different configuration of a package. When you add a new
 package, there is always a single plan associated with the package. A plan is
 uniquely identified by its plan ID.
 
+## Bindable Attribute
+A boolean attribute that is set while adding a package. When set to true for a
+package with two or more ROS components, the components successfully communicate
+with each other.
+
+It also determines whether a deployment of a package can be used as a dependent
+deployment of other deployments. If set false, the deployment of the package
+cannot be used as a dependent deployment of another deployment.
+
+It also determines whether a package can be added as an include package. If set
+false, the package cannot be used as an include package.
+
 ## Endpoint
 Components can externally expose network endpoints. While creating a package
 you may provide a name for the endpoint, select the desired protocol and specify
