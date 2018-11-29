@@ -15,9 +15,9 @@ absolute path of the _Dockerfile_ instead of rapyuta.io automatically detecting
 the _Dockerfile_ location with respect to the git repository. Finally, rapyuta.io
 builds the _Dockerfile_ into a runnable docker image.
 
-When the build fails, you should inspect the corresponding build logs and/or
-properly validate the _Dockerfile_ present in the git repository. If you continue
-to see the error, contact the support team.
+When the build fails, you should inspect the corresponding [build logs](/core-concepts/logging/build-logs)
+and/or properly validate the _Dockerfile_ present in the git repository. If
+you continue to see the error, contact the support team.
 
 You can explicitly specify the absolute path of
 [Dockerfile](https://docs.docker.com/engine/reference/builder/) in a git

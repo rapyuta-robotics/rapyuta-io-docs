@@ -21,7 +21,7 @@ variable when deploying ROS packages.
 device. rapyuta.io automatically sources ROS packages present in this workspace
 for package deployment.
 * **runtime** specifies whether the device supports _dockercompose_ for the package
-deployment. Otherwise, its value is set as _preinstalled_. You can provide this
+deployment. Otherwise, its value is set as _preinstalled_. It is immutable. You can provide this
 value while adding a device to rapyuta.io
 
 The above predefined configuration variables are found on the device's

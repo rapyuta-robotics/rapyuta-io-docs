@@ -6,8 +6,9 @@ date: 2018-11-20T18:49:43+05:30
 pre: "2. "
 weight: 194
 ---
-Add a _ROS Publisher Exclusive_ package that has a _Talker_ component with cloud runtime.
-It publishes `\telemetry` ROS topic with **High** **QoS**. Deploy the package
+[Add a _ROS Publisher Exclusive_ package](/getting-started/create-new-package)
+that has a _Talker_ component with cloud runtime. It publishes *\telemetry*
+ROS topic with **High** **QoS**. [Deploy the package](/getting-started/deploy-package)
 on the cloud by the name _ROS publisher exclusive deployment_
 
 1. On the left navigation bar, click **DEPLOYMENTS**.

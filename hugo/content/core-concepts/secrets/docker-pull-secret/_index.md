@@ -32,8 +32,8 @@ To create a docker pull secret for a private docker registry, follow the steps:
    **Registry Url** box. It is mandatory to provide the registry url.
 6. In the **Username** box, type in your docker username.
 7. In the **Password** box, type in your docker password.    
-   If you can't quite remember your docker credentials for your private registry,
-   learn how to determine your docker credentials.
+   To determine your docker credentials for your private registry,
+   read about [authorisation token for docker credentials](/core-concepts/secrets/docker-pull-secret/auth-token-docker-creds).
 8. In the **Email** box, enter the valid email address associated with your
    docker registry.
 9. Click **SUBMIT**.

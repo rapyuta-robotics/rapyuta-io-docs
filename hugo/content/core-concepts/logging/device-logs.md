@@ -7,11 +7,11 @@ pre: "3. "
 weight: 196
 ---
 By default, device logs are not collected until you explicitly subscribe to a
-ROS topic.
+ROS topic in case of ROS deployments.
 
 Before viewing device logs, it is necessary to have the ROS Master up and running.
 Add a _ROS Publisher_ package that has a _Talker_ component with device runtime.
-It publishes `/telemetry` ROS topic with **High** **QoS**.
+It publishes */telemetry* ROS topic with **High** **QoS**.
 
 1. On left navigation bar, click **Devices**.
 2. Select a device whose device logs you want to view. In this example,
