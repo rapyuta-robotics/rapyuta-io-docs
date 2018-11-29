@@ -80,7 +80,6 @@ save the program and close the file.
 from rapyuta_io import Client
 client = Client(AUTH_TOKEN)
 
-from rapyuta_io import Client
 persistent_volume = client.get_persistent_volume()
 volume_instance = persistent_volume.create_volume_instance("my_sample_volume", 1,
                                                            DiskType.DEFAULT)
