@@ -53,8 +53,9 @@ want to use for creating a package, follow the steps:
     To add additional URL patterns, click **Add URL pattern**.    
 8. Click **Submit**.
 
-Source URL pattern lets you specify your git repository url pattern. The _Build
-Engine_ will match the git repository url that you will provide while adding a package
+Source URL pattern lets you specify your git repository url pattern. The
+[_Build Engine_](/core-concepts/device-management/device-docker-runtime/rio-build-engine)
+will match the git repository url that you will provide while adding a package
 to the source url pattern so as to use the corresponding source secret to build
 the package. Alternatively, it is a regular expression representing git
 repositories' urls.
