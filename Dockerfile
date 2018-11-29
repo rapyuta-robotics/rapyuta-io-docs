@@ -1,12 +1,31 @@
-FROM nginx:alpine
-MAINTAINER Bharat Khatri <bharat.khatri@rapyuta-robotics.com>
+FROM debian:jessie
+RUN apt-get -qq update \
+	&& DEBIAN_FRONTEND=noninteractive apt-get -qq install -y --no-install-recommends curl python-pygments git ca-certificates asciidoc \
+    && apt-get -y autoclean \
+	&& rm -rf /var/lib/apt/lists/*
+ENV HUGO_VERSION=0.39 \
+    NVM_DIR=/usr/local/nvm \
+    NODE_VERSION=10.10.0
 
-ARG DOCS_ROOT=latest 
+ENV HUGO_BINARY=hugo_${HUGO_VERSION}_Linux-64bit.deb \
+    NODE_PATH=$NVM_DIR/v$NODE_VERSION/lib/node_modules \
+    PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
-RUN chown -R root:root /var/cache/nginx \
-	&& chmod -R g+w /var/log/nginx /var/cache/nginx /var/run
+ADD https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} /tmp/hugo.deb
+RUN dpkg -i /tmp/hugo.deb \
+	&& rm /tmp/hugo.deb
+RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
+RUN /bin/bash -c "source $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION \
+    && nvm use default"
 
-COPY _preview/rapyuta-io/${DOCS_ROOT} /usr/share/nginx/html/${DOCS_ROOT}/
 
-RUN sed -i'' "s/listen *80/listen 8000/" /etc/nginx/conf.d/default.conf \
-	&& sed -i'' "s/#error_page *404 *\/404.html;/&\n\n    location = \/ {\n        return 302 ${DOCS_ROOT}\/overview\/introduction.html;\n    }/" /etc/nginx/conf.d/default.conf
+COPY . /appsrc
+WORKDIR /appsrc
+RUN git submodule init && git submodule update \
+    && npm install \
+    && cd hugo && hugo -v
+
+EXPOSE 3000
+CMD ["node", "index.js"]

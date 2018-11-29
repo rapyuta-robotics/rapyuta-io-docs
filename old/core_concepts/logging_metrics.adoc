@@ -1,0 +1,33 @@
+= Logging and Metrics 
+
+== Logs
+Logs are textual, verbose messages from the applications used for debugging and monitoring. Logs are aggregated across the entire ROS environment
+and available on the rapyuta.io console UI. Every deployment has its own logs. The platform log streaming service is responsible for collecting and
+indexing the data.
+
+When a rapyuta.io package is deployed, the ROS logs from both the cloud deployment and the device deployment are combined and saved into the platform
+data store.
+
+[NOTE] 
+Logs are not intended for real-time monitoring.
+The delay due to relaying, indexing and rendering logs in rapyuta.io could be as high as 5s. 
+
+image::logging_metrics.png["ROS logging architecture"]
+
+== Metrics
+We define metric as scalar measurements that change over time such as temperature, remaining battery, etc.
+Metrics can be used for dynamic device selection.
+This data can be visualized close to real-time on rapyuta.io console UI by adding graphs and dashboards. 
+
+The metric data is stored in a time series database, allowing you to group the data by different time intervals.
+You can create customized live charts from the metric stream and choose from multiple visualization types such as line graph, stack, etc. Values can be aggregated based on their count, average, min, max, etc.
+
+The platform can collect metrics (humidity, wind speed, etc.) from a powered-on and connected device even when a rapyuta.io package deployment is not being
+executed. This could be useful to gather data and monitor state of a device.
+
+[NOTE]
+The delay in relaying, indexing and rendering metrics in rapyuta.io could be as high as 5s. They are also only intended for scalar values, not for large data blobs such as laser scans or images.
+
+[TIP]
+Follow link:../developer_guide/device_management_operations/device_metric_collection_visualization.html[these instructions] to collect and visualize your
+log data.

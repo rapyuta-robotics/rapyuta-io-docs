@@ -1,0 +1,64 @@
+= rapyuta.io SDK
+:toc: macro
+:toc-title:
+:data-uri:
+:experimental:
+:prewrap!:
+:description:
+:keywords:
+
+toc::[]
+
+The rapyuta.io SDK is a python client library that provides an interface to rapyuta.io services including service catalog and device manager.
+
+== link:../rio_sdk_docs/[PyDoc Reference]
+
+== Example of usage
+The rapyuta.io SDK allows you to manage packages easily.
+
+=== Provisioning a package on the cloud
+In this example, the package is already created using the rapyuta.io console UI. The following code snippet will provision this package and run it on the cloud.
+
+[source,python]
+----
+from rapyuta_io import Client
+client = Client()
+package_id = 'my_package_id'    // <1>
+plan_id = 'my_plan_id'          // <2>
+auth_token = 'my_auth_token'    // <3>
+pkg = client.get_package(package_id=package_id, plan_id=plan_id, auth_token=auth_token)
+deployment_id = 'my_deployment_id' // <4>
+deployment = pkg.provision(deployment_id=deployment_id)
+----
+<1> 'package_id' is given while creating the package.
+<1> 'plan_id' is the plan of the package that you want to provision.
+<1> 'auth_token' is the authorization token of your rapyuta.io user.
+<1> `deployment_id` should be a string that will identify your provision from this moment.
+
+Once your package is provisioned, you can gather information of the deployment as follows:
+
+[source,python]
+----
+deployment_info = pkg.get_deployment_info(deployment['deployment_id'])
+----
+
+=== Provisioning a package on the device
+To provision a package on a device, you need to select a device using `select_device` method of `Client` class. You need to add the device to package configuration and pass the device in
+the provision call. The following snippet shows an example provisioning the same package as before on the device.
+
+[source,python]
+----
+query = 'label.camera=true, measurement.battery.value>20'
+devices = client.select_devices(query, auth_token=auth_token)
+pkg.config.component_parameters.my_component_name.device_id = devices[0].uuid // <1>
+deployment_dev = pkg.provision(deployment_id=deployment_id, devices=devices) // <2>
+----
+<1> `my_component_name` is the name of the component you want to run on the device, given while creating the package. In this line, such component is assigned to the first device that
+satisfy the query, where it will be deployed.
+<1> By adding the argument `global_devices=devices`, we indicate the possible devices in which the deployment can be done. The package will match the `device_id` given in the previous line
+with the devices provided here.
+
+==== Querying devices
+Device selection query is a comma-separated set of subqueries. Each subquery can select the device based on a label or telemetry data. Label based subquery will search for the devices based
+on the device labels. For example, `label.camera=true` will search for the devices having label `camera:true`. Telemetry-based subquery will search for the devices based on the telemetry data.
+For example, `measurement.battery.value>20` will search for the devices having a battery level greater than 20%. The method will select the devices which meet the criteria of all the sub-queries.

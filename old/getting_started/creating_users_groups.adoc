@@ -1,0 +1,31 @@
+= Creating users and groups
+
+== Creating a user
+. Visit the https://console.rapyuta.io/login[rapyuta.io Console login page].
+. Click on *Register*, since we are creating a new user.
+
+image::creating_users_groups/login.png["Login page - creating a new user"]
+
+[start=3]
+. Enter your basic information, and click on *Create Account*.
+
+image::creating_users_groups/register.png["Register page - creating a new user"]
+
+[start=4]
+. A Verification email will be sent to the Email address entered. To proceed further, you will have to click on the
+verification link in the email.
+. After the email address verification is done, you can log in with your Email address and Password.
+. Since you would be visiting the rapyuta.io console for the first time with your credentials, you will have to enter the
+Invite Code that was provided to you and click *Submit*.
+
+image::creating_users_groups/invitecode.png["Register page - enter invite code"]
+
+The page shall automatically redirect to the dashboard on successful registration.
+
+== Creating a Group 
+1. Navigate to the *Users and groups* page by clicking on the left navigation bar.
+2. Click on *Create new group* button above the list of groups in the page.
+
+image::creating_users_groups/group_creation.png["Creating a group"]
+
+The newly created group shall show up in the table on successful creation.

@@ -1,0 +1,134 @@
+= Deployments
+:toc: macro
+:toc-title:
+:data-uri:
+:experimental:
+:prewrap!:
+:description:
+:keywords:
+
+toc::[]
+== Overview
+A Deployment is a running instance of a package on the platform. A deployment can be triggered from the rapyuta.io
+console UI, link:../developer_guide/rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK], or directly using REST API endpoints.
+While deploying a package, the platform is responsible for:
+
+* Resolving all specified package dependencies for a package. 
+* Injecting result of package bindings of the dependencies into the specified package's components and spawning these
+components on the requested cloud or device runtime.
+* Creating and exposing all required network endpoints.
+* Deploying any components needed by the platform (e.g., cloud bridge, ROS master).
+
+The platform handles the deployments requests asynchronously and provides REST API endpoints for retrieving the current
+deployment progress. The progress can also be checked from the rapyuta.io console UI.
+
+
+== Singleton Deployment
+Certain package link:packages.html#plans[plans] may need to be instantiated only once for a particular user/group. The
+author can choose to use the *singleton* flag to indicate this while creating the package. In these cases, only
+the first request to provision the chosen package plan results in a new instance of the components. This  would help
+restrict the number of deployments of a resource intensive package to only one.
+
+Please refer the design patterns section of the link:service_catalog.html#dependant-deployments[service catalog] docs
+for a overview.
+
+== Deployment Phase
+Each Deployment goes through multiple phases in its lifecycle. The *Phase* of the deployment indicates the current
+lifecycle phase of the deployment. For example, after a deployment of a package starts successfully, its *Phase* will be
+marked as *Started successfully*. If the deployment creation were to fail, the phase of the deployment would have been
+marked as *Failed to start*. When the user stops a running deployment, the phase will be marked as *Deployment stopped*.
+
+Following are the phases of deployment along with their description:
+
+[%header,cols=2*]
+|===
+|Deployment Phase
+|Description
+
+|In progress
+|Waiting for deployment to start
+
+|Started successfully
+|Deployment was started successfully
+
+|Failed to start
+|Deployment could not be started due to an error
+
+|Partially deprovisioned
+|Deployment deprovisioned by the user but some components could not be stopped due to an error. User can retry to stop the remaining components
+
+|Deployment stopped
+|Deployment deprovisioned by the user and all components were stopped
+|===
+
+== Live status
+rapyuta.io allows the user to monitor the current status of the components that were deployed as parts of a deployment.
+*Live status* depicts this information of a deployment once deployment starts successfully (*Phase* is *Started
+successfully*). Depending on the status of components of the deployment, the final status of deployment can be:
+
+[%header,cols=2*]
+|===
+|Live status
+|Description
+
+|Initializing
+|Deployment started successfully and the components are coming up
+
+|Running
+|All the components of the deployment are running
+
+|Unknown
+|Status of one or more components is unknown
+
+|Error
+|One or more components are facing an error
+|===
+
+If the *Live Status* is *Error* or *Unknown*, the deployment status contains an error code which specifies the cause of the error.
+In case of system errors, you should report the error to support team along with the error code.
+
+Following are the error codes, descriptions, and the recommended actions when faced with the error code.
+
+[%header,cols=3*]
+|===
+|Error Code
+|Description
+|Recommended Action
+
+|DEP_E151
+|Device offline/not reachable
+|Check the device's internet connectivity
+
+|DEP_E152
+|Component executables on the device either exited too quickly or failed with errors
+|Troubleshoot the failing component using component logs
+
+|DEP_E153
+|Could not pull either the docker image or the built package artifact for the component on the cloud
+|Verify that the docker container submitted at package creation still exists at the specified registry endpoint
+
+|DEP_E154
+|Component executables on the cloud exited too quickly
+|Troubleshoot the failing component using component logs
+
+|DEP_E155
+|Component executables on the cloud failing with errors
+|Troubleshoot the failing component using component logs
+
+|DEP_E156
+|Dependent deployment is in error state
+|Troubleshoot the dependent deployment which is in error state
+
+|DEP_E2xx
+|Internal rapyuta.io error in the components deployed on the cloud
+|Report the issue with details to the support team using an email or a
+link:https://rapyutarobotics.freshdesk.com[freshdesk] ticket
+
+|DEP_E3xx
+|Internal rapyuta.io error in the components deployed on device
+|Report the issue with details to the support team using an email or a
+link:https://rapyutarobotics.freshdesk.com[freshdesk] ticket
+|===
+
+[TIP]
+To learn how to deploy packages, visit link:../getting_started/deploying_package.html[this page].

@@ -1,0 +1,29 @@
+baseurl = "/"
+languageCode = "en-us"
+languageLang = "en"
+defaultContentLanguage = "en"
+
+title = "Rapyuta IO Documentation"
+theme = "learn"
+disableSearch = false
+
+[params]
+    themeVariant = "rio"
+    author = "Rapyuta IO"
+    description = "Making robots more accessible to enterprise-level customers"
+
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
+
+[[menu.shortcuts]]
+    identifier = "freshdesk"
+    name = "<i class='fas fa-envelope'></i> Contact support"
+    weight = 10
+
+[[menu.shortcuts]]
+    name = "<i class='fas fa-globe'></i> Rapyuta Robotics"
+    url = "https://www.rapyuta-robotics.com/"
+    weight = 11
+
+[blackfriday]
+    hrefTargetBlank = true

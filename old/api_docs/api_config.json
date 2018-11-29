@@ -1,0 +1,9 @@
+{
+  "specs": [
+    {
+      "OUTPUT_PATH": "device_manager",
+      "SPEC_PATH": "../specs/device_manager.json",
+      "TITLE": "Device Manager API"
+    }
+  ]
+}

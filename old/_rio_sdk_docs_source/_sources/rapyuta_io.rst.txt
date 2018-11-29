@@ -1,0 +1,29 @@
+rapyuta\_io package
+===================
+
+Subpackages
+-----------
+
+.. toctree::
+
+    rapyuta_io.clients
+
+Submodules
+----------
+
+rapyuta\_io\.client module
+--------------------------
+
+.. automodule:: rapyuta_io.client
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: rapyuta_io
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,197 @@
+[[core-components-devices]]
+= ROS publisher-subscriber
+:toc: macro
+:toc-title:
+:data-uri:
+:experimental:
+:prewrap!:
+:description:
+:keywords:
+
+toc::[]
+
+This tutorial will show you how to deploy a basic ROS package with a ROS publisher running in the cloud and a ROS subscriber running on a Raspberry Pi.
+The ROS publisher sits in a public git repository and is built into a Docker container on the fly using `ros-indigo-catkin` build recipe.
+The ROS subscriber is assumed to be downloaded on Raspberry Pi and is launched when the package is deployed using rapyuta.io console UI or the
+link:../rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK].
+
+== Prerequisites
+To complete this tutorial, you should have the following:
+
+* Raspberry Pi 3.
+* Micro SD card of at least 4 Gb.
+* Internet connection for your Raspberry Pi over Ethernet.
+
+== Preparing the Raspberry Pi 3
+We are going to use Ubuntu 16.04 on the Raspberry Pi. It is not officially supported, but there is an image available that we will use for this tutorial.
+
+1. Download one of the following images
+* link:https://drive.google.com/file/d/14jAm71TMTEcwd-VDagovpIhQMmQKhWJC/view[custom rapyuta.io image]
+* link:https://ubuntu-pi-flavour-maker.org/download/[ubuntu pi flavour]
+* link:https://wiki.ubuntu.com/ARM/RaspberryPi[ubuntu classic].
+
+[TIP]
+====
+Our link:https://drive.google.com/file/d/14jAm71TMTEcwd-VDagovpIhQMmQKhWJC/view[custom rapyuta.io image] comes with ROS, catkin and rapyuta.io
+tutorials pre-installed. If you use this image, you can skip step 6 to 10 from the below mentioned steps.
+====
+
+2. To make the SD card flashing easier, download and install link:https://etcher.io/[Etcher].
+3. Mount the micro SD card on your computer and flash it using Etcher.
+
+image::ros_pub_sub/etcher.png["Flashing the SD card with Etcher"]
+
+[start=4]
+4. Insert the micro SD card on the Raspberry Pi micro SD card slot and power it.
+5. Connect the Ethernet port of the Raspberry Pi to a router that provides internet access.
+
+[TIP]
+====
+    You could use `nmap` to find the device IP:
+    nmap -sn 1.2.3.0/24 // replace 1.2.3 for your local IP address.
+====
+
+[start=6]
+5. To make sure that everything is OK so far, try to ssh into the Raspberry Pi. Default user and password are `ubuntu`. You will be required
+to change the password as soon as you log in.
+
+    ssh ubuntu@<device IP>
+
+[TIP]
+Alternatively you may use as serial terminal to achieve the same result.
+[CAUTION]
+The actual on-boarding requires connectivity to rapyuta.io
+
+[start=7]
+7. Some more configuration is required to avoid problems in the future. Open with root permissions the file `/etc/default/locale` and add the following line:
+
+    LC_ALL=C
+
+8. In the `/etc/hosts` file of the Raspberry Pi, add the following line:
+
+    127.0.1.1 ubuntu
+
+9. Install ROS on the Raspberry Pi following the link:http://wiki.ros.org/kinetic/Installation/Ubuntu[official instructions]. We recommend installing
+*ROS-Base*. Also, please make sure that you have link:http://catkin-tools.readthedocs.io/en/latest/installing.html[catkin tools] present on your device
+
+10. Currently, rapyuta.io does not install the components on the device. Therefore, you have to get and compile the `listener` package that will run on the device. For this:
+
+.. On your device, create a catkin workspace under the `home` folder (both Catkin and Catkin tools are OK):
+
+    cd $HOME
+    mkdir -p catkin_ws/src
+    cd catkin_ws/src
+    source /opt/ros/kinetic/setup.bash
+
+.. Get the code for the ROS listener:
+
+    git clone https://github.com/rapyuta/io_tutorials
+    cd ..
+
+.. Build the package:
+
+    catkin build listener
+
+Once the compilation is finished, you can check that everything is correct:
+
+    source devel/setup.bash
+    roslaunch listener listener.launch
+
+image::ros_pub_sub/comp_ok.png["Listener correctly running on the Raspberry Pi"]
+
+Kill the roslaunch process (Ctrl + C) before proceeding to the next step.
+
+== Setting the Raspberry Pi as rapyuta.io device
+So far, we have set the minimum requirements for the Raspberry Pi. Now, it is time to integrate them into rapyuta.io.
+
+1. Follow link:../../getting_started/creating_users_groups.html[these instructions] to create a user if you do not have one yet. It is not
+necessary to create a group.
+2. To add your devices to rapyuta.io, follow link:../../getting_started/adding_new_device.html[these instructions]. Note that you have to run the
+device setup link with root permissions.
+
+
+== Creating the package
+The packages have to be created from the rapyuta.io Console UI:
+
+1. Sign in to https://console.rapyuta.io/login[rapyuta.io console UI].
+2. On the left bar, go to the *Catalog* tab and click on *Add New Package*.
+3. Choose your package name, version, and add a description.
+4. This package will only have one plan. Choose the name for the plan and leave `Shared plan` unchecked.
+
+image::ros_pub_sub/pkg_1.png["Package configuration."]
+
+[start=5]
+5. The package will have two components: the talker running on the cloud and the listener running on the device:
+.. Talker component:
+... Select a name and a description for the `talker` component. Select `Cloud` as required runtime and check `Is ROS` box.
+... In this case, we will have one executable from a git repository. Therefore, select git and add this URL: https://github.com/rapyuta/io_tutorials
+... This executable will publish a topic `/telemetry`. We want this topic to arrive at the device. Therefore, add the `/telemetry` topic with max QoS
+(usually a telemetry topic would not have max QoS, take this as an example), and leave the scope as global.
+... Finally, rapyuta.io needs to know what to launch from the repository, as it might have many packages and roslaunch files.
+Therefore, add *_roslaunch talker talker.launch_* in the *Command* field of the form.
++
+image::ros_pub_sub/pkg_2.png["Talker component."]
+
+
+.. Listener component:
+... Select a name and a description for the `talker` component. Select `Device` as required runtime and check `Is ROS` box.
+... The code is already on the device. We simply have to tell rapyuta.io what to run on the device. Make sure to use absolute path of your catkin workspace:
+
+    source /home/ubuntu/catkin_ws/devel/setup.bash && roslaunch listener listener.launch
+
+... No other parameters or topics need to be specified. rapyuta.io will expose the `/telemetry` topic here from the cloud via the cloud bridge.
+
+
+image::ros_pub_sub/pkg_3.png["Listener component."]
+
+[start=6]
+6. Click on submit. After this, rapyuta.io will process and prepare the package for future deployments. If everything is OK you should see the
+status indicator as green on the package information page.
+
+image::ros_pub_sub/pkg_ok.png["Package created successfully."]
+
+
+== Deploying the package
+There are two ways of deploying a package: using the rapyuta.io console UI or using the link:../rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK]
+
+=== Deploy the package from the rapyuta.io console UI
+1. On the left bar, go to the *Catalog* tab and click on the package you just created.
+2. Click on *Deploy package*.
+3. We do not need to select the plan, as we only have one. Click on *Get devices*. After some seconds, your online devices should appear. Then, click *Continue*.
+
+image::ros_pub_sub/dep_1.png["Devices available for the deployment."]
+
+[start=4]
+4. For the `talker` component, nothing has to be done. For the `listener`, select the device you want to use.
+5. Also on the `listener` component, add two `ROS Setup Scripts` (the order is important):
+
+    /opt/ros/kinetic/setup.bash
+    /opt/rapyuta/catkin/devel/setup.bash
+
+6. Click on create deployment.
+
+image::ros_pub_sub/dep_2.png["Selecting runtime and adding ROS Setup Scripts."]
+
+The deployment status indicator will blink yellow for some seconds. Once the deployment is finished, it will become green.
+
+To check that everything is working, you can SSH into your device and do:
+
+
+    source ~/catkin_ws/devel/setup.bash
+    rostopic echo /telemetry
+
+
+You should see "Hello world" messages with a timestamp attached at approximately 10 Hz.
+
+
+=== Deploy the package from the link:../rapyuta_io_sdk/sdk_docs.html[rapyuta.io SDK]
+
+[source,python]
+from rapyuta_io import Client
+client = Client()
+package_id = 'my_package_id'    # change with package_id you want to deploy
+plan_id = 'my_plan_id'          # change with the plan_id you want to deploy
+auth_token = 'my_auth_token'    # change with your auth_token
+pkg = client.get_package(package_id=package_id, plan_id=plan_id, auth_token=auth_token)
+deployment = pkg.provision(deployment_id=deployment_id)
+deployment_info = pkg.get_deployment_info(deployment['deployment_id'])

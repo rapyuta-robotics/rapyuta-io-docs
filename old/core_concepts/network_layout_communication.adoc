@@ -1,0 +1,70 @@
+[[core-components-devices]]
+= Network layout and communication 
+:toc: macro
+:toc-title:
+:data-uri:
+:experimental:
+:prewrap!:
+:description:
+:keywords:
+
+toc::[]
+
+rapyuta.io is a fully managed service and is responsible for establishing and maintaining connectivity between different components of your distributed
+robotics application. These can broadly be divided into two categories: communication between the cloud and remote device and communication within the cloud.
+
+== Communication between the cloud and device
+The rapyuta.io cloud platform uses multiple channels to communicate with your remote device over the same physical connection. This allows us to cater
+to different kinds of data needs and offer purpose-specific optimisation and security. All channels account for NAT firewall limitations common on client
+deployment sites and do not require the devices to be on the same network or have a public IP address or require special router configuration.  
+
+=== Always-On Communication 
+rapyuta.io maintains two low throughput always-on channels. If your robot is powered-on, connected to the internet, and registered with rapyuta.io
+these channels will be active. These channels are optimized for reliability, low resource footprint and security for small payloads such as configuration
+commands, remote debug calls, metric and log information. These are the management channel and telemetry channel.
+
+==== Management Channel
+Inspired by the philosophy of separating management networks in a data-center, rapyuta.io maintains a dedicated management channel. This ensures critical
+commands reach the device when required and aren't affected by less vital information like telemetry.
+
+The device manager uses this channel to communicate with registered devices using a publish-subscribe pattern to send all the control commands from the
+device manager service to the device manager agent and receive event messages from the device manager agent. This channel is managed with strong isolation
+for each user/group and features per-device unique rotating AES key-based encryption to ensure security.
+
+==== Telemetry Channel
+The connected device generates system metrics and logs that are transported and processed in the cloud. The dedicated telemetry channel pushes data to a
+shared cloud endpoint. Each device channel uses TLS encryption, a unique token, and is governed by access control policies set by the platform.
+
+=== On-demand communication 
+There are some robotic applications, such as a mission flight or a delivery, that require a dedicated, ephemeral communication channel associated with a
+deployment and executed on demand. These are more use-case specific, offer higher bandwidth and dedicated single-use endpoints (e.g., webSSH,
+bridging ROS Environments, video, etc).
+
+[[core_concepts-network-cloud_bridge]]
+==== Cloud Bridge
+The cloud bridge is the component that is responsible for implicitly establishing a communication channel between two or more ROS environments. It is an
+application-level bridge that offers many compelling features to ROS developers. 
+
+ROS takes a fully connected graph approach to connect all relevant ROS nodes. While this works on a local network, it is suboptimal over a WAN link where
+it could lead to a waste of precious bandwidth and run the risk of compromising latency and reliability. We use an application level whitelist-based approach
+to select exactly what information (topic/service/actions) flows over the Internet. The bridge taps into ROS's internal mechanics to automate ROS message
+schema detection and metadata, it also manages dead peers, remote announcements and configuration thereby alleviating the need for complex configuration,
+build steps, and ROS message definition management. 
+
+In a typical ROS application, not all topics are equal, some are more relevant than others. For instance, some applications would prefer losing few telemetry
+messages while ensuring they arrive within a reasonable time bound. On the other hand, there might be less frequent but application-critical messages that are
+required to be delivered. The cloud bridge provides parameters for configuring bounds on delays, QoS, TTL per topic. Additionally, it is possible to configure
+protocol optimizations, load-balancing, selectable compression, connection pooling, and reassembly. These parameters help reduce routing overheads, maintain
+ordering (per-topic), reduce payload size (up to 80% under certain conditions for sparse messages like a PointCloud), and allow for horizontal scaleout
+(on services/actions).
+
+Further, each deployment gets a dedicated endpoint to cater to the needs of that particular deployment. Additionally, the endpoint is randomized and has a
+unique set of encryption keys and credentials to ensure security.
+
+==== Special Purpose Communication 
+Certain workloads such as a remote terminal, device updates, or real-time video have unique communication and security needs. There are platform-specific
+or catalog components to deal with these, and they may open additional special purpose channels as required.
+
+== Communication within the cloud
+Each entity's resources (device manager, logs, build artifacts, etc.) are contained within an isolated network. Additionally, each deployment gets its own
+dedicated isolated network. This dramatically improves security and prevent crosstalk between discovery and multicast protocols. 

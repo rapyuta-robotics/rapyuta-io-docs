@@ -1,0 +1,44 @@
+<ul>
+  <%- navigation.each.with_index do |topic_group, groupidx| -%>
+      <%- current_group = topic_group[:id] == group_id -%>
+      <li class="nav-header">
+        <a class="topicGroupHead" href="javascript:void(0);">
+          <%= topic_group[:name] %>
+        </a>
+        <ul class="collapse <%= current_group ? 'in' : '' %> list-unstyled">
+          <%- topic_group[:topics].each.with_index do |topic, topicidx| -%>
+              <%- if not topic.has_key?(:topics) -%>
+                  <%- current_topic = current_group && (topic[:id] == topic_id) -%>
+                  <li><a class="topicLink <%= current_topic ? ' active' : '' %>" href="<%= subtopic_shim %><%= topic[:path] %>"><%= topic[:name] %></a></li>
+              <%- else -%>
+                  <%- current_subgroup = topic[:id] == subgroup_id -%>
+                  <li>
+                    <a class="topicSubgroupHead" href="javascript:void(0);">
+                      <%= topic[:name] %>
+                    </a>
+                    <ul>
+                      <%- topic[:topics].each do |subtopic| -%>
+                          <%- current_subtopic = current_group && current_subgroup && (subtopic[:id] == topic_id) %>
+                          <li><a class="topicSubgroupLink <%= current_subtopic ? ' active' : '' %>" href="<%= subtopic_shim %><%= subtopic[:path] %>"><%= subtopic[:name] %></a></li>
+                      <%- end -%>
+                    </ul>
+                  </li>
+              <%- end -%>
+          <%- end -%>
+        </ul>
+      </li>
+  <%- end -%>
+    <li class="nav-header">
+        <a class="topicGroupHead" href="javascript:void(0);">
+            API Docs
+        </a>
+        <ul class="collapse list-unstyled">
+            <li>
+                <a class="topicLink " href="/latest/api_docs/catalog/" target="_blank">Catalog</a>
+            </li>
+            <li>
+                <a class="topicLink " href="/latest/api_docs/device_manager/" target="_blank">Device Manager</a>
+            </li>
+        </ul>
+    </li>
+</ul>

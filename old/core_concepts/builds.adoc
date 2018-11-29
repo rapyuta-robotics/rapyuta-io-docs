@@ -1,0 +1,186 @@
+= Builds
+
+An application build converts your source code or docker images into runnable rapyuta.io package artifacts. An
+application build is specified during package creation as shown in the example below:
+
+image::executables.png["Specifying a new executable from a git repository."]
+
+[NOTE]
+rapyuta.io currently only supports docker images for components for *Cloud* runtime. You can submit any x86_64 docker
+images during the package creation by referring to the images' URL. The same is true of git repositories; rapyuta.io
+currently only supports git repositories for components for *Cloud* runtime.
+
+= Secrets
+A secret is an object which consists of sensitive data such as a password, SSH private key, SSL certificate needed by
+rapyuta.io to access and build/use private resources like git repositories or docker images. Placing this data in a
+Secret object enables better control over its usage, and reduces any potential risk of exposure. rapyuta.io enables you
+to manage this data from the *Secrets* tab in the console UI.
+
+[TIP]
+A Secret provides a layer of abstraction between the container and a set of credentials.
+
+== Secret Types
+
+rapyuta.io provides two secret types:
+
+* *Docker Pull Secret*
+* *Source Secret*
+
+[[core_concepts-secrets_docker_pull_secret]]
+
+== Docker Pull Secret
+
+When the user wants to use a docker image from his private docker registry to create a package, access to the registry
+is required by rapyuta.io. Docker secrets are used to provide rapyuta.io with access to private docker registries. You
+can create these secrets by following the instructions given in the next section.
+
+[[core_concepts-builds-docker_secret_type]]
+There are two types of Docker Pull Secrets:
+
+* *Docker Hub*: If the docker registry is link:https://hub.docker.com[Docker Hub]
+* *Private Registry*: For any other private docker registry
+
+==== Step-by-Step Instructions
+
+To use docker images from a private docker registry in rapyuta.io *Packages*, the user only has to create a
+*Docker pull secret* for the docker registry. After creating the *Docker pull secret*, the user can create rapyuta.io
+*Packages* that use any docker images of this registry. rapyuta.io will use the information from the Docker pull secret
+to pull and use these docker images.
+
+The steps given below will help you add a Docker Pull Secret:
+
+1. Login to link:http://console.rapyuta.io[console.rapyuta.io]
+2. Click *Secrets* from the left navigation panel in the console UI
+3. Click *ADD NEW SECRET*
++
+On clicking *ADD NEW SECRET*, you will be taken to a modal window where you can create new secret as shown in the image
+below:
++
+image::secret_types.png["Selecting Docker pull secret",650]
++
+On selecting Docker Pull Secret, you will be taken to a modal window where you can create a new secret as shown in
+the image below:
++
+image::create_docker_secret.png["Creating Docker pull secret",650]
+4. Fill in the form with the particulars of the docker registry and click *Submit*. In the case of a private registry,
+click the radio button for link:#core_concepts-builds-docker_secret_type[Private registry]. In this case, you also have to
+fill in the registry url in the *Registry Url* part of the form. The other fields are described below:
++
+* Username: This is your user ID for Docker Hub or the private registry
+* Password: This is your password for Docker Hub or the private registry
+* Email: This is the email address used for Docker Hub or the private registry
+
+[NOTE]
+rapyuta.io does not support docker registries that do not use TLS.
+//TODO:improve image resolution
+//image::docker_hub.png["Docker Hub",650]
+//TODO: improve image resolution
+//image::private_registry.png["Registry Url",650]
+
+[[core_concepts-builds-source_secret]]
+
+== Source Secret
+When using source code from a private git repository to create a package, access to the repository is required by
+rapyuta.io. Source secrets are used to provide rapyuta.io with access to private git repositories or git repositories
+with self-signed or untrusted SSL certificates.
+
+There are two types of Source Secret, namely:
+
+* *Basic Authentication*: For access with user's username and password or git access token
+* *SSH Authentication*: For access with a private SSH key for the repository
+
+==== Step-by-Step Instructions
+To use the source code from a private git repository in rapyuta.io *Packages*, the user only has to create a
+*Source secret* for the git repository. After creating the *Source secret*, the user can use the source code from the
+matching git repository for *Package* creation. rapyuta.io will use the information from the Source secret to pull
+and build the source code into runnable artifacts.
+
+The steps given below will help you add a Source Secret:
+
+1. Login to link:http://console.rapyuta.io[console.rapyuta.io]
+2. Click *Secrets* from the left navigation panel in the console UI
+3. Click *ADD NEW SECRET*
++
+On clicking ADD NEW SECRET, you will be taken to a modal window where you can create new secret as shown in the image
+below:
++
+image::secret_types.png["Creating Source secret"]
+4. Select *Source Secret*
+5.  Fill in the secret creation form. The description of the fields is given below:
++
+*For Basic Authentication secrets:*
++
+image::source_secrets_basic.png["Specifying a new source secret with basic authentication.",650]
+
+* Name: User provided name for the source secret
+* Authentication Type: The link:#core_concepts-builds-source_secret[type] of source secret
+* *Password* or *Token*:
+The user can choose between providing access via either username and password or a git access token
++
+--
+For *Password*, the following fields are required:
+
+- Username: The git username
+- Password: The password of the user for the repository
+
+For *Token*, the following field is required:
+
+- Token: The git access token for the repository
+--
+
+* Source URL pattern: The regular expression that represents the URLs of git repositories that the user wants to provide
+access to. Read link:#core_concepts-builds-source_uri[Source URLs].
+* Use CA certificate: If your Git server uses a self-signed or untrusted certificate, you can use this option. Password
+or token fields are optional, if ca.crt is given.
+
++
+--
+*For SSH Authentication:*
+
+image::source_secrets_ssh.png["Specifying a new source secret with SSH key authentication.",650]
+
+* Name: User provided name for the source secret
+* Authentication Type: The link:#core_concepts-builds-source_secret[type] of source secret
+* SSH key: The private SSH key. Follow these tutorials to add SSH keys for your
+https://help.github.com/articles/connecting-to-github-with-ssh/[GitHub] or
+https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html[Bitbucket] repository.
+* Source URL pattern: The regular expression that represents the URLs of git repositories that the user wants to provide
+access to. Read link:#core_concepts-builds-source_uri[Source URLs].
+* Use CA certificate: If your Git server uses a self-signed or untrusted certificate, you can use this option. Password
+or token fields are optional, if ca.crt is given.
+--
+
+== Additional Concepts
+
+[[core_concepts-builds-source_uri]]
+
+* *Source URL patterns*
+
+You can specify your Git server url patterns using _Source URL patterns_ field.
+Build engine will match the Git source given in the Package definition to these
+source URLs and will then use the containing source secret to build the package.
+
+image::source_secrets_uri_patterns.png["URL patterns for source secrets",650]
+
+A URL pattern must consist of:
+
+* a valid scheme (*://, git://, http://, https:// or ssh://).
+
+* a host (* or a valid hostname or IP address optionally preceded by *.).
+
+* a path (/* or / followed by any characters optionally including * characters).
+
+In all of the above, a * character is interpreted as a wildcard.
+
+URL patterns only match Git source URLs which are conformant to RFC3986. For
+example, https://github.com/rapyuta/sample.git. They do not match the
+alternate SSH style that Git also uses. For example,
+git@github.com:rapyuta/sample.git. It is also not valid to include a
+username/password component in a URL pattern.
+
+
+If multiple secrets match the Git source of a particular Package, Build Engine will
+select the secret with the longest match. This allows for basic overriding. For
+example, secret with source URL https://\*.rapyuta-robotics.com/* will match with any SCM
+server in the domain rapyuta-robotics.com accessed over HTTPS but secret with source URL
+https://ioconsole.rapyuta-robotics.com/* will override configurations for ioconsole.rapyuta-robotics.com

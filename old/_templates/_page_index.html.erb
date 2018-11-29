@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title><%= [topic_title, subgroup_title].compact.join(' - ') %> | <%= group_title %> | <%= distro %> <%= version %></title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="<%= File.join(css_path, 'main.css') %>" rel="stylesheet" />
+  <link rel="shortcut icon" href="<%= File.join(images_path, 'favicon.ico') %>" />
+</head>
+<body>
+<div id="header">
+  <div id="headerInner">
+    <img id="headerLogo" src="<%= File.join(images_path, 'rr_logo.png') %>" alt="Rapyuta robotics logo"/>
+  </div>
+</div>
+
+<div id="container">
+  <div id="breadcrumbNav">
+    <ol id="breadcrumb">
+      <li>
+        <%= breadcrumb_root %>
+      </li>
+      <li>
+        <%= breadcrumb_group %>
+      </li>
+      <%= breadcrumb_subgroup_block %>
+      <li>
+        <%= breadcrumb_topic %>
+      </li>
+    </ol>
+  </div>
+  <div id="pageContainer">
+    <div id="sidebar">
+      <%= render(
+        "_templates/_nav.html.erb",
+        :navigation => navigation,
+        :group_id => group_id,
+        :topic_id => topic_id,
+        :subgroup_id => subgroup_id,
+        :subtopic_shim => subtopic_shim
+      ) %>
+    </div>
+    <div id="pageContents">
+      <div class="page-header">
+        <h1><%= article_title %></h1>
+      </div>
+      <%= content %>
+    </div>
+  </div>
+</div>
+</body>
+</html>
