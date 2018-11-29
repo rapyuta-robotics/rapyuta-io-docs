@@ -26,4 +26,4 @@ There could likely be a delay of five seconds in relaying, indexing and
 rendering metrics. Metrics are not intended for large data blobs such as
 laser scans and images.
 
-Follow how to visualise device metrics data tutorial.
+Follow how to [visualise device metrics data](/getting-started/metrics-collection-visualisation) guide.
