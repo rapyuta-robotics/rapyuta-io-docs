@@ -20,7 +20,7 @@ Raspberry PI 2 or 3 with docker compose runtime.
 	* Ensure that the [Google Chrome](https://www.google.com/chrome/) browser
 	  is installed on the computer.
 	* Raspberry PI 2 or 3
-2. You should be familiar with the core concepts of rapyuta.io
+2. You should be familiar with the [core concepts](/core-concepts) of rapyuta.io
 3. You should be familiar with
    [Docker image](https://docs.docker.com/v17.09/engine/userguide/storagedriver/imagesandcontainers/)
    concept.
