@@ -3,7 +3,7 @@ title: "Catalog"
 description:
 type: core-concepts
 date: 2018-11-15T13:43:59+05:30
-pre: "<b>e. </b>"
+pre: "e. "
 weight: 145
 ---
 Catalog is a curated collection of _storage_ and _default_ packages. It helps

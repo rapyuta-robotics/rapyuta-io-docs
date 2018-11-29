@@ -3,8 +3,7 @@ title: "Docker Pull Secret"
 description:
 type: core-concepts
 date: 2018-11-15T14:20:10+05:30
-pre: "<b>1. </b>"
-pre: "<b>* </b>"
+pre: "1. "
 weight: 165
 ---
 When you want to use a docker image from your private (docker) registry, you

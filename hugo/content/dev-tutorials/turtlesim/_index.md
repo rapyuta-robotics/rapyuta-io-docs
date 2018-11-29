@@ -3,7 +3,7 @@ title: "Turtlesim"
 description:
 type: dev-tutorials
 date: 2018-11-23T10:44:42+05:30
-pre: "<b>e. </b>"
+pre: "e. "
 weight: 325
 ---
 This tutorial will show you how to set up and run a variation of the ROS

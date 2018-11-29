@@ -3,7 +3,7 @@ title: "Metrics"
 description:
 type: core-concepts
 date: 2018-11-21T19:32:57+05:30
-pre: "<b>k. </b>"
+pre: "k. "
 weight: 198
 ---
 Metrics are scalar measurements that change over time such as temperature,

@@ -3,7 +3,7 @@ title: "Device Configuration Variables"
 description:
 type: core-concepts
 date: 2018-11-15T10:05:11+05:30
-pre: "<b>* </b>"
+pre: "1. "
 weight: 120
 ---
 Device configuration variables are environment variables that allow you to

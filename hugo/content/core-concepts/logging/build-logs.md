@@ -3,7 +3,7 @@ title: "Build Logs"
 description:
 type: core-concepts
 date: 2018-11-20T18:19:21+05:30
-pre: "<b>* </b>"
+pre: "1. "
 weight: 192
 ---
 An executable of a rapyuta.io package is either a git repository or a docker image.

@@ -3,7 +3,7 @@ title: "Dockerfile Build Strategy"
 description:
 type: core-concepts
 date: 2018-11-15T14:01:53+05:30
-pre: "<b>* </b>"
+pre: "1. "
 weight: 155
 ---
 When you create a package, you can either provide a _git repository_ url or a

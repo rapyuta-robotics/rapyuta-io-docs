@@ -3,7 +3,7 @@ title: "Software Architecture"
 description:
 type: dev-tutorials
 date: 2018-11-23T10:46:51+05:30
-pre: "<b>* </b>"
+pre: "1. "
 weight: 330
 ---
 rapyuta.io recommends a modularised software architecture design. This

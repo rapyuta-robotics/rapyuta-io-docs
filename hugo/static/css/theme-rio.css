@@ -160,3 +160,6 @@ pre .copy-to-clipboard:hover {
     background-color: #e8e2cd;
 }
 
+#sidebar ul li li {
+    padding-left: 0.6rem;
+}

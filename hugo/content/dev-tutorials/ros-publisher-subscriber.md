@@ -3,7 +3,7 @@ title: "ROS Publisher Subscriber"
 description:
 type: dev-tutorials
 date: 2018-11-22T13:18:57+05:30
-pre: "<b>a. </b>"
+pre: "a. "
 weight: 305
 ---
 A _ROS publisher_ is part of a ROS package. It is a public git repository, which

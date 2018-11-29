@@ -3,7 +3,7 @@ title: "Introduction"
 description:
 type: Overview
 date: 2018-11-26T16:41:44+05:30
-pre: "<b>a. </b>"
+pre: "a. "
 weight: 3
 ---
 The following lists the elements of a cloud robotics application:

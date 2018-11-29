@@ -3,7 +3,7 @@ title: "Controlling on-board LED"
 description:
 type: core-concepts
 date: 2018-11-15T10:06:24+05:30
-pre: "<b>* </b>"
+pre: "b. "
 weight: 135
 ---
 The tutorial will teach you how to deploy a basic non-ROS package that changes

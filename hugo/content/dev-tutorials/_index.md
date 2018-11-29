@@ -1,7 +1,7 @@
 ---
 title: "Developer tutorials"
 chapter: true
-pre: "<b>4. </b>"
+pre: "4. "
 weight: 300
 ---
 

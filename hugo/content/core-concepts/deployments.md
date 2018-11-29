@@ -3,7 +3,7 @@ title: "Deployments"
 description:
 type: core-concepts
 date: 2018-11-19T17:01:38+05:30
-pre: "<b>h. </b>"
+pre: "h. "
 weight: 180
 ---
 A deployment is a running instance of a package. You can deploy a package using

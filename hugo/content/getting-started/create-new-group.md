@@ -3,7 +3,7 @@ title: "Creating New Group"
 description:
 type: getting-started
 date: 2018-11-26T14:33:54+05:30
-pre: "<b>b. </b>"
+pre: "b. "
 weight: 210
 ---
 A [group](/core-concepts/resource-user-group) is a collection of arbitrary number of users

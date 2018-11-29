@@ -3,7 +3,7 @@ title: "Source Secret"
 description:
 type: core-concepts
 date: 2018-11-15T14:20:33+05:30
-pre: "<b>* </b>"
+pre: "2. "
 weight: 175
 ---
 You can create packages using the source code from a private git repository.

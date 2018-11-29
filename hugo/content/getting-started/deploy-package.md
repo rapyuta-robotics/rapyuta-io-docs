@@ -3,7 +3,7 @@ title: "Deploying Package"
 description:
 type: getting-started
 date: 2018-11-26T15:19:20+05:30
-pre: "<b>h. </b>"
+pre: "h. "
 weight: 240
 ---
 To deploy a package in rapyuta.io using the [console](https://closed-beta.rapyuta.io),

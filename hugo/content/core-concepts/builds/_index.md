@@ -3,7 +3,7 @@ title: "Builds"
 description:
 type: core-concepts
 date: 2018-11-15T14:01:26+05:30
-pre: "<b>f. </b>"
+pre: "f. "
 weight: 150
 ---
 An application build is the result of building source code into runnable docker

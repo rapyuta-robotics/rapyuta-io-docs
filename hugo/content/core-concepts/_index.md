@@ -1,7 +1,7 @@
 ---
 title: "Core Concepts"
 chapter: true
-pre: "<b>2. </b>"
+pre: "2. "
 weight: 100
 ---
 

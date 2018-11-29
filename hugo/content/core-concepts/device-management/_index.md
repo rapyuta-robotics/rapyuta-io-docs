@@ -3,7 +3,7 @@ title: "Device Management"
 description:
 type: core-concepts
 date: 2018-11-15T10:02:42+05:30
-pre: "<b>c. </b>"
+pre: "c. "
 weight: 115
 ---
 ## Overview

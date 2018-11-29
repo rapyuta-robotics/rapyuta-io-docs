@@ -3,7 +3,7 @@ title: "Creating New User"
 description:
 type: getting-started
 date: 2018-11-26T14:28:00+05:30
-pre: "<b>a. </b>"
+pre: "a. "
 weight: 205
 ---
 

@@ -3,7 +3,7 @@ title: "Resources, Users and Groups"
 description:
 type: core-concepts
 date: 2018-11-15T09:48:54+05:30
-pre: "<b>a. </b>"
+pre: "a. "
 weight: 105
 ---
 A resource is an entity that can be managed by rapyuta.io. It can be a device

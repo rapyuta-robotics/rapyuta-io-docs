@@ -1,7 +1,7 @@
 ---
 title: "Python SDK"
 description:
-pre: "<b>5. </b>"
+pre: "5. "
 weight: 400
 ---
 rapyuta.io's Python SDK enables you to provision packages either on the cloud or

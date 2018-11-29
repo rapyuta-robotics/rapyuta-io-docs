@@ -3,7 +3,7 @@ title: "Logging"
 description:
 type: core-concepts
 date: 2018-11-20T18:06:42+05:30
-pre: "<b>j. </b>"
+pre: "j. "
 weight: 190
 ---
 Logs are verbose text messages, and are used for debugging and monitoring.

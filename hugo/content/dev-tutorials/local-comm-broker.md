@@ -3,7 +3,7 @@ title: "Publisher Subscriber using Communication Broker"
 description:
 type: dev-tutorials
 date: 2018-11-22T13:20:28+05:30
-pre: "<b>d. </b>"
+pre: "d. "
 weight: 320
 ---
 Complex robotic applications involving multi-device communication with service

@@ -3,7 +3,7 @@ title: "Packages"
 description:
 type: core-concepts
 date: 2018-11-15T13:41:10+05:30
-pre: "<b>d. </b>"
+pre: "d. "
 weight: 140
 ---
 A package is the smallest unit of deployment in rapyuta.io. It is composed of

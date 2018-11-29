@@ -3,7 +3,7 @@ title: "Switching Between User Group"
 description:
 type: getting-started
 date: 2018-11-26T14:35:44+05:30
-pre: "<b>c. </b>"
+pre: "c. "
 weight: 215
 ---
 ## From user to group

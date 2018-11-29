@@ -3,7 +3,7 @@ title: "Organisation"
 description:
 type: core-concepts
 date: 2018-11-15T09:49:07+05:30
-pre: "<b>b. </b>"
+pre: "b. "
 weight: 110
 ---
 A _partner organisation_ receives an email with links to [rapyuta.io console](https://closed-beta.rapyuta.io),

@@ -3,7 +3,7 @@ title: "Application Architecture"
 description:
 type: Overview
 date: 2018-11-26T18:11:06+05:30
-pre: "<b>b. </b>"
+pre: "b. "
 weight: 4
 ---
 A rapyuta.io component is either a generic component or a ROS component.
