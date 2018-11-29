@@ -33,9 +33,10 @@ the command will execute.
 
 ## Component
 A component is a set of executables. All executables are deployed in unison on
-the desired _Component Runtime_. All executables of a component share a specified
-file system (ensures data locality) and communicate via Inter Process Communication (IPC).
-An executable listening on a port is accessible to its sibling executables via localhost.
+the desired [_Component Runtime_](/core-concepts/packages/#component-runtime).
+All executables of a component share a specified file system (ensures data locality)
+and communicate via Inter Process Communication (IPC). An executable listening
+on a port is accessible to its sibling executables via localhost.
 
 ## Plan
 A plan represents a different configuration of a package. When you add a new
@@ -57,9 +58,9 @@ false, the package cannot be used as an include package.
 ## Endpoint
 Components can externally expose network endpoints. While creating a package
 you may provide a name for the endpoint, select the desired protocol and specify
-a target port. The supported protocols are Secure TCP(TLS/SNI), HTTP/Websocket,
-and HTTPS/WSS. For HTTPS/WSS and Secure TCP(TLS/SNI), the value of **Port** is
-defaulted to 443, whereas for HTTP/Websocket the value of **Port** is set to 80.
+a target port. The supported protocols are **Secure TCP(TLS/SNI)**, **HTTP/Websocket**,
+and **HTTPS/WSS**. For HTTPS/WSS and Secure TCP(TLS/SNI), the value of port is
+defaulted to 443, whereas for HTTP/Websocket the value of port is set to 80.
 You can view the FQDN of the endpoint during the deployment process.
 rapyupta.io automatically creates an accessible public network endpoint for each
 exposed network endpoint.    
@@ -99,9 +100,11 @@ For example, maximum QoS for a topic indicates that all messages published to a
 topic are guaranteed to reach the subscribers of the topic. The offered QoS
 values are Maximum, High, Medium, and Low.
 
-Why not just use “maximum” QoS for all topics?
+{{% notice info %}}
+Why not just use “maximum” QoS for all topics?    
 QoS is proportional to the latency of the message: the average latency of maximum
 QoS topics is higher than that of medium QoS topics.
+{{% /notice %}}
 
 ## Inbound ROS interfaces
 A deployment of a package may depend on a deployment of another package. If you

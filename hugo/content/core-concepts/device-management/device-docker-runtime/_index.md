@@ -10,10 +10,10 @@ rapyuta.io leverages docker containers for managing applications.
 You can build, provision and remotely manage applications on your devices on
 the fly.
 
-For instance, rapyuta.io Build Engine builds the source code to a docker image.
+For instance, rapyuta.io [Build Engine](/core-concepts/device-management/device-docker-runtime/rio-build-engine) builds the source code to a docker image.
 
 To set docker compose as the default runtime on a device, select
-Use docker compose as default runtime checkbox while adding the device.
+**Use docker compose as default runtime** checkbox while [adding the device](/getting-started/add-new-device).
 
 ![Dockercompose runtime for device](/images/core-concepts/device-management/device-docker-runtime.png?classes=border)
 
@@ -29,11 +29,12 @@ uses port 80, the container’s application will be available on port 80 on
 the host’s IP address.
 
 ## Accessing hardware interfaces
-Application containers that are deployed are configured to run in privileged mode.
+Application containers that are deployed are configured to run in
+[privileged mode](https://www.google.com/url?q=https://docs.docker.com/engine/reference/run/%23runtime-privilege-and-linux-capabilities&sa=D&ust=1543468745359000&usg=AFQjCNHiG1OkTDqql9g5xAAz7Lnzgvj87g).
 Thus, the containers can access all of the device interfaces similar to those
 that are accessed by the processes running outside containers.
 
-Learn how to access hardware interfaces from applications running in containers.
+Learn how to [access hardware interfaces](/core-concepts/device-management/device-docker-runtime/control-onboard-led) from applications running in containers.
 
 Access to volume mounts from applications running in containers are not
 supported at the moment.
