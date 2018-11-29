@@ -33,7 +33,7 @@ The below table lists the phases of deployment as they appear in the lifecycle:
 | Partially deprovisioned | you deprovisioned a deployment, but there is at least one component that could not be deprovisioned |
 | Deployment stopped | you deprovisioned a deployment, and all of its components are stopped |
 
-![Deployment](/images/core-concepts/deployments/deployment-phase.png?classes=border)
+![Deployment](/images/core-concepts/deployments/deployment-phase.png?classes=border,shadow&width=50pc)
 
 ## Status
 rapyuta.io enables you to monitor the current status of each executable of a
