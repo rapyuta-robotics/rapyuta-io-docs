@@ -7,7 +7,7 @@ pre: "f. "
 weight: 230
 ---
 ## Prerequisites
-- [UP board](https://www.up-board.org/up/)
+- [UP board](https://up-board.org/up/specifications/)
 - DC power supply rated 5V/4A
 - USB flash drive
 - Monitor screen
