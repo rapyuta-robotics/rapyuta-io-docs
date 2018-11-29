@@ -1,8 +1,8 @@
 ---
 title: "Talker Listener"
 description:
-pre: "a. "
-weight: 405
+pre: "b. "
+weight: 410
 ---
 
 ## Learning objectives
@@ -12,7 +12,7 @@ The tutorial will show you how to:
 2. deploy a package on cloud
 3. add a dependent deployment
 
-using [rapyuta_io Python SDK](/python-sdk) in your python application.
+using [rapyuta_io Python SDK](/python-sdk/introduction) in your python application.
 
 ## Prerequisites
 1. You should be familiar with the core concepts of rapyuta.io

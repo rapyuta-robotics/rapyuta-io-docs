@@ -1,8 +1,8 @@
 ---
 title: "Persistent Volume"
 description:
-pre: "b. "
-weight: 410
+pre: "c. "
+weight: 415
 ---
 ## Learning objectives
 
@@ -10,7 +10,7 @@ weight: 410
 2. Mount the persistent volume on a component of a deployment
 3. Deploy a package with the mounted persistent volume
 
-using [rapyuta_io Python SDK](/python-sdk) in your Python application.
+using [rapyuta_io Python SDK](/python-sdk/introduction) in your Python application.
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ default disk type, `DiskType.DEFAULT`. You may also choose the **_SSD_** type fo
 disk, `DiskType.SSD`
 ```python
 # Create Volume code snippet
-persistent_volume = Client.get_persistent_volume()
+persistent_volume = client.get_persistent_volume()
 volume_instance = persistent_volume.create_volume_instance("my_sample_volume", 1,
                                                            DiskType.DEFAULT)
 ```
@@ -57,7 +57,7 @@ at the mount path.
 
 ```python
 # Mount Volume code snippet
-sample_pkg = Client.get_package("package_id")
+sample_pkg = client.get_package("package_id")
 pkg_provision_config = sample_pkg.get_provision_configuration("plan_id")
 pkg_provision_config.mount_volume(component_name="sample_component_name",
                                   volume_instance=volume_instance,
@@ -81,11 +81,11 @@ from rapyuta_io import Client
 client = Client(AUTH_TOKEN)
 
 from rapyuta_io import Client
-persistent_volume = Client.get_persistent_volume()
+persistent_volume = client.get_persistent_volume()
 volume_instance = persistent_volume.create_volume_instance("my_sample_volume", 1,
                                                            DiskType.DEFAULT)
 
-sample_pkg = Client.get_package("package_id")
+sample_pkg = client.get_package("package_id")
 pkg_provision_config = sample_pkg.get_provision_configuration("plan_id")
 pkg_provision_config.mount_volume(component_name="sample_component_name",
                                   volume_instance=volume_instance,
@@ -93,6 +93,8 @@ pkg_provision_config.mount_volume(component_name="sample_component_name",
 
 deployment_with_volume_mounted = sample_pkg.provision(deployment_name="volume_mounted_deployment",
                                                       provision_configuration=pkg_provision_config)
+
+print deployment_with_volume_mounted.get_status()
 ```
 
 At the terminal prompt, run the program using the command:
