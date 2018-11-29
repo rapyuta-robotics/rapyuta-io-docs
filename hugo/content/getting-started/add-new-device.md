@@ -36,7 +36,7 @@ follow the steps:
    deployment.
 5. In the **ROS Catkin Workspace** box, enter the absolute path of your catkin workspace.
    If you are using the rapyuta.io custom image on the device, enter
-   */home/rapyuta/catkin_ws* where *catkin_ws* is the name of the catkin workspace.
+   `/home/rapyuta/catkin_ws` where *catkin_ws* is the name of the catkin workspace.
    Otherwise, you will have a different absolute path for your catkin workspace.
    The **ROS Catkin Workspace** can be empty, and you may provide its value on the
    device's **Details** page later.

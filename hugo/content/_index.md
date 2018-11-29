@@ -5,6 +5,5 @@ type: index
 weight: 1
 ---
 
-## Test Homepage
 
-Test homepage content
+## rapyuta.io Documentation
