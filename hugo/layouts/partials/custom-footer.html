@@ -18,3 +18,12 @@
     "url": "https://rapyutarobotics.freshdesk.com"
   });
 </script>
+<script type="text/javascript">
+  /* Fix for autocomplete dropdown scrolling issue */
+  window.onload = () => {
+    const autocompleteSuggestions = document.getElementsByClassName("autocomplete-suggestions")[0];
+    window.addEventListener("scroll", () => {
+      autocompleteSuggestions.style.top = `${window.pageYOffset + 124}px`
+    })
+  };
+</script>
