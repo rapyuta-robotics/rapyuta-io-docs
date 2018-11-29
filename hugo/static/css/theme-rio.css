@@ -163,3 +163,12 @@ pre .copy-to-clipboard:hover {
 #sidebar ul li li {
     padding-left: 0.6rem;
 }
+
+b, strong {
+    font-weight: 500;
+}
+
+#body #breadcrumbs {
+    width: 95%;
+}
+
