@@ -30,7 +30,7 @@ the host’s IP address.
 
 ## Accessing hardware interfaces
 Application containers that are deployed are configured to run in
-[privileged mode](https://www.google.com/url?q=https://docs.docker.com/engine/reference/run/%23runtime-privilege-and-linux-capabilities&sa=D&ust=1543468745359000&usg=AFQjCNHiG1OkTDqql9g5xAAz7Lnzgvj87g).
+[privileged mode](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities).
 Thus, the containers can access all of the device interfaces similar to those
 that are accessed by the processes running outside containers.
 
