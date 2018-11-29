@@ -9,7 +9,7 @@ weight: 225
 ## Prerequisites
 
 1. Raspberry PI 2 or 3
-2. Micro SD card of at least 8 GB
+2. Micro SD card of at least 16 GB class 10
 3. Internet connection over ethernet
 
 ## Procedure
@@ -25,14 +25,15 @@ are also installed on these custom images.
 2. You can easily flash the SD card using [Etcher](https://etcher.io) or other [options](https://www.raspberrypi.org/documentation/installation/installing-images/).
 3. Insert the microSD card into the Raspberry PI microSD slot and power the device.
 4. Connect the ethernet port of the Raspberry PI to a router to access internet.  
-You may use `nmap` to determine the device IP:
+You may use [nmap](https://nmap.org/) to determine the device IP by
+replace 1.2.3.0/24 with your local IP address.
 
 ```bash
-nmap -sn 1.2.3.0/24     # replace 1.2.3.0/24 with your local IP address
+nmap -sn 1.2.3.0/24
 ```
 To ensure that everything is working OK, SSH into the Raspberry PI using
 the default username and password. Both the default username and password is
-`rapyuta`.
+*rapyuta*.
 
 You are required to change the password as soon as you sign in.
 
