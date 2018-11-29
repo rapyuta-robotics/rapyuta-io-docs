@@ -92,7 +92,7 @@ The package has two components: the **talker** running on the cloud and the
 		[ROS Master](https://wiki.ros.org/Master) instead of running the `rosrun`
 		command, because the ROS Master will fail to start on `rosrun`, and
 		eventually, the deployment will fail as well.
-		![talkerExecutable](/images/tutorials/docker-pub-sub/docker-pubsub-talker-exec.png?classes=border)
+		![talkerExecutable](/images/tutorials/docker-pub-sub/docker-pubsub-talker-exec.png?classes=border,shadow&width=50pc)
 	9. The _talkerExecutable_ publishes a ROS topic, `/telemetry`    
 	   To add a ROS topic, click **Add ROS topic**. In the **Name** box, enter the
 	   name of the ROS topic. Select **Maximum** for **QoS**.
@@ -118,7 +118,7 @@ The package has two components: the **talker** running on the cloud and the
 		[ROS Master](https://wiki.ros.org/Master) instead of running the `rosrun`
 		command, because the ROS Master will fail to start on `rosrun`, and
 		eventually, the deployment will fail as well.
-		![listenerExecutable](/images/tutorials/docker-pub-sub/docker-pubsub-listener-exec.png?classes=border)
+		![listenerExecutable](/images/tutorials/docker-pub-sub/docker-pubsub-listener-exec.png?classes=border,shadow&width=50pc)
 	10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 The package takes about two to five minutes to build the source code in the git
@@ -156,4 +156,4 @@ the **DEPLOYMENT PHASE** has **Succeeded** and the **STATUS** is **Running**.
 You may also analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs)
 to check if everything is working OK.
 
-![Docker Publisher Subscriber Deployment](/images/tutorials/docker-pub-sub/docker-pubsub-deployment.png?classes=border)
+![Docker Publisher Subscriber Deployment](/images/tutorials/docker-pub-sub/docker-pubsub-deployment.png?classes=border,shadow&width=50pc)

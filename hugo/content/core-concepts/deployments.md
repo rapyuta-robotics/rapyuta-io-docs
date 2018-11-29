@@ -60,7 +60,7 @@ deployment phase:
 If the status of an executable reads **Pending** or **Error**, you are provided
 the cause of the status as **Reason**.
 
-![Reason field](/images/core-concepts/deployments/reason-field.png?classes=border)
+![Reason field](/images/core-concepts/deployments/reason-field.png?classes=border,shadow&width=50pc)
 
 If the overall deployment **STATUS** is **Error**, the [console](https://closed-beta.rapyuta.io)
 displays an error code along with a brief description of the error.
@@ -83,13 +83,13 @@ and the recommendations you should take:
 rapyuta.io lets you **SSH** into the environment of a running executable.
 On the **Shell Access** tab, click **SSH**.
 
-![Shell access ssh](/images/core-concepts/deployments/shell-access-ssh.png?classes=border)
+![Shell access ssh](/images/core-concepts/deployments/shell-access-ssh.png?classes=border,shadow&width=60pc)
 
 Once you SSH into the environment of an executable, you can execute shell
 commands such as `pwd`, `ls -l` at the terminal's prompt. This is helpful in
 debugging the environment.
 
-![Execute shell commands](/images/core-concepts/deployments/execute-shell-commands.png?classes=border)
+![Execute shell commands](/images/core-concepts/deployments/execute-shell-commands.png?classes=border,shadow&width=30pc)
 
 To go back to the list of all running containers, click **Back**.
 

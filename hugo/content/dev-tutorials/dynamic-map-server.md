@@ -84,7 +84,7 @@ https://github.com/rapyuta/io_tutorials
 	[ROS Master](http://wiki.ros.org/Master) instead of running the `rosrun`
 	command, because the ROS Master will fail to start on `rosrun`, and
 	eventually, the deployment will fail as well.
-	![dmsexecutable](/images/tutorials/dms/dms-exec-details.png?classes=border)
+	![dmsexecutable](/images/tutorials/dms/dms-exec-details.png?classes=border,shadow&width=50pc)
 12. To add a ROS topic, click **Add ROS topic**. In the **Name** box,
     enter `/map_metadata` and set **QoS** to **Low**.
     Similarly, add another ROS topic `/map` and set **QoS** to **Low**.
@@ -118,7 +118,7 @@ The _Dynamic Map Server Deployment_ is successfully running only when the green
 coloured bar moves to **Succeeded** and **Status:Running** point indicating that the
 **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
 
-![Dynamic Map Server Deployment](/images/tutorials/dms/dms-deployment.png?classes=border)
+![Dynamic Map Server Deployment](/images/tutorials/dms/dms-deployment.png?classes=border,shadow&width=50pc)
 
 ## Create dependent deployment
 If you are using a Raspberry PI as the device, learn
@@ -176,7 +176,7 @@ To create the package, follow the instructions:
 	Master](http://wiki.ros.org/Master) instead of running the `rosrun` command,
 	because the ROS Master will fail to start on `rosrun` command, and
 	eventually, the deployment will fail as well.
-	![map_listener_executable](/images/tutorials/dms/maplistener_exec_details.png?classes=border)
+	![map_listener_executable](/images/tutorials/dms/maplistener_exec_details.png?classes=border,shadow&width=50pc)
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ### Deploy map_listener package
@@ -199,7 +199,7 @@ To deploy *map_listener* package, follow the steps:
 You can verify if the _Map Listener Deployment_ is successfully running by
 checking if the **DEPLOYMENT PHASE** is _Succeeded_ and the **STATUS** is _Running_.
 
-![Map Listener Deployment](/images/tutorials/dms/map-listener-deployment.png?classes=border)
+![Map Listener Deployment](/images/tutorials/dms/map-listener-deployment.png?classes=border,shadow&width=60pc)
 
 Ensure that the dependent deployment **STATUS** is _Running_ as well.
 

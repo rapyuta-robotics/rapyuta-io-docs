@@ -171,7 +171,7 @@ To add a set of catkin build parameters, click **Add Parameter** against
 You may provide multiple sets of catkin build parameters for a single ROS package,
 thus you can run multiple catkin builds on a ROS package.
 
-![Catkin build parameters](/images/core-concepts/packages/multiple-sets-catkin-build-params.png?classes=border)
+![Catkin build parameters](/images/core-concepts/packages/multiple-sets-catkin-build-params.png?classes=border,shadow&width=50pc)
 
 ## Dependencies and composition
 rapyuta.io allows for a number of design patterns to help you compose an

@@ -19,14 +19,14 @@ on the cloud by the name _ROS publisher exclusive deployment_
    displays logs that are ten seconds   prior to the request time. The logs are
    displayed in the logging area (terminal-like window) as a continuous real-time log stream.
 
-![Successful Deployment](/images/core-concepts/logging/deployment-logs/success-deployment.png?classes=border)
+![Successful Deployment](/images/core-concepts/logging/deployment-logs/success-deployment.png?classes=border,shadow&width=50pc)
 
 ## Timestamp
 Each log entry has a corresponding timestamp attached to it. To view the
 timestamps of non-streaming logs, select **Show timestamps** checkbox.
 The timestamps are in UTC and of ISO 8601 standard.
 
-![Logs Timestamps](/images/core-concepts/logging/deployment-logs/timestamps.png?classes=border)
+![Logs Timestamps](/images/core-concepts/logging/deployment-logs/timestamps.png?classes=border,shadow&width=60pc)
 
 ## Streaming
 There are two modes of viewing logs:
@@ -37,13 +37,13 @@ selected by default. Hence, you do not need to refresh or reload for latest logs
 The logs are streamed as and when they are made available by the server.    
 For device components, **Stream logs** option is unavailable.
 
-![Stream Logs](/images/core-concepts/logging/deployment-logs/stream-logs.png?classes=border)
+![Stream Logs](/images/core-concepts/logging/deployment-logs/stream-logs.png?classes=border,shadow&width=60pc)
 2. **Non-streaming**    
 To disable real-time streaming of logs, clear Stream logs checkbox. You'll now
 view logs in non-streaming mode. In this mode, logs are automatically refreshed
 every ten seconds. You can also filter logs and display timestamps for all logs.
 
-![Non-streaming Logs](/images/core-concepts/logging/deployment-logs/non-stream-logs.png?classes=border)
+![Non-streaming Logs](/images/core-concepts/logging/deployment-logs/non-stream-logs.png?classes=border,shadow&width=60pc)
 
 ## Filtering
 You can filter logs by time interval or by log source.
@@ -54,10 +54,10 @@ You can filter logs by time interval or by log source.
 		2. Choose from-date and to-date using calendar.
 		3. Choose time range. The time drop-down list on the left represents
 		start time, while the one on the right is end time.
-    ![Custom time range](/images/core-concepts/logging/deployment-logs/custom-time-range.png?classes=border)
+    ![Custom time range](/images/core-concepts/logging/deployment-logs/custom-time-range.png?classes=border,shadow&width=60pc)
 	2. To select a predefined time interval, click **Past 5 minutes** drop-down
 	list and choose one item from the list.
-    ![Predefined time interval](/images/core-concepts/logging/deployment-logs/predefined-time-interval.png?classes=border)
+    ![Predefined time interval](/images/core-concepts/logging/deployment-logs/predefined-time-interval.png?classes=border,shadow&width=60pc)
 
 	If there are no logs available for a given time range, the logging area
 	appears empty.
@@ -67,13 +67,13 @@ cloud components, all of the logs are read only from stdout.
 To switch between stdout and  stderr, click **stdout/stderr** drop-down list and
 select the source you require.
 
-![Log source](/images/core-concepts/logging/deployment-logs/log-source.png?classes=border)
+![Log source](/images/core-concepts/logging/deployment-logs/log-source.png?classes=border,shadow&width=60pc)
 
 ## Search logs
 You can search the logs for matching phrases using the **Search** bar. All
 occurrences of a match are highlighted.
 
-![Search box](/images/core-concepts/logging/deployment-logs/search-box.png?classes=border)
+![Search box](/images/core-concepts/logging/deployment-logs/search-box.png?classes=border,shadow&width=60pc)
 
 ## View logs in full screen
 To expand the logging area to full screen, click **Expand** (at top-right corner

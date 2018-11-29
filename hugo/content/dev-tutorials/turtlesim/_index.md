@@ -345,7 +345,7 @@ packages in Turtlesim tutorial.
 The below diagram illustrates the dependencies among packages in
 Turtlesim tutorial.
 
-![Dependent deployment block diagram](/images/tutorials/turtlesim/turtlesim-ddeploy-blk-diagram.png?classes=border)
+![Dependent deployment block diagram](/images/tutorials/turtlesim/turtlesim-ddeploy-blk-diagram.png?classes=border,shadow)
 
 ## Deploy Simulator package
 To deploy the _Simulator_ package whose deployment is independent of
@@ -400,7 +400,7 @@ Turtlesim user interface without any Turtles. However, if you do not
 see the Turtlesim user interface, try refreshing the web page for
 couple of times.
 
-![Network Endpoint for User Interface package](/images/tutorials/turtlesim/UI-endpoint.png?classes=border)
+![Network Endpoint for User Interface package](/images/tutorials/turtlesim/UI-endpoint.png?classes=border,shadow&width=60pc)
 
 ## Deploy Turtle package
 The procedure for deploying the _Turtle_ package is similar to that of any
@@ -419,12 +419,12 @@ four deployments that you created.
 
 An illustration of the resultant dependency graph is:
 
-![Dependency graph of Turtlesim](/images/tutorials/turtlesim/dependency-graph.png?classes=border)
+![Dependency graph of Turtlesim](/images/tutorials/turtlesim/dependency-graph.png?classes=border,shadow&width=60pc)
 
 Refresh the Turtlesim User Interface web page to view a single Turtle
 randomly placed in the environment.
 
-![Turtlesim simulation](/images/tutorials/turtlesim/turtlesim-viewer.png?classes=border)
+![Turtlesim simulation](/images/tutorials/turtlesim/turtlesim-viewer.png?classes=border,shadow&width=40pc)
 
 Try moving the Turtle around using the command interface. If the Turtle
 behaves as you expect, you have successfully finished the tutorial.

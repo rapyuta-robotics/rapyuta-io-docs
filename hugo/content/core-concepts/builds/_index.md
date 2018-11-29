@@ -51,7 +51,7 @@ package, you may also view details such as the git repository url where the
 source code is hosted, the latest commit SHA number, the commit message and
 the commit owner’s name by clicking **View details/logs**.
 
-![View details or logs](/images/core-concepts/builds/trigger-rollback-view-deails.png?classes=border)
+![View details or logs](/images/core-concepts/builds/trigger-rollback-view-deails.png?classes=border,shadow&width=50pc)
 
 You may also **Rollback** to a previous build generation number, if there is any,
 irrespective of the previous build status. Rollbacking to a previous build does
@@ -60,13 +60,13 @@ container that was created for that build generation.
 
 The **Current build generation** number is shown below the package ID.
 
-![Current build generation number](/images/core-concepts/builds/current-build-number.png?classes=border)
+![Current build generation number](/images/core-concepts/builds/current-build-number.png?classes=border,shadow&width=50pc)
 
 When you deploy a package, the deployment process automatically chooses the
 current build generation number. Once a package is deployed, the build generation
 number used in the deployment process is displayed adjacent to the package name.
 
-![Build generation number during deployment](/images/core-concepts/builds/build-number-deploy.png?classes=border)
+![Build generation number during deployment](/images/core-concepts/builds/build-number-deploy.png?classes=border,shadow&width=50pc)
 
 The builds are automatically restarted on software infrastructure failures.
 If you observe that the build logs are abruptly disconnected or stopped,

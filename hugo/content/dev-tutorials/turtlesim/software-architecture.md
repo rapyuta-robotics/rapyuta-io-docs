@@ -29,13 +29,13 @@ Turtlesim is composed of four packages. They are:
 The below diagram illustrates how these packages are interconnected.
 The arrows represent the direction of information flow between the package.
 
-![Interconnected packages](/images/tutorials/turtlesim/interconnected-packages.png?classes=border)
+![Interconnected packages](/images/tutorials/turtlesim/interconnected-packages.png?classes=border,shadow)
 
 In ROS terminology, each package (apart from the User Interface) is a node.
 The following diagram illustrates the information that is passed between
 the nodes.
 
-![Packages as Nodes](/images/tutorials/turtlesim/packages-as-nodes.png?classes=border)
+![Packages as Nodes](/images/tutorials/turtlesim/packages-as-nodes.png?classes=border,shadow)
 
 Each of these nodes (including the User Interface) will be deployed as a
 package on rapyuta.io. These packages will pass the same information to one
@@ -66,7 +66,7 @@ Package A. The arrow in the diagram represents dependency relationship.
 Package B injects configuration parameters and/or network endpoints into
 Package A as environment variables.
 
-![Modal dependent deployment](/images/tutorials/turtlesim/dependent-deployment.png?classes=border)
+![Modal dependent deployment](/images/tutorials/turtlesim/dependent-deployment.png?classes=border,shadow)
 
 Dependent deployment is a design pattern when you want to loosely couple
 packages having different instantiated life cycles.
@@ -89,7 +89,7 @@ in Turtlesim tutorial.
 
 The below diagram illustrates the dependencies among packages in Turtlesim tutorial.
 
-![Dependent deployments block diagram](/images/tutorials/turtlesim/turtlesim-ddeploy-blk-diagram.png?classes=border)
+![Dependent deployments block diagram](/images/tutorials/turtlesim/turtlesim-ddeploy-blk-diagram.png?classes=border,shadow)
 
 You may find it instructive to execute the Turtlesim tutorial locally on
 your machine. A reference implementation together with execution instructions

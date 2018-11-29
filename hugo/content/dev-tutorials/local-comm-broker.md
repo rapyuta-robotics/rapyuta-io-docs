@@ -275,7 +275,7 @@ so you may debug if the deployment fails.
 7. Select **Communication Broker Deployment** from the drop-down list of
    deployments. Ensure that the **Communication Broker Deployment** is
    valid and is already running.
-   ![Dependent deployment](/images/tutorials/local-comm-broker/ros-pub-dependent-deploy.png?classes=border)
+   ![Dependent deployment](/images/tutorials/local-comm-broker/ros-pub-dependent-deploy.png?classes=border,shadow&width=50pc)
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** tab. The
@@ -283,7 +283,7 @@ package is successfully deployed when the green coloured bar moves from
 **In progress** to **Succeeded** indicating that the **DEPLOYMENT PHASE** has **Succeeded**
 and the **STATUS** is **Running**.
 
-![ROS Publisher Deployment](/images/tutorials/local-comm-broker/ros-pub-deployment.png?classes=border)
+![ROS Publisher Deployment](/images/tutorials/local-comm-broker/ros-pub-deployment.png?classes=border,shadow&width=50pc)
 
 Ensure that the dependent deployment **STATUS** is **Running** as well.
 
@@ -312,7 +312,7 @@ The package is successfully deployed when the green coloured bar moves from
 **In progress** to **Succeeded** indicating that the **DEPLOYMENT PHASE** has **Succeeded**
 and the **STATUS** is **Running**.
 
-![ROS Subscriber Deployment](/images/tutorials/local-comm-broker/ros-sub-deployment.png?classes=border)
+![ROS Subscriber Deployment](/images/tutorials/local-comm-broker/ros-sub-deployment.png?classes=border,shadow&width=50pc)
 
 Ensure that the dependent deployment **STATUS** is **Running** as well.
 

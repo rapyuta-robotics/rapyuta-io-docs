@@ -74,19 +74,19 @@ is successfully deployed when the green coloured bar moves from **In progress** 
 **Succeeded** indicating that the **DEPLOYMENT PHASE** has **Succeeded** and the **STATUS** is
 **Running**.
 
-![minio deployment without persistent volume](/images/core-concepts/persistent-vol-storage/minio-wo-pv-deployment.png?classes=border)
+![minio deployment without persistent volume](/images/core-concepts/persistent-vol-storage/minio-wo-pv-deployment.png?classes=border,shadow&width=60pc)
 
 To access the _minio_ package's deployment at the provided
 endpoint, copy and paste the highlighted web page link in a new browser tab.
 
-![minio network endpoint](/images/core-concepts/persistent-vol-storage/minio-wo-pv-endpoint.png?classes=border)
+![minio network endpoint](/images/core-concepts/persistent-vol-storage/minio-wo-pv-endpoint.png?classes=border,shadow&width=50pc)
 
 You can now access the [Minio](https://www.minio.io/) UI at the provided endpoint.
 You can use the UI to add buckets and files. In the **Access Key** and
 **Secret Key** boxes, enter the same access key and secret key that you
 provided while creating the above deployment, respectively.
 
-![minio login in separate browser tab](/images/core-concepts/persistent-vol-storage/minio-login.png?classes=border)
+![minio login in separate browser tab](/images/core-concepts/persistent-vol-storage/minio-login.png?classes=border,shadow&width=50pc)
 
 Since this deployment does not use a persistent volume, any files that you add
 on the server will be lost when you de-provision the deployment.
@@ -103,7 +103,7 @@ persistent volume for _minio_, follow the below process:
    block storage, while the SSD option provisions an SSD.
 5. The capacity parameter refers to the size of block storage. It can be between
    1GB and 100 GB. Enter the number *2* in the **capacity** box.
-   ![deploy minio volume](/images/core-concepts/persistent-vol-storage/deploy-minio-volume.png?classes=border)
+   ![deploy minio volume](/images/core-concepts/persistent-vol-storage/deploy-minio-volume.png?classes=border,shadow&width=30pc)
 6. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 To use _minio-volume_ for the deployment of _minio_, follow these steps:
@@ -120,16 +120,16 @@ _minio-deployment-with-pv_.
    component.
 7. Persistent volume will be mounted at mount path. Since Minio stores
    data/files at `/data`, provide `/data` as the value of **Mount path**.
-   ![Add volume](/images/core-concepts/persistent-vol-storage/add-volume.png?classes=border)
+   ![Add volume](/images/core-concepts/persistent-vol-storage/add-volume.png?classes=border,shadow&width=50pc)
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 This will create the deployment of minio with a persistent volume attached at `/data`.
 
-![minio deployment with persistent volume](/images/core-concepts/persistent-vol-storage/minio-deployment-with-pv.png?classes=border)
+![minio deployment with persistent volume](/images/core-concepts/persistent-vol-storage/minio-deployment-with-pv.png?classes=border,shadow&width=50pc)
 
 The corresponding dependency graph for the *minio-deployment-with-pv* looks like:
 
-![dependency graph for minio deployment with persistent volume](/images/core-concepts/persistent-vol-storage/minio-with-pv-dgraph.png?classes=border)
+![dependency graph for minio deployment with persistent volume](/images/core-concepts/persistent-vol-storage/minio-with-pv-dgraph.png?classes=border,shadow&width=40pc)
 
 If you de-provision **minio-deployment-with-pv** deployment, the **minio-volume** deployment
 will not be de-provisioned. Furthermore, the **minio-volume** deployment can be used

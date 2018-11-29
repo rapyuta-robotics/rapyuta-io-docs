@@ -13,7 +13,7 @@ representing a single robot entity. In the real world implementation,
 the Turtle package would directly control a robot. Since this is a simulation,
 the dynamics of the Turtle's behaviour is obtained from the Simulator.
 
-![Turtle package](/images/tutorials/turtlesim/packages/package_turtle.png?classes=border)
+![Turtle package](/images/tutorials/turtlesim/packages/package_turtle.png?classes=border,shadow)
 
 | Name | ROS Interface Type | Description |
 | ---- | ------------------ | ----------- |
@@ -40,7 +40,7 @@ to the Turtles. A docker container encapsulates its application code and
 dependencies. It communicates with the Command Center through a WebSecureSocket.
 It is the only non-ROS package based on Nginix.
 
-![User Interface package](/images/tutorials/turtlesim/packages/package_user_interface.png?classes=border)
+![User Interface package](/images/tutorials/turtlesim/packages/package_user_interface.png?classes=border,shadow)
 
 ## Simulator package
 The Simulator package replicates the physical dynamics of 2D robots and
@@ -48,7 +48,7 @@ their sensors. It publishes two ROS topics - /sim/pose and /sim/sensors.
 It subscribes to the ROS topic /sim/cmd_vel that the Turtle package publishes.
 It supports two ROS services - /teleport_turtle and /register_sim_turtle.
 
-![Simulator package](/images/tutorials/turtlesim/packages/package_simulator.png?classes=border)
+![Simulator package](/images/tutorials/turtlesim/packages/package_simulator.png?classes=border,shadow)
 
 | Name | ROS Interface Type | Description |
 | ---- | ------------------ | ----------- |
@@ -69,7 +69,7 @@ The Command Center is a node for registering Turtles, and a router for
 passing control commands and telemetry messages between User Interface
 and Turtles.
 
-![Command Center package](/images/tutorials/turtlesim/packages/package_command_center.png?classes=border)
+![Command Center package](/images/tutorials/turtlesim/packages/package_command_center.png?classes=border,shadow)
 
 | Name | ROS Interface Type | Description |
 | ---- | ------------------ | ----------- |

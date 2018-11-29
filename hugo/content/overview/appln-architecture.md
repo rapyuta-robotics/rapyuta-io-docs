@@ -20,4 +20,4 @@ and actions from other components.
 You do not have to explicitly run the cloud bridge or ROS master while
 deploying the application. Their lifecycle is managed by the platform.
 
-![application architecture](/images/application-architecture.png)
+![application architecture](/images/application-architecture.png?classes=border,shadow&width=50pc)

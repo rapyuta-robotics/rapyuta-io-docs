@@ -31,7 +31,7 @@ The package is successfully deployed when the green coloured bar moves from
 **DEPLOYMENT PHASE** has _succeeded_, and when the **STATUS** is **Running**
 indicating that the deployment is currently running.
 
-![Deployment example](/images/tutorials/ros-pub-sub/ros-pub-sub-deployment.png)
+![Deployment example](/images/tutorials/ros-pub-sub/ros-pub-sub-deployment.png?classes=border,shadow&width=50pc)
 
 Furthermore, if dependent deployments are added then each dependency's **STATUS**
 must read **running**.
