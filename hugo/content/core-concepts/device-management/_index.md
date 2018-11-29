@@ -37,7 +37,7 @@ publisher-subscriber pattern. The two communication channels are:
   The metric channel sends metrics data of a device from device manager agent
   to the device manager service.
 
-Learn more about network layout and communication.
+Learn more about [network layout and communication](/core-concepts/network-layout-communication).
 
 ## Remote execution
 The device manager lets you access your device even if it is located at a
@@ -51,7 +51,7 @@ of where they are located. The device manager service enables you to collect and
 visualise execution metrics such as CPU usage, memory usage, battery level, etc.
 of the device. You can visualise custom metrics by subscribing to ROS topics.
 
-Learn how to collect and visualise device metrics data.
+Learn how to [collect and visualise device metrics data](/getting-started/metrics-collection-visualisation).
 
 ## Application deployment
 You can remotely deploy software applications on your device, manage your

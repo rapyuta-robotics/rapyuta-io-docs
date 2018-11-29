@@ -1,5 +1,5 @@
 ---
-title: "How to Webssh"
+title: "How to WebSSH"
 description:
 type: getting-started
 date: 2018-11-26T15:37:32+05:30
@@ -18,7 +18,13 @@ the following commands in the device's terminal in sequence:
 
 ```bash
 sudo apt-get install openssh-server
+```
+
+```bash
 sudo systemctl start ssh
+```
+
+```bash
 sudo systemctl status ssh
 ```
 
