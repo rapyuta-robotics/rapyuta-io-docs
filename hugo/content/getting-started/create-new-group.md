@@ -27,4 +27,4 @@ You have successfully created a group. To add/remove users
 4. In the **EXISTING USERS** list, click **Remove** against the user you want
    to remove from the group.
 
-![Add/Remove from group](/images/getting-started/grp-funcs.png?classes=border)
+![Add/Remove from group](/images/getting-started/grp-funcs.png?classes=border,shadow&width=60pc)

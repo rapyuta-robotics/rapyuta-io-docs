@@ -20,7 +20,7 @@ package, its version, and a brief summary of the package.
 	4. In the **Description** box, write a short summary of the package. It is optional.
 3. Click **NEXT**.
 
-![Package Information](/images/getting-started/pkg-info.png?classes=border)
+![Package Information](/images/getting-started/pkg-info.png?classes=border,shadow&width=20pc)
 
 Fill in **COMPONENT METADATA** details as follows:
 
@@ -49,7 +49,7 @@ component. In this example, select **Git** as the **Executable Type**.
 	Master](http://wiki.ros.org/Master) instead of running the `rosrun` command,
 	because the ROS Master will fail to start on `rosrun` command in the console,
 	and eventually, the deployment will fail.
-	![Executable Information](/images/getting-started/exec-details.png?classes=border)
+	![Executable Information](/images/getting-started/exec-details.png?classes=border,shadow&width=40pc)
 9. If you prefer to explicitly specify the path of the Dockerfile in the git repository,
 select **Specify docker file path** checkbox.
 10. Alternatively, you can provide a docker image for the executable. Select
@@ -58,7 +58,7 @@ select **Specify docker file path** checkbox.
 11. Add a ROS topic by clicking **Add ROS topic**, specify the name of
 the ROS topic in the **Name** box, and choosing **Maximum QoS**. In this example,
 the ROS topic `/telemetry` is added.
-![Add ROS Topic](/images/getting-started/add-ros-topic.png?classes=border)
+![Add ROS Topic](/images/getting-started/add-ros-topic.png?classes=border,shadow&width=40pc)
 12. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 A flickering yellow dot against the newly added package name indicates that
@@ -67,7 +67,7 @@ rapyuta.io package only when the dot against the package's name turns green in
 colour, which indicates that the package has been successfully built, and is
 ready to be deployed.
 
-![](/images/getting-started/pkg-build-status.png?classes=border)
+![](/images/getting-started/pkg-build-status.png?classes=border,shadow&width=40pc)
 
 Additionally, the package is successfully built and is ready to be deployed
 when the **Deploy package** button is active and enabled.

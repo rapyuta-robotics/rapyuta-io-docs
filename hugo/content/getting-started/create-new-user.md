@@ -21,7 +21,7 @@ follow the steps:
 5. Since you will be signing into the [console](https://closed-beta.rapyuta.io)
    for the first time, you will have to enter the _invite code_ provided to you,
    and click **SUBMIT**.
-   ![Invite code](/images/getting-started/invite-code.png?classes=border)
+   ![Invite code](/images/getting-started/invite-code.png?classes=border,shadow&width=20pc)
 
 On successful registration and sign-in, you will be redirected to the home
 screen of rapyuta.io [console](https://closed-beta.rapyuta.io).

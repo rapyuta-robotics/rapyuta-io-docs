@@ -21,7 +21,7 @@ It publishes `/telemetry` ROS topic with **High** **QoS**.
    Ensure the status of the subscribed topic(s) is **Subscribed** and is highlighted
    in green.
 
-![To subscribe](/images/core-concepts/logging/device-logs/yet-to-subscribe.png?classes=border,shadow&width=50pc)
+![To subscribe](/images/core-concepts/logging/device-logs/yet-to-subscribe.png?classes=border,shadow&width=60pc)
 
 Once you subscribe to a topic, the device logs are displayed in the
 _logging area_ (a terminal-like window).

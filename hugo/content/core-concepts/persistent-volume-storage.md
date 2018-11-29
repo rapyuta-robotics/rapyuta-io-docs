@@ -129,7 +129,7 @@ This will create the deployment of minio with a persistent volume attached at `/
 
 The corresponding dependency graph for the *minio-deployment-with-pv* looks like:
 
-![dependency graph for minio deployment with persistent volume](/images/core-concepts/persistent-vol-storage/minio-with-pv-dgraph.png?classes=border,shadow&width=40pc)
+![dependency graph for minio deployment with persistent volume](/images/core-concepts/persistent-vol-storage/minio-with-pv-dgraph.png?classes=border,shadow&width=50pc)
 
 If you de-provision **minio-deployment-with-pv** deployment, the **minio-volume** deployment
 will not be de-provisioned. Furthermore, the **minio-volume** deployment can be used

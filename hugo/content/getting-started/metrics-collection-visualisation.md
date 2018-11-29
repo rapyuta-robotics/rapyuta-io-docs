@@ -29,23 +29,23 @@ You can visualise a device's telemetry data and metrics data in [rapyuta.io cons
 
 1. Click **DEVICES** > select a device for visualising its metrics > click **Metrics**.
 2. To subscribe to a topic, click **Subscribe**.
-![Subscribe Topic](/images/getting-started/subscribe-topic.png?classes=border)
+![Subscribe Topic](/images/getting-started/subscribe-topic.png?classes=border,shadow&width=70pc)
 3. To add a new visual, click **Add Cell**.
-![Add Cell](/images/getting-started/add-cell.png?classes=border)
+![Add Cell](/images/getting-started/add-cell.png?classes=border,shadow&width=70pc)
 4. Click **Add a Query**.
-![Add Query](/images/getting-started/add-query.png?classes=border)
+![Add Query](/images/getting-started/add-query.png?classes=border,shadow&width=70pc)
 5. Select a metric such as **TestIntTopic** in this example.
 6. Select field such as **data** in this example.
-![Select Data](/images/getting-started/select-field-data.png?classes=border)
+![Select Data](/images/getting-started/select-field-data.png?classes=border,shadow&width=70pc)
 7. To plot a function say mean, sum, median etc. against the time axis, click **1 Function**. You can apply more than one function.
-![Plot Function](/images/getting-started/function.png?classes=border)
+![Plot Function](/images/getting-started/function.png?classes=border,shadow&width=70pc)
 8. To change the form of visualisation, click one of the available visualisation graphs such as **Bar**. To close settings, click the red colored check mark box at the top-right corner.
-![Bar chart](/images/getting-started/bar-chart.png?classes=border)
+![Bar chart](/images/getting-started/bar-chart.png?classes=border,shadow&width=70pc)
 10. To edit the title of the graph, click the pencil icon at the top right corner of the cell as indicated by 1 in the below image.
 11. To change settings of the graph, click the wheel icon at the top right corner of the cell as indicated by 2 in the below image.
 12. To close the cell, click on x at the top right corner of the cell as indicated by 3 in the below picture.
-![Graph Window Options](/images/getting-started/graph-window.png?classes=border)
+![Graph Window Options](/images/getting-started/graph-window.png?classes=border,shadow&width=70pc)
 13. To change the refresh interval, click **Every 5 seconds** drop-down list and select your desired interval.
-![Refresh Interval](/images/getting-started/refresh-interval.png?classes=border)
+![Refresh Interval](/images/getting-started/refresh-interval.png?classes=border,shadow&width=70pc)
 14. To change the time range, click **Past 5 minutes** drop-down list and select your desired range.
-![Time Range](/images/getting-started/time-range.png?classes=border)
+![Time Range](/images/getting-started/time-range.png?classes=border,shadow&width=70pc)

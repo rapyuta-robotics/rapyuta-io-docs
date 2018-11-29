@@ -35,13 +35,13 @@ want to use for creating a package, follow the steps:
 	1. For authenticating via your git username and password, select **Password**.
 		1. In the **Username** box, enter your git username.
 		2. In the **Password** box, enter your password.
-        ![Basic auth via password](/images/core-concepts/source-secret/basicauth-password.png?classes=border,shadow&width=50pc)
+        ![Basic auth via password](/images/core-concepts/source-secret/basicauth-password.png?classes=border,shadow&width=40pc)
 	2. For authenticating via the repository's git access token, select **Token**
 		1. In the **Token** box, provide the corresponding git access token
 6. If you want to grant access via SSH key of your git repository, select **SSH
    Authentication** from the **Authentication Type** drop-down list.
 	1. In the **SSH Key** box, provide the private SSH key of your git repository.
-    ![SSH authentication](/images/core-concepts/source-secret/sshauth.png?classes=border,shadow&width=50pc)
+    ![SSH authentication](/images/core-concepts/source-secret/sshauth.png?classes=border,shadow&width=40pc)
 7. The **Source URL patterns** is a three part value.
 	1. The first part is the protocol of your git server. You can choose from
 	   distinct protocols such as **\*://** , **git://** , **http://** ,
