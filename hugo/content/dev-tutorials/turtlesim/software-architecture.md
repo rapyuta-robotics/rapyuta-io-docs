@@ -31,7 +31,7 @@ The arrows represent the direction of information flow between the package.
 
 ![Interconnected packages](/images/tutorials/turtlesim/interconnected-packages.png?classes=border,shadow)
 
-In ROS terminology, each package (apart from the User Interface) is a node.
+In ROS terminology, each package (apart from the User Interface) is a [node](https://wiki.ros.org/rosnode).
 The following diagram illustrates the information that is passed between
 the nodes.
 

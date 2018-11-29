@@ -276,7 +276,7 @@ To add _Command Center_ package, follow the steps:
 13. To add a ROS service, click **Add ROS service** > enter `/register_turtle` in the **Name** box.
 14. The environment variables: *WS_ADDR* and *WS_PORT*, defined in the ROS launch
     file, determine the WebSecureSocket address and port. You can adjust
-    their values as configuration parameters defined in the console
+    their values as configuration parameters defined in the [console](https://closed-beta.rapyuta.io)
     during the process of deploying the *command_center* component.
     To add *WS_ADDR* as configuration parameter, follow the steps:
     1. Under **CONFIGURATION PARAMETERS**, click **Add Parameter**.
@@ -325,7 +325,7 @@ Since a deployment may depend on another deployment(s), you will initially
 deploy the package that is independent of other deployments, and you will
 work your way up the dependency chain.
 
-ROS publisher subscriber describes the standard procedure for deploying
+[ROS publisher subscriber](/dev-tutorials/ros-publisher-subscriber) describes the standard procedure for deploying
 a ROS package. In this tutorial, the _Simulator_ deployment is independent of
 any other deployment. The _Command Center_ deployment relies on that of
 _Simulator_, while the _User Interface_ deployment is based on that of

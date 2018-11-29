@@ -27,7 +27,7 @@ tutorial.
 3. You should be familiar with the [core concepts](/core-concepts) of rapyuta.io
 4. You should be familiar with the [map_server](https://wiki.ros.org/map_server) ROS package.
 5. You should be familiar with the below tools:
-	1. [Git](https://git-scm.com)
+	1. [Git](https://git-scm.com/doc)
 	2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
 	3. [ROS topics](https://wiki.ros.org/Topics)
 	4. [ROS nodes](https://wiki.ros.org/Nodes)
@@ -100,7 +100,7 @@ A flickering yellow dot against the package name indicates that the **Build Stat
 is **New**, while a green dot against the package name indicates that the **Build
 Status** is **Complete**.
 
-Alternatively, you may verify if the package is built successfully and is ready
+Additionally, you may verify if the package is built successfully and is ready
 to be deployed by clicking to see if the **Deploy package** button is enabled.
 
 ## Deploy dynamic_map_server
@@ -137,7 +137,7 @@ mkdir -p catkin_ws/src
 cd catkin_src/src
 git clone https://github.com/rapyuta/io_tutorials
 cd ..
-source /opt/ros/kinetic/setup.#!/usr/bin/env bash
+source /opt/ros/kinetic/setup.bash
 catkin_make --pkg map_listener
 ```
 And then, you will [add the device](/getting-started/add-new-device)
@@ -152,15 +152,15 @@ To create the package, follow the instructions:
 2. You should provide information about the package such as the name of the
    package, its version number, whether its a singleton package and a short
    description.
-		1. In the **Package Name** box, enter a name for the package say *map_listener*
-		2. In the **Package Version** box, enter the version of the package. By default,
+	1. In the **Package Name** box, enter a name for the package say *map_listener*
+	2. In the **Package Version** box, enter the version of the package. By default,
 		the version is set to _1.0.0_    
 		Package version must follow semantic versioning specification.
-		3. Ensure **Is singleton package** is not selected.
-		4. Make sure **Is a bindable package** is not selected.
-		4. In the **Description** box, provide a brief summary of the package say
-		   _Runs a map_listener node on device_
-		5. Click **NEXT**.
+	3. Ensure **Is singleton package** is not selected.
+	4. Make sure **Is a bindable package** is not selected.
+	4. In the **Description** box, provide a brief summary of the package say
+	   *Runs a map_listener node on device*
+	5. Click **NEXT**.
 3. In the **Component Name** box, provide a name for the component say _MapListener_
 4. For **Component Runtime**, click **Device**.
 5. Ensure **Is ROS Component** is selected.
@@ -207,11 +207,11 @@ To know whether *map_listener* has received the map data, execute the below
 command in the device's terminal:
 
 ```bash
-sudo tail /root/.ros/log/latest/map_listener_2.log
+sudo tail /root/.ros/log/latest/map_listener-2.log
 ```
 
-Sometimes *map_listener* stores the map data in *map_listener_1.log* file. Therefore,
-you are recommended to check all the files of the form *map_listener_<n>.log_*
+Sometimes *map_listener* stores the map data in *map_listener-1.log* file. Therefore,
+you are recommended to check all the files of the form *map_listener-n.log*
 where n is a positive integer, if any file is empty.
 
 You should see a similar output as shown below after executing the above command:

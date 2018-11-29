@@ -26,7 +26,7 @@ PI.
 	is installed on the device.
 2. You should be familiar with the [core concepts](/core-concepts/) of rapyuta.io
 3. You should be familiar with the below tools:
-	1. [Git](https://git-scm.com)
+	1. [Git](https://git-scm.com/doc)
 	2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
 	3. [ROS topics](https://wiki.ros.org/Topics)
 	4. [ROS services](https://wiki.ros.org/Services)
