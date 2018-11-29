@@ -12,7 +12,7 @@ The platform provides ways to expose Secure TCP(TLS/SNI), HTTP/Websocket,
 and HTTPS/Websocket-Secure endpoints when deployed on the cloud. Both ROS
 and generic components can leverage these types of endpoints.
 
-For a ROS component, the platform launches a ROS master and a cloud bridge.
+For a ROS component, the platform launches a ROS master and a [cloud bridge](/core-concepts/network-layout-communication/#cloud-bridge).
 Each cloud bridge exposes a user-specified set of ROS topics, services, and
 actions for the component and receives similarly exposed ROS topics, services,
 and actions from other components.
