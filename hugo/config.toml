@@ -3,13 +3,13 @@ languageCode = "en-us"
 languageLang = "en"
 defaultContentLanguage = "en"
 
-title = "Rapyuta IO Documentation"
+title = "rapyuta.io Documentation"
 theme = "learn"
 disableSearch = false
 
 [params]
     themeVariant = "rio"
-    author = "Rapyuta IO"
+    author = "Rapyuta Robotics"
     description = "Making robots more accessible to enterprise-level customers"
 
 [outputs]
