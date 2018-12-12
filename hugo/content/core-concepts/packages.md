@@ -21,7 +21,7 @@ bash shell command, which overrides the
 [entry point](https://docs.docker.com/engine/reference/run/#cmd-default-command-or-options)
 of the docker container.
 {{% notice info %}}
-The maximum size of the docker image is 10GB
+The maximum size of the docker image is 10GB for cloud deployment.
 {{% /notice %}}
 2. **Git repository**    
 You may provide a git repository for an executable. rapyuta.io builds the source

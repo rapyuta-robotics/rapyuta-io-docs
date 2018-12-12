@@ -56,7 +56,8 @@ To create *led_trigger* package, follow the steps:
 12. Click **Docker** for **Executable Type** as the executable is a docker image.
 13. In the **Docker image** box, specify the docker image - *rrdockerhub/led_trigger*
 {{% notice info %}}
-The maximum size of the docker image is 10GB
+The maximum size of the docker image for device deployment is determined by
+the maximum size of the device on which the package will be deployed.
 {{% /notice %}}
 14. In the **Command to run in the docker container** box, enter the command:
 	```bash

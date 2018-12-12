@@ -56,7 +56,7 @@ select **Specify docker file path** checkbox.
 **Docker** as the **Executable Type**, and then enter the docker image URL in the
 **Docker image** box.
 {{% notice info %}}
-The maximum size of the docker image is 10 GB
+The maximum size of the docker image is 10 GB for cloud deployment
 {{% /notice %}}
 11. Add a ROS topic by clicking **Add ROS topic**, specify the name of
 the ROS topic in the **Name** box, and choosing **Maximum QoS**. In this example,
