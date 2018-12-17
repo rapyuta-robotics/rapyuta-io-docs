@@ -61,7 +61,7 @@ To create the _Docker publisher subscriber_ package using the
 4. In the **Package Version** box, enter the version of the package you are creating.
    The default value is _1.0.0_
 5. Ensure **Is a singleton package** is not selected.
-6. Make sure **Is a bindable package** is not selected.
+6. Make sure **Is a bindable package** is selected.
 5. In the **Description** box, provide a brief summary of the package.
 6. Click **NEXT**.
 
