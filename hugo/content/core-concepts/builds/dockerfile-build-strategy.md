@@ -8,6 +8,9 @@ weight: 155
 ---
 When you create a package, you can either provide a _git repository_ url or a
 _docker image_ as an executable of the package irrespective of a component's runtime.
+{{% notice info %}}
+The maximum size of the docker image is 10GB for cloud deployment.
+{{% /notice %}}
 
 To apply Dockerfile Build strategy to a _Dockerfile_, you must ensure that the
 git repository contains a valid _Dockerfile_. You may explicitly specify the
