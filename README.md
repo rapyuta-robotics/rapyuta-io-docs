@@ -1,4 +1,4 @@
-# Rapyuta IO Documentation
+# rapyuta.io Documentation
 
 ## Running locally for development
 
@@ -17,4 +17,3 @@ git submodule update
 cd hugo
 hugo server
 ```
-
