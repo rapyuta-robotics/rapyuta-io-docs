@@ -157,7 +157,7 @@ To create the package, follow the instructions:
 		the version is set to _1.0.0_    
 		Package version must follow semantic versioning specification.
 	3. Ensure **Is singleton package** is not selected.
-	4. Make sure **Is a bindable package** is not selected.
+	4. Make sure **Is a bindable package** is selected.
 	4. In the **Description** box, provide a brief summary of the package say
 	   *Runs a map_listener node on device*
 	5. Click **NEXT**.
