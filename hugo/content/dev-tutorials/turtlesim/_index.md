@@ -70,7 +70,7 @@ follow the steps:
    2. In the **Package Version** box, specify a version for the package. Initially,
       the version is set to the default value _1.0.0_
    3. Make sure **Is singleton package** is not selected.
-   4. Ensure **Is bindable package** is not selected.
+   4. Ensure **Is bindable package** is selected.
    5. In the **Description** box, provide short summary of the package. For
       example, _An emulation of Turtlebot_
    6. Click **NEXT**.
