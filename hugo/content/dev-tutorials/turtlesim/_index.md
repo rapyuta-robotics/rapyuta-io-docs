@@ -82,7 +82,7 @@ follow the steps:
 6. Set **Replicas to run the component** to a number greater than 1 (default value)
    if you require to do so.
 7. In the **Executable Name** box, type in a name for the executable. For example,
-   _turtle_executable_        
+   *turtle_executable*         
    The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
    and _ character, and must not start with a digit.
 8. Select **Git** for the **Executable Type**.
@@ -134,7 +134,7 @@ follow the instructions:
    3. Make sure **Is singleton package** is not selected.
    4. Ensure **Is bindable package** is selected.
    5. In the **Description** box, enter short summary of the package such as
-      _An interactive, web based version of ROS Turtlesim's user interface_
+      _An interactive, web based user interface of ROS Turtlesim_
    6. Click **NEXT**.
 3. In the **Component Name** box, enter a name for the component say *user_interface*    
    The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
@@ -189,7 +189,7 @@ To add the _Simulator_ package, follow the steps:
 6. Set the value of **Replicas to run the component** to a number greater than 1
    (default value) if you require to do so.
 7. In the **Executable Name** box, enter a name for the executable say
-   _simulator_executable_    
+   *simulator_executable*   
    The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
    and _ character, and must not start with a digit.
 8. For the **Executable type**, click **Git**.
