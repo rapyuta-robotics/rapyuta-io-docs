@@ -95,8 +95,8 @@ the steps:
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.
-3. In the **Package Name** box, type in a name for the package say _`ROS publisher
-   subscriber`_.
+3. In the **Package Name** box, type in a name for the package say `ROS publisher
+   subscriber`
 4. In the **Package Version** box, enter the version of the package you are creating.
    The default value is _1.0.0_
 5. Make sure **Is singleton package** is not selected.
@@ -108,7 +108,7 @@ The package has two components: the **talker** running on the cloud and the
 **listener** running on the device.
 
 1. Talker component (aka _ROS publisher_)
-	1. In the **Component Name** box, enter a name for the component say _`talker`_  
+	1. In the **Component Name** box, enter a name for the component say `talker`
 {{% notice info %}}
 The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
 and an underscore _ character. It must not begin with a digit.
@@ -118,7 +118,7 @@ and an underscore _ character. It must not begin with a digit.
 	4. Set the value of **Replicas to run the component** to a number greater than
 	1 (default value) if you require to do so.
 	5. In the **Executable Name** box, enter a name for the executable say
-	   _`talkerExecutable`_
+	   `talkerExecutable`
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9]
 and an underscore _ character, and must not start with a digit.
@@ -140,7 +140,7 @@ and an underscore _ character, and must not start with a digit.
 	   To add a ROS topic, click **Add ROS topic**. In the **Name** box, enter the
 	   name of the ROS topic. Select **Maximum** for **QoS**.
 2. Listener component (aka _ROS subscriber_)
-	1. In the **Component Name** box, type in a name for the component say _`listener`_     
+	1. In the **Component Name** box, type in a name for the component say `listener`  
 {{% notice info %}}
 The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
 and an underscore _ character, and must not begin with a digit.
@@ -148,7 +148,7 @@ and an underscore _ character, and must not begin with a digit.
 	2. For **Component Runtime**, click **Device**.
 	3. Ensure **Is ROS Component** is selected.
 	5. In the **Executable Name** box, type in a name for the executable say
-	   _`listenerExecutable`_      
+	   `listenerExecutable`      
 {{% notice info  %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
 and an underscore _ character, and must not begin with a digit.
