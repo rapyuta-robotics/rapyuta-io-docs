@@ -7,7 +7,7 @@ pre: "a. "
 weight: 305
 ---
 A _ROS publisher_ is part of a ROS package. It is a public git repository, which
-is built into a docker container on the fly when the package is being deployed.
+is built into a running docker container on the fly when the package is being deployed.
 A _ROS subscriber_ is also a part of the same ROS package. It is downloaded on a
 device, and is launched when the package is deployed.
 
@@ -41,17 +41,43 @@ It will take nearly about 15 minutes to finish the tutorial.
 The tutorial will use Raspberry PI as the device.
 Learn [how to prepare your Raspberry PI](/getting-started/prepare-raspberry-pi)
 
+If you are using custom rapyuta.io image on the device, the catkin workspace is
+created, the io_tutorials repository is present in the workspace, and the
+source code is built for you.
+
 If you are using either a computer with ROS installed on it or any device other
-than Raspberry PI, you need to execute the below commands as _root user_ at the
-device's terminal prompt:
+than Raspberry PI or a Raspberry PI without custom rapyuta.io image, you will
+create a catkin workspace and get the *io_tutorials* repository into the workspace.
+
+{{% notice note %}}
+In this tutorial, the catkin workspace is `catkin_ws/src`, but you may choose to name
+your catkin workspace as you like and ensure that you replace all occurrences to
+`catkin_ws` with your workspace name.
+{{% /notice %}}
+
+You need to execute the below commands (perhaps, as _root user_) at the device's terminal prompt.
 ```bash
-cd ~
+cd $HOME
+```
+```bash
 mkdir -p catkin_ws/src
+```
+```bash
 cd catkin_ws/src
+```
+```bash
 git clone https://github.com/rapyuta/io_tutorials
+```
+To build the source code in the catkin workspace, execute the below commands in the root of
+the workspace:
+```bash
 cd ..
-source /opt/ros/kinetic/setup.bash
-catkin_make --pkg listener
+```
+```bash
+catkin_make -DCATKIN_WHITELIST_PACKAGES="listener"
+```
+```bash
+source ~/catkin_ws/devel/setup.bash
 ```
 
 ## Setting up your device
@@ -69,8 +95,8 @@ the steps:
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.
-3. In the **Package Name** box, type in a name for the package say _ROS publisher
-   subscriber_.
+3. In the **Package Name** box, type in a name for the package say _`ROS publisher
+   subscriber`_.
 4. In the **Package Version** box, enter the version of the package you are creating.
    The default value is _1.0.0_
 5. Make sure **Is singleton package** is not selected.
@@ -82,17 +108,21 @@ The package has two components: the **talker** running on the cloud and the
 **listener** running on the device.
 
 1. Talker component (aka _ROS publisher_)
-	1. In the **Component Name** box, enter a name for the component say _talker_      
-	The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
-	and an underscore _ character. It must not begin with a digit.
+	1. In the **Component Name** box, enter a name for the component say _`talker`_  
+{{% notice info %}}
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
+and an underscore _ character. It must not begin with a digit.
+{{% /notice %}}
 	2. For **Component Runtime**, click **Cloud**.
 	3. Ensure **Is ROS Component** is selected.
 	4. Set the value of **Replicas to run the component** to a number greater than
 	1 (default value) if you require to do so.
 	5. In the **Executable Name** box, enter a name for the executable say
-	   _talkerExecutable_      
-	  The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9]
-	  and an underscore _ character, and must not start with a digit.
+	   _`talkerExecutable`_
+{{% notice info %}}
+The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9]
+and an underscore _ character, and must not start with a digit.
+{{% /notice %}}
 	6. For **Executable Type**, click **Git**.
 	7. In the **Git repository** box, enter the url address:
 	   https://github.com/rapyuta/io_tutorials
@@ -103,22 +133,26 @@ The package has two components: the **talker** running on the cloud and the
 
 	   	Ensure you always execute the command `roslaunch` to explicitly start the
 	   	[ROS Master](https://wiki.ros.org/Master) instead of running the `rosrun`
-	   	command, because the ROS Master will fail to start on `rosrun`, and
+	   	command, because the ROS Master will fail to start on _rosrun_, and
 	   	eventually, the deployment will fail as well.
 	   ![talkerExecutable](/images/tutorials/ros-pub-sub/ros-pubsub-talker-exec-details.png?classes=border,shadow&width=50pc)
 	9. The _talkerExecutable_ publishes a ROS topic, `/telemetry`    
 	   To add a ROS topic, click **Add ROS topic**. In the **Name** box, enter the
 	   name of the ROS topic. Select **Maximum** for **QoS**.
 2. Listener component (aka _ROS subscriber_)
-	1. In the **Component Name** box, type in a name for the component say _listener_     
-	The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
-	and an underscore _ character, and must not begin with a digit.
+	1. In the **Component Name** box, type in a name for the component say _`listener`_     
+{{% notice info %}}
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
+and an underscore _ character, and must not begin with a digit.
+{{% /notice %}}
 	2. For **Component Runtime**, click **Device**.
 	3. Ensure **Is ROS Component** is selected.
 	5. In the **Executable Name** box, type in a name for the executable say
-	   _listenerExecutable_      
-	   The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
-       and an underscore _ character, and must not begin with a digit.
+	   _`listenerExecutable`_      
+{{% notice info  %}}
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
+and an underscore _ character, and must not begin with a digit.
+{{% /notice %}}
 	6. Since the _ROS subscriber_ is already installed on the device, select
 	   **Default** as **Executable Type**.
 	7. In the **Command to run in the docker container** box, enter the command:
@@ -128,7 +162,7 @@ The package has two components: the **talker** running on the cloud and the
 
 	   	Ensure you always execute the command `roslaunch` to explicitly start the
 	   	[ROS Master](https://wiki.ros.org/Master) instead of running the `rosrun`
-	   	command, because the ROS Master will fail to start on `rosrun`, and
+	   	command, because the ROS Master will fail to start on _rosrun_, and
 	   	eventually, the deployment will fail as well.
 	   ![listenerExecutable](/images/tutorials/ros-pub-sub/ros-pubsub-listener-exec.png?classes=border,shadow&width=50pc)
 	8. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
@@ -140,9 +174,9 @@ A flickering yellow dot against the name of the package indicates that the
 **Build Status** is **New**, while a green dot indicates that the **Build Status**
 is **Complete**.
 
-Alternately, when the **Deploy package** button is automatically enabled, it
+Additionally, when the **Deploy package** button is automatically enabled, it
 indicates that the _ROS publisher subscriber_ package has been successfully
-deployed and can be deployed.
+built and it can be deployed.
 
 ## Deploying the package
 To deploy a package using the [console](https://closed-beta.rapyuta.io),
@@ -152,7 +186,7 @@ follow the steps:
 2. Select the _ROS publisher subscriber_ package.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, enter a name for the deployment you are
-creating say _ROS Publisher Subscriber Deployment_.
+creating say `ROS Publisher Subscriber Deployment`
 5. Since _listener_ has device runtime, you must select the device you want to
 deploy the component on. Click **Refresh the list of online devices** to retrieve
 an updated list of online devices.
@@ -162,10 +196,10 @@ drop-down list.
 are selected.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You are redirected to the deployment details page where an yellow dot flickers
-against the deployment name indicating that the deployment is in progress.
-Once the dot turns green, it implies that the **DEPLOYMENT PHASE** has **Succeeded**
-and the **STATUS** is **Running**.
+You will be redirected to the newly created deployment's **Details** page.
+The _ROS Publisher Subscriber Deployment_ is successfully running only when the green
+coloured bar moves to **Succeeded** and **Status:Running** point indicating that the
+**DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
 
 ![ROS  Publisher Subscriber Deployment](/images/tutorials/ros-pub-sub/ros-pub-sub-deployment.png?classes=border,shadow&width=50pc)
 
