@@ -42,17 +42,17 @@ The tutorial will use Raspberry PI as the device.
 Learn [how to prepare your Raspberry PI](/getting-started/prepare-raspberry-pi)
 
 If you are using custom rapyuta.io image on the device, the catkin workspace is
-created, the io_tutorials repository is present in the workspace, and the
-source code is built for you.
+already created and the *io_tutorials* repository is already present in the workspace.
+Moreover, the source code is already built for you.
 
 If you are using either a computer with ROS installed on it or any device other
 than Raspberry PI or a Raspberry PI without custom rapyuta.io image, you will
 create a catkin workspace and get the *io_tutorials* repository into the workspace.
 
 {{% notice note %}}
-In this tutorial, the catkin workspace is `catkin_ws/src`, but you may choose to name
+In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name
 your catkin workspace as you like and ensure that you replace all occurrences to
-`catkin_ws` with your workspace name.
+`~/catkin_ws/` with your workspace name.
 {{% /notice %}}
 
 You need to execute the below commands (perhaps, as _root user_) at the device's terminal prompt.
@@ -68,11 +68,11 @@ cd catkin_ws/src
 ```bash
 git clone https://github.com/rapyuta/io_tutorials
 ```
-To build the source code in the catkin workspace, execute the below commands in the root of
-the workspace:
 ```bash
 cd ..
 ```
+To build the source code in the catkin workspace, execute the below commands in the root of
+the workspace:
 ```bash
 catkin_make -DCATKIN_WHITELIST_PACKAGES="listener"
 ```
@@ -110,7 +110,7 @@ The package has two components: the **talker** running on the cloud and the
 1. Talker component (aka _ROS publisher_)
 	1. In the **Component Name** box, enter a name for the component say `talker`
 {{% notice info %}}
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
 and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}
 	2. For **Component Runtime**, click **Cloud**.
@@ -120,7 +120,7 @@ and an underscore _ character. It must not begin with a digit.
 	5. In the **Executable Name** box, enter a name for the executable say
 	   `talkerExecutable`
 {{% notice info %}}
-The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9]
+The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hypen -
 and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 	6. For **Executable Type**, click **Git**.
@@ -142,7 +142,7 @@ and an underscore _ character, and must not start with a digit.
 2. Listener component (aka _ROS subscriber_)
 	1. In the **Component Name** box, type in a name for the component say `listener`  
 {{% notice info %}}
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
 and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 	2. For **Component Runtime**, click **Device**.
@@ -150,7 +150,7 @@ and an underscore _ character, and must not begin with a digit.
 	5. In the **Executable Name** box, type in a name for the executable say
 	   `listenerExecutable`      
 {{% notice info  %}}
-The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
 and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 	6. Since the _ROS subscriber_ is already installed on the device, select
@@ -167,7 +167,7 @@ and an underscore _ character, and must not begin with a digit.
 	   ![listenerExecutable](/images/tutorials/ros-pub-sub/ros-pubsub-listener-exec.png?classes=border,shadow&width=50pc)
 	8. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-The package takes about two to five minutes to build the source code in the git
+The package takes about two to five minutes to build the source code in the *io_tutorials*
 repository into a running docker container. You may analyse the corresponding
 [build logs](/core-concepts/logging/build-logs), which help debug failing builds.
 A flickering yellow dot against the name of the package indicates that the
@@ -204,4 +204,12 @@ coloured bar moves to **Succeeded** and **Status:Running** point indicating that
 ![ROS  Publisher Subscriber Deployment](/images/tutorials/ros-pub-sub/ros-pub-sub-deployment.png?classes=border,shadow&width=50pc)
 
 You may also analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs)
-to check if everything is working OK.
+to check if everything is working OK by clicking on **Logs** tab.
+
+The **listener-listenerExecutable** will be streaming *`/listener I heard hello_world`* logs.
+
+![ROS Subscriber logs](/images/tutorials/ros-pub-sub/listener-logs.png?classes=border,shadow&width=50pc)
+
+while **talker-talkerExecutable** will be publishing *`hello_world`* logs.
+
+![ROS Publisher logs](/images/tutorials/ros-pub-sub/talker-logs.png?classes=border,shadow&width=50pc)
