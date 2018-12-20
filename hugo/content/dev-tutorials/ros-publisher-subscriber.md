@@ -41,17 +41,40 @@ It will take nearly about 15 minutes to finish the tutorial.
 The tutorial will use Raspberry PI as the device.
 Learn [how to prepare your Raspberry PI](/getting-started/prepare-raspberry-pi)
 
+If you are using custom rapyuta.io image on the device, the catkin workspace is
+already created and the *io_tutorials* repository is already present in the workspace.
+Moreover, the source code is already built for you.
+
 If you are using either a computer with ROS installed on it or any device other
-than Raspberry PI, you need to execute the below commands as _root user_ at the
-device's terminal prompt:
+than Raspberry PI or a Raspberry PI without custom rapyuta.io image, you will
+create a catkin workspace and get the *io_tutorials* repository into the workspace.
+
+{{% notice note %}}
+In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name
+your catkin workspace as you like and ensure that you replace all occurrences to
+`~/catkin_ws/` with your workspace name.
+{{% /notice %}}
+
+You need to execute the below commands (perhaps, as _root user_) at the device's terminal prompt.
+```bash
+cd $HOME
+```
 ```bash
 cd ~
 mkdir -p catkin_ws/src
 cd catkin_ws/src
 git clone https://github.com/rapyuta/io_tutorials
+```
+```bash
 cd ..
-source /opt/ros/kinetic/setup.bash
-catkin_make --pkg listener
+```
+To build the source code in the catkin workspace, execute the below commands in the root of
+the workspace:
+```bash
+catkin_make -DCATKIN_WHITELIST_PACKAGES="listener"
+```
+```bash
+source ~/catkin_ws/devel/setup.bash
 ```
 
 ## Setting up your device
@@ -82,17 +105,21 @@ The package has two components: the **talker** running on the cloud and the
 **listener** running on the device.
 
 1. Talker component (aka _ROS publisher_)
-	1. In the **Component Name** box, enter a name for the component say _talker_      
-	The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
-	and an underscore _ character. It must not begin with a digit.
+	1. In the **Component Name** box, enter a name for the component say `talker`
+{{% notice info %}}
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
+and an underscore _ character. It must not begin with a digit.
+{{% /notice %}}
 	2. For **Component Runtime**, click **Cloud**.
 	3. Ensure **Is ROS Component** is selected.
 	4. Set the value of **Replicas to run the component** to a number greater than
 	1 (default value) if you require to do so.
 	5. In the **Executable Name** box, enter a name for the executable say
-	   _talkerExecutable_      
-	  The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9]
-	  and an underscore _ character, and must not start with a digit.
+	   `talkerExecutable`
+{{% notice info %}}
+The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hypen -
+and an underscore _ character, and must not start with a digit.
+{{% /notice %}}
 	6. For **Executable Type**, click **Git**.
 	7. In the **Git repository** box, enter the url address:
 	   https://github.com/rapyuta/io_tutorials
@@ -110,15 +137,19 @@ The package has two components: the **talker** running on the cloud and the
 	   To add a ROS topic, click **Add ROS topic**. In the **Name** box, enter the
 	   name of the ROS topic. Select **Maximum** for **QoS**.
 2. Listener component (aka _ROS subscriber_)
-	1. In the **Component Name** box, type in a name for the component say _listener_     
-	The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
-	and an underscore _ character, and must not begin with a digit.
+	1. In the **Component Name** box, type in a name for the component say `listener`  
+{{% notice info %}}
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
+and an underscore _ character, and must not begin with a digit.
+{{% /notice %}}
 	2. For **Component Runtime**, click **Device**.
 	3. Ensure **Is ROS Component** is selected.
 	5. In the **Executable Name** box, type in a name for the executable say
-	   _listenerExecutable_      
-	   The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
-       and an underscore _ character, and must not begin with a digit.
+	   `listenerExecutable`      
+{{% notice info  %}}
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
+and an underscore _ character, and must not begin with a digit.
+{{% /notice %}}
 	6. Since the _ROS subscriber_ is already installed on the device, select
 	   **Default** as **Executable Type**.
 	7. In the **Command to run in the docker container** box, enter the command:
@@ -133,7 +164,7 @@ The package has two components: the **talker** running on the cloud and the
 	   ![listenerExecutable](/images/tutorials/ros-pub-sub/ros-pubsub-listener-exec.png?classes=border,shadow&width=50pc)
 	8. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-The package takes about two to five minutes to build the source code in the git
+The package takes about two to five minutes to build the source code in the *io_tutorials*
 repository into a running docker container. You may analyse the corresponding
 [build logs](/core-concepts/logging/build-logs), which help debug failing builds.
 A flickering yellow dot against the name of the package indicates that the
@@ -170,4 +201,12 @@ and the **STATUS** is **Running**.
 ![ROS  Publisher Subscriber Deployment](/images/tutorials/ros-pub-sub/ros-pub-sub-deployment.png?classes=border,shadow&width=50pc)
 
 You may also analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs)
-to check if everything is working OK.
+to check if everything is working OK by clicking on **Logs** tab.
+
+The **listener-listenerExecutable** will be streaming *`/listener I heard hello_world`* logs.
+
+![ROS Subscriber logs](/images/tutorials/ros-pub-sub/listener-logs.png?classes=border,shadow&width=50pc)
+
+while **talker-talkerExecutable** will be publishing *`hello_world`* logs.
+
+![ROS Publisher logs](/images/tutorials/ros-pub-sub/talker-logs.png?classes=border,shadow&width=50pc)
