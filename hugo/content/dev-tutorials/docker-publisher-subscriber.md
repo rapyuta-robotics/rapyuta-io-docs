@@ -71,7 +71,7 @@ The package has two components: the **talker** running on the cloud and the
 1. Talker component (aka _ROS publisher_)
 	1. In the **Component Name** box, enter a name for the component say `talker`      
 {{% notice info %}}
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
 and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}
 	2. For **Component Runtime**, click **Cloud**.
@@ -81,7 +81,7 @@ and an underscore _ character. It must not begin with a digit.
 	5. In the **Executable Name** box, enter a name for the executable say
 	   `talkerExecutable`  
 {{% notice info %}}
-The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9]
+The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hypen -
 and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 	6. For **Executable Type**, click **Git**.
@@ -103,7 +103,7 @@ and an underscore _ character, and must not start with a digit.
 2. Listener component (aka _ROS subscriber_)
 	1. In the **Component Name** box, type in a name for the component say `listener`      
 {{% notice info %}}
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
 and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 	2. For **Component Runtime**, click **Device**.
@@ -112,7 +112,7 @@ and an underscore _ character, and must not begin with a digit.
 	6. In the **Executable Name** box, type in a name for the executable say
 	   `listenerExecutable`   
 {{% notice info %}}
-The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
 and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 	7. For **Executable Type**, select **Git**.
@@ -129,7 +129,7 @@ and an underscore _ character, and must not begin with a digit.
 		![listenerExecutable](/images/tutorials/docker-pub-sub/docker-pubsub-listener-exec.png?classes=border,shadow&width=50pc)
 	10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-The package takes about two to five minutes to build the source code in the git
+The package takes about two to five minutes to build the source code in the *io_tutorials*
 repository into a running docker container. You may analyse the corresponding
 [build logs](/core-concepts/logging/build-logs), which help debug failing builds.
 
@@ -165,3 +165,11 @@ You may also analyse the corresponding [deployment logs](/core-concepts/logging/
 to check if everything is working OK.
 
 ![Docker Publisher Subscriber Deployment](/images/tutorials/docker-pub-sub/docker-pubsub-deployment.png?classes=border,shadow&width=50pc)
+
+The **listener-listenerExecutable** will be streaming *`/listener I heard hello_world`* logs.
+
+![ROS Subscriber logs](/images/tutorials/ros-pub-sub/listener-logs.png?classes=border,shadow&width=50pc)
+
+while **talker-talkerExecutable** will be publishing *`hello_world`* logs.
+
+![ROS Publisher logs](/images/tutorials/ros-pub-sub/talker-logs.png?classes=border,shadow&width=50pc)
