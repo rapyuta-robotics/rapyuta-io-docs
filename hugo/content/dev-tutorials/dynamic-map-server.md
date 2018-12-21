@@ -67,8 +67,8 @@ Package version must follow semantic versioning specification.
 4. In the **Component Name** box, enter a name for the component say
    `DynamicMapServer`
 {{% notice info %}}     
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9] and
-underscore _ character, and must not begin with a digit.
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
+and underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 5. Select **Cloud** for **Component Runtime**.
 6. Ensure **Is ROS Component** is selected.
@@ -77,8 +77,8 @@ underscore _ character, and must not begin with a digit.
 8. In the **Executable Name** box, type in a name for the executable say
    `dmsexecutable`  
 {{% notice info %}} 
-The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9] and
-underscore _ character, and must not begin with a digit.
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
+and underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 9. Select **Git** for **Executable Type**.
 10. In the **Git Repository** box, enter the git repository url:
@@ -101,7 +101,7 @@ https://github.com/rapyuta/io_tutorials
     `/set_map`
 14. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-The package takes about five minutes to build the source code in the git
+The package takes about five minutes to build the source code in the *io_tutorials*
 repository into a running container. You may view the corresponding
 [build logs](/core-concepts/logging/build-logs), which help in debugging failing builds.
 
@@ -137,17 +137,17 @@ If you are using a UP Board as the device, learn
 [how to prepare it](/getting-started/prepare-up-board).
 
 If you are using custom rapyuta.io image on the device, the catkin workspace is
-created, the io_tutorials repository is present in the workspace, and the
-source code is built for you.
+already created and the *io_tutorials* repository is already present in the workspace.
+Moreover, the source code is already built for you.
 
 If you are using either a computer with ROS installed on it or any device other
 than Raspberry PI or a Raspberry PI without custom rapyuta.io image, you will
 create a catkin workspace and get the *io_tutorials* repository into the workspace.
 
 {{% notice note %}}
-In this tutorial, the catkin workspace is `catkin_ws/src`, but you may choose to name
+In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name
 your catkin workspace as you like and ensure that you replace all occurrences to
-`catkin_ws` with your workspace name.
+`~/catkin_ws/` with your workspace name.
 {{% /notice %}}
 
 You need to execute the below commands (perhaps, as _root user_) at the device's terminal prompt.
@@ -163,11 +163,11 @@ cd catkin_ws/src
 ```bash
 git clone https://github.com/rapyuta/io_tutorials
 ```
-To build the source code in the catkin workspace, execute the below commands in the root of
-the workspace:
 ```bash
 cd ..
 ```
+To build the source code in the catkin workspace, execute the below commands in the root of
+the workspace:
 ```bash
 catkin_make -DCATKIN_WHITELIST_PACKAGES="map_listener"
 ```
@@ -175,8 +175,8 @@ catkin_make -DCATKIN_WHITELIST_PACKAGES="map_listener"
 source ~/catkin_ws/devel/setup.bash
 ```
 And then, you will [add the device](/getting-started/add-new-device)
-to rapyuta.io using the console. Ensure that **Use docker compose as default runtime**
-checkbox is not selected.
+to rapyuta.io using the [console](https://closed-beta.rapyuta.io). Ensure
+that **Use docker compose as default runtime** checkbox is not selected.
 
 ### Create map_listener package
 You will create *map_listener* package, which will be deployed on the device.
@@ -219,7 +219,7 @@ To deploy *map_listener* package, follow the steps:
 1. Click **CATALOG** > select *map_listener* package > click **Deploy package**.
 2. In the **Name of deployment** box, provide a name for the specific deployment
    say `Map Listener Deployment`
-3. Since *map_listener_executable* has device runtime, you must select the device
+3. Since *MapListener* has device runtime, you must select the device
    you want to deploy the component on. Click **Refresh the list of online devices**
    to retrieve an updated list of online devices.
 4. Select the device from the **Select device for deploying the component** drop-down
@@ -235,7 +235,11 @@ checking if the **DEPLOYMENT PHASE** is _Succeeded_ and the **STATUS** is _Runni
 
 ![Map Listener Deployment](/images/tutorials/dms/map-listener-deployment.png?classes=border,shadow&width=60pc)
 
-Ensure that the dependent deployment **STATUS** is _Running_ as well.
+Ensure that the dependent deployment's **STATUS** is _Running_ as well.
+
+The corresponding dependency graph is shown below:
+
+![Dependency graph](/images/tutorials/dms/dms-dgraph.png?classes=border,shadow&width=60pc)
 
 To know whether *map_listener* has received the map data, execute the below
 command in the device's terminal:
