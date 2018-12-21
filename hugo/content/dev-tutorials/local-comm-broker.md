@@ -8,7 +8,7 @@ weight: 320
 ---
 Complex robotic applications involving multi-device communication with service
 distributed across WAN can be latent. This tutorial demonstrates how to have
-multi-device communication within same internet.
+multi-device communication within same LAN.
 
 ## Learning objectives
 This tutorial will show how to deploy a broker package locally for inter
@@ -87,9 +87,9 @@ than Raspberry PI or a Raspberry PI without custom rapyuta.io image, you will
 create a catkin workspace and get the *io_tutorials* repository into the workspace.
 
 {{% notice note %}}
-In this tutorial, the catkin workspace is `catkin_ws/src`, but you may choose to name
+In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name
 your catkin workspace as you like and ensure that you replace all occurrences to
-`catkin_ws` with your workspace name.
+`~/catkin_ws/` with your workspace name.
 {{% /notice %}}
 
 You need to execute the below commands (perhaps, as _root user_) at the device's terminal prompt.
@@ -106,11 +106,11 @@ cd catkin_ws/src
 ```bash
 git clone https://github.com/rapyuta/io_tutorials
 ```
-To build the source code in the catkin workspace, execute the below commands in the root of
-the workspace:
 ```bash
 cd ..
 ```
+To build the source code in the catkin workspace, execute the below commands in the root of
+the workspace:
 ```bash
 catkin_make -DCATKIN_WHITELIST_PACKAGES="talker"
 ```
@@ -170,9 +170,9 @@ than Raspberry PI or a Raspberry PI without custom rapyuta.io image, you will
 create a catkin workspace and get the *io_tutorials* repository into the workspace.
 
 {{% notice note %}}
-In this tutorial, the catkin workspace is `catkin_ws/src`, but you may choose to name
+In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name
 your catkin workspace as you like and ensure that you replace all occurrences to
-`catkin_ws` with your workspace name.
+`~/catkin_ws/` with your workspace name.
 {{% /notice %}}
 
 You need to execute the below commands (perhaps, as _root user_) at the device's terminal prompt.
@@ -188,11 +188,11 @@ cd catkin_ws/src
 ```bash
 git clone https://github.com/rapyuta/io_tutorials
 ```
-To build the source code in the catkin workspace, execute the below commands in the root of
-the workspace:
 ```bash
 cd ..
 ```
+To build the source code in the catkin workspace, execute the below commands in the root of
+the workspace:
 ```bash
 catkin_make -DCATKIN_WHITELIST_PACKAGES="listener"
 ```
@@ -266,9 +266,17 @@ so you may debug if the deployment fails.
       `Publishes ROS topic for a subscriber`
    6. Click **NEXT**.
 3. In the **Component Name** box, enter a name for the component, say `Publisher`
+{{% notice info %}}     
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
+and underscore _ character, and must not begin with a digit.
+{{% /notice %}}
 4. Select **Device** as the **Component Runtime**.
 5. Ensure **Is ROS Component** is selected.
 6. In the **Executable Name** box, type in a name for the executable say `talker`
+{{% notice info %}} 
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
+and underscore _ character, and must not begin with a digit.
+{{% /notice %}}
 7. For **Executable type**, select **Default** because the source code is already
    installed on the _Publisher Device_.
 8. In the **Command to run in the docker container** box, copy and paste the command:
@@ -299,9 +307,17 @@ so you may debug if the deployment fails.
 	   `Subscribes to ROS topic published by a publisher`
 	6. Click **NEXT**.
 3. In the **Component Name** box, enter a name for the component, say `Subscriber`
+{{% notice info %}}     
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
+and underscore _ character, and must not begin with a digit.
+{{% /notice %}}
 4. Select **Device** as the **Component Runtime**.
 5. Ensure **Is ROS Component** is selected.
 6. In the **Executable Name** box, type in a name for the executable say `listener`
+{{% notice info %}} 
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
+and underscore _ character, and must not begin with a digit.
+{{% /notice %}}
 7. For **Executable type**, select **Default** because the source code is already
    installed on the _Subcriber Device_.
 8. In the **Command to run in the docker container** box, copy and paste the command:
