@@ -20,7 +20,7 @@ RUN /bin/bash -c "source $NVM_DIR/nvm.sh \
 
 COPY . /appsrc
 WORKDIR /appsrc
-RUN bash -c "if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1; then git submodule init && git submodule update;fi; \
+RUN bash -c "if [ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1; then git submodule init && git submodule update; fi; \
     npm install && cd hugo && hugo -v" 
 
 EXPOSE 3000
