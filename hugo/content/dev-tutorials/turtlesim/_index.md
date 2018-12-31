@@ -86,8 +86,8 @@ and _ character, and must not start with a digit.
 7. In the **Executable Name** box, type in a name for the executable. For example,
    `turtle_executable`       
 {{% notice info %}}
-The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
-and _ character, and must not start with a digit.
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
+and underscore _ character, and must not start with a digit.
 {{% /notice %}}
 8. Select **Git** for the **Executable Type**.
 9. In the **Git repository** box, enter the url address of the git
@@ -201,8 +201,8 @@ and _ character, and must not start with a digit.
 7. In the **Executable Name** box, enter a name for the executable say
    `simulator_executable`   
 {{% notice info %}}
-The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
-and _ character, and must not start with a digit.
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
+and underscore _ character, and must not start with a digit.
 {{% /notice %}}
 8. For the **Executable type**, click **Git**.
 9. In the **Git Repository** box, enter the url address of the git repository,
@@ -257,7 +257,7 @@ To add _Command Center_ package, follow the steps:
    say `command_center`   
 {{% notice info %}}
 The name of a component must consist of alphabets [A-Z, a-z], digits
-[0-9] and _ character, and must not start with a digit.
+[0-9], hypen - and underscore _ character, and must not start with a digit.
 {{% /notice %}}
 4. Select **Cloud** for the **Component Runtime**.
 5. Ensure **Is ROS Component** checkbox is selected.
@@ -267,7 +267,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits
    say `ccexecutable`
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z],
-digits [0-9] and _ character, and must not start with a digit.
+digits [0-9], hypen - and underscore _ character, and must not start with a digit.
 {{% /notice %}}
 8. For **Executable type**, click **Git**.
 9. In the **Git Repository** box, enter the url address of the git repository:      https://github.com/rapyuta-robotics/io_tutorials
