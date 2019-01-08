@@ -66,25 +66,29 @@ follow the steps:
 2. You should provide information about the package such as the name of the
    package, its version, whether it is a singleton package and a short
    description.
-   1. In the **Package Name** box, enter a name say _Turtle_
+   1. In the **Package Name** box, enter a name say `Turtle`
    2. In the **Package Version** box, specify a version for the package. Initially,
       the version is set to the default value _1.0.0_
    3. Make sure **Is singleton package** is not selected.
    4. Ensure **Is bindable package** is selected.
    5. In the **Description** box, provide short summary of the package. For
-      example, _An emulation of Turtlebot_
+      example, `An emulation of Turtlebot`
    6. Click **NEXT**.
-3. In the **Component Name** box, enter a name for the component such as _turtle_        
-   The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
-   and _ character, and must not start with a digit.
+3. In the **Component Name** box, enter a name for the component such as `turtle`      
+{{% notice info %}}
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
+and _ character, and must not start with a digit.
+{{% /notice %}}
 4. Select **Cloud** as the **Component Runtime**.
 5. Select **Is ROS Component**.
 6. Set **Replicas to run the component** to a number greater than 1 (default value)
    if you require to do so.
 7. In the **Executable Name** box, type in a name for the executable. For example,
-   *turtle_executable*         
-   The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
-   and _ character, and must not start with a digit.
+   `turtle_executable`       
+{{% notice info %}}
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
+and _ character, and must not start with a digit.
+{{% /notice %}}
 8. Select **Git** for the **Executable Type**.
 9. In the **Git repository** box, enter the url address of the git
    repository: https://github.com/rapyuta/io_tutorials
@@ -95,7 +99,7 @@ follow the steps:
 
 	Ensure you always execute the command `roslaunch` to explicitly start the
 	[ROS Master](http://wiki.ros.org/Master). However, it's not recommended to
-	run the command `rosrun` because the ROS Master will fail to start, and thus,
+	run the command *rosrun* because the ROS Master will fail to start, and thus,
 	the deployment fails.
 11. Add `/pose` ROS topic with low QoS because there is no need to guarantee
     the delivery of each control message. Instead, it is essential to receive
@@ -128,27 +132,31 @@ follow the instructions:
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
 2. You should provide information about the package such as the name of the package,
    its version, whether it is a singleton package and a short description of the package.
-   1. In the **Package Name** box, enter a name say _User Interface_
+   1. In the **Package Name** box, enter a name say `User Interface`
    2. In the **Package Version** box, specify a version for the package. Initially,
       the version is set to the default value _1.0.0_
    3. Make sure **Is singleton package** is not selected.
    4. Ensure **Is bindable package** is selected.
    5. In the **Description** box, enter short summary of the package such as
-      _An interactive, web based user interface of ROS Turtlesim_
+      `An interactive, web based version of ROS Turtlesim's user interface`
    6. Click **NEXT**.
-3. In the **Component Name** box, enter a name for the component say *user_interface*    
-   The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
-   and _ character, and must not start with a digit.
+3. In the **Component Name** box, enter a name for the component say `user_interface`   
+{{% notice info %}}
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
+and _ character, and must not start with a digit.
+{{% /notice %}}
 4. Select **Cloud** for **Component Runtime**.
 5. Deselect **Is ROS Component** because _User Interface_ is a non-ROS package.
 6. Set **Replicas to run the component** to a number greater than 1 (default value)
    if you require to do so.
-7. In the **Executable Name** box, enter a name for the executable say _uiexecutable_    
-   The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
-   and _ character, and must not start with a digit.
+7. In the **Executable Name** box, enter a name for the executable say `uiexecutable`    
+{{% notice info %}}
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
+and _ character, and must not start with a digit.
+{{% /notice %}}
 8. Select **Docker** for **Executable Type**.
 9. In the **Docker image** box, enter the address of the docker image that contains
-   the application code. The address of the image is *rrdockerhub/io_turtlesim_ui*
+   the application code. The address of the image is `rrdockerhub/io_turtlesim_ui`
    as the image is held in the public docker registry, [DockerHub](https://hub.docker.com/).
 10. The **Command to run in the docker container** remains empty because the docker
     image will automatically execute when you deploy the _User Interface_ package.
@@ -156,11 +164,11 @@ follow the instructions:
 12. Expose a communication endpoint to access _User Interface_ as well as interact
     with the Turtles. To add an endpoint, follow the steps:
 	1. Click **Add endpoint**.
-	2. In the **Endpoint Name** box, enter a name say _UserInterface_
+	2. In the **Endpoint Name** box, enter a name say `UserInterface`
 	3. Select **Exposed externally**.
 	4. Click **HTTPS/WSS** for **Protocol**.
 	5. The **Port** is set to the default value 443 for the HTTPS/WSS protocol.
-	6. In the **Target Port** box, enter the value _8080_ (default port for Nginix).
+	6. In the **Target Port** box, enter the value `8080` (default port for Nginix).
 13. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ## Create Simulator package
@@ -173,25 +181,29 @@ To add the _Simulator_ package, follow the steps:
 2. You must provide information about the package such as the name of the package,
    its version, whether it is a singleton package, and a short description.
    1. In the **Package Name** box, type in the name for the package say
-      _Simulator_
+      `Simulator`
    2. In the **Package Version** box, enter the version of the package.
       The default value is set to _1.0.0_
    3. Ensure **Is singleton package** checkbox is not selected.
    4. Ensure **Is bindable package** is selected.
    5. In the **Description** box, enter a short summary of the package such as
-      _Simulator simulates physical dynamics of 2D robots and their sensors_
+      `Simulator simulates physical dynamics of 2D robots and their sensors`
    6. Click **NEXT**.
-3. In the **Component Name** box, type in a name for the component say _simulator_    
-   The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
-   and _ character, and must not start with a digit.
+3. In the **Component Name** box, type in a name for the component say `simulator`  
+{{% notice info %}}
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
+and _ character, and must not start with a digit.
+{{% /notice %}}
 4. Select **Cloud** for **Component Runtime**.
 5. Select **Is ROS Component** checkbox.
 6. Set the value of **Replicas to run the component** to a number greater than 1
    (default value) if you require to do so.
 7. In the **Executable Name** box, enter a name for the executable say
-   *simulator_executable*   
-   The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
-   and _ character, and must not start with a digit.
+   `simulator_executable`   
+{{% notice info %}}
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
+and _ character, and must not start with a digit.
+{{% /notice %}}
 8. For the **Executable type**, click **Git**.
 9. In the **Git Repository** box, enter the url address of the git repository,
    that is, https://github.com/rapyuta-robotics/io_tutorials
@@ -232,27 +244,31 @@ To add _Command Center_ package, follow the steps:
    package, its version, whether it is a singleton package, and a
    short description.
    1. In the **Package Name** box, type in the name for the package
-      say _Command Center_
+      say `Command Center`
    2. In the **Package Version** box, enter the version of the package.
       The default value is _1.0.0_
    3. Ensure **Is singleton package** checkbox is not selected.
    4. Ensure **Is bindable package** is selected.
    5. In the **Description** box, enter a short description of the package such
-      as _Command Center_ is responsible for communication between
-      _User Interface_ and _Turtle_
+      as `Command Center is responsible for communication between
+      User Interface and Turtle`
    6. Click **NEXT**.
 3. In the **Component Name** box, enter a name for the component
-   say *command_center*    
-   The name of a component must consist of alphabets [A-Z, a-z], digits
-   [0-9] and _ character, and must not start with a digit.
+   say `command_center`   
+{{% notice info %}}
+The name of a component must consist of alphabets [A-Z, a-z], digits
+[0-9] and _ character, and must not start with a digit.
+{{% /notice %}}
 4. Select **Cloud** for the **Component Runtime**.
 5. Ensure **Is ROS Component** checkbox is selected.
 6. Set the value of **Replicas to run the component** to a number greater
    than 1 (default value) if you require to do so.
 7. In the **Executable Name** box, type in a name for the executable
-   say _ccexecutable_    
-   The name of an executable must consist of alphabets [A-Z, a-z],
-   digits [0-9] and _ character, and must not start with a digit.
+   say `ccexecutable`
+{{% notice info %}}
+The name of an executable must consist of alphabets [A-Z, a-z],
+digits [0-9] and _ character, and must not start with a digit.
+{{% /notice %}}
 8. For **Executable type**, click **Git**.
 9. In the **Git Repository** box, enter the url address of the git repository:      https://github.com/rapyuta-robotics/io_tutorials
 10. In the **Command to run in the docker container** box, enter the command:
@@ -267,11 +283,11 @@ To add _Command Center_ package, follow the steps:
 11. You must expose a communication network endpoint for
     publicly accessing _Command Center_.
     1. Click **Add endpoint**.
-    2. In the **Endpoint Name** box, enter *WS_ROSBRIDGE*
+    2. In the **Endpoint Name** box, enter `WS_ROSBRIDGE`
     3. Make **Exposed externally** checkbox is selected.
     4. Click **HTTPS/WSS** under **Protocol**.
     5. The value of **Port** is automatically set to _443_ because the Protocol is HTTPS/WSS.
-    6. In the **Target Port** box, type in _9090_
+    6. In the **Target Port** box, type in `9090`
 12. To add a ROS topic, click **Add ROS topic** > enter `/cmd_vel` in the **Name** box > click **Low** for **QoS**.
 13. To add a ROS service, click **Add ROS service** > enter `/register_turtle` in the **Name** box.
 14. The environment variables: *WS_ADDR* and *WS_PORT*, defined in the ROS launch
@@ -280,12 +296,12 @@ To add _Command Center_ package, follow the steps:
     during the process of deploying the *command_center* component.
     To add *WS_ADDR* as configuration parameter, follow the steps:
     1. Under **CONFIGURATION PARAMETERS**, click **Add Parameter**.
-    2. In the **Name** box, enter *WS_ADDR*
-    3. In the **Default** value box, type in _0.0.0.0_
-    4. In the **Description** box, type in _WebSocket Address_
+    2. In the **Name** box, enter `WS_ADDR`
+    3. In the **Default** value box, type in `0.0.0.0`
+    4. In the **Description** box, type in `WebSocket Address`
     5. Deselect **This parameter is exposed externally** checkbox.    
-    Similarly, add *WS_PORT* configuration parameter. Set **Name** as *WS_PORT* and
-    **Default** value to _9090_, and describe it as _WebSocket Port_.
+    Similarly, add *WS_PORT* configuration parameter. Set **Name** as `WS_PORT` and
+    **Default** value to `9090`, and describe it as `WebSocket Port`.
 15. Click **NEXT** to move to **Additional Information** page.
 16. The _Command Center_ is responsible for coordination among the _Turtles_.
     The inbound ROS interfaces help recognise ROS topics, services and
@@ -353,7 +369,7 @@ any other deployment, follow the steps:
 
 1. Click **CATALOG** > select _Simulator_ package > click **Deploy package**.
 2. In the **Name of the deployment** box, type in a name for the deployment
-   you are creating say _SIMULATOR deployment_
+   you are creating say `SIMULATOR deployment`
 3. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the deployment **Details** page where a green progress
@@ -367,7 +383,7 @@ To deploy the _Command Center_ package, follow the steps:
 
 1. click **CATALOG**  >  select **COMMAND CENTER** package  >  click **Deploy package**.
 2. In the **Name of deployment** box, enter a name for the deployment say
-   _COMMAND CENTER deployment_
+   `COMMAND CENTER deployment`
 3. Ensure that the value of **WS_ADDR** is **0.0.0.0** and **WS_PORT** is **9090**
 4. Under **DEPENDENT DEPLOYMENTS**, click **Add dependency**  >  select the Simulator's
    deployment ID from the dropdown list.
@@ -386,7 +402,7 @@ _User Interface_ is based on that of _Command Center_.
 
 The procedure to deploy the _User Interface_ package is the same as deploying
 the _Command Center_ package. However, provide a different name for the deployment
-say _USER INTERFACE deployment_. To add a dependent deployment, click **Add dependency**
+say `USER INTERFACE deployment` To add a dependent deployment, click **Add dependency**
 and select the **COMMAND CENTER deployment** ID from the drop-down list.
 Click **CREATE DEPLOYMENT**  >  **Confirm**.
 
@@ -407,7 +423,7 @@ The procedure for deploying the _Turtle_ package is similar to that of any
 package whose deployment depends on another deployments. A deployment of
 _Turtle_ depends on the running deployments of the _Command Center_ and the
 _Simulator_, that is **COMMAND CENTER deployment** and **SIMULATOR deployment**.
-You may provide a name for the deployment say _TURTLE deployment_.
+You may provide a name for the deployment say `TURTLE deployment`
 To add multiple dependent deployments, click **Add dependency** and select the
 desired deployment ID for each dependent deployment.
 
