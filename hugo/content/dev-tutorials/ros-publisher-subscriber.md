@@ -55,7 +55,7 @@ your catkin workspace as you like and ensure that you replace all occurrences to
 `~/catkin_ws/` with your workspace name.
 {{% /notice %}}
 
-You need to execute the below commands (perhaps, as _root user_) at the device's terminal prompt.
+You need to execute the below commands at the device's terminal prompt.
 ```bash
 cd $HOME
 ```
@@ -112,8 +112,7 @@ and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}
 	2. For **Component Runtime**, click **Cloud**.
 	3. Ensure **Is ROS Component** is selected.
-	4. Set the value of **Replicas to run the component** to a number greater than
-	1 (default value) if you require to do so.
+	4. Set the value of **Replicas to run the component** to the number 1 (default value).
 	5. In the **Executable Name** box, enter a name for the executable say
 	   `talkerExecutable`
 {{% notice info %}}
