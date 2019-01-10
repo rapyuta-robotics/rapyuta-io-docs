@@ -114,9 +114,6 @@ the workspace:
 ```bash
 catkin_make -DCATKIN_WHITELIST_PACKAGES="talker"
 ```
-```bash
-source ~/catkin_ws/devel/setup.bash
-```
 
 ## Add Publisher Device
 
@@ -195,9 +192,6 @@ To build the source code in the catkin workspace, execute the below commands in 
 the workspace:
 ```bash
 catkin_make -DCATKIN_WHITELIST_PACKAGES="listener"
-```
-```bash
-source ~/catkin_ws/devel/setup.bash
 ```
 
 ## Add Subscriber Device
@@ -284,8 +278,8 @@ and underscore _ character, and must not begin with a digit.
    	roslaunch talker talker.launch
    	```
 
-	Ensure you always execute `roslaunch` command to explicitly start the
-    [ROS Master](http://wiki.ros.org/Master) instead of running the `rosrun` command,
+	Ensure you always execute *roslaunch* command to explicitly start the
+    [ROS Master](http://wiki.ros.org/Master) instead of running the *rosrun* command,
     because the ROS Master will fail to start on _rosrun_, and eventually, the
     deployment will fail as well.
 9. To add a ROS topic, click **Add ROS topic**. In the **Name** box, enter `/telemetry`
@@ -325,8 +319,8 @@ and underscore _ character, and must not begin with a digit.
 	roslaunch listener listener.launch
 	```
 
-	Ensure you always execute `roslaunch` command to explicitly start the
-	[ROS Master](http://wiki.ros.org/Master) instead of running the `rosrun`
+	Ensure you always execute *roslaunch* command to explicitly start the
+	[ROS Master](http://wiki.ros.org/Master) instead of running the *rosrun*
 	command, because the ROS Master will fail to start on _rosrun_, and
 	eventually, the deployment will fail as well.
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.

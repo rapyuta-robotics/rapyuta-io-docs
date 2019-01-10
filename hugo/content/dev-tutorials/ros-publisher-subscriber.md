@@ -68,6 +68,9 @@ cd catkin_ws/src
 ```bash
 git clone https://github.com/rapyuta/io_tutorials
 ```
+```
+source /opt/ros/kinetic/setup.bash
+```
 ```bash
 cd ..
 ```
@@ -75,9 +78,6 @@ To build the source code in the catkin workspace, execute the below commands in 
 the workspace:
 ```bash
 catkin_make -DCATKIN_WHITELIST_PACKAGES="listener"
-```
-```bash
-source ~/catkin_ws/devel/setup.bash
 ```
 
 ## Setting up your device
@@ -125,15 +125,15 @@ and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 	6. For **Executable Type**, click **Git**.
 	7. In the **Git repository** box, enter the url address:
-	   https://github.com/rapyuta/io_tutorials
+	   `https://github.com/rapyuta/io_tutorials`
 	8. In the **Command to run in the docker container** box, enter the command:
 	   	```bash
 	   	roslaunch talker talker.launch
 	   	```
 
-	   	Ensure you always execute the command `roslaunch` to explicitly start the
-	   	[ROS Master](https://wiki.ros.org/Master) instead of running the `rosrun`
-	   	command, because the ROS Master will fail to start on _rosrun_, and
+	   	Ensure you always execute the command *roslaunch* to explicitly start the
+	   	[ROS Master](https://wiki.ros.org/Master) instead of running the *rosrun*
+	   	command, because the ROS Master will fail to start on *rosrun*, and
 	   	eventually, the deployment will fail as well.
 	   ![talkerExecutable](/images/tutorials/ros-pub-sub/ros-pubsub-talker-exec-details.png?classes=border,shadow&width=50pc)
 	9. The _talkerExecutable_ publishes a ROS topic, `/telemetry`    
@@ -160,9 +160,9 @@ and an underscore _ character, and must not begin with a digit.
 		roslaunch listener listener.launch
 	   	```
 
-	   	Ensure you always execute the command `roslaunch` to explicitly start the
-	   	[ROS Master](https://wiki.ros.org/Master) instead of running the `rosrun`
-	   	command, because the ROS Master will fail to start on _rosrun_, and
+	   	Ensure you always execute the command *roslaunch* to explicitly start the
+	   	[ROS Master](https://wiki.ros.org/Master) instead of running the *rosrun*
+	   	command, because the ROS Master will fail to start on *rosrun*, and
 	   	eventually, the deployment will fail as well.
 	   ![listenerExecutable](/images/tutorials/ros-pub-sub/ros-pubsub-listener-exec.png?classes=border,shadow&width=50pc)
 	8. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
@@ -206,10 +206,10 @@ coloured bar moves to **Succeeded** and **Status:Running** point indicating that
 You may also analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs)
 to check if everything is working OK by clicking on **Logs** tab.
 
-The **listener-listenerExecutable** will be streaming *`/listener I heard hello_world`* logs.
+The **listener-listenerExecutable** will be streaming */listener I heard hello_world* logs.
 
 ![ROS Subscriber logs](/images/tutorials/ros-pub-sub/listener-logs.png?classes=border,shadow&width=50pc)
 
-while **talker-talkerExecutable** will be publishing *`hello_world`* logs.
+while **talker-talkerExecutable** will be publishing *hello_world* logs.
 
 ![ROS Publisher logs](/images/tutorials/ros-pub-sub/talker-logs.png?classes=border,shadow&width=50pc)
