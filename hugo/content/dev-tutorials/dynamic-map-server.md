@@ -44,7 +44,7 @@ It will take nearly about 30 minutes to finish the tutorial.
 You will add and deploy the _dynamic-map-server_ package. The package offers a
 navigation map to other deployments that depend on it. It is a modified version
 of the original map_server package. Besides exposing ROS topics such as `/map`
-and `/map_metadata`, it also exposes an additional service called `/set_map`,
+and */map_metadata*, it also exposes an additional service called */set_map*,
 which replaces the map published by `/map` topic.
 
 ## Create dynamic_map_server package
@@ -67,17 +67,16 @@ Package version must follow semantic versioning specification.
 4. In the **Component Name** box, enter a name for the component say
    `DynamicMapServer`
 {{% notice info %}}     
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9] and
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen - and
 underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 5. Select **Cloud** for **Component Runtime**.
 6. Ensure **Is ROS Component** is selected.
-7. Set the value of **Replicas to run the component** to a number greater than 1
-   (default value) if you require to do so.
+7. Set the value of **Replicas to run the component** to number 1 (default value).
 8. In the **Executable Name** box, type in a name for the executable say
    `dmsexecutable`  
 {{% notice info %}} 
-The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9] and
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hypen - and
 underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 9. Select **Git** for **Executable Type**.
@@ -88,8 +87,8 @@ https://github.com/rapyuta/io_tutorials
 	roslaunch dynamic_map_server map_server.launch
 	```
 	
-	Ensure you always execute `roslaunch` command to explicitly start the
-	[ROS Master](http://wiki.ros.org/Master) instead of running the `rosrun`
+	Ensure you always execute *roslaunch* command to explicitly start the
+	[ROS Master](http://wiki.ros.org/Master) instead of running the *rosrun*
 	command, because the ROS Master will fail to start on _rosrun_, and
 	eventually, the deployment will fail as well.
 
@@ -101,7 +100,7 @@ https://github.com/rapyuta/io_tutorials
     `/set_map`
 14. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-The package takes about five minutes to build the source code in the git
+The package takes about five minutes to build the source code in the *io_tutorials*
 repository into a running container. You may view the corresponding
 [build logs](/core-concepts/logging/build-logs), which help in debugging failing builds.
 
@@ -136,8 +135,8 @@ If you are using a Raspberry PI as the device, learn
 If you are using a UP Board as the device, learn
 [how to prepare it](/getting-started/prepare-up-board).
 
-If you are using custom rapyuta.io image on the device, the catkin workspace is
-created, the io_tutorials repository is present in the workspace, and the
+If you are using custom rapyuta.io image on the device, the catkin workspace is already
+created, the *io_tutorials* repository is already present in the workspace. Moreover, the
 source code is built for you.
 
 If you are using either a computer with ROS installed on it or any device other
@@ -145,12 +144,12 @@ than Raspberry PI or a Raspberry PI without custom rapyuta.io image, you will
 create a catkin workspace and get the *io_tutorials* repository into the workspace.
 
 {{% notice note %}}
-In this tutorial, the catkin workspace is `catkin_ws/src`, but you may choose to name
+In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name
 your catkin workspace as you like and ensure that you replace all occurrences to
-`catkin_ws` with your workspace name.
+`~/catkin_ws/` with your workspace name.
 {{% /notice %}}
 
-You need to execute the below commands (perhaps, as _root user_) at the device's terminal prompt.
+Hence, to create a catkin workspace on the device, you have to execute the below commands at the device's terminal prompt.
 ```bash
 cd $HOME
 ```
@@ -163,20 +162,20 @@ cd catkin_ws/src
 ```bash
 git clone https://github.com/rapyuta/io_tutorials
 ```
-To build the source code in the catkin workspace, execute the below commands in the root of
-the workspace:
+```bash
+source /opt/ros/kinetic/setup.bash
+```
 ```bash
 cd ..
 ```
+To build the source code in the catkin workspace, execute the below commands in the root of
+the workspace:
 ```bash
 catkin_make -DCATKIN_WHITELIST_PACKAGES="map_listener"
 ```
-```bash
-source ~/catkin_ws/devel/setup.bash
-```
 And then, you will [add the device](/getting-started/add-new-device)
-to rapyuta.io using the console. Ensure that **Use docker compose as default runtime**
-checkbox is not selected.
+to rapyuta.io using the [console](https://closed-beta.rapyuta.io). Ensure that **Use docker compose as default runtime**
+checkbox is **_not selected_**.
 
 ### Create map_listener package
 You will create *map_listener* package, which will be deployed on the device.
@@ -188,8 +187,7 @@ To create the package, follow the instructions:
    description.
 	1. In the **Package Name** box, enter a name for the package say `map_listener`
 	2. In the **Package Version** box, enter the version of the package. By default,
-		the version is set to _1.0.0_    
-		Package version must follow semantic versioning specification.
+		the version is set to _1.0.0_
 	3. Ensure **Is singleton package** is not selected.
 	4. Make sure **Is a bindable package** is selected.
 	4. In the **Description** box, provide a brief summary of the package say
@@ -206,8 +204,8 @@ To create the package, follow the instructions:
 	roslaunch map_listener listener.launch
 	```
 
-	Ensure you always execute the `roslaunch` command to explicitly start the [ROS
-	Master](http://wiki.ros.org/Master) instead of running the `rosrun` command,
+	Ensure you always execute the *roslaunch* command to explicitly start the [ROS
+	Master](http://wiki.ros.org/Master) instead of running the *rosrun* command,
 	because the ROS Master will fail to start on *rosrun* command, and
 	eventually, the deployment will fail as well.
 	![map_listener_executable](/images/tutorials/dms/maplistener_exec_details.png?classes=border,shadow&width=50pc)
@@ -245,8 +243,8 @@ sudo tail /root/.ros/log/latest/map_listener-2.log
 ```
 
 Sometimes *map_listener* stores the map data in *map_listener-1.log* file. Therefore,
-you are recommended to check all the files of the form *map_listener-n.log*
-where n is a positive integer, if any file is empty.
+you are recommended to check all the files of the form ***map_listener-n.log***
+where **_n_** is a positive integer, if any file is empty.
 
 You should see a similar output as shown below after executing the above command:
 
@@ -262,14 +260,46 @@ In the device's terminal window, execute the command:
 sudo tail -f /root/.ros/log/latest/rosout.log
 ```
 
-Open another terminal window, and run the below commands in sequence:
+Open another terminal window, and run the command:
 
 ```bash
 source ~/catkin_ws/devel/setup.bash
 ```
+To pass a service argument to */set_map*, ensure you press the tab key (more than twice) before executing the below command:
 ```bash
-rosservice call /set_map
+rosservice call /set_map "map:
+  header:
+    seq: 0
+    stamp:
+      secs: 0
+      nsecs: 0
+    frame_id: ''
+  info:
+    map_load_time: {secs: 0, nsecs: 0}
+    resolution: 0.0
+    width: 0
+    height: 0
+    origin:
+      position: {x: 0.0, y: 0.0, z: 0.0}
+      orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
+  data: [0]
+initial_pose:
+  header:
+    seq: 0
+    stamp: {secs: 0, nsecs: 0}
+    frame_id: ''
+  pose:
+    pose:
+      position: {x: 0.0, y: 0.0, z: 0.0}
+      orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
+    covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
 ```
 
 In the former terminal window, you should see that the *map_listener* will
-receive a new map.
+receive a new map. The result may appear as shown below:
+```bash
+... INFO [listener.py:7(callback) [topics: /rosout, /map] Received map data
+... INFO [listener.py:11(callback) [topics: /rosout, /map] Read a 0 X 0 map @ 0.0 m/cell
+```
