@@ -156,7 +156,7 @@ follow the steps:
    drop-down list.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You are redirected to the deployment's **Details** page where a green coloured bar
+You will be redirected to the newly created deployment's **Details** page where a green coloured bar
 moves from **In progress** to **Succeeded** with **Status:Running** indicating that
 the **DEPLOYMENT PHASE** has **Succeeded** and the **STATUS** is **Running**.
 
@@ -165,10 +165,10 @@ to check if everything is working OK.
 
 ![Docker Publisher Subscriber Deployment](/images/tutorials/docker-pub-sub/docker-pubsub-deployment.png?classes=border,shadow&width=50pc)
 
-The **listener-listenerExecutable** will be streaming *`/listener I heard hello_world`* logs.
+The **listener-listenerExecutable** will be streaming */listener I heard hello_world* logs.
 
-![ROS Subscriber logs](/images/tutorials/ros-pub-sub/listener-logs.png?classes=border,shadow&width=50pc)
+![ROS Subscriber logs](/images/tutorials/docker-pub-sub/listener-logs.png?classes=border,shadow&width=50pc)
 
-while **talker-talkerExecutable** will be publishing *`hello_world`* logs.
+while **talker-talkerExecutable** will be publishing *hello_world* logs.
 
-![ROS Publisher logs](/images/tutorials/ros-pub-sub/talker-logs.png?classes=border,shadow&width=50pc)
+![ROS Publisher logs](/images/tutorials/docker-pub-sub/talker-logs.png?classes=border,shadow&width=50pc)
