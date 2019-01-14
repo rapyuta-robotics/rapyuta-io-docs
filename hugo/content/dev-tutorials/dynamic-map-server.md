@@ -81,7 +81,7 @@ underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 9. Select **Git** for **Executable Type**.
 10. In the **Git Repository** box, enter the git repository url:
-https://github.com/rapyuta/io_tutorials
+`https://github.com/rapyuta/io_tutorials`
 11. In the **Command to run in the docker container** box, copy and paste the command:
 	```bash
 	roslaunch dynamic_map_server map_server.launch
@@ -171,8 +171,19 @@ cd ..
 To build the source code in the catkin workspace, execute the below commands in the root of
 the workspace:
 ```bash
-catkin_make -DCATKIN_WHITELIST_PACKAGES="map_listener"
+catkin build map_listener
 ```
+{{% notice note %}}
+If you experience an error
+```bash
+catkin:command not found
+```
+then the `python-catkin-tools` package is missing on the device, which is required for executing `catkin build` command. Install the package by running the below command at the terminal:
+```bash
+sudo apt-get install python-catkin-tools
+```
+{{% /notice %}}
+
 And then, you will [add the device](/getting-started/add-new-device)
 to rapyuta.io using the [console](https://closed-beta.rapyuta.io). Ensure that **Use docker compose as default runtime**
 checkbox is **_not selected_**.
