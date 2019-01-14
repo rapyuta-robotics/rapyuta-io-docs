@@ -77,7 +77,7 @@ cd ..
 To build the source code in the catkin workspace, execute the below command in the root of
 the workspace:
 ```bash
-catkin build "listener"
+catkin build listener
 ```
 If you experience an error
 ```bash
