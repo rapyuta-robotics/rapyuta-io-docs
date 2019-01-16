@@ -41,13 +41,12 @@ It will take nearly about 15 minutes to finish the tutorial.
 The tutorial will use Raspberry PI as the device.
 Learn [how to prepare your Raspberry PI](/getting-started/prepare-raspberry-pi)
 
-If you are using custom rapyuta.io image on the device, the catkin workspace is
+If you are using the custom rapyuta.io image on the device, the catkin workspace is
 already created and the *io_tutorials* repository is already present in the workspace.
 Moreover, the source code is already built for you.
 
-If you are using either a computer with ROS installed on it or any device other
-than Raspberry PI or a Raspberry PI without custom rapyuta.io image, you will
-create a catkin workspace and get the *io_tutorials* repository into the workspace.
+If you are using a computer with ROS installed on it as a device, or a Raspberry PI without custom rapyuta.io image, you will
+create a catkin workspace and get the *io_tutorials* repository into that workspace.
 
 {{% notice note %}}
 In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name
@@ -79,14 +78,11 @@ the workspace:
 ```bash
 catkin build listener
 ```
-If you experience an error
-```bash
-catkin:command not found
-```
-then the `python-catkin-tools` package is missing on the device, which is required for executing `catkin build` command. Install the package by running the below command at the terminal:
-```bash
-sudo apt-get install python-catkin-tools
-```
+{{% notice note %}}
+If you experience an error ***catkin:command not found***
+then the *python-catkin-tools* package is missing on the device, which is required for executing *catkin build* command. Install the package by running `sudo apt-get install python-catkin-tools` at the terminal.
+{{% /notice %}}
+
 ## Setting up your device
 To integrate the device into rapyuta.io using the [console](https://closed-beta.rapyuta.io):
 
@@ -117,18 +113,17 @@ The package has two components: the **talker** running on the cloud and the
 1. Talker component (aka _ROS publisher_)
 	1. In the **Component Name** box, enter a name for the component say `talker`
 {{% notice info %}}
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen - 
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - 
 and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}
 	1. For **Component Runtime**, click **Cloud**.
 	2. Ensure **Is ROS Component** is selected.
-	3. Set the value of **Replicas to run the component** the number 1 (default value).
-	4. In the **Executable Name** box, enter a name for the executable say
-	   `talkerExecutable`   
-	{{% notice info %}}
-	The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hypen -
-	and an underscore _ character, and must not start with a digit.
-	{{% /notice %}}
+	3. Set the value of **Replicas to run the component** number 1 (default value).
+	4. In the **Executable Name** box, enter a name for the executable say `talkerExecutable`   
+{{% notice info %}}
+The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen -
+and an underscore _ character, and must not start with a digit.
+{{% /notice %}}
 	6. For **Executable Type**, click **Git**.
 	7. In the **Git repository** box, enter the url address:
 	   `https://github.com/rapyuta/io_tutorials`
@@ -148,17 +143,16 @@ and an underscore _ character. It must not begin with a digit.
 2. Listener component (aka _ROS subscriber_)
 	1. In the **Component Name** box, type in a name for the component say `listener` 
 {{% notice info %}}
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -
 and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 	2. For **Component Runtime**, click **Device**.
 	3. Ensure **Is ROS Component** is selected.
-	5. In the **Executable Name** box, type in a name for the executable say
-	   `listenerExecutable`  
-	{{% notice info %}}
-	The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
-    and an underscore _ character, and must not begin with a digit.
-	{{% /notice %}}
+	5. In the **Executable Name** box, type in a name for the executable say `listenerExecutable`  
+{{% notice info %}}
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -
+and an underscore _ character, and must not begin with a digit.
+{{% /notice %}}
 	6. Since the _ROS subscriber_ is already installed on the device, select
 	   **Default** as **Executable Type**.
 	7. In the **Command to run in the docker container** box, enter the command:
@@ -211,9 +205,9 @@ coloured bar moves to **Succeeded** and **Status:Running** point indicating that
 You may also analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs)
 to check if everything is working OK by clicking on **Logs** tab.
 
-The **listener-listenerExecutable** will be streaming */listener I heard hello_world* logs.
+The **listener-listenerExecutable** will be streaming ***/listener I heard hello_world*** logs.
 
 ![ROS Subscriber Logs](/images/tutorials/ros-pub-sub/listener-logs.png?classes=border,shadow&width=50pc)
 
-while **talker-talkerExecutable** will be publishing *hello_world* logs.
+while **talker-talkerExecutable** will be publishing ***hello_world*** logs.
 ![ROS Publisher Logs](/images/tutorials/ros-pub-sub/talker-logs.png?classes=border,shadow&width=50pc)
