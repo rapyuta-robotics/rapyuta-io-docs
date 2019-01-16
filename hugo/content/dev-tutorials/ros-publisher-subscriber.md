@@ -42,10 +42,10 @@ The tutorial will use Raspberry PI as the device.
 Learn [how to prepare your Raspberry PI](/getting-started/prepare-raspberry-pi)
 
 If you are using the custom rapyuta.io image on the device, the catkin workspace is
-already created and the *io_tutorials* repository is already present in the workspace.
+already created for you and the *io_tutorials* repository is already present in the workspace.
 Moreover, the source code is already built for you.
 
-If you are using a computer with ROS installed on it as a device, or a Raspberry PI without custom rapyuta.io image, you will
+If your device is a computer with ROS installed on it, or a Raspberry PI without custom rapyuta.io image, you will
 create a catkin workspace and get the *io_tutorials* repository into that workspace.
 
 {{% notice note %}}
@@ -54,7 +54,7 @@ your catkin workspace as you like and ensure that you replace all occurrences to
 `~/catkin_ws/` with your workspace name.
 {{% /notice %}}
 
-Hence, to create a catkin workspace, you have to execute the below commands at the device's terminal prompt.
+Hence, to create a catkin workspace, you have to execute the below commands at the device terminal.
 ```bash
 cd $HOME
 ```
