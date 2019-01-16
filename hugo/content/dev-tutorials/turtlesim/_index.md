@@ -80,7 +80,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 4. Select **Cloud** as the **Component Runtime**.
-5. Select **Is ROS Component**.
+5. Ensure **Is ROS Component** is selected.
 6. Set **Replicas to run the component** to number 1 (default value).
 7. In the **Executable Name** box, type in a name for the executable. For example,
    `turtle_executable`       
@@ -193,8 +193,8 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 4. Select **Cloud** for **Component Runtime**.
-5. Select **Is ROS Component** checkbox.
-6. Set the value of **Replicas to run the component** to a number greater 1 (default value).
+5. Ensure **Is ROS Component** is selected.
+6. Set the value of **Replicas to run the component** to number 1 (default value).
 7. In the **Executable Name** box, enter a name for the executable say
    `simulator_executable`   
 {{% notice info %}}
@@ -218,7 +218,7 @@ and an underscore _ character, and must not start with a digit.
 12. To add another ROS topic, `/sim/sensors`, click **Add ROS topic** again.
     In the **Name** box, type in `/sim/sensors` and select **Low** for **QoS**.    
 {{% notice info %}}
-The value of QoS is set to Low because it is not necessary to guarantee
+The value of **QoS** is set to **Low** because it is not necessary to guarantee
 the delivery of each topic. Instead it is essential to receive the most
 recent message at the expense of losing some information.
 {{% /notice %}}
@@ -259,7 +259,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits
 [0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 4. Select **Cloud** for the **Component Runtime**.
-5. Ensure **Is ROS Component** checkbox is selected.
+5. Ensure **Is ROS Component** is selected.
 6. Set the value of **Replicas to run the component** to number 1 (default value).
 7. In the **Executable Name** box, type in a name for the executable
    say `ccexecutable`
@@ -276,7 +276,7 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
 
     Ensure you always execute the *roslaunch* command to explicitly start
     the ROS Master. However, it's not recommended to run the
-    *rosrun* command because the ROS Master will fail to start, and thus the
+    *rosrun* command because the [ROS Master](http://wiki.ros.org/Master) will fail to start, and thus the
     deployment fails.
 11. You must expose a communication network endpoint for
     publicly accessing _Command Center_.
@@ -297,7 +297,7 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
     2. In the **Name** box, enter `WS_ADDR`
     3. In the **Default** value box, type in `0.0.0.0`
     4. In the **Description** box, type in `WebSocket Address`
-    5. Deselect **This parameter is exposed externally** checkbox.    
+    5. Ensure **This parameter is exposed externally** is not selected.    
     Similarly, add *WS_PORT* configuration parameter. Set **Name** as `WS_PORT` and
     **Default** value to `9090`, and describe it as `WebSocket Port`.
 15. Click **NEXT** to move to **Additional Information** page.
