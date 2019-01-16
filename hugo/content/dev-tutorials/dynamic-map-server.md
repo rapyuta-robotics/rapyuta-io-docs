@@ -43,9 +43,9 @@ It will take nearly about 30 minutes to finish the tutorial.
 
 You will add and deploy the _dynamic-map-server_ package. The package offers a
 navigation map to other deployments that depend on it. It is a modified version
-of the original map_server package. Besides exposing ROS topics such as `/map`
+of the original map_server package. Besides exposing ROS topics such as */map*
 and */map_metadata*, it also exposes an additional service called */set_map*,
-which replaces the map published by `/map` topic.
+which replaces the map published by */map* topic.
 
 ## Create dynamic_map_server package
 1. On the left navigation bar, click **CATALOG**.
@@ -55,10 +55,7 @@ package, its version, whether it is a singleton package, and a short description
 	1. In the **Package Name** box, type in the name of the package say
 	   `dynamic_map_server`
 	2. In the **Package Version** box, type in the version of the package. By
-	   default, the version is set to _1.0.0_ 
-{{% notice info %}}   
-Package version must follow semantic versioning specification.
-{{% /notice %}}
+	   default, the version is set to _1.0.0_
 	3. Ensure **Is a singleton package** checkbox is not selected.
 	4. Make sure **Is a bindable package** checkbox is selected.
 	5. In the **Description** box, provide a brief summary of the package, for
@@ -67,7 +64,7 @@ Package version must follow semantic versioning specification.
 4. In the **Component Name** box, enter a name for the component say
    `DynamicMapServer`
 {{% notice info %}}     
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen - and
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and
 underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 5. Select **Cloud** for **Component Runtime**.
@@ -76,7 +73,7 @@ underscore _ character, and must not begin with a digit.
 8. In the **Executable Name** box, type in a name for the executable say
    `dmsexecutable`  
 {{% notice info %}} 
-The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hypen - and
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and
 underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 9. Select **Git** for **Executable Type**.
@@ -87,7 +84,7 @@ underscore _ character, and must not begin with a digit.
 	roslaunch dynamic_map_server map_server.launch
 	```
 	
-	Ensure you always execute *roslaunch* command to explicitly start the
+	Ensure you always execute the *roslaunch* command to explicitly start the
 	[ROS Master](http://wiki.ros.org/Master) instead of running the *rosrun*
 	command, because the ROS Master will fail to start on _rosrun_, and
 	eventually, the deployment will fail as well.
@@ -136,11 +133,11 @@ If you are using a UP Board as the device, learn
 [how to prepare it](/getting-started/prepare-up-board).
 
 If you are using custom rapyuta.io image on the device, the catkin workspace is already
-created, the *io_tutorials* repository is already present in the workspace. Moreover, the
+created, and the *io_tutorials* repository is already present in the workspace. Moreover, the
 source code is built for you.
 
-If you are using either a computer with ROS installed on it or any device other
-than Raspberry PI or a Raspberry PI without custom rapyuta.io image, you will
+If you are using either a computer with ROS installed on it, or any device other
+than Raspberry PI, or a Raspberry PI without custom rapyuta.io image, you will
 create a catkin workspace and get the *io_tutorials* repository into the workspace.
 
 {{% notice note %}}
@@ -149,7 +146,7 @@ your catkin workspace as you like and ensure that you replace all occurrences to
 `~/catkin_ws/` with your workspace name.
 {{% /notice %}}
 
-Hence, to create a catkin workspace on the device, you have to execute the below commands at the device's terminal prompt.
+Hence, to create a catkin workspace on the device, you have to execute the below commands at the device terminal.
 ```bash
 cd $HOME
 ```
@@ -168,20 +165,14 @@ source /opt/ros/kinetic/setup.bash
 ```bash
 cd ..
 ```
-To build the source code in the catkin workspace, execute the below commands in the root of
+To build the source code in the catkin workspace, execute the below command in the root of
 the workspace:
 ```bash
 catkin build map_listener
 ```
 {{% notice note %}}
-If you experience an error
-```bash
-catkin:command not found
-```
-then the `python-catkin-tools` package is missing on the device, which is required for executing `catkin build` command. Install the package by running the below command at the terminal:
-```bash
-sudo apt-get install python-catkin-tools
-```
+If you experience the error ***catkin:command not found***,
+then the *python-catkin-tools* package is missing on the device, which is required for executing *catkin build* command. Install the package by running the command `sudo apt-get install python-catkin-tools` at the device terminal.
 {{% /notice %}}
 
 And then, you will [add the device](/getting-started/add-new-device)
