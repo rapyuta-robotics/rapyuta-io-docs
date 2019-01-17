@@ -8,7 +8,7 @@ weight: 420
 ---
 Complex robotic applications involving multi-device communication with service
 distributed across WAN can be latent. This tutorial demonstrates how to have
-multi-device communication within same internet.
+multi-device communication within same LAN.
 
 ## Learning objectives
 This tutorial will show how to deploy a broker package locally for inter
@@ -76,23 +76,24 @@ Moreover, the [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tuto
 are also installed on these custom images.
 {{% /notice %}}
 
+{{% notice info%}}
 Learn how to [prepare Raspberry PI](/getting-started/prepare-raspberry-pi)
+{{% /notice %}}
 
 If you are using custom rapyuta.io image on the device, the catkin workspace is
-created, the io_tutorials repository is present in the workspace, and the
-source code is built for you.
+already set up, the io_tutorials repository is already downloaded in the workspace, and the
+source code is already built for you.
 
-If you are using either a computer with ROS installed on it or any device other
-than Raspberry PI or a Raspberry PI without custom rapyuta.io image, you will
+If you are using either a computer with ROS installed on it, or a Raspberry PI without custom rapyuta.io image, you will
 create a catkin workspace and get the *io_tutorials* repository into the workspace.
 
 {{% notice note %}}
-In this tutorial, the catkin workspace is `catkin_ws/src`, but you may choose to name
+In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name
 your catkin workspace as you like and ensure that you replace all occurrences to
-`catkin_ws` with your workspace name.
+`~/catkin_ws/` with your workspace name.
 {{% /notice %}}
 
-You need to execute the below commands (perhaps, as _root user_) at the device's terminal prompt.
+You need to execute the below commands at the device's terminal prompt.
 
 ```bash
 cd $HOME
@@ -106,17 +107,21 @@ cd catkin_ws/src
 ```bash
 git clone https://github.com/rapyuta/io_tutorials
 ```
-To build the source code in the catkin workspace, execute the below commands in the root of
-the workspace:
-```bash
-cd ..
-```
-```bash
-catkin_make -DCATKIN_WHITELIST_PACKAGES="talker"
-```
 ```bash
 source ~/catkin_ws/devel/setup.bash
 ```
+```bash
+cd ..
+```
+To build the source code in the catkin workspace, execute the below command in the root of
+the workspace:
+```bash
+catkin build talker
+```
+{{% notice note%}}
+If you experience the error ***catkin:command not found***,
+then the *python-catkin-tools* package is missing on the device, which is required for executing *catkin build* command. Install the package by running the command `sudo apt-get install python-catkin-tools` at the device terminal.
+{{% /notice %}}
 
 ## Add Publisher Device
 
@@ -159,23 +164,24 @@ Moreover, the [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tuto
 are also installed on these custom images.
 {{% /notice %}}
 
+{{% notice info %}}
 Learn how to [prepare Raspberry PI](/getting-started/prepare-raspberry-pi)
+{{% /notice %}}
 
 If you are using custom rapyuta.io image on the device, the catkin workspace is
-created, the io_tutorials repository is present in the workspace, and the
+set up, the io_tutorials repository is downloaded in the workspace, and the
 source code is built for you.
 
-If you are using either a computer with ROS installed on it or any device other
-than Raspberry PI or a Raspberry PI without custom rapyuta.io image, you will
+If you are using either a computer with ROS installed on it, or a Raspberry PI without custom rapyuta.io image, you will
 create a catkin workspace and get the *io_tutorials* repository into the workspace.
 
 {{% notice note %}}
-In this tutorial, the catkin workspace is `catkin_ws/src`, but you may choose to name
+In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name
 your catkin workspace as you like and ensure that you replace all occurrences to
-`catkin_ws` with your workspace name.
+`~/catkin_ws/` with your workspace name.
 {{% /notice %}}
 
-You need to execute the below commands (perhaps, as _root user_) at the device's terminal prompt.
+You need to execute the below commands at the device's terminal prompt.
 ```bash
 cd $HOME
 ```
@@ -188,17 +194,21 @@ cd catkin_ws/src
 ```bash
 git clone https://github.com/rapyuta/io_tutorials
 ```
-To build the source code in the catkin workspace, execute the below commands in the root of
-the workspace:
-```bash
-cd ..
-```
-```bash
-catkin_make -DCATKIN_WHITELIST_PACKAGES="listener"
-```
 ```bash
 source ~/catkin_ws/devel/setup.bash
 ```
+```bash
+cd ..
+```
+To build the source code in the catkin workspace, execute the below command in the root of
+the workspace:
+```bash
+catkin build listener
+```
+{{% notice note%}}
+If you experience the error ***catkin:command not found***,
+then the *python-catkin-tools* package is missing on the device, which is required for executing *catkin build* command. Install the package by running the command `sudo apt-get install python-catkin-tools` at the device terminal.
+{{% /notice %}}
 
 ## Add Subscriber Device
 
@@ -276,8 +286,8 @@ so you may debug if the deployment fails.
    	roslaunch talker talker.launch
    	```
 
-	Ensure you always execute `roslaunch` command to explicitly start the
-    [ROS Master](http://wiki.ros.org/Master) instead of running the `rosrun` command,
+	Ensure you always execute *roslaunch* command to explicitly start the
+    [ROS Master](http://wiki.ros.org/Master) instead of running the *rosrun* command,
     because the ROS Master will fail to start on _rosrun_, and eventually, the
     deployment will fail as well.
 9. To add a ROS topic, click **Add ROS topic**. In the **Name** box, enter `/telemetry`
@@ -309,8 +319,8 @@ so you may debug if the deployment fails.
 	roslaunch listener listener.launch
 	```
 
-	Ensure you always execute `roslaunch` command to explicitly start the
-	[ROS Master](http://wiki.ros.org/Master) instead of running the `rosrun`
+	Ensure you always execute *roslaunch* command to explicitly start the
+	[ROS Master](http://wiki.ros.org/Master) instead of running the *rosrun*
 	command, because the ROS Master will fail to start on _rosrun_, and
 	eventually, the deployment will fail as well.
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
