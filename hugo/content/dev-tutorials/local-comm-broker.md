@@ -93,7 +93,7 @@ your catkin workspace as you like and ensure that you replace all occurrences to
 `~/catkin_ws/` with your workspace name.
 {{% /notice %}}
 
-You need to execute the below commands at the device's terminal prompt.
+To create the catkin workspace, you have to execute the below commands at the device's terminal.
 
 ```bash
 cd $HOME
@@ -181,7 +181,7 @@ your catkin workspace as you like and ensure that you replace all occurrences to
 `~/catkin_ws/` with your workspace name.
 {{% /notice %}}
 
-You need to execute the below commands at the device's terminal prompt.
+To create the catkin workspace, you have to execute the below commands at the device's terminal.
 ```bash
 cd $HOME
 ```
