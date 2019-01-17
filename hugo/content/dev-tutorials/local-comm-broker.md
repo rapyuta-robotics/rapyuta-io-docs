@@ -33,7 +33,7 @@ Intermediate
 ## Estimated time
 It will take nearly 20 minutes to finish the tutorial.
 
-
+## Tutorial walkthrough
 
 In this tutorial, you will add three devices namely _Broker Device_,
 _Publisher Device_ and _Subscriber Device_. You will also create and deploy
