@@ -24,6 +24,12 @@ Raspberry PI 2 or 3 with docker compose runtime.
    [Docker image](https://docs.docker.com/v17.09/engine/userguide/storagedriver/imagesandcontainers/)
    concept.
 
+## Difficulty
+Beginner
+
+## Estimated time
+15 minutes
+
 ## Preparing your device
 Learn how to [prepare your Raspberry PI](/getting-started/prepare-raspberry-pi).
 
