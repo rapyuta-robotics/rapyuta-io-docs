@@ -6,15 +6,14 @@ date: 2018-11-15T10:06:24+05:30
 pre: "f. "
 weight: 330
 ---
-The tutorial will teach you how to deploy a basic non-ROS package that changes
+The tutorial will teach you how to deploy a basic non-ROS package that will change
 the trigger of the on-board LED (ACT/LED0) on Raspberry PI 2 or 3.
 
 ## Learning objectives
-The objective is to learn how to deploy a basic non-ROS package on a
+The goal is to learn how to deploy a basic non-ROS package on a
 Raspberry PI 2 or 3 with docker compose runtime.
 
 ## Prerequisites
-
 1. Device requirements
 	* You should have access to a computer with an internal connection.
 	* Ensure that the [Google Chrome](https://www.google.com/chrome/) browser
@@ -56,7 +55,7 @@ and an underscore _ character, and must not start with a digit.
 10. Select **arm32v7** as **Architecture**.
 11. In the **Executable Name** box, type in a name for the executable say `led_trigger_executable`
 {{% notice info %}}
-The name of a executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -
 and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 12. Click **Docker** for **Executable Type** as the executable is a docker image.
