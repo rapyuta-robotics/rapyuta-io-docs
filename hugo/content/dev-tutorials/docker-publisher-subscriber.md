@@ -76,8 +76,7 @@ and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}
 	2. For **Component Runtime**, click **Cloud**.
 	3. Ensure **Is ROS Component** is selected.
-	4. Set the value of **Replicas to run the component** to a number greater than
-	   1 (default value) if you require to do so.
+	4. Set the value of **Replicas to run the component** to the number 1 (default value).
 	5. In the **Executable Name** box, enter a name for the executable say
 	   `talkerExecutable`  
 {{% notice info %}}
@@ -86,14 +85,14 @@ and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 	6. For **Executable Type**, click **Git**.
 	7. In the **Git repository** box, enter the url address:
-	https://github.com/rapyuta/io_tutorials
+	`https://github.com/rapyuta/io_tutorials`
 	8. In the **Command to run in the docker container** box, enter the command:
 		```bash
 		roslaunch talker talker.launch
 		```
 
-		Ensure you always execute the command `roslaunch` to explicitly start the
-		[ROS Master](https://wiki.ros.org/Master) instead of running the `rosrun`
+		Ensure you always execute the command *roslaunch* to explicitly start the
+		[ROS Master](https://wiki.ros.org/Master) instead of running the *rosrun*
 		command, because the ROS Master will fail to start on _rosrun_, and
 		eventually, the deployment will fail as well.
 		![talkerExecutable](/images/tutorials/docker-pub-sub/docker-pubsub-talker-exec.png?classes=border,shadow&width=50pc)
@@ -116,14 +115,14 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 	7. For **Executable Type**, select **Git**.
-	8. In the **Git repository** box, enter the url address: https://github.com/rapyuta/io_tutorials
+	8. In the **Git repository** box, enter the url address: `https://github.com/rapyuta/io_tutorials`
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
 		roslaunch listener listener.launch
 		```
 
-		Ensure you always execute the command `roslaunch` to explicitly start the
-		[ROS Master](https://wiki.ros.org/Master) instead of running the `rosrun`
+		Ensure you always execute the command *roslaunch* to explicitly start the
+		[ROS Master](https://wiki.ros.org/Master) instead of running the *rosrun*
 		command, because the ROS Master will fail to start on _rosrun_, and
 		eventually, the deployment will fail as well.
 		![listenerExecutable](/images/tutorials/docker-pub-sub/docker-pubsub-listener-exec.png?classes=border,shadow&width=50pc)
@@ -157,7 +156,7 @@ follow the steps:
    drop-down list.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You are redirected to the deployment's **Details** page where a green coloured bar
+You will be redirected to the newly created deployment's **Details** page where a green coloured bar
 moves from **In progress** to **Succeeded** with **Status:Running** indicating that
 the **DEPLOYMENT PHASE** has **Succeeded** and the **STATUS** is **Running**.
 
@@ -166,10 +165,10 @@ to check if everything is working OK.
 
 ![Docker Publisher Subscriber Deployment](/images/tutorials/docker-pub-sub/docker-pubsub-deployment.png?classes=border,shadow&width=50pc)
 
-The **listener-listenerExecutable** will be streaming *`/listener I heard hello_world`* logs.
+The **listener-listenerExecutable** will be streaming */listener I heard hello_world* logs.
 
-![ROS Subscriber logs](/images/tutorials/ros-pub-sub/listener-logs.png?classes=border,shadow&width=50pc)
+![ROS Subscriber logs](/images/tutorials/docker-pub-sub/listener-logs.png?classes=border,shadow&width=50pc)
 
-while **talker-talkerExecutable** will be publishing *`hello_world`* logs.
+while **talker-talkerExecutable** will be publishing *hello_world* logs.
 
-![ROS Publisher logs](/images/tutorials/ros-pub-sub/talker-logs.png?classes=border,shadow&width=50pc)
+![ROS Publisher logs](/images/tutorials/docker-pub-sub/talker-logs.png?classes=border,shadow&width=50pc)
