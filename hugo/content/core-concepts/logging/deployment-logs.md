@@ -26,8 +26,7 @@ A tabular listing of buffered deployment logs, where each row consists of a logâ
 its component name and executable name, and its information or message. There are up to 500
 log entries fetched at a time. To view the next 500 entries, you will have to scroll down to
 the end of the table until you see a **Load More** button. If log entries have not been exhausted,
-additional entries are displayed on clicking **Load More**. Otherwise, the error message
-**Unable to fetch logs** is shown.
+additional entries are displayed on clicking **Load More**.
 ![Historical logs table](/images/core-concepts/logging/deployment-logs/historical-logs/tabular-hist-logs.png?classes=border,shadow&width=50pc)
 
 You can select a specific *component-executable* combination to view its corresponding logs.
