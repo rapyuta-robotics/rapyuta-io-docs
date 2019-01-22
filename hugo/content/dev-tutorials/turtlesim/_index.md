@@ -76,30 +76,29 @@ follow the steps:
    6. Click **NEXT**.
 3. In the **Component Name** box, enter a name for the component such as `turtle`      
 {{% notice info %}}
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
-and _ character, and must not start with a digit.
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -
+and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 4. Select **Cloud** as the **Component Runtime**.
-5. Select **Is ROS Component**.
-6. Set **Replicas to run the component** to a number greater than 1 (default value)
-   if you require to do so.
+5. Ensure **Is ROS Component** is selected.
+6. Set **Replicas to run the component** to number 1 (default value).
 7. In the **Executable Name** box, type in a name for the executable. For example,
    `turtle_executable`       
 {{% notice info %}}
-The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
-and _ character, and must not start with a digit.
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - 
+and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 8. Select **Git** for the **Executable Type**.
 9. In the **Git repository** box, enter the url address of the git
-   repository: https://github.com/rapyuta/io_tutorials
+   repository: `https://github.com/rapyuta/io_tutorials`
 10. In the **Command to run in the docker container** box, enter the command:
     ```bash
 	roslaunch io_turtle turtle.launch
     ```
 
-	Ensure you always execute the command `roslaunch` to explicitly start the
+	Ensure you always execute the *roslaunch* command to explicitly start the
 	[ROS Master](http://wiki.ros.org/Master). However, it's not recommended to
-	run the command *rosrun* because the ROS Master will fail to start, and thus,
+	run the *rosrun* command because the ROS Master will fail to start, and thus,
 	the deployment fails.
 11. Add `/pose` ROS topic with low QoS because there is no need to guarantee
     the delivery of each control message. Instead, it is essential to receive
@@ -142,17 +141,16 @@ follow the instructions:
    6. Click **NEXT**.
 3. In the **Component Name** box, enter a name for the component say `user_interface`   
 {{% notice info %}}
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
-and _ character, and must not start with a digit.
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - 
+and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 4. Select **Cloud** for **Component Runtime**.
 5. Deselect **Is ROS Component** because _User Interface_ is a non-ROS package.
-6. Set **Replicas to run the component** to a number greater than 1 (default value)
-   if you require to do so.
+6. Set **Replicas to run the component** to number 1 (default value).
 7. In the **Executable Name** box, enter a name for the executable say `uiexecutable`    
 {{% notice info %}}
-The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
-and _ character, and must not start with a digit.
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - 
+and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 8. Select **Docker** for **Executable Type**.
 9. In the **Docker image** box, enter the address of the docker image that contains
@@ -191,38 +189,39 @@ To add the _Simulator_ package, follow the steps:
    6. Click **NEXT**.
 3. In the **Component Name** box, type in a name for the component say `simulator`  
 {{% notice info %}}
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9]
-and _ character, and must not start with a digit.
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - 
+and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 4. Select **Cloud** for **Component Runtime**.
-5. Select **Is ROS Component** checkbox.
-6. Set the value of **Replicas to run the component** to a number greater than 1
-   (default value) if you require to do so.
+5. Ensure **Is ROS Component** is selected.
+6. Set the value of **Replicas to run the component** to number 1 (default value).
 7. In the **Executable Name** box, enter a name for the executable say
    `simulator_executable`   
 {{% notice info %}}
-The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9]
-and _ character, and must not start with a digit.
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - 
+and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 8. For the **Executable type**, click **Git**.
 9. In the **Git Repository** box, enter the url address of the git repository,
-   that is, https://github.com/rapyuta-robotics/io_tutorials
+   that is, `https://github.com/rapyuta-robotics/io_tutorials`
 10. In the **Command to run in the docker container** box, enter the command:
     ```bash
     roslaunch io_turtle_sim_env simulation.launch
     ```
 
-    Ensure you always execute the command `roslaunch` to explicitly start the
+    Ensure you always execute the *roslaunch* command to explicitly start the
     [ROS Master](http://wiki.ros.org/Master). However, it's not recommended to
-    run the command `rosrun` because the ROS Master will fail to start, and
+    run the *rosrun* command because the ROS Master will fail to start, and
     thus the deployment fails.
 11. To add `/sim/pose` ROS topic, click **Add ROS topic**. In the **Name** box, type in
     `/sim/pose` and select **Low** for **QoS**.
 12. To add another ROS topic, `/sim/sensors`, click **Add ROS topic** again.
     In the **Name** box, type in `/sim/sensors` and select **Low** for **QoS**.    
-    The value of QoS is set to Low because it is not necessary to guarantee
-    the delivery of each topic. Instead it is essential to receive the most
-    recent message at the expense of losing some information.
+{{% notice info %}}
+The value of **QoS** is set to **Low** because it is not necessary to guarantee
+the delivery of each topic. Instead it is essential to receive the most
+recent message at the expense of losing some information.
+{{% /notice %}}
 13. To add a ROS service, click **Add ROS service**. In the **Name** box, enter the
     name of the service `/register_sim_turtle`. Similarly, add another
     ROS service `/teleport_turtle`.
@@ -257,28 +256,27 @@ To add _Command Center_ package, follow the steps:
    say `command_center`   
 {{% notice info %}}
 The name of a component must consist of alphabets [A-Z, a-z], digits
-[0-9] and _ character, and must not start with a digit.
+[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 4. Select **Cloud** for the **Component Runtime**.
-5. Ensure **Is ROS Component** checkbox is selected.
-6. Set the value of **Replicas to run the component** to a number greater
-   than 1 (default value) if you require to do so.
+5. Ensure **Is ROS Component** is selected.
+6. Set the value of **Replicas to run the component** to number 1 (default value).
 7. In the **Executable Name** box, type in a name for the executable
    say `ccexecutable`
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z],
-digits [0-9] and _ character, and must not start with a digit.
+digits [0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 8. For **Executable type**, click **Git**.
-9. In the **Git Repository** box, enter the url address of the git repository:      https://github.com/rapyuta-robotics/io_tutorials
+9. In the **Git Repository** box, enter the url address of the git repository:      `https://github.com/rapyuta-robotics/io_tutorials`
 10. In the **Command to run in the docker container** box, enter the command:
     ```bash
     roslaunch io_turtle_command_center command_center.launch
     ```
 
-    Ensure you always execute the command `roslaunch` to explicitly start
-    the ROS Master. However, it's not recommended to run the command
-    `rosrun` because the ROS Master will fail to start, and thus the
+    Ensure you always execute the *roslaunch* command to explicitly start
+    the ROS Master. However, it's not recommended to run the
+    *rosrun* command because the [ROS Master](http://wiki.ros.org/Master) will fail to start, and thus the
     deployment fails.
 11. You must expose a communication network endpoint for
     publicly accessing _Command Center_.
@@ -299,7 +297,7 @@ digits [0-9] and _ character, and must not start with a digit.
     2. In the **Name** box, enter `WS_ADDR`
     3. In the **Default** value box, type in `0.0.0.0`
     4. In the **Description** box, type in `WebSocket Address`
-    5. Deselect **This parameter is exposed externally** checkbox.    
+    5. Ensure **This parameter is exposed externally** is not selected.    
     Similarly, add *WS_PORT* configuration parameter. Set **Name** as `WS_PORT` and
     **Default** value to `9090`, and describe it as `WebSocket Port`.
 15. Click **NEXT** to move to **Additional Information** page.
