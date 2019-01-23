@@ -15,12 +15,13 @@ number of significant updates in this version that we hope you will like.
   When a device goes into the failed state, the corresponding error code is displayed.
 
 #### Notable Fixes
-* Display network endpoints in non-bindable deployments.
-* Fixes invalid edges that were being shown in dependency graphs in some cases.
-* Validate deployments with multiple replicas of cloud components while also depending on a volume deployment.
-* Fixes deployment failure when an invalid Dockerhub secret exists for the user/group.
-* New UI layout for the *volumes* configuration parameter of a component.
+* For packages with **Bindable: True** attribute, fixes the issue of network endpoints not displayed in a deployment's details page.
+* Fix invalid edges that were being shown in dependency graphs in some cases.
+* Add a validation to not let the user add a volume to a cloud component having multiple replicas.
+* Fixes deployment failure when an invalid Dockerhub secret exists in either a group or a user scope.
+* New UI layout for the *volumes* configuration parameter of a component in a deployment details page.
 * Fixes in rapyuta uninstall script.
+* Fix suitable device configuration variables upon selecting a different device while deploying any package with device component.
 
 #### Documentation
 * A [list of error codes](/getting-started/add-new-device/device-failed-error-codes) when a device is in failed state.
