@@ -24,4 +24,4 @@ number of significant updates in this version that we hope you will like.
 
 #### Documentation
 * A [list of error codes](/getting-started/add-new-device/device-failed-error-codes) when a device is in failed state.
-* Revamped ROS Publisher Subscriber, Docker Publisher Subscriber and Turtlesim tutorials.
+* Revamped [ROS Publisher Subscriber](/dev-tutorials/ros-publisher-subscriber), [Docker Publisher Subscriber](/dev-tutorials/docker-publisher-subscriber) and [Turtlesim](/dev-tutorials/turtlesim/_index.md) tutorials.
