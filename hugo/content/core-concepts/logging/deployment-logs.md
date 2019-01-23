@@ -23,7 +23,7 @@ To view or analyse the corresponding deployment logs, click **Historical Logs**.
 ![Deployment detials page](/images/core-concepts/logging/deployment-logs/historical-logs/deployment-hist-logs.png?classes=border,shadow&width=50pc)
 
 A tabular listing of buffered deployment logs, where each row consists of a log’s timestamp,
-its component name and executable name, and its information or message. There are up to 500
+its component name and executable name, and its information or message is displayed. There are up to 500
 log entries fetched at a time. To view the next 500 entries, you will have to scroll down to
 the end of the table until you see a **Load More** button. If log entries have not been exhausted,
 additional entries are displayed on clicking **Load More**.
@@ -38,17 +38,19 @@ the buffered logs of only the **Talker** component are shown below.
 
 You can choose to view logs from within a time range. However, ensure that the time slice is neither
 in the past from the start time of a deployment nor in the future from now. You will be able to view
-logs up to seven days in the past if a deployment has been running till now.
+logs up to ***seven days*** in the past if a deployment has been running till now.
 ![Time Interval](/images/core-concepts/logging/deployment-logs/historical-logs/time-range.png?classes=border,shadow&width=50pc)
 
-You can filter logs based on component name, executable name, timestamp or information via
+You can filter logs based on component name, executable name, timestamp or information using
 [JavaScript regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
 The expression that you provide is preffixed with **/** and suffixed with **/g** tags.
-Moreover, for advanced searching of logs, you will have to write a [lucene query](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html)
-in the advanced search box.
 ![JS Regex](/images/core-concepts/logging/deployment-logs/historical-logs/JS-regex.png?classes=border,shadow&width=50pc)
 
-You may download the historical logs of a deployment in ***.log*** file by clicking the download button.
+Moreover, for advanced searching of logs, you will have to write a [lucene query](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html)
+in the **Advanced Search** box.
+![Advanced search](/images/core-concepts/logging/deployment-logs/historical-logs/lucene-query.png?classes=border,shadow&width=50pc)
+
+You may download historical logs of a deployment as a ***.log*** file by clicking the download button.
 ![Download logs](/images/core-concepts/logging/deployment-logs/historical-logs/download-button.png?classes=border,shadow&width=50pc)
 
 You may want to refresh the logs by clicking the refresh button.
