@@ -34,7 +34,7 @@ Application containers that are deployed are configured to run in
 Thus, the containers can access all of the device interfaces similar to those
 that are accessed by the processes running outside containers.
 
-Learn how to [access hardware interfaces](/core-concepts/device-management/device-docker-runtime/control-onboard-led) from applications running in containers.
+Learn how to [access hardware interfaces](/dev-tutorials/control-onboard-led) from applications running in containers.
 
 Access to volume mounts from applications running in containers are not
 supported at the moment.
