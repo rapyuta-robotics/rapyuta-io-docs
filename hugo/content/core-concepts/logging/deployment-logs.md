@@ -10,14 +10,14 @@ Logs of a deployment are buffered (*historical logs*) and streamed continuously 
 
 [Add a *ROS Publisher Exclusive* package](/getting-started/create-new-package)
 that has a _Talker_ component with cloud runtime. It publishes the ROS topic 
-_\telemetry_ with **Maximum** **QoS**. [Deploy the package](/getting-started/deploy-package)
+_\telemetry_ with **Maximum** **QoS** as well as prints debug information to *stdout*. [Deploy the package](/getting-started/deploy-package)
 on the cloud by the name _ROS publisher exclusive deployment_
 
 1. On the left navigation bar, click **DEPLOYMENTS**.
 2. Select specific deployment whose logs you want to view or analyse. In this example, _ROS publisher exclusive deployment_ is selected.
 3. On the deployment's **DETAILS** tab, ensure the green progress bar is at **Succeeded** and **Status:Running** point.
 
-## Real time logs
+## Streaming logs
 To view the corresponding deployment logs in real time, click **Live Logs** tab. They are streamed continuously in a terminal-like window, while you analyse the logs.
 
 ![Live Logs tab](/images/core-concepts/logging/deployment-logs/realtime-logs/deployment-live-logs.png?classes=border,shadow&width=50pc)
