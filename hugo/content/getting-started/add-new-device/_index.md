@@ -83,7 +83,7 @@ against the device's name. If you do not see a green dot after couple of minutes
 
 rapyuta.io assigns a unique identifier, *UUID*, to the device.
 
-The state of a device is colour coded. The following lists the various statuses
+The status of a device is colour coded. The following lists the various statuses
 the device may be in:
 
 * Registered (blue) indicates that the device is successfully added, but an
@@ -95,6 +95,8 @@ active connection is yet to be established.
 rapyuta.io
 * Delete (red) indicates that all traces of the device's data is removed from
 rapyuta.io
+* Failed (red) indicates that a failure occurred while managing the device. You may
+  read the [list of error codes](/getting-started/add-new-device/device-failed-error-codes) for more details about specific failure cases.
 
 The device's **Details** tab displays a summary of the device:
 
