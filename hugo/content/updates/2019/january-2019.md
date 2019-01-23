@@ -12,15 +12,16 @@ number of significant updates in this version that we hope you will like.
 
 #### Features
 * Support for device error codes
-* New User Experience for deployment logs
+  When a device goes into the failed state, the corresponding error code is displayed.
 * Component's volumes is a table instead of JSON
+  The *volumes* configuration parameter of a component appears in a table instead of in a JSON.
 
 #### Notable Fixes
 * Display network endpoints in non-bindable deployments.
-* Correct and valid edges in dependency graphs.
-* Fixes deployment failure due to a cloud component with multiple replicas and volume as dependent deployment.
+* Correct and valid edges in deployment dependency graphs.
+* Fixes deployment failure caused by its dependency on a volume deployment and multiple replicas of its cloud component.
 * Fixes deployment failure due to an incorrect Dockerhub secret. 
 
 #### Documentation
-* New User Experience for deployment logs.
-* A list of error codes when a device is in failed state.
+* A [list of error codes](/getting-started/add-new-device/device-failed-error-codes) when a device is in failed state.
+* Revamped ROS Publisher Subscriber, Docker Publisher Subscriber and Turtlesim tutorials.
