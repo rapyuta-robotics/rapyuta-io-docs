@@ -65,13 +65,10 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 12. Click **Docker** for **Executable Type** as the executable is a docker image.
-13. In the **Docker image** box, specify the docker image: `rrdockerhub/led_trigger`
-14. In the **Command to run in the docker container** box, enter the command:
-	```bash
-	led_trigger led0 heartbeat
-	```
-
-15. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+13. In the **Docker image** box, specify the docker image: `rrdockerhub/led-trigger-arm32v7`
+14. In the **Command to run in the docker container** box, enter the command `led_trigger led0 heartbeat`
+15.  Deselect **Run command from bash shell**.
+16.  Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 A flickering yellow dot against the package name indicates that the **Build Status**
 is **New**, while a green dot against the package name indicates that the **Build
