@@ -6,71 +6,63 @@ date: 2018-11-15T14:01:26+05:30
 pre: "f. "
 weight: 150
 ---
-An application build is the result of building source code into runnable docker
-container. The _Build Engine_ uses a build recipe to build source code.
-Builds are automatically triggered when you specify a build recipe and a git
-repository while creating a package.
+An executable of a component can either be a source code file, or a docker
+file in a git repository, or a docker image file.
 
-If the **Executable Type** is **Git**, you must provide a git repository url address.
-rapyuta.io builds the source code in the git repository into an executable
-docker container.
+## Build strategies
+There are three kinds of build strategies available for building
+ROS and non-ROS packages. The ***ROS Engine*** selects an appropriate build
+strategy based on whether you have provided a git repository with
+Dockerfile in it or without it, or a docker image.
 
-Suppose you want to add a git repository url: https://github.com/rapyuta-robotics/io_tutorials,
-where *io_tutorials* is the project repository (folder) containing source code on
-the master branch and is hosted on GitHub.
+If the **Executable Type** is **Git**, you must provide a git repository
+url address.
 
-If you want to add source code located on a different branch say *io_turtlesim_qos*
-of the same project, your git repository url will look like:  https://github.com/rapyuta-robotics/io_tutorials#io_turtlesim_qos
+The goal of each build strategy is to generate a running docker container
+at the end of package creation.
 
-### Trigger new builds and Rollback to previous builds
-Consider a package whose executable is a git repository. The source code in the
-git repository is built into a runnable docker container. Each time you update
-the source code in the repository you expect the changes to be reflected the
-next time you deploy the package, that is you expect the executable to pick up
-the latest git commit hash of the repository. Thus, you’ll trigger a new build
-for the package.
+You may analyse [build logs](/core-concepts/logging/build-logs) for
+debugging build failures. In the case of source code and Dockerfile
+strategies, you can
+[trigger new builds or roll back previous builds](/core-concepts/builds/trigger-rollback).
 
-When you add a package, the **Builds** tab displays information about the current
-build such as build generation number, time of build generation, name of the
-user who triggered the build, the status of build and error message if there is
-any.
+### Source code strategy
+This strategy builds source code files into a docker image. The source code
+is usually stored in a git repository. If it is a private git repository,
+you need to [add a source secret](/core-concepts/secrets/source-secret)
+to access the repository contents. rapyuta.io uses ***ROS Builder***, a
+subset of *catkin build*, to build source code into a docker image.
 
-Suppose the current build generation number is _i_. If you update the source code
-in the git repository, you may want to trigger a new build for building the same
-package so as to reflect the new code changes. As a result, a new build
-generation number _(i+1)_ is generated. To trigger a new build for a package,
-click **Trigger build**.
+Suppose you want to add a git repository url say
+https://github.com/rapyuta-robotics/io_tutorials,
+where *io_tutorials* is the project repository (folder) containing source
+code on the master branch and is hosted on GitHub.
 
-You may always **Trigger** a new build irrespective of the status of the previous
-build. That is you can trigger a new build from either a **Complete** build or an
-**Error** build. However, only those builds that are **Complete** are suitable for
-provisioning. The **Failed** builds are unfit for provisioning.
+If you want to add source code located on a different branch say
+*io_turtlesim_qos* of the same project, your git repository url
+will look like:
+https://github.com/rapyuta-robotics/io_tutorials#io_turtlesim_qos
 
-Besides the names of the components and the executables that constitute a
-package, you may also view details such as the git repository url where the
-source code is hosted, the latest commit SHA number, the commit message and
-the commit owner’s name by clicking **View details/logs**.
+The [ROS Publisher Subscriber](/dev-tutorials/ros-publisher-subscriber)
+tutorial is an example of source code build strategy.
 
-![View details or logs](/images/core-concepts/builds/trigger-rollback-view-deails.png?classes=border,shadow&width=50pc)
+### Dockerfile strategy
+This strategy builds a Dockerfile into a docker image. The Dockerfile is
+usually saved in a git repository. If it is a private git repository,
+you need to add a source secret to access the repository contents.
+{{% notice info %}}
+The maximum size of the docker image is 10GB for cloud deployment.
+{{% /notice %}}
 
-You may also **Rollback** to a previous build generation number, if there is any,
-irrespective of the previous build status. Rollbacking to a previous build does
-not restart the build process. Instead, it would run the corresponding docker
-container that was created for that build generation.
+You may explicitly specify the absolute path of Dockerfile, or
+rapyuta.io defaults the location of the Dockerfile as the root of
+the git repository.
 
-The **Current build generation** number is shown below the package ID.
+### Docker image strategy
+This strategy builds a docker image locally. The docker image is usually
+stored in either a public docker registry (i.e., Dockerhub) or a private
+docker registry. You need to add a docker pull secret for rapyuta.io
+to access a private docker image.
 
-![Current build generation number](/images/core-concepts/builds/current-build-number.png?classes=border,shadow&width=50pc)
-
-When you deploy a package, the deployment process automatically chooses the
-current build generation number. Once a package is deployed, the build generation
-number used in the deployment process is displayed adjacent to the package name.
-
-![Build generation number during deployment](/images/core-concepts/builds/build-number-deploy.png?classes=border,shadow&width=50pc)
-
-The builds are automatically restarted on software infrastructure failures.
-If you observe that the build logs are abruptly disconnected or stopped,
-click **Refresh**.
-
-When a build fails, you should analyse the corresponding [build logs](/core-concepts/logging/build-logs)
-for debugging.
+The [Control onboard LED tutorial](/dev-tutorials/control-onboard-led)
+illustrates docker image build strategy.
