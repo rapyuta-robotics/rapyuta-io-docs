@@ -6,7 +6,7 @@ date: 2018-11-20T18:49:43+05:30
 pre: "2. "
 weight: 194
 ---
-Logs of a deployment are buffered (*historical logs*) and streamed continuously (*live logs*) in real time.
+Logs of a deployment are available as *historical logs* and are streamed continuously (*live logs*) in real time.
 
 [Add a *ROS Publisher Exclusive* package](/getting-started/create-new-package)
 that has a _Talker_ component with cloud runtime. It publishes the ROS topic 
@@ -25,11 +25,18 @@ To view or analyse the corresponding deployment logs, click **Historical Logs**.
 ![Deployment detials page](/images/core-concepts/logging/deployment-logs/historical-logs/deployment-hist-logs.png?classes=border,shadow&width=50pc)
 
 A tabular listing of buffered deployment logs, where each row consists of a log’s timestamp,
-its component name and executable name, and its information or message is displayed. There are up to 500
-log entries fetched at a time. To view the next 500 entries, you will have to scroll down to
-the end of the table until you see a **Load More** button. If log entries have not been exhausted,
-additional entries are displayed on clicking **Load More**.
+its component name and executable name, and its information or message is displayed.
 ![Historical logs table](/images/core-concepts/logging/deployment-logs/historical-logs/tabular-hist-logs.png?classes=border,shadow&width=50pc)
+
+There are up to 500 log entries fetched at a time. To view the next 500 entries, you will have to scroll down to the end of the table until you see a **Load Ahead Logs** button. If log entries have not been exhausted,
+additional entries are displayed on clicking **Load Ahead Logs**.
+![Load Ahead Logs](/images/core-concepts/logging/deployment-logs/historical-logs/load-ahead-logs.png?classes=border,shadow&width=50pc)
+
+To view the previous 500 log entries, you will have to
+scroll up to the top of the table until you see a
+**Load Remaining Logs In Time Range** button, and click
+it.
+![Load Remaining Logs In Time Range](/images/core-concepts/logging/deployment-logs/historical-logs/load-remaining-logs.png?classes=border,shadow&width=50pc)
 
 You can select a specific *component-executable* combination to view its corresponding logs.
 You may also select multiple such combinations. If you select only a component’s name, you will
