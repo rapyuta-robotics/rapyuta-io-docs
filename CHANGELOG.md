@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Fixed
+* Added in extra fixes for a device failed state error code.
 
 ## [1.0.0 - 2019-01-23]
 ### Added
