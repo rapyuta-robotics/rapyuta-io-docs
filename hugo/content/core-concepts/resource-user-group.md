@@ -1,5 +1,5 @@
 ---
-title: "Resources, Users, Groups"
+title: "Resources, Users, Projects"
 description:
 type: core-concepts
 date: 2018-11-15T09:48:54+05:30
@@ -18,23 +18,18 @@ access a set of available resources.
 
 Learn how to [create a new user](/getting-started/create-new-user).
 
-## Groups
-A group is a collection of arbitrary number of users belonging to the same
-organisation. You can use groups for collaborating with teams from the same
-organisation and/or for sharing resources (devices, packages, deployments etc.)
-among all groups' members. You can be a member of zero or more groups at a
-given time. You may create an arbitrary number of groups. As a creator of a
-group, only you are authorised to add/remove users (from the same organisation)
-from the group or delete the group itself. Any member of a group may add/delete
-resources in the group.
+## Projects
+A project is a set of one or more packages, devices, running deployments
+(both cloud and device component instances). Projects are shared only among
+users from within the same organisation. The name of a project must be unique.
+{{% notice info %}}
+A project's name must consist of alphabets, digits, hyphen (-) or an
+underscore ( _ ) or space characters, and it must begin with an alphabet.
+It must be atleast 3 characters long and not more than 75 characters.
+{{% /notice %}}
+Each project is identified by its unique project ID. The creator of a
+project is also the admin of the project.
 
-An organisation, _Rapyuta_, has two teams - _Team1_ that works on drones and
-_Team2_ that works on droids. Each team creates a dedicated group for its members.
-_Team1_ creates _Group1_ and adds all of its members to the group. Similarly,
-_Team2_ creates _Group2_ with all of its members. If an engineer collaborates
-with both the teams, they are a member of both the groups. A member of a group
-can access only the resources shared in that group.
+Learn how to create a new project, delete an existing project.
 
-Learn how to [create a new group](/getting-started/create-new-group).
-
-Learn how to [switch between user and group](/getting-started/switch-between-user-group).
+Learn how to add users to a project, delete a user from the project.
