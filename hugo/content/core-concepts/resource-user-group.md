@@ -30,6 +30,8 @@ It must be atleast 3 characters long and not more than 75 characters.
 Each project is identified by its unique project ID. The creator of a
 project is also the admin of the project.
 
-Learn how to create a new project, delete an existing project.
+Learn how to [create a new project](/getting-started/create-project),
+[delete an existing project](/getting-started/delete-project).
 
-Learn how to add users to a project, delete a user from the project.
+Learn how to [add users to a project](/getting-started/add-user-to-project),
+[delete a user from the project](/getting-started/delete-user-from-project).
