@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Updated
+* Updated python SDK version.
 ### Fixed
 * Added in extra fixes for a device failed state error code.
 
