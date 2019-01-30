@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Updated
 * Updated python SDK version.
+* Update Python >=2.7.8, <3
 ### Fixed
 * Added in extra fixes for a device failed state error code.
 
