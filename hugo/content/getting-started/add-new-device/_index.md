@@ -9,7 +9,7 @@ weight: 220
 ## Device requirements
 
 * Mandatory
-    * Python >= 2.7.8
+    * Python >=2.7.8, <3
     * Ubuntu 16.04
     * pip >8.1.0, <10.0.0
 * Optional
