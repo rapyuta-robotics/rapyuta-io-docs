@@ -24,7 +24,7 @@ on the cloud by the name _ROS publisher exclusive deployment_
 To view or analyse the corresponding deployment logs, click **Historical Logs**.
 ![Deployment detials page](/images/core-concepts/logging/deployment-logs/historical-logs/deployment-hist-logs.png?classes=border,shadow&width=50pc)
 
-A tabular listing of buffered deployment logs, where each row consists of a log’s timestamp,
+A tabular listing of historical deployment logs, where each row consists of a log’s timestamp,
 its component name and executable name, and its information or message is displayed.
 ![Historical logs table](/images/core-concepts/logging/deployment-logs/historical-logs/tabular-hist-logs.png?classes=border,shadow&width=50pc)
 
