@@ -14,10 +14,10 @@ and services in your python applications.
 It is recommended you install the latest Python SDK using [pip](https://pip.pypa.io/en/stable/)
 (most popular tool for installing python packages).
 ```bash
-pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.2.0-py2-none-any.whl
+pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.3.2-py2-none-any.whl
 ```
 If you are using an old version of the Python SDK, please upgrade to the latest
-[0.2.0](https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.2.0-py2-none-any.whl)
+[0.3.2](https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.3.2-py2-none-any.whl)
 version.
 
 ## Requirements
