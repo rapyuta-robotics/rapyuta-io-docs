@@ -3,7 +3,7 @@ title: "January 30"
 description:
 type: updates
 pre: ""
-weight: 592
+weight: 596
 ---
 ## January 30
 Welcome to the January 30, 2019 release of rapyuta.io platform.
