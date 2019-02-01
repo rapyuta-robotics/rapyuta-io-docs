@@ -6,7 +6,11 @@ date: 2018-11-20T18:49:43+05:30
 pre: "2. "
 weight: 194
 ---
-Logs of a deployment are available as *historical logs* and are streamed continuously (*live logs*) in real time.
+rapyuta.io provides tabular searchable logs (*historical logs*) for components of a deployment both
+in the cloud or on a device.
+
+Additionally, for components deployed on the cloud the rapyuta.io offers a way
+to stream (*live logs*) and follow stdout/stderr.
 
 [Add a *ROS Publisher Exclusive* package](/getting-started/create-new-package)
 that has a _Talker_ component with cloud runtime. It publishes the ROS topic 
@@ -24,18 +28,16 @@ on the cloud by the name _ROS publisher exclusive deployment_
 To view or analyse the corresponding deployment logs, click **Historical Logs**.
 ![Deployment detials page](/images/core-concepts/logging/deployment-logs/historical-logs/deployment-hist-logs.png?classes=border,shadow&width=50pc)
 
-A tabular listing of historical deployment logs, where each row consists of a log’s timestamp,
-its component name and executable name, and its information or message is displayed.
+A tabular listing of historical deployment logs is displayed, where each row consists of a log’s timestamp,
+its component name and executable name, and its information or message.
 ![Historical logs table](/images/core-concepts/logging/deployment-logs/historical-logs/tabular-hist-logs.png?classes=border,shadow&width=50pc)
 
-There are up to 500 log entries fetched at a time. To view the next 500 entries, you will have to scroll down to the end of the table until you see a **Load Ahead Logs** button. If log entries have not been exhausted,
-additional entries are displayed on clicking **Load Ahead Logs**.
-![Load Ahead Logs](/images/core-concepts/logging/deployment-logs/historical-logs/load-ahead-logs.png?classes=border,shadow&width=50pc)
+Initially, the table displays logs generated between ***now*** and ***ten minutes past now***. If there are more than 500 logs in a given time range, the table fetches 500 log entries at a time. 
 
-To view the previous 500 log entries, you will have to
-scroll up to the top of the table until you see a
-**Load Remaining Logs In Time Range** button, and click
-it.
+As you scroll to the bottom of the table and click **Load More Logs**, the table will append additional logs that are yielded after ***now***.
+![Load Ahead Logs](/images/core-concepts/logging/deployment-logs/historical-logs/load-ahead-logs.png?classes=border,shadow&width=50pc) 
+
+As you scroll to the top of the table and click **Load Previous Logs In Time Range**, the table will display all the logs that are absent from the existing result set.
 ![Load Remaining Logs In Time Range](/images/core-concepts/logging/deployment-logs/historical-logs/load-remaining-logs.png?classes=border,shadow&width=50pc)
 
 You can select a specific *component-executable* combination to view its corresponding logs.
@@ -52,7 +54,7 @@ logs up to ***seven days*** in the past if a deployment has been running till no
 
 You can filter logs based on component name, executable name, timestamp or information using
 [JavaScript regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
-The expression that you provide is preffixed with **/** and suffixed with **/g** tags.
+The expression that you provide is wrapped in global modifier tags.
 ![JS Regex](/images/core-concepts/logging/deployment-logs/historical-logs/JS-regex.png?classes=border,shadow&width=50pc)
 
 Moreover, for advanced searching of logs, you will have to write a [lucene query](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html)
@@ -64,8 +66,10 @@ You may download historical logs of a deployment as a ***.log*** file by clickin
 
 You may want to refresh the logs by clicking the refresh button.
 ![Refresh logs](/images/core-concepts/logging/deployment-logs/historical-logs/refresh-button.png?classes=border,shadow&width=50pc)
-1. Select specific deployment whose logs you want to view or analyse. In this example, _ROS publisher exclusive deployment_ is selected.
-2. On the deployment's **DETAILS** tab, ensure the green progress bar is at **Succeeded** and **Status:Running** point.
+
+Any errors or exceptions that occur while logs are being generated are redirected to ***stderr*** output window, but otherwise,
+a valid logs output is displayed at ***stdout*** window.
+![stdout or stderr](/images/core-concepts/logging/deployment-logs/historical-logs/stdout-stderr.png?classes=border,shadow&width=50pc)
 
 ## Streaming logs
 To view the corresponding deployment logs in real time, click **Live Logs** tab. They are streamed continuously in a terminal-like window, while you analyse the logs.
