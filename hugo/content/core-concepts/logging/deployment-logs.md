@@ -32,11 +32,8 @@ A tabular listing of historical deployment logs is displayed, where each row con
 its component name and executable name, and its information or message.
 ![Historical logs table](/images/core-concepts/logging/deployment-logs/historical-logs/tabular-hist-logs.png?classes=border,shadow&width=50pc)
 
-The table displays the most recent logs in the indicated time range first. The widget fetches 500 entries at a time.
-
-If there are logs generated in the result set and not visible in the most recent 500 and you wish to view them (the ones not rendered in the first 500) use the **Load Previous Logs In Time Range** available at the top of the table. Each time 500 new logs are fetched. You may use the time range selectors to narrow your search window.
+The table displays the most recent logs in the indicated time range first. The widget fetches 500 entries at a time. If there are logs generated in the result set and not visible in the most recent 500 and you wish to view them (the ones not rendered in the first 500) use the **Load Previous Logs In Time Range** available at the top of the table. Each time 500 new logs are fetched. You may use the time range selectors to narrow your search window.
 ![Load Remaining Logs In Time Range](/images/core-concepts/logging/deployment-logs/historical-logs/load-remaining-logs.png?classes=border,shadow&width=50pc)
-
 As you scroll to the bottom of the table and click **Load More Logs**, the table will append additional logs that are yielded after ***now***.
 ![Load Ahead Logs](/images/core-concepts/logging/deployment-logs/historical-logs/load-ahead-logs.png?classes=border,shadow&width=50pc) 
 
