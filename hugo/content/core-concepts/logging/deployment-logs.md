@@ -14,7 +14,7 @@ to stream (*live logs*) and follow stdout/stderr.
 
 [Add a *ROS Publisher Exclusive* package](/getting-started/create-new-package)
 that has a _Talker_ component with cloud runtime. It publishes the ROS topic 
-_\telemetry_ with **Maximum** **QoS** as well as prints debug information to *stdout*. [Deploy the package](/getting-started/deploy-package)
+_/telemetry_ with **Maximum** **QoS** as well as prints debug information to *stdout*. [Deploy the package](/getting-started/deploy-package)
 on the cloud by the name _ROS publisher exclusive deployment_
 
 1. On the left navigation bar, click **DEPLOYMENTS**.
@@ -32,13 +32,13 @@ A tabular listing of historical deployment logs is displayed, where each row con
 its component name and executable name, and its information or message.
 ![Historical logs table](/images/core-concepts/logging/deployment-logs/historical-logs/tabular-hist-logs.png?classes=border,shadow&width=50pc)
 
-Initially, the table displays logs generated between ***now*** and ***ten minutes past now***. If there are more than 500 logs in a given time range, the table fetches 500 log entries at a time. 
+The table displays the most recent logs in the indicated time range first. The widget fetches 500 entries at a time.
+
+If there are logs generated in the result set and not visible in the most recent 500 and you wish to view them (the ones not rendered in the first 500) use the **Load Previous Logs In Time Range** available at the top of the table. Each time 500 new logs are fetched. You may use the time range selectors to narrow your search window.
+![Load Remaining Logs In Time Range](/images/core-concepts/logging/deployment-logs/historical-logs/load-remaining-logs.png?classes=border,shadow&width=50pc)
 
 As you scroll to the bottom of the table and click **Load More Logs**, the table will append additional logs that are yielded after ***now***.
 ![Load Ahead Logs](/images/core-concepts/logging/deployment-logs/historical-logs/load-ahead-logs.png?classes=border,shadow&width=50pc) 
-
-As you scroll to the top of the table and click **Load Previous Logs In Time Range**, the table will display all the logs that are absent from the existing result set.
-![Load Remaining Logs In Time Range](/images/core-concepts/logging/deployment-logs/historical-logs/load-remaining-logs.png?classes=border,shadow&width=50pc)
 
 You can select a specific *component-executable* combination to view its corresponding logs.
 You may also select multiple such combinations. If you select only a component’s name, you will
@@ -72,7 +72,7 @@ a valid logs output is displayed at ***stdout*** window.
 ![stdout or stderr](/images/core-concepts/logging/deployment-logs/historical-logs/stdout-stderr.png?classes=border,shadow&width=50pc)
 
 ## Streaming logs
-To view the corresponding deployment logs in real time, click **Live Logs** tab. They are streamed continuously in a terminal-like window, while you analyse the logs.
+To view the corresponding deployment logs in real time, click **Live Logs** tab. They are streamed in a terminal like view ,and can be useful to view and debug your application in the cloud as it generates new logs. This is similar to similar to the _"tail -f"_ functionality one is used to in a unix terminal console.
 
 ![Live Logs tab](/images/core-concepts/logging/deployment-logs/realtime-logs/deployment-live-logs.png?classes=border,shadow&width=50pc)
 
