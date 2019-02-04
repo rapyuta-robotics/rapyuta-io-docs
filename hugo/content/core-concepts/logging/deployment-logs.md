@@ -9,19 +9,15 @@ weight: 194
 rapyuta.io provides tabular searchable logs (*historical logs*) for components of a deployment both
 in the cloud or on a device.
 
-Additionally, for components deployed on the cloud the rapyuta.io offers a way
+Additionally, for components deployed on the cloud, rapyuta.io offers a way
 to stream (*live logs*) and follow stdout/stderr.
 
 [Add a *ROS Publisher Exclusive* package](/getting-started/create-new-package)
-that has a _Talker_ component with cloud runtime. It publishes the ROS topic 
-_/telemetry_ with **Maximum** **QoS** as well as prints debug information to *stdout*. [Deploy the package](/getting-started/deploy-package)
-on the cloud by the name _ROS publisher exclusive deployment_
+that has a _Talker_ component with cloud runtime. It publishes the ROS topic _/telemetry_ with **Maximum** **QoS** as well as prints debug information to *stdout*. [Deploy the package](/getting-started/deploy-package) on the cloud by the name _ROS publisher exclusive deployment_
 
 1. On the left navigation bar, click **DEPLOYMENTS**.
-2. Select specific deployment whose logs you want to view or analyse. In this
-   example, _ROS publisher exclusive deployment_ is selected.
-3. On the deployment's **DETAILS** tab, ensure the green progress bar is at
-   **Succeeded** and **Status:Running** point.
+2. Select specific deployment whose logs you want to view or analyse. In this example, select _ROS publisher exclusive deployment_.
+3. On the deployment's **DETAILS** tab, ensure the green progress bar is at **Succeeded** and **Status:Running** point.
 
 ## Historical logs
 
@@ -32,7 +28,7 @@ A tabular listing of historical deployment logs is displayed, where each row con
 its component name and executable name, and its information or message.
 ![Historical logs table](/images/core-concepts/logging/deployment-logs/historical-logs/tabular-hist-logs.png?classes=border,shadow&width=50pc)
 
-The table displays the most recent logs in the indicated time range first. The widget fetches 500 entries at a time. If there are logs generated in the result set and not visible in the most recent 500 and you wish to view them (the ones not rendered in the first 500) use the **Load Previous Logs In Time Range** available at the top of the table. Each time 500 new logs are fetched. You may use the time range selectors to narrow your search window.
+The table displays the most recent logs generated in the indicated time range. The widget fetches 500 log entries at a time. If the set of most recent logs contains more than 500 entries and you want to view logs not rendered in the first 500, use the **Load Previous Logs In Time Range** available at the top of the table. So, each time 500 new logs are fetched. You may use the time range selectors to narrow your search window.
 ![Load Remaining Logs In Time Range](/images/core-concepts/logging/deployment-logs/historical-logs/load-remaining-logs.png?classes=border,shadow&width=50pc)
 As you scroll to the bottom of the table and click **Load More Logs**, the table will append additional logs that are yielded after ***now***.
 ![Load Ahead Logs](/images/core-concepts/logging/deployment-logs/historical-logs/load-ahead-logs.png?classes=border,shadow&width=50pc) 
@@ -65,11 +61,11 @@ You may want to refresh the logs by clicking the refresh button.
 ![Refresh logs](/images/core-concepts/logging/deployment-logs/historical-logs/refresh-button.png?classes=border,shadow&width=50pc)
 
 Any errors or exceptions that occur while logs are being generated are redirected to ***stderr*** output window, but otherwise,
-a valid logs output is displayed at ***stdout*** window.
+a valid logs output is displayed in ***stdout*** window.
 ![stdout or stderr](/images/core-concepts/logging/deployment-logs/historical-logs/stdout-stderr.png?classes=border,shadow&width=50pc)
 
 ## Streaming logs
-To view the corresponding deployment logs in real time, click **Live Logs** tab. They are streamed in a terminal like view ,and can be useful to view and debug your application in the cloud as it generates new logs. This is similar to similar to the _"tail -f"_ functionality one is used to in a unix terminal console.
+To view the corresponding deployment logs in real time, click **Live Logs** tab. They are streamed in a terminal like window, and can be useful to view and debug your application in the cloud as it generates new logs. This is similar to the _"tail -f"_ functionality one is used to in a unix terminal console.
 
 ![Live Logs tab](/images/core-concepts/logging/deployment-logs/realtime-logs/deployment-live-logs.png?classes=border,shadow&width=50pc)
 
