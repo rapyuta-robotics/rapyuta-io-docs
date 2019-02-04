@@ -1,9 +1,6 @@
 # CHANGELOG
 
 ## [Unreleased]
-
-## [1.1.1 - 2019-02-04]
-### Updated
 * Historical and streaming deployment logs
 
 ## [1.1.0 - 2019-01-30]
