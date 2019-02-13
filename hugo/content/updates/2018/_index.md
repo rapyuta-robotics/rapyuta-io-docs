@@ -4,6 +4,8 @@ description:
 type: updates
 date: 2019-01-22T17:25:45+05:30
 pre: ""
-weight: 595
+weight: 598
 ---
-* [December](/updates/2018/december-2018)
+### rapyuta.io 2019 Updates
+
+{{% children depth="999" sort="Weight" %}}

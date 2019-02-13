@@ -1,12 +1,10 @@
 ---
-title: "December"
+title: "December 19"
 description:
 type: updates
 date: 2018-12-19T17:46:22+05:30
-pre: ""
-weight: 596
+weight: 600
 ---
-## December 19
 Welcome to the December 2018 release of rapyuta.io platform. There are a
 number of significant updates in this version that we hope you will like.
 
