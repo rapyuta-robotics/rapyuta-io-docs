@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+* Add release notes for February 13, 2019
 ### Updated
 * Historical and streaming deployment logs
 
