@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## [Unreleased]
+## [1.2.0 - 2019-02-13]
 ### Added
 * Add release notes for February 13, 2019
 ### Updated
