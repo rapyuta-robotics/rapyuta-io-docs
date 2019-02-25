@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Changed
+- remove pip version limits - since python packages will be installed in virtualenv
 
 ## [1.0.0 - 2019-01-23]
 ### Added
