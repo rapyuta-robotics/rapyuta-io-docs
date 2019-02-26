@@ -24,8 +24,8 @@ A project is a set of one or more packages, devices, running deployments
 users from within the same organisation. The name of a project must be unique.
 {{% notice info %}}
 A project's name must consist of alphabets, digits, hyphen (-) or an
-underscore ( _ ) or space characters, and it must begin with an alphabet.
-It must be atleast 3 characters long and not more than 75 characters.
+underscore ( _ ), and it must begin with an alphabet.
+It must be atleast 3 characters long and not more than 15 characters.
 {{% /notice %}}
 Each project is identified by its unique project ID. The creator of a
 project is also the admin of the project.
