@@ -6,9 +6,16 @@ date: 2019-02-26T19:48:59+05:30
 pre: "c. "
 weight: 207
 ---
-The admin of an organization can delete or remove an user from the
-organization. However, if the user is a member of an existing project,
-the admin will not be able to remove them from the organization. Hence,
-only **Invited** users can be deleted from the organization.
+The admin of an organization can delete or remove an user from the organization.
+However, only **Invited** users can be removed from the organization.
 
-***TO DO*** : Describe the workflow of deleting a user from organization with images.
+To delete or remove an **Invited** user from your organization on rapyuta.io,
+you will follow the below instructions:
+
+1. On the left navigation bar, click **ORGANIZATION**. The panel displays information
+   such as the name of your organization, its official website, location and a list of users.
+2. On **Users** tab, search for the details of the user you want to remove.
+   Also ensure that the user is in **Invited** state.
+3. Click **Remove**.
+
+![Delete user in invited state](/images/getting-started/organization/delete-invited-usr.png?classes=border,shadow&width=50pc)

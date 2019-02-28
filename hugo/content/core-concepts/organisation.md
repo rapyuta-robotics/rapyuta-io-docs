@@ -6,18 +6,29 @@ date: 2018-11-15T09:49:07+05:30
 pre: "b. "
 weight: 110
 ---
-A partner organization is an organization that is willing to use rapyuta.io to build efficient cloud robotics applications, and agree to abide by the Terms and Services Agreement, Fair Use Policy, Privacy Policy and NDA. Once an organization subscribes to a pricing plan, it is given access to rapyuta.io
+An organization is an enterprise customer like you who is interested and
+willing to use rapyuta.io for building efficient robotics applications.
 
-An organization is assigned an admin - the very first user who signs into rapyuta.io, and they are given higher privileges than any user of the same organization. The admin is responsible for filling in the details of the organization such as name, location and official website.
+An _admin_ - the first user who registers and signs into rapyuta.io - is
+assigned to an organization. Since the _admin_ is also the very first user who
+signs into rapyuta.io, they must provide details about the organization such as
+its name, official website and location. They have higher privileges than
+other users in the same organization. For example, the _admin_ can invite users
+(belonging to the same organization) to explore rapyuta.io, remove certain users
+from using rapyuta.io. They alone can access the **BILLING** panel.
 
+The **ORGANIZATION** panel contains information about an organization along with a
+list of **Invited** and **Activated** users. Your billing account is tied to your
+organization.
+![Organization panel](/images/getting-started/organization/org-panel.png?classes=border,shadow&width=50pc)
 {{% notice info %}}
 Learn how to [register as a new user](/getting-started/register-new-user/) on rapyuta.io
 {{% /notice %}}
 
 {{% notice info %}}
-Learn how to [invite or add a user to organization](/getting-started/invite-user-to-org/) panel
+Learn how to [invite or add a user to your organization](/getting-started/invite-user-to-org/).
 {{% /notice %}}
 
 {{% notice info %}}
-Learn how to [delete a user from the organization](/getting-started/remove-user-from-org/) panel
+Learn how to [delete a user from your organization](/getting-started/remove-user-from-org/).
 {{% /notice %}}
