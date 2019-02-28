@@ -9,14 +9,17 @@ weight: 105
 ## Resources
 A resource is an entity that can be managed by rapyuta.io. It can be a device
 that is already integrated into the platform, a package that is added to the
-platform, a deployment or a build. Resources are also scoped by a user or a group.
+platform, a deployment or a build.
 
 ## Users
-A user is an entity responsible for creating and managing resources
-(device, package, deployment etc.) using rapyuta.io. An authenticated user can
-access a set of available resources.    
+A user is an entity responsible for creating and managing rapyuta.io resources
+(device, package, deployment). A user can be either in **Invited** state or in **Activated**
+state. The admin of an organization is the most privileged user of all users in an
+organization on rapyuta.io
 
-Learn how to [create a new user](/getting-started/create-new-user).
+{{% notice info %}}
+Learn how to [register as a new user on rapyuta.io](/getting-started/register-new-user).
+{{% /notice %}}
 
 ## Projects
 A project is a set of one or more packages, devices, running deployments
