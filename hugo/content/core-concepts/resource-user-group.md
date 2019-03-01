@@ -22,19 +22,38 @@ Learn how to [register as a new user on rapyuta.io](/getting-started/register-ne
 {{% /notice %}}
 
 ## Projects
-A project is a set of one or more packages, devices, running deployments
-(both cloud and device component instances). Projects are shared only among
-users from within the same organisation. The name of a project must be unique.
+A project consists of a set of users and rapyuta.io resources such as packages,
+deployments, secrets and devices. It organises all your rapyuta.io resources
+into logical groups. It can be thought of as a namespace, which means every resource
+within each project must have a unique name.
+
+Each rapyuta.io project has:
+
+* a project name
+* a project ID
+* the project’s creator name
+* the creation timestamp
+
+Each project name and project ID is unique.
+
+You may create multiple projects and use them to organise rapyuta.io resources.
+Each project is associated with one billing account.
+
 {{% notice info %}}
-A project's name must consist of alphabets, digits, hyphen (-) or an
-underscore ( _ ), and it must begin with an alphabet.
-It must be atleast 3 characters long and not more than 15 characters.
+A project's name is 3 to 15 characters in length, and consists of lowercase
+alphabets, digits and hyphen (-).
 {{% /notice %}}
-Each project is identified by its unique project ID. The creator of a
-project is also the admin of the project.
 
-Learn how to [create a new project](/getting-started/create-project),
+{{% notice info %}}
+Learn how to [create a new project](/getting-started/create-project) or
 [delete an existing project](/getting-started/delete-project).
+{{% /notice %}}
 
-Learn how to [add users to a project](/getting-started/add-user-to-project),
+{{% notice info %}}
+Learn how to [add users to a project](/getting-started/add-user-to-project) or
 [delete a user from the project](/getting-started/delete-user-from-project).
+{{% /notice %}}
+
+{{% notice info %}}
+Learn how to [switch between projects](/getting-started/switch-between-projects/).
+{{% /notice %}}

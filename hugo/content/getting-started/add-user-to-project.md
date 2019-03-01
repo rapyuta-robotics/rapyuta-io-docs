@@ -1,14 +1,24 @@
 ---
-title: "Add User to A Project"
+title: "Add User to Project"
 description:
 type: getting-started
 date: 2019-01-29T11:48:40+05:30
 pre: "d. "
 weight: 212
 ---
-Only the admin of a project is eligible to add another user to it
-provided the user being added is from the same organisation, and has
-logged into [rapyuta.io console](https://closed-beta.rapyuta.io) at least
-once.
+A project’s creator can alone add other users to the project.
 
-Describe the workflow with images.
+{{% notice note %}}
+Users within a project belong to the same organisation as that of the creator.
+{{% /notice %}}
+
+To add a user to a project, you will follow the below instructions:
+
+1. On the left navigation bar, click **PROJECTS** to view the projects dashboard.
+2. Select the project to which you want to add a user.
+3. Under **Users** tab, enter or select the email address of the user from the drop down menu. Ensure that the user you are adding is in **Activated** state.
+4. Click **ADD USER**.
+   ![Add user to project](/images/getting-started/organization/project/add-user-to-proj.png?classes=border,shadow&width=50pc)
+5. The name of the user, their email address is added to the list of **EXISTING USERS**.
+
+![newly added user](/images/getting-started/organization/project/after-usr-added.png?classes=border,shadow&width=50pc)
