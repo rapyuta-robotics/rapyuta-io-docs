@@ -14,6 +14,6 @@ Pay only for what you use, nothing more.
 
 Simple, flexible usage-based pricing options.
 
-{{% children depth="999" sort="Weight" %}}
+{{% children depth="1" sort="Weight" %}}
 
 

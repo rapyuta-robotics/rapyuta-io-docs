@@ -11,4 +11,4 @@ weight: 500
 
 # Updates
 
-{{% children depth="999" sort="Weight" %}}
+{{% children depth="1" sort="Weight" %}}

@@ -10,4 +10,4 @@ weight: 200
 
 # Getting Started Guides
 
-{{% children depth="999" sort="Weight" %}}
+{{% children depth="1" sort="Weight" %}}
