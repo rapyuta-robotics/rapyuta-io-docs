@@ -15,11 +15,11 @@ In this scheme, you pay for all of the designated units as you use them.
 The units include cloud deployment hours, device deployment hours and
 persistent volume.
 
-Device deployment hours is the duration for which you can run your deployments
+Device deployment hours (DDH) is the duration for which you can run your deployments
 on your devices through rapyuta.io. If you exhaust the available device deployment hours of your subscribed plan, you will incur an additional
 fee for each additional hour.
 
-Cloud deployment hours is the duration for which you can run your deployments
+Cloud deployment hours (CDH) is the duration for which you can run your deployments
 in the cloud through rapyuta.io. Similarly, you will incur an additional fee
 per vCPU per hour if you exhaust the available cloud deployment hours of your
 subscribed plan.
@@ -35,9 +35,30 @@ you to choose from.
 | High | 8 | 32 |
 
 Persistent volume is made available in the form of SSD disks. The available disk
-sizes are 32GiB, 64GiB, 128GiB, 256GiB and 512GiB. Volume deployment hours
+sizes are 32GiB, 64GiB, 128GiB, 256GiB and 512GiB. Volume deployment hours (VDH)
 is the duration for which you run deployments of the ***Persistent Volume*** package
 provided by rapyuta.io
+
+Consider you have subscribed to the [Professional Plan](/pricing/subscription-plans/)
+on March 01. Your credit card is charged with the plan’s subscription fee on the same day.
+
+Suppose you create a package say *pkgA* with three components say *compA*, *compB* and
+*compC*. The details of each component are:
+
+* _compA_ is deployed on a device
+* _compC_ is a volume deployment of 32GiB size
+* _compB_ is deployed on the cloud. It has two executables say *execX* with 1 vCPU
+  and *execY* with 8 vCPU. Also, there are ***three*** replicas of *compB*.
+
+All of the above three components are run for ***ten*** hours.
+
+The formula to calculate **pay-as-you-use** charges is:    
+{{% notice info %}}
+pay-as-you-use charge = (number of hours * DDH) + (number of hours * volume size * VDH) + (number of hours * replica count * (sum of vCPU numbers of all executables) * CDH)
+{{% /notice %}}
+
+Hence, in the aforementioned example,    
+pay-as-you-use charges = (10 * $0.004) + (10 * 32GiB * $0.001) + (10 * 3 * (1 + 8)vCPUs * $0.08)
 
 ## Add-ons
 
