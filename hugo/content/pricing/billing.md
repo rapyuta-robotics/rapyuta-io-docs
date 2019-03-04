@@ -1,5 +1,5 @@
 ---
-title: "Billing"
+title: "Billing and Usage"
 description:
 type: pricing
 date: 2019-03-04T10:40:44+05:30
