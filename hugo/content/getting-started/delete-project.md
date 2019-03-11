@@ -6,12 +6,13 @@ date: 2019-01-29T11:38:56+05:30
 pre: "c. "
 weight: 211
 ---
-The creator of a project is alone permitted to delete the project. However,
-you must ensure that the billable units (deployments, devices, users and disks)
-are deleted or unallocated prior to removing the project.
+The creator of a project can alone delete the project. Prior to deleting a
+project, ensure that the project's resources are de-allocated and its users
+are removed.
 
 {{% notice note %}}
-Deletion of a project is irreversible.
+Deletion of a project is irreversible. Once de-allocated, the resources of the project cannot be retained.
+You must create a new project to allocate resources.
 {{% /notice %}}
 
 To delete an existing project, you will follow the below instructions:

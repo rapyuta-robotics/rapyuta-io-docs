@@ -7,25 +7,25 @@ pre: "a. "
 weight: 105
 ---
 ## Resources
-A resource is an entity that can be managed by rapyuta.io. It can be a device
-that is already integrated into the platform, a package that is added to the
-platform, a deployment or a build.
+A resource is an entity that can be managed by rapyuta.io, for instance, the resources that are found in rapyuta.io:
+
+* A device that is already integrated into the platform
+* A package that is added to the platform
+* A deployment that is run either on a device or in the cloud
+* A package build
+* A secret
 
 ## Users
-A user is an entity responsible for creating and managing rapyuta.io resources
-(device, package, deployment). A user can be either in **Invited** state or in **Activated**
-state. The admin of an organization is the most privileged user of all users in an
-organization on rapyuta.io
+A user represents the end-user of rapyuta.io with a unique email address and sign in credentials. They can manage rapyuta.io resources such as devices, deployments, secrets, packages and builds.
+
+A user can be either in **Invited** state or in **Activated** state. They may be an *admin* - the highest privilege user-level in rapyuta.io because they are responsible for managing the [organization](/core-concepts/organisation/).
 
 {{% notice info %}}
 Learn how to [register as a new user on rapyuta.io](/getting-started/register-new-user).
 {{% /notice %}}
 
 ## Projects
-A project consists of a set of users and rapyuta.io resources such as packages,
-deployments, secrets and devices. It organises all your rapyuta.io resources
-into logical groups. It can be thought of as a namespace, which means every resource
-within each project must have a unique name.
+A project is an entity that enables users to logically isolate and organize resources within an organization.
 
 Each rapyuta.io project has:
 
@@ -36,13 +36,14 @@ Each rapyuta.io project has:
 
 Each project name and project ID is unique.
 
-You may create multiple projects and use them to organise rapyuta.io resources.
-Each project is associated with one billing account.
-
 {{% notice info %}}
 A project's name is 3 to 15 characters in length, and consists of lowercase
 alphabets, digits and hyphen (-).
 {{% /notice %}}
+
+You may create multiple projects and use them to organize rapyuta.io resources.
+
+The project's creator must [add users from the organization to the project](/getting-started/add-user-to-project) in order for them to collaborate.
 
 {{% notice info %}}
 Learn how to [create a new project](/getting-started/create-project) or
