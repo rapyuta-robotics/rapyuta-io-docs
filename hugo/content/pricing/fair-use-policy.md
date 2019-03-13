@@ -3,19 +3,17 @@ title: "Fair Use Policy"
 description:
 type: pricing
 date: 2019-02-26T15:00:03+05:30
-pre: "d. "
-weight: 720
+pre: "c. "
+weight: 715
 ---
 This Fair Use Policy (this **Policy**) governs the use of rapyuta.io (the
 **rapyuta.io**) and its services (the **Services**) by customers and authorized
 users. It describes prohibited uses of the Services offered by
-Rapyuta Robotics Inc. (the **Rapyuta Robotics**), and the website located
-at https://www.rapyuta-robotics.com (the **Website**). The examples described
+Rapyuta Robotics Inc. (the **Rapyuta Robotics**). The examples described
 in this Policy are not exhaustive. We may modify this Policy at any time by
-posting a revised version on the Website. By using the rapyuta.io or
-accessing the Website, you agree to the latest version of this Policy. If
-you violate this Policy or authorize or help others to do so, we may suspend
-or terminate your use of the rapyuta.io
+posting a revised version on rapyuta.io. By using the rapyuta.io, you agree to the
+latest version of this Policy. If you violate this Policy or authorize or
+help others to do so, we may suspend or terminate your use of the rapyuta.io
 
 ## Acceptable Use Limits
 
