@@ -7,22 +7,18 @@ pre: "a. "
 weight: 105
 ---
 ## Resources
-A resource is an entity that can be managed by rapyuta.io, for instance, the resources that are found in rapyuta.io:
+A resource is an entity that rapyuta.io provides to its users for building robotics applications, for example:
 
-* A device that is already integrated into the platform
+* A device that is already on-boarded on to the platform
 * A package that is added to the platform
 * A deployment that is run either on a device or in the cloud
 * A package build
 * A secret
 
 ## Users
-A user represents the end-user of rapyuta.io with a unique email address and sign in credentials. They can manage rapyuta.io resources such as devices, deployments, secrets, packages and builds.
+A user represents the end user of rapyuta.io with a unique email address and sign in credentials. They can manage resources such as devices, deployments, secrets, packages and builds.
 
-A user can be either in **Invited** state or in **Activated** state. They may be an *admin* - the highest privilege user-level in rapyuta.io because they are responsible for managing the [organization](/core-concepts/organisation/).
-
-{{% notice info %}}
-Learn how to [register as a new user on rapyuta.io](/getting-started/register-new-user).
-{{% /notice %}}
+A user can be either in **Invited** state or in **Activated** state. They may be an *admin* and are responsible for managing the [organization](/core-concepts/organisation/).
 
 ## Projects
 A project is an entity that enables users to logically isolate and organize resources within an organization.

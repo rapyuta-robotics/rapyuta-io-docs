@@ -11,15 +11,13 @@ project, ensure that the project's resources are de-allocated and its users
 are removed.
 
 {{% notice note %}}
-Deletion of a project is irreversible. Once de-allocated, the resources of the project cannot be retained.
-You must create a new project to allocate resources.
+Deletion of a project is irreversible. Once de-allocated, the resources of the project cannot be retained. You must create a new project to allocate resources.
 {{% /notice %}}
 
 To delete an existing project, you will follow the below instructions:
 
-1. On the left navigation bar, click **PROJECTS**. You will view a dashboard, which enlists
-   all of the current projects in your organization.
-2. Select the project that you want to delete.
+1. On the left navigation bar, click **PROJECTS**. You will view a dashboard, which enlists your current projects.
+2. Pick the project that you want to delete.
 3. Click **Delete** to remove the project.
    ![Delete existing project](/images/getting-started/organization/project/delete-project.png?classes=border,shadow&width=50pc)
 4. Click **Confirm**.

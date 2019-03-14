@@ -12,7 +12,7 @@ project can alone add or remove users from the project.
 To create a new project, you will follow the below instructions:
 
 1. On the left navigation bar, click **PROJECTS**. You will view a dashboard,
-   which enlists all the current projects in your organization. The list displays the name of the project, its creator and the valid action for the project.
+   which enlists all the current rapyuta.io projects in your organization. The list displays the name of the project, its creator and the valid action for the project.
 2. Click **CREATE NEW PROJECT**.
    ![Create new project](/images/getting-started/organization/project/proj-dashboard.png?classes=border,shadow&width=50pc)
 3. Provide a name for the project say `example-2`
@@ -24,4 +24,10 @@ To create a new project, you will follow the below instructions:
 4. Click **CONTINUE**.
 
 The newly created project appears in the list of current projects on the
-dashboard.
+dashboard. A project is highlighted in red if you are either the project's creator or is added as a member to the project.
+
+![Project dashboard](/images/getting-started/organization/project/proj-list-other-user.png?classes=border,shadow&width=50pc)
+
+The admin of the organization can see all the current rapyuta.io projects that are created for the organization, while the other users can see only the projects that they created or are a member of.
+
+![Admin's project dashboard](/images/getting-started/organization/project/project-list-admin.png?classes=border,shadow&width=50pc)
