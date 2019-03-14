@@ -3,8 +3,8 @@ title: "Fair Use Policy"
 description:
 type: pricing
 date: 2019-02-26T15:00:03+05:30
-pre: "c. "
-weight: 715
+pre: "d. "
+weight: 720
 ---
 This Fair Use Policy (this **Policy**) governs the use of rapyuta.io (the
 **rapyuta.io**) and its services (the **Services**) by customers and authorized
