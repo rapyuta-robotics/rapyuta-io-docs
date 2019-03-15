@@ -17,26 +17,28 @@ weight: 705
 | Additional deployment hours on device | <center>$0.004/hour</center> | <center>$0.004/hour</center> |
 | Cloud deployment hours<br><br>*represents hours of deployments consumed in the cloud* | <center>100 vCPU-hour</center> | <center>500 vCPU-hour</center> |
 | Additional deployment hours in cloud | <center>$0.08/vCPU-hour</center> | <center>$0.08/vCPU-hour</center> |
-| Volume deployment hours<br><br>*represents hours consumed by storage volume deployments* | <center>$0.001/GiB-hour</center> | <center>$0.001/GiB-hour</center> |
-| Storage and compute | <table><tr><th>Tier</th><th>vCPU</th><th>Memory</th></tr><tr><td>Low</td><td>1</td><td>4</td></tr><tr><td>Medium</td><td>2</td><td>8</td></tr><tr><td>High</td><td>8</td><td>32</td></tr></table> | <table><tr><th>Tier</th><th>vCPU</th><th>Memory</th></tr><tr><td>Low</td><td>1</td><td>4</td></tr><tr><td>Medium</td><td>2</td><td>8</td></tr><tr><td>High</td><td>8</td><td>32</td></tr></table> |
+| Volume deployment hours<br><br>*represents hours consumed by volume deployments* | <center>$0.001/GiB-hour</center> | <center>$0.001/GiB-hour</center> |
+| Memory and compute | <table><tr><th>Tier</th><th>vCPU</th><th>Memory</th></tr><tr><td>Low</td><td>1</td><td>4</td></tr><tr><td>Medium</td><td>2</td><td>8</td></tr><tr><td>High</td><td>8</td><td>32</td></tr></table> | <table><tr><th>Tier</th><th>vCPU</th><th>Memory</th></tr><tr><td>Low</td><td>1</td><td>4</td></tr><tr><td>Medium</td><td>2</td><td>8</td></tr><tr><td>High</td><td>8</td><td>32</td></tr></table> |
 | Support | <ul><li>Resolve critical bugs and issues.</li><li>Quickly answer queries and concerns.</li></ul> | <ul><li>On-demand, SLA support for critical bugs.</li><li>Access to Rapyuta Robotics engineers.</li></ul> |
 | Free trial period | <center>NA</center> | <center>Free 7-day trial</center> |
 
 When you subscribe to a plan, your credit card will be charged for $1 in order to verify the card details.
 After successful transaction, the $1 will be refunded to your account in 24 hours.
 {{% notice info %}}
-If you want to unsubscribe from or cancel the current plan or shift to another plan, please contact support.
+If you want to cancel the current plan or shift to another plan, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
 {{% /notice %}}
 
 ## Community Plan
 
-With community plan, you can get started with rapyuta.io for free. You will be charged an overage fee if you want to add more deployment hours or add-ons.
+With community plan, you can get started with rapyuta.io for free. You will be charged additional usage charges if you consume more deployment hours than
+included in the plan or purchase add-ons.
 
 ## Professional Plan
 
-With professional plan, you can get started with rapyuta.io for free for ***seven*** days. On subscribing to the plan, your credit card will be charged for $99 at the start of the free trial period. You will be automatically moved to the professional plan once the free trial period ends. Then, the subscription fee is applied monthly and prorated for partial months.
+With professional plan, you can get started with rapyuta.io for free for ***seven*** days. On subscribing to the plan, the subscription fee is applied monthly and prorated for partial months. Your credit card will be charged with
+the subscription fee at the start of the free trial period. You will be automatically moved to the professional plan once the free trial period ends.
 {{% notice note %}}
-***Fair use*** during the free 7-day trial period restricts you to *50 cloud deployment hours* and *200 device deployment hours*. If you unsubscribe from the plan before the free trial period ends, the full subscription fee will be refunded. However, you may be charged for additional consumption of resources beyond their fair use before unsubscribing from the plan.
+***Fair use*** during the free 7-day trial period restricts you to *50 cloud deployment hours* and *200 device deployment hours*. If you unsubscribe from the plan before the free trial period ends, the full subscription fee will be refunded. However, you may be charged for additional consumption of resources beyond their fair use before.
 {{% /notice %}}
 
 ## Consumable Items
@@ -49,7 +51,8 @@ You will incur overage charges when you exhaust all deployment hours of your sub
 In the case of volume deployment hours, rapyuta.io provides SSD disks as persistent storage volumes. The disks are of ***32GiB***, ***64GiB***, ***128GiB***, ***256GiB*** and ***512GiB*** sizes.
 {{% /notice %}}
 
-Add-ons are discrete and countable items such as devices added to rapyuta.io or active users of rapyuta.io. You can add or remove add-ons as per your requirements.
+Add-ons are discrete and countable items such as devices added to rapyuta.io or active users of rapyuta.io. You can purchase add-ons to increase the available
+limits on devices and users provided by your subscribed plan.
 
 To add or remove add-ons in rapyuta.io:
 
