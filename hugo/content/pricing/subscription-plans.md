@@ -4,7 +4,7 @@ description:
 type: pricing
 date: 2019-02-26T13:37:38+05:30
 pre: "a. "
-weight: 705
+weight: 205
 ---
 
 | Key Features | <center>Community</center> | <center>Professional</center> |

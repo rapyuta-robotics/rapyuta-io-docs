@@ -1,9 +1,9 @@
 ---
 title: "Pricing"
 date: 2019-02-26T13:26:36+05:30
-weight: 700 
+weight: 200 
 chapter: true
-pre: "7. "
+pre: "3. "
 ---
 
 ### rapyuta.io

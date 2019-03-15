@@ -4,7 +4,7 @@ description:
 type: pricing
 date: 2019-03-14T19:09:48+05:30
 pre: "c. "
-weight: 715
+weight: 215
 ---
 This pricing example is set outside the free 7-day trial period.
 

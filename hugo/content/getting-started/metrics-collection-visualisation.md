@@ -4,7 +4,7 @@ description:
 type: getting-started
 date: 2018-11-29T16:25:57+05:30
 pre: "n. "
-weight: 250
+weight: 350
 ---
 rapyuta.io enables a device to push metrics data out, and lets you visualise
 the telemetry data in the [console](https://closed-beta.rapyuta.io).

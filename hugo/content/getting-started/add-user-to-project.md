@@ -4,7 +4,7 @@ description:
 type: getting-started
 date: 2019-01-29T11:48:40+05:30
 pre: "e. "
-weight: 213
+weight: 313
 ---
 A project’s creator can alone add other users to the project.
 

@@ -2,7 +2,7 @@
 title: "December"
 date: 2019-02-13T18:27:49+05:30
 chapter: true
-weight: 599
+weight: 699
 ---
 ### rapyuta.io
 
