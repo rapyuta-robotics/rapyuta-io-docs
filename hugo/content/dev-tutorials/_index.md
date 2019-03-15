@@ -1,12 +1,12 @@
 ---
 title: "Developer tutorials"
 chapter: true
-pre: "4. "
-weight: 300
+pre: "5. "
+weight: 400
 ---
 
 ### Category
 
 # Developer tutorials
 
-{{% children depth="999" sort="Weight" %}}
+{{% children depth="1" sort="Weight" %}}

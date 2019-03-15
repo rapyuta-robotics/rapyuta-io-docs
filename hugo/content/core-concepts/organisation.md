@@ -1,30 +1,37 @@
 ---
-title: "Organisation"
+title: "Organization"
 description:
 type: core-concepts
 date: 2018-11-15T09:49:07+05:30
 pre: "b. "
 weight: 110
 ---
-A _partner organisation_ receives an email with links to [rapyuta.io console](https://closed-beta.rapyuta.io),
-this documentation and an unique _invite code_. You (a user of rapyuta.io console from
-a partner organisation) must use this _invite code_ to register and access the
-console. When you log into the console for the first time, you must provide
-the _invite code_ just once. There is a limit on the number of users who use
-the invite code to access the console for the first time. Once an
-organisation exhausts its maximum count, no additional users can access
-rapyuta.io console.
+An organization is an enterprise customer or a small business team or
+an individual developer like you who signs up for rapyuta.io and subscribes
+to its tools and services for building efficient robotics applications.
 
-If you are the very first user from your organisation to access rapyuta.io
-console, you will have to fill in the details of your organisation. For example,
-you should provide your organisation’s name, its official website url and
-location on the organisation details page.
+Each organization has an _admin_, that is, the very first user that registers and
+signs into rapyuta.io. The *admin* is responsible for on-boarding the organization
+onto rapyuta.io and providing necessary details (e.g. organization name, website)
+to complete the registration process. rapyuta.io grants highest privilege to the
+admin than any user can have, and is responsible for managing users (invite/remove)
+and billing.
 
-rapyuta.io allows an organisation to create a finite number of resources
-(devices, packages, deployments, builds etc.) to your organisation. Each resource
-that you utilise counts on your organisation regardless how the resources are
-used -  as a user or a group. You can create [groups of users](../resource-user-group)
-for sharing resources. But, the users in a group must belong to the same organisation.
+The organization panel displays information relevant to an organization and a
+list of *Activated* users.
+![Organization panel](/images/getting-started/organization/org-panel.png?classes=border,shadow&width=50pc)
+{{% notice note %}}
+Your billing account is tied to your organization.
+{{% /notice %}}
 
-An _invite code_ has a maximum count. Once a _partner organisation_ exhausts its
-maximum count, no more users can access rapyuta.io console.
+{{% notice info %}}
+Learn how to [register as a new user](/getting-started/register-new-user/) on rapyuta.io
+{{% /notice %}}
+
+{{% notice info %}}
+Learn how to [invite or add a user to your organization](/getting-started/invite-user-to-org/).
+{{% /notice %}}
+
+{{% notice info %}}
+Learn how to [delete a user from your organization](/getting-started/remove-user-from-org/).
+{{% /notice %}}

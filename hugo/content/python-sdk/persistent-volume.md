@@ -2,7 +2,7 @@
 title: "Persistent Volume"
 description:
 pre: "c. "
-weight: 415
+weight: 515
 ---
 ## Learning objectives
 

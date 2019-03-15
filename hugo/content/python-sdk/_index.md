@@ -2,11 +2,11 @@
 title: "Python SDK"
 description:
 chapter: true
-pre: "5. "
-weight: 400
+pre: "6. "
+weight: 500
 ---
 ### Category
 
 # Python SDK
 
-{{% children depth="999" sort="Weight" %}}
+{{% children depth="1" sort="Weight" %}}

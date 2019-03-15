@@ -4,9 +4,7 @@ description:
 type: updates
 date: 2019-01-22T17:24:52+05:30
 pre: ""
-weight: 540
+weight: 640
 ---
 
-### rapyuta.io 2019 Updates
-
-{{% children depth="999" sort="Weight" %}}
+{{% children depth="1" sort="Weight" %}}
