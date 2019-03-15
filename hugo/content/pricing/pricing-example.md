@@ -8,7 +8,12 @@ weight: 715
 ---
 This pricing example is set outside the free 7-day trial period.
 
-Let’s assume your ROS application has three modules say module A, module B and module C. You intend to deploy 3 copies of module A in the cloud, a copy of module B on one of your devices, and attach a persistent storage volume of 32GiB size to module C and deploy it. You also want for all the three modules A, B and C to run for 10 hours.
+Let’s assume your ROS application has two modules say module A and module B. You intend to deploy 3 instances of module A in the cloud, an instance of module B on your device, and attach a persistent storage volume of 32GiB size. You also want the ROS application to run for 10 hours a day.
+
+In rapyuta.io, the ROS application is modelled as a ROS package. The
+application modules are implemented as the components of the package,
+and each component has at least one executable
+The instances of a component are called replicas.
 
 You would create a ROS package with three components say compA, compB and compC using rapyuta.io.
 
