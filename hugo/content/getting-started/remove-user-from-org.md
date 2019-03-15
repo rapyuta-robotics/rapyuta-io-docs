@@ -4,7 +4,7 @@ description:
 type: getting-started
 date: 2019-02-26T19:48:59+05:30
 pre: "b. "
-weight: 207
+weight: 307
 ---
 The admin of an organization can remove a user from rapyuta.io.
 However, only **Invited** users can be removed from rapyuta.io.

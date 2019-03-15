@@ -4,7 +4,7 @@ description:
 type: pricing
 date: 2019-03-04T10:40:44+05:30
 pre: "b. "
-weight: 710
+weight: 210
 ---
 On subscribing to one of the plans, you (the admin of organization or
 individual user) can access the **Billing** panel. *Billing* aggregates information

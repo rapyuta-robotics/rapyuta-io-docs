@@ -4,7 +4,7 @@ description:
 type: getting-started
 date: 2018-11-26T15:03:30+05:30
 pre: "j. "
-weight: 230
+weight: 330
 ---
 ## Prerequisites
 - [UP board](https://up-board.org/up/specifications/)

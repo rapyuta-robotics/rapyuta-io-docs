@@ -4,7 +4,7 @@ description:
 type: getting-started
 date: 2018-11-26T15:13:07+05:30
 pre: "k. "
-weight: 235
+weight: 335
 ---
 To create a new rapyuta.io package using the [console](https://closed-beta.rapyuta.io),
 follow the steps:

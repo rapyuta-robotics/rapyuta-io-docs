@@ -4,7 +4,7 @@ description:
 type: python-sdk
 date: 2018-11-29T18:37:54+05:30
 pre: "a. "
-weight: 405
+weight: 505
 ---
 rapyuta.io's Python SDK enables you to provision packages either on the cloud or
 on a device, add a dependent deployment, and access various rapyuta.io resources

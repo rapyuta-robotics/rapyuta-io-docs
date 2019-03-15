@@ -4,7 +4,7 @@ description:
 type: getting-started
 pre: "1. "
 date: 2019-01-07T11:43:33+05:30
-weight: 221
+weight: 321
 ---
 The below table lists all of the error codes together with their description
 and recommended actions when the status of a device is Failed. If the issue still persists, please contact support.

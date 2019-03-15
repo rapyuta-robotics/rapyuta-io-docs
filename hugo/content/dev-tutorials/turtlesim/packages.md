@@ -4,7 +4,7 @@ description:
 type: dev-tutorials
 date: 2018-11-23T10:47:03+05:30
 pre: "2. "
-weight: 335
+weight: 435
 ---
 ## Turtle package
 The Turtle package emulates the behaviour of a Turtlebot through the Simulator.

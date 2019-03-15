@@ -4,7 +4,7 @@ description:
 type: getting-started
 date: 2018-11-26T15:19:20+05:30
 pre: "l. "
-weight: 240
+weight: 340
 ---
 To deploy a package in rapyuta.io using the [console](https://closed-beta.rapyuta.io),
 follow the steps:

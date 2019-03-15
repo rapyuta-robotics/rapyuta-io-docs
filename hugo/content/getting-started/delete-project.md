@@ -4,7 +4,7 @@ description:
 type: getting-started
 date: 2019-01-29T11:38:56+05:30
 pre: "d. "
-weight: 211
+weight: 311
 ---
 The creator of a project can alone delete the project. Prior to deleting a
 project, ensure that the project's resources are de-allocated and its users

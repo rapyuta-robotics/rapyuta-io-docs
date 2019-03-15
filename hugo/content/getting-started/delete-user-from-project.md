@@ -4,7 +4,7 @@ description:
 type: getting-started
 date: 2019-01-29T11:55:37+05:30
 pre: "f. "
-weight: 215
+weight: 315
 ---
 The creator of a project is qualified to remove a user from the project.
 However, the project’s creator cannot remove themself.

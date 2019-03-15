@@ -4,7 +4,7 @@ description:
 type: getting-started
 date: 2019-01-29T11:29:35+05:30
 pre: "c. "
-weight: 209
+weight: 309
 ---
 Any user in **Activated** state can create a new project. The *creator* of the
 project can alone add or remove users from the project.

@@ -4,7 +4,7 @@ description:
 type: getting-started
 date: 2018-11-26T15:37:32+05:30
 pre: "m. "
-weight: 245
+weight: 345
 ---
 The device manager provides SSH access to a device connected to rapyuta.io
 through a reverse ssh tunnel. The WebSSH feature secures you from exposing SSH
