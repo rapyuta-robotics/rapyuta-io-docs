@@ -3,8 +3,8 @@ title: "Adding New Device"
 description:
 type: getting-started
 date: 2018-11-26T14:37:01+05:30
-pre: "d. "
-weight: 220
+pre: "h. "
+weight: 219
 ---
 ## Device requirements
 

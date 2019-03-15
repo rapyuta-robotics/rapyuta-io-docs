@@ -9,4 +9,4 @@ weight: 100
 
 # Core concepts
 
-{{% children depth="999" sort="Weight" %}}
+{{% children depth="1" sort="Weight" %}}

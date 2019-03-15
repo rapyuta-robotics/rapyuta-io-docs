@@ -9,4 +9,4 @@ weight: 300
 
 # Developer tutorials
 
-{{% children depth="999" sort="Weight" %}}
+{{% children depth="1" sort="Weight" %}}
