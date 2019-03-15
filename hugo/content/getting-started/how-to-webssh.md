@@ -3,7 +3,7 @@ title: "How to WebSSH"
 description:
 type: getting-started
 date: 2018-11-26T15:37:32+05:30
-pre: "i. "
+pre: "m. "
 weight: 245
 ---
 The device manager provides SSH access to a device connected to rapyuta.io

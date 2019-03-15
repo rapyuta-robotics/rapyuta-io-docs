@@ -3,8 +3,8 @@ title: "Invite User to Organization"
 description:
 type: getting-started
 date: 2019-02-26T19:19:44+05:30
-pre: "b. "
-weight: 206
+pre: "a. "
+weight: 205
 ---
 The admin of an organization can invite users to rapyuta.io
 
