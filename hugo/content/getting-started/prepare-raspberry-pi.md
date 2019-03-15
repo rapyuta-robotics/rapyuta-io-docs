@@ -3,8 +3,8 @@ title: "Preparing Raspberry PI"
 description:
 type: getting-started
 date: 2018-11-26T15:02:22+05:30
-pre: "e. "
-weight: 225
+pre: "i. "
+weight: 325
 ---
 ## Prerequisites
 

@@ -3,15 +3,14 @@ title: "Adding New Device"
 description:
 type: getting-started
 date: 2018-11-26T14:37:01+05:30
-pre: "d. "
-weight: 220
+pre: "h. "
+weight: 319
 ---
 ## Device requirements
 
 * Mandatory
     * Python >=2.7.8, <3
     * Ubuntu 16.04
-    * pip >8.1.0, <10.0.0
 * Optional
     * [curl](https://curl.haxx.se/)
     * [Robot Operating System](http://wiki.ros.org/kinetic) (ROS)

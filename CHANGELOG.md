@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [Unreleased]
+### Changed
+- remove pip version limits - since python packages will be installed in virtualenv
+
 ## [1.2.0 - 2019-02-13]
 ### Added
 * Add release notes for February 13, 2019
