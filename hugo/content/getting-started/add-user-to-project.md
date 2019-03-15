@@ -3,8 +3,8 @@ title: "Add User to Project"
 description:
 type: getting-started
 date: 2019-01-29T11:48:40+05:30
-pre: "d. "
-weight: 212
+pre: "e. "
+weight: 213
 ---
 A project’s creator can alone add other users to the project.
 

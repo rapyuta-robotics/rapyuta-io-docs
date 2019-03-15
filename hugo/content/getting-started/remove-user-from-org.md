@@ -3,7 +3,7 @@ title: "Remove User From Organization"
 description:
 type: getting-started
 date: 2019-02-26T19:48:59+05:30
-pre: "c. "
+pre: "b. "
 weight: 207
 ---
 The admin of an organization can remove a user from rapyuta.io.
