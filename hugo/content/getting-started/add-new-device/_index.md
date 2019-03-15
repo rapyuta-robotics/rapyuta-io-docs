@@ -9,7 +9,7 @@ weight: 219
 ## Device requirements
 
 * Mandatory
-    * Python >= 2.7.8
+    * Python >=2.7.8, <3
     * Ubuntu 16.04
 * Optional
     * [curl](https://curl.haxx.se/)
