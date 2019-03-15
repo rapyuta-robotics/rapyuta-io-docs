@@ -1,8 +1,11 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+- Added pricing sections with explanation of subscription plans
 ### Changed
 - remove pip version limits - since python packages will be installed in virtualenv
+- Updated existing group docs for project
 
 ## [1.2.0 - 2019-02-13]
 ### Added
