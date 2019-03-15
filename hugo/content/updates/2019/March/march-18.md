@@ -10,16 +10,14 @@ number of significant updates in this version that we hope you will like.
 
 #### Features
 
-* Introduce subscription plans    
-  General availability release with subscription plans.
+* General availability release with ***Subscription Plans***.
 * Introduce projects    
   Change group scope to project scope for better tracking of resources
   within an organization. You must provide unique deployment names and
   device names in a project.
 * Introduce memory and compute limits for executables of components
   in a rapyuta.io package.
-* Introduce new capacity buckets for volume deployments    
-  You will be able to select a bucket size for volume deployments.
+* Introduce new capacity buckets for volume deployments.
 * Introduce Cloud Bridge v5    
   With Cloud Bridge v5, you can provide additional options for multi
   robot communication. A new compression feature over ROS messages is
