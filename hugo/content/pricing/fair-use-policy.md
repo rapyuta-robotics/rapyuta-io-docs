@@ -42,4 +42,4 @@ You agree to not, or not to allow third parties, use the rapyuta.io or its Servi
 
 If you become aware of any violation of this Policy, you will immediately
 notify us and provide us with assistance, as requested, to stop or remedy
-the violation. To report any violation of this Policy, please contact support.
+the violation. To report any violation of this Policy, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
