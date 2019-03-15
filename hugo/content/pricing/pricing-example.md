@@ -88,11 +88,10 @@ bill.
 
 #### Case 2
 
-Suppose you remove 2 devices on March 20. You will be charged for
-5 devices (that were added on March 10) even though you have removed
-2 out of 5 devices for the month. The count of devices at the start
-of the next month is 3 (5 - 2 = 3), and an overage charge for these
-3 devices is added to the next month's bill.
+Suppose you remove 2 devices on March 20. The device add-on count
+will immediately decrease to 3. You will be charged for
+5 devices (that were added on March 10) in the current bill.
+The removed devices will not be charged in the next month's bill.
 
 #### Case 3
 
