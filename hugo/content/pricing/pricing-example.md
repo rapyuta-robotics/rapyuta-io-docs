@@ -26,12 +26,12 @@ You will create a ROS package with two components say *compA* and
 * Let's assume *compA* will have two executables that actually
   get deployed when *compA* is deployed in the cloud.
   So, *compA* is charged based on cloud deployment hours.
-  The compute and storage values for one of the executables
+  The compute and memory values for one of the executables
   are (1vCPU, 4GiB) while the other executable has (8vCPU, 32GiB).
   You will create 3 replicas of *compA*.
 * Suppose *compB* will have a single executable that actually gets
   deployed when *compB* is deployed on a device. So, *compB* is charged
-  for device deployment hours. The compute and storage specifics for its executable are (1vCPU, 4GiB).
+  for device deployment hours.
   
 You will deploy a persistent storage volume of 32GiB size,
 which will be used by a deployment of the ROS package.
@@ -45,19 +45,19 @@ a day.
 
 Cloud deployment hours (CDH) price per vCPU-hour is $0.08<br>
 CDH charges for all executables of an instance of *compA*
-running for 10 hours is <br>**(CDH price * (sum of vCPUs of all executables) * hours)**: $0.08 * (1+8) * 10 = $7.2<br>
-CDH charges for 3 copies of compA: $7.2 * 3 = ***$21.6***
+running for 10 hours a day for 30 days is <br>**(CDH price * (sum of vCPUs of all executables) * hours)**: $0.08 * (1+8) * 10 * 30 days = $7.2<br>
+CDH charges for 3 copies of compA: $7.2 * 3 = ***$216***
 
 Device deployment hours (DDH) price per hour is $0.004<br>
 DDH charges for an executable of an instance of *compB*
-running for 10 hours is <br>**(DDH price * (sum of vCPUs of all executables) * hours)**: $0.004 * 1 * 10 = ***$0.04***
+running for 10 hours a day for 30 days is <br>**(DDH price * hours)**: $0.004 * 10 * 30 = ***$1.2***
 
 Volume deployment hours (VDH) price per GiB-hour is $0.001<br>
 VDH charges for a storage volume of 32GiB size running for
-10 hours is <br>**(VDH price * (storage volume size in GiB) * hours)**:
-$0.001 * 32 * 10 = ***$0.32***
+10 hours a day for 30 days is <br>**(VDH price * (storage volume size in GiB) * hours)**:
+$0.001 * 32 * 10 * 30 = ***$9.6***
 
-Total pay as you use charges: $21.6 + $0.04 + $0.32 = **$21.96**
+Total pay as you use charges: $216 + $1.2 + $9.6 = **$226.8**
 
 Let’s assume you may require more add-ons, for example, you
 add 5 devices.
@@ -65,14 +65,14 @@ add 5 devices.
 Add-ons price per device per month is $5<br>
 Add-ons price for 5 devices per month: $5 * 5 = **$25**
 
-Total charges: $21.96 + $25 = **$46.96**
+Total charges: $226.8 + $25 = **$251.8**
 
-Grand total charges: $46.96 + $99 (subscription fee) = **$145.96**
+Grand total charges: $251.8 + $99 (subscription fee) = **$350.8**
 
 ### Add-ons Pricing Calculation
 
-The add-ons (devices and users) are charged in a slightly different way
-unlike the deployment hours.
+The add-ons (devices and users) are charged differently
+from the deployment hours.
 
 For example, let's assume you have subscribed to one of the plans on
 March 1. Suppose you add 5 additional devices on March 10. You will
@@ -88,7 +88,7 @@ bill.
 
 #### Case 2
 
-Suppose you remove 2 devices on March 20. You will still be charged for
+Suppose you remove 2 devices on March 20. You will be charged for
 5 devices (that were added on March 10) even though you have removed
 2 out of 5 devices for the month. The count of devices at the start
 of the next month is 3 (5 - 2 = 3), and an overage charge for these
