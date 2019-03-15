@@ -11,7 +11,7 @@ project, ensure that the project's resources are de-allocated and its users
 are removed.
 
 {{% notice note %}}
-Deletion of a project is irreversible. Once de-allocated, the resources of the project cannot be retained. You must create a new project to allocate resources.
+Deletion of a project is irreversible. Once de-allocated, the resources of the project cannot be retained.
 {{% /notice %}}
 
 To delete an existing project, you will follow the below instructions:

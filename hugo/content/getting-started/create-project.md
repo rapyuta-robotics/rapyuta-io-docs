@@ -24,10 +24,10 @@ To create a new project, you will follow the below instructions:
 4. Click **CONTINUE**.
 
 The newly created project appears in the list of current projects on the
-dashboard. A project is highlighted in red if you are either the project's creator or is added as a member to the project.
+dashboard. A project is highlighted in red if you are either the project's creator or a member of the project.
 
 ![Project dashboard](/images/getting-started/organization/project/proj-list-other-user.png?classes=border,shadow&width=50pc)
 
-The admin of the organization can see all the current rapyuta.io projects that are created for the organization, while the other users can see only the projects that they created or are a member of.
+The admin of the organization can see all the rapyuta.io projects that are created for the organization, while the other users can see only the projects that they are a member of.
 
 ![Admin's project dashboard](/images/getting-started/organization/project/project-list-admin.png?classes=border,shadow&width=50pc)
