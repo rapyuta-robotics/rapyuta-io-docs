@@ -1,5 +1,5 @@
 ---
-title: "Pricing Example"
+title: "Pricing Calculation"
 description:
 type: pricing
 date: 2019-03-14T19:09:48+05:30
@@ -8,36 +8,96 @@ weight: 715
 ---
 This pricing example is set outside the free 7-day trial period.
 
-Let’s assume your ROS application has two modules say module A and module B. You intend to deploy 3 instances of module A in the cloud, an instance of module B on your device, and attach a persistent storage volume of 32GiB size. You also want the ROS application to run for 10 hours a day.
+Let’s assume your ROS software application has two modules say
+*A* and *B*. You intend to deploy 3 instances of
+A in the cloud, an instance of B on your device, and attach
+a *persistent storage volume of 32GiB size* to your application.
+You also want the ROS application to run for 10 hours a day.
 
-In rapyuta.io, the ROS application is modelled as a ROS package. The
-application modules are implemented as the components of the package,
-and each component has at least one executable
-The instances of a component are called replicas.
+In rapyuta.io, the ROS software application is modelled as a
+ROS *package*. The application modules are implemented as
+*components* of the package, and each component has at least
+one *executable* (a runnable entity).
+The instances of a component are called *replicas*.
 
-You would create a ROS package with three components say compA, compB and compC using rapyuta.io.
+You will create a ROS package with two components say *compA* and
+*compB* using rapyuta.io.
 
-* The compA will have two executables that actually get deployed when compA is deployed in the cloud. So, compA is charged based on cloud deployment hours. The compute and storage specifications for one of the executables is (1 vCPU, 4GiB) while for the other it is (8 vCPU, 32GiB). You will create 3 replicas of compA.
-* The compB will have a single executable that actually gets deployed when compB is deployed on a device. So, compB is charged for device deployment hours. The compute and storage specifics for its executable is (1vCPU, 4GiB).
-* The compC will have one executable with (1vCPU, 4GiB) compute and storage specifics. You will attach a running persistent volume deployment of 32GiB to compC. So, compC is charged for volume deployment hours.
+* Let's assume *compA* will have two executables that actually
+  get deployed when *compA* is deployed in the cloud.
+  So, *compA* is charged based on cloud deployment hours.
+  The compute and storage values for one of the executables
+  are (1vCPU, 4GiB) while the other executable has (8vCPU, 32GiB).
+  You will create 3 replicas of *compA*.
+* Suppose *compB* will have a single executable that actually gets
+  deployed when *compB* is deployed on a device. So, *compB* is charged
+  for device deployment hours. The compute and storage specifics for its executable are (1vCPU, 4GiB).
+  
+You will deploy a persistent storage volume of 32GiB size,
+which will be used by a deployment of the ROS package.
+So, this persistent volume deployment is charged for
+volume deployment hours.
+
+You will then deploy the ROS package and have it run for 10 hours
+a day.
+
+***Monthly charges*** will be calculated as follows:
 
 Cloud deployment hours (CDH) price per vCPU-hour is $0.08<br>
-CDH charges for (1 + 8)vCPU for 10 hours for one copy of compA: $0.08 * (1+8) * 10 = $7.2<br>
-CDH charges for 3 copies of compA: $7.2 * 3 = $21.6
+CDH charges for all executables of an instance of *compA*
+running for 10 hours is <br>**(CDH price * (sum of vCPUs of all executables) * hours)**: $0.08 * (1+8) * 10 = $7.2<br>
+CDH charges for 3 copies of compA: $7.2 * 3 = ***$21.6***
 
 Device deployment hours (DDH) price per hour is $0.004<br>
-DDH charges for 1vCPU for 10 hours for a single copy of compB: $0.004 * 1 * 10 = $0.04
+DDH charges for an executable of an instance of *compB*
+running for 10 hours is <br>**(DDH price * (sum of vCPUs of all executables) * hours)**: $0.004 * 1 * 10 = ***$0.04***
 
 Volume deployment hours (VDH) price per GiB-hour is $0.001<br>
-VDH charges for a storage volume size of 32GiB for 10 hours for a single copy of compC: $0.001 * 32 * 10 = $0.32
+VDH charges for a storage volume of 32GiB size running for
+10 hours is <br>**(VDH price * (storage volume size in GiB) * hours)**:
+$0.001 * 32 * 10 = ***$0.32***
 
-Total pay as you use charges: $21.6 + $0.04 + $0.32 = $21.96
+Total pay as you use charges: $21.6 + $0.04 + $0.32 = **$21.96**
 
-Let’s consider you add more devices as add-ons, for example, assume you add 5 devices.
+Let’s assume you may require more add-ons, for example, you
+add 5 devices.
 
 Add-ons price per device per month is $5<br>
-Add-ons price for 5 devices per month: $5 * 5 = $25
+Add-ons price for 5 devices per month: $5 * 5 = **$25**
 
-Total charges: $21.96 + $25 = $46.96
+Total charges: $21.96 + $25 = **$46.96**
 
-Grand total charges: $46.96 + $99 (subscription fee) = $145.96
+Grand total charges: $46.96 + $99 (subscription fee) = **$145.96**
+
+### Add-ons Pricing Calculation
+
+The add-ons (devices and users) are charged in a slightly different way
+unlike the deployment hours.
+
+For example, let's assume you have subscribed to one of the plans on
+March 1. Suppose you add 5 additional devices on March 10. You will
+be charged for those 5 devices. Now, going further, you may experience
+either of the following three cases:
+
+#### Case 1
+
+Suppose you add 3 more devices on March 20. You will be charged for
+these devices. So, the total number of devices added till now is 8
+(5 + 3), and an overage charge for 8 devices is reflected in the final
+bill.
+
+#### Case 2
+
+Suppose you remove 2 devices on March 20. You will still be charged for
+5 devices (that were added on March 10) even though you have removed
+2 out of 5 devices for the month. The count of devices at the start
+of the next month is 3 (5 - 2 = 3), and an overage charge for these
+3 devices is added to the next month's bill.
+
+#### Case 3
+
+Suppose you neither add nor remove any devices after March 10. You will be
+charged for the 5 devices that you added on March 10.
+
+Your credit card will, eventually, be charged with the final bill amount
+on the first day of the next month.
