@@ -4,7 +4,7 @@ description:
 type: dev-tutorials
 date: 2018-11-22T13:20:28+05:30
 pre: "d. "
-weight: 320
+weight: 420
 ---
 Complex robotic applications involving multi-device communication with service
 distributed across WAN can be latent. This tutorial demonstrates how to have

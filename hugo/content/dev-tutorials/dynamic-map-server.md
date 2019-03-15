@@ -4,7 +4,7 @@ description:
 type: dev-tutorials
 date: 2018-11-22T13:20:02+05:30
 pre: "c. "
-weight: 315
+weight: 415
 ---
 A deployment may depend on other deployments, and it can access all of the
 exposed topics, services, actions, endpoints and configuration parameters of
