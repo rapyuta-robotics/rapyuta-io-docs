@@ -6,13 +6,13 @@ date: 2019-02-26T19:19:44+05:30
 pre: "b. "
 weight: 206
 ---
-The admin of an organization can invite users from the organization to use rapyuta.io
+The admin of an organization can invite users to rapyuta.io
 
-To invite or add users to your organization, you will follow the below
+To invite or add users to rapyuta.io, you will follow the below
 instructions:
 
 1. On left navigation bar, click **ORGANIZATION**. The panel will display
-   information such as the name of your organization, its official website,
+   information such as the name of the organization, its official website,
    location and a list of users.
 2. On **Users** tab, enter a valid email address of the user you want to
    invite to rapyuta.io.
@@ -28,5 +28,6 @@ changes to **Activated**.
 ![User in activated state](/images/getting-started/organization/invited-user-signs-in.png?classes=border,shadow&width=50pc)
 
 {{% notice note %}}
-The admin of an organization is alone privileged to view *Invited* users.
+The admin of an organization has the privilege to view *Invited* users. All other users can view only *Activated*
+users.
 {{% /notice %}}
