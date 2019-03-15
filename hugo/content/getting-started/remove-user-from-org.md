@@ -21,5 +21,5 @@ you will follow the below instructions:
 ![Delete user in invited state](/images/getting-started/organization/delete-invited-usr.png?classes=border,shadow&width=50pc)
 
 {{% notice note %}}
-To remove an **Activated** user, please contact support.
+To remove an **Activated** user, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
 {{% /notice %}}
