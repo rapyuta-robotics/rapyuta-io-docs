@@ -17,7 +17,7 @@ It is recommended you install the latest Python SDK using [pip](https://pip.pypa
 pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.2.0-py2-none-any.whl
 ```
 If you are using an old version of the Python SDK, please upgrade to the latest
-[0.2.0](https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.2.0-py2-none-any.whl)
+[0.2.0](https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.4.0-py2-none-any.whl)
 version.
 
 ## Requirements
