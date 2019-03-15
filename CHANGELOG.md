@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+
+## [1.3.0 - 2019-03-15]
 ### Added
 - Added pricing sections with explanation of subscription plans
 ### Changed
