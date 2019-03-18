@@ -32,6 +32,6 @@ number of significant updates in this version that we hope you will like.
 
 #### Documentation
 
-* Pricing documentation.
-* Cloud Bridge v5 documentation.
-* Updated Python SDK documentation.
+* Describe the newly introduced [Pricing plans](/pricing/) for rapyuta.io.
+* Explain [Multi-robot communication support](/core-concepts/network-layout-communication/multi-robot-communication/) provided by rapyuta.io's Cloud Bridge.
+* Update [Python SDK documentation](/python-sdk/introduction/).
