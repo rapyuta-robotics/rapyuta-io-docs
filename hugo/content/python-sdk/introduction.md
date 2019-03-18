@@ -33,3 +33,7 @@ Python SDK:
 
 1. [Talker Listener](/python-sdk/talker-listener)
 2. [Persistent Volume](/python-sdk/persistent-volume)
+
+{{% notice info %}}
+Before walking through the examples, ensure you [obtain the auth token, project ID, device ID, package ID and plan ID](/python-sdk/determine-unique-identifiers/).
+{{% /notice %}}
