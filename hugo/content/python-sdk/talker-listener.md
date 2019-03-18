@@ -23,11 +23,12 @@ using [rapyuta_io Python SDK](/python-sdk/introduction) in your python applicati
 Beginner
 
 ## Estimated time
-It will take nearly about 15 minutes to complete the tutorial.
+15 minutes
 
 ## Assumptions
 1. Ensure that the device with device ID, `DEVICE_ID`, is in rapyuta.io
-2. Ensure that the packages with package IDs `DEVICE_TALKER_PACKAGE_ID` and
+2. The project's ID is `"project_id"`.
+3. Ensure that the packages with package IDs `DEVICE_TALKER_PACKAGE_ID` and
 `CLOUD_LISTENER_PACKAGE_ID` are in rapyuta.io catalog.
 3. **_TALKER_** is the component name of the talker package.
 4. `DEVICE_TALKER_PLAN_ID` is the plan ID of the *DEVICE_TALKER_PACKAGE*
@@ -40,7 +41,7 @@ rapyuta.io services from within your python application.
 ```python
 # Authentication code snippet
 from rapyuta_io import Client
-client = Client(AUTH_TOKEN)
+client = Client(AUTH_TOKEN, "project_id")
 ```
 
 You retrieve the talker package via its package ID, and pick the device on which
@@ -81,7 +82,7 @@ program and close the file.
 # talker-listener.py
 
 from rapyuta_io import Client
-client = Client(AUTH_TOKEN)
+client = Client(AUTH_TOKEN, "project_id")
 
 talker_package = client.get_package(DEVICE_TALKER_PACKAGE_ID)
 device = client.get_device(DEVICE_ID)
@@ -105,6 +106,6 @@ At the terminal prompt, run the program using the command:
 $ python talker-listener.py
 ```
 
-The output is an object of the class [DeploymentStatus](https://closed-betadocs.ep.rapyuta.io/#rapyuta_io.clients.deployment.DeploymentStatus),
+The output is an object of the class ***DeploymentStatus***,
 which contains values such as deployment ID, deployment name, deployment status,
 deployment phase, package ID and other details.
