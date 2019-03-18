@@ -28,7 +28,7 @@ sudo systemctl start ssh
 sudo systemctl status ssh
 ```
 
-On rapyuta.io [console](https://closed-beta.rapyuta.io):
+On rapyuta.io [console](https://console.rapyuta.io):
 
 1. On left navigation bar, click **DEVICES**.
 2. Select the device you want to initiate an SSH session on.

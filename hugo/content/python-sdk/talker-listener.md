@@ -16,7 +16,7 @@ using [rapyuta_io Python SDK](/python-sdk/introduction) in your python applicati
 
 ## Prerequisites
 1. You should be familiar with the core concepts of rapyuta.io
-2. You should be familiar with the basic workflow of [rapyuta.io console](https://closed-beta.rapyuta.io)
+2. You should be familiar with the basic workflow of [rapyuta.io console](https://console.rapyuta.io)
 3. Ensure Python2.7 is installed in your development environment
 
 ## Difficulty

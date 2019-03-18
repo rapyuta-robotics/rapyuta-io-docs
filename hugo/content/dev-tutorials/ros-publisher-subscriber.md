@@ -84,7 +84,7 @@ then the *python-catkin-tools* package is missing on the device, which is requir
 {{% /notice %}}
 
 ## Setting up your device
-To integrate the device into rapyuta.io using the [console](https://closed-beta.rapyuta.io):
+To integrate the device into rapyuta.io using the [console](https://console.rapyuta.io):
 
 1. [Create a user account](/getting-started/create-new-user) if you do not
 have one yet.
@@ -93,7 +93,7 @@ Ensure that you do not select the **Use docker compose as default runtime** chec
 while adding the device.
 
 ## Creating the package
-To create a package using the [console](https://closed-beta.rapyuta.io), follow
+To create a package using the [console](https://console.rapyuta.io), follow
 the steps:
 
 1. On the left navigation bar, click **CATALOG**.
@@ -179,7 +179,7 @@ indicates that the _ROS publisher subscriber_ package has been successfully
 built and it can be deployed.
 
 ## Deploying the package
-To deploy a package using the [console](https://closed-beta.rapyuta.io),
+To deploy a package using the [console](https://console.rapyuta.io),
 follow the steps:
 
 1. On the left navigation bar, click **CATALOG**.
