@@ -44,7 +44,7 @@ from rapyuta_io import Client
 client = Client(AUTH_TOKEN, "project_id")
 ```
 
-You create a persistent volume, `"my_sample_volume"`, of **_1GB_** capacity and of
+You create a persistent volume, `"my_sample_volume"`, of **_32GiB_** capacity and of
 default disk type, `DiskType.DEFAULT`. You may also choose the **_SSD_** type for the
 disk, `DiskType.SSD`
 ```python
@@ -52,7 +52,7 @@ disk, `DiskType.SSD`
 from rapyuta_io import DiskType
 
 persistent_volume = client.get_persistent_volume()
-volume_instance = persistent_volume.create_volume_instance("my_sample_volume", 1, DiskType.DEFAULT)
+volume_instance = persistent_volume.create_volume_instance("my_sample_volume", 32, DiskType.DEFAULT)
 ```
 
 Mount the volume you just created on a component of a deployment of the `sample_pkg`
@@ -82,7 +82,7 @@ from rapyuta_io import Client, DiskType
 client = Client(AUTH_TOKEN, "project_id")
 
 persistent_volume = client.get_persistent_volume()
-volume_instance = persistent_volume.create_volume_instance("my_sample_volume", 1, DiskType.DEFAULT)
+volume_instance = persistent_volume.create_volume_instance("my_sample_volume", 32, DiskType.DEFAULT)
 
 sample_pkg = client.get_package("package_id")
 pkg_provision_config = sample_pkg.get_provision_configuration("plan_id")
@@ -98,6 +98,6 @@ At the terminal prompt, run the program using the command:
 $ python persistent-volume.py
 ```
 
-The output is an object of the class ***DeploymentStatus***,
+The output is an object of the class [***DeploymentStatus***](https://sdkdocs.apps.rapyuta.io/#rapyuta_io.clients.deployment.DeploymentStatus),
 which contains values such as deployment ID, deployment name, deployment status,
 deployment phase, package ID and other details.

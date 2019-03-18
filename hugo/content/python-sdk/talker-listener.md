@@ -106,6 +106,6 @@ At the terminal prompt, run the program using the command:
 $ python talker-listener.py
 ```
 
-The output is an object of the class ***DeploymentStatus***,
+The output is an object of the class [***DeploymentStatus***](https://sdkdocs.apps.rapyuta.io/#rapyuta_io.clients.deployment.DeploymentStatus),
 which contains values such as deployment ID, deployment name, deployment status,
 deployment phase, package ID and other details.
