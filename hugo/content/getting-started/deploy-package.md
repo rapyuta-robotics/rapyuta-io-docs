@@ -6,7 +6,7 @@ date: 2018-11-26T15:19:20+05:30
 pre: "l. "
 weight: 340
 ---
-To deploy a package in rapyuta.io using the [console](https://closed-beta.rapyuta.io),
+To deploy a package in rapyuta.io using the [console](https://console.rapyuta.io),
 follow the steps:
 
 1. On the left navigation bar, click **CATALOG**.
