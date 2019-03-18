@@ -4,10 +4,13 @@
 
 ## [1.3.0 - 2019-03-15]
 ### Added
-- Added pricing sections with explanation of subscription plans
+- Add pricing sections with explanation of subscription plans
+- Add multi-support communication support in rapyuta.io
+- Add release notes for March 18, 2019
 ### Changed
-- remove pip version limits - since python packages will be installed in virtualenv
-- Updated existing group docs for project
+- Remove pip version limits - since python packages will be installed in virtualenv
+- Update existing group docs for project
+- Update Python SDK URL and tutorials
 
 ## [1.2.0 - 2019-02-13]
 ### Added
