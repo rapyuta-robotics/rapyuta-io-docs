@@ -7,7 +7,7 @@ pre: "1. "
 weight: 120
 ---
 Device configuration variables are environment variables that allow you to
-correctly configure a device on rapyuta.io using the [console](https://closed-beta.rapyuta.io).
+correctly configure a device on rapyuta.io using the [console](https://console.rapyuta.io).
 They are used when deploying packages on the device.
 
 A list of predefined device configuration variables are made available for a

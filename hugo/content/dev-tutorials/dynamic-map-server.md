@@ -12,7 +12,7 @@ other deployments at runtime.
 
 ## Learning objectives
 This tutorial will show you how to create a dependent deployment using
-[rapyuta.io console](https://closed-beta.rapyuta.io).
+[rapyuta.io console](https://console.rapyuta.io).
 
 ## Prerequisites
 1. You are recommended to complete the [ROS publisher subscriber](../ros-publisher-subscriber)

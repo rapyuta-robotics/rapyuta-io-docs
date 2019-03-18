@@ -7,7 +7,7 @@ pre: "h. "
 weight: 180
 ---
 A deployment is a running instance of a package. You can deploy a package using
-the [rapyuta.io console](https://closed-beta.rapyuta.io).
+the [rapyuta.io console](https://console.rapyuta.io).
 While deploying a package, rapyuta.io will:
 
 1. Deploy components either on the cloud or on a device as you specified in a package.
@@ -64,7 +64,7 @@ the cause of the status as **Reason**.
 
 ![Reason field](/images/core-concepts/deployments/reason-field.png?classes=border,shadow&width=50pc)
 
-If the overall deployment **STATUS** is **Error**, the [console](https://closed-beta.rapyuta.io)
+If the overall deployment **STATUS** is **Error**, the [console](https://console.rapyuta.io)
 displays an error code along with a brief description of the error.
 The following table lists the error codes that are available, short descriptions
 and the recommendations you should take:

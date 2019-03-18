@@ -23,7 +23,7 @@ weight: 319
 
 ## Registering a device
 
-To register a new device with rapyuta.io using the [console](https://closed-beta.rapyuta.io),
+To register a new device with rapyuta.io using the [console](https://console.rapyuta.io),
 follow the steps:
 
 1. On the left navigation bar, click **DEVICES**.

@@ -34,7 +34,7 @@ Beginner
 Learn how to [prepare your Raspberry PI](/getting-started/prepare-raspberry-pi).
 
 ## Setting up Raspberry PI
-To integrate the device into rapyuta.io using the [console](https://closed-beta.rapyuta.io):
+To integrate the device into rapyuta.io using the [console](https://console.rapyuta.io):
 
 1. [Create a user account](/getting-started/create-new-user) if you do not
    have one yet.
@@ -81,7 +81,7 @@ Additionally, you may verify if the package is built successfully and is ready
 to be deployed by clicking to see if the **Deploy package** button is enabled.
 
 ## Deploying the package
-To deploy a package from the [console](https://closed-beta.rapyuta.io),
+To deploy a package from the [console](https://console.rapyuta.io),
 follow the steps:
 
 1. On the left navigation bar, click **CATALOG**.
