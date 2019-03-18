@@ -143,7 +143,7 @@ running prior to adding it to a deployment of a package.
 
 ## Catkin build parameters
 You can control how ROS packages will be built by specifying catkin build parameters.
-The [console](https://closed-beta.rapyuta.io) provides a handful of catkin
+The [console](https://console.rapyuta.io) provides a handful of catkin
 build parameters when adding a ROS package.
 They are:
 
@@ -172,7 +172,7 @@ subsequently, catkin build parameters are applied to it. In the absence of a
 context directory, all of the folders in the git repository are built.
 
 To add a set of catkin build parameters, click **Add Parameter** against
-**CATKIN BUILD PARAMETERS** while adding a package using the [console](https://closed-beta.rapyuta.io).
+**CATKIN BUILD PARAMETERS** while adding a package using the [console](https://console.rapyuta.io).
 
 You may provide multiple sets of catkin build parameters for a single ROS package,
 thus you can run multiple catkin builds on a ROS package.

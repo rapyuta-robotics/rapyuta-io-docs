@@ -12,7 +12,7 @@ can be reused to control real robots such as [Turtlebot](https://www.turtlebot.c
 
 ## Learning objectives
 In this tutorial you will learn how to add and deploy packages using
-[rapyuta.io console](https://closed-beta.rapyuta.io). Specifically, you'll
+[rapyuta.io console](https://console.rapyuta.io). Specifically, you'll
 learn how to:
 
 1. Source your packages from a public docker registry and from a public git
@@ -59,7 +59,7 @@ the Turtle package would directly control a robot. Since this is a simulation,
 the dynamics of the Turtle's behaviour is obtained from the Simulator. Learn
 more about [Turtle package](./packages/#turtle-package).
 
-To add _Turtle_ package using [rapyuta.io console](https://closed-beta.rapyuta.io),
+To add _Turtle_ package using [rapyuta.io console](https://console.rapyuta.io),
 follow the steps:
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
@@ -125,7 +125,7 @@ dependencies. It communicates with the _Command Center_ through a WebSecureSocke
 It is the only non-ROS package based on Nginix. Learn more about
 [User Interface package](./packages/#user-interface-package).
 
-To add _User Interface_ package using the [console](https://closed-beta.rapyuta.io),
+To add _User Interface_ package using the [console](https://console.rapyuta.io),
 follow the instructions:
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
@@ -290,7 +290,7 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
 13. To add a ROS service, click **Add ROS service** > enter `/register_turtle` in the **Name** box.
 14. The environment variables: *WS_ADDR* and *WS_PORT*, defined in the ROS launch
     file, determine the WebSecureSocket address and port. You can adjust
-    their values as configuration parameters defined in the [console](https://closed-beta.rapyuta.io)
+    their values as configuration parameters defined in the [console](https://console.rapyuta.io)
     during the process of deploying the *command_center* component.
     To add *WS_ADDR* as configuration parameter, follow the steps:
     1. Under **CONFIGURATION PARAMETERS**, click **Add Parameter**.

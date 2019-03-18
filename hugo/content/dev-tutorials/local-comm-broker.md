@@ -12,7 +12,7 @@ multi-device communication within same internet.
 
 ## Learning objectives
 This tutorial will show how to deploy a broker package locally for inter
-device communication using [rapyuta.io console](https://closed-beta.rapyuta.io).
+device communication using [rapyuta.io console](https://console.rapyuta.io).
 
 ## Prerequisites
 1. Device requirements

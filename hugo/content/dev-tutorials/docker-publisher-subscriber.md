@@ -42,7 +42,7 @@ The tutorial will use Raspberry PI as the device.
 Learn [how to prepare your Raspberry PI](/getting-started/prepare-raspberry-pi)
 
 ## Setting up your device
-To integrate the device into rapyuta.io using the [console](https://closed-beta.rapyuta.io):
+To integrate the device into rapyuta.io using the [console](https://console.rapyuta.io):
 
 1. [Create a user account](/getting-started/create-new-user) if you do not
 have one yet.
@@ -52,7 +52,7 @@ while adding the device.
 
 ## Creating the package
 To create the _Docker publisher subscriber_ package using the
-[console](https://closed-beta.rapyuta.io), follow the steps:
+[console](https://console.rapyuta.io), follow the steps:
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.
@@ -141,7 +141,7 @@ indicates that the _Docker publisher subscriber_ package has been successfully
 built and can be deployed.
 
 ## Deploying the package
-To deploy a package using the [console](https://closed-beta.rapyuta.io),
+To deploy a package using the [console](https://console.rapyuta.io),
 follow the steps:
 
 1. On the left navigation bar, click **CATALOG**.

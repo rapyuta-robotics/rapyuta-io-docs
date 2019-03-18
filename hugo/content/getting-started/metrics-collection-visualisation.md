@@ -7,7 +7,7 @@ pre: "n. "
 weight: 350
 ---
 rapyuta.io enables a device to push metrics data out, and lets you visualise
-the telemetry data in the [console](https://closed-beta.rapyuta.io).
+the telemetry data in the [console](https://console.rapyuta.io).
 
 ## Collect Device Metrics
 You can collect telemetry data that a ROS topic publishes on a device and
@@ -25,7 +25,7 @@ To collect device metrics, follow the steps:
 4. To subscribe to a ROS topic you want to visualise, click **Subscribe**.
 
 ## Visualise device metrics
-You can visualise a device's telemetry data and metrics data in [rapyuta.io console](https://closed-beta.rapyuta.io).
+You can visualise a device's telemetry data and metrics data in [rapyuta.io console](https://console.rapyuta.io).
 
 1. Click **DEVICES** > select a device for visualising its metrics > click **Metrics**.
 2. To subscribe to a topic, click **Subscribe**.
