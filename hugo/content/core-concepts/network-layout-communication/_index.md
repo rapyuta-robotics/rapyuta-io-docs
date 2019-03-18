@@ -4,7 +4,7 @@ description:
 type: core-concepts
 date: 2018-11-28T14:17:22+05:30
 pre: "l. "
-weight: 199
+weight: 198
 ---
 rapyuta.io is a fully managed service. It is responsible for establishing and
 maintaining connectivity between various components of a distributed
@@ -86,6 +86,10 @@ for horizontal scale out (on services/actions).
 Further, each deployment gets a dedicated endpoint to cater to the needs of
 that particular deployment. Additionally, the endpoint is randomised and has a
 unique set of encryption keys and credentials to ensure security.
+
+{{% notice info %}}
+[Multi-robot communication support](/core-concepts/network-layout-communication/multi-robot-communication/) in rapyuta.io
+{{% /notice %}}
 
 #### Special Purpose Communication
 Certain workloads such as a remote terminal, device updates, or real-time video
