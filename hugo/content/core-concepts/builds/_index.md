@@ -47,22 +47,21 @@ The [ROS Publisher Subscriber](/dev-tutorials/ros-publisher-subscriber)
 tutorial is an example of source code build strategy.
 
 ### Dockerfile strategy
-This strategy builds a Dockerfile into a docker image. The Dockerfile is
+This strategy builds a [Dockerfile](https://docs.docker.com/engine/reference/builder/) into a docker image. The Dockerfile is
 usually saved in a git repository. If it is a private git repository,
-you need to add a source secret to access the repository contents.
+you need to [add a source secret](/core-concepts/secrets/source-secret)
+to access the repository contents.
 {{% notice info %}}
-The maximum size of the docker image is 10GB for cloud deployment.
+The maximum size of the docker image is **10GB** for cloud deployment.
 {{% /notice %}}
 
 You may explicitly specify the absolute path of Dockerfile, or
-rapyuta.io defaults the location of the Dockerfile as the root of
-the git repository.
+rapyuta.io defaults the root of the git repository as the location of the Dockerfile.
 
 ### Docker image strategy
 This strategy builds a docker image locally. The docker image is usually
 stored in either a public docker registry (i.e., Dockerhub) or a private
-docker registry. You need to add a docker pull secret for rapyuta.io
-to access a private docker image.
+docker registry. You need to [add a docker pull secret](/core-concepts/secrets/docker-pull-secret/) for rapyuta.io to access a private docker image.
 
 The [Control onboard LED tutorial](/dev-tutorials/control-onboard-led)
 illustrates docker image build strategy.
