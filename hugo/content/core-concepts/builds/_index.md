@@ -6,14 +6,14 @@ date: 2018-11-15T14:01:26+05:30
 pre: "f. "
 weight: 150
 ---
-An executable of a component can either be a source code file, or a docker
-file in a git repository, or a docker image file.
+An executable of a component can be either a source code file or a docker
+file in a git repository or a docker image file.
 
 ## Build strategies
-There are three kinds of build strategies available for building
-ROS and non-ROS packages. The ***ROS Engine*** selects an appropriate build
-strategy based on whether you have provided a git repository with
-Dockerfile in it or without it, or a docker image.
+rapyuta.io builds ROS and non-ROS packages using various build strategies.
+The ***ROS Engine*** selects an appropriate build strategy based on
+whether the package contains a git repository with Dockerfile or
+without it or a docker image.
 
 If the **Executable Type** is **Git**, you must provide a git repository
 url address.
@@ -52,7 +52,7 @@ usually saved in a git repository. If it is a private git repository,
 you need to [add a source secret](/core-concepts/secrets/source-secret)
 to access the repository contents.
 {{% notice info %}}
-The maximum size of the docker image is **10GB** for cloud deployment.
+The maximum size of a docker image for cloud deployment is **10GB**.
 {{% /notice %}}
 
 You may explicitly specify the absolute path of Dockerfile, or
