@@ -6,16 +6,16 @@ date: 2018-11-22T13:20:02+05:30
 pre: "c. "
 weight: 415
 ---
-A deployment may depend on other deployments, and it can access all of the
-exposed topics, services, actions, endpoints and configuration parameters of
+A deployment may depend on other deployments. It can access all
+topics, services, actions, endpoints and configuration parameters exposed by
 other deployments at runtime.
 
-## Learning objectives
-This tutorial will show you how to create a dependent deployment using
+## Learning Objectives
+The tutorial will show you how to create a dependent deployment using
 [rapyuta.io console](https://console.rapyuta.io).
 
 ## Prerequisites
-1. You are recommended to complete the [ROS publisher subscriber](../ros-publisher-subscriber)
+1. You are recommended to complete the [ROS publisher subscriber](/dev-tutorials/ros-publisher-subscriber/)
 tutorial.
 2. Device requirements
 	1. You should have access to a device (computer and/or Raspberry PI 2 or 3)
@@ -24,7 +24,7 @@ tutorial.
 	installed on the computer.
 	3. Ensure that the [Robot Operating System (ROS)](https://wiki.ros.org/kinetic/Installation)
 	is installed on the device.
-3. You should be familiar with the [core concepts](/core-concepts) of rapyuta.io
+3. You should be familiar with the [core concepts](/core-concepts/) of rapyuta.io
 4. You should be familiar with the [map_server](https://wiki.ros.org/map_server) ROS package.
 5. You should be familiar with the below tools:
 	1. [Git](https://git-scm.com/doc)
@@ -36,18 +36,18 @@ tutorial.
 ## Difficulty
 Intermediate
 
-## Estimated time
-It will take nearly about 30 minutes to finish the tutorial.
+## Estimated Time
+30 minutes
 
 ## Tutorial Walkthrough
 
-You will add and deploy the _dynamic-map-server_ package. The package offers a
-navigation map to other deployments that depend on it. It is a modified version
-of the original map_server package. Besides exposing ROS topics such as */map*
-and */map_metadata*, it also exposes an additional service called */set_map*,
+You will add and deploy the *dynamic_map_server* package. It is a modified version
+of the original map_server package. The package offers a
+navigation map to other deployments that depend on it. Besides exposing the ROS topics: */map*
+and */map_metadata*, the package also exposes the */set_map* service,
 which replaces the map published by */map* topic.
 
-## Create dynamic_map_server package
+#### Create dynamic_map_server package
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.
 3. You should provide information about the package such as the name of the
@@ -56,8 +56,8 @@ package, its version, whether it is a singleton package, and a short description
 	   `dynamic_map_server`
 	2. In the **Package Version** box, type in the version of the package. By
 	   default, the version is set to _1.0.0_
-	3. Ensure **Is a singleton package** checkbox is not selected.
-	4. Make sure **Is a bindable package** checkbox is selected.
+	3. Ensure **Is a singleton package** is *not selected*.
+	4. Make sure **Is a bindable package** *is selected*.
 	5. In the **Description** box, provide a brief summary of the package, for
 	   example, `A modified ROS map_server`
 	6. Click **NEXT**.
@@ -98,18 +98,17 @@ underscore _ character, and must not begin with a digit.
 14. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 The package takes about five minutes to build the source code in the *io_tutorials*
-repository into a running container. You may view the corresponding
-[build logs](/core-concepts/logging/build-logs), which help in debugging failing builds.
+repository into a running container. You may analyse the corresponding
+[build logs](/core-concepts/logging/build-logs) for debugging build failures.
 
 A flickering yellow dot against the package name indicates that the **Build Status**
-is **New**, while a green dot against the package name indicates that the **Build
-Status** is **Complete**.
+is **BuildInProgress**, while a green dot indicates that the **Build Status** is **Complete**.
 
 Additionally, you may verify if the package is built successfully and is ready
 to be deployed by clicking to see if the **Deploy package** button is enabled.
 
-## Deploy dynamic_map_server
-To deploy dynamic_map_server package, follow the steps:
+#### Deploy dynamic_map_server
+To deploy *dynamic_map_server* package, follow the steps:
 
 1. On the left navigation bar, click **CATALOG**.
 2. Select *dynamic_map_server* package.
@@ -120,12 +119,12 @@ To deploy dynamic_map_server package, follow the steps:
 
 You will be redirected to the newly created deployment's **Details** page.
 The _Dynamic Map Server Deployment_ is successfully running only when the green
-coloured bar moves to **Succeeded** and **Status:Running** point indicating that the
+coloured progress bar moves to **Succeeded** and **Status:Running**, indicating that the
 **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
 
 ![Dynamic Map Server Deployment](/images/tutorials/dms/dms-deployment.png?classes=border,shadow&width=50pc)
 
-## Create dependent deployment
+#### Create dependent deployment
 If you are using a Raspberry PI as the device, learn
 [how to prepare it](/getting-started/prepare-raspberry-pi).
 
@@ -176,10 +175,10 @@ then the *python-catkin-tools* package is missing on the device, which is requir
 {{% /notice %}}
 
 And then, you will [add the device](/getting-started/add-new-device)
-to rapyuta.io using the [console](https://closed-beta.rapyuta.io). Ensure that **Use docker compose as default runtime**
-checkbox is **_not selected_**.
+to rapyuta.io using the [console](https://console.rapyuta.io). Ensure that **Use docker compose as default runtime**
+checkbox is ***not selected***.
 
-### Create map_listener package
+#### Create map_listener package
 You will create *map_listener* package, which will be deployed on the device.
 To create the package, follow the instructions:
 
@@ -190,8 +189,8 @@ To create the package, follow the instructions:
 	1. In the **Package Name** box, enter a name for the package say `map_listener`
 	2. In the **Package Version** box, enter the version of the package. By default,
 		the version is set to _1.0.0_
-	3. Ensure **Is singleton package** is not selected.
-	4. Make sure **Is a bindable package** is selected.
+	3. Ensure **Is singleton package** is *not selected*.
+	4. Make sure **Is a bindable package** *is selected*.
 	4. In the **Description** box, provide a brief summary of the package say
 	   `Runs a map_listener node on device`
 	5. Click **NEXT**.
@@ -213,7 +212,7 @@ To create the package, follow the instructions:
 	![map_listener_executable](/images/tutorials/dms/maplistener_exec_details.png?classes=border,shadow&width=50pc)
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-### Deploy map_listener package
+#### Deploy map_listener package
 To deploy *map_listener* package, follow the steps:
 
 1. Click **CATALOG** > select *map_listener* package > click **Deploy package**.
@@ -231,7 +230,7 @@ To deploy *map_listener* package, follow the steps:
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You can verify if the _Map Listener Deployment_ is successfully running by
-checking if the **DEPLOYMENT PHASE** is _Succeeded_ and the **STATUS** is _Running_.
+checking if the green colored progress bar indicates that the **DEPLOYMENT PHASE** is _Succeeded_ and the **STATUS** is _Running_.
 
 ![Map Listener Deployment](/images/tutorials/dms/map-listener-deployment.png?classes=border,shadow&width=60pc)
 
@@ -255,7 +254,7 @@ You should see a similar output as shown below after executing the above command
 [rosout][INFO] 2018-01-26 06:18:56,578: Read a 4000 X 4000 map @ 0.0500000007451 m/cell
 ```
 
-### Update navigation map
+#### Update navigation map
 In the device's terminal window, execute the command:
 
 ```bash
@@ -267,7 +266,7 @@ Open another terminal window, and run the command:
 ```bash
 source ~/catkin_ws/devel/setup.bash
 ```
-To pass a service argument to */set_map*, ensure you press the tab key (more than twice) before executing the below command:
+To pass an argument to the service */set_map*, press the tab key (more than twice) to complete the *rosservice call* command:
 ```bash
 rosservice call /set_map "map:
   header:
@@ -299,7 +298,7 @@ initial_pose:
       0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
 ```
 
-In the former terminal window, you should see that the *map_listener* will
+In the previous terminal window, you should see that the *map_listener* will
 receive a new map. The result may appear as shown below:
 ```bash
 ... INFO [listener.py:7(callback) [topics: /rosout, /map] Received map data
