@@ -6,9 +6,9 @@ date: 2018-11-22T13:20:28+05:30
 pre: "d. "
 weight: 420
 ---
-Complex robotic applications involving multi-device communication with service
-distributed across WAN can be latent. This tutorial demonstrates how to have
-multi-device communication within same LAN.
+Complex robotic applications involving multi-device communication can be
+latent when the service is distributed across WAN. This tutorial demonstrates
+how to have multi-device communication within same LAN.
 
 ## Learning objectives
 This tutorial will show how to deploy a broker package locally for inter
@@ -31,7 +31,7 @@ device communication using [rapyuta.io console](https://console.rapyuta.io).
 Intermediate
 
 ## Estimated time
-It will take nearly 20 minutes to finish the tutorial.
+20 minutes
 
 ## Tutorial walkthrough
 
@@ -39,7 +39,7 @@ In this tutorial, you will add three devices namely _Broker Device_,
 _Publisher Device_ and _Subscriber Device_. You will also create and deploy
 _ROS Subscriber_ and _ROS Publisher_ packages.
 
-## Add Broker Device
+#### Add Broker Device
 The _Broker Device_ must be of **amd64** CPU architecture.
 
 1. Click **DEVICES** > **ADD NEW DEVICE**.
@@ -61,7 +61,7 @@ Initialising the Rapyuta Platform
 Successfully Installed!
 ```
 
-## Prepare Publisher Device
+#### Prepare Publisher Device
 The _Publisher Device_ is:
 
 * Raspberry PI 2 or 3
