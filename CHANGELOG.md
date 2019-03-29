@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.3.1 - 2019-03-29]
+### Fixed
+- Fix the volume deployment pricing. 
+
 ## [1.3.0 - 2019-03-15]
 ### Added
 - Add pricing sections with explanation of subscription plans
