@@ -17,7 +17,7 @@ weight: 205
 | Additional deployment hours on device | <center>$0.004/hour</center> | <center>$0.004/hour</center> |
 | Cloud deployment hours<br><br>*represents hours of deployments consumed in the cloud* | <center>100 vCPU-hour</center> | <center>500 vCPU-hour</center> |
 | Additional deployment hours in cloud | <center>$0.08/vCPU-hour</center> | <center>$0.08/vCPU-hour</center> |
-| Volume deployment hours<br><br>*represents hours consumed by volume deployments* | <center>$0.001/GiB-hour</center> | <center>$0.001/GiB-hour</center> |
+| Volume deployment hours<br><br>*represents hours consumed by volume deployments* | <center>$0.00025/GiB-hour</center> | <center>$0.00025/GiB-hour</center> |
 | Memory and compute | <table><tr><th>Tier</th><th>vCPU</th><th>Memory</th></tr><tr><td>Low</td><td>1</td><td>4</td></tr><tr><td>Medium</td><td>2</td><td>8</td></tr><tr><td>High</td><td>8</td><td>32</td></tr></table> | <table><tr><th>Tier</th><th>vCPU</th><th>Memory</th></tr><tr><td>Low</td><td>1</td><td>4</td></tr><tr><td>Medium</td><td>2</td><td>8</td></tr><tr><td>High</td><td>8</td><td>32</td></tr></table> |
 | Support | <ul><li>Resolve critical bugs and issues.</li><li>Quickly answer queries and concerns.</li></ul> | <ul><li>On-demand, SLA support for critical bugs.</li><li>Access to Rapyuta Robotics engineers.</li></ul> |
 | Free trial period | <center>NA</center> | <center>Free 7-day trial</center> |
