@@ -52,10 +52,10 @@ Device deployment hours (DDH) price per hour is $0.004<br>
 DDH charges for an executable of an instance of *compB*
 running for 10 hours a day for 30 days is <br>**(DDH price * hours)**: $0.004 * 10 * 30 = ***$1.2***
 
-Volume deployment hours (VDH) price per GiB-hour is $0.001<br>
+Volume deployment hours (VDH) price per GiB-hour is $0.00025<br>
 VDH charges for a storage volume of 32GiB size running for
 10 hours a day for 30 days is <br>**(VDH price * (storage volume size in GiB) * hours)**:
-$0.001 * 32 * 10 * 30 = ***$9.6***
+$0.00025 * 32 * 10 * 30 = ***$2.4***
 
 Total pay as you use charges: $216 + $1.2 + $9.6 = **$226.8**
 
