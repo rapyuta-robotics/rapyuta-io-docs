@@ -104,6 +104,9 @@ rapyuta.io
 You may read the [list of error codes](/getting-started/add-new-device/device-failed-error-codes) for more details about specific failure cases.
 {{% /notice %}}
 
+On the **Details** page of the device, you may modify its description or
+its catkin workspace as shown in the below image.
+
 ![Device's Details tab](/images/getting-started/add-new-device/demo-device-details.png?classes=border,shadow&width=60pc)
 
 {{% notice note %}}
