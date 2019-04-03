@@ -15,47 +15,53 @@ weight: 319
     * [curl](https://curl.haxx.se/)
     * [Robot Operating System](http://wiki.ros.org/kinetic) (ROS)
 
-## Current supported devices
+## Supported devices
 
 * [Raspberry PI 2](/getting-started/prepare-raspberry-pi)
 * [Raspberry PI 3](/getting-started/prepare-raspberry-pi)
 * [UP board](/getting-started/prepare-up-board)
 
-## Registering a device
+#### Registering a device
 
-To register a new device with rapyuta.io using the [console](https://console.rapyuta.io),
-follow the steps:
+To register a new device on [rapyuta.io console](https://console.rapyuta.io),
+follow the below steps:
 
 1. On the left navigation bar, click **DEVICES**.
 2. Click **ADD NEW DEVICE**.
-3. In the **Device Name** box, type in a name for the device you are adding.
-4. If you prefer to build the source code in the console using rapyuta.io
-   resources, and remotely push the build to the device, select **Use docker compose
-   as default runtime** checkbox. As a result, you can use docker compose for application
-   deployment.
-5. In the **ROS Catkin Workspace** box, enter the absolute path of your catkin workspace.
-   If you are using the rapyuta.io custom image on the device, enter
+3. You will provide a name for the device in the **Device Name** box.
+4. If you prefer to build source code in rapyuta.io and push the build
+   remotely to the device, select **Use docker compose
+   as default runtime** option. Thus, you can use docker compose for
+   application deployment.
+5. You will provide the absolute path of your catkin workspace as
+   the **ROS Catkin Workspace** value. If you are using custom rapyuta.io
+   image on the device, your catkin workspace will be
    `/home/rapyuta/catkin_ws` where *catkin_ws* is the name of the catkin workspace.
    Otherwise, you will have a different absolute path for your catkin workspace.
-   The **ROS Catkin Workspace** can be empty, and you may provide its value on the
-   device's **Details** page later.
+   {{% notice info %}}
+   The **ROS Catkin Workspace** can be empty, and you may provide this value on
+   the device's **Details** page.
+   {{% /notice %}}
 6. In the **Description** box, enter a brief summary of the device.
 7. Click **CONTINUE**.
-    ![Device Details](/images/getting-started/device-details.png?classes=border,shadow&width=40pc)
+    ![Device Details](/images/getting-started/add-new-device/device-details.png?classes=border,shadow&width=40pc)
 8. To copy the generated token (a unique device setup link), click **COPY**.    
-   You must copy the device setup link before it expires in _ten_ minutes. To generate
-   the token again, click **Token** on the devices list page.
-   ![Device Token](/images/getting-started/device-token.png?classes=border,shadow&width=40pc)
+   You must copy the token before it expires in *ten* minutes. To generate
+   the token again, click **Token** on the **Devices** page.
+   ![Device Token](/images/getting-started/add-new-device/device-token.png?classes=border,shadow&width=40pc)
 
-## Setting up a device
-Copy, paste and run the device setup link in the command terminal of the device.
-The device setup link starts setting up the rapyuta.io device client. Sometimes,
-you may need to run the setup link as the root user.    
-You may access the command terminal of the device either through the serial TTY
-method or the SSH method.
+#### Setting up a device
+Copy, paste and run the device's token in the command terminal
+of the device. The token sets up the rapyuta.io device client on
+the device. Sometimes, you may need root permission to execute
+the token on tthe device.
+{{% notice note %}}
+You may access the command terminal of the device through either the
+serial TTY method or the SSH method.
+{{% /notice %}}
 
-In this example, since an executable source has already been installed in the
-device (preinstalled), its device setup link is of the form:
+In this example, since an executable source is already installed in the
+device (preinstalled), its token is of the form:
 
 ```bash
 curl -O -H '...' https://bootstrap.rapyuta.io/start && bash start -w /home/rapyuta/catkin_ws
@@ -69,47 +75,38 @@ Initialising the Rapyuta Platform
 Successfully installed!
 root@ubuntu:/home/ubuntu#
 ```
-As soon as the device is successfully registered, you will see a
-<span style="color:blue">blue</span> dot against the device's name.
-![Registered Status of Device](/images/getting-started/registered-status.png?classes=border,shadow&width=40pc)
+When the device is successfully registered, you will see a
+<span style="color:green">***green***</span> dot next to the
+device's name, which indicates that the device is online.
+If you do not see the green dot after couple of minutes,
+**refresh** the web page (that is click the refresh button of
+Google Chrome browser).
 
-Then you will see a flickering yellow dot against the device's name indicating
-that the device is being initialised.
+![Registered Status of Device](/images/getting-started/add-new-device/demo-device.png?classes=border,shadow&width=40pc)
 
-After a while, the device will be online, which is indicated by a green dot
-against the device's name. If you do not see a green dot after couple of minutes,
-**refresh** the web page (that is click the refresh button of Google Chrome browser).
-
-rapyuta.io assigns a unique identifier, *UUID*, to the device.
+rapyuta.io assigns a unique identifier, ***UUID***, to the device.
 
 The status of a device is colour coded. The following lists the various statuses
 the device may be in:
 
-* Registered (blue) indicates that the device is successfully added, but an
+* Registered (<span style="color:blue">***blue***</span>) indicates that the device is successfully added, but an
 active connection is yet to be established.
-* Initialising Device (yellow) indicates that the device is being initialised.
-* Online (green) indicates that the device is ready to receive commands.
-* Offline (grey) shows that the device is registered, but is currently offline.
-* Rejected (red) indicates that the device is blocked from communicating with
+* Initialising Device (<span style="color:orange">***yellow***</span>) indicates that the device is being initialised.
+* Online (<span style="color:green">***green***</span>) indicates that the device is ready to receive commands.
+* Offline (<span style="color:grey">***grey***</span>) shows that the device is registered, but is currently offline.
+* Rejected (<span style="color:red">***red***</span>) indicates that the device is blocked from communicating with
 rapyuta.io
-* Delete (red) indicates that all traces of the device's data is removed from
+* Delete (<span style="color:red">***red***</span>) indicates that all traces of the device's data is removed from
 rapyuta.io
-* Failed (red) indicates that a failure occurred while managing the device. You may
-  read the [list of error codes](/getting-started/add-new-device/device-failed-error-codes) for more details about specific failure cases.
+* Failed (<span style="color:red">***red***</span>) indicates that a failure occurred while managing the device.
 
-The device's **Details** tab displays a summary of the device:
+{{% notice info %}}
+You may read the [list of error codes](/getting-started/add-new-device/device-failed-error-codes) for more details about specific failure cases.
+{{% /notice %}}
 
-1. SYSTEM INFO
-2. DESCRIPTION
-3. HOST NAME
-4. REGISTRATION TIME
-5. DEVICE OS
-6. SALT VERSION
-7. IP INTERFACES
-8. LABELS
-9. CONFIG VARIABLES
+![Device's Details tab](/images/getting-started/add-new-device/demo-device-details.png?classes=border,shadow&width=60pc)
 
-![Device's Details tab](/images/getting-started/device-details-pg.png?classes=border,shadow&width=60pc)
-
-Read [device management](/core-concepts/device-management) section to learn more
+{{% notice note %}}
+Read [device management](/core-concepts/device-management) topic to learn more
 about device manager concepts.
+{{% /notice %}}
