@@ -11,15 +11,15 @@ file in a git repository or a docker image file.
 
 ## Build strategies
 rapyuta.io builds ROS and non-ROS packages using various build strategies.
-The ***ROS Engine*** selects an appropriate build strategy based on
+The ***Build Engine*** selects an appropriate build strategy based on
 whether the package contains a git repository with Dockerfile or
 without it or a docker image.
 
-If the **Executable Type** is **Git**, you must provide a git repository
-url address.
+If the **Executable Type** is **Git**, you must provide the url address of
+a git repository.
 
 The goal of each build strategy is to generate a running docker container
-at the end of package creation.
+at the end of package creation process.
 
 You may analyse [build logs](/core-concepts/logging/build-logs) for
 debugging build failures. In the case of source code and Dockerfile
@@ -33,13 +33,13 @@ you need to [add a source secret](/core-concepts/secrets/source-secret)
 to access the repository contents. rapyuta.io uses ***ROS Builder***, a
 subset of *catkin build*, to build source code into a docker image.
 
-Suppose you want to add a git repository url say
+Suppose you want to add the address of a git repository say
 https://github.com/rapyuta-robotics/io_tutorials,
-where *io_tutorials* is the project repository (folder) containing source
+where ***io_tutorials*** is the project folder that contains the source
 code on the master branch and is hosted on GitHub.
 
 If you want to add source code located on a different branch say
-*io_turtlesim_qos* of the same project, your git repository url
+***io_turtlesim_qos*** of the same project, your git repository url
 will look like:
 https://github.com/rapyuta-robotics/io_tutorials#io_turtlesim_qos
 
@@ -55,8 +55,8 @@ to access the repository contents.
 The maximum size of a docker image for cloud deployment is **10GB**.
 {{% /notice %}}
 
-You may explicitly specify the absolute path of Dockerfile, or
-rapyuta.io defaults the root of the git repository as the location of the Dockerfile.
+You may explicitly specify the absolute path of the Dockerfile, or
+the root of the git repository is set as the location of the Dockerfile.
 
 ### Docker image strategy
 This strategy builds a docker image locally. The docker image is usually
