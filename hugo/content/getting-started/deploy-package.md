@@ -6,7 +6,7 @@ date: 2018-11-26T15:19:20+05:30
 pre: "l. "
 weight: 340
 ---
-To deploy a package in rapyuta.io using the [console](https://console.rapyuta.io),
+To deploy a package in [rapyuta.io console](https://console.rapyuta.io),
 follow the steps:
 
 1. On the left navigation bar, click **CATALOG**.
@@ -15,34 +15,35 @@ follow the steps:
 4. In the **Name of deployment** box, enter a name for the specific deployment
 you are creating for the package.
 5. A _LABEL_ is a key-value pair. If you want to add a label, click **Add label**.
-6. If a component of the package has _device_ runtime, you must select the device
+6. If a component of the package has *cloud* runtime, skip to step 9.
+7. If a component of the package has *device* runtime, you must select the device
 you want to deploy the component on. Click **Refresh the list of online
 devices** to retrieve an updated list of online devices.
-7. Select the device from the **Select device for deploying the component** drop-down list.
+8. Select the device from the **Select device for deploying the component** drop-down list.
 {{% notice info %}}
 The list of devices is a set of online devices, which are pre-filtered to match
 the architecture (amd64, arm32v7, arm64v8) and device runtime (docker or preinstalled)
 required by the component in question.
 {{% /notice %}}
-8. If you want to add a dependent deployment, click **Add dependency**, and select
+9. If you want to add a dependent deployment, click **Add dependency**, and select
 a deployment you want to add as a dependency from the drop-down list of
 deployment IDs.
-9. If you want to add a volume, click **Add volume**. Ensure that a running volume
+10. If you want to add a volume, click **Add volume**. Ensure that a running volume
 deployment is available before you add one.
-10. Click **CREATE DEPLOYMENT** > **Confirm**.
+11. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You will be redirected to the newly created deployment **Details** page.
-The package is successfully deployed when the green coloured bar moves from
+![Deploy demo package](/images/getting-started/deploy-pkg/deploy-demo-pkg.png?classes=border,shadow&width=50pc)
+You will be redirected to the **Details** page of the newly created deployment.
+The package is successfully deployed when the green colored bar moves from
 **In progress** to **Provisioning** to **Succeeded** indicating that the
-**DEPLOYMENT PHASE** has _succeeded_, and when the **STATUS** is **Running**
-indicating that the deployment is currently running.
+**DEPLOYMENT PHASE** has *succeeded* and the deployment **STATUS** is **Running**.
 
-![Deployment example](/images/tutorials/ros-pub-sub/ros-pub-sub-deployment.png?classes=border,shadow&width=50pc)
+![Deployment example](/images/getting-started/deploy-pkg/demo-deployment.png?classes=border,shadow&width=50pc)
 
 Furthermore, if dependent deployments are added then each dependency's **STATUS**
 must read **running**.
 
-You may analyse all of the corresponding [logs](/core-concepts/logging/deployment-logs)
+You may analyze the corresponding [logs](/core-concepts/logging/deployment-logs)
 generated while deploying a package.
 
 If a deployment fails, the **DEPLOYMENT PHASE** will read **Failed to start**.
