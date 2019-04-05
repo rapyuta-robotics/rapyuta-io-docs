@@ -60,13 +60,8 @@ You may access the command terminal of the device through either the
 serial TTY method or the SSH method.
 {{% /notice %}}
 
-In this example, since an executable source is already installed in the
-device (preinstalled), its token is of the form:
-
-```bash
-curl -O -H '...' https://bootstrap.rapyuta.io/start && bash start -w /home/rapyuta/catkin_ws
-```
-If the device is set up successfully, you should see the following output:
+If the device is set up successfully, you should see the following output
+on the command terminal:
 
 ```bash
 Initialising the Rapyuta Platform
