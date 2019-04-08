@@ -15,7 +15,7 @@ Raspberry PI 2 or 3 with docker compose runtime.
 
 ## Prerequisites
 1. Device requirements
-	* You should have access to a computer with an internal connection.
+	* You should have access to a computer with an internet connection.
 	* Ensure that the [Google Chrome](https://www.google.com/chrome/) browser
 	  is installed on the computer.
 	* Raspberry PI 2 or 3
@@ -34,7 +34,7 @@ Beginner
 Learn how to [prepare your Raspberry PI](/getting-started/prepare-raspberry-pi).
 
 ## Setting up Raspberry PI
-To integrate the device into rapyuta.io using the [console](https://console.rapyuta.io):
+To integrate the device into [rapyuta.io console](https://console.rapyuta.io):
 
 1. [Create a user account](/getting-started/create-new-user) if you do not
    have one yet.
@@ -70,19 +70,18 @@ and an underscore _ character, and must not start with a digit.
 15.  Deselect **Run command from bash shell**.
 16.  Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-A flickering yellow dot against the package name indicates that the **Build Status**
-is **New**, while a green dot against the package name indicates that the **Build
-Status** is **Complete**.
+A flickering yellow dot next to the package name indicates that the **Build Status**
+is **New**, while a green dot indicates that the **Build Status** is **Complete**.
 
 Additionally, you may verify if the package is built successfully and is ready
 to be deployed by clicking to see if the **Deploy package** button is enabled.
 
 ## Deploying the package
-To deploy a package from the [console](https://console.rapyuta.io),
+To deploy a package from the [rapyuta.io console](https://console.rapyuta.io),
 follow the steps:
 
 1. On the left navigation bar, click **CATALOG**.
-2. Select the *led_trigger* package that you just created.
+2. Select the ***led_trigger*** package that you just created.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, enter a name for the deployment say `LED Trigger Deployment`
 5. Since *led_trigger* has device runtime, you must select the device you want to
