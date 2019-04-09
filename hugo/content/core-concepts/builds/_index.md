@@ -7,16 +7,13 @@ pre: "f. "
 weight: 150
 ---
 An executable of a component can be either a source code file or a docker
-file in a git repository or a docker image file.
+file in a git repository or a docker image.
 
 ## Build strategies
 rapyuta.io builds ROS and non-ROS packages using various build strategies.
 The ***Build Engine*** selects an appropriate build strategy based on
 whether the package contains a git repository with Dockerfile or
 without it or a docker image.
-
-If the **Executable Type** is **Git**, you must provide the url address of
-a git repository.
 
 The goal of each build strategy is to generate a running docker container
 at the end of package creation process.
@@ -27,14 +24,15 @@ strategies, you can
 [trigger new builds or roll back previous builds](/core-concepts/builds/trigger-rollback).
 
 ### Source code strategy
-This strategy builds source code files into a docker image. The source code
+This strategy builds source code into a docker image. The source code
 is usually stored in a git repository. If it is a private git repository,
 you need to [add a source secret](/core-concepts/secrets/source-secret)
 to access the repository contents. rapyuta.io uses ***ROS Builder***, a
 subset of *catkin build*, to build source code into a docker image.
 
-Suppose you want to add the address of a git repository say
-https://github.com/rapyuta-robotics/io_tutorials,
+Set the **Executable Type** as **Git** and provide the url address of
+a git repository. Suppose you want to add the address of a git repository
+say https://github.com/rapyuta-robotics/io_tutorials,
 where ***io_tutorials*** is the project folder that contains the source
 code on the master branch and is hosted on GitHub.
 
@@ -46,22 +44,33 @@ https://github.com/rapyuta-robotics/io_tutorials#io_turtlesim_qos
 The [ROS Publisher Subscriber](/dev-tutorials/ros-publisher-subscriber)
 tutorial is an example of source code build strategy.
 
+{{% notice info %}}
+rapyuta.io supports cross compilation of source code
+to be able to run on devices with *arm64*, *arm32* CPU
+architectures.
+{{% /notice %}}
+
 ### Dockerfile strategy
 This strategy builds a [Dockerfile](https://docs.docker.com/engine/reference/builder/) into a docker image. The Dockerfile is
 usually saved in a git repository. If it is a private git repository,
 you need to [add a source secret](/core-concepts/secrets/source-secret)
 to access the repository contents.
-{{% notice info %}}
-The maximum size of a docker image for cloud deployment is **10GB**.
-{{% /notice %}}
 
 You may explicitly specify the absolute path of the Dockerfile, or
 the root of the git repository is set as the location of the Dockerfile.
 
 ### Docker image strategy
-This strategy builds a docker image locally. The docker image is usually
+This strategy builds a pre-built docker image locally. The docker image is usually
 stored in either a public docker registry (i.e., Dockerhub) or a private
 docker registry. You need to [add a docker pull secret](/core-concepts/secrets/docker-pull-secret/) for rapyuta.io to access a private docker image.
 
+{{% notice info %}}
+The maximum size of a docker image for cloud deployment is **10GB**.
+{{% /notice %}}
+
+If you are going to deploy a docker image onto a device, ensure that the
+CPU architecture of the device is compatiable with that of the image being
+deployed. You may use the ***Build Engine*** for checking for compatibility.
+
 The [Control onboard LED tutorial](/dev-tutorials/control-onboard-led)
-illustrates docker image build strategy.
+illustrates docker image strategy.
