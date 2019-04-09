@@ -41,7 +41,7 @@ The package is successfully deployed when the green colored bar moves from
 ![Deployment example](/images/getting-started/deploy-pkg/demo-deployment.png?classes=border,shadow&width=50pc)
 
 Furthermore, if dependent deployments are added then each dependency's **STATUS**
-must read **running**.
+must read **Running**.
 
 You may analyze the corresponding [logs](/core-concepts/logging/deployment-logs)
 generated while deploying a package.
