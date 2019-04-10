@@ -89,12 +89,14 @@ underscore _ character, and must not begin with a digit.
 	command, because the ROS Master will fail to start on _rosrun_, and
 	eventually, the deployment will fail as well.
 
-	![dmsexecutable](/images/tutorials/dms/dms-exec-details.png?classes=border,shadow&width=50pc)
+	![Executable details](/images/tutorials/dms/dms-exec-details.png?classes=border,shadow&width=50pc)
 12. To add a ROS topic, click **Add ROS topic**. In the **Name** box,
     enter `/map_metadata` and set **QoS** to **Low**.
     Similarly, add another ROS topic `/map` and set **QoS** to **Low**.
+		![Add ROS topic](/images/tutorials/dms/dms-add-ros-topics.png?classes=border,shadow&width=50pc)
 13. To add a ROS service, click **Add ROS service**. In the **Name** box, enter
     `/set_map`
+		![Add ROS service](/images/tutorials/dms/dms-add-ros-service.png?classes=border,shadow&width=50pc)
 14. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 The package takes about five minutes to build the source code in the *io_tutorials*
@@ -131,19 +133,15 @@ If you are using a Raspberry PI as the device, learn
 If you are using a UP Board as the device, learn
 [how to prepare it](/getting-started/prepare-up-board).
 
-If you are using custom rapyuta.io image on the device, the catkin workspace is already
-created, and the *io_tutorials* repository is already present in the workspace. Moreover, the
-source code is built for you.
+If you are using custom rapyuta.io image on the device, the catkin workspace is already created, and the *io_tutorials* repository is already present in the workspace. Moreover, the source code is built for you.
+
+{{% notice note %}}
+In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name your catkin workspace as you like and ensure that you replace all occurrences to `~/catkin_ws/` with your workspace name.
+{{% /notice %}}
 
 If you are using either a computer with ROS installed on it, or any device other
 than Raspberry PI, or a Raspberry PI without custom rapyuta.io image, you will
 create a catkin workspace and get the *io_tutorials* repository into the workspace.
-
-{{% notice note %}}
-In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name
-your catkin workspace as you like and ensure that you replace all occurrences to
-`~/catkin_ws/` with your workspace name.
-{{% /notice %}}
 
 Hence, to create a catkin workspace on the device, you have to execute the below commands at the device terminal.
 ```bash
@@ -175,7 +173,7 @@ then the *python-catkin-tools* package is missing on the device, which is requir
 {{% /notice %}}
 
 And then, you will [add the device](/getting-started/add-new-device)
-to rapyuta.io using the [console](https://console.rapyuta.io). Ensure that **Use docker compose as default runtime**
+to [rapyuta.io](https://console.rapyuta.io). Ensure that **Use docker compose as default runtime**
 checkbox is ***not selected***.
 
 #### Create map_listener package
@@ -243,9 +241,11 @@ command in the device's terminal:
 sudo tail /root/.ros/log/latest/map_listener-2.log
 ```
 
+{{% notice info %}}
 Sometimes *map_listener* stores the map data in *map_listener-1.log* file. Therefore,
 you are recommended to check all the files of the form ***map_listener-n.log***
 where **_n_** is a positive integer, if any file is empty.
+{{% /notice %}}
 
 You should see a similar output as shown below after executing the above command:
 
@@ -266,7 +266,7 @@ Open another terminal window, and run the command:
 ```bash
 source ~/catkin_ws/devel/setup.bash
 ```
-To pass an argument to the service */set_map*, press the tab key (more than twice) to complete the *rosservice call* command:
+To pass an argument to the service ***/set_map***, press the tab key (more than twice) to complete the ***rosservice call*** command:
 ```bash
 rosservice call /set_map "map:
   header:
