@@ -17,7 +17,9 @@ number of significant updates in this version that we hope you will like.
 
 #### Documentation
 * Improved Builds core concept
-* Revamped [Adding New Device](/getting-started/add-new-device/),
-  [Preparing Raspberry PI](/getting-started/prepare-raspberry-pi/)
-  and [Preparing UP Board](/getting-started/prepare-up-board/) quick
-  starting guides
+* Revamped the following quick starting guides:
+  * [Creating New Package](/getting-started/create-new-package/)
+  * [Adding New Device](/getting-started/add-new-device/)
+  * [Preparing Raspberry PI](/getting-started/prepare-raspberry-pi/)
+  * [Preparing UP Board](/getting-started/prepare-up-board/)
+  * [Deploying Package](/getting-started/deploy-package/)
