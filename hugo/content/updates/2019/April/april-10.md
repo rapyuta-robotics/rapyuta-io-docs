@@ -9,14 +9,10 @@ Welcome to the April 10, 2019 release of rapyuta.io platform. There are a
 number of significant updates in this version that we hope you will like.
 
 #### Notable Fixes
-* Organization name cannot be empty. It is mandatory to provide the name of
-  the organization when signing up on rapyuta.io
-* Correct the billing date on the Billing tab
-* Fixed the bug in historical logs table that cleared off available and
-  visible logs when the scroll API fails.
+* Fixed issue of incorrect billing date on the Billing tab
+* Better error handling in historical logs of deployments
 
 #### Documentation
-* Improved Builds core concept
 * Revamped the following quick starting guides:
   * [Creating New Package](/getting-started/create-new-package/)
   * [Adding New Device](/getting-started/add-new-device/)
