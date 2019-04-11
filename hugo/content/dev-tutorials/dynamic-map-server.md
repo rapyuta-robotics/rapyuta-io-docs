@@ -52,15 +52,15 @@ which replaces the map published by */map* topic.
 2. Click **ADD NEW PACKAGE**.
 3. You should provide information about the package such as the name of the
 package, its version, whether it is a singleton package, and a short description.
-	1. In the **Package Name** box, type in the name of the package say
+   1. In the **Package Name** box, type in the name of the package say
 	   `dynamic_map_server`
-	2. In the **Package Version** box, type in the version of the package. By
+   2. In the **Package Version** box, type in the version of the package. By
 	   default, the version is set to _1.0.0_
-	3. Ensure **Is a singleton package** is *not selected*.
-	4. Make sure **Is a bindable package** *is selected*.
-	5. In the **Description** box, provide a brief summary of the package, for
+   3. Ensure **Is a singleton package** option is ***not selected***.
+   4. Make sure **Is a bindable package** option ***is selected***.
+   5. In the **Description** box, provide a brief summary of the package, for
 	   example, `A modified ROS map_server`
-	6. Click **NEXT**.
+   6. Click **NEXT**
 4. In the **Component Name** box, enter a name for the component say
    `DynamicMapServer`
 {{% notice info %}}     
@@ -187,8 +187,8 @@ To create the package, follow the instructions:
 	1. In the **Package Name** box, enter a name for the package say `map_listener`
 	2. In the **Package Version** box, enter the version of the package. By default,
 		the version is set to _1.0.0_
-	3. Ensure **Is singleton package** is *not selected*.
-	4. Make sure **Is a bindable package** *is selected*.
+	3. Ensure **Is singleton package** option is ***not selected***.
+	4. Make sure **Is a bindable package** option ***is selected***.
 	4. In the **Description** box, provide a brief summary of the package say
 	   `Runs a map_listener node on device`
 	5. Click **NEXT**.
@@ -222,7 +222,9 @@ To deploy *map_listener* package, follow the steps:
 4. Select the device from the **Select device for deploying the component** drop-down
    list.
 5. Ensure that the **ros_workspace** and **ros_distro** are selected.
+   ![Deploy map_listener package](/images/tutorials/dms/deploy-mplstnr.png?classes=border,shadow&width=60pc)
 6. Click **Add dependency** to add a dependent deployment.
+   ![Add dependent deployment](/images/tutorials/dms/add-dependency.png?classes=border,shadow&width=60pc)
 7. Select _Dynamic Map Server Deployment_ from the drop-down list of deployments.
    Ensure that the _Dynamic Map Server Deployment_ is valid and is already running.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
@@ -230,9 +232,12 @@ To deploy *map_listener* package, follow the steps:
 You can verify if the _Map Listener Deployment_ is successfully running by
 checking if the green colored progress bar indicates that the **DEPLOYMENT PHASE** is _Succeeded_ and the **STATUS** is _Running_.
 
-![Map Listener Deployment](/images/tutorials/dms/map-listener-deployment.png?classes=border,shadow&width=60pc)
+![Map Listener Deployment](/images/tutorials/dms/mplstnr-deployment.png?classes=border,shadow&width=60pc)
 
 Ensure that the dependent deployment **STATUS** is _Running_ as well.
+
+The corresponding dependency graph will look as shown below:
+![Dependency graph](/images/tutorials/dms/dms-dgraph.png?classes=border,shadow&width=60pc)
 
 To know whether *map_listener* has received the map data, execute the below
 command in the device's terminal:
