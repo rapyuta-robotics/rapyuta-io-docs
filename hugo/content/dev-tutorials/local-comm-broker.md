@@ -6,12 +6,12 @@ date: 2018-11-22T13:20:28+05:30
 pre: "d. "
 weight: 420
 ---
-Complex robotic applications involving multi-device communication with service
-distributed across WAN can be latent. This tutorial demonstrates how to have
-multi-device communication within same internet.
+Complex robotic applications involving multi-device communication can be
+latent when the service is distributed across WAN. This tutorial demonstrates
+how to have multi-device communication within same LAN.
 
 ## Learning objectives
-This tutorial will show how to deploy a broker package locally for inter
+This tutorial will show you how to deploy a broker package locally for inter
 device communication using [rapyuta.io console](https://console.rapyuta.io).
 
 ## Prerequisites
@@ -31,29 +31,29 @@ device communication using [rapyuta.io console](https://console.rapyuta.io).
 Intermediate
 
 ## Estimated time
-It will take nearly 20 minutes to finish the tutorial.
+20 minutes
 
-
+## Tutorial walkthrough
 
 In this tutorial, you will add three devices namely _Broker Device_,
 _Publisher Device_ and _Subscriber Device_. You will also create and deploy
-_ROS Subscriber_ and _ROS Publisher_ packages.
+_ROS Publisher_ and _ROS Subscriber_ packages.
 
-## Add Broker Device
+#### Add Broker Device
 The _Broker Device_ must be of **amd64** CPU architecture.
 
 1. Click **DEVICES** > **ADD NEW DEVICE**.
-2. In the **Device Name** box, enter the name of the device say _Broker Device_
-3. Select **Use docker compose as default runtime** checkbox.
+2. In the **Device Name** box, enter the name of the device say `Broker Device`
+3. Select **Use docker compose as default runtime** option.
 4. In the **Description** box, provide a short summary of the device
-   say *I'm communication broker*
+   say `I am a communication broker`
 5. Click **CONTINUE**.
 6. Click **COPY** to copy the generated **Token**
 
-Paste the token (otherwise called the device set up link) in the device's terminal
-and run it to set up the rapyuta.io client on the device.
+Paste and execute the token (otherwise called the device set up link) in the device's terminal
+to set up the rapyuta.io client on the device.
 
-If the device is set up successfully, you should see the following output:
+If the device is set up successfully, you should see the following output at the device's terminal:
 ```bash
 Initialising the Rapyuta Platform
 
@@ -61,7 +61,10 @@ Initialising the Rapyuta Platform
 Successfully Installed!
 ```
 
-## Prepare Publisher Device
+Ensure that there's a <span style="color:green">**green**</span> dot next to the ***Broker Device***,
+which indicates that it is online on rapyuta.io.
+
+#### Prepare Publisher Device
 The _Publisher Device_ is:
 
 * Raspberry PI 2 or 3
@@ -69,52 +72,90 @@ The _Publisher Device_ is:
 * must have ROS kinetic installed on it
 * must have rapyuta.io tutorials installed on it
 
-The custom rapyuta.io images come with [Ubuntu Xenial](http://releases.ubuntu.com/xenial/)
+{{% notice info %}}
+The custom rapyuta.io image comes with [Ubuntu Xenial](http://releases.ubuntu.com/xenial/)
 OS and [ROS kinetic](http://wiki.ros.org/kinetic) software installed on them.
 Moreover, the [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tutorials)
 are also installed on these custom images.
+{{% /notice %}}
 
+{{% notice info%}}
 Learn how to [prepare Raspberry PI](/getting-started/prepare-raspberry-pi)
+{{% /notice %}}
 
-If you are not using any of the custom rapyuta.io images on the _Publisher
-Device_, you should execute the following commands on the device's terminal
-to install rapyuta.io tutorials:
+If you are using custom rapyuta.io image on the device, the catkin workspace is
+already set up for you, the ***io_tutorials*** repository is already downloaded
+in the workspace, and the source code is already built for you.
+
+{{% notice note %}}
+In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name
+your catkin workspace as you like and ensure that you replace all occurrences to
+`~/catkin_ws/` with your workspace name.
+{{% /notice %}}
+
+If you are using either a computer with ROS kinetic installed on it, or
+a Raspberry PI without custom rapyuta.io image, you will create a catkin
+workspace and get the ***io_tutorials*** repository into the workspace.
+
+To create the catkin workspace, you have to execute the below commands at the device's terminal.
 
 ```bash
-cd ~
-mkdir -p catkin_ws/src
-cd catkin_ws/src
-git clone https://github.com/rapyuta/io_tutorials
-cd ..
-source /opt/ros/kinetic/setup.bash
-catkin_make --pkg talker
+cd $HOME
 ```
+```bash
+mkdir -p catkin_ws/src
+```
+```bash
+cd catkin_ws/src
+```
+```bash
+git clone https://github.com/rapyuta/io_tutorials
+```
+```bash
+source /opt/ros/kinetic/setup.bash
+```
+```bash
+cd ..
+```
+To build the source code in the catkin workspace, execute the below command in the root of
+the workspace:
+```bash
+catkin build talker
+```
+{{% notice note%}}
+If you experience the error ***catkin:command not found***,
+then the *python-catkin-tools* package is missing on the device, which is required for executing *catkin build* command. Install the package by running the command `sudo apt-get install python-catkin-tools` at the device terminal.
+{{% /notice %}}
 
 ## Add Publisher Device
 
 1. Click **DEVICES** > **ADD NEW DEVICE**.
-2. In the **Device Name** box, enter the name of the device say _Publisher Device_
+2. In the **Device Name** box, enter the name of the device say `Publisher Device`
 3. In the **ROS Catkin Workspace** box, enter the absolute path of the catkin
    workspace found on the device.
    If rapyuta.io custom image is installed on the device, the absolute path
-   of the catkin workspace is */home/rapyuta/catkin_ws*    
+   of the catkin workspace is `/home/rapyuta/catkin_ws`    
    Otherwise the absolute path of the catkin workspace will be different
    for the device.
 4. In the **Description** box, provide a short summary of the device say
-   *I'm ROS Publisher*
+   `I am a ROS Publisher`
 5. Click **CONTINUE**.
 6. Click **COPY** to copy the generated **Token**.
 
-Paste the token in the device's terminal and run it to set up the
+Paste and execute the token in the device's terminal so as to set up the
 rapyuta.io client on the device.
 
-If the device is set up successfully, you should see the following output:
+If the device is set up successfully, you should see the following output
+at the device's terminal:
 ```bash
 Initialising the Rapyuta Platform
 
 ############(100%)
 Successfully Installed!
 ```
+
+Ensure that there's a <span style="color:green">**green**</span> dot next to
+the ***Publisher Device***, which indicates that it is online on rapyuta.io.
 
 ## Prepare Subscriber Device
 The _Subscriber Device_ is a:
@@ -124,42 +165,77 @@ The _Subscriber Device_ is a:
 * must have ROS kinetic installed on it
 * must have rapyuta.io tutorials installed on it
 
-The custom rapyuta.io images come with [Ubuntu Xenial](http://releases.ubuntu.com/xenial/)
+{{% notice info %}}
+The custom rapyuta.io image comes with [Ubuntu Xenial](http://releases.ubuntu.com/xenial/)
 OS and [ROS kinetic](http://wiki.ros.org/kinetic) software installed on them.
 Moreover, the [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tutorials)
 are also installed on these custom images.
+{{% /notice %}}
 
+{{% notice info %}}
 Learn how to [prepare Raspberry PI](/getting-started/prepare-raspberry-pi)
+{{% /notice %}}
 
-If you are not using any of the custom rapyuta.io images on the
-_Subscriber Device_, you should execute the following commands on the
-device's terminal to install rapyuta.io tutorials:
+If you are using custom rapyuta.io image on the device, the catkin workspace is
+set up for you, the ***io_tutorials*** repository is downloaded in the workspace,
+and the source code is built for you.
+
+{{% notice note %}}
+In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name
+your catkin workspace as you like and ensure that you replace all occurrences to
+`~/catkin_ws/` with your workspace name.
+{{% /notice %}}
+
+If you are using either a computer with ROS installed on it, or a Raspberry PI
+without custom rapyuta.io image, you will create a catkin workspace and get
+the ***io_tutorials*** repository into the workspace.
+
+To create the catkin workspace, you have to execute the below commands at the device's terminal:
+
 ```bash
-cd ~
-mkdir -p catkin_ws/src
-cd catkin_ws/src
-git clone https://github.com/rapyuta/io_tutorials
-cd ..
-source /opt/ros/kinetic/setup.bash
-catkin_make --pkg listener
+cd $HOME
 ```
+```bash
+mkdir -p catkin_ws/src
+```
+```bash
+cd catkin_ws/src
+```
+```bash
+git clone https://github.com/rapyuta/io_tutorials
+```
+```bash
+source /opt/ros/kinetic/setup.bash
+```
+```bash
+cd ..
+```
+To build the source code in the catkin workspace, execute the below command in the root of
+the workspace:
+```bash
+catkin build listener
+```
+{{% notice note%}}
+If you experience the error ***catkin:command not found***,
+then the *python-catkin-tools* package is missing on the device, which is required for executing *catkin build* command. Install the package by running the command `sudo apt-get install python-catkin-tools` at the device terminal.
+{{% /notice %}}
 
 ## Add Subscriber Device
 
 1. Click **DEVICES** > **ADD NEW DEVICE**.
-2. In the **Device Name** box, enter the name of the device say _Subscriber Device_
+2. In the **Device Name** box, enter the name of the device say `Subscriber Device`
 3. In the **ROS Catkin Workspace** box, enter the absolute path of the
    catkin workspace found on the device.    
    If rapyuta.io custom image is installed on the device, the absolute path
-   of the catkin workspace is */home/rapyuta/catkin_ws*    
+   of the catkin workspace is `/home/rapyuta/catkin_ws`    
    Otherwise the absolute path of the catkin workspace will be
    different for the device.
 4. In the **Description** box, provide a short summary of the device say
-   *I'm ROS Subscriber*
+   `I am a ROS Subscriber`
 5. Click **CONTINUE**.
 6. Click **COPY** to copy the generated **Token**.
 
-Paste the token in the device's terminal and run it to set up the device
+Paste and execute the token in the device's terminal so as to set up the device
 manager client on the device.
 
 If the device is set up successfully, you should see the following output:
@@ -170,6 +246,9 @@ Initialising the Rapyuta Platform
 Successfully Installed!
 ```
 
+Ensure that there's a <span style="color:green">**green**</span> dot next to
+the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
+
 ## Deploy local communication broker
 
 1. Click **CATALOG**.
@@ -177,7 +256,7 @@ Successfully Installed!
    package.
 3. Click **Deploy package**.
 4. In the **Name of Deployment** box, enter a name for the broker deployment say
-   _Communication Broker Deployment_
+   `Communication Broker Deployment`
 5. Since **brokerComponent** has **Device runtime** select the device you want to
    deploy on by clicking **Refresh the list of online devices**. This retrieves
    an updated list of online devices.
@@ -201,18 +280,18 @@ so you may debug if the deployment fails.
 2. You should provide information about the package such as the name of the
    package, its version, whether it is a singleton package, and a short
    description.
-   1. In the **Package Name** box, enter the name of the package say _ROS Publisher_
+   1. In the **Package Name** box, enter the name of the package say `ROS Publisher`
    2. In the **Package Version** box, type in the package's version. By default,
       the version is set to _1.0.0_
-   3. Ensure **Is a singleton package** checkbox is not selected.
-   4. Ensure **Is a bindable package** checkbox is not selected.
+   3. Ensure **Is a singleton package** checkbox is ***not selected***.
+   4. Ensure **Is a bindable package** checkbox is ***not selected***.
    5. In the **Description** box, provide a brief summary of the package say
-      _Publishes ROS topic for a subscriber_
+      `Publishes ROS topic for a subscriber`
    6. Click **NEXT**.
-3. In the **Component Name** box, enter a name for the component, say _Publisher_
+3. In the **Component Name** box, enter a name for the component, say `Publisher`
 4. Select **Device** as the **Component Runtime**.
 5. Ensure **Is ROS Component** is selected.
-6. In the **Executable Name** box, type in a name for the executable say _talker_
+6. In the **Executable Name** box, type in a name for the executable say `talker`
 7. For **Executable type**, select **Default** because the source code is already
    installed on the _Publisher Device_.
 8. In the **Command to run in the docker container** box, copy and paste the command:
@@ -220,9 +299,9 @@ so you may debug if the deployment fails.
    	roslaunch talker talker.launch
    	```
 
-	Ensure you always execute `roslaunch` command to explicitly start the
-    [ROS Master](http://wiki.ros.org/Master) instead of running the `rosrun` command,
-    because the ROS Master will fail to start on `rosrun`, and eventually, the
+	Ensure you always execute *roslaunch* command to explicitly start the
+    [ROS Master](http://wiki.ros.org/Master) instead of running the *rosrun* command,
+    because the ROS Master will fail to start on _rosrun_, and eventually, the
     deployment will fail as well.
 9. To add a ROS topic, click **Add ROS topic**. In the **Name** box, enter `/telemetry`
    and set **QoS** to **Maximum**.
@@ -234,18 +313,18 @@ so you may debug if the deployment fails.
 2. You should provide information about the package such as the name of the
    package, its version, whether it is a singleton package, and a
    short description.
-   	1. In the **Package Name** box, enter the name of the package say _ROS Subscriber_
+   1. In the **Package Name** box, enter the name of the package say `ROS Subscriber`
 	2. In the **Package Version** box, type in the package's version. By default,
 	   the version is set to _1.0.0_
-	3. Ensure **Is a singleton package** checkbox is not selected.
-	4. Ensure **Is a bindable package** checkbox is not selected.
+	3. Ensure **Is a singleton package** checkbox is ***not selected***.
+	4. Ensure **Is a bindable package** checkbox is ***not selected***.
 	5. In the **Description** box, provide a brief summary of the package say
-	   _Subscribes to ROS topic published by a publisher_
+	   `Subscribes to ROS topic published by a publisher`
 	6. Click **NEXT**.
-3. In the **Component Name** box, enter a name for the component, say _Subscriber_
+3. In the **Component Name** box, enter a name for the component, say `Subscriber`
 4. Select **Device** as the **Component Runtime**.
 5. Ensure **Is ROS Component** is selected.
-6. In the **Executable Name** box, type in a name for the executable say _listener_
+6. In the **Executable Name** box, type in a name for the executable say `listener`
 7. For **Executable type**, select **Default** because the source code is already
    installed on the _Subcriber Device_.
 8. In the **Command to run in the docker container** box, copy and paste the command:
@@ -253,9 +332,9 @@ so you may debug if the deployment fails.
 	roslaunch listener listener.launch
 	```
 
-	Ensure you always execute `roslaunch` command to explicitly start the
-	[ROS Master](http://wiki.ros.org/Master) instead of running the `rosrun`
-	command, because the ROS Master will fail to start on `rosrun`, and
+	Ensure you always execute *roslaunch* command to explicitly start the
+	[ROS Master](http://wiki.ros.org/Master) instead of running the *rosrun*
+	command, because the ROS Master will fail to start on _rosrun_, and
 	eventually, the deployment will fail as well.
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
@@ -263,7 +342,7 @@ so you may debug if the deployment fails.
 
 1. Click **CATALOG** > select **ROS Publisher** package > click **Deploy package**.
 2. In the **Name of deployment** box, enter a name for the deployment
-   say _ROS Publisher Deployment_
+   say `ROS Publisher Deployment`
 3. Since **Publisher** has **Device runtime**, select the device you want to deploy
    on by clicking **Refresh the list of online devices**. This retrieves an
    updated list of online devices.
@@ -278,7 +357,7 @@ so you may debug if the deployment fails.
    ![Dependent deployment](/images/tutorials/local-comm-broker/ros-pub-dependent-deploy.png?classes=border,shadow&width=50pc)
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You will be redirected to the newly created deployment's **Details** tab. The
+You will be redirected to the **Details** tab of the newly created deployment. The
 package is successfully deployed when the green coloured bar moves from
 **In progress** to **Succeeded** indicating that the **DEPLOYMENT PHASE** has **Succeeded**
 and the **STATUS** is **Running**.
@@ -294,7 +373,7 @@ if the deployment fails.
 
 1. Click **CATALOG** > select **ROS Subscriber** package > click **Deploy package**.
 2. In the **Name of deployment** box, enter a name for the deployment say
-   _ROS Subscriber Deployment_
+   `ROS Subscriber Deployment`
 3. Since **Subscriber** has **Device runtime**, select the device you want to deploy
    on by clicking **Refresh the list of online devices**. This retrieves an
    updated list of online devices.
@@ -320,13 +399,13 @@ You may analyse the corresponding [deployment logs](/core-concepts/logging/deplo
 if the deployment fails.
 
 If all of the above three deployments are successfully running, the
-logs of _ROS Subscriber Deployment_ will print `hello_world`.
+logs of **ROS Subscriber Deployment** will print ***hello_world***.
 
 
-Since the communication broker is deployed on the _Broker Device_ locally,
+Since the communication broker is deployed on the **Broker Device** locally,
 and the bindable attribute is not selected (value is set to false) for both
-the _ROS Publisher_ package and the _ROS Subscriber_ package, the ROS topic
-(`/telemetry`) and in general, the data is transferred within the same
+the **ROS Publisher** package and the **ROS Subscriber** package, the ROS topic
+(***/telemetry***) and in general, the data is transferred within the same
 local network. Thus, the application's latency is comparatively reduced
-provided the _Broker Device_ is in the same network as the _Publisher Device_
-and _Subscriber Device_.
+provided the **Broker Device** is in the same network as the **Publisher Device**
+and **Subscriber Device**.

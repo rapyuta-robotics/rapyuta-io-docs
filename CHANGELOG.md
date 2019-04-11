@@ -1,6 +1,17 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Updated
+- Revamp builds topic.
+
+## [1.3.3 - 2019-04-10]
+### Added
+- Add release notes for April 10, 2019
+### Updated
+- Improve creating new package quick starting guide.
+- Improve deploying package quick starting guide.
+- Improve preparing raspberry pi and UP board guides.
+- Improve adding new device quick starting guide.
 
 ## [1.3.2 - 2019-03-29]
 ### Fixed
