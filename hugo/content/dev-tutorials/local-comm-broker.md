@@ -369,6 +369,9 @@ Ensure that the dependent deployment **STATUS** is **Running** as well.
 You may analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs) so you may debug
 if the deployment fails.
 
+The corresponding [dependency graph](/core-concepts/deployments/#dependency-graph) of **ROS Publisher Deployment** looks like:
+![Dependency graph](/images/tutorials/local-comm-broker/dgraph-pub-broker.png?classes=border,shadow&width=50pc)
+
 ## Deploy ROS Subscriber package
 
 1. Click **CATALOG** > select **ROS Subscriber** package > click **Deploy package**.
@@ -397,6 +400,9 @@ Ensure that the dependent deployment **STATUS** is **Running** as well.
 
 You may analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs) so you may debug
 if the deployment fails.
+
+The corresponding [dependency graph](/core-concepts/deployments/#dependency-graph) of **ROS Subscriber Deployment** looks like:
+![Dependency graph](/images/tutorials/local-comm-broker/dgraph-sub-broker.png?classes=border,shadow&width=50pc)
 
 If all of the above three deployments are successfully running, the
 logs of **ROS Subscriber Deployment** will print ***hello_world***.
