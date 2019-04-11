@@ -222,9 +222,9 @@ To deploy *map_listener* package, follow the steps:
 4. Select the device from the **Select device for deploying the component** drop-down
    list.
 5. Ensure that the **ros_workspace** and **ros_distro** are selected.
-   ![Deploy map_listener package](/images/tutorials/dms/deploy-mplstnr.png?classes=border,shadow&width=60pc)
+   ![Deploy map_listener package](/images/tutorials/dms/deploy-mplstnr.png?classes=border,shadow&width=40pc)
 6. Click **Add dependency** to add a dependent deployment.
-   ![Add dependent deployment](/images/tutorials/dms/add-dependency.png?classes=border,shadow&width=60pc)
+   ![Add dependent deployment](/images/tutorials/dms/add-dependency.png?classes=border,shadow&width=40pc)
 7. Select _Dynamic Map Server Deployment_ from the drop-down list of deployments.
    Ensure that the _Dynamic Map Server Deployment_ is valid and is already running.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
@@ -236,8 +236,8 @@ checking if the green colored progress bar indicates that the **DEPLOYMENT PHASE
 
 Ensure that the dependent deployment **STATUS** is _Running_ as well.
 
-The corresponding dependency graph will look as shown below:
-![Dependency graph](/images/tutorials/dms/dms-dgraph.png?classes=border,shadow&width=60pc)
+The corresponding [dependency graph](/core-concepts/deployments/#dependency-graph) will look as shown below:
+![Dependency graph](/images/tutorials/dms/dms-dgraph.png?classes=border,shadow&width=50pc)
 
 To know whether *map_listener* has received the map data, execute the below
 command in the device's terminal:
