@@ -249,31 +249,6 @@ Successfully Installed!
 Ensure that there's a <span style="color:green">**green**</span> dot next to
 the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 
-## Deploy local communication broker
-
-1. Click **CATALOG**.
-2. Under **Communication packages**, select **Rapyuta IO Local Communication Broker**
-   package.
-3. Click **Deploy package**.
-4. In the **Name of Deployment** box, enter a name for the broker deployment say
-   `Communication Broker Deployment`
-5. Since **brokerComponent** has **Device runtime** select the device you want to
-   deploy on by clicking **Refresh the list of online devices**. This retrieves
-   an updated list of online devices.
-6. Select **Broker Device** from **Select device for deploying the
-   component** drop-down list.
-7. Select the network interface parameter value as per your device on
-   which you are deploying by clicking **NETWORK_INTERFACE** drop-down list.
-8. Click **CREATE DEPLOYMENT** > **Confirm**.
-
-You will be redirected to the newly created deployment's **Details** tab.
-The package is successfully deployed when the green coloured bar moves
-from **In progress** to **Succeeded** indicating that the **DEPLOYMENT PHASE**
-has **Succeeded** and the **STATUS** is **Running**.
-
-You may analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs)
-so you may debug if the deployment fails.
-
 ## Create ROS Publisher package
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
@@ -337,6 +312,31 @@ so you may debug if the deployment fails.
 	command, because the ROS Master will fail to start on _rosrun_, and
 	eventually, the deployment will fail as well.
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+
+## Deploy local communication broker
+
+1. Click **CATALOG**.
+2. Under **Communication packages**, select **Rapyuta IO Local Communication Broker**
+   package.
+3. Click **Deploy package**.
+4. In the **Name of Deployment** box, enter a name for the broker deployment say
+   `Communication Broker Deployment`
+5. Since **brokerComponent** has **Device runtime** select the device you want to
+   deploy on by clicking **Refresh the list of online devices**. This retrieves
+   an updated list of online devices.
+6. Select **Broker Device** from **Select device for deploying the
+   component** drop-down list.
+7. Select the network interface parameter value as per your device on
+   which you are deploying by clicking **NETWORK_INTERFACE** drop-down list.
+8. Click **CREATE DEPLOYMENT** > **Confirm**.
+
+You will be redirected to the newly created deployment's **Details** tab.
+The package is successfully deployed when the green coloured bar moves
+from **In progress** to **Succeeded** indicating that the **DEPLOYMENT PHASE**
+has **Succeeded** and the **STATUS** is **Running**.
+
+You may analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs)
+so you may debug if the deployment fails.
 
 ## Deploy ROS Publisher package
 
