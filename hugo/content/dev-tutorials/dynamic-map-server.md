@@ -42,7 +42,7 @@ Intermediate
 ## Tutorial Walkthrough
 
 You will add and deploy the *dynamic_map_server* package. It is a modified version
-of the original map_server package. The package offers a
+of the original *map_server* package. The package offers a
 navigation map to other deployments that depend on it. Besides exposing the ROS topics: */map*
 and */map_metadata*, the package also exposes the */set_map* service,
 which replaces the map published by */map* topic.
@@ -109,29 +109,9 @@ is **BuildInProgress**, while a green dot indicates that the **Build Status** is
 Additionally, you may verify if the package is built successfully and is ready
 to be deployed by clicking to see if the **Deploy package** button is enabled.
 
-#### Deploy dynamic_map_server
-To deploy *dynamic_map_server* package, follow the steps:
-
-1. On the left navigation bar, click **CATALOG**.
-2. Select *dynamic_map_server* package.
-3. Click **Deploy package**.
-4. In the **Name of deployment** box, provide a name for the specific deployment
-   you are creating say `Dynamic Map Server Deployment`
-5. Click **CREATE DEPLOYMENT** > **Confirm**.
-
-You will be redirected to the newly created deployment's **Details** page.
-The _Dynamic Map Server Deployment_ is successfully running only when the green
-coloured progress bar moves to **Succeeded** and **Status:Running**, indicating that the
-**DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
-
-![Dynamic Map Server Deployment](/images/tutorials/dms/dms-deployment.png?classes=border,shadow&width=50pc)
-
-#### Create dependent deployment
-If you are using a Raspberry PI as the device, learn
-[how to prepare it](/getting-started/prepare-raspberry-pi).
-
-If you are using a UP Board as the device, learn
-[how to prepare it](/getting-started/prepare-up-board).
+#### Prepare and add a device
+You will [prepare](/getting-started/prepare-raspberry-pi) a Raspberry Pi 2 or 3
+as the device for this tutorial.
 
 If you are using custom rapyuta.io image on the device, the catkin workspace is already created, and the *io_tutorials* repository is already present in the workspace. Moreover, the source code is built for you.
 
@@ -143,7 +123,8 @@ If you are using either a computer with ROS installed on it, or any device other
 than Raspberry PI, or a Raspberry PI without custom rapyuta.io image, you will
 create a catkin workspace and get the *io_tutorials* repository into the workspace.
 
-Hence, to create a catkin workspace on the device, you have to execute the below commands at the device terminal.
+Hence, to create a catkin workspace on the device, you have to execute the following
+commands at the device terminal.
 ```bash
 cd $HOME
 ```
@@ -173,8 +154,10 @@ then the *python-catkin-tools* package is missing on the device, which is requir
 {{% /notice %}}
 
 And then, you will [add the device](/getting-started/add-new-device)
-to [rapyuta.io](https://console.rapyuta.io). Ensure that **Use docker compose as default runtime**
-checkbox is ***not selected***.
+to [rapyuta.io](https://console.rapyuta.io).
+{{% notice note %}}
+While adding the device, ensure that **Use docker compose as default runtime** checkbox is ***not selected***.
+{{% /notice %}}
 
 #### Create map_listener package
 You will create *map_listener* package, which will be deployed on the device.
@@ -209,6 +192,23 @@ To create the package, follow the instructions:
 	eventually, the deployment will fail as well.
 	![map_listener_executable](/images/tutorials/dms/maplistener_exec_details.png?classes=border,shadow&width=50pc)
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+
+#### Deploy dynamic_map_server package
+To deploy *dynamic_map_server* package, follow the steps:
+
+1. On the left navigation bar, click **CATALOG**.
+2. Select *dynamic_map_server* package.
+3. Click **Deploy package**.
+4. In the **Name of deployment** box, provide a name for the specific deployment
+   you are creating say `Dynamic Map Server Deployment`
+5. Click **CREATE DEPLOYMENT** > **Confirm**.
+
+You will be redirected to the newly created deployment's **Details** page.
+The _Dynamic Map Server Deployment_ is successfully running only when the green
+coloured progress bar moves to **Succeeded** and **Status:Running**, indicating that the
+**DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
+
+![Dynamic Map Server Deployment](/images/tutorials/dms/dms-deployment.png?classes=border,shadow&width=50pc)
 
 #### Deploy map_listener package
 To deploy *map_listener* package, follow the steps:
