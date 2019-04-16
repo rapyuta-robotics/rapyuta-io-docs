@@ -60,7 +60,7 @@ You may explicitly specify the absolute path of the Dockerfile, or
 the root of the git repository is set as the location of the Dockerfile.
 
 ### Docker image strategy
-This strategy builds a pre-built docker image locally. The docker image is usually
+This strategy uses a pre-built docker image. The docker image is usually
 stored in either a public docker registry (i.e., Dockerhub) or a private
 docker registry. You need to [add a docker pull secret](/core-concepts/secrets/docker-pull-secret/) for rapyuta.io to access a private docker image.
 
@@ -70,7 +70,8 @@ The maximum size of a docker image for cloud deployment is **10GB**.
 
 If you are going to deploy a docker image onto a device, ensure that the
 CPU architecture of the device is compatiable with that of the image being
-deployed. You may use the ***Build Engine*** for checking for compatibility.
+deployed. You may use the ***Build Engine*** for compiling for a different
+target architecture.
 
 The [Control onboard LED tutorial](/dev-tutorials/control-onboard-led)
 illustrates docker image strategy.
