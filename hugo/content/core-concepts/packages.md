@@ -6,10 +6,11 @@ date: 2018-11-15T13:41:10+05:30
 pre: "d. "
 weight: 140
 ---
-A package is the smallest unit of deployment in rapyuta.io. It is composed of
-components, which are in turn made of executables. The components are deployed
-either on a device or the cloud. Before a package is deployed, it must be added
-to the catalog. By default, any package that you deploy holds exactly one plan.
+In [rapyuta.io](https://console.rapyuta.io/), a package is the smallest
+unit of deployment. It is composed of components, which are in turn made
+of executables. The components are deployed on either a device or the cloud.
+Before a package is deployed, it must be added to the
+[catalog](/core-concepts/catalog/).
 
 ## Executable
 An executable is a runnable entity such as:
@@ -21,18 +22,17 @@ bash shell command, which overrides the
 [entry point](https://docs.docker.com/engine/reference/run/#cmd-default-command-or-options)
 of the docker container.
 {{% notice info %}}
-The maximum size of the docker image is 10GB for cloud deployment.
+The maximum size of the docker image for cloud deployment is 10GB.
 {{% /notice %}}
 2. **Git repository**    
-You may provide a git repository for an executable. rapyuta.io builds the source
-code in the git repository into a docker image. Moreover, you may also specify a
-bash shell command, which will be run in tandem with the executable.
+You may provide a git repository as an executable. rapyuta.io builds the source
+code in the git repository into a docker image. Moreover, you may also execute a
+bash shell command in tandem with the executable.
 3. **Bash command**    
-A simple bash shell command is an executable. If you choose the **Executable Type**
-as **Default**, the bash shell command becomes an executable. In this case, the
-executable can run only on **Device** runtime. rapyuta.io assumes that all dependencies
-that are required to run the command are already present on the device where
-the command will execute.
+A simple bash shell command can be an executable. If the type of the
+executable is default, the bash shell command becomes an executable. In this case, the
+runtime of the executable is device runtime. rapyuta.io assumes that all dependencies
+that are required to run the command are already installed on the device.
 
 ## Component
 A component is a set of executables. All executables are deployed in unison on
@@ -44,14 +44,15 @@ on a port is accessible to its sibling executables via localhost.
 ## Plan
 A plan represents a different configuration of a package. When you add a new
 package, there is always a single plan associated with the package. A plan is
-uniquely identified by its plan ID.
+uniquely identified by its plan ID. Any package that is deployed holds exactly
+one plan.
 
-## Bindable Attribute
-A boolean attribute that is set while adding a package. When set to true for a
-package with two or more ROS components, the components successfully communicate
-with each other.
+## Bindable attribute
+The binadable attribute is a boolean attribute that is set while adding a package.
+When set to true for a package with two or more ROS components, the components
+successfully communicate with each other.
 
-It also determines whether a deployment of a package can be used as a dependent
+It determines whether a deployment of a package can be used as a dependent
 deployment of other deployments. If set false, the deployment of the package
 cannot be used as a dependent deployment of another deployment.
 
@@ -60,19 +61,30 @@ false, the package cannot be used as an include package.
 
 ## Endpoint
 Components can externally expose network endpoints. While creating a package
-you may provide a name for the endpoint, select the desired protocol and specify
-a target port. The supported protocols are **Secure TCP(TLS/SNI)**, **HTTP/Websocket**,
-and **HTTPS/WSS**. For HTTPS/WSS and Secure TCP(TLS/SNI), the value of port is
-defaulted to 443, whereas for HTTP/Websocket the value of port is set to 80.
-You can view the FQDN of the endpoint during the deployment process.
-rapyupta.io automatically creates an accessible public network endpoint for each
-exposed network endpoint.    
+you may provide a name for the endpoint, select the desired protocol and
+specify a target port.
+
+The supported protocols are:
+
+* Secure TCP(TLS/SNI)
+* HTTP/Websocket
+* HTTPS/WSS
+
+For **HTTPS/WSS** and **Secure TCP(TLS/SNI)**, the value of port is
+defaulted to ***443***, whereas for **HTTP/Websocket** the value of
+port is set to ***80***. You can view the
+[FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) of
+the endpoint during the deployment process.
+
+rapyupta.io automatically creates an accessible public network
+endpoint for each exposed network endpoint.
+
 The Secure TCP(TLS/SNI) endpoint uses [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication)
 headers for routing the request to the desired backend.
 
 ## Component runtime
-A component of a package may be deployed either on the cloud or on a device.
-When deployed on the cloud, the component has cloud runtime. Whereas, the component
+A component of a package may be deployed on either the cloud or a device.
+When deployed on the cloud, the component has cloud runtime. Similarly, the component
 deployed on a device has device runtime.
 
 ## Configuration parameters
@@ -138,8 +150,10 @@ creating a deployment, follow the steps:
 5. Select a component from from the **Application Component** drop-down list.
 6. Provide a mount path in the **Mount path** box.
 
-If you see a message, _No running volumes available_, ensure that a volume is
+{{% notice note %}}
+If you see a message, ***No running volumes available***, ensure that a volume is
 running prior to adding it to a deployment of a package.
+{{% /notice %}}
 
 ## Catkin build parameters
 You can control how ROS packages will be built by specifying catkin build parameters.
@@ -148,28 +162,29 @@ build parameters when adding a ROS package.
 They are:
 
 1. **ROS packages**    
-A list of ROS packages in the catkin workspace that you want to build.    
-The ROS package name must begin with an alphabet (A-Z, a-z), followed by alphanumeric
-characters (A-Z, a-z, 0-9) or an underscore ( _ ) or at most one forward slash ( / )
-2. 	**Blacklist**     
+A list of ROS packages in the catkin workspace that you want to build.
+{{%notice info %}}  
+The ROS package name must begin with an alphabet (A-Z, a-z), followed by
+alphanumeric characters (A-Z, a-z, 0-9) or an underscore ( _ ) or at most
+one forward slash ( / )
+{{% /notice %}}
+2. **Blacklist**     
 A list of ROS packages in the catkin workspace that you do not want to build even
-if another package depends on it.    
-The ROS package name must begin with an alphabet (A-Z, a-z), followed by alphanumeric
-characters (A-Z, a-z, 0-9) or an underscore ( _ ) or at most one forward slash ( / )
-3. **Make arguments**    
-A list of make options that you intend to use while building the ROS package.
+if another package depends on it.
+1. **Make arguments**    
+A list of make options that you intend to use when building the ROS package.
 4. **CMake arguments**    
-A list of cmake options that you want to use while building the ROS package.
+A list of cmake options that you want to use when building the ROS package.
 5. **Catkin Make arguments**    
-A list of make options that you want to use while building ROS packages.
+A list of make options that you want to use when building ROS packages.
 
-The catkin build parameters are optional. If you choose to not specify any of them,
+The catkin build parameters are *optional*. If you choose to not specify any of them,
 the ROS Builder will build all ROS packages in its catkin workspace.
 
-The context directory is a specific project directory (folder) relative to the
-git repository. It is copied to the ROS Builder's catkin workspace, and
-subsequently, catkin build parameters are applied to it. In the absence of a
-context directory, all of the folders in the git repository are built.
+The ***context directory*** is a specific project directory (folder) relative to the
+git repository. It is copied to the ROS Builder's catkin workspace where catkin build
+parameters are applied to it. In the absence of a
+context directory, all the folders in the git repository are built.
 
 To add a set of catkin build parameters, click **Add Parameter** against
 **CATKIN BUILD PARAMETERS** while adding a package using the [console](https://console.rapyuta.io).
@@ -182,6 +197,7 @@ thus you can run multiple catkin builds on a ROS package.
 ## Dependencies and composition
 rapyuta.io allows for a number of design patterns to help you compose an
 application using a combination of one or more packages.
-
+{{% notice info %}}
 Read about [design patterns](/core-concepts/catalog/#design-patterns) for more
 details on package composition.
+{{% /notice %}}
