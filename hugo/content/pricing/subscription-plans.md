@@ -28,13 +28,13 @@ After successful transaction, the $1 will be refunded to your account in 24 hour
 If you want to cancel the current plan or shift to another plan, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
 {{% /notice %}}
 
-[Discourse](http://rapyuta.io/discourse/login) is an open discussion forum for
+There is an open [Discussion Forum](http://rapyuta.io/discourse/login) for
 rapyuta.io users, where you can ask clarifying questions, discuss relevant topics,
 share knowledge and help others by answering queries about rapyuta.io platform.
 
-You need rapyuta.io validated credentials to access the discussion forum.
-Moreover, you must have signed into the platform at least once. Be *respectful*,
-*kind* and *empathetic* in your interactions with other users in the discussion forum.
+You need to be a registered rapyuta.io user to access the discussion forum.
+Be *respectful*, *kind* and *empathetic* in your interactions with other
+users in the discussion forum.
 
 ## Community Plan
 
