@@ -143,6 +143,21 @@ source /opt/ros/kinetic/setup.bash
 ```bash
 cd ..
 ```
+
+In order for the custom rapyuta.io image to support the build command, ***catkin build***, you
+will set up the device by executing the following:
+```bash
+cd $HOME && 
+mv catkin_ws catkin_old && 
+curl https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_arm32v7.tar.gz | tar xz
+``` 
+
+The argument to the ***curl*** command, i.e. the URL address, changes based on the architecture of the device.
+
+* For a device with an *arm64* architecture, use https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_arm64v8.tar.gz
+* For a device with an *arm32* architecture, use https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_arm32v7.tar.gz
+* For a device with an *amd64* architecture, use https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_amd64.tar.gz
+
 To build the source code in the catkin workspace, execute the below command in the root of
 the workspace:
 ```bash
