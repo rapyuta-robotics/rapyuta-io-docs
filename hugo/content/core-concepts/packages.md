@@ -25,13 +25,14 @@ of the docker container.
 The maximum size of the docker image for cloud deployment is 10GB.
 {{% /notice %}}
 2. **Git repository**    
-You may provide a git repository as an executable. rapyuta.io builds the source
-code in the git repository into a docker image. Moreover, you may also execute a
+You may provide a git repository as an executable. rapyuta.io
+[builds the source code in the git repository](/core-concepts/builds/#source-code-strategy)
+into a docker image. Moreover, you may also execute a
 bash shell command in tandem with the executable.
 3. **Bash command**    
 A simple bash shell command can be an executable. If the type of the
 executable is default, the bash shell command becomes an executable. In this case, the
-runtime of the executable is device runtime. rapyuta.io assumes that all dependencies
+executable can run only on **Device** runtime. rapyuta.io assumes that all dependencies
 that are required to run the command are already installed on the device.
 
 ## Component
