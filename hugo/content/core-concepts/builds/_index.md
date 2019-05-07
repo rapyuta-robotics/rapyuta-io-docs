@@ -59,7 +59,7 @@ to access the repository contents.
 You may explicitly specify the absolute path of the Dockerfile, or
 the root of the git repository is set as the location of the Dockerfile.
 
-The [Hello World Application](/dev-tutorials/hello-world/) tutorial is
+The [Hello World Web Application](/dev-tutorials/hello-world/) tutorial is
 an example of dockerfile build strategy.
 
 ### Docker image strategy
