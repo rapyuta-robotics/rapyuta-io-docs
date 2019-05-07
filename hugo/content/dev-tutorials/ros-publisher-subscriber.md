@@ -45,14 +45,15 @@ If you are using the custom rapyuta.io image on the device, the catkin workspace
 already created for you and the *io_tutorials* repository is already present in the workspace.
 Moreover, the source code is already built for you.
 
-If your device is a computer with ROS installed on it, or a Raspberry PI without custom rapyuta.io image, you will
-create a catkin workspace and get the *io_tutorials* repository into that workspace.
-
 {{% notice note %}}
 In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name
 your catkin workspace as you like and ensure that you replace all occurrences to
 `~/catkin_ws/` with your workspace name.
 {{% /notice %}}
+
+If your device is a computer with ROS installed on it, or a Raspberry PI
+without custom rapyuta.io image, you will create a catkin workspace and
+get the *io_tutorials* repository into that workspace.
 
 Hence, to create a catkin workspace, you have to execute the below commands at the device terminal.
 ```bash
@@ -73,6 +74,20 @@ source /opt/ros/kinetic/setup.bash
 ```bash
 cd ..
 ```
+In order for the custom rapyuta.io image to support the build command, ***catkin build***, you
+will set up the device by executing the following:
+```bash
+cd $HOME && 
+mv catkin_ws catkin_old && 
+curl https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_arm32v7.tar.gz | tar xz
+``` 
+
+The argument to the ***curl*** command, i.e. the URL address, changes based on the architecture of the device.
+
+* For a device with an *arm64* architecture, use https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_arm64v8.tar.gz
+* For a device with an *arm32* architecture, use https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_arm32v7.tar.gz
+* For a device with an *amd64* architecture, use https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_amd64.tar.gz
+
 To build the source code in the catkin workspace, execute the below command in the root of
 the workspace:
 ```bash
