@@ -1,5 +1,5 @@
 ---
-title: "Hello World Application"
+title: "Hello World Web Application"
 description:
 type: dev-tutorials
 date: 2019-04-26T16:27:32+05:30
@@ -7,16 +7,18 @@ pre: "g. "
 weight: 445
 ---
 An executable of a package can be a dockerfile. In that case, rapyuta.io
-applies dockerfile build strategy while deploying the package. The tutorial
-illustrates this strategy, where a dockerfile is built into a docker image.
+applies [dockerfile build strategy](/core-concepts/builds/#dockerfile-strategy)
+while deploying the package. The tutorial illustrates this strategy, where
+a dockerfile is built into a docker image.
 
 ## Learning objectives
-The tutorial will show you how to include a dockerfile in an executable
-of a rapyuta.io package.
+The tutorial will show you how to use a dockerfile to build an executable
+of a package.
 
 ## Prerequisites
-1. Ensure that the Google Chrome browser is installed on a computer.
-2. You should be familiar with the core concepts of rapyuta.io
+1. Ensure that the [Google Chrome browser](https://www.google.com/chrome/)
+   is installed on a computer.
+2. You should be familiar with the [core concepts](/core-concepts/) of rapyuta.io
 
 ## Difficulty
 Beginner
@@ -33,8 +35,8 @@ follow the below instructions in sequence:
 3. You should provide information about the package such as the name of the package, its version, whether its a singleton or bindable package and a short description.
    1. In the **Package Name** box, type in a name for the package like `simple-hello-world`
    2. In the **Package Version** box, type in the version of the package. By default, the version is set to *1.0.0*
-   3. Ensure **Is singleton package** is *not selected*.
-   4. Make sure **Is bindable package** is *selected*.
+   3. Ensure **Is a singleton package** is *not selected*.
+   4. Make sure **Is a bindable package** is *selected*.
    5. Describe the package in a sentence or two like `Demo package for dockerfile build strategy`.
 4. Click **NEXT**.
 5. In the **Component Name** box, enter a name for the component say `Flask_Application`.
@@ -49,8 +51,8 @@ follow the below instructions in sequence:
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}
 10. Select **Git** for **Executable Type**.
-11. In the **Git Repository** box, enter the git repository's URL address: `https://github.com/rapyuta-robotics/io_tutorials#feature/add_dockerfile_flask_tutorial`
-12. In the **Context directory** box, enter the name of the parent directory that contains the dockerfile. In this example, the directory is `flask_helloworld`.
+11. In the **Git Repository** box, enter the git repository's URL address: `https://github.com/rapyuta-robotics/io_tutorials`
+12. In the **Context directory** box, enter the name of the parent directory that contains the dockerfile. In this example, it is `flask_helloworld`.
 13. Select **Use docker build strategy**.
 ![Executable details](/images/tutorials/hello-world/exec-details.png?classes=border,shadow&width=50pc)
 14. You must expose a network endpoint for viewing the output of the tutorial:
