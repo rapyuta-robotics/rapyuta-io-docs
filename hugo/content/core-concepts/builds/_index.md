@@ -59,6 +59,9 @@ to access the repository contents.
 You may explicitly specify the absolute path of the Dockerfile, or
 the root of the git repository is set as the location of the Dockerfile.
 
+The [Hello World Web Application](/dev-tutorials/hello-world/) tutorial is
+an example of dockerfile build strategy.
+
 ### Docker image strategy
 This strategy uses a pre-built docker image. The docker image is usually
 stored in either a public docker registry (i.e., Dockerhub) or a private
