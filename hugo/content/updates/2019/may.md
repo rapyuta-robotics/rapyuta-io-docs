@@ -1,10 +1,11 @@
 ---
-title: "May 08"
+title: "May"
 description:
 type: updates
 date: 2019-05-07T17:38:58+05:30
 weight: 686
 ---
+## May 08
 Welcome to the May 08, 2019 release of rapyuta.io platform.
 There are a number of significant updates in this version
 that we hope you will like.
