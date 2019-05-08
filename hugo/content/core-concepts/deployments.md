@@ -78,8 +78,9 @@ and the recommendations you should take:
 | DEP_E155 | executables of the component deployed on cloud failed | troubleshoot the failed component by analysing deployment logs |
 | DEP_E156 | dependent deployment is in error state | troubleshoot the dependent deployment that is in error state |
 | DEP_E161 | docker image is not found for executables of components deployed on device | verify that the path of the docker image is valid |
-| DEP_E2xx | internal rapyuta.io error in the components deployed on cloud | report the issue together with the relevant details to the support team |
-| DEP_E3xx | internal rapyuta.io error in the components deployed on a device | report the issue together with the relevant details to the support team |
+| DEP_E2xx | internal rapyuta.io error in the components deployed on cloud | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
+| DEP_E3xx | internal rapyuta.io error in the components deployed on a device | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
+| DEP_E4xx | internal rapyuta.io error | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
 
 ## Shell access
 rapyuta.io lets you **SSH** into the environment of a running executable.

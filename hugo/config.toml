@@ -16,6 +16,11 @@ disableSearch = false
     home = ["HTML", "RSS", "JSON"]
 
 [[menu.shortcuts]]
+    name = "<i class='fas fa-atlas'></i> API Documentation"
+    url = "https://gadocs.apps.rapyuta.io"
+    weight = 9
+
+[[menu.shortcuts]]
     identifier = "freshdesk"
     name = "<i class='fas fa-envelope'></i> Contact support"
     weight = 10

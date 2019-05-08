@@ -117,6 +117,21 @@ source /opt/ros/kinetic/setup.bash
 ```bash
 cd ..
 ```
+
+In order for the custom rapyuta.io image to support the build command, ***catkin build***, you
+will set up the device by executing the following:
+```bash
+cd $HOME && 
+mv catkin_ws catkin_old && 
+curl https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_arm32v7.tar.gz | tar xz
+``` 
+
+The argument to the ***curl*** command, i.e. the URL address, changes based on the architecture of the device.
+
+* For a device with an *arm64* architecture, use https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_arm64v8.tar.gz
+* For a device with an *arm32* architecture, use https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_arm32v7.tar.gz
+* For a device with an *amd64* architecture, use https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_amd64.tar.gz
+
 To build the source code in the catkin workspace, execute the below command in the root of
 the workspace:
 ```bash
@@ -210,6 +225,21 @@ source /opt/ros/kinetic/setup.bash
 ```bash
 cd ..
 ```
+
+In order for the custom rapyuta.io image to support the build command, ***catkin build***, you
+will set up the device by executing the following:
+```bash
+cd $HOME && 
+mv catkin_ws catkin_old && 
+curl https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_arm32v7.tar.gz | tar xz
+``` 
+
+The argument to the ***curl*** command, i.e. the URL address, changes based on the architecture of the device.
+
+* For a device with an *arm64* architecture, use https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_arm64v8.tar.gz
+* For a device with an *arm32* architecture, use https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_arm32v7.tar.gz
+* For a device with an *amd64* architecture, use https://storage.googleapis.com/artifacts.rapyuta.io/io_tutorials/catkin_ws_amd64.tar.gz
+
 To build the source code in the catkin workspace, execute the below command in the root of
 the workspace:
 ```bash
@@ -248,31 +278,6 @@ Successfully Installed!
 
 Ensure that there's a <span style="color:green">**green**</span> dot next to
 the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
-
-## Deploy local communication broker
-
-1. Click **CATALOG**.
-2. Under **Communication packages**, select **Rapyuta IO Local Communication Broker**
-   package.
-3. Click **Deploy package**.
-4. In the **Name of Deployment** box, enter a name for the broker deployment say
-   `Communication Broker Deployment`
-5. Since **brokerComponent** has **Device runtime** select the device you want to
-   deploy on by clicking **Refresh the list of online devices**. This retrieves
-   an updated list of online devices.
-6. Select **Broker Device** from **Select device for deploying the
-   component** drop-down list.
-7. Select the network interface parameter value as per your device on
-   which you are deploying by clicking **NETWORK_INTERFACE** drop-down list.
-8. Click **CREATE DEPLOYMENT** > **Confirm**.
-
-You will be redirected to the newly created deployment's **Details** tab.
-The package is successfully deployed when the green coloured bar moves
-from **In progress** to **Succeeded** indicating that the **DEPLOYMENT PHASE**
-has **Succeeded** and the **STATUS** is **Running**.
-
-You may analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs)
-so you may debug if the deployment fails.
 
 ## Create ROS Publisher package
 
@@ -338,6 +343,31 @@ so you may debug if the deployment fails.
 	eventually, the deployment will fail as well.
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
+## Deploy local communication broker
+
+1. Click **CATALOG**.
+2. Under **Communication packages**, select **Rapyuta IO Local Communication Broker**
+   package.
+3. Click **Deploy package**.
+4. In the **Name of Deployment** box, enter a name for the broker deployment say
+   `Communication Broker Deployment`
+5. Since **brokerComponent** has **Device runtime** select the device you want to
+   deploy on by clicking **Refresh the list of online devices**. This retrieves
+   an updated list of online devices.
+6. Select **Broker Device** from **Select device for deploying the
+   component** drop-down list.
+7. Select the network interface parameter value as per your device on
+   which you are deploying by clicking **NETWORK_INTERFACE** drop-down list.
+8. Click **CREATE DEPLOYMENT** > **Confirm**.
+
+You will be redirected to the newly created deployment's **Details** tab.
+The package is successfully deployed when the green coloured bar moves
+from **In progress** to **Succeeded** indicating that the **DEPLOYMENT PHASE**
+has **Succeeded** and the **STATUS** is **Running**.
+
+You may analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs)
+so you may debug if the deployment fails.
+
 ## Deploy ROS Publisher package
 
 1. Click **CATALOG** > select **ROS Publisher** package > click **Deploy package**.
@@ -369,6 +399,9 @@ Ensure that the dependent deployment **STATUS** is **Running** as well.
 You may analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs) so you may debug
 if the deployment fails.
 
+The corresponding [dependency graph](/core-concepts/deployments/#dependency-graph) of **ROS Publisher Deployment** looks like:
+![Dependency graph](/images/tutorials/local-comm-broker/dgraph-pub-broker.png?classes=border,shadow&width=50pc)
+
 ## Deploy ROS Subscriber package
 
 1. Click **CATALOG** > select **ROS Subscriber** package > click **Deploy package**.
@@ -397,6 +430,9 @@ Ensure that the dependent deployment **STATUS** is **Running** as well.
 
 You may analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs) so you may debug
 if the deployment fails.
+
+The corresponding [dependency graph](/core-concepts/deployments/#dependency-graph) of **ROS Subscriber Deployment** looks like:
+![Dependency graph](/images/tutorials/local-comm-broker/dgraph-sub-broker.png?classes=border,shadow&width=50pc)
 
 If all of the above three deployments are successfully running, the
 logs of **ROS Subscriber Deployment** will print ***hello_world***.

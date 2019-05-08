@@ -1,10 +1,11 @@
 ---
-title: "April 10"
+title: "April"
 description:
 type: updates
 date: 2019-04-10T13:12:46+05:30
 weight: 689
 ---
+## April 10
 Welcome to the April 10, 2019 release of rapyuta.io platform. There are a
 number of significant updates in this version that we hope you will like.
 

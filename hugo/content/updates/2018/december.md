@@ -1,11 +1,12 @@
 ---
-title: "December 19"
+title: "December"
 description:
 type: updates
 date: 2018-12-19T17:46:22+05:30
 weight: 700
 ---
-Welcome to the December 2018 release of rapyuta.io platform. There are a
+## December 19
+Welcome to the December 19, 2018 release of rapyuta.io platform. There are a
 number of significant updates in this version that we hope you will like.
 
 #### Features
