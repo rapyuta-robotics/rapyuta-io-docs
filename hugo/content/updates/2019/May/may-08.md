@@ -19,4 +19,5 @@ that we hope you will like.
 
 #### Documentation
 * Added [API Documentation](https://gadocs.apps.rapyuta.io/).
+* Add Hello World Web Application tutorial to illustrate dockerfile build strategy.
 * Workaround fix for ***catkin build*** command appearing in [ROS Publisher Subscriber](/dev-tutorials/ros-publisher-subscriber/), [Dynamic Map Server](/dev-tutorials/dynamic-map-server/) and [Publisher Subscriber Using Communication Broker](/dev-tutorials/local-comm-broker/) tutorials.
