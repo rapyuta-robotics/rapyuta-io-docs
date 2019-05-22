@@ -19,7 +19,7 @@ weight: 205
 | Additional deployment hours in cloud | <center>$0.08/vCPU-hour</center> | <center>$0.08/vCPU-hour</center> |
 | Volume deployment hours<br><br>*represents hours consumed by volume deployments* | <center>$0.00025/GiB-hour</center> | <center>$0.00025/GiB-hour</center> |
 | Memory and compute | <table><tr><th>Tier</th><th>vCPU</th><th>Memory</th></tr><tr><td>Low</td><td>1</td><td>4</td></tr><tr><td>Medium</td><td>2</td><td>8</td></tr><tr><td>High</td><td>8</td><td>32</td></tr></table> | <table><tr><th>Tier</th><th>vCPU</th><th>Memory</th></tr><tr><td>Low</td><td>1</td><td>4</td></tr><tr><td>Medium</td><td>2</td><td>8</td></tr><tr><td>High</td><td>8</td><td>32</td></tr></table> |
-| Support | <ul><li>Resolve critical bugs and issues.</li><li>Quickly answer queries and concerns.</li></ul> | <ul><li>On-demand, SLA support for critical bugs.</li><li>Access to Rapyuta Robotics engineers.</li></ul> |
+| Support | <ul><li>Resolve critical bugs and issues.</li><li>Quickly answer queries and concerns.</li><li>Access to [discussion forum](https://forum.rapyuta.io).</li></ul> | <ul><li>On-demand, SLA support for critical bugs.</li><li>Access to Rapyuta Robotics engineers.</li><li>Access to [discussion forum](https://forum.rapyuta.io).</li></ul> |
 | Free trial period | <center>NA</center> | <center>Free 7-day trial</center> |
 
 When you subscribe to a plan, your credit card will be charged for $1 in order to verify the card details.
@@ -27,6 +27,13 @@ After successful transaction, the $1 will be refunded to your account in 24 hour
 {{% notice info %}}
 If you want to cancel the current plan or shift to another plan, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
 {{% /notice %}}
+There is an open [discussion forum](https://forum.rapyuta.io) for
+rapyuta.io users, where you can ask clarifying questions, discuss relevant topics,
+share knowledge and help others by answering queries about rapyuta.io platform.
+
+You need to be a registered rapyuta.io user to interact in the discussion forum.
+Be *respectful*, *kind* and *empathetic* in your interactions with other
+users in the discussion forum.
 
 ## Community Plan
 
