@@ -5,6 +5,26 @@ type: updates
 date: 2019-05-07T17:38:58+05:30
 weight: 686
 ---
+## May 27
+Welcome to the May 27, 2019 release of rapyuta.io platform.
+There are a number of significant updates in this version
+that we hope you will like.
+
+#### Features
+* You can now clone a package to a different project.
+* While creating a package, you can provide git repository URLs
+  of the form ***git@github.com:user/path***
+ 
+#### Notable Fixes
+* Fixed bugs in streaming and live logs.
+* Added validation for git repository URLs in package creation process.
+* Added validation to check for duplicate cloud network endpoint names in package creation.
+* Fixed bug in the process of creating multiple cloud network endpoints.
+* Fixed the bug in deployment details page not showing multiple dependent deployments
+* Fixed few bugs in deployment creation.
+* Improved user analytics.
+
+
 ## May 15
 Welcome to the May 15, 2019 release of rapyuta.io platform.
 A couple of bugs are fixed in this release for under-the-hood
