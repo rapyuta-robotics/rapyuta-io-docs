@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Added
 - Discussion forum for users
+- Remove authentication from docs.
 
 ## [1.3.4 - 2019-05-08]
 ### Fixed
