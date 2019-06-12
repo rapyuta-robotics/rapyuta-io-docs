@@ -1,8 +1,20 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+- Discussion forum for users
+
+## [1.3.4 - 2019-05-08]
+### Fixed
+- Workaround fix for catin build command in ROS Publisher Subscriber, Dynamic Map Server and Publisher Subscriber using Communication Broker tutorial
+### Added
+- Add release notes for May 08, 2019
+- Add API documentation
+- Add Hello World Web Application tutorial
+- Add new deployment error code DEP_E4xx
 ### Updated
-- Revamp builds topic.
+- Revamp builds topic
+- Improve core concept: device management
 
 ## [1.3.3 - 2019-04-10]
 ### Added
