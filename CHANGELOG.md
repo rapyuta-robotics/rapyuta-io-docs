@@ -1,8 +1,20 @@
 # CHANGELOG
 
+## [1.3.7 - 2019-06-12]
+### Added
+- Remove user authentication from documentation.
+- Add a note for Git LFS extension.
+- Add release notes for June 12, 2019 release
+
+## [1.3.6 - 2019-05-27]
+### Added
+- Add release notes for May 27, 2019 release.
+
+
 ## [Unreleased]
 ### Added
 - Discussion forum for users
+- Remove authentication from docs.
 
 ## [1.3.4 - 2019-05-08]
 ### Fixed
