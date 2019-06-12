@@ -22,7 +22,8 @@ we hope you will like.
 #### Features
 * rapyuta.io lets you to work with git repositories containing
   large files by supporting Git LFS extension.
-* Built a reliable pipeline for collecting device metrics.
+* Enhanced the reliability of the pipeline for collecting device
+  metrics.
 
 
 #### Documentation
