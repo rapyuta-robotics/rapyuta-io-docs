@@ -50,6 +50,12 @@ to be able to run on devices with *arm64*, *arm32* CPU
 architectures.
 {{% /notice %}}
 
+{{% notice note %}}
+rapyuta.io now supports faster cloning and fetching from repositories
+that deal with large files (as large as a couple GB in size) with
+Git Large File System (LFS) extension.
+{{% /notice %}}
+
 ### Dockerfile strategy
 This strategy builds a [Dockerfile](https://docs.docker.com/engine/reference/builder/) into a docker image. The Dockerfile is
 usually saved in a git repository. If it is a private git repository,
