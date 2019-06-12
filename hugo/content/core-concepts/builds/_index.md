@@ -55,7 +55,7 @@ rapyuta.io supports faster cloning and fetching from repositories
 that deal with large files (as large as a couple GB in size) with
 [Git Large File System (LFS)](https://git-lfs.github.com/) extension.
 If you are working with a private git repository, ensure you
-select *SSH authentication* while adding a source secret.
+select *SSH authentication* while [adding a source secret](/core-concepts/secrets/source-secret/).
 {{% /notice %}}
 
 ### Dockerfile strategy
