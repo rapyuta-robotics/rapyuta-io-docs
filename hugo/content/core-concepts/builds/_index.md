@@ -50,6 +50,13 @@ to be able to run on devices with *arm64*, *arm32* CPU
 architectures.
 {{% /notice %}}
 
+{{% notice note %}}
+rapyuta.io supports cloning and fetching from repositories
+that deal with large files (as large as a couple GB in size) with
+[Git Large File System (LFS)](https://git-lfs.github.com/) extension.
+If you want to use Git LFS with a private git repository, you must select *SSH authentication* while [adding a source secret](/core-concepts/secrets/source-secret/) because the LFS extension will fail with the *Basic authentiontion*, and the corresponding source secret will not be applied to the private repository.
+{{% /notice %}}
+
 ### Dockerfile strategy
 This strategy builds a [Dockerfile](https://docs.docker.com/engine/reference/builder/) into a docker image. The Dockerfile is
 usually saved in a git repository. If it is a private git repository,
