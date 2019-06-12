@@ -53,7 +53,7 @@ architectures.
 {{% notice note %}}
 rapyuta.io now supports faster cloning and fetching from repositories
 that deal with large files (as large as a couple GB in size) with
-Git Large File System (LFS) extension.
+[Git Large File System (LFS)](https://git-lfs.github.com/) extension.
 {{% /notice %}}
 
 ### Dockerfile strategy
