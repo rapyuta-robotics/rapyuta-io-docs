@@ -71,6 +71,13 @@ You will create a new configuration as shown in the figure below:
 
 ##### Rules for writing configuration parameters
 
+## Applying configuration parameters to devices
+Labels of a device help in associating it to a set of configuration
+parameters. They resolve the parameters by matching labels with attributes defined in configuration hierarchies. There are two ways of applying parameters to devices.
+
+1. If you want to apply a set of parameters to multiple devices at once.
+2. If you want to aggregate all parameters across all configuration hierarchies and then apply them to a single device.
+
 
 
 
