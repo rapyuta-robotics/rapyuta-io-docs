@@ -25,7 +25,20 @@ we hope you will like.
 * Enhanced the reliability of the pipeline for collecting device
   metrics.
 
-
 #### Documentation
 rapyuta.io user documentation is now freely available to all. Even if
 you are not registered on [rapyuta.io](https://console.rapyuta.io), you can still access and view its [user documentation](https://userdocs.rapyuta.io).
+
+## June 19
+Welcome to the June 19, 2019 release of rapyuta.io platform.
+There are a number of significant updates in this version that
+we hope you will like.
+
+#### Features
+**Configurations** allow you to control the behaviour of a device (robot) or a group of devices based on a large set of parameters.
+
+#### Notables Fixes
+Added captcha validation for changing rapyuta.io password, verifing email address and selecting forgot password option.
+
+#### Documentation
+Read about the [configurations](/core-concepts/config-params/) feature, and learn [how to create and apply a configuration for your devices](/getting-started/apply-config-params/).

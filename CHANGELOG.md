@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [1.3.8 - 2019-06-19]
+### Added
+- Add configuration parameters documentation
+- Add apply configuration parameters to a device starting guide
+- Add release update page for June 19, 2019 release
+
 ## [1.3.7 - 2019-06-12]
 ### Added
 - Remove user authentication from documentation.
@@ -9,7 +15,6 @@
 ## [1.3.6 - 2019-05-27]
 ### Added
 - Add release notes for May 27, 2019 release.
-
 
 ## [Unreleased]
 ### Added

@@ -3,7 +3,7 @@ title: "Builds"
 description:
 type: core-concepts
 date: 2018-11-15T14:01:26+05:30
-pre: "f. "
+pre: "g. "
 weight: 150
 ---
 An executable of a component can be either a source code file or a docker
