@@ -1,6 +1,10 @@
 # CHANGELOG
 
 ## [1.3.8 - 2019-06-19]
+### Fixed
+- Fix the build on GCP
+
+## [1.3.8 - 2019-06-19]
 ### Added
 - Add configuration parameters documentation
 - Add apply configuration parameters to a device starting guide
