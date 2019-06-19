@@ -3,7 +3,7 @@ title: "Creating New Package"
 description:
 type: getting-started
 date: 2018-11-26T15:13:07+05:30
-pre: "k. "
+pre: "l. "
 weight: 335
 ---
 To add a new package using [rapyuta.io](https://console.rapyuta.io),
