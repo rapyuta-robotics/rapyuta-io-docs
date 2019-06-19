@@ -54,8 +54,8 @@ You will create a new configuration, say, ***example*** as shown in the figure b
    {{% /notice %}}
 6. Define the following base parameters as shown in the figure below.
 {{% notice info %}}
-Ensure you read the [rules for writing/editing configuration parameters files]
-(/getting-started/apply-config-params/#rules-for-writing-configuration-parameters).
+Ensure you read the
+[rules for writing/editing configuration parameters files](/getting-started/apply-config-params/#rules-for-writing-configuration-parameters).
 {{% /notice %}}
     ![base parameters](/images/core-concepts/configurations/parameter-defaults.png?classes=border,shadow&width=40pc)
 1. Hover over the root node again to view options to add a new
