@@ -100,13 +100,13 @@ There are a set of rules that you must adhere to when writing a configuration
 parameters file. They are:
 
 1. A space character always follows a colon (:) and a hyphen (-). For instance,
-   ```python
-   ## Invalid parameters
+   ```yaml
+   # Invalid parameters
    a:b
    list:
         -a
         -b
-    ## Valid parameters
+    # Valid parameters
     a: b
     list:
         - a
@@ -118,7 +118,7 @@ parameters file. They are:
    abc      # string
    # Invalid parameter file example
    [a, b]   # list
-   ## Valid parameter file example
+   # Valid parameter file example
    a:
         b: c
         d: e
@@ -127,27 +127,27 @@ parameters file. They are:
            - h
    ```
 3. If you add a new item to a default list parameter, it is appended to the list.
-   ```python
-   ## base parameters file
+   ```yaml
+   # base parameters file
    list:
         - a
         - b
-    ## extending parameters file
+    # extending parameters file
     list:
         - c
-    ## merged resultant file
+    # merged resultant file
     list:
         - a
         - b
         - c
    ```
 4. If you modify a default parameter's value, the new value overrides the old value.
-   ```python
-   ## base parameters file
+   ```yaml
+   # base parameters file
    a: b
-   ## overriding parameters file
+   # overriding parameters file
    a: e
-   ## merged resultant file
+   # merged resultant file
    a: e
    ```
 
