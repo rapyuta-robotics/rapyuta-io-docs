@@ -3,7 +3,7 @@ title: "Deploying Package"
 description:
 type: getting-started
 date: 2018-11-26T15:19:20+05:30
-pre: "l. "
+pre: "m. "
 weight: 340
 ---
 To deploy a package in [rapyuta.io console](https://console.rapyuta.io),

@@ -3,7 +3,7 @@ title: "Collecting and Visualising Device Metrics"
 description:
 type: getting-started
 date: 2018-11-29T16:25:57+05:30
-pre: "n. "
+pre: "o. "
 weight: 350
 ---
 [rapyuta.io](https://console.rapyuta.io) enables you to visualize metrics data that is
