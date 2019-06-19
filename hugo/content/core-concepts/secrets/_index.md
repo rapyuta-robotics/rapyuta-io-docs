@@ -3,7 +3,7 @@ title: "Secrets"
 description:
 type: core-concepts
 date: 2018-11-15T14:19:36+05:30
-pre: "g. "
+pre: "h. "
 weight: 160
 ---
 A secret is an object containing sensitive information or confidential data such

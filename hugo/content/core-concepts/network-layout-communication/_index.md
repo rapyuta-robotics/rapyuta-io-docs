@@ -3,7 +3,7 @@ title: "Network Layout Communication"
 description:
 type: core-concepts
 date: 2018-11-28T14:17:22+05:30
-pre: "l. "
+pre: "m. "
 weight: 198
 ---
 rapyuta.io is a fully managed service. It is responsible for establishing and

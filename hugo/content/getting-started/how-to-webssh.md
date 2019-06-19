@@ -3,7 +3,7 @@ title: "How to WebSSH"
 description:
 type: getting-started
 date: 2018-11-26T15:37:32+05:30
-pre: "m. "
+pre: "n. "
 weight: 345
 ---
 The rapyuta.io's device manager lets you connect remotely to online devices through
