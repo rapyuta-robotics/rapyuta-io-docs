@@ -35,10 +35,10 @@ There are a number of significant updates in this version that
 we hope you will like.
 
 #### Features
-Configurations allow you to set the behaviour of a device (robot) based on a set of parameters. You can either override or extend default parameters. You can aggregrate parameters across all configurations and apply them to a device, or apply a specific configuration to a group of devices.
+**Configurations** allow you to control the behaviour of a device (robot) or a group of devices based on a large set of parameters.
 
 #### Notables Fixes
-You should solve a captcha when you change your rapyuta.io password, verify your email address or have selected forgot password option.
+Added captcha validation for changing rapyuta.io password, verifing email address and selecting forgot password option.
 
 #### Documentation
 Read about the [configurations](/core-concepts/config-params/) feature, and learn [how to create and apply a configuration for your devices](/getting-started/apply-config-params/).
