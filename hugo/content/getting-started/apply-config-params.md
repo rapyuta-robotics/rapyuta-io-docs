@@ -113,9 +113,11 @@ parameters file. They are:
         - b
    ```
 2. Start your configuration parameters file with maps.
-   ```python
-   ## Invalid parameter file example
-   a: b
+   ```yaml
+   # Invalid parameter file example
+   abc      # string
+   # Invalid parameter file example
+   [a, b]   # list
    ## Valid parameter file example
    a:
         b: c
