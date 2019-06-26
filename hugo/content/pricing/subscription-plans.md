@@ -32,7 +32,7 @@ rapyuta.io users, where you can ask clarifying questions, discuss relevant topic
 share knowledge and help others by answering queries about rapyuta.io platform.
 
 You need to be a registered rapyuta.io user to interact in the discussion forum.
-Be *respectful*, *kind* and *empathetic* in your interactions with other
+Please be *respectful*, *kind* and *empathetic* in your interactions with other
 users in the discussion forum.
 
 ## Community Plan
