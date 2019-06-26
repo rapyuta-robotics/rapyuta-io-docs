@@ -12,7 +12,7 @@ A graph is generated with the data plotted against the time intervals.
 
 1. Click **DEVICES** > select a device for visualizing its metrics > click **Metrics**.
 2. You will have to first subscribe to a ROS topic so as to visualize the data being published by the topic. To subscribe to a topic, click **Subscribe**.
-![Subscribe Topic](/images/getting-started/subscribe-topic.png?classes=border,shadow&width=70pc)
+![Subscribe Topic](/images/getting-started/collect-visualise-metrics/subscribe-sys-metrics.png?classes=border,shadow&width=40pc)
 3. To add a new visualization, click **Add Cell**.
 ![Add Cell](/images/getting-started/add-cell.png?classes=border,shadow&width=70pc)
 4. Click **Add a Query**.

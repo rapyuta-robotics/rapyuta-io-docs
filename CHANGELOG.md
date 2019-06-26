@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## [1.2.0 - 2019-06-26]
+### Added
+- Add communication discussion forum
+- Add device system metrics
+- Add a note on multiple credit cards support
+
+## [1.3.9 - 2019-06-19]
+### Fixed
+- Fix the build on GCP
+
 ## [1.3.8 - 2019-06-19]
 ### Added
 - Add configuration parameters documentation
