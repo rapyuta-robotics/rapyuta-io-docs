@@ -37,8 +37,33 @@ we hope you will like.
 #### Features
 **Configurations** allow you to control the behaviour of a device (robot) or a group of devices based on a large set of parameters.
 
-#### Notables Fixes
+#### Notable Fixes
 Added captcha validation for changing rapyuta.io password, verifing email address and selecting forgot password option.
 
 #### Documentation
 Read about the [configurations](/core-concepts/config-params/) feature, and learn [how to create and apply a configuration for your devices](/getting-started/apply-config-params/).
+
+## June 26
+Welcome to the June 26, 2019 release of rapyuta.io platform.
+There are a number of significant updates in this version that we hope you
+will like.
+
+#### Features
+* **Community discussion forum**    
+  Users can ask clarifying questions, discuss relevant topics, share
+  knowledge and help others by interacting with others in the [community
+  discussion forum](https://forum.rapyuta.io/).
+* **Multiple credit cards**    
+  rapyuta.io supports adding multiple credit cards to an organisation's billing
+  account. But, only one credit card is made the primary or default card, which will
+  be used for charging fees additional costs.
+* **Device system metrics**    
+  A set of device system metrics like CPU load average, memory usage, disk usage, disk IO, network IO interface are available for you. These metrics would help you to visualise specific data measurements.
+
+#### Notable Fixes
+Fixed a couple of rapyuta.io user interface issues.
+
+#### Documentation
+* Read about the [community discussion forum](https://forum.rapyuta.io/)
+* Read about the newly available [device system metrics](/core-concepts/metrics/)
+* Ensure you are aware of the new [multiple credit card support](/pricing/billing/) provided by rapyuta.io
