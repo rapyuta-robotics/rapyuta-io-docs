@@ -37,6 +37,11 @@ The total available units for use is the sum of included units and add-ons.
 
 ![Billing Usage](/images/pricing/billing/billing-lower-part.png?classes=border,shadow&width=50pc)
 
+{{% notice info %}}
+As an admin of an organisation you can **add multiple credit cards** to your organisation's billing account. But, only one credit card is made the **primary** or **default** card, which is used to charge the subscription fee and additional amount for using rapyuta.io resources.
+You can **delete any existing credit card** except the primary card because it is used for monetary transactions. If you want to delete the primary credit card, ensure you make another card a primary card before deleting the previous one.
+{{% /notice %}}
+
 {{% notice note %}}
 If you want to unsubscribe, or cancel the current plan, or upgrade to another plan,
 please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
