@@ -107,23 +107,23 @@ roslaunch param_talker talker.launch
 14. Click NEXT > CONFIRM PACKAGE CREATION
 
 ## Deploying the package
-To deploy the Talker Supervisor package, follow the steps:
+To deploy the *Talker Supervisor* package, follow the steps:
 
-1. On the left navigation bar, click CATALOG.
-2. Select the Talker Supervisor package.
-3. Click Deploy package.
-4. Provide a name for the deployment you are creating say Talker Supervisor Deployment in the Name of deployment box.
-5. Since Talker has device runtime, you must select the device you want to deploy the component on. Click Refresh the list of online devices to retrieve an updated list of online devices.
-6. Select the device from the Select device for deploying the component drop-down list.
-7. For the Talker component, ensure that ros_workspace and ros_distro are selected.
-8. Click CREATE DEPLOYMENT > Confirm.
+1. On the left navigation bar, click **CATALOG**.
+2. Select the **Talker Supervisor** package.
+3. Click **Deploy package**.
+4. Provide a name for the deployment you are creating say `Talker Supervisor Deployment` in the **Name of deployment** box.
+5. Since *Talker* has device runtime, you must select the device you want to deploy the component on. Click **Refresh the list of online devices** to retrieve an updated list of online devices.
+6. Select the device from the **Select device for deploying the component** drop-down list.
+7. For the **Talker** component, ensure that **ros_workspace** and **ros_distro** are selected.
+8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You will be redirected to the newly created deployment's Details page. The Talker Supervisor Deployment is successfully running only when the green coloured bar moves to Succeeded and Status:Running point indicating that the DEPLOYMENT PHASE is Succeeded and the STATUS is Running.
+You will be redirected to the newly created deployment's **Details** page. The **Talker Supervisor Deployment** is successfully running only when the green coloured bar moves to **Succeeded** and **Status:Running** point indicating that the **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
 
 ## Verifying deployment logs
-You may verify the correctness of the tutorial by analysing the corresponding deployment logs by clicking on the Historical Logs.
+You may verify the correctness of the tutorial by analysing the corresponding deployment logs by clicking on the **Historical Logs**.
 
-The Historical Logs will display an output as shown in the figure below.
+The historical logs will display an output as shown in the figure below.
 
 
 
