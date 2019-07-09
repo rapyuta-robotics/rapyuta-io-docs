@@ -53,6 +53,21 @@ Refer to the quick starting guide on [how to define parameters](/getting-started
 {{% /notice %}}
 ![robots configuration](/images/tutorials/talker-supervisor/robots-configuration.png?classes=border,shadow&width=40pc)
 
+Similarly, define parameters in all of the ***name.yaml*** files occurring below the various value nodes and the root node. For example,
+
+* **robots** root node
+![robots parameter file](/images/tutorials/talker-supervisor/robots-name-file.png?classes=border,shadow&width=40pc)
+* **AGV** value node
+![AGV parameter file](/images/tutorials/talker-supervisor/AGV-name-file.png?classes=border,shadow&width=40pc)
+* **AGV-1** value node
+![AGV-1 parameter file](/images/tutorials/talker-supervisor/AGV1-name-file.png?classes=border,shadow&width=40pc)
+* **AGV-2** value node
+![AGV-2 parameter file](/images/tutorials/talker-supervisor/AGV2-name-file.png?classes=border,shadow&width=40pc)
+* **drone** value node
+![drone parameter file](/images/tutorials/talker-supervisor/drone-name-file.png?classes=border,shadow&width=40pc)
+* **drone-1** value node
+![drone-1 parameter file](/images/tutorials/talker-supervisor/drone1-name-file.png?classes=border,shadow&width=40pc)
+
 #### Preparing device
 The tutorial will use Raspberry PI as the device. Learn [how to prepare the device](/getting-started/prepare-raspberry-pi).
 
@@ -82,8 +97,8 @@ The value of **RIO_CONFIGS_DIR** is set to **/opt/rapyuta/configs**
 #### Applying configuration to device
 You need to define labels for the device so as to apply configuration parameters to it. You will define the two labels:
 
-* fist_name: Sarah
-* last_name: Edwards
+* robot_type: drone
+* robot_name: drone-1
 
 ![device labels](/images/tutorials/talker-supervisor/device-21-labels.png?classes=border,shadow&width=40pc)
 
@@ -130,7 +145,7 @@ To create the *Publisher for Configured Devices* package, follow the steps:
 10. Ensure **Is ROS Component** is selected.
 11. In the **Executable Name** box, enter a name for the executable say `talker_executable`.
 12. Select **Default** for **Executable Type**.
-13. Enter the following command in the **Command to run in the docker docker container** box.
+13. Enter the following command in the **Command to run in the docker container** box.
 ```
 roslaunch param_talker talker.launch
 ```
