@@ -91,7 +91,13 @@ Follow how to [visualise device metrics data](/getting-started/metrics-collectio
 {{% /notice %}}
 
 ## QoS guarantee
-The QoS guarantee level is an agreement between the sender of a message and the receiver of a message that defines the guarantee of delivery for a specific message. In rapyuta.io, the messages are generally metrics or logs that are sent to rapyuta.io servers. There are three QoS levels:
+The QoS guarantee level is an agreement between the sender of a message and the receiver of a message that defines the guarantee of delivery for a specific message. In rapyuta.io, the messages are generally metrics or logs of a device, which are sent to rapyuta.io servers.
+
+{{% notice note %}}
+QoS guarantee levels described here are different from the QoS guarantee that you set while adding a new rapyuta.io package.
+{{% /notice %}}
+
+There are three QoS levels:
 
 * Low
 * Medium
