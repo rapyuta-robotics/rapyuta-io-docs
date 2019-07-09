@@ -3,8 +3,8 @@ title: "Hello World Web Application"
 description:
 type: dev-tutorials
 date: 2019-04-26T16:27:32+05:30
-pre: "g. "
-weight: 445
+pre: "a. "
+weight: 405
 ---
 An executable of a package can be a dockerfile. In that case, rapyuta.io
 applies [dockerfile build strategy](/core-concepts/builds/#dockerfile-strategy)
