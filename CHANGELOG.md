@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [1.2.1 - 2019-07-10]
+### Added
+- developer tutorial for dynamic configurations
+- dependency injection of network endpoints
+- Add QoS guarantee levels - Low, Medium and High
+
 ## [1.2.0 - 2019-06-26]
 ### Added
 - Add communication discussion forum
