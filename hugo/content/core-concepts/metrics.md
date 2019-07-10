@@ -104,7 +104,7 @@ There are three QoS levels:
 * High
 
 #### Low QoS guarantee
-The minimum QoS level is *Low*. This level guarantees best-effort delivery, but delivers with some data loss. Use Low QoS level when you have a completely or mostly stable connection between sender and receiver. The loss of some metrics or logs can be acceptable if data is not that important.
+The minimum QoS level is *Low*. This level guarantees best-effort delivery, but delivers with some data loss. Use Low QoS level when you have a completely or mostly stable connection between sender and receiver, or if the loss of some metrics or logs is acceptable.
 
 #### Medium QoS guarantee
 *Medium* QoS level guarantees that metrics or logs are delivered at least once to the receiver. It is possible for the data to be delivered multiple times. Use Medium QoS level when you need to get every data and your application can tolerate duplicates and be able to process them accordingly.
