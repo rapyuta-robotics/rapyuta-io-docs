@@ -100,10 +100,9 @@ the rapyuta.io platform can use the above URL to determine the corresponding **H
 
 The platform can now make this information available to any other resource it manages such as deployments.
 
-Consider another deployment, say, *C* such that *C* depends on *P*. Hence, a parent-child relationship is established between deployments *P* and *C*. In this case, *P* becomes the ***dependent deployment*** (aka parent) of *C*.
+Consider another deployment, say, *C* such that user deploying *C* selects *P* as a ***dependent deployment***. Now for the purpose of linking deployments a parent-child relationship is established between deployments *P* (the parent) and *C* (the child). 
 
-The platform will make this information avaiable to C in the form of environment variables. To achieve this the platform injects exactly 3 environment variables corresponding to each endpoint.
-It constructs the environment variable names as follows for each endpoint and sets their value from the information it has pertaining to the endpoint from the parent.
+The platform will make exposed endpoint information avaiable to *C* (the child) by constructing and injecting environment variables corresponding to each endpoint exposed by *P* (the parent) using the following rule.
 
 * **<ENDPOINT_NAME>**
 * <ENDPOINT_NAME>**_HOST**
