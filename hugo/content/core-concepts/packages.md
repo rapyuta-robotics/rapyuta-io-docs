@@ -58,17 +58,58 @@ cannot be used as a dependent deployment of another deployment.
 It also determines whether a package can be added as an include package. If set
 false, the package cannot be used as an include package.
 
-## Endpoint
-Components can externally expose network endpoints. While creating a package
-you may provide a name for the endpoint, select the desired protocol and specify
-a target port. The supported protocols are **Secure TCP(TLS/SNI)**, **HTTP/Websocket**,
-and **HTTPS/WSS**. For HTTPS/WSS and Secure TCP(TLS/SNI), the value of port is
-defaulted to 443, whereas for HTTP/Websocket the value of port is set to 80.
-You can view the FQDN of the endpoint during the deployment process.
-rapyupta.io automatically creates an accessible public network endpoint for each
-exposed network endpoint.    
-The Secure TCP(TLS/SNI) endpoint uses [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication)
-headers for routing the request to the desired backend.
+## Network Endpoints
+Components may have network endpoints. A network endpoint is a combination of an IP address and a port number. The endpoints may or may not be exposed publicly.
+
+When creating an endpoint you must provide a name for the endpoint, select the desired network protocol and specify a target port.
+
+{{% notice info %}}
+The name of a network endpoint must consist of alphabets, digits or an underscore ( _ ), and must not begin with a digit.
+{{% /notice %}}
+
+**Port** is where the application's service is made visible to other services.
+
+**Target port** is where the application needs to be listening for network requests for the service to work.
+
+#### Exposing endpoints internally
+You can restrict access to a network endpoint by ensuring that **Exposed externally** checkbox is not selected.
+
+The only protocol available is the **TCP** for which the value of the **Port** field is automatically set to ***443***.
+![internal endpoint](/images/core-concepts/network-endpoints/internal-endpoint.png?classes=border,shadow&width=40pc)
+
+#### Exposing endpoints externally
+Select **Exposed externally** checkbox to expose a network endpoint publicly over the internet.
+
+The supported protocols are:
+
+* HTTP/Websocket
+* HTTPS/WSS
+* Secure TCP (TLS/SNI)
+
+In the case of **HTTPS/WSS** and **Secure TCP (TLS/SNI)** protocols, the value of port is automatically set to ***443***, and the value of the **HTTP/Websocket** port is assigned ***80***.
+
+The **Secure TCP (TLS/SNI)** protocol uses [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication) headers for routing the request to the desired backend.
+![external endpoint](/images/core-concepts/network-endpoints/external-endpoint.png?classes=border,shadow&width=40pc)
+
+rapyuta.io creates an accessible public IP address for externally exposed network endpoint. Hence, you can view the Fully Qualified Domain Name (FQDN) of the endpoint on successful deployments' details page.
+
+#### Linking dependent deployments
+Suppose you have a deployment, say, *P* running on rapyuta.io, and *P* has a network endpoint defined as **ENDPOINT**.
+
+The URL address of a network endpoint is used to determine the host and port values, that is, **ENDPOINT_HOST** and **ENDPOINT_PORT** values.
+
+For example, suppose that **ENDPOINT** has the    
+URL address: *https://inst-fjdcoyvhmpgvljaxywlvpmei-wcylmx.apps.rapyuta.io:443*    
+The corresponding host and port values are determined as:
+
+* **ENDPOINT_HOST**: *inst-fjdcoyvhmpgvljaxywlvpmei-wcylmx.apps.rapyuta.io:443*
+* **ENDPOINT_PORT**: *443*
+
+Consider another deployment, say, *C* such that *C* depends on *P*. Hence, a parent-child relationship is established between deployments *P* and *C*. In this case, *P* becomes the ***dependent deployment*** (aka parent) of *C*.
+
+The **ENDPOINT**, **ENDPOINT_HOST** and **ENDPOINT_PORT** of deployment *P* are injected as ***environment variables*** in deployment *C*, and you can remotely access these environment variables in *C*.
+
+
 
 ## Component runtime
 A component of a package may be deployed either on the cloud or on a device.
