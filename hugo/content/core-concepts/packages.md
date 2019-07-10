@@ -80,13 +80,11 @@ The only protocol available is the **TCP** for which the value of the **Port** f
 #### Exposing endpoints externally
 Select **Exposed externally** checkbox to expose a network endpoint publicly over the internet.
 
-The supported protocols are:
+The following are the supported protocols that are exposed on their respective ports by default:
 
-* HTTP/Websocket
-* HTTPS/WSS
-* Secure TCP (TLS/SNI)
-
-In the case of **HTTPS/WSS** and **Secure TCP (TLS/SNI)** protocols, the value of port is set to ***443***, and the value of the **HTTP/Websocket** port is assigned ***80*** by default. However, you can change the port's value.
+* HTTP/Websocket exposed on port ***80***
+* HTTPS/WSS exposed on port ***443***
+* Secure TCP (TLS/SNI) exposed on port ***443***
 
 The **Secure TCP (TLS/SNI)** protocol uses [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication) headers for routing the request to the desired backend.
 ![external endpoint](/images/core-concepts/network-endpoints/external-endpoint.png?classes=border,shadow&width=40pc)
