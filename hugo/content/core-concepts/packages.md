@@ -92,21 +92,32 @@ The **Secure TCP (TLS/SNI)** protocol uses [SNI](https://en.wikipedia.org/wiki/S
 rapyuta.io creates an accessible public IP address for externally exposed network endpoint. Hence, you can view the Fully Qualified Domain Name (FQDN) of the endpoint on successful deployments' details page.
 
 #### Linking dependent deployments
-Suppose you have a deployment, say, *P* running on rapyuta.io, and *P* has a network endpoint defined as **ENDPOINT**.
+For instance if you have a deployment *P* running on rapyuta.io that exposes a network endpoint defined as **SAMPLE_ENDPOINT** with the URL address: *https://inst-awesomesauce-url.apps.rapyuta.io:443* 
+the rapyuta.io platform can use the above URL to determine the corresponding **HOST** and **PORT** values as follows
 
-The URL address of a network endpoint is used to determine the host and port values, that is, **ENDPOINT_HOST** and **ENDPOINT_PORT** values.
+* **HOST**: *inst-awesomesauce-url.apps.rapyuta.io*
+* **PORT**: *443*
 
-For example, suppose that **ENDPOINT** has the    
-URL address: *https://inst-fjdcoyvhmpgvljaxywlvpmei-wcylmx.apps.rapyuta.io:443*    
-The corresponding host and port values are determined as:
-
-* **ENDPOINT**: *https://inst-fjdcoyvhmpgvljaxywlvpmei-wcylmx.apps.rapyuta.io:443*
-* **ENDPOINT_HOST**: *inst-fjdcoyvhmpgvljaxywlvpmei-wcylmx.apps.rapyuta.io*
-* **ENDPOINT_PORT**: *443*
+The platform can now make this information available to any other resource it manages such as deployments.
 
 Consider another deployment, say, *C* such that *C* depends on *P*. Hence, a parent-child relationship is established between deployments *P* and *C*. In this case, *P* becomes the ***dependent deployment*** (aka parent) of *C*.
 
-The **ENDPOINT**, **ENDPOINT_HOST** and **ENDPOINT_PORT** of deployment *P* are injected as ***environment variables*** in deployment *C*, and you can remotely access these environment variables in *C*.
+The platform will make this information avaiable to C in the form of environment variables. To achieve this the platform injects exactly 3 environment variables corresponding to each endpoint.
+It constructs the environment variable names as follows for each endpoint and sets their value from the information it has pertaining to the endpoint from the parent.
+
+* **<ENDPOINT_NAME>**
+* <ENDPOINT_NAME>**_HOST**
+* <ENDPOINT_NAME>**_PORT**
+
+Drawing from the aforementioned example this would correspond to following evnironment variables and their corresponding values: 
+
+* **SAMPLE_ENDPOINT** : *https://inst-awesomesauce-url.apps.rapyuta.io:443* 
+* **SAMPLE_ENDPOINT_HOST** : *inst-awesomesauce-url.apps.rapyuta.io*
+* **SAMPLE_ENDPOINT_PORT** : *443*
+
+The developer of the package running in *C* can now access these environment variables in code.
+
+Eg The developer would access the value of the **SAMPLE_ENDPOINT** in a pyhton application using `import os; os.getenv('SAMPLE_ENDPOINT')`
 
 
 
