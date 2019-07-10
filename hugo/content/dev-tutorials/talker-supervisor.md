@@ -1,5 +1,5 @@
 ---
-title: "Package Deployment using Configuration Parameters"
+title: "Package Deployment using Dynamic Configurations"
 description:
 type: dev-tutorials
 date: 2019-07-04T11:53:21+05:30
