@@ -1,5 +1,5 @@
 ---
-title: "Package Deployment with Configurations"
+title: "Package Deployment using Configuration Parameters"
 description:
 type: dev-tutorials
 date: 2019-07-04T11:53:21+05:30
@@ -118,7 +118,7 @@ Had you given a device label say *robot_type: drone*, rapyuta.io would traverse 
 You may apply more than one configuration to a single device.
 {{% /notice %}}
 
-The robots configuration is stored in **RIO_CONFIGS_DIR** and its parameters file ***name.yaml*** is stored in the **robots** directory as shown in the figure below.
+The robots configuration is stored in **RIO_CONFIGS_DIR** and its parameters file ***name.yaml*** is stored in the **robots** (corresponding configuration) directory as shown in the figure below.
 ![robots configuration directory](/images/tutorials/talker-supervisor/content-rio-configs-dir.png?classes=border,shadow&width=40pc)
 
 ![configuration parameters file](/images/tutorials/talker-supervisor/parameter-file.png?classes=border,shadow&width=40pc)
@@ -170,7 +170,13 @@ You will be redirected to the newly created deployment's **Details** page. The *
 ## Verifying deployment logs
 You may verify the correctness of the tutorial by analysing the corresponding deployment logs by clicking on the **Historical Logs**.
 
-The historical logs will display an output as shown in the figure below.
+The historical logs will display an output as shown:
+
+```bash
+hello Drone 1.0 RDrone
+```
+
+The output contains values of the *first_name* and *last_name* parameters for the *drone-1* device.
 ![Successful deployment logs](/images/tutorials/talker-supervisor/successful-logs.png?classes=border,shadow&width=60pc)
 
 {{% notice note %}}
