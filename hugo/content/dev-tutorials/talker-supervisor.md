@@ -174,6 +174,6 @@ The historical logs will display an output as shown in the figure below.
 ![Successful deployment logs](/images/tutorials/talker-supervisor/successful-logs.png?classes=border,shadow&width=60pc)
 
 {{% notice note %}}
-Your output may be different if you choose to define labels for the device in other ways than that given in the tutorial.
+Your output may be different based on the device labels you define.
 {{% /notice %}}
 
