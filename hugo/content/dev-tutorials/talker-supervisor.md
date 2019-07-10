@@ -6,10 +6,10 @@ date: 2019-07-04T11:53:21+05:30
 pre: "g. "
 weight: 435
 ---
-The *Publisher for Configured Devices* is a ROS package that will be deployed on a device. The device is configured based on a set of parameters like *name*, *location*, *velocity* etc.
+The *Publisher for Configured Devices* is a ROS package that will be deployed on a device, which is configured based on a set of parameters like *name*, *location*, *velocity* etc.
 
 ## Learning objective
-The tutorial will show you how to apply configuration parameters to a device before deploying a rapyta.io package on it.
+The tutorial will show you how to apply configuration parameters to a device before deploying a rapyuta.io package on it.
 
 ## Prerequisites
 1. Device requirements
@@ -17,7 +17,7 @@ The tutorial will show you how to apply configuration parameters to a device bef
    2. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is installed on the computer.
    3. Ensure that the [Robot Operating System (ROS Kinetic)](https://wiki.ros.org/kinetic/Installation) is installed on the device.
 2. You should be familiar with the [configurations](/core-concepts/config-params/) concept.
-3. Read the guide on [how to apply configurations to devices](/getting-started/apply-config-params/).
+3. Read the quick starting guide on [how to apply configurations to devices](/getting-started/apply-config-params/).
 4. You should be familiar with the following tools:
    1. [Git](https://git-scm.com/doc)
    2. [UNIX/Linux command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
@@ -34,13 +34,13 @@ The tutorial consists of the below steps:
 1. Define a configuration
 2. Prepare a device
 3. Add the device to rapyuta.io
-4. Apply configuration to the device
+4. Apply configuration parameters to the device
 5. Add a ROS package to rapyuta.io
 6. Deploy the package on the device
 7. Verify deployment logs
 
 #### Defining configuration
-You will define the configuration ***robots*** by following the instructions:
+You will define the configuration ***robots*** as follows:
 
 1. On the left navigation bar, click **CONFIGURATIONS**.
 2. Click **ADD NEW CONFIGURATION**.
@@ -49,7 +49,7 @@ You will define the configuration ***robots*** by following the instructions:
 5. Add a new file, ***name.yaml***, below the root node ***robots***.
 6. Define parameters in the ***name.yaml***.
 {{% notice info %}}
-Refer to the quick starting guide on [how to define parameters](/getting-started/apply-config-params/).
+Refer to the quick starting guide on [how to define parameters](/getting-started/apply-config-params/#creating-configuration-parameters).
 {{% /notice %}}
 ![robots configuration](/images/tutorials/talker-supervisor/robots-configuration.png?classes=border,shadow&width=40pc)
 
@@ -57,12 +57,6 @@ Similarly, define parameters in all of the ***name.yaml*** files occurring below
 
 * **robots** root node
 ![robots parameter file](/images/tutorials/talker-supervisor/robots-name-file.png?classes=border,shadow&width=40pc)
-* **AGV** value node
-![AGV parameter file](/images/tutorials/talker-supervisor/AGV-name-file.png?classes=border,shadow&width=40pc)
-* **AGV-1** value node
-![AGV-1 parameter file](/images/tutorials/talker-supervisor/AGV1-name-file.png?classes=border,shadow&width=40pc)
-* **AGV-2** value node
-![AGV-2 parameter file](/images/tutorials/talker-supervisor/AGV2-name-file.png?classes=border,shadow&width=40pc)
 * **drone** value node
 ![drone parameter file](/images/tutorials/talker-supervisor/drone-name-file.png?classes=border,shadow&width=40pc)
 * **drone-1** value node
@@ -84,7 +78,7 @@ catkin build param_talker
 ```
 
 #### Adding device to rapyuta.io
-When onboarding the device to rapyuta.io the environment variable **RIO_CONFIGS_DIR** is set locally on the device. It represents the location of the directory where all of the configurations that will be applied to the device are stored.
+When [onboarding the device to rapyuta.io](/getting-started/add-new-device/) the environment variable **RIO_CONFIGS_DIR** is set locally on the device. It is the location of the directory where all of the configurations that will be applied to the device are stored.
 {{% notice info %}}
 The value of **RIO_CONFIGS_DIR** is set to **/opt/rapyuta/configs**
 {{% /notice %}}
@@ -95,16 +89,12 @@ The value of **RIO_CONFIGS_DIR** is set to **/opt/rapyuta/configs**
 {{% /notice %}}
 
 #### Applying configuration to device
-You need to define labels for the device so as to apply configuration parameters to it. You will define the two labels:
+You should [define labels for the device](/getting-started/apply-config-params/#defining-labels-for-devices) so you can apply configuration parameters to it. You will define the following labels in this tutorial:
 
 * robot_type: drone
 * robot_name: drone-1
 
-![device labels](/images/tutorials/talker-supervisor/device-21-labels.png?classes=border,shadow&width=40pc)
-
-{{% notice info %}}
-You may have to define ***labels*** for a device if you want to apply a configuration to it. Learn [how to define labels](/getting-started/apply-config-params/) in the quick starting guide.
-{{% /notice %}}
+![device labels](/images/tutorials/talker-supervisor/device-21-labels.png?classes=border,shadow&width=40pc) 
 
 To apply an existing configuration to the device:
 
@@ -115,7 +105,16 @@ To apply an existing configuration to the device:
 4. Click **CONFIRM APPLY**.
    ![confirm configuration parameters application](/images/tutorials/talker-supervisor/confirm-config-params-application.png?classes=border,shadow&width=30pc)
 
+The set of device labels (*robot_type: drone*, *robot_name: drone-1*) are resolved to select the **drone-1/name.yaml** file, and thus, apply the below configuration parameters:
+```yaml
+name:
+    first_name: Drone 1.0
+    last_name: RDrone
+```
 {{% notice note %}}
+Had you given a device label say *robot_type: drone*, rapyuta.io would traverse the configuration tree, select the **drone/name.yaml** file and apply the configuration parameters found in the file. Similarly, if no device label is defined, **name.yaml** file will be selected for application of configuration parameters defined in the file.
+{{% /notice %}}
+{{% notice info %}}
 You may apply more than one configuration to a single device.
 {{% /notice %}}
 
@@ -174,5 +173,7 @@ You may verify the correctness of the tutorial by analysing the corresponding de
 The historical logs will display an output as shown in the figure below.
 ![Successful deployment logs](/images/tutorials/talker-supervisor/successful-logs.png?classes=border,shadow&width=60pc)
 
-
+{{% notice note %}}
+Your output may be different if you choose to define other labels for the device than those given in the tutorial.
+{{% /notice %}}
 
