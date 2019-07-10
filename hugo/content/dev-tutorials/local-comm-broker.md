@@ -3,8 +3,8 @@ title: "Publisher Subscriber using Communication Broker"
 description:
 type: dev-tutorials
 date: 2018-11-22T13:20:28+05:30
-pre: "d. "
-weight: 420
+pre: "f. "
+weight: 430
 ---
 Complex robotic applications involving multi-device communication can be
 latent when the service is distributed across WAN. This tutorial demonstrates
