@@ -3,8 +3,8 @@ title: "Turtlesim"
 description:
 type: dev-tutorials
 date: 2018-11-23T10:44:42+05:30
-pre: "e. "
-weight: 425
+pre: "h. "
+weight: 440
 ---
 This tutorial will show you how to set up and run a variation of the ROS
 Turtlesim on rapyuta.io. Some of the packages that are used in this tutorial
