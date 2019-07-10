@@ -74,7 +74,7 @@ The name of a network endpoint must consist of alphabets, digits or an underscor
 #### Exposing endpoints internally
 You can restrict access to a network endpoint by ensuring that **Exposed externally** checkbox is not selected.
 
-The only protocol available is the **TCP** for which the value of the **Port** field is automatically set to ***443***.
+The only protocol available is the **TCP** for which the value of the **Port** field is set to ***443*** by default. However, you can change the port's value.
 ![internal endpoint](/images/core-concepts/network-endpoints/internal-endpoint.png?classes=border,shadow&width=40pc)
 
 #### Exposing endpoints externally
@@ -86,7 +86,7 @@ The supported protocols are:
 * HTTPS/WSS
 * Secure TCP (TLS/SNI)
 
-In the case of **HTTPS/WSS** and **Secure TCP (TLS/SNI)** protocols, the value of port is automatically set to ***443***, and the value of the **HTTP/Websocket** port is assigned ***80***.
+In the case of **HTTPS/WSS** and **Secure TCP (TLS/SNI)** protocols, the value of port is set to ***443***, and the value of the **HTTP/Websocket** port is assigned ***80*** by default. However, you can change the port's value.
 
 The **Secure TCP (TLS/SNI)** protocol uses [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication) headers for routing the request to the desired backend.
 ![external endpoint](/images/core-concepts/network-endpoints/external-endpoint.png?classes=border,shadow&width=40pc)
@@ -102,7 +102,8 @@ For example, suppose that **ENDPOINT** has the
 URL address: *https://inst-fjdcoyvhmpgvljaxywlvpmei-wcylmx.apps.rapyuta.io:443*    
 The corresponding host and port values are determined as:
 
-* **ENDPOINT_HOST**: *inst-fjdcoyvhmpgvljaxywlvpmei-wcylmx.apps.rapyuta.io:443*
+* **ENDPOINT**: *https://inst-fjdcoyvhmpgvljaxywlvpmei-wcylmx.apps.rapyuta.io:443*
+* **ENDPOINT_HOST**: *inst-fjdcoyvhmpgvljaxywlvpmei-wcylmx.apps.rapyuta.io*
 * **ENDPOINT_PORT**: *443*
 
 Consider another deployment, say, *C* such that *C* depends on *P*. Hence, a parent-child relationship is established between deployments *P* and *C*. In this case, *P* becomes the ***dependent deployment*** (aka parent) of *C*.
