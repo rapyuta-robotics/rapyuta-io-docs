@@ -80,7 +80,7 @@ The only protocol available is the **TCP** for which the value of the **Port** f
 #### Exposing endpoints externally
 Select **Exposed externally** checkbox to expose a network endpoint publicly over the internet.
 
-The following are the supported protocols that are exposed on their respective ports by default:
+The following are the supported protocols that are exposed on their respective ports (cannot be modified):
 
 * HTTP/Websocket exposed on port ***80***
 * HTTPS/WSS exposed on port ***443***
