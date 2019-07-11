@@ -28,3 +28,4 @@ rapyuta.io will make exposed network endpoint information to child deployments b
 
 * Try the new developer tutorial on [how to deploy a package on a device using dynamic configurations](/dev-tutorials/talker-supervisor/).
 * Read about [dependency injection of network endpoints](/core-concepts/packages/#network-endpoints).
+* Read about the [QoS guarantee levels](/core-concepts/metrics/#qos-guarantee) provided by rapyuta.io platform.
