@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [1.2.2 - 2019-07-11]
+### Updated
+- Updated SDK version to 0.5.0
+
 ## [1.2.1 - 2019-07-10]
 ### Added
 - developer tutorial for dynamic configurations
