@@ -3,8 +3,8 @@ title: "Controlling on-board LED"
 description:
 type: core-concepts
 date: 2018-11-15T10:06:24+05:30
-pre: "f. "
-weight: 440
+pre: "d. "
+weight: 420
 ---
 The tutorial will teach you how to deploy a basic non-ROS package that will change
 the trigger of the on-board LED (ACT/LED0) on Raspberry PI 2 or 3.
