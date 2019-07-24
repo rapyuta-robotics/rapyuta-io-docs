@@ -4,6 +4,8 @@ description:
 type: dev-tutorials
 date: 2019-07-04T11:53:21+05:30
 pre: "g. "
+aliases:
+    - /dev-tutorials/talker-supervisor/
 weight: 435
 ---
 The *Publisher for Configured Devices* is a ROS package that will be deployed on a device, which is configured based on a set of parameters like *name*, *location*, *velocity* etc.
