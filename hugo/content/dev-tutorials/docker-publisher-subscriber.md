@@ -22,7 +22,7 @@ PI. It also shows how to use docker compose runtime on a device.
 	with an internet connection.
 	2. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is
 	installed on the computer.
-	3. Ensure that the [Robot Operating System (ROS)](https://wiki.ros.org/kinetic/Installation)
+	3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation)
 	is installed on the device.
 2. You should be familiar with the [core concepts](/core-concepts) of rapyuta.io
 3. You should be familiar with the below tools:
@@ -107,7 +107,8 @@ and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 	2. For **Component Runtime**, click **Device**.
 	3. Ensure **Is ROS Component** is selected.
-	4. Select **arm32v7** as **Architecture**.
+	4. Ensure the **ROS Version** is **Kinetic**.
+	5. Select **arm32v7** as **Architecture**.
 	6. In the **Executable Name** box, type in a name for the executable say
 	   `listenerExecutable`   
 {{% notice info %}}
