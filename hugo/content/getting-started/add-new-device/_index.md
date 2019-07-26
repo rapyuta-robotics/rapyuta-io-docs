@@ -10,10 +10,12 @@ weight: 319
 
 * Mandatory
     * Python >=2.7.8, <3
-    * Ubuntu 16.04
+    * [Ubuntu 16.04](http://releases.ubuntu.com/16.04/) (Xenial Xerus)
+ or [Ubuntu 18.04](http://releases.ubuntu.com/18.04/) (Bionic Beaver)
 * Optional
     * [curl](https://curl.haxx.se/)
-    * [Robot Operating System](http://wiki.ros.org/kinetic) (ROS)
+    * Robot Operating System (ROS)
+      * [Kinetic Kame](http://wiki.ros.org/kinetic) or [Melodic Morenia](http://wiki.ros.org/melodic)
 
 ## Supported devices
 
@@ -29,10 +31,10 @@ follow the below steps:
 1. On the left navigation bar, click **DEVICES**.
 2. Click **ADD NEW DEVICE**.
 3. You will provide a name for the device in the **Device Name** box.
-4. If you prefer to build source code in rapyuta.io and push the build
-   remotely to the device, select **Use docker compose
-   as default runtime** option. Thus, you can use docker compose for
-   application deployment.
+4. You can choose to build the application's source code inside the device or outside it.
+   1. Do ***not*** select **Use docker compose as default runtime** option if the application source code is already built locally in the device.
+   2. Select **Use docker compose as default runtime** option if you want to build the application source code in rapyuta.io and push the build to the device remotely. On selecting this option, you will be asked to choose the version of ROS installed on the device.
+   ![Select ROS version](/images/getting-started/add-new-device/select-ROS-version.png?classes=border,shadow&width=40pc)
 5. You will provide the absolute path of your catkin workspace as
    the **ROS Catkin Workspace** value. If you are using custom rapyuta.io
    image on the device, your catkin workspace will be
@@ -45,7 +47,7 @@ follow the below steps:
 6. In the **Description** box, enter a brief summary of the device.
 7. Click **CONTINUE**.
     ![Device Details](/images/getting-started/add-new-device/device-details.png?classes=border,shadow&width=40pc)
-8. To copy the generated token (a unique device setup link), click **COPY**.    
+8.  To copy the generated token (a unique device setup link), click **COPY**.    
    You must copy the token before it expires in *ten* minutes. To generate
    the token again, click **Token** on the **Devices** page.
    ![Device Token](/images/getting-started/add-new-device/device-token.png?classes=border,shadow&width=40pc)
