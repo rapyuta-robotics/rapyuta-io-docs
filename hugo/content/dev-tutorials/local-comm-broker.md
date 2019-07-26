@@ -20,7 +20,7 @@ device communication using [rapyuta.io console](https://console.rapyuta.io).
 	   with an internet connection.
 	2. Ensure that the latest [Google Chrome](https://www.google.com/chrome/)
 	   browser is installed on the device.
-	3. Ensure the [Robot Operating System](http://wiki.ros.org/kinetic/Installation) (ROS kinetic)
+	3. Ensure the [ROS Kinetic Kame](http://wiki.ros.org/kinetic/Installation) (ROS kinetic)
 	   is installed on the device.
 2. You should be familiar with the [core concepts](/core-concepts) of rapyuta.io
 3. You should be familiar with the following tools:
@@ -45,10 +45,11 @@ The _Broker Device_ must be of **amd64** CPU architecture.
 1. Click **DEVICES** > **ADD NEW DEVICE**.
 2. In the **Device Name** box, enter the name of the device say `Broker Device`
 3. Select **Use docker compose as default runtime** option.
-4. In the **Description** box, provide a short summary of the device
+4. Ensure the **ROS Version** is **Kinetic**.
+5. In the **Description** box, provide a short summary of the device
    say `I am a communication broker`
-5. Click **CONTINUE**.
-6. Click **COPY** to copy the generated **Token**
+6. Click **CONTINUE**.
+7. Click **COPY** to copy the generated **Token**
 
 Paste and execute the token (otherwise called the device set up link) in the device's terminal
 to set up the rapyuta.io client on the device.
@@ -69,7 +70,7 @@ The _Publisher Device_ is:
 
 * Raspberry PI 2 or 3
 * can have either **arm64v8** or **arm32v7** CPU architecture
-* must have ROS kinetic installed on it
+* must have ROS Kinetic installed on it
 * must have rapyuta.io tutorials installed on it
 
 {{% notice info %}}
@@ -93,7 +94,7 @@ your catkin workspace as you like and ensure that you replace all occurrences to
 `~/catkin_ws/` with your workspace name.
 {{% /notice %}}
 
-If you are using either a computer with ROS kinetic installed on it, or
+If you are using either a computer with ROS Kinetic installed on it, or
 a Raspberry PI without custom rapyuta.io image, you will create a catkin
 workspace and get the ***io_tutorials*** repository into the workspace.
 
@@ -177,12 +178,12 @@ The _Subscriber Device_ is a:
 
 * Raspberry PI 2 or 3
 * can have either **arm64v8** or **arm32v7** CPU architecture
-* must have ROS kinetic installed on it
+* must have ROS Kinetic installed on it
 * must have rapyuta.io tutorials installed on it
 
 {{% notice info %}}
 The custom rapyuta.io image comes with [Ubuntu Xenial](http://releases.ubuntu.com/xenial/)
-OS and [ROS kinetic](http://wiki.ros.org/kinetic) software installed on them.
+OS and [ROS Kinetic](http://wiki.ros.org/kinetic) software installed on them.
 Moreover, the [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tutorials)
 are also installed on these custom images.
 {{% /notice %}}
@@ -296,10 +297,11 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 3. In the **Component Name** box, enter a name for the component, say `Publisher`
 4. Select **Device** as the **Component Runtime**.
 5. Ensure **Is ROS Component** is selected.
-6. In the **Executable Name** box, type in a name for the executable say `talker`
-7. For **Executable type**, select **Default** because the source code is already
+6. Ensure the **ROS Version** is **Kinetic**.
+7. In the **Executable Name** box, type in a name for the executable say `talker`
+8. For **Executable type**, select **Default** because the source code is already
    installed on the _Publisher Device_.
-8. In the **Command to run in the docker container** box, copy and paste the command:
+9. In the **Command to run in the docker container** box, copy and paste the command:
    	```bash
    	roslaunch talker talker.launch
    	```
@@ -329,10 +331,11 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 3. In the **Component Name** box, enter a name for the component, say `Subscriber`
 4. Select **Device** as the **Component Runtime**.
 5. Ensure **Is ROS Component** is selected.
-6. In the **Executable Name** box, type in a name for the executable say `listener`
-7. For **Executable type**, select **Default** because the source code is already
+6. Ensure the **ROS Version** is **Kinetic**.
+7. In the **Executable Name** box, type in a name for the executable say `listener`
+8. For **Executable type**, select **Default** because the source code is already
    installed on the _Subcriber Device_.
-8. In the **Command to run in the docker container** box, copy and paste the command:
+9. In the **Command to run in the docker container** box, copy and paste the command:
 	```bash
 	roslaunch listener listener.launch
 	```
@@ -354,8 +357,7 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 5. Since **brokerComponent** has **Device runtime** select the device you want to
    deploy on by clicking **Refresh the list of online devices**. This retrieves
    an updated list of online devices.
-6. Select **Broker Device** from **Select device for deploying the
-   component** drop-down list.
+6. Select **Broker Device** from **Select device for deploying the component** drop-down list.
 7. Select the network interface parameter value as per your device on
    which you are deploying by clicking **NETWORK_INTERFACE** drop-down list.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
