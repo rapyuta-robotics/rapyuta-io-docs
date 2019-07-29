@@ -6,8 +6,7 @@ date: 2018-11-15T14:01:26+05:30
 pre: "g. "
 weight: 150
 ---
-An executable of a component can be either a source code file or a docker
-file in a git repository or a docker image.
+An executable of a component can be either a source code file or a docker file in a git repository or a docker image.
 
 ## Build strategies
 rapyuta.io builds ROS and non-ROS packages using various build strategies.
@@ -27,8 +26,7 @@ strategies, you can
 This strategy builds source code into a docker image. The source code
 is usually stored in a git repository. If it is a private git repository,
 you need to [add a source secret](/core-concepts/secrets/source-secret)
-to access the repository contents. rapyuta.io uses ***ROS Builder***, a
-subset of *catkin build*, to build source code into a docker image.
+to access the repository contents. rapyuta.io uses ***ROS Builder***, a subset of *catkin build*, to build source code into a docker image. If a package contains a ROS component, the component's ROS version can be *Kinetic* or *Melodic*. When building the source code, the ***ROS Builder*** takes into account its corresponding component's ROS version. 
 
 Set the **Executable Type** as **Git** and provide the url address of
 a git repository. Suppose you want to add the address of a git repository
