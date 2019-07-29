@@ -88,7 +88,7 @@ that particular deployment. Additionally, the endpoint is randomised and has a
 unique set of encryption keys and credentials to ensure security.
 
 {{% notice note %}}
-If you experience the error: ***incoming connection failed: unable to receive data from sender, check sender's logs for details***, please ignore it as it cannot be fixed, and continue using the platform.
+If you experience the error: ***incoming connection failed: unable to receive data from sender, check sender's logs for details***, please ignore it. As the error cannot be fixed you can continue using the platform.
 {{% /notice %}}
 
 {{% notice info %}}
