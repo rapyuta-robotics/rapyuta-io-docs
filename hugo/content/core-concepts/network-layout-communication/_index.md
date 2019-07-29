@@ -88,7 +88,7 @@ that particular deployment. Additionally, the endpoint is randomised and has a
 unique set of encryption keys and credentials to ensure security.
 
 {{% notice note %}}
-If you experience the ***incoming connection failed: unable to receive data from sender, check sender's logs for details*** error, please ignore it. You can still continue using rapyuta.io platform.
+If you experience the error: ***incoming connection failed: unable to receive data from sender, check sender's logs for details***, please ignore it and continue using rapyuta.io platform.
 {{% /notice %}}
 
 {{% notice info %}}
