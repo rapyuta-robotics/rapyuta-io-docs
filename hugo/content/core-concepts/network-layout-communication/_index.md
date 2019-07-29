@@ -87,6 +87,10 @@ Further, each deployment gets a dedicated endpoint to cater to the needs of
 that particular deployment. Additionally, the endpoint is randomised and has a
 unique set of encryption keys and credentials to ensure security.
 
+{{% notice note %}}
+If you experience the ***incoming connection failed: unable to receive data from sender, check sender's logs for details*** error, please ignore it. You can still continue using rapyuta.io platform.
+{{% /notice %}}
+
 {{% notice info %}}
 [Multi-robot communication support](/core-concepts/network-layout-communication/multi-robot-communication/) in rapyuta.io
 {{% /notice %}}
