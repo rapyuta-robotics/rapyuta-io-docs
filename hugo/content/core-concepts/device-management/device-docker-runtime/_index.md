@@ -15,7 +15,7 @@ For instance, rapyuta.io [Build Engine](/core-concepts/device-management/device-
 To set docker compose as the default runtime on a device, select
 **Use docker compose as default runtime** checkbox while [adding the device](/getting-started/add-new-device).
 
-![Dockercompose runtime for device](/images/core-concepts/device-management/device-docker-runtime.png?classes=border,shadow&width=50pc)
+![Dockercompose runtime for device](/images/core-concepts/device-management/docker-runtime-for-device.png?classes=border,shadow&width=40pc)
 
 When a package is deployed on a device, each executable in the package becomes a
 separate docker container. If your application is a ROS package, a
