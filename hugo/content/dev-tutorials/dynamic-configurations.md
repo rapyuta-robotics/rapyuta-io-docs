@@ -84,7 +84,7 @@ When [onboarding the device to rapyuta.io](/getting-started/add-new-device/) the
 {{% notice info %}}
 The value of **RIO_CONFIGS_DIR** is set to **/opt/rapyuta/configs**
 {{% /notice %}}
-![configuration environment variable](/images/tutorials/talker-supervisor/configurations-on-device.png?classes=border,shadow&width=40pc)
+![configuration environment variable](/images/tutorials/talker-supervisor/environment-config-var.png?classes=border,shadow&width=40pc)
 
 {{% notice info %}}
 **RIO_CONFIGS_DIR** is available to all the executables of a running deployment.
