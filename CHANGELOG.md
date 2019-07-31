@@ -1,10 +1,7 @@
 # CHANGELOG
 
 ## [Unreleased]
-### Added
-- ROS Melodic + Ubuntu Bionic changes
-
-## [1.2.3 - 2019-07-10]
+## [1.2.3 - 2019-07-31]
 ### Added
 - Note on connection failed error message in cloud bridge
 - Modify dynamic configurations tutorial URL
