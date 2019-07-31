@@ -37,10 +37,10 @@ we hope you will like.
 
 #### Features
 
-* Support for ROS Melodic Morenia     
-  You can onboard devices running ROS Melodic installed, and deploy rapyuta.io packages on them.
-* Support for Ubuntu Bionic (Ubuntu 18.04) OS    
-  You can onboard devices running Ubuntu 18.04 OS, and deploy rapyuta.io packages on them.
+* **Support for ROS Melodic Morenia**     
+  You can onboard devices running ROS Melodic, and deploy rapyuta.io packages on them.
+* **Support for Ubuntu Bionic (Ubuntu 18.04) OS**    
+  You can onboard devices running Ubuntu 18.04, and deploy rapyuta.io packages on them.
 
 #### Notable Fixes
 
@@ -52,4 +52,4 @@ we hope you will like.
 
 ### Documentation
 
-Read about the support for devices running Ubuntu 18.04 and/or ROS Melodic Morenia.
+Read about the support for devices running Ubuntu 18.04 and/or ROS Melodic.
