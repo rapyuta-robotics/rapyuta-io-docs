@@ -7,6 +7,9 @@
 ## [1.2.2 - 2019-07-10]
 ### Added
 - Note on conncetion failed error message in cloud bridge
+- Modify dynamic configurations tutorial URL
+- Update the ambiguous image in dynamic configurations tutorial
+
 ## [1.2.1 - 2019-07-10]
 ### Added
 - developer tutorial for dynamic configurations
