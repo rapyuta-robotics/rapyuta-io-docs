@@ -29,3 +29,27 @@ rapyuta.io will make exposed network endpoint information to child deployments b
 * Try the new developer tutorial on [how to deploy a package on a device using dynamic configurations](/dev-tutorials/talker-supervisor/).
 * Read about [dependency injection of network endpoints](/core-concepts/packages/#network-endpoints).
 * Read about the [QoS guarantee levels](/core-concepts/metrics/#qos-guarantee) provided by rapyuta.io platform.
+
+## July 31
+Welcome to the July 31, 2019 release of rapyuta.io platform.
+There are a number of significant updates in this version that
+we hope you will like.
+
+#### Features
+
+* Support for ROS Melodic Morenia     
+  You can onboard devices running ROS Melodic installed, and deploy rapyuta.io packages on them.
+* Support for Ubuntu Bionic (Ubuntu 18.04) OS    
+  You can onboard devices running Ubuntu 18.04 OS, and deploy rapyuta.io packages on them.
+
+#### Notable Fixes
+
+* Fixed issue to fasten up applying configurations to multiple devices.
+* Added validation check for parameters of deployments running on devices.
+* Fixed the default option displayed for resource limits when adding
+  executables to packages.
+* Fixed security issues.
+
+### Documentation
+
+Read about the support for devices running Ubuntu 18.04 and/or ROS Melodic Morenia.
