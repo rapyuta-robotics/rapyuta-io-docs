@@ -44,7 +44,7 @@ we hope you will like.
 
 #### Notable Fixes
 
-* Fixed issue to fasten up applying configurations to multiple devices.
+* Fixed issue to speed up applying configurations to multiple devices.
 * Added validation check for parameters of deployments running on devices.
 * Fixed the default option displayed for resource limits when adding
   executables to packages.
