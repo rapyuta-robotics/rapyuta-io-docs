@@ -24,6 +24,12 @@ PI. It also shows how to use docker compose runtime on a device.
 	installed on the computer.
 	3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation)
 	is installed on the device.
+{{% notice note %}}
+If the device has [ROS Melodic Morenia](http://wiki.ros.org/melodic)
+installed on it, replace ***Kinetic*** with ***Melodic*** in all places
+where a specific version of ROS is asked for. The tutorial should still
+work the same.
+{{% /notice %}}
 2. You should be familiar with the [core concepts](/core-concepts) of rapyuta.io
 3. You should be familiar with the below tools:
 	1. [Git](https://git-scm.com/doc)

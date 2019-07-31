@@ -20,12 +20,17 @@ device communication using [rapyuta.io console](https://console.rapyuta.io).
 	   with an internet connection.
 	2. Ensure that the latest [Google Chrome](https://www.google.com/chrome/)
 	   browser is installed on the device.
-	3. Ensure the [ROS Kinetic Kame](http://wiki.ros.org/kinetic/Installation) (ROS kinetic)
-	   is installed on the device.
+	3. Ensure the [ROS Kinetic Kame](http://wiki.ros.org/kinetic/Installation) (ROS kinetic) is installed on the device.
+{{% notice note %}}
+If the device has [ROS Melodic Morenia](http://wiki.ros.org/melodic)
+installed on it, replace ***Kinetic*** with ***Melodic*** in all places
+where a specific version of ROS is asked for. The tutorial should still
+work the same.
+{{% /notice %}}
 2. You should be familiar with the [core concepts](/core-concepts) of rapyuta.io
 3. You should be familiar with the following tools:
-	1. ROS [topics](http://wiki.ros.org/Topics)
-	2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
+	4. ROS [topics](http://wiki.ros.org/Topics)
+	5. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
 
 ## Difficulty
 Intermediate

@@ -18,6 +18,12 @@ The tutorial will show you how to apply configuration parameters to a device bef
    1. You should have access to a device (computer and/or Raspberry PI 2 or 3) with an internet connection.
    2. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is installed on the computer.
    3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation) is installed on the device.
+{{% notice note %}}
+If the device has [ROS Melodic Morenia](http://wiki.ros.org/melodic)
+installed on it, replace ***Kinetic*** with ***Melodic*** in all places
+where a specific version of ROS is asked for. The tutorial should still
+work the same.
+{{% /notice %}}
 2. You should be familiar with the [configurations](/core-concepts/config-params/) concept.
 3. Read the quick starting guide on [how to apply configurations to devices](/getting-started/apply-config-params/).
 4. You should be familiar with the following tools:

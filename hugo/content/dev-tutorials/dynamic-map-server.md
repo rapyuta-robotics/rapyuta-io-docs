@@ -24,6 +24,12 @@ tutorial.
 	installed on the computer.
 	3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation)
 	is installed on the device.
+{{% notice note %}}
+If the device has [ROS Melodic Morenia](http://wiki.ros.org/melodic)
+installed on it, replace ***Kinetic*** with ***Melodic*** in all places
+where a specific version of ROS is asked for. The tutorial should still
+work the same.
+{{% /notice %}}
 3. You should be familiar with the [core concepts](/core-concepts/) of rapyuta.io
 4. You should be familiar with the [map_server](https://wiki.ros.org/map_server) ROS package.
 5. You should be familiar with the below tools:
