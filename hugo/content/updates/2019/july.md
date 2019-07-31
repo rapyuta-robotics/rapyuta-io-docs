@@ -35,13 +35,6 @@ Welcome to the July 31, 2019 release of rapyuta.io platform.
 There are a number of significant updates in this version that
 we hope you will like.
 
-#### Features
-
-* **Support for ROS Melodic Morenia**     
-  You can onboard devices running ROS Melodic, and deploy rapyuta.io packages on them.
-* **Support for Ubuntu Bionic (Ubuntu 18.04) OS**    
-  You can onboard devices running Ubuntu 18.04, and deploy rapyuta.io packages on them.
-
 #### Notable Fixes
 
 * Fixed issue to speed up applying configurations to multiple devices.
@@ -50,6 +43,7 @@ we hope you will like.
   executables to packages.
 * Fixed security issues.
 
-### Documentation
-
-Read about the support for devices running Ubuntu 18.04 and/or ROS Melodic.
+#### Documentation
+Added a [detailed note](/core-concepts/network-layout-communication/#cloud-bridge)
+on the error message: ***incoming connection failed: unable to receive
+data from sender, check sender's logs for details*** as seen in ROS service logs.
