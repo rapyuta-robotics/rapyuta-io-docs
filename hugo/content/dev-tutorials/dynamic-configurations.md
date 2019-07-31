@@ -4,6 +4,8 @@ description:
 type: dev-tutorials
 date: 2019-07-04T11:53:21+05:30
 pre: "g. "
+aliases:
+    - /dev-tutorials/talker-supervisor/
 weight: 435
 ---
 The *Publisher for Configured Devices* is a ROS package that will be deployed on a device, which is configured based on a set of parameters like *name*, *location*, *velocity* etc.
@@ -82,7 +84,7 @@ When [onboarding the device to rapyuta.io](/getting-started/add-new-device/) the
 {{% notice info %}}
 The value of **RIO_CONFIGS_DIR** is set to **/opt/rapyuta/configs**
 {{% /notice %}}
-![configuration environment variable](/images/tutorials/talker-supervisor/configurations-on-device.png?classes=border,shadow&width=40pc)
+![configuration environment variable](/images/tutorials/talker-supervisor/environment-config-var.png?classes=border,shadow&width=40pc)
 
 {{% notice info %}}
 **RIO_CONFIGS_DIR** is available to all the executables of a running deployment.
