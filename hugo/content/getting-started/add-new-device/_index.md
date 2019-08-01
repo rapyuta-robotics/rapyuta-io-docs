@@ -16,6 +16,9 @@ weight: 319
     * [curl](https://curl.haxx.se/)
     * Robot Operating System (ROS)
       * [Kinetic Kame](http://wiki.ros.org/kinetic) or [Melodic Morenia](http://wiki.ros.org/melodic)
+{{% notice note%}}
+Make sure you install libraries in ROS-Base or above it.
+{{% /notice %}}
 
 ## Supported devices
 
