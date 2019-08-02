@@ -22,8 +22,14 @@ tutorial.
 	with an internet connection.
 	2. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is
 	installed on the computer.
-	3. Ensure that the [Robot Operating System (ROS)](https://wiki.ros.org/kinetic/Installation)
+	3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation)
 	is installed on the device.
+{{% notice note %}}
+If the device has [ROS Melodic Morenia](http://wiki.ros.org/melodic)
+installed on it, replace ***Kinetic*** with ***Melodic*** in all places
+where a specific version of ROS is asked for. The tutorial should still
+work the same.
+{{% /notice %}}
 3. You should be familiar with the [core concepts](/core-concepts/) of rapyuta.io
 4. You should be familiar with the [map_server](https://wiki.ros.org/map_server) ROS package.
 5. You should be familiar with the below tools:
@@ -193,10 +199,11 @@ To create the package, follow the instructions:
 3. In the **Component Name** box, provide a name for the component say `MapListener`
 4. For **Component Runtime**, click **Device**.
 5. Ensure **Is ROS Component** is selected.
-6. In the **Executable Name** box, enter a name for the executable say
+6. Ensure the **ROS Version** is **Kinetic**.
+7. In the **Executable Name** box, enter a name for the executable say
    `map_listener_executable`
-7. For **Executable Type**, click **Default**.
-8. In the **Command to run on the device** box, copy and paste the command:
+8. For **Executable Type**, click **Default**.
+9. In the **Command to run on the device** box, copy and paste the command:
 	```bash
 	roslaunch map_listener listener.launch
 	```
