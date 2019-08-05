@@ -15,6 +15,7 @@ we hope you will like.
 * **Support for ROS Melodic Morenia**    
   You can on-board devices running ROS Melodic, and deploy rapyuta.io
   packages on them.
+  ![ROS Melodic](/images/updates/ros-melodic.png?classes=border,shadow&width=30pc)
 * **Support for Ubuntu 18.04 (Ubuntu Bionic) OS**    
   You can add devices running Ubuntu 18.04, and deploy rapyuta.io
   packages on them.
