@@ -33,7 +33,7 @@ To add the _minio_ package, follow the steps:
 8. In the **Component Name** box, type in a name for the component say _Minio_
 9. Select **Cloud** as **Component Runtime**.
 10. Select **Is ROS Component** checkbox.
-11. Set **Replicas to run the component** to a number greater than 1 (default value).
+11. Set the value of **Replicas to run the component** to 1 (which is the default value).
 12. In the **Executable Name** box, enter a name for the executable say _minio_
 13. Select **Docker** for **Executable Type**.
 14. In the **Docker image** box, enter *rrdockerhub/minio-server*
