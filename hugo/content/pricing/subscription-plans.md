@@ -36,7 +36,7 @@ users in the discussion forum.
 ## Community Plan
 As a promotional offer, the community plan provides free resources every
 month. This offer is only for a limited time. The free resources are
-**100 vCPU-hour cloud deployment** hours and
+**100 vCPU-hour cloud deployment hours** and
 **500 device deployment hours**.
 
 The current usage percentage is the percentage of included units of
@@ -50,13 +50,13 @@ and all devices are removed from rapyuta.io completely. Since the
 deletion of resources is *irreversible* the deployments and devices cannot
 be restored. Consequently, you will lose any information, like logs,
 associated with those resources. You can re-activate your account by
-adding credit card information on the Billing page after logging into
-the platform.
+adding credit card information on the [Billing](/pricing/billing/)
+page after logging into the platform.
 
 Besides free resources, the plan includes **add-ons**, which are devices
 and users. You are allowed to add at most two devices. You can purchase
-more add-ons by adding credit card details on the Billing page.
-With credit card added, you can also deploy storage volumes for
+more add-ons by adding credit card details on the billing page.
+With credit card added, you can start deploying storage volumes for
 applications to use.
 
 ## Professional Plan
