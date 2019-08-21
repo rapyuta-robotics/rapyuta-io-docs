@@ -3,10 +3,15 @@
 ## [Unreleased]
 ## [1.2.5 - 2019-08-21]
 ### Added
-- Add release update page for August 21, 2019 release
+- Add release update page for August 21, 2019 release.
 
 ### Updated
-- Update documentation for community plan: free, no credit card needed
+- Update documentation for community plan: free, no credit card needed.
+- Update the version of docker in the device failed error codes table
+  for devices running Ubuntu 18.04
+
+### Fixed
+- Fix the value of the count of component replicas.
 
 ## [1.2.4 - 2019-08-02]
 ### Added
