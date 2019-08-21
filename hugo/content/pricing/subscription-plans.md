@@ -22,9 +22,7 @@ weight: 205
 | Support | <ul><li>Resolve critical bugs and issues.</li><li>Quickly answer queries and concerns.</li><li>Access to [discussion forum](https://forum.rapyuta.io).</li></ul> | <ul><li>On-demand, SLA support for critical bugs.</li><li>Access to Rapyuta Robotics engineers.</li><li>Access to [discussion forum](https://forum.rapyuta.io).</li></ul> |
 | Free trial period | <center>NA</center> | <center>Free 7-day trial</center> |
 
-When you subscribe to a plan, your credit card will be charged for $1 in order to verify the card details.
-After successful transaction, the $1 will be refunded to your account in 24 hours.
-{{% notice info %}}
+{{% notice note %}}
 If you want to cancel the current plan or shift to another plan, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
 {{% /notice %}}
 There is an open [discussion forum](https://forum.rapyuta.io) for
@@ -36,9 +34,30 @@ Please be *respectful*, *kind* and *empathetic* in your interactions with other
 users in the discussion forum.
 
 ## Community Plan
+As a promotional offer, the community plan provides free resources every
+month. This offer is only for a limited time. The free resources are
+**100 vCPU-hour cloud deployment hours** and
+**500 device deployment hours**.
 
-With community plan, you can get started with rapyuta.io for free. You will be charged additional usage charges if you consume more deployment hours than
-included in the plan or purchase add-ons.
+An email notification will be sent when the current usage percentage
+(percentage of included units of either cloud deployment hours or
+device deployment hours consumed) is at **60%**, and another one at
+**90%**. A final email notification is sent out at **100%** usage percentage
+at which point your account will be **suspended**.
+
+Once the account is suspended, all deployments are stopped and deleted,
+and all devices are removed from rapyuta.io completely. Since the
+deletion of resources is *irreversible*, the deployments and devices cannot
+be restored. Consequently, you will lose any information, like logs,
+associated with those resources. You can re-activate your account by
+adding credit card information on the [Billing](/pricing/billing/)
+page after logging into the platform.
+
+Besides free resources, the plan includes **add-ons**, which are devices
+and users. You are allowed to add at most two devices. You can purchase
+more add-ons by adding credit card details on the billing page.
+With credit card added, you can start deploying storage volumes for
+applications to use.
 
 ## Professional Plan
 
