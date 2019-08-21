@@ -1,6 +1,13 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [1.2.5 - 2019-08-21]
+### Added
+- Add release update page for August 21, 2019 release
+
+### Updated
+- Update documentation for community plan: free, no credit card needed
+
 ## [1.2.4 - 2019-08-02]
 ### Added
 - Add documentation for ROS Melodic + Ubuntu Bionic support
