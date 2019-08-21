@@ -29,17 +29,12 @@ Welcome to the August 21, 2019 release of rapyuta.io platform.
 There are significant updates in this version that we hope you will
 like.
 
-#### Features
+#### Feature
 
 * **Community plan: Free, no credit card needed**    
   Subcribe to the community plan without having to submit credit card
   information. You can explore and experience rapyuta.io within the
-  plan limits for free.
-* **Retry failing deployments**    
-  With exponential backoff feature, you can retry failed deployments
-  that return 500 error code.
-* **Password visibility**    
-  Toggle to view or hide password while creating secrets.  
+  plan limits for free.  
 
 #### Notable Fixes
 
