@@ -23,3 +23,25 @@ we hope you will like.
 #### Documentation
 rapyuta.io [supports devices](/getting-started/add-new-device/#device-requirements) running Ubuntu 18.04 and/or
 ROS Melodic.
+
+## August 21
+Welcome to the August 21, 2019 release of rapyuta.io platform.
+There are significant updates in this version that we hope you will
+like.
+
+#### Feature
+
+* **Community plan: Free, no credit card needed**    
+  Subcribe to the community plan without having to submit credit card
+  information. You can explore and experience rapyuta.io within the
+  plan limits for free.  
+
+#### Notable Fixes
+
+* Added validation to check the length of password provided
+  during registration.
+* Fixed internal issues related to deployments and device manager.
+
+#### Documentation
+Read more details on rapyuta.io's
+[community plan](/pricing/subscription-plans/#community-plan).
