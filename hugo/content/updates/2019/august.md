@@ -48,4 +48,4 @@ like.
 * Fixed internal issues related to deployments and device manager.
 
 #### Documentation
-Read further details on rapyuta.io community plan.
+Read further details on rapyuta.io's [community plan](/pricing/subscription-plans/#community-plan).
