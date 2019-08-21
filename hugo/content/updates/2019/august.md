@@ -39,7 +39,7 @@ like.
   With exponential backoff feature, you can retry failed deployments
   that return 500 error code.
 * **Password visibility**    
-  Toggle to view or hide your rapyuta.io password on sign up/sign in.  
+  Toggle to view or hide password while creating secrets.  
 
 #### Notable Fixes
 
