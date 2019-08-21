@@ -39,15 +39,15 @@ month. This offer is only for a limited time. The free resources are
 **100 vCPU-hour cloud deployment hours** and
 **500 device deployment hours**.
 
-The current usage percentage is the percentage of included units of
-either cloud deployment hours or device deployment hours consumed.
 An email notification will be sent when the current usage percentage
-is at **60%**, and another one at **90%**. A final email notification is
-sent out at **100%** usage at which point your account is **suspended**.
+(percentage of included units of either cloud deployment hours or
+device deployment hours consumed) is at **60%**, and another one at
+**90%**. A final email notification is sent out at **100%** usage percentage
+at which point your account will be **suspended**.
 
 Once the account is suspended, all deployments are stopped and deleted,
 and all devices are removed from rapyuta.io completely. Since the
-deletion of resources is *irreversible* the deployments and devices cannot
+deletion of resources is *irreversible*, the deployments and devices cannot
 be restored. Consequently, you will lose any information, like logs,
 associated with those resources. You can re-activate your account by
 adding credit card information on the [Billing](/pricing/billing/)
