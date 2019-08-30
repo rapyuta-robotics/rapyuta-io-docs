@@ -82,6 +82,24 @@ and the recommendations you should take:
 | DEP_E3xx | internal rapyuta.io error in the components deployed on a device | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
 | DEP_E4xx | internal rapyuta.io error | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
 
+## Restart deployments
+Deployments that are running on devices are automatically restarted if the
+deployment executables exit due to an error or when devices are rebooted.
+There are three kinds of restart policies available for a device deployment:
+
+* **always**    
+  Always restart deployments if the deployment executables are in error
+  state or if the device is rebooted.
+* **on-failure**    
+  Restart deployments only if the deployment executables exit due to an
+  error.
+* **no**    
+  Do not restart deployments under any circumstance.
+{{% notice note %}}
+The restart policies do not support deployments running on devices with
+preinstalled runtime.
+{{% /notice %}}
+
 ## Shell access
 rapyuta.io lets you **SSH** into the environment of a running executable.
 On the **Shell Access** tab, click **SSH**.
