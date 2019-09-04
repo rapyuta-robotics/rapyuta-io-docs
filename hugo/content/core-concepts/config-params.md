@@ -132,7 +132,7 @@ maximum velocity of an AGV from **5m/s** to **3m/s**. You can override the
 ***sample.yaml*** file under the ***Japan*** value includes only the
 ***max_velocity*** parameter, but with its default overridden.
 
-![override parameters](/images/core-concepts/configurations/override-max-vel.png?classes=border,shadow&width=40pc)
+![override parameters](/images/core-concepts/configurations/override-max-vel.png?classes=border,shadow&width=65pc)
 
 The final parameters file is a result of merging the base parameters
 (***example/sample.yaml***) and the overridden parameters
@@ -146,7 +146,7 @@ The resultant file after merging the base parameters in ***example/sample.yaml**
 and newly added parameters in ***USA/sample.yaml*** will include
 ***example_param_val*** in addition to those already present.
 
-![extend parameters](/images/core-concepts/configurations/extend-params.png?classes=border,shadow&width=40pc)
+![extend parameters](/images/core-concepts/configurations/extend-params.png?classes=border,shadow&width=80pc)
 
 {{% notice info %}}
 Learn how to
