@@ -1,6 +1,13 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [1.2.6 - 2019-09-04]
+### Added
+- Add release summary page for September 04, 2019 release.
+
+### Updates
+- Update images depicting new YAML editor for configurations.
+
 ## [1.2.5 - 2019-08-21]
 ### Added
 - Add release update page for August 21, 2019 release.

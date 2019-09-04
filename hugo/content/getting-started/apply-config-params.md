@@ -73,14 +73,14 @@ Ensure you read the
     list of base parameters. The resultant file after merging the
     base parameters in **example/sample.yaml** and the newly added parameters in
     **USA/sample.yaml** will include **tesla** in addition to those already present.
-    ![sample file of USA](/images/getting-started/apply-config-paramas/USA-sample.png?classes=border,shadow&width=40pc)
+    ![sample file of USA](/images/getting-started/apply-config-paramas/USA-sample.png?classes=border,shadow&width=65pc)
 6.  Suppose that the regulation in Japan requires you to limit the
     maximum velocity of an AGV from *5m/s* to *3m/s*. You can override
     the ***max_velocity*** of the AGV by assigning a new value to it. You
     will have to define ***sample.yaml*** file under the ***Japan*** value,
     which will include the ***max_velocity*** parameter, but with its default
     overridden. The final parameters file is a result of merging the base parameters (**example/sample.yaml**) and the overridden parameters (**Japan/sample.yaml**).
-    ![sample file of Japan](/images/getting-started/apply-config-paramas/japan-sample.png?classes=border,shadow&width=40pc)
+    ![sample file of Japan](/images/getting-started/apply-config-paramas/japan-sample.png?classes=border,shadow&width=65pc)
 
 ## Applying configuration parameters to devices
 Labels of a device help in associating it to a set of configuration
