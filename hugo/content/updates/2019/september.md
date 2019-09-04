@@ -24,5 +24,6 @@ There are significant updates in this version that we hope you will like.
 
 * Fixed the bug occurring when attempting to SSH into a cloud deployment
   from multiple projects.
-* Fixed bugs in device bootstrapping or installation process.
+* Fixed bugs in docker-ce installation and docker image pull processes
+  during device installation.
 * Fixed several internal bugs.
