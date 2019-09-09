@@ -161,8 +161,5 @@ inside the same project is not supported.
 {{% /notice %}}
 
 {{% notice info %}}
-You may ***rename an already defined configuration***. Since the value of
-a root node is the same as the name of its configuration, and if you
-rename the configuration, the new name is made the new value for the
-root node.
+You may ***rename an already defined configuration***.
 {{% /notice %}}
