@@ -12,13 +12,117 @@ description and recommended actions.
 
 If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
 
-| Error Code | Description | Recommended Actions |
-| ---------- | ----------- | ----------------------- |
-| DEV_E100 | Internal error | <a href="#" onclick="javascript:FreshWidget.show();">Contact support</a> |
-| DEV_E101 | Downloading internal artifact failed | <ul><li>Ensure device has an active internet connection.</li><li>Ensure there is adequate disk space on device.</li></ul> |
-| DEV_E102 | Pulling internal docker image failed | <ul><li>Ensure device has an active internet connection.</li><li>Ensure there is adequate disk space on device.</li><li>Ensure the docker version on device is:  <ul><li>***docker-ce==17.12.1~ce-0~ubuntu*** for Ubuntu 16.04</li><li>***docker-ce==5:18.09.7~3-0~ubuntu-bionic*** for Ubuntu 18.04</li></ul>If not, uninstall it and [set up the device](/getting-started/add-new-device/#setting-up-a-device) again.</li></ul> |
-| DEV_E103 | Installing pip package failed | <ul><li>Ensure the version of Python on device is ***Python>=2.7.8,<3*** If not, uninstall it and [set up the device](/getting-started/add-new-device/#setting-up-a-device) again.</li><li>Ensure device has an active internet connection.</li><li>Ensure there is adequate disk space on device.</li></ul> |
-| DEV_E104 | Installing docker failed | <ul><li>Ensure device has an active internet connection.</li><li>Ensure there is adequate disk space on device.</li><li>Ensure the docker version on device is:  <ul><li>***docker-ce==17.12.1~ce-0~ubuntu*** for Ubuntu 16.04</li><li>***docker-ce==5:18.09.7~3-0~ubuntu-bionic*** for Ubuntu 18.04</li></ul>If not, uninstall it and [set up the device](/getting-started/add-new-device/#setting-up-a-device) again.</li></ul> |
-| DEV_E105 | Installing system package failed | <ul><li>Try installing the package manually and check if it fails.</li><li>Ensure device has an active internet connection.</li><li>Ensure there is adequate disk space on device.</li></ul> |
-| DEV_E106 | Managing files on device failed | <ul><li>Ensure device has an active internet connection.</li><li>Ensure there is adequate disk space on device.</li></ul> |
-| DEV_E107 | Internal service failed to start | <a href="#" onclick="javascript:FreshWidget.show();">Contact support</a> |
+<table>
+    <thead>
+        <tr>
+            <th>Error Code</th>
+            <th>Description</th>
+            <th>Recommended Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>DEV_E100</td>
+            <td>Internal error</td>
+            <td><a href="#" onclick="javascript:FreshWidget.show();" class="highlight">Contact support</a></td>
+        </tr>
+        <tr>
+            <td>DEV_E101</td>
+            <td>Downloading internal artifact failed</td>
+            <td>
+                <ul>
+                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure device has an active internet connection.</a></li>
+                    <li><a href="#check-for-disk-space" class="highlight">Ensure there is adequate disk space on device.</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>DEV_E102</td>
+            <td>Pulling internal docker image failed</td>
+            <td>
+                <ul>
+                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure device has an active internet connection.</a></li>
+                    <li><a href="#check-for-disk-space" class="highlight">Ensure there is adequate disk space on device.</a></li>
+                    <li>Ensure the docker version on device is:
+                        <ul>
+                            <li><strong><em>docker-ce==17.12.1~ce-0~ubuntu</em></strong> for Ubuntu 16.04</li>
+                            <li><strong><em>docker-ce==5:18.09.7~3-0~ubuntu-bionic</em></strong> for Ubuntu 18.04</li>
+                        </ul>If not, uninstall it and <a href="/getting-started/add-new-device/#setting-up-a-device" class="highlight">set up the device</a> again.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>DEV_E103</td>
+            <td>Installing pip package failed</td>
+            <td>
+                <ul>
+                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure device has an active internet connection.</a></li>
+                    <li><a href="#check-for-disk-space" class="highlight">Ensure there is adequate disk space on device.</a></li>
+                    <li>Ensure the version of Python on device is <strong><em>Python&gt;=2.7.8,&lt;3</em></strong><br>
+                    If not, uninstall it and <a href="/getting-started/add-new-device/#setting-up-a-device" class="highlight">set up the device</a> again.</li>
+                    <li>Try installing the package manually by executing<br>
+                    <code>source /opt/rapyuta/venv/bin/activate &amp;&amp; <br>pip install &lt;python-package&gt;</code> and see if it fails.<br>
+                    If it doesn’t fail, the issue may be transient.<br>
+                    Now, <a href="/getting-started/add-new-device/#setting-up-a-device" class="highlight">set up the device</a> on successful installation of python package.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>DEV_E104</td>
+            <td>Installing docker failed</td>
+            <td>
+                <ul>
+                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure device has an active internet connection.</a></li>
+                    <li><a href="#check-for-disk-space" class="highlight">Ensure there is adequate disk space on device.</a></li>
+                    <li>Ensure the docker version on device is:
+                        <ul>
+                            <li><strong><em>docker-ce==17.12.1~ce-0~ubuntu</em></strong> for Ubuntu 16.04</li>
+                            <li><strong><em>docker-ce==5:18.09.7~3-0~ubuntu-bionic</em></strong> for Ubuntu 18.04</li>
+                        </ul>If not, uninstall it and <a href="/getting-started/add-new-device/#setting-up-a-device" class="highlight">set up the device</a> again.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>DEV_E105</td>
+            <td>Installing system package failed</td>
+            <td>
+                <ul>
+                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure device has an active internet connection.</a></li>
+                    <li><a href="#check-for-disk-space" class="highlight">Ensure there is adequate disk space on device.</a></li>
+                    <li>Try installing the package manually by executing<br>
+                    <code>apt-get install &lt;system-package&gt;</code> and see if it fails. If it doesn’t fail, the issue may be transient.<br>
+                    Now, <a href="/getting-started/add-new-device/#setting-up-a-device" class="highlight">set up the device</a> on successful installation of system package.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>DEV_E106</td>
+            <td>Managing files on device failed</td>
+            <td>
+                <ul>
+                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure device has an active internet connection.</a></li>
+                    <li><a href="#check-for-disk-space" class="highlight">Ensure there is adequate disk space on device.</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>DEV_E107</td>
+            <td>Internal service failed to start</td>
+            <td><a href="#" onclick="javascript:FreshWidget.show();" class="highlight">Contact support</a></td>
+        </tr>
+    </tbody>
+</table>
+
+## Check for active internet connection
+To check if a device has an active internet connection, execute the command:
+`ping -c 4 8.8.8.8` at the device's terminal.
+The *[ping](https://linux.die.net/man/8/ping)* command will try
+to reach [Google Public DNS](https://en.wikipedia.org/wiki/Google_Public_DNS).
+If successful, you should see an output as:
+***4 packets transmitted, 4 received, 0% packet loss.***
+
+## Check for disk space
+To check if there is adequate disk space on device, run the command: `df -h`
+at the device's terminal. The *[df](https://linux.die.net/man/1/df)* command
+will display your disk usage. Ensure the value of percentage used for
+your main filesystem is not nearly 100%.
