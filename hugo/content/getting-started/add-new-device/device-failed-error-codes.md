@@ -111,7 +111,7 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
 To check if a device has an active internet connection, execute the command:
 `ping -c 4 8.8.8.8` at the device's terminal.
 The *[ping](https://linux.die.net/man/8/ping)* command will try
-to reach *[Google Public DNS](https://en.wikipedia.org/wiki/Google_Public_DNS)*.
+to reach [Google Public DNS](https://en.wikipedia.org/wiki/Google_Public_DNS).
 If successful, you should see an output as:
 ***4 packets transmitted, 4 received, 0% packet loss.***
 
