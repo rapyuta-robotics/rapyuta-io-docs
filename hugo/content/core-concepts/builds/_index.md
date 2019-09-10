@@ -83,3 +83,13 @@ target architecture.
 
 The [Control onboard LED tutorial](/dev-tutorials/control-onboard-led)
 illustrates docker image strategy.
+
+{{% notice note %}}
+Select **Run command from bash shell** option to launch the docker
+container with a bash shell for executing commands inside it.
+It provides the flexibility of overriding the container's
+main process (process with PID 1) with a bash shell process.
+Together with **Command to run in the docker container** option,
+rapyuta.io provides the flexibility of overriding *CMD*
+arguments.
+{{% /notice %}}
