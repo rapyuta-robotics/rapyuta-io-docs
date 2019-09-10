@@ -152,3 +152,14 @@ and newly added parameters in ***USA/sample.yaml*** will include
 Learn how to
 [apply a configuration to a robot (device)](/getting-started/apply-config-params/).
 {{% /notice%}}
+
+{{% notice info %}}
+You may ***clone an existing configuration*** in to another project.
+Cloning saves you from the redundant task of defining the
+same configurations from scratch again. However, cloning a configuration
+inside the same project is not supported.
+{{% /notice %}}
+
+{{% notice info %}}
+You may ***rename an already defined configuration***.
+{{% /notice %}}
