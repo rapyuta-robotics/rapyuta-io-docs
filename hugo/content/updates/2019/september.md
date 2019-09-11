@@ -42,8 +42,8 @@ There are significant updates in this version that we hope you will like.
   Click on the **Rename** button to rename an already defined configuration.
 * **Comprehensive error message for failed devices**    
   Added more details to the error message in case of device initialization
-  failures due to system packages installation failure, python packages
-  installation failure, and docker image pull errors.
+  failures due to system packages installation failures, python packages
+  installation failures, and docker image pull errors.
 * **Introduced new parameter in Deployment List API**    
   Added a new query parameter, ***phases***, in the Deployment List API. The same
   is updated in rapyuta.io SDK.
