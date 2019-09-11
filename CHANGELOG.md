@@ -1,6 +1,15 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [1.2.7 - 2019-09-11]
+### Added
+- Add release summary page for September 11, 2019 release.
+- Add information on cloning and renaming configurations.
+
+### Updated
+- Update device failed state error messages.
+
+
 ## [1.2.6 - 2019-09-04]
 ### Added
 - Add release summary page for September 04, 2019 release.
