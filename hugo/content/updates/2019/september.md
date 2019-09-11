@@ -58,7 +58,6 @@ There are significant updates in this version that we hope you will like.
 
 * Read about [cloning and renaming](/core-concepts/config-params/)
   existing configurations.
-* Read about how [running a command in bash shell](/core-concepts/builds/#docker-image-strategy) option works.
 * Check out the improved [error messages for device failed state](/getting-started/add-new-device/device-failed-error-codes/).
 * [Download/Upgrade](/python-sdk/introduction/#installation) to the
   new rapyuta.io Python SDK **0.6.0**
