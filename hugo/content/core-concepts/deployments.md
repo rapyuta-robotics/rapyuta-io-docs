@@ -102,11 +102,11 @@ preinstalled runtime.
 
 There are a couple of *exceptions* while applying the restart policies:
 
-* Components of a deployment will not start if the corresponding
-  executables are not found in **$PATH**
-* Irrespective of the kind of restart policy subsequent deployments
-  have, the ***ROS component*** will always have the restart policy
-  of the first deployment run on a device.
+* Restarting a deployment running on a device may fail if its executables
+  are missing in **$PATH**. This is due to the components of the
+  deployment failing to start.
+* A ***ROS component*** will have the same restart policy as that of the
+  first deployment on a device irrespective of the restart policies of any subsequent deployments on the device.
 * If a deployment running on a device is stopped
   manually by stopping its docker container (of an executable),
   both **on-failure** and **always** policies (if selected) are not
