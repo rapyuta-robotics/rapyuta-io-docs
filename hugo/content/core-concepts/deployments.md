@@ -100,16 +100,17 @@ The restart policies do not support deployments running on devices with
 preinstalled runtime.
 {{% /notice %}}
 
-A few exceptions while applying the restart policies:
+There are a couple of *exceptions* while applying the restart policies:
 
-* Components of a deployment will not be started if the executables
-  are not found in **$PATH**
+* Components of a deployment will not start if the corresponding
+  executables are not found in **$PATH**
 * Irrespective of the kind of restart policy subsequent deployments
-  have, the ***ROS components*** will have only the restart policy of the
-  first deployment run on a device.
-* If a docker container (of an executable) is stopped manually,
-  both **on-failure** and **always** are not applied unless the device
-  (on which the deployment is running) reboots.
+  have, the ***ROS component*** will always have the restart policy
+  of the first deployment run on a device.
+* If a deployment running on a device is stopped
+  manually by stopping its docker container (of an executable),
+  both **on-failure** and **always** policies (if selected) are not
+  applied unless the device is rebooted.
 
 ## Shell access
 rapyuta.io lets you **SSH** into the environment of a running executable.
