@@ -87,18 +87,29 @@ Deployments that are running on devices are automatically restarted if the
 deployment executables exit due to an error or when devices are rebooted.
 There are three kinds of restart policies available for a device deployment:
 
-* **always**    
+* **Always**    
   Always restart deployments if the deployment executables are in error
   state or if the device is rebooted.
-* **on-failure**    
+* **On-failure**    
   Restart deployments only if the deployment executables exit due to an
-  error.
-* **no**    
+  error, and the error code is non-zero.
+* **Never**    
   Do not restart deployments under any circumstance.
 {{% notice note %}}
 The restart policies do not support deployments running on devices with
 preinstalled runtime.
 {{% /notice %}}
+
+A few exceptions while applying the restart policies:
+
+* Components of a deployment will not be started if the executables
+  are not found in **$PATH**
+* Irrespective of the kind of restart policy subsequent deployments
+  have, the ***ROS components*** will have only the restart policy of the
+  first deployment run on a device.
+* If a docker container (of an executable) is stopped manually,
+  both **on-failure** and **always** are not applied unless the device
+  (on which the deployment is running) reboots.
 
 ## Shell access
 rapyuta.io lets you **SSH** into the environment of a running executable.
