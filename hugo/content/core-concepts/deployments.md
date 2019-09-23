@@ -83,32 +83,35 @@ and the recommendations you should take:
 | DEP_E4xx | internal rapyuta.io error | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
 
 ## Restart deployments
-Deployments that are running on devices are automatically restarted if the
-deployment executables exit due to an error or when devices are rebooted.
-There are three kinds of restart policies available for a device deployment:
+Unlike deployments running on the cloud, which are automatically restarted
+if they exit due to some error, deployments that are running on devices
+do not automatically restart if they exit due to an error or when devices
+are rebooted.
+
+You can configure the behaviour of deployments running on devices by
+setting the restart policies. There are three kinds of restart policies
+available for a device deployment:
 
 * **Always**    
   Always restart deployments if the deployment executables are in error
   state or if the device is rebooted.
 * **On-failure**    
   Restart deployments only if the deployment executables exit due to an
-  error, and the error code is non-zero.
+  error, and the exit code is non-zero.
 * **Never**    
   Do not restart deployments under any circumstance.
-{{% notice note %}}
-The restart policies do not support deployments running on devices with
-preinstalled runtime.
-{{% /notice %}}
 
 There are a couple of *exceptions* while applying the restart policies:
 
 * Restarting a deployment running on a device may fail if its executables
   are missing in **$PATH**. This is due to the components of the
   deployment failing to start.
-* A ***ROS component*** will have the same restart policy as that of the
-  first deployment on a device irrespective of the restart policies of any subsequent deployments on the device.
+* rapyuta.io components that are shared between deployments running on the
+  same device (like ROS Master) will have the same restart policy as
+  that of the first deployment on a device irrespective of the restart
+  policies of any subsequent deployments on the device.
 * If a deployment running on a device is stopped
-  manually by stopping its docker container (of an executable),
+  manually by stopping its docker container,
   both **on-failure** and **always** policies (if selected) are not
   applied unless the device is rebooted.
 
