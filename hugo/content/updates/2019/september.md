@@ -73,9 +73,8 @@ deployments, which are running on devices, if they exit due to an
 error or when devices are rebooted.
 
 #### Notable fixes
-* Added a secure flag to enhace security of cookies.
-* Fixed validation check errors on user given names for exposed parameter and endpoint fields.
-* Fixed expired authentication token bug when trying to access API documentation.
+* Fixed validation check errors on user given names for exposed
+  parameter and endpoint fields.
 * Added validation checks for user provided component executables.
 
 #### Documentation
