@@ -117,8 +117,8 @@ There are a couple of *exceptions* while applying the restart policies:
 
 For a deployment running on a device, the variable
 **Restart Count** (on the deployment details page) represents the
-number of times the deployment has restarted due to rebooting
-of the device or restarting of deployment components.
+number of times the deployment has restarted due to restarting of
+deployment components.
 
 
 ## Shell access
