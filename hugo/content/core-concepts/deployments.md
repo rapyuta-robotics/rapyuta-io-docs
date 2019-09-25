@@ -115,6 +115,12 @@ There are a couple of *exceptions* while applying the restart policies:
   both **on-failure** and **always** policies (if selected) are not
   applied unless the device is rebooted.
 
+For a deployment running on a device, the variable
+**Restart Count** (on the deployment details page) represents the
+number of times the deployment has restarted due to rebooting
+of the device or restarting of deployment components.
+
+
 ## Shell access
 rapyuta.io lets you **SSH** into the environment of a running executable.
 On the **Shell Access** tab, click **SSH**.
