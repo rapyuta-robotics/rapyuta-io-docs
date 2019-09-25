@@ -1,6 +1,11 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [1.2.8 - 2019-09-25]
+### Added
+- Add brief explanation on restart policies for device deployments.
+- Add release summary page for September 25, 2019 release.
+
 ## [1.2.7 - 2019-09-11]
 ### Added
 - Add release summary page for September 11, 2019 release.
