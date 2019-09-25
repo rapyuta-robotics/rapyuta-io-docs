@@ -67,15 +67,18 @@ Welcome to the September 25, 2019 release of rapyuta.io platform (v0.30.0).
 There are significant updates in this version that we hope you will like.
 
 #### Features
-##### Restart deployments on devices 
+* **Restart deployments on devices**     
 Choose a ***restart policy*** for automatically restarting your
 deployments, which are running on devices, if they exit due to an
 error or when devices are rebooted.
+* **Show available data if device is offline**    
+Display data that is available when the device is offline.
 
 #### Notable fixes
-* Fixed validation check errors on user given names for exposed
-  parameter and endpoint fields.
-* Added validation checks for user provided component executables.
+* Fixed validations for exposed parameters, endpoint names and
+  executable commands while creating a package.
+* Fixed formatting of IP interfaces in catalog modal when there
+  are many entries.
 
 #### Documentation
 * Read about [how to restart deployments on devices by choosing from a set of three restart policies](/core-concepts/deployments/#restart-deployments).
