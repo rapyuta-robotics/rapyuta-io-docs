@@ -61,3 +61,26 @@ There are significant updates in this version that we hope you will like.
 * Check out the improved [error messages for device failed state](/getting-started/add-new-device/device-failed-error-codes/).
 * [Download/Upgrade](/python-sdk/introduction/#installation) to the
   new rapyuta.io Python SDK **0.6.0**
+
+## September 25
+Welcome to the September 25, 2019 release of rapyuta.io platform (v0.30.0).
+There are significant updates in this version that we hope you will like.
+
+#### Features
+* **Restart deployments on devices**     
+Choose a ***restart policy*** for automatically restarting your
+deployments, which are running on devices, if they exit due to an
+error or when devices are rebooted.
+* **Show available data if device is offline**    
+Display data that is available when the device is offline.
+
+#### Notable fixes
+* Fixed validations for exposed parameters, endpoint names and
+  executable commands while creating a package.
+* Fixed formatting of IP interfaces in catalog modal when there
+  are many entries.
+
+#### Documentation
+* Read about [how to restart deployments on devices by choosing from a set of three restart policies](/core-concepts/deployments/#restart-deployments).
+* [Download/Upgrade](/python-sdk/introduction/#installation) to the
+  new rapyuta.io Python SDK **0.7.0**
