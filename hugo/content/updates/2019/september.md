@@ -61,3 +61,23 @@ There are significant updates in this version that we hope you will like.
 * Check out the improved [error messages for device failed state](/getting-started/add-new-device/device-failed-error-codes/).
 * [Download/Upgrade](/python-sdk/introduction/#installation) to the
   new rapyuta.io Python SDK **0.6.0**
+
+## September 25
+Welcome to the September 25, 2019 release of rapyuta.io platform (v0.30.0).
+There are significant updates in this version that we hope you will like.
+
+#### Features
+##### Restart deployments on devices 
+Choose a ***restart policy*** to automatically restart your deployments
+running on devices if they exit due to an error or when devices are
+rebooted.
+
+#### Notable fixes
+* Added a secure flag to enhace security of cookies.
+* Fixed validation check errors on user given names for exposed parameter and endpoint fields.
+* Fixed expired authentication token bug when trying to access API documentation.
+* Added validation checks for user provided component executables.
+
+#### Documentation
+* Read about [how to restart deployments on devices by choosing from a set of three restart policies](/core-concepts/deployments/#restart-deployments).
+* [Download/Upgrade](/python-sdk/introduction/#installation) to the new rapyuta.io Python SDK **0.7.0**
