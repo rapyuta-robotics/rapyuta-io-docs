@@ -68,9 +68,9 @@ There are significant updates in this version that we hope you will like.
 
 #### Features
 ##### Restart deployments on devices 
-Choose a ***restart policy*** to automatically restart your deployments
-running on devices if they exit due to an error or when devices are
-rebooted.
+Choose a ***restart policy*** for automatically restarting your
+deployments, which are running on devices, if they exit due to an
+error or when devices are rebooted.
 
 #### Notable fixes
 * Added a secure flag to enhace security of cookies.
@@ -80,4 +80,5 @@ rebooted.
 
 #### Documentation
 * Read about [how to restart deployments on devices by choosing from a set of three restart policies](/core-concepts/deployments/#restart-deployments).
-* [Download/Upgrade](/python-sdk/introduction/#installation) to the new rapyuta.io Python SDK **0.7.0**
+* [Download/Upgrade](/python-sdk/introduction/#installation) to the
+  new rapyuta.io Python SDK **0.7.0**
