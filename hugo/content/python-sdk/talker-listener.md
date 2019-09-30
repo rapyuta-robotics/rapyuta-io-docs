@@ -60,13 +60,13 @@ it on the cloud. The resulting deployment is called ***PUBLISHER***.
 
 ```python
 # Deploy Publisher package on cloud
-publisher_package = client.get_package(PUBLISHER_ID)
+publisher = client.get_package(PUBLISHER_ID)
 
-talker_configuration = publisher_package.get_provision_configuration(PUBLISHER_PLAN_ID)
+publisher_configuration = publisher.get_provision_configuration(PUBLISHER_PLAN_ID)
 
-publisher_deployment = publisher_package.provision("PUBLISHER", provision_configuration=talker_configuration)
+publisher_cloud_deployment = publisher.provision(deployment_name="PUBLISHER", provision_configuration=publisher_configuration)
 
-publisher_deployment.poll_deployment_till_ready()
+publisher_cloud_deployment.poll_deployment_till_ready()
 ```
 
 Similarly, deploy ***Subscriber*** package on the cloud.
@@ -74,18 +74,18 @@ Since the resulting ***SUBSCRIBER*** deployment depends on ***PUBLISHER***
 deployment, add the later as a dependent deployment of the former.
 
 ```python
-# Deploy Subscriber package on cloud
-subscriber_package = client.get_package(SUBSCRIBER_ID)
+# Deploy Subscriber package on device
+subscriber = client.get_package(SUBSCRIBER_ID)
 
-listener_configuration = subscriber_package.get_provision_configuration(SUBSCRIBER_PLAN_ID)
+subscriber_configuration = subscriber.get_provision_configuration(SUBSCRIBER_PLAN_ID)
 
-listener_configuration.add_dependent_deployment(publisher_deployment)
+device = client.get_device(DEVICE_ID)
+subscriber_configuration.add_device("Listener", device)
+subscriber_configuration.add_dependent_deployment(publisher_cloud_deployment)
 
-subscriber_deployment = subscriber_package.provision(deployment_name="SUBSCRIBER", provision_configuration=listener_configuration)
+subscriber_device_deployment = subscriber.provision(deployment_name="SUBSCRIBER", provision_configuration=subscriber_configuration)
 
-subscriber_deployment.poll_deployment_till_ready()
-
-print subscriber_deployment.get_status()
+subscriber_device_deployment.poll_deployment_till_ready()
 ```
 
 Put the above code snippets together in a file, ***talker-listener.py***,
@@ -105,11 +105,16 @@ publisher_deployment = publisher_package.provision("PUBLISHER", provision_config
 publisher_deployment.poll_deployment_till_ready()
 
 
-# Deploy Subscriber package on cloud
-subscriber_package = client.get_package(SUBSCRIBER_ID)
-listener_configuration = subscriber_package.get_provision_configuration(SUBSCRIBER_PLAN_ID)
-listener_configuration.add_dependent_deployment(publisher_deployment)
-subscriber_deployment = subscriber_package.provision(deployment_name="SUBSCRIBER", provision_configuration=listener_configuration)
+# Deploy Subscriber package on device
+subscriber = client.get_package(SUBSCRIBER_ID)
+subscriber_configuration = subscriber.get_provision_configuration(SUBSCRIBER_PLAN_ID)
+
+device = client.get_device(DEVICE_ID)
+subscriber_configuration.add_device("Listener", device)
+subscriber_configuration.add_dependent_deployment(publisher_cloud_deployment)
+
+subscriber_device_deployment = subscriber.provision(deployment_name="SUBSCRIBER", provision_configuration=listener_configuration)
+
 subscriber_deployment.poll_deployment_till_ready()
 
 # Get status of subscriber's deployment
