@@ -48,3 +48,58 @@ select **Show timestamps** checkbox.
 
 Topics such as `/rosout` and `/rosout_agg` are already available for a
 ROS-based device.
+
+## Upload Device Logs
+You can upload logs collected from a device (like dmesg,
+journalctl, rosbags etc.) to rapyuta.io. This lets you:
+
+* *Save* logs for future reference
+* *Process* logs for information retrieval
+* *Analyze* logs to gain useful insights
+* *Visualise* logs for identifying patterns and trends
+* *Remotely debug* device failures
+
+The log data can be text, images or videos. You can upload
+log files (of a device) by clicking on the **Upload** button.
+You can only upload one file at a time. If you want to upload
+another log file, you have to click the button again to upload
+it to the device’s log folder.
+
+A list of statuses indicates the progress of an ongoing upload.
+They are:
+
+* **In Progress**: uploading a log file (to the cloud storage) is underway
+* **Failed**: uploading a log file failed due to an error
+* **Complete**: uploading a log file (to the storage) succeeded
+
+{{% notice note %}}
+You can *cancel* an ongoing upload process if you want to
+by clicking on the cancel icon.
+{{% /notice %}}
+
+Sometimes log files are large in size, and a significant
+amount of network bandwidth is consumed while uploading
+enormous log data. rapyuta.io lets you tune network
+bandwidth so as to upload massive log data even in
+slow network bandwidths.
+
+### Operations on Log Files
+After uploading a log file to rapyuta.io, you can perform
+the following operations with ease.
+
+#### List Files
+View a list of all the log files that you uploaded for a device.
+
+#### Download
+Download a log file locally on your system.
+
+#### Delete
+Delete a log file from the cloud storage.
+
+#### Purge
+Remove a log file at the source (that is, from the device) after
+uploading the file to rapyuta.io. You can still view the log file
+in the list of files, but the file is deleted on the device.
+
+#### Override
+Lets you replace an existing log file with a new log file.
