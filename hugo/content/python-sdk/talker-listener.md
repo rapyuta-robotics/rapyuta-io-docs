@@ -22,8 +22,12 @@ python application.
    of rapyuta.io
 2. [Install rapyuta.io SDK](/python-sdk/introduction/#installation)
    in your development environment.
-3. Learn [how to obtain authorization token, project ID,
-   package ID and plan ID, and device ID](/python-sdk/determine-unique-identifiers/)
+3. Learn how to obtain:
+   1. [authorization token](/python-sdk/determine-unique-identifiers/#auth-token)
+   2. [project ID](/python-sdk/determine-unique-identifiers/#project-id)
+   3. [package ID](/python-sdk/determine-unique-identifiers/#package-id)
+   4. [plan ID](/python-sdk/determine-unique-identifiers/#plan-id)
+   5. [device ID](/python-sdk/determine-unique-identifiers/#device-id)
 
 ## Difficulty
 Beginner
