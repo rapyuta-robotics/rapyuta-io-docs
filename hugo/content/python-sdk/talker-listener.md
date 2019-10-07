@@ -52,7 +52,61 @@ Beginner
 7. ***DEVICE ID*** is a unique identification value of a device on
    rapyuta.io, and it is of type *string*.
 
+### Create Talker Package
 
+1. On the left navigation bar, click **CATALOG**.
+2. Click **ADD PACKAGE**.
+3. In the **Package Name** box, type in a name for the package like `Talker`.
+4. In the **Package Verison** box, enter the version of the package
+   you are creating. The default value is *1.0.0*
+5. Make sure **Is singleton package** is ***not selected***.
+6. Ensure **Is bindable package** is ***selected***.
+7. In the **Description** box, explain what the package is about,
+   for instance, the description of this package is `ROS Publisher`.
+8. Click **NEXT**.
+9.  In the **Component Name** box, enter a name for the component say `TALKER`.
+10. Select **Cloud** for **Component Runtime**.
+11. Ensure **Is ROS Component** is selected.
+12. Select **Kinetic** for **ROS Version**.
+13. The default value of **Replicas to run the component** is set to 1
+14. In the **Executable Name** box, enter a name for an executable
+    say `talker_executable`.
+15. Click **Git** for **Executable Type**.
+16. In the **Git repository** box, enter the URL address:
+    `https://github.com/rapyuta/io_tutorials`
+17. In the **Command to run in the docker container** box, enter the command:
+    `roslaunch talker talker.launch`
+18. The ***talker_executable*** publishes a ROS topic `/telemetry`.
+    To add a ROS topic, click **Add ROS topic**. In the **Name** box,
+    type in the ROS topic. Select **Maximum** as the value for **QoS**.
+19. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+
+### Create Listener Package
+
+1. On the left navigation bar, click **CATALOG**.
+2. Click **ADD PACKAGE**.
+3. In the **Package Name** box, type in a name for the package
+   like `Listener`.
+4. In the **Package Version** box, enter the version of the package
+   you are creating. The default value is *1.0.0*
+5. Make sure **Is singleton package** is ***not selected***.
+6. Ensure **Is bindable package** is ***selected***.
+7. In the **Description** box, explain what the package is about,
+   for instance, the description of this package is `ROS Subscriber`.
+8. Click **NEXT**.
+9.  In the **Component Name** box, enter a name for the component say `LISTENER`.
+10. Select **Device** for **Component Runtime**.
+11. Ensure **Is ROS Component** is selected.
+12. Select **Kinetic** for **ROS Version**.
+13. Set **Restart Policy** to **Never**.
+14. In the **Executable Name** box, enter a name for an
+    executable say `listener_executable`.
+15. Set **Executable Type** to **Default**.
+16. In the **Command to run in the docker container** box, enter
+    the command: `roslaunch listener listener.launch`
+17. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+
+### Code Walkthrough
 Firstly, you need to authenticate so as to access rapyuta.io services from within
 your python application.
 ```python
