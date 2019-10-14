@@ -53,42 +53,58 @@ ROS-based device.
 You can upload logs collected from a device (like dmesg,
 journalctl, rosbags etc.) to rapyuta.io. This lets you:
 
-* *Save* logs to cloud storage for future reference
-* *Process* and *analyze* logs as you require for insights
+* *Save* logs for future reference. The logs are saved to the
+  cloud storage.
+* *Process* and *analyze* logs for insights as per your requirements.
 
 The log data can be text, images or videos. You can upload
-log files (of a device) by clicking on the **Upload** button, which
-is found on a device's **Manage** tab.
+log files by clicking on the **Upload** button, which
+is found on the device's **Manage** tab.
+![Manage Tab](/images/core-concepts/logging/device-logs/upload-logs/manage-tab.png?classes=border,shadow&width=40pc)
 
 A list of statuses indicates the progress of an ongoing upload.
 They are:
 
-* **In Progress**: uploading a log file (to the cloud storage) is underway
-* **Failed**: uploading a log file failed due to an error
-* **Complete**: uploading a log file (to the storage) succeeded
+* **In Progress**: uploading a log file (to the cloud storage) is underway.
+* **Failed**: uploading a log file failed due to an error.
+* **Complete**: uploading a log file (to the storage) is succeeded.
 * **Cancelled**: ongoing process of uploading a log file is cancelled 
 
 ### Parameters for Uploading Log Files
 There are certain parameters to take care of while uploading a
-log file from a device to the cloud storage.
+log file from a device to rapyuta.io
 
-While providing the absolute path of the log file ensure it does
+When providing the absolute path of the log file ensure it does
 not end with a backslash. Hence, folders are not supported. You are
 only allowed to upload a single log file at a time.
 
-Sometimes log files are large in size, and a significant
-amount of network bandwidth is consumed while uploading
-enormous log data. rapyuta.io lets you tune network
-bandwidth so as to upload massive log data even in
-slow network bandwidths. You can choose the upload rate
-value in Mega bytes, or Giga bytes.
+Sometimes constrained resources can limit a device's ability to
+execute tasks while uploading logs. For instance, a significant amount
+of network bandwidth is consumed while uploading
+enormous log data, which can affect execution of other high priority
+tasks on the device. In this case, rapyuta.io lets you tune network
+bandwidth based on the device and its environment limitations. This lets
+you upload log files without interfering with task execution. You can
+choose the upload rate value in ***Mega bytes***, or ***Giga bytes***.
 
 Select the **purge** option to remove a log file from a device
 after successfully uploading it to the cloud storage.
+
+![Upload Parameters](/images/core-concepts/logging/device-logs/upload-logs/upload-dialog-box.png?classes=border,shadow&width=40pc)
 
 Select the **override** option to replace an existing log file
 with a new log file with the same name.
 
 **Meta data** lets you create static tags for log files while uploading.
 
-After successfully uploading the log file, you can view a list of all the log files that you uploaded for a device, download a log file locally on your system, and delete a log file from the cloud storage.
+A summary of the log file is generated after completion as shown below:
+![Summary Post Upload](/images/core-concepts/logging/device-logs/upload-logs/log-details.png?classes=border,shadow&width=40pc)
+
+After successfully uploading the log file:
+
+*   view a list of all the log files that you uploaded for a device.
+*   download a log file locally on your system.
+*   delete a log file from the cloud storage.
+*   filter list of log files based on upload status.
+*   sort list of log files based on filename, file size and time of creation.
+
