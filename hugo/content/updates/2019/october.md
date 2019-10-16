@@ -22,19 +22,18 @@ There are significant updates in this version that we hope you will like.
   before it is sent to the customer support.
 * **rapyuta.io SDK 0.8.0 released**   
   * Added support for logs API
-  * Added support to override fields, tags in subscribe topics API
 
 #### Notable Fixes
 
 * Fixed rotation bug in the deployment dependency graph.
-* Fixed duplicate names for ROS configuration and inbound ROS
-  interfaces fields in package manifest.
+* Fixed validation errors related to ROS configuration in package
+  manifest.
 
 #### Documentation
 
 * Read about
   [how to upload device logs to the cloud storage](/core-concepts/logging/device-logs/#upload-device-logs) in rapyuta.io
 * Read further on
-  [supported data types of ROS messages](/core-concepts/ros-data-collection/).
+  [supported data types of ROS messages](/core-concepts/device-monitoring/#ros-data-collection).
 * [Download/upgrade](/python-sdk/introduction/#installation) to
   the new rapyuta.io SDK 0.8.0
