@@ -90,21 +90,21 @@ choose the upload rate value in ***Mega bytes***, or ***Giga bytes***.
 Select the **purge** option to remove a log file from a device
 after successfully uploading it to the cloud storage.
 
-![Upload Parameters](/images/core-concepts/logging/device-logs/upload-logs/upload-dialog-box.png?classes=border,shadow&width=40pc)
-
 Select the **override** option to replace an existing log file
 with a new log file with the same name.
 
-**Meta data** lets you create static tags for log files while uploading.
+**Metadata** lets you create static tags for log files while uploading.
+
+![Upload Parameters](/images/core-concepts/logging/device-logs/upload-logs/upload-log-dialog-box.png?classes=border,shadow&width=40pc)
 
 A summary of the log file is generated after completion as shown below:
-![Summary Post Upload](/images/core-concepts/logging/device-logs/upload-logs/log-details.png?classes=border,shadow&width=40pc)
+![Summary Post Upload](/images/core-concepts/logging/device-logs/upload-logs/log-file-summary.png?classes=border,shadow&width=40pc)
 
 After successfully uploading the log file:
 
-*   view a list of all the log files that you uploaded for a device.
-*   download a log file locally on your system.
-*   delete a log file from the cloud storage.
-*   filter list of log files based on upload status.
-*   sort list of log files based on filename, file size and time of creation.
+*   ***view*** a list of all the log files that you uploaded for a device.
+*   ***download*** a log file locally on your system.
+*   ***delete*** a log file from the cloud storage.
+*   ***filter*** list of log files based on upload status.
+*   ***sort*** list of log files based on filename, file size and time of creation.
 
