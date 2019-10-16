@@ -20,6 +20,9 @@ There are significant updates in this version that we hope you will like.
   Click **Report Device** to raise a bug report from the **Details**
   tab of a device. The device logs are automatically added to the report
   before it is sent to the customer support.
+* **rapyuta.io SDK 0.8.0 released**   
+  * Added support for logs API
+  * Added support to override fields, tags in subscribe topics API
 
 #### Notable Fixes
 
@@ -32,6 +35,6 @@ There are significant updates in this version that we hope you will like.
 * Read about
   [how to upload device logs to the cloud storage](/core-concepts/logging/device-logs/#upload-device-logs) in rapyuta.io
 * Read further on
-  [supported data types of ROS messages](/core-concepts/metrics/).
+  [supported data types of ROS messages](/core-concepts/ros-data-collection/).
 * [Download/upgrade](/python-sdk/introduction/#installation) to
   the new rapyuta.io SDK 0.8.0
