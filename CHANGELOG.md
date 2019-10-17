@@ -1,6 +1,15 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [1.2.9 - 2019-10-16]
+### Added
+- Add explanation on upload device logs feature.
+- Add release update page for October 16, 2019.
+
+### Updated
+- Update SDK version to 0.8.0
+
+
 ## [1.2.8 - 2019-09-25]
 ### Added
 - Add brief explanation on restart policies for device deployments.
