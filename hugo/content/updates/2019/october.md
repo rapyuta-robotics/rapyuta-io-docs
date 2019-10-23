@@ -52,5 +52,6 @@ There are significant updates in this version that we hope you will like.
 
 #### Documentation
 
-* Learn [how to simulate a robot in its environment](/dev-tutorials/turtlebot-simulation/).
+* Learn [how to simulate a robot in rapyuta.io](/dev-tutorials/turtlebot-simulation/).
+* Read more on [simulation using rapyuta.io](/core-concepts/simulation).
   
