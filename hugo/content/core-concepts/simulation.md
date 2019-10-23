@@ -20,3 +20,7 @@ Please go through the [tutorial](/dev-tutorials/turtlebot-simulation/) to know m
 {{% notice note %}}
 We only support **Gazebo version 9** as of now. Users are expected to use gazebo9 ROS packages for their corresponding ROS distros. For instance, `ros-melodic-gazebo-ros-pkgs` on ROS melodic, and `ros-kinetic-gazebo9-ros-pkgs` on ROS kinetic.
 {{% /notice %}}
+
+{{% notice note %}}
+Gazebo simulation is only supported for [Source code strategy](/core-concepts/builds/#source-code-strategy) as of now.
+{{% /notice %}}
