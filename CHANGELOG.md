@@ -1,10 +1,12 @@
 # CHANGELOG
 
 ## [Unreleased]
-
+## [1.4.0 - 2019-10-23]
 ### Added
 - Simulation page in core concepts
-
+- Turtlebot3 simulation tutorial
+- SDK full reference in TOC
+- Release update page for October 23, 2019
 
 ## [1.2.9 - 2019-10-16]
 ### Added
