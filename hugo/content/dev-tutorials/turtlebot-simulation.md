@@ -1,5 +1,5 @@
 ---
-title: "Robot Simulation"
+title: "Turtlebot Simulation"
 description:
 type: dev-tutorials
 date: 2019-10-23T16:26:42+05:30
@@ -150,3 +150,4 @@ You can verify if **KEYBOARD TELEOPERATION** is running successfully by checking
 6. Try controlling the robot using the keyboard commands shown in ther terminal output. To see how the robot moves, switch to the Gazebo simulation browser tab.
 7. To reset simulation, **Ctrl+C** and then run `rosservice call /gazebo/reset_simulation`
 
+<video controls style="max-width: 1500px" width="100%" class="border shadow" src="/images/tutorials/turtlebot-simulation/simulation.webm"></video>
