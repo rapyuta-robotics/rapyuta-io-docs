@@ -35,3 +35,22 @@ There are significant updates in this version that we hope you will like.
   [how to upload device logs to the cloud storage](/core-concepts/logging/device-logs/#upload-device-logs) in rapyuta.io
 * [Download/upgrade](/python-sdk/introduction/#installation) to
   the new rapyuta.io SDK 0.8.0
+
+## October 23
+Welcome to the October 23, 2019 release of rapyuta.io platform (v0.32.0).
+There are significant updates in this version that we hope you will like.
+
+#### Features
+
+* **Support simulation on the cloud**    
+  Simulate robots and their environment using Gazebo simulation running on the cloud in rapyuta.io
+
+#### Update
+
+* **Network endpoint has different domain suffix**    
+  Network endpoints of a deployment have a different domain suffix. The old network endpoints will still work.
+
+#### Documentation
+
+* Learn [how to simulate a robot in its environment](/dev-tutorials/turtlebot-simulation/).
+  
