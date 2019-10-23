@@ -21,14 +21,19 @@ disableSearch = false
     weight = 9
 
 [[menu.shortcuts]]
+    name = "<i class='fas fa-atlas'></i> SDK Reference"
+    url = "https://sdkdocs.apps.rapyuta.io/"
+    weight = 10
+
+[[menu.shortcuts]]
     identifier = "freshdesk"
     name = "<i class='fas fa-envelope'></i> Contact support"
-    weight = 10
+    weight = 11
 
 [[menu.shortcuts]]
     name = "<i class='fas fa-globe'></i> Rapyuta Robotics"
     url = "https://www.rapyuta-robotics.com/"
-    weight = 11
+    weight = 12
 
 [blackfriday]
     hrefTargetBlank = true
