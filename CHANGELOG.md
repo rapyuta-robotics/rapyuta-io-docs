@@ -1,6 +1,11 @@
 # CHANGELOG
 
 ## [Unreleased]
+
+### Added
+- Simulation page in core concepts
+
+
 ## [1.2.9 - 2019-10-16]
 ### Added
 - Add explanation on upload device logs feature.
