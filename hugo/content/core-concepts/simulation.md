@@ -15,7 +15,7 @@ During application development a robotics simulator can greatly help by cutting 
 
 rapyuta.io lets users run their simulation application with Gazebo simulator on the cloud. It provides a web interface to watch and interact with Gazebo GUI client running on the cloud. ROS interfaces provided by its ROS packages compliments rapyuta.io’s [application architecture](/overview/appln-architecture/), and enhances the ways users architect their simulation and robotics applications. For instance, robotics application **running on a [device](https://userdocs.rapyuta.io/core-concepts/device-management/)** can interact with Gazebo (get model state, set physics properties, etc) **running on cloud** through ROS interfaces.
 
-Please go through the tutorial (**ADD LINK**) to know more.
+Please go through the [tutorial](/dev-tutorials/turtlebot-simulation/) to know more.
 
 {{% notice note %}}
 We only support **Gazebo version 9** as of now. Users are expected to use gazebo9 ROS packages for their corresponding ROS distros. For instance, `ros-melodic-gazebo-ros-pkgs` on ROS melodic, and `ros-kinetic-gazebo9-ros-pkgs` on ROS kinetic.
