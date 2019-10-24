@@ -8,6 +8,6 @@ pre = "<b>3. </b>"
 
 ### rapyuta.io
 
-# Understand rapyuta.io
+# Understanding rapyuta.io
 
-Lorem Ipsum.
+{{% children %}}
