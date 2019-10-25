@@ -8,4 +8,24 @@ weight: 225
 ---
 ## Overview
 
-Write overview here
+## Architecture
+## Communication
+note on NAT
+### Management Communication
+
+* Control channel
+* Telemetry channel
+
+note Application Communication
+
+### Required Ports
+
+note on Remote Execution
+
+note on Remote Debugging
+
+note on Remote Configuration
+
+note on Remote Monitoring
+
+Security notes
