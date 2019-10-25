@@ -34,5 +34,17 @@ The admin of the organization can see all the rapyuta.io projects that are creat
 ![Admin's project dashboard](/images/getting-started/organization/project/project-list-admin.png?classes=border,shadow&width=50pc)
 
 ## Switch Between Projects
+Consider two projects, *example-0* and *example-3*. You would want to
+switch between *example-0* and *example-3*.
+
+To switch from *example-0* to *example-3*, you will follow the below instructions:
+
+1. Click on *example-0* located at the top left corner of the rapyuta.io page.
+   ![project zero](/images/getting-started/organization/project/switch-projs/example-0.png?classes=border,shadow&width=50pc)
+2. Select *example-3* from the list of available projects.
+   ![switch-proj](/images/getting-started/organization/project/switch-projs/switch-proj.png?classes=border,shadow&width=50pc)
+3. Now you are in *example-3* project namespace.
+   ![project three](/images/getting-started/organization/project/switch-projs/example-3.png?classes=border,shadow&width=50pc)
+   
 ## Delete Existing Project
 ## Add/Remove Users From Project
