@@ -1,9 +1,9 @@
 ---
 title: "Highlighted Features For Robots"
 description:
-type: understand-rio
-date: 2019-10-23T16:16:22+05:30
-pre: "3. "
+type: understanding-rio
+date: 2019-10-25T14:12:00+05:30
+pre: "c. "
 weight: 115
 ---
 ## Observability for Robots
