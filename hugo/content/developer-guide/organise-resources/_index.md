@@ -8,6 +8,4 @@ weight: 205
 ---
 ## Overview
 
-Write a brief overview about this topic
-
 {{% children %}}
