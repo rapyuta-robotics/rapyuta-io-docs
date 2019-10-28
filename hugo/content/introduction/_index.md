@@ -19,7 +19,7 @@ solution development.
 The software infrastructure can be seen as a collection of the
 following four layers and the facilitation is enabled by hardware
 and software catalogs.
-![rapyuta.io layer architecture](/images/chapters/introduction/rio-layers.png?classes=shadow)
+![rapyuta.io layer architecture](/images/chapters/introduction/rio-layers.png?classes=border,shadow)
 
 ## What does it solve
 Given the multi-domain and embryonic stage of the robotics
@@ -28,8 +28,7 @@ challenges: lack of expertise, limited budget and time.
 The pain points of the solution provider and gains using the
 project's J-curve.
 
-<!---
-J-curve image--->
+![J curve](/images/chapters/introduction/j-curve.png?classes=shadow,border&width=50pc)
 
 ## Vision
 Our mission is to empower lives with connected machines. Machine - from
@@ -44,14 +43,13 @@ model defined as
 > Cloud Robotics is a model enabling self-service, elastic, and ubiquitous
 access to a shared pool of robotics resources with open interfaces.
 
-{{% notice info %}}
-This model is inspired from the cloud computing model [1] is a broader
+This model is inspired from the cloud computing model[1] is a broader
 definition of Cloud Robotics compared to the Cloud connected Robotics
-definition by Kuffner [2].
+definition by Kuffner[2].
 
-[1]Mell, Peter, and Tim Grance. "The NIST definition of cloud computing." (2011).
+[1]Mell, Peter, and Tim Grance. "The NIST definition of cloud computing."(2011).
+
 [2]Kuffner, James. “Cloud-Enabled-Robots”  (2010)
-{{% /notice %}}
 
 ## Our Origins
 Our journey on Cloud Robotics started with [RoboEarth](http://roboearth.ethz.ch/),
