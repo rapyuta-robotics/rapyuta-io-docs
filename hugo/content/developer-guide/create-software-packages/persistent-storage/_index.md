@@ -10,4 +10,4 @@ Applications running on the cloud be design deallocate any resources consumed by
 
 A rapyuta.io Persistent Volume is a storage package. A storage package is a public package which is available to all users out of the box. You cannot delete or modify storage packages, and they are available to every user and group to deploy.
 
-Follow this [tutorial to setup a simple object store](./obj-store-deployment-tutorial.md) #TODO
+Follow this [tutorial to setup a simple object store](./obj-store-deployment-tutorial.md)
