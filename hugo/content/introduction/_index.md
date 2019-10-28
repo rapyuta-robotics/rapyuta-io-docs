@@ -21,6 +21,21 @@ following four layers and the facilitation is enabled by hardware
 and software catalogs.
 ![rapyuta.io layer architecture](/images/chapters/introduction/rio-layers.png?classes=border,shadow)
 
+* **Machine Layer**    
+    Monitor the machine and manage the onboard software - remotely via API or Web UI.
+* **Communications Layer**    
+    Secure and scalable machine-to-machine and machine-to-cloud communication with ROS compatibility.
+* **Computation Layer**    
+    Build, ship, monitor, and control distributed applications running on any machine anywhere.
+* **Intelligence Layer**    
+    Distributed intelligence that gives your heterogeneous multi-robot system the robustness and flexibility.
+* **Composition Tooling**    
+    Compose, simulate, and deploy your applications with the community all in one place.
+* **Software Catalog**    
+    Leverage software features from all across the globe. Batteries included for Enterprise Clients: laser-based localization, navigation, and depalletization.
+* **Hardware Catalog**    
+    Choose the hardware that best suits your needs or offer your hardware to the world.
+
 ## What does it solve
 Given the multi-domain and embryonic stage of the robotics
 industry, robotics solution developers face the following three
@@ -65,6 +80,7 @@ on our prior work, have a look at the following papers and videos:
 
 * G. Mohanarajah, D. Hunziker, R. D'Andrea and M. Waibel, "[Rapyuta: A Cloud Robotics Platform](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6853392&isnumber=7079441)," in IEEE Transactions on Automation Science and Engineering, vol. 12, no. 2, pp. 481-493, April 2015.
 * G. Mohanarajah, V. Usenko, M. Singh, R. D'Andrea and M. Waibel, "[Cloud-Based Collaborative 3D Mapping in Real-Time With Low-Cost Robots](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7057681&isnumber=7079441)," in IEEE Transactions on Automation Science and Engineering, vol. 12, no. 2, pp. 423-431, April 2015.
-* [Rapyuta: A Cloud Robotics Framework](https://youtu.be/4-ir1ieqKyc)
-* [Cloud based collaborative 3D mapping in real-time with low-cost robots](https://youtu.be/sZBSQrks5Hw)
-* [Building an internet for robots](https://youtu.be/7JHbpdt8Av8)
+* Videos
+    * [Rapyuta: A Cloud Robotics Framework](https://youtu.be/4-ir1ieqKyc)
+    * [Cloud based collaborative 3D mapping in real-time with low-cost robots](https://youtu.be/sZBSQrks5Hw)
+    * [Building an internet for robots](https://youtu.be/7JHbpdt8Av8)
