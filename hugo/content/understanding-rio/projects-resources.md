@@ -4,17 +4,17 @@ description:
 type: understanding-rio
 date: 2019-10-25T14:09:54+05:30
 pre: "a. "
-weight: 105
+weight: 11
 ---
 ## rapyuta.io Resources
-rapyuta.io uses the concept of resources to manage and represent a set
+rapyuta.io uses the concept of *resources* to manage and represent a set
 of physical assets (such as robot locations and computing infrastructure
 living in data-centers) as well as more abstract entities like the user's
 software binaries, services or credentials.
 
 ## Accessing resources through services
 In cloud computing each of these physical and abstract entities map to
-certain services. These services provide access to the underlaying
+certain services. These services provide access to the underlying
 resources. When you develop your application on rapyuta.io, you mix
 and match these services into combinations that provide the
 infrastructure you need, and then add your code to enable the
@@ -28,7 +28,7 @@ are added.
 ## Projects
 Any rapyuta.io resource that you create, allocate and use must belong
 to a project. You can think of a project as the organisational unit
-for waht you are building. A project is made up of the settings,
+for what you are building. A project is made up of the settings,
 configuration, and other metadata that describe your applications.
 Resources within a single project can work together easily, for
 example, by communicating through an internal network. The

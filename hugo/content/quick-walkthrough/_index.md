@@ -4,10 +4,15 @@ description:
 type: quick-walkthrough
 date: 2019-10-24T16:39:42+05:30
 pre: "2. "
-weight: 10
+weight: 100
 ---
+
 This tutorial will show you how to set up and run a variation of the ROS
-Turtlesim on rapyuta.io. Some of the packages that are used in this tutorial
+Turtlesim on rapyuta.io. This tutorial targets individuals who like to get thier hands dirty and explore a wider variety of functionality found in the rapyuta.io platform. 
+
+In order to attain a deeper understanding of rapyuta.io it is highly reccommended that the developer refer to the [developer guide](/developer-guide) section for in-depth documentation on each topic and/or pick from one of the more nuanced [sample walkthroughs](/build-solutions/sample-walkthroughs/) that deal with individual concepts and topics.
+
+Some of the packages that are used in this tutorial
 can be reused to control real robots such as [Turtlebot](https://www.turtlebot.com/).
 
 ## Learning objectives
@@ -24,13 +29,10 @@ learn how to:
 
 ## Prerequisites
 
-1. You are recommended to complete the [Dynamic map server](../dynamic-map-server)
-   tutorial.
-2. You should have access to a computer with an internet connection.
+1. You should have access to a computer with an internet connection.
    Ensure that the latest [Google Chrome](https://www.google.com/chrome/) browser
    is installed on it.
-3. You should be familiar with the [core concepts](/core-concepts/) of rapyuta.io
-4. You should be familiar with the following tools:
+2. You should be familiar with the following tools:
 	* [Git](https://git-scm.com/doc)
 	* [Docker](https://docs.docker.com/get-started/)
 	* Robot Operating System ([ROS](http://wiki.ros.org/kinetic)) and its
@@ -38,7 +40,7 @@ learn how to:
 	and [services](http://wiki.ros.org/Services).
 
 ## Difficulty
-Intermediate
+Advanced
 
 ## Estimated time
 It will take nearly about 60 minutes to complete the tutorial.
@@ -49,7 +51,7 @@ specific purpose and contributes to the whole of Turtlesim. A modularised
 software is easy to maintain, share and scale. A package contains interfaces
 that determine how it may interact with other packages. A deployment of a
 package may depend on deployments of other packages. Learn more about
-Turtlesim's [software architecture](./software-architecture).
+Turtlesim's [software architecture](./software-architecture) and [constituent packages](./packages)
 
 ## Create Turtle package
 The Turtle package emulates the behaviour of a Turtlebot through the Simulator.
@@ -269,6 +271,7 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
 {{% /notice %}}
 8. For **Executable type**, click **Git**.
 9. In the **Git Repository** box, enter the url address of the git repository:      `https://github.com/rapyuta-robotics/io_tutorials`
+
 10. In the **Command to run in the docker container** box, enter the command:
     ```bash
     roslaunch io_turtle_command_center command_center.launch
@@ -278,6 +281,7 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
     the ROS Master. However, it's not recommended to run the
     *rosrun* command because the [ROS Master](http://wiki.ros.org/Master) will fail to start, and thus the
     deployment fails.
+
 11. You must expose a communication network endpoint for
     publicly accessing _Command Center_.
     1. Click **Add endpoint**.
@@ -286,8 +290,11 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
     4. Click **HTTPS/WSS** under **Protocol**.
     5. The value of **Port** is automatically set to _443_ because the Protocol is HTTPS/WSS.
     6. In the **Target Port** box, type in `9090`
+
 12. To add a ROS topic, click **Add ROS topic** > enter `/cmd_vel` in the **Name** box > click **Low** for **QoS**.
+
 13. To add a ROS service, click **Add ROS service** > enter `/register_turtle` in the **Name** box.
+
 14. The environment variables: *WS_ADDR* and *WS_PORT*, defined in the ROS launch
     file, determine the WebSecureSocket address and port. You can adjust
     their values as configuration parameters defined in the [console](https://console.rapyuta.io)
@@ -300,7 +307,9 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
     5. Ensure **This parameter is exposed externally** is not selected.    
     Similarly, add *WS_PORT* configuration parameter. Set **Name** as `WS_PORT` and
     **Default** value to `9090`, and describe it as `WebSocket Port`.
+
 15. Click **NEXT** to move to **Additional Information** page.
+
 16. The _Command Center_ is responsible for coordination among the _Turtles_.
     The inbound ROS interfaces help recognise ROS topics, services and
     actions broadcasted from the various Turtles' deployments.
@@ -312,6 +321,7 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
        under **INBOUND ROS INTERFACES** > enter `/turtle_0/goto_action` in the
        **Name** box. Similarly, add another Inbound ROS action,
        `/turtle_1/goto_action`.
+
 17. Click **CONFIRM PACKAGE CREATION**.
 
 ## Package build status

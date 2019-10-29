@@ -21,6 +21,14 @@ Deployments may support linking and binding to allow the user to
 combine multiple different applications together to help realize
 a potentially complex robotics solution.
 
+The deployment object exposes information to help you introspect the state of the system and set policies on mechanisms that attempt recovery of desired state on degradation. 
+The following sections let the developer learn more about
+
+* [Deployment Phases](#phases)
+* [Deployment State](#states)
+* [Deployment Error Codes](#error-codes)
+* [Deployment Restart Policies](#restart-policy)
+
 ## Phases
 The lifecycle of a deployment consists of multiple phases. The **DEPLOYMENT PHASE**
 indicates the current phase of the deployment in its lifecycle.

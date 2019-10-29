@@ -77,13 +77,11 @@ These are mapped to environment variables made available to your code they are m
 The package author can choose to provide default values. These values may be overridden by the user while deploying the package.
 
 {{% notice note %}}
-A **package** may choose to declare environment variables as exposed from within its constituent components allowing dependent deployments to receive these values during deployment binding phase. Please refer to the section for more details
-#TODO
+A **package** may choose to declare environment variables as exposed from within its constituent components allowing dependent deployments to receive these values during deployment binding phase. Please refer to the section on [binding](/developer-guide/manage-software-cycle/compose-software/binding/) for more details
 {{% /notice %}}
 
 {{% notice note %}}
-The platform injects environment variables corresponding to exposed parameters and linked network endpoints during deployment binding phase. Please refer to the section for more details.
-#TODO
+The platform injects environment variables corresponding to exposed parameters and linked network endpoints during deployment binding phase. Please refer to the section on [Link Injection](/developer-guide/manage-software-cycle/communication-topologies/std-comms/) for more details.
 {{% /notice %}}
 
 ### Network Endpoints

@@ -6,6 +6,7 @@ date: 2019-10-24T11:28:56+05:30
 pre: "2. "
 weight: 215
 ---
+A user is a *rapyuta.io resource* that maps to an individual developer on the rapyuta.io platform with a unique login credentials. 
 A user can be either in **Invited** state or in **Activated** state. They may be an *admin* and are responsible for managing the organization.
 
 ## Invite User to Organization

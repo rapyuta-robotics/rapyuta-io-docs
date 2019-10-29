@@ -25,6 +25,11 @@ Initialising the Rapyuta Platform
 Successfully installed!
 root@ubuntu:/home/ubuntu#
 ```
+
+{{% notice warning %}}
+In case you face issues on-boarding the device. Please refer to the [section on failure codes](./failure-codes) to help you troubleshoot.
+{{% /notice %}}
+
 When the device is successfully registered, you will see a
 <span style="color:green">***green***</span> dot next to the
 device's name, which indicates that the device is online.

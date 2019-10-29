@@ -39,7 +39,5 @@ cannot be used as a dependent deployment of another deployment.
 It also determines whether a package can be added as an include package. If set
 false, the package cannot be used as an include package.
 
-## Configuration Injection (exposed parameters)
-
-
-Note on communication linking
+## Communication Linking
+In order to faciliate communication between deployments that have been bound the rapyuta.io platform implements a number of communication toplogies. To learn more of the implication please refer the section on [**communication topologies**](/developer-guide/manage-software-cycle/communication-topologies/).

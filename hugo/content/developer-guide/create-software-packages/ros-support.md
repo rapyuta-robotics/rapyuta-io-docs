@@ -29,7 +29,7 @@ The platform adopts a declarative approach to describing the ROS interfaces (top
 #### Defining QOS
 
 
-Rapyuta.io offers a tunable level of reliability for ROS topics for the transport layer even over the public internet. The QoS (quality of service) attribute of the package reflects this function.The offered and the recommended uses cases are as follows:
+rapyuta.io offers a tunable level of reliability for ROS topics for the transport layer even over the public internet. The QoS (quality of service) attribute of the package reflects this function.The offered and the recommended uses cases are as follows:
 
 
 ##### Maximum
@@ -58,12 +58,11 @@ The user may optionally enable transparent compression. The platform relies on �
 #### Multi Robot Support
 
 
-ROS has a number of key pain points when working with multi robot systems that often need error prone setups involving specific launch sequences, roslaunch/xml files and remappings. Rapyuta.io ships with special support for multirobot systems and enforces runtime identities to robots automatically wrap and unwrap the for the right agent. 
+ROS has a number of key pain points when working with multi robot systems that often need error prone setups involving specific launch sequences, roslaunch/xml files and remappings. rapyuta.io ships with special support for multirobot systems and enforces runtime identities to robots automatically wrap and unwrap the for the right agent. 
 
-Learn More #TODO
+Learn More about [**dedicated ROS communication support**](/developer-guide/manage-software-cycle/communication-topologies/ros-support/)
 
 {{% notice note %}}
-In complex dependency patterns rapyuta.io allows parent child relations where a package must whitelist ros interfaces it can bind to from a child as “inbound ros interfaces’. 
-Learn More #TODO
+In complex dependency patterns rapyuta.io allows parent child relations where a package must whitelist ros interfaces it can bind to from a child as [*"inbound ROS interfaces"*](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#note-on-inbound-interfaces).
 {{% /notice %}}
 
