@@ -104,11 +104,10 @@ parameters and hierarchies are different from those using them or
 operating robots. This calls for decoupling the consumption of the
 parameters from the operation of robots. So, rapyuta.io
 lets you to define a set of key-value pairs, called
-[*device labels*](/getting-started/apply-config-params/#defining-labels-for-devices)
-to tag a robot.
+device labels to tag a robot.
 
 ## Resolving parameters for devices
-When you [apply a configuration](/getting-started/apply-config-params/#applying-configuration-parameters-to-devices) to a robot, rapyuta.io
+When you apply a configuration to a robot, rapyuta.io
 utilizes the device labels to traverse the configuration
 hierarchy in the ***example*** configuration.
 
@@ -149,10 +148,10 @@ and newly added parameters in ***USA/sample.yaml*** will include
 
 ![extend parameters](/images/core-concepts/configurations/extend-params.png?classes=border,shadow&width=80pc)
 
-{{% notice info %}}
+<!---{{% notice info %}}
 Learn how to
 [apply a configuration to a robot (device)](/getting-started/apply-config-params/).
-{{% /notice %}}
+{{% /notice %}}--->
 
 {{% notice info %}}
 You may ***clone an existing configuration*** in to another project.

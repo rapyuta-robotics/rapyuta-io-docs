@@ -39,7 +39,7 @@ The below table lists the phases of deployment as they appear in the lifecycle:
 
 ![Deployment](/images/core-concepts/deployments/deployment-phase.png?classes=border,shadow&width=50pc)
 
-## States
+## Status
 rapyuta.io enables you to monitor the current status of each executable of a
 component that is deployed. The overall status of a deployment of a package
 depends on the combined status of all components participating in the deployment.
@@ -69,7 +69,7 @@ the cause of the status as **Reason**.
 ![Reason field](/images/core-concepts/deployments/reason-field.png?classes=border,shadow&width=50pc)
 
 ## Error Codes
-If the overall deployment **STATUS** is **Error**, the [console](https://console.rapyuta.io)
+If the overall deployment **STATUS** is **Error**, rapyuta.io
 displays an error code along with a brief description of the error.
 The following table lists the error codes that are available, short descriptions
 and the recommendations you should take:
