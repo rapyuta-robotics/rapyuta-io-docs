@@ -21,3 +21,7 @@ registered on rapyuta.io
 {{% notice note%}}
 Make sure you install libraries in ROS-Base or above it.
 {{% /notice %}}
+
+{{% notice info %}}
+Read about the device [onboarding process](/developer-guide/manage-machines/onboarding/), which consists of registering, setting up and viewing a device on rapyuta.io
+{{% /notice %}}
