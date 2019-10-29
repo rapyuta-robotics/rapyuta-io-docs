@@ -36,15 +36,14 @@ bash shell command, which will be run in tandem with the executable.
 3. **Bash command**    
 A simple bash shell command is an executable. If you choose the **Executable Type**
 as **Default**, the bash shell command becomes an executable. In this case, the
-executable can run only on **Device** runtime. rapyuta.io assumes that all dependencies
+executable can run only on **Preinstalled device** runtime. rapyuta.io assumes that all dependencies
 that are required to run the command are already present on the device where
 the command will execute.
 
 ### Components
 A component is a set of executables. All executables are deployed in unison on
 the desired [*Component Runtime*](/developer-guide/create-software-packages/package-internals/#component-runtime).
-All executables of a component share a specified file system (ensures data locality)
-and communicate via Inter Process Communication (IPC). An executable listening
+All executables of a component communicate via Inter Process Communication (IPC). An executable listening
 on a port is accessible to its sibling executables via localhost.
 
 {{% notice note %}}
@@ -54,8 +53,7 @@ Components are further nested into **plans**. A rapyuta.io "package" may contain
 ### Component Runtime
 A component of a package may be deployed either on the **cloud** or on a **device**.
 
-When deployed on the cloud, the component has cloud runtime. Whereas, the component
-deployed on a device has device runtime.
+When deployed on the cloud, the component has cloud runtime. Whereas, the component deployed on a device has device runtime.
 
 ### Configuration Parameters
 {{% notice info %}}
@@ -80,7 +78,7 @@ The platform injects environment variables corresponding to exposed parameters a
 {{% notice info %}}
 network endpoints are exposed by individual components 
 {{% /notice %}}
-Components may have network endpoints. A network endpoint is a combination of an IP address and a port number. The endpoints may or may not be exposed publicly.
+Components, which are deployed on the cloud, may have network endpoints. A network endpoint is a combination of an IP address and a port number. The endpoints may or may not be exposed publicly.
 
 When creating an endpoint you must provide a name for the endpoint, select the desired network protocol and specify a target port.
 

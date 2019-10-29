@@ -6,7 +6,7 @@ date: 2019-10-25T12:36:16+05:30
 pre: "5. "
 weight: 290
 ---
-Applications running on the cloud can be designed to deallocate
+Applications running on the cloud deallocate
 any resources consumed by them when they stop, scale down or fail.
 This implies that the working storage associated to them is ephemeral.
 To get around this problem rapyuta.io provides a mechanism to consume persistent [block storage](https://en.wikipedia.org/wiki/Block-level_storage)
