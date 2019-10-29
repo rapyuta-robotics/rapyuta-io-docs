@@ -3,7 +3,7 @@ title: "Device Configuration Variables"
 description:
 type: developer-guide
 date: 2019-10-24T11:48:15+05:30
-pre: "4. "
+pre: "5. "
 weight: 265
 ---
 Device configuration variables are environment variables that allow you to
