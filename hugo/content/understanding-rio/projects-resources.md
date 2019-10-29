@@ -14,7 +14,7 @@ software binaries, services or credentials.
 
 ## Accessing resources through services
 In cloud computing each of these physical and abstract entities map to
-certain services. These services provide access to the underlaying
+certain services. These services provide access to the underlying
 resources. When you develop your application on rapyuta.io, you mix
 and match these services into combinations that provide the
 infrastructure you need, and then add your code to enable the

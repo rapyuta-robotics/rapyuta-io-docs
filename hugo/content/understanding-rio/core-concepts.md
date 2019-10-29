@@ -17,7 +17,9 @@ it should be built, its compatibility and runtime requirements,
 network endpoints and ROS interfaces it exposes, and any configuration
 information it may require.
 
-Learn more 
+{{% notice info %}}
+Read about [packages](/developer-guide/create-software-packages/package-internals/) for more information.
+{{% /notice %}}
 
 ## Catalog
 The catalog serves as the portal in rapyuta.io to streamline the software
@@ -50,8 +52,9 @@ complex robotics solution.
 
 ## Device
 A device is a rapyuta.io resource representing any physical device
-that typically lives at a client location on the platform. The
-resource encapsulates information about the device, its architecture,
+that typically lives at a client location, and is registered on
+rapyuta.io.
+The resource encapsulates information about the device, its architecture,
 runtime, user provided metadata. Once a particular piece of hardware
 is successfully onboarded to rapyuta.io this entity is responsible
 for providing the necessary mechanics and communication channels
