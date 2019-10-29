@@ -29,15 +29,15 @@ without it or a docker image.
 The goal of each build strategy is to generate a running docker container
 at the end of package creation process.
 
-You may analyse [build logs](/core-concepts/logging/build-logs) for
+You may analyse [build logs](/developer-guide/tooling-automation/logging/build-logs/) for
 debugging build failures. In the case of source code and Dockerfile
 strategies, you can
-[trigger new builds or roll back previous builds](/core-concepts/builds/trigger-rollback).
+[trigger new builds or roll back previous builds](/developer-guide/create-software-packages/builds/trigger-rollback/).
 
 ### Source code strategy
 This strategy builds source code into a docker image. The source code
 is usually stored in a git repository. If it is a private git repository,
-you need to [add a source secret](/core-concepts/secrets/source-secret)
+you need to [add a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)
 to access the repository contents. rapyuta.io uses ***ROS Builder***, a subset of *catkin build*, to build source code into a docker image. If a package contains a ROS component, the component's ROS version can be *Kinetic* or *Melodic*. When building the source code, the ***ROS Builder*** takes into account its corresponding component's ROS version. 
 
 Set the **Executable Type** as **Git** and provide the url address of
@@ -51,8 +51,7 @@ If you want to add source code located on a different branch say
 will look like:
 https://github.com/rapyuta-robotics/io_tutorials#io_turtlesim_qos
 
-The [ROS Publisher Subscriber](/dev-tutorials/ros-publisher-subscriber)
-tutorial is an example of source code build strategy.
+The [ROS Publisher Subscriber](/build-solutions/sample-walkthroughs/basic-ros-pubsub/preinstalled-runtime/) walkthrough is an example of source code build strategy.
 
 {{% notice info %}}
 rapyuta.io supports cross compilation of source code
@@ -64,25 +63,24 @@ architectures.
 rapyuta.io supports cloning and fetching from repositories
 that deal with large files (as large as a couple GB in size) with
 [Git Large File System (LFS)](https://git-lfs.github.com/) extension.
-If you want to use Git LFS with a private git repository, you must select *SSH authentication* while [adding a source secret](/core-concepts/secrets/source-secret/) because the LFS extension will fail with the *Basic authentiontion*, and the corresponding source secret will not be applied to the private repository.
+If you want to use Git LFS with a private git repository, you must select *SSH authentication* while [adding a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)because the LFS extension will fail with the *Basic authentiontion*, and the corresponding source secret will not be applied to the private repository.
 {{% /notice %}}
 
 ### Dockerfile strategy
 This strategy builds a [Dockerfile](https://docs.docker.com/engine/reference/builder/) into a docker image. The Dockerfile is
 usually saved in a git repository. If it is a private git repository,
-you need to [add a source secret](/core-concepts/secrets/source-secret)
+you need to [add a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)
 to access the repository contents.
 
 You may explicitly specify the absolute path of the Dockerfile, or
 the root of the git repository is set as the location of the Dockerfile.
 
-The [Hello World Web Application](/dev-tutorials/hello-world/) tutorial is
-an example of dockerfile build strategy.
+The [Basic Web Application](/build-solutions/sample-walkthroughs/basic-web-app/) walkthrough is an example of dockerfile build strategy.
 
 ### Docker image strategy
 This strategy uses a pre-built docker image. The docker image is usually
 stored in either a public docker registry (i.e., Dockerhub) or a private
-docker registry. You need to [add a docker pull secret](/core-concepts/secrets/docker-pull-secret/) for rapyuta.io to access a private docker image.
+docker registry. You need to [add a docker pull secret](/developer-guide/create-software-packages/secrets/docker-registry/) for rapyuta.io to access a private docker image.
 
 {{% notice info %}}
 The maximum size of a docker image for cloud deployment is **10GB**.
@@ -93,5 +91,4 @@ CPU architecture of the device is compatiable with that of the image being
 deployed. You may use the ***Build Engine*** for compiling for a different
 target architecture.
 
-The [Control onboard LED tutorial](/dev-tutorials/control-onboard-led)
-illustrates docker image strategy.
+The [Hardware Interfacing](/build-solutions/sample-walkthroughs/hardware-interfacing/) walkthrough illustrates docker image strategy.

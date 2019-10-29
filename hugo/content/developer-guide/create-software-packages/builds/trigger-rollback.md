@@ -56,4 +56,5 @@ If you observe that the build logs are abruptly disconnected or stopped,
 click **Refresh**.
 
 When a build fails, you should analyse the corresponding
-[build logs](/core-concepts/logging/build-logs) for debugging.
+[build logs](/developer-guide/tooling-automation/logging/build-logs/)
+for debugging.
