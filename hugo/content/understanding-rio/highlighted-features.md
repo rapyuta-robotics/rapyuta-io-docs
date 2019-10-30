@@ -7,7 +7,7 @@ pre: "c. "
 weight: 13
 ---
 ## Observability for Robots
-### Logging
+#### Logging
 Logs are essential part of troubleshooting application and infrastructure
 performance. They help provide visibility into how your applications are
 running on each of the various infrastructure components. The requirement
@@ -30,7 +30,7 @@ to meet the different needs.
   need to collect binary data e.g. rosbags. The platform offers you
   SDK methods and an API to make this data available to you anywhere.
 
-### Metrics
+#### Metrics
 rapyuta.io enables you to collect critical time series temperature
 sensor data measuring the temperature of its surroundings, CPU
 usage, delivery count from any connected devices.
@@ -39,7 +39,7 @@ After collection the user can query and visualize this information
 in a dashboard and even create threshold based alerts.
 
 ## Communication for Robots
-### ROS Native
+#### ROS Native
 The unique communication architecture in rapyuta.io solves many of
 the challenges associated with running ROS1 across multiple robots
 in a local network or even across the public internet.
@@ -58,7 +58,7 @@ rapyuta.io ships with special support for multi-robot systems
 and enforces runtime identities to robots to automatically
 wrap and unwrap for the right agent.
 
-### Generic Network Endpoints
+#### Generic Network Endpoints
 rapyuta.io allows your applications running in the cloud to declaratively
 expose HTTP/HTTPS Websocket/WSS and raw TLS endpoints to enable
 integration with any other popular web services and protocols.
