@@ -53,20 +53,10 @@ complex robotics solution.
 [Learn more](/developer-guide/manage-software-cycle/deployments/)
 
 ## Device
-<<<<<<< HEAD
-A device is a *rapyuta.io resource* representing any physical device
-that typically lives at a client location on the platform. The
-resource encapsulates information about the device, its architecture,
-||||||| merged common ancestors
-A device is a rapyuta.io resource representing any physical device
-that typically lives at a client location on the platform. The
-resource encapsulates information about the device, its architecture,
-=======
 A device is a rapyuta.io resource representing any physical device
 that typically lives at a client location, and is registered on
 rapyuta.io.
 The resource encapsulates information about the device, its architecture,
->>>>>>> 6ca50cb26cc78418a81bed4b2f28c9c78d91430b
 runtime, user provided metadata. Once a particular piece of hardware
 is successfully onboarded to rapyuta.io this entity is responsible
 for providing the necessary mechanics and communication channels
