@@ -7,18 +7,28 @@ pre: "1. "
 weight: 560
 ---
 ## Learning objectives
-The tutorial will show you how to:
+The walkthrough gives an overview on how to:
 
-1. deploy a package on a device
-2. deploy a package on cloud
-3. add a dependent deployment
+1. configure and provision a package
+2. deploy a package on the cloud
+3. deploy a package on a device
+4. add a dependent deployment
 
-using [rapyuta_io Python SDK](/python-sdk/introduction) in your python application.
+programmatically using
+[rapyuta.io Python SDK](/python-sdk/introduction) in your
+python application.
 
 ## Prerequisites
-1. You should be familiar with the core concepts of rapyuta.io
-2. You should be familiar with the basic workflow of [rapyuta.io console](https://console.rapyuta.io)
-3. Ensure Python2.7 is installed in your development environment
+1. Read about the [core concepts](/core-concepts/)
+   of rapyuta.io
+2. [Install rapyuta.io SDK](/python-sdk/introduction/#installation)
+   in your development environment.
+3. Learn how to obtain:
+   1. [authorization token](/python-sdk/determine-unique-identifiers/#auth-token)
+   2. [project ID](/python-sdk/determine-unique-identifiers/#project-id)
+   3. [package ID](/python-sdk/determine-unique-identifiers/#package-id)
+   4. [plan ID](/python-sdk/determine-unique-identifiers/#plan-id)
+   5. [device ID](/python-sdk/determine-unique-identifiers/#device-id)
 
 ## Difficulty
 Beginner
@@ -27,79 +37,154 @@ Beginner
 15 minutes
 
 ## Assumptions
-1. Ensure that the device with device ID, `DEVICE_ID`, is in rapyuta.io
-2. The project's ID is `"project_id"`.
-3. Ensure that the packages with package IDs `DEVICE_TALKER_PACKAGE_ID` and
-`CLOUD_LISTENER_PACKAGE_ID` are in rapyuta.io catalog.
-3. **_TALKER_** is the component name of the talker package.
-4. `DEVICE_TALKER_PLAN_ID` is the plan ID of the *DEVICE_TALKER_PACKAGE*
-5. `AUTH_TOKEN` is the authorisation token for accessing rapyuta.io
-resources and services.
+1. ***Talker*** is a ROS package created in rapyuta.io,
+   and it behaves as a ROS publisher.
+2. ***Listener*** is another ROS package created in
+   rapyuta.io, and it behaves as a ROS subscriber. **LISTENER** is the
+   component of the package that will be deployed on a device.
+3. ***PROJECT_ID*** is a unique identification value
+   of the project in which **Talker** and **Listener**
+   packages are created. It is of type *string*.
+4. ***TALKER_ID*** and ***LISTENER_ID*** are the
+   package IDs of the ***Talker*** and ***Listener*** packages
+   respectively. The values are of type *string*.
+5. ***TALKER_PLAN_ID*** and ***LISTENER_PLAN_ID***
+   are the plan IDs of the default plan of ***Talker*** and
+   ***Listener*** packages respectively. The values are of
+   type *string*.
+6. ***AUTH_TOKEN*** is the authorization token for accessing rapyuta.io 
+   resources and services. Its value is of type *string*.
+7. ***DEVICE ID*** is a unique identification value of a device on
+   rapyuta.io, and it is of type *string*.
 
+### Create Talker Package
 
-As a user of rapyuta_io Python SDK, you must create an interface for accessing
-rapyuta.io services from within your python application.
+1. On the left navigation bar, click **CATALOG**.
+2. Click **ADD PACKAGE**.
+3. In the **Package Name** box, type in a name for the package like `Talker`.
+4. In the **Package Verison** box, enter the version of the package
+   you are creating. The default value is *1.0.0*
+5. Make sure **Is singleton package** is ***not selected***.
+6. Ensure **Is bindable package** is ***selected***.
+7. In the **Description** box, explain what the package is about,
+   for instance, the description of this package is `ROS Publisher`.
+8. Click **NEXT**.
+9.  In the **Component Name** box, enter a name for the component say `TALKER`.
+10. Select **Cloud** for **Component Runtime**.
+11. Ensure **Is ROS Component** is selected.
+12. Select **Kinetic** for **ROS Version**.
+13. The default value of **Replicas to run the component** is set to 1
+14. In the **Executable Name** box, enter a name for an executable
+    say `talker_executable`.
+15. Click **Git** for **Executable Type**.
+16. In the **Git repository** box, enter the URL address:
+    `https://github.com/rapyuta/io_tutorials`
+17. In the **Command to run in the docker container** box, enter the command:
+    `roslaunch talker talker.launch`
+18. The ***talker_executable*** publishes a ROS topic `/telemetry`.
+    To add a ROS topic, click **Add ROS topic**. In the **Name** box,
+    type in the ROS topic. Select **Maximum** as the value for **QoS**.
+19. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+
+### Create Listener Package
+
+1. On the left navigation bar, click **CATALOG**.
+2. Click **ADD PACKAGE**.
+3. In the **Package Name** box, type in a name for the package
+   like `Listener`.
+4. In the **Package Version** box, enter the version of the package
+   you are creating. The default value is *1.0.0*
+5. Make sure **Is singleton package** is ***not selected***.
+6. Ensure **Is bindable package** is ***selected***.
+7. In the **Description** box, explain what the package is about,
+   for instance, the description of this package is `ROS Subscriber`.
+8. Click **NEXT**.
+9.  In the **Component Name** box, enter a name for the component say `LISTENER`.
+10. Select **Device** for **Component Runtime**.
+11. Ensure **Is ROS Component** is selected.
+12. Select **Kinetic** for **ROS Version**.
+13. Set **Restart Policy** to **Never**.
+14. In the **Executable Name** box, enter a name for an
+    executable say `listener_executable`.
+15. Set **Executable Type** to **Default**.
+16. In the **Command to run in the docker container** box, enter
+    the command: `roslaunch listener listener.launch`
+17. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+
+### Code Walkthrough
+Firstly, you need to authenticate so as to access rapyuta.io services from within
+your python application.
 ```python
-# Authentication code snippet
+# Authentication
 from rapyuta_io import Client
-client = Client(AUTH_TOKEN, "project_id")
+
+client = Client(AUTH_TOKEN, PROJECT_ID)
 ```
 
-You retrieve the talker package via its package ID, and pick the device on which
-you want to deploy the package on. For provisioning an instance of the package's
-**_TALKER_** on the device, add the device to package configuration. The deployment of
-talker package on the device is given the name `device_talker`.
+Retrieve the ***Talker*** package by its package ID, and then deploy
+it on the cloud. The resulting deployment is called ***ROS PUBLISHER***.
 
 ```python
-# Device Talker code snippet
-talker_package = client.get_package(DEVICE_TALKER_PACKAGE_ID)
+# Deploy Talker package on cloud
+talker = client.get_package(TALKER_ID)
+
+talker_configuration = talker.get_provision_configuration(TALKER_PLAN_ID)
+
+talker_cloud_deployment = talker.provision(deployment_name="ROS PUBLISHER", provision_configuration=talker_configuration)
+
+talker_cloud_deployment.poll_deployment_till_ready()
+```
+
+Similarly, deploy ***Listener*** package on the cloud.
+Since the resulting ***ROS SUBSCRIBER*** deployment depends on ***ROS PUBLISHER***
+deployment, add the later as a dependent deployment of the former.
+
+```python
+# Deploy Listener package on device
+listener = client.get_package(LISTENER_ID)
+
+listener_configuration = listener.get_provision_configuration(LISTENER_PLAN_ID)
+
 device = client.get_device(DEVICE_ID)
-talker_configuration = talker_package.get_provision_configuration(DEVICE_TALKER_PLAN_ID)
-talker_configuration.add_device(TALKER, device)
-device_talker_deployment = talker_package.provision(deployment_name = "device_talker",
-						provision_configuration = talker_configuration)
-print device_talker_deployment.get_status()
+listener_configuration.add_device("LISTENER", device)
+listener_configuration.add_dependent_deployment(talker_cloud_deployment)
+
+listener_device_deployment = listener.provision(deployment_name="ROS SUBSCRIBER", provision_configuration=listener_configuration)
+
+listener_device_deployment.poll_deployment_till_ready()
 ```
 
-Similarly, deploy listener package on the cloud using rapyuta_io Python SDK.
-Since the `cloud_listener` deployment depends on the `device_talker` deployment,
-add `device_talker_deployment` as a dependent deployment of
-`cloud_listener_deployment`
-
-```python
-# Cloud Listener code snippet
-listener_package = client.get_package(CLOUD_LISTENER_PACKAGE_ID)
-listener_configuration = listener_package.get_provision_configuration(CLOUD_LISTENER_PLAN_ID)
-listener_configuration.add_dependent_deployment(device_talker_deployment)
-cloud_listener_deployment = listener_package.provision(deployment_name = 'cloud_listener',
-				provision_configuration = listener_configuration)
-print cloud_listener_deployment.get_status()
-```
-
-Put the above code snippets together in a file, _talker-listener.py_, save the
-program and close the file.
+Put the above code snippets together in a file, ***talker-listener.py***,
+save the program and close the file.
 
 ```python
 # talker-listener.py
 
+# Authentication
 from rapyuta_io import Client
-client = Client(AUTH_TOKEN, "project_id")
+client = Client(AUTH_TOKEN, PROJECT_ID)
 
-talker_package = client.get_package(DEVICE_TALKER_PACKAGE_ID)
+# Deploy Talker on cloud
+talker = client.get_package(TALKER_ID)
+talker_configuration = talker.get_provision_configuration(TALKER_PLAN_ID)
+talker_cloud_deployment = talker.provision(deployment_name="ROS PUBLISHER", provision_configuration=talker_configuration)
+talker_cloud_deployment.poll_deployment_till_ready()
+
+
+# Deploy Listener on device
+listener = client.get_package(LISTENER_ID)
+listener_configuration = listener.get_provision_configuration(LISTENER_PLAN_ID)
+
 device = client.get_device(DEVICE_ID)
-talker_configuration = talker_package.get_provision_configuration(DEVICE_TALKER_PLAN_ID)
-talker_configuration.add_device(TALKER, device)
-device_talker_deployment = talker_package.provision(deployment_name = "device_talker",
-						 provision_configuration = talker_configuration)
-print device_talker_deployment.get_status()
+listener_configuration.add_device("LISTENER", device)
+listener_configuration.add_dependent_deployment(talker_cloud_deployment)
 
+listener_device_deployment = listener.provision(deployment_name="ROS SUBSCRIBER", provision_configuration=listener_configuration)
 
-listener_package = client.get_package(CLOUD_LISTENER_PACKAGE_ID)
-listener_configuration = listener_package.get_provision_configuration(CLOUD_LISTENER_PLAN_ID)
-listener_configuration.add_dependent_deployment(device_talker_deployment)
-cloud_listener_deployment = listener_package.provision(deployment_name = "cloud_listener",
-					provision_configuration = listener_configuration)
-print cloud_listener_deployment.get_status()
+listener_device_deployment.poll_deployment_till_ready()
+
+# Get status of ROS SUBSCRIBER deployment
+print subscriber_deployment.get_status()
 ```
 
 At the terminal prompt, run the program using the command:
@@ -107,6 +192,19 @@ At the terminal prompt, run the program using the command:
 $ python talker-listener.py
 ```
 
-The output is an object of the class [***DeploymentStatus***](https://sdkdocs.apps.rapyuta.io/#rapyuta_io.clients.deployment.DeploymentStatus),
-which contains values such as deployment ID, deployment name, deployment status,
-deployment phase, package ID and other details.
+The output is an object of the class
+[***DeploymentStatus***](https://sdkdocs.apps.rapyuta.io/#rapyuta_io.clients.deployment.DeploymentStatus),
+which contains values such as:
+
+* deployment ID
+* deployment name
+* deployment status
+* deployment phase
+* package ID and other details.
+
+The final deployment is running successfully if the value of the *deployment
+status* is ***Running***.
+
+To verify if the program has executed correctly, click on the **Historical Logs**
+tab of **ROS SUBSCRIBER** deployment to view the output as shown:
+![logs of ROS SUBCRIBER](/images/python-sdk-images/basic-pubsub/talker-listener-log.png?classes=border,shadow&width=50pc)

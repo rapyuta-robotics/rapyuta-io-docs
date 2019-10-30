@@ -8,17 +8,19 @@ weight: 565
 ---
 ## Learning objectives
 
-1. Create a persistent volume
-2. Mount the persistent volume on a component of a deployment
-3. Deploy a package with the mounted persistent volume
+1. Set up a storage volume.
+2. Mount the storage volume to an application deployment.
 
-using [rapyuta_io Python SDK](/python-sdk/introduction) in your Python application.
+using [rapyuta.io Python SDK](/python-sdk/introduction) in your
+Python application.
 
 ## Prerequisites
-
-1. You must be familiar with the core concepts of rapyuta.io
-2. You need to be familiar with the persistent volume/storage concept of rapyuta.io
-3. Ensure Python2.7 is installed in your development environment
+1. Read about the [core concepts](/core-concepts/) of rapyuta.io
+2. Ensure Python2.7 is installed in your development environment.
+3. Learn
+   [how to obtain authorization token, project ID, package ID and plan ID](/python-sdk/determine-unique-identifiers/)
+4. Read the
+   [persistent volume developer tutorial](/core-concepts/persistent-volume-storage/).
 
 ## Difficulty
 Intermediate
@@ -29,13 +31,15 @@ Intermediate
 ## Assumptions
 
 1. `'my_sample_volume'` is the persistent volume you will create in the tutorial.
-2. `"project_id"` is the project ID.
+2. ***PROJECT_ID*** is a unique identification value
+   of the project in which **Publisher** and **Subscriber**
+   packages are created. It is of type *string*.
 3. The package is called `sample_pkg` with package ID `'package_id'` and component
 `'sample_component_name'`
 3. `'plan_id'` is the plan ID of `sample_pkg` package.
 4. The final deployment name is `'volume_mounted_deployment'`
-5. `AUTH_TOKEN` is the authorisation token for accessing rapyuta.io services and
-resources.
+5. ***AUTH_TOKEN*** is the authorization token for accessing rapyuta.io 
+   resources and services. Its value is of type *string*.
 
 As a user of rapyuta_io Python SDK, you must create an interface for accessing
 rapyuta.io services from within your Python application.
