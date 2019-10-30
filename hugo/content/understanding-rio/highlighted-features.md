@@ -4,7 +4,7 @@ description:
 type: understanding-rio
 date: 2019-10-25T14:12:00+05:30
 pre: "c. "
-weight: 115
+weight: 13
 ---
 ## Observability for Robots
 ### Logging

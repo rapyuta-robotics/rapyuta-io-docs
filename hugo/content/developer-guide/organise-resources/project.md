@@ -6,6 +6,24 @@ date: 2019-10-24T11:29:02+05:30
 pre: "3. "
 weight: 220
 ---
+
+Any rapyuta.io resource that you create, allocate and use must belong
+to a project. You can think of a project as the organisational unit
+for what you are building. A project is made up of the settings,
+configuration, and other metadata that describe your applications.
+Resources within a single project can work together easily, for
+example, by communicating through an internal network. The
+resources that each project contains remain separate across project
+boundaries; you can only interconnect them through an external
+connection.
+
+This document helps you can learn about:
+
+* [Creating a project](#create-new-project)
+* [Switching between projects](#switch-between-projects)
+* [Deleting a project](#delete-existing-project)
+* [Adding users to a project](#adding-users-to-projects)
+
 ## Create New Project
 Any user in **Activated** state can create a new project. The *creator* of the
 project can alone add or remove users from the project.

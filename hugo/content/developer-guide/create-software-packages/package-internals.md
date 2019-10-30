@@ -67,11 +67,11 @@ These are mapped to environment variables made available to your code. They are 
 The package author can choose to provide default values. These values may be overridden by the user while deploying the package.
 
 {{% notice note %}}
-A **package** may choose to declare environment variables as exposed from within its constituent components allowing dependent deployments to receive these values during deployment binding phase. Refer to the [dependent deployment](/developer-guide/manage-software-cycle/compose-software/design-patterns/#run-time-dependencies-dependent-deployments) section for more details.
+A **package** may choose to declare environment variables as exposed from within its constituent components allowing dependent deployments to receive these values during deployment binding phase. Refer to the section on [binding](/developer-guide/manage-software-cycle/compose-software/binding/) for more details
 {{% /notice %}}
 
 {{% notice note %}}
-The platform injects environment variables corresponding to exposed parameters and linked network endpoints during deployment binding phase. Refer to the [configuration injection](/developer-guide/manage-software-cycle/compose-software/binding/#configuration-injection-exposed-parameters) section for more details.
+The platform injects environment variables corresponding to exposed parameters and linked network endpoints during deployment binding phase. Refer to the section on [Link Injection](/developer-guide/manage-software-cycle/communication-topologies/std-comms/) for more details.
 {{% /notice %}}
 
 ### Network Endpoints

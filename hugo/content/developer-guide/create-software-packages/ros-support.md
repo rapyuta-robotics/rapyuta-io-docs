@@ -22,7 +22,8 @@ The platform adopts a declarative approach to describing the ROS interfaces (top
 
 
 #### Defining QOS
-rapyuta.io offers a tunable level of reliability for ROS topics for the transport layer even over the public internet. The QoS (quality of service) attribute of the package reflects this function. The offered and the recommended uses cases are as follows:
+rapyuta.io offers a tunable level of reliability for ROS topics for the transport layer even over the public internet. The QoS (quality of service) attribute of the package reflects this function.The offered and the recommended uses cases are as follows:
+
 
 ##### Maximum
 This is the highest possible QoS by using end to end protocol delivery confirmations, message ordering guarantees and retires in case of failure.  This is typically intended for one off critical control/command messages.
@@ -37,12 +38,43 @@ These are intermediate levels offered between the two extremes that may be more 
 #### Compression
 The user may optionally enable transparent compression. The platform relies on “snappy” compression algorithm. Compression is not free, you usually pay a small penalty, with messages long repeats and sparse data such as laser scan, maps etc. The benefits of a reduced payload more than compensate for this penalty and let the user send much larger volumes of data over the communication link.
 
+<<<<<<< HEAD
+The user may optionally enable transparent compression. The platform relies on “snappy” compression algorithm. Compression is not free, you usually pay a small penalty, with messages long repeats and sparse data such as laser scan, maps etc the benefits of a reduced payload more than compensate for this penalty and let the user send much larger volumes of data over the communication link.
+
+
+#### Multi Robot Support
+
+
+ROS has a number of key pain points when working with multi robot systems that often need error prone setups involving specific launch sequences, roslaunch/xml files and remappings. rapyuta.io ships with special support for multirobot systems and enforces runtime identities to robots automatically wrap and unwrap the for the right agent. 
+||||||| merged common ancestors
+The user may optionally enable transparent compression. The platform relies on “snappy” compression algorithm. Compression is not free, you usually pay a small penalty, with messages long repeats and sparse data such as laser scan, maps etc the benefits of a reduced payload more than compensate for this penalty and let the user send much larger volumes of data over the communication link.
+
+
+#### Multi Robot Support
+
+
+ROS has a number of key pain points when working with multi robot systems that often need error prone setups involving specific launch sequences, roslaunch/xml files and remappings. Rapyuta.io ships with special support for multirobot systems and enforces runtime identities to robots automatically wrap and unwrap the for the right agent. 
+=======
 #### Multi-robot Support
 ROS has a number of key pain points when working with multi-robot systems that often need error prone setups involving specific launch sequences, roslaunch/xml files and remappings. rapyuta.io ships with special support for multi-robot systems and enforces runtime identities to robots to automatically wrap and unwrap for the right agent. 
+>>>>>>> 6ca50cb26cc78418a81bed4b2f28c9c78d91430b
 
+<<<<<<< HEAD
+Learn More about [**dedicated ROS communication support**](/developer-guide/manage-software-cycle/communication-topologies/ros-support/)
+||||||| merged common ancestors
+Learn More #TODO
+=======
 Refer to the [multi-robot support](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#multi-robot-support) section for further details.
+>>>>>>> 6ca50cb26cc78418a81bed4b2f28c9c78d91430b
 
 {{% notice note %}}
+<<<<<<< HEAD
+In complex dependency patterns rapyuta.io allows parent child relations where a package must whitelist ros interfaces it can bind to from a child as [*"inbound ROS interfaces"*](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#note-on-inbound-interfaces).
+||||||| merged common ancestors
+In complex dependency patterns rapyuta.io allows parent child relations where a package must whitelist ros interfaces it can bind to from a child as “inbound ros interfaces’. 
+Learn More #TODO
+=======
 In complex dependency patterns rapyuta.io allows parent child relations where a package must whitelist ros interfaces it can bind to from a child as **inbound ros interfaces**. Refer to the [inbound interfaces](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#inbound-interfaces) section for more details.
+>>>>>>> 6ca50cb26cc78418a81bed4b2f28c9c78d91430b
 {{% /notice %}}
 

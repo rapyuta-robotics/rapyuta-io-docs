@@ -3,15 +3,26 @@ title: "Managing Machines"
 description:
 type: developer-guide
 date: 2019-10-24T11:39:53+05:30
-pre: "b. "
+pre: "II. "
 weight: 225
 ---
+
+The rapyuta.io platform attempts to bring all the various parts of your robotics solution under one roof. The unified tooling, API and workflows strive to maintain uniformity in process and capabilities enabling the developer to foucs less on managing distributed infrastructure and more on the solution.
+
+To make this feasible rapyuta.io implements device managment capabilities into the core of the platform.
+
+This section of the document is intended to help the developer understand how to connect, interact and use his robots and devices on the platform.
+
 ## Architecture
 The following image illustrates the architecture of device
 manager system.
 ![Architecture](/images/core-concepts/device-management/architecture.png?classes=border,shadow&width=60pc)
 
-## Communication
+## Device management in rapyuta.io
+
+The device management layer in rapyuta.io is a critical part of the base infrastructure and services to enable core functionality. The following sections are a non exhaustive set of some of its responsibilities and features.
+
+### Communication
 The device manager service uses the server-agent communication
 model where the *device manager* is the server side component,
 and the *device manager agent* is the agent component of the
@@ -44,30 +55,28 @@ minimum utilization of resources.
   to secure each device together with a unique token.
 
 {{% notice note %}}
-Application communication - link to communication topologies
+Application communication is handled in diffrent channels. [Learn more](/developer-guide/manage-software-cycle/communication-topologies/) with a dedicated set of [features for ROS users](/developer-guide/manage-software-cycle/communication-topologies/ros-support/)
 {{% /notice %}}
 
-## Remote Execution
-
-## Remote Debugging
+### Remote Debugging
 The device manager lets you access a device remotely over a
 Wide Area Network (WAN) connection. You may open an
 interactive shell to the device through a web browser
 WebSSH, and send individual shell commands to be executed
 on the device.
 
-## Remote Configuration
+### Remote Configuration
 Dynamic configurations allow you to  control a device or a
 group of devices based on a large set of configuration
 parameters.
 
-## Remote Monitoring
+### Remote Monitoring
 Remote monitoring provide better visibility into devices
 regardless of where they are located. The device manager
 service enables you to collect and visualise execution metrics
 like CPU usage, memory usage, battery level, etc. of the device.
 
-## Security Notes
+### Security 
 The device manager ensures that the data
 (telemetry and control) exchanged between
 various components is encrypted.

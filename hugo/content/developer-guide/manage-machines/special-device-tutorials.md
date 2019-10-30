@@ -6,7 +6,12 @@ date: 2019-10-29T14:32:13+05:30
 pre: "4. "
 weight: 262
 ---
-## Generic x64
+This document details on how to setup popular devices.
+
+* [Generic x64](#generic-x64) - UP Board
+* [ARM](#arm) - raspberry-pi
+
+### Generic x64
 #### Preparing UP Board
 ##### Prerequisites
 - [UP board](https://up-board.org/up/specifications/)
@@ -48,7 +53,7 @@ password as soon as you sign in.
 ssh rapyuta@1.2.3.0
 ```
 
-## ARM
+### ARM
 #### Preparing Raspberry PI 3
 ##### Prerequisites
 

@@ -15,6 +15,6 @@ associated to at most one running deployment at any given point
 of time. A user is typically required to manage the lifecycle of
 the application code independently from the associated storage.
 
-The **Rapyuta IO Persistent Volume** is a storage package. A storage package is a public package which is available to all users out of the box. You cannot delete or modify storage packages, and they are available to every user and group to deploy.
+The **Rapyuta IO Persistent Volume** is a storage package. A storage package is a public package which is available to all users out of the box. You cannot delete or modify storage packages, and they are available to every user.
 
 Follow this [tutorial to setup a simple object store](/developer-guide/create-software-packages/persistent-storage/obj-store-deployment-tutorial/)
