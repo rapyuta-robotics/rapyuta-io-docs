@@ -44,3 +44,7 @@ Each project has:
 
 You may create multiple projects and use them to organise rapyuta.io
 resources.
+
+{{% notice info %}}
+Learn more about projects [here](/developer-guide/organise-resources/project/).
+{{% /notice %}}

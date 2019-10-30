@@ -19,10 +19,11 @@ connection.
 
 This document helps you can learn about:
 
-* [Creating a project](#create-new-project)
-* [Switching between projects](#switch-between-projects)
-* [Deleting a project](#delete-existing-project)
-* [Adding users to a project](#adding-users-to-projects)
+- [Create New Project](#create-new-project)
+- [Switch Between Projects](#switch-between-projects)
+- [Delete Existing Project](#delete-existing-project)
+- [Adding Users To Projects](#adding-users-to-projects)
+- [Removing Users from Projects](#removing-users-from-projects)
 
 ## Create New Project
 Any user in **Activated** state can create a new project. The *creator* of the
