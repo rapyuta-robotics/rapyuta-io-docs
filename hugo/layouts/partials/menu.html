@@ -35,7 +35,7 @@
               {{if eq .Identifier "freshdesk" }}
                   {{.Pre}}<a class="padding" href="#" onclick="javascript:FreshWidget.show();">{{safeHTML .Name}}</a>{{.Post}}
               {{else}}
-                  {{.Pre}}<a class="padding" href="{{.URL | absLangURL }}">{{safeHTML .Name}}</a>{{.Post}}
+                  {{.Pre}}<a class="padding" target="_blank" href="{{.URL | absLangURL }}">{{safeHTML .Name}}</a>{{.Post}}
               {{end}}
               </li>
           {{end}}
