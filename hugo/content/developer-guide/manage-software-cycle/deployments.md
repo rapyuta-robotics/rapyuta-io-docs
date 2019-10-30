@@ -3,7 +3,7 @@ title: "Deployments"
 description:
 type: developer-guide
 date: 2019-10-25T12:49:01+05:30
-pre: "1. "
+pre: "2. "
 weight: 405
 ---
 A deployment is a rapyuta.io resource that represents a unique
@@ -24,10 +24,10 @@ a potentially complex robotics solution.
 The deployment object exposes information to help you introspect the state of the system and set policies on mechanisms that attempt recovery of desired state on degradation. 
 The following sections let the developer learn more about
 
-* [Deployment Phases](#phases)
-* [Deployment State](#states)
-* [Deployment Error Codes](#error-codes)
-* [Deployment Restart Policies](#restart-policy)
+- [Phases](#phases)
+- [Status](#status)
+- [Error Codes](#error-codes)
+- [Restart Policy](#restart-policy)
 
 ## Phases
 The lifecycle of a deployment consists of multiple phases. The **DEPLOYMENT PHASE**
