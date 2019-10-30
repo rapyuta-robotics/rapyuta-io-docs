@@ -74,7 +74,3 @@ You can determine the percentage of CPU used by a user, process or system by sub
 * ***usage_steal*** is the percentage of time that the CPU is in stolen time or time spent in other operating systems in a virtualised environment
 * ***usage_system*** is the percentage of time that the CPU is in system mode
 * ***usage_user*** is the percentage of time that the CPU is in user mode
-
-{{% notice info %}}
-Follow how to [visualise device metrics data](/getting-started/metrics-collection-visualisation) guide.
-{{% /notice %}}
