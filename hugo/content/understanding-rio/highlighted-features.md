@@ -15,16 +15,16 @@ for this is even more acute in the context of a distributed robotics
 application. rapyuta.io provides a set of features specifically targeted
 to meet the different needs.
 
-* Streaming Logs    
+* **Streaming Logs**        
   This feature essentially allows you to tail the stdout/stderr of a
-  deployment/build running on the rapyuta.io cloud. This is similat to
+  deployment/build running on the rapyuta.io cloud. This is similar to
   the tail -f functionality in a UNIX terminal console.
-* Historical Logs    
+* **Historical Logs**    
   This is an indexed logging feature that lets you retrieve (and download)
   stdout/stderr log of any deployment/build running on any
   infrastructure (device or cloud) logs based on standard
   lucene search queries and time ranges.
-* Batch Logs and Blobs    
+* **Batch Logs and Blobs**    
   This is tailor made for the situation where your device may not be
   always connected to the internet or have a lot of data, or have the
   need to collect binary data e.g. rosbags. The platform offers you
@@ -80,8 +80,8 @@ criteria from the process of consuming the resultant configuration
 at runtime by leveraging metadata tags present on the device.
 
 This allows the developer to abstract out hierarchies based on
-differences in certain traits or properties of the robot/software/
-location without having to bother about the actual hardware
+differences in certain traits or properties of the
+robot/software/location without having to bother about the actual hardware
 deployment scenario. At the same time individuals responsible for
 maintaining or provisioning the device do not need to be aware
 of the hierarchy and only need to assign the relevant metadata
@@ -105,7 +105,7 @@ processes.
 ## Software Composition
 Complex robotic applications are often built using more than one
 programming language, in varied development environments, and by
-people from distinct domains. For example, the interactive; user
+people from distinct domains. For example, the interactive user
 facing (User Interface) part of an application is built using
 a JavaScript framework while the application's device component
 is developed in C/C++, and navigation algorithms are implemented

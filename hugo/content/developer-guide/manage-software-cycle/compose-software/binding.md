@@ -29,8 +29,7 @@ _PASSWORD_ and *DATABASE_NAME* as environment variables.
 
 ## Bindable Attribute
 A boolean attribute that is set while adding a package. When set to true for a
-package with two or more ROS components, the components successfully communicate
-with each other.
+package with two or more ROS components, the components successfully communicate through [ROS interfaces](/developer-guide/create-software-packages/ros-support/#ros-native-communication-interfaces).
 
 It also determines whether a deployment of a package can be used as a dependent
 deployment of other deployments. If set false, the deployment of the package

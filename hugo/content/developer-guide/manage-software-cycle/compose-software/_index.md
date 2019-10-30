@@ -8,7 +8,7 @@ weight: 410
 ---
 Complex robotics applications are often built using more than one
 programming language, in varied development environments, and by
-people from distinct domains. For example, the interactive; user 
+people from distinct domains. For example, the interactive user 
 interface of an application is built using a JavaScript framework
 while the device component of the application is developed in
 C/C++, and navigation algorithms are implemented in Python or

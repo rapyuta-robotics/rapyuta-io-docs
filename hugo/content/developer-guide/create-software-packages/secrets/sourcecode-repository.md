@@ -54,11 +54,7 @@ want to use for creating a package, follow the steps:
 8. Click **Submit**.
 
 Source URL pattern lets you specify your git repository url pattern. The
-[_Build Engine_](/core-concepts/device-management/device-docker-runtime/rio-build-engine)
-will match the git repository url that you will provide while adding a package
-to the source url pattern so as to use the corresponding source secret to build
-the package. Alternatively, it is a regular expression representing git
-repositories' urls.
+***Build Engine*** will match the git repository url that you will provide while adding a package to the source url pattern so as to use the corresponding source secret to build the package. Alternatively, it is a regular expression representing git repositories' URLs.
 
 A source url pattern consists of the following segments:
 
@@ -71,5 +67,4 @@ The character * is a wild card character popular in regular expressions.
 
 Source url patterns match only git repository urls that conform to [RFC3986](https://tools.ietf.org/html/rfc3986).
 For example https://github.com/rapyuta/io_tutorials.git is a valid match,
-whereas _git@github.com:rapyuta/sample.git_ is an invalid match. Moreover, it is
-discouraged to include a username and password components in a url pattern.
+whereas _git@github.com:rapyuta/sample.git_ is an invalid match. Moreover, it is discouraged to include a username and password components in a URL pattern.

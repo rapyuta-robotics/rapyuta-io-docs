@@ -6,51 +6,54 @@ date: 2019-10-25T12:36:50+05:30
 pre: "a. "
 weight: 295
 ---
-You will learn how to use a **Rapyuta IO Persistent Volume** in a [Minio](https://www.minio.io/)
-file server to persist files and reuse them.
+You will learn how to use the **Rapyuta IO Persistent Volume** package
+in a [Minio](https://www.minio.io/) file server to persist files
+and reuse them.
 
 You will create a [Minio](https://www.minio.io/) file server using the given [docker image](https://hub.docker.com/r/rrdockerhub/minio-server/).
 The docker image, which is maintained by rapyuta.io, stores all the file data in the path
-`/data`. You will create a new package called _minio_ for [Minio](https://www.minio.io/)
-file server.
+`/data`. You will create a new package called ***minio***
+for [Minio](https://www.minio.io/) file server.
 
-To add the _minio_ package, follow the steps:
+To add the ***minio*** package, follow the steps:
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
-2. In the **Package Name** box, enter the name of the package say _minio_
-3. In the Package Version box, enter the version of the package. By default, it
-   is set to 1.0.0
-4. Ensure **Is a singleton package** is not selected.
-5. Ensure **Is a bindable package** is selected.
-6. Enter a brief description of the package in the **Description** box say
-   _Minio server_
+2. In the **Package Name** box, enter the name of the package say `minio`
+3. In the **Package Version** box, enter the version of the package.
+   By default, it is set to **1.0.0**
+4. Ensure **Is a singleton package** is ***not selected***.
+5. Ensure **Is a bindable package** checkbox ***is selected***.
+6. Briefly describe the package in the **Description** box, say
+   `Minio server`
 7. Click **NEXT**.
-8. In the **Component Name** box, type in a name for the component say _Minio_
+8. In the **Component Name** box, type in a name for the component,
+   say `Minio`
 9. Select **Cloud** as **Component Runtime**.
-10. Select **Is ROS Component** checkbox.
-11. Set the value of **Replicas to run the component** to 1 (which is the default value).
-12. In the **Executable Name** box, enter a name for the executable say _minio_
+10. Ensure **Is ROS Component** checkbox is selected.
+11. Ensure the value of **Replicas to run the component** is set to **1**
+12. In the **Executable Name** box, enter a name for the executable,
+    say `minio`
 13. Select **Docker** for **Executable Type**.
-14. In the **Docker image** box, enter *rrdockerhub/minio-server*
+14. In the **Docker image** box, enter `rrdockerhub/minio-server`
 15. Click **Add Endpoint**.
-	1. Give a name for the endpoint in the **Endpoint Name** box say _UIendpoint_
+	1. Give a name for the endpoint in the **Endpoint Name** box, say `UIendpoint`
 	2. Select **Exposed externally** checkbox.
 	3. Select **HTTPS/WSS** for **Protocol**.
-	4. In the **Port** box, the default value is _443_, and you are not allowed
-       to change this value.
-	5. In the **Target Port** box, enter _9000_
+	4. In the **Port** box, the default value is `443`, and you are not allowed to change this value.
+	5. In the **Target Port** box, enter `9000`
 16. You will add two **CONFIGURATION PARAMETERS** say *MINIO_SECRET_KEY* and *MINIO_ACCESS_KEY*.
-	1. Click **Add Parameter**.
-	2. In the **Name** box, enter *MINIO_SECRET_KEY*
-	3. In the **Description** box, provide short description for the parameter say
-	   _secret_
-	4. Similarly, add another parameter *MINIO_ACCESS_KEY*. Enter _key_ in the description box.
+	6. Click **Add Parameter**.
+	7. In the **Name** box, enter `MINIO_SECRET_KEY`
+	8. In the **Description** box, describe the parameter, say
+	   `secret`
+	4. Similarly, add another parameter *MINIO_ACCESS_KEY*. Enter `key` in the **Description** box.
 17. Click **NEXT** > **CONFIRM PACKAGE CREATION** > **Confirm**.
 
 ## Deploy without persistent volume
-You can deploy [Minio](https://www.minio.io/) server without persistent volume,
-that is, though a _Minio_ server package is provisioned, the data/files stored on
-the server are lost after de-provisioning the deployment.
+You can deploy Minio server without persistent volume,
+that is, though a *Minio* server package is provisioned,
+the data/files stored on the server are lost after de-provisioning
+the deployment.
 
 To deploy _Minio_ server package without persistent volume, follow these steps:
 
@@ -76,7 +79,7 @@ endpoint, copy and paste the highlighted web page link in a new browser tab.
 
 ![minio network endpoint](/images/core-concepts/persistent-vol-storage/minio-wo-pv-endpoint.png?classes=border,shadow&width=50pc)
 
-You can now access the [Minio](https://www.minio.io/) UI at the provided endpoint.
+You can now access the Minio UI at the provided endpoint.
 You can use the UI to add buckets and files. In the **Access Key** and
 **Secret Key** boxes, enter the same access key and secret key that you
 provided while creating the above deployment, respectively.
