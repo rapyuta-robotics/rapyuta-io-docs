@@ -31,12 +31,14 @@ to meet the different needs.
   SDK methods and an API to make this data available to you anywhere.
 
 #### Metrics
-rapyuta.io enables you to collect critical time series temperature
-sensor data measuring the temperature of its surroundings, CPU
-usage, delivery count from any connected devices.
+rapyuta.io enables you to collect critical system metrics such
+as cpu usage, memory consumption , etc. as well as directly subscribe
+to arbiraray ROS topic types. One could use this to collect measurements
+about parameters like temperature, distance or even application and
+business metrics such as orders completed or time to delivery.
 
 After collection the user can query and visualize this information
-in a dashboard and even create threshold based alerts.
+in a dashboard.
 
 ## Communication for Robots
 #### ROS Native
