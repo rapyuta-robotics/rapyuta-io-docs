@@ -12,14 +12,16 @@ in the cloud or on a device.
 Additionally, for components deployed on the cloud, rapyuta.io offers a way
 to stream (*live logs*) and follow stdout/stderr.
 
-[Add a *ROS Publisher Exclusive* package](/getting-started/create-new-package)
-that has a _Talker_ component with cloud runtime. It publishes the ROS topic _/telemetry_ with **Maximum** **QoS** as well as prints debug information to *stdout*. [Deploy the package](/getting-started/deploy-package) on the cloud by the name _ROS publisher exclusive deployment_
+Add a ROS package to rapyuta.io, which will have a component with
+cloud runtime. It will publish the ROS topic _/telemetry_ with **Maximum** **QoS** as well as prints debug information to ***stdout***. Deploy the package on the cloud, and name the deployment as
+***ROS publisher exclusive deployment***
 
 1. On the left navigation bar, click **DEPLOYMENTS**.
-2. Select specific deployment whose logs you want to view or analyse. In this example, select _ROS publisher exclusive deployment_.
+2. Select specific deployment whose logs you want to view or analyse.
+   In this example, select ***ROS publisher exclusive deployment***.
 3. On the deployment's **DETAILS** tab, ensure the green progress bar is at **Succeeded** and **Status:Running** point.
 
-## Stdout logs
+## Stdout Logs
 
 To view or analyse the corresponding deployment logs, click **Historical Logs**.
 ![Deployment detials page](/images/core-concepts/logging/deployment-logs/historical-logs/deployment-hist-logs.png?classes=border,shadow&width=50pc)
@@ -64,8 +66,8 @@ Any errors or exceptions that occur while logs are being generated are redirecte
 a valid logs output is displayed in ***stdout*** window.
 ![stdout or stderr](/images/core-concepts/logging/deployment-logs/historical-logs/stdout-stderr.png?classes=border,shadow&width=50pc)
 
-## Indexed logs
-To view the corresponding deployment logs in real time, click **Live Logs** tab. They are streamed in a terminal like window, and can be useful to view and debug your application in the cloud as it generates new logs. This is similar to the _"tail -f"_ functionality one is used to in a unix terminal console.
+## Indexed Logs
+To view the corresponding deployment logs in real time, click **Live Logs** tab. They are streamed in a terminal like window, and can be useful to view and debug your application in the cloud as it generates new logs. This is similar to the ***tail -f*** functionality one is used to in a unix terminal console.
 
 ![Live Logs tab](/images/core-concepts/logging/deployment-logs/realtime-logs/deployment-live-logs.png?classes=border,shadow&width=50pc)
 

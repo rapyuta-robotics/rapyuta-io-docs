@@ -10,7 +10,7 @@ An executable of a rapyuta.io package is either a git repository or a docker ima
 Build logs are generated when rapyuta.io converts the source code of a git repository
 into a runnable docker image.
 
-To view build logs of a package on [rapyuta.io console](https://console.rapyuta.io),
+To view build logs of a package on rapyuta.io,
 follow these steps:
 
 1. On the left navigation bar, click **Catalog**.

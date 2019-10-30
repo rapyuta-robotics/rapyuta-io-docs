@@ -70,7 +70,7 @@ They are:
 * **Complete**: uploading a log file (to the storage) is succeeded.
 * **Cancelled**: ongoing process of uploading a log file is cancelled 
 
-### Parameters for Uploading Log Files
+#### Parameters for Uploading Log Files
 There are certain parameters to take care of while uploading a
 log file from a device to rapyuta.io
 
