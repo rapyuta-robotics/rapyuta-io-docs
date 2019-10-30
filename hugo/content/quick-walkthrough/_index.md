@@ -326,7 +326,7 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
 
 ## Package build status
 Each package takes about 5 minutes to build the source code into a running
-docker executable. You can view the [build logs](/core-concepts/logging/build-logs)
+docker executable. You can view the [build logs](/developer-guide/tooling-automation/logging/build-logs/)
 of a specific package, which help in debugging failing builds.
 
 A flickering yellow dot against the package name indicates that
@@ -349,7 +349,7 @@ Since a deployment may depend on another deployment(s), you will initially
 deploy the package that is independent of other deployments, and you will
 work your way up the dependency chain.
 
-[ROS publisher subscriber](/dev-tutorials/ros-publisher-subscriber) describes the standard procedure for deploying
+[ROS publisher subscriber](/build-solutions/sample-walkthroughs/basic-ros-pubsub/preinstalled-runtime/) describes the standard procedure for deploying
 a ROS package. In this tutorial, the _Simulator_ deployment is independent of
 any other deployment. The _Command Center_ deployment relies on that of
 _Simulator_, while the _User Interface_ deployment is based on that of
