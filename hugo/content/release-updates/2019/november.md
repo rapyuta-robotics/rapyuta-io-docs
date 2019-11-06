@@ -30,5 +30,5 @@ There are significant updates in this version that we hope you will like.
 #### Documentation
 
 * A complete overhaul of user documentation.
-* Read about specifying network interfaces while deploying the local
-  communication broker.
+* Read about [specifying network interfaces while deploying the local
+  communication broker](/developer-guide/manage-software-cycle/communication-topologies/local-communication-broker/).
