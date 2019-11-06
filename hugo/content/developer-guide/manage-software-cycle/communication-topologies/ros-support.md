@@ -44,6 +44,66 @@ If in the ROS Service logs you experience the error: ***incoming connection fail
 rapyuta.io does not enforce pre-defining which package can depend on the other, this is left to the developer. This can potentially lead to a case where a user may deploy a package that depends on a previously deployed one without sufficient knowledge of the internal workings of the parent package. Cross talk between topics/services/actions in such cases can cause unintended hard to debug errors and failure of application code. To prevent against such unintentional cross communication between deployments of two packages rapyuta.io requires a package to declare a whitelist of ROS topics/services/interfaces it can recieve from a child dependant on it. If you intend to add a deployment of any package as a dependent deployment of the current package, it must be declared as an inbound ROS interface. An inbound ROS interface could be a: ROS topic that a dependent deployment publishes to the current package, ROS service or ROS action of the dependent deployment, and the current package is allowed to call that ROS action and/or ROS service.
 {{% /notice %}}
 
+#### Automatic Linking of ROS Interfaces
+When a package declares a ROS interface like a ROS topic/service/action,
+it is automatically made available to ROS nodes of other deployments
+linked via the available design patterns like a dependent deployment.
+
+Conside a sample composition such that two deployments:
+
+* **C1** (corresponding to package **Q1**)
+* **C2** (corresponding to package **Q2**)
+
+that depend on a deployment **S** (corresponding
+to package **P**). The user would quickly recognize that **C1**
+and **C2** are effectively sibling deployments
+with respect to a parent deployment **S**.
+
+In this scenario, the following ROS specific interfaces are defined by
+the packages **Q1** and **Q2** corresponding to **C1** and **C2**
+respectively.
+
+* **Q1** defines a ROS topic ***/test_topic***
+* **Q2** defines a scoped ROS service ***/test_service*** (effectively available
+  to peers as ***/C2/test_service***) and a ROS topic **/test_topic2**
+* **P** defines inbound ROS interfaces for topic **/test_topic** and service
+  **/test_service**
+
+This set up is illustrated as shown below.
+![auto linking of ROS interfaces](/images/dev-guide/manage-software-lifecycle/comm-topologies/auto-link-ros-interfaces.png?classes=border,shadow&width=50pc)
+
+In such circumstances, availability of a topic/service/action
+is dictated by the inbound interfaces defined by the package
+**P**. In the above example, only ***/test_topic*** and
+***/test_service*** (seen as ***/C2/test_service***) are available
+to ROS nodes in the deployment **S**, while ***/test_topic2*** will not.
+
+A key side effect is all of the deployments that depend on **S**
+(**C1** and **C2**) will also have available an identical configuration
+of ROS topics/services/actions to their ROS nodes. In this case,
+***/test_topic*** and ***/test_service***
+(seen as ***/C2/test_service***).
+
+{{% notice note %}}
+**Special case**: when package **P** is the publicly provided
+**Rapyuta IO Local Communication Broker** package, the package is
+then equivalent to a package with an Allow All inbound ROS
+interface configuration. This implies all of the ROS
+topics/services/actions provided by any child deployments
+are available to all dependent siblings. In the above example,
+***/test_topic***, ***/test_topic2*** and ***/test_service***
+(seen as ***/C2/test_service***) are available
+to both **C1** and **C2** (and any other siblings).
+{{% /notice %}}
+
+{{% notice note %}}
+rapyuta.io makes ROS topics/actions/services available to the
+*rosgraph* in the target deployment based on the composition.
+However, data does not flow unless a ROS node within a particular
+deployment tries to consume it by subscribing to a topic or
+performing a service request.
+{{% /notice %}}
+
 ## Multi-robot Support
 Topics, services, and actions are the primary way ROS nodes communicate
 with each other in a ROS (in this document when we refer to ROS we imply
