@@ -24,7 +24,7 @@ available to all users.
 
 You can optionally specify a ***network interface*** (i.e., an IP address)
 parameter while deploying a local communication broker public package.
-You can also specify the network interface value for a local communication
+You may select the network interface value for a local communication
 broker deployment while deploying a package that depends on it.
 In this case, the latter network interface
 takes precedence. Make sure that the latter network interface falls in
