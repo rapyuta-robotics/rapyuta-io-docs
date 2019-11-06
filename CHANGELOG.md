@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 - Explain automatic linking of ROS interfaces in deployment composition.
+- Explain adding network interface to local communication broker deployment
 ## [2.0.0 - 2019-10-30]
 - A complete revamp of the user documentation
 
