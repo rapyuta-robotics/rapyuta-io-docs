@@ -19,8 +19,7 @@ Raspberry PI 2 or 3 with docker compose runtime.
 	* Ensure that the [Google Chrome](https://www.google.com/chrome/) browser
 	  is installed on the computer.
 	* Raspberry PI 2 or 3
-2. You should be familiar with the [core concepts](/core-concepts) of rapyuta.io
-3. You should be familiar with
+2. You should be familiar with
    [Docker image](https://docs.docker.com/v17.09/engine/userguide/storagedriver/imagesandcontainers/)
    concept.
 
@@ -31,19 +30,16 @@ Beginner
 15 minutes
 
 ## Preparing your device
-Learn how to [prepare your Raspberry PI](/getting-started/prepare-raspberry-pi).
+Learn how to [prepare your Raspberry PI](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3).
 
 ## Setting up Raspberry PI
-To integrate the device into [rapyuta.io console](https://console.rapyuta.io):
-
-1. [Create a user account](/getting-started/create-new-user) if you do not
-   have one yet.
-2. [Add the device](/getting-started/add-new-device) to the console.
-   Ensure that you select the **Use docker compose as default runtime** checkbox
-   while adding the device.
+To onboard the device on to rapyuta.io,
+[add the device](/developer-guide/manage-machines/onboarding/) to rapyuta.io,
+and ensure that you select the **Use docker compose as default runtime** checkbox
+while adding the device.
 
 ## Creating the package
-To create *led_trigger* package, follow the steps:
+To create ***led_trigger*** package, follow the steps:
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.
@@ -77,7 +73,7 @@ Additionally, you may verify if the package is built successfully and is ready
 to be deployed by clicking to see if the **Deploy package** button is enabled.
 
 ## Deploying the package
-To deploy a package from the [rapyuta.io console](https://console.rapyuta.io),
+To deploy a package from the rapyuta.io,
 follow the steps:
 
 1. On the left navigation bar, click **CATALOG**.
@@ -96,7 +92,8 @@ The _LED Trigger Deployment_ is successfully running only when the green
 coloured bar moves to **Succeeded** and **Status:Running** point indicating that the
 **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
 
-You may also analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs)
+You may also analyse the corresponding
+[deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/)
 to check if everything is working good.
 
 To verify that everything is working correctly, you should observe the trigger

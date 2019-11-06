@@ -1,9 +1,18 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.0.1 - 2019-11-06]
+### Added
+- Explain automatic linking of ROS interfaces in deployment composition.
+- Explain adding network interface to local communication broker deployment
+- Add release summary page for November 06, 2019
+
+### Updated
+- Update SDK version to 0.9.0
+
+
 ## [2.0.0 - 2019-10-30]
 - A complete revamp of the user documentation
-
 
 ## [1.4.0 - 2019-10-23]
 ### Added
