@@ -9,6 +9,18 @@ weight: 435
 
 The rapyuta.io platform relies on a sub-component called the *cloud bridge* for implicitly establishing a communication channel between two or more ROS environments. It is an application-level bridge that offers many compelling features to ROS developers including [ROS over the public internet](#ros-over-the-public-internet) and dedicated features for [**multi-robot ros communication**](#multi-robot-support)
 
+The list of topics explained are:
+
+- [ROS over the public internet](#ros-over-the-public-internet)
+- [Multi-robot Support](#multi-robot-support)
+    - [ROS Environment Aliases](#ros-environment-aliases)
+    - [Multi-Robot Communication Configuration](#multi-robot-communication-configuration)
+    - [Scoped - Topics, Actions, Services](#scoped---topics-actions-services)
+    - [Targeted Topics](#targeted-topics)
+    - [Inbound Targeted Topics](#inbound-targeted-topics)
+    - [Automatic Linking of ROS Interfaces](#automatic-linking-of-ros-interfaces)
+
+
 ## ROS over the public internet
 ROS takes a fully connected graph approach for connecting all relevant ROS nodes.
 While this works on a local network, it is suboptimal over a WAN link where it
@@ -204,3 +216,63 @@ bridge communications and enforce alias constraints.
 ![Inbound targeted](/images/multi-robot-communication/inbound-targeted.png?classes=border,shadow&width=50pc)
 
 ![Substitute](/images/multi-robot-communication/substitute.png?classes=border,shadow&width=50pc)
+
+#### Automatic Linking of ROS Interfaces
+When a package declares a ROS interface like a ROS topic/service/action,
+it is automatically made available to ROS nodes of other deployments
+linked via the available design patterns like a dependent deployment.
+
+Conside a sample composition such that two deployments:
+
+* **C1** (corresponding to package **Q1**)
+* **C2** (corresponding to package **Q2**)
+
+that depend on a deployment **S** (corresponding
+to package **P**). The user would quickly recognize that **C1**
+and **C2** are effectively sibling deployments
+with respect to a parent deployment **S**.
+
+In this scenario, the following ROS specific interfaces are defined by
+the packages **Q1** and **Q2** corresponding to **C1** and **C2**
+respectively.
+
+* **Q1** defines a ROS topic ***/test_topic***
+* **Q2** defines a scoped ROS service ***/test_service*** (effectively available
+  to peers as ***/C2/test_service***) and a ROS topic **/test_topic2**
+* **P** defines inbound ROS interfaces for topic **/test_topic** and service
+  **/test_service**
+
+This set up is illustrated as shown below.
+![auto linking of ROS interfaces](/images/dev-guide/manage-software-lifecycle/comm-topologies/auto-link-ros-interfaces.png?classes=border,shadow&width=50pc)
+
+In such circumstances, availability of a topic/service/action
+is dictated by the inbound interfaces defined by the package
+**P**. In the above example, only ***/test_topic*** and
+***/test_service*** (seen as ***/C2/test_service***) are available
+to ROS nodes in the deployment **S**, while ***/test_topic2*** will not.
+
+A key side effect is all of the deployments that depend on **S**
+(**C1** and **C2**) will also have available an identical configuration
+of ROS topics/services/actions to their ROS nodes. In this case,
+***/test_topic*** and ***/test_service***
+(seen as ***/C2/test_service***).
+
+{{% notice note %}}
+**Special case**: when package **P** is the publicly provided
+**Rapyuta IO Local Communication Broker** package, the package is
+then equivalent to a package with an Allow All inbound ROS
+interface configuration. This implies all of the ROS
+topics/services/actions provided by any child deployments
+are available to all dependent siblings. In the above example,
+***/test_topic***, ***/test_topic2*** and ***/test_service***
+(seen as ***/C2/test_service***) are available
+to both **C1** and **C2** (and any other siblings).
+{{% /notice %}}
+
+{{% notice note %}}
+rapyuta.io makes ROS topics/actions/services available to the
+*rosgraph* in the target deployment based on the composition.
+However, data does not flow unless a ROS node within a particular
+deployment tries to consume it by subscribing to a topic or
+performing a service request.
+{{% /notice %}}
