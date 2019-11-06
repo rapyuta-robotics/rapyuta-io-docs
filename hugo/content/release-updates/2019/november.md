@@ -14,8 +14,8 @@ There are significant updates in this version that we hope you will like.
 * **Show/hide deployments in a dependency graph**    
   Toggle between show/hide of stopped deployments in a dependency graph.
 * **Deploy local communication broker with preferred network interface**    
-  Ability to specify a network IP address while delploying the local communication
-  broker.
+  Ability to specify a preferred network interface for local communication broker when added as dependent deployment.
+
 * **rapyuta.io SDK 0.9.0 released**
   * Added ability to create package from manifest file and manifest dictionary.
   * Added ability to connect preferred network interface of the local communication broker when local broker added as dependent deployment
