@@ -16,6 +16,12 @@ There are significant updates in this version that we hope you will like.
 * **Deploy local communication broker with preferred network interface**    
   Ability to specify a network IP address while delploying the local communication
   broker.
+* **rapyuta.io SDK 0.9.0 released**
+  * Added ability to create package from manifest file and manifest dictionary.
+  * Added ability to provide multile network interfaces for a deployment of local communication broker package.
+  * Added *packageVersion* field to *Package* class.
+  * Added ability to propagate error from REST client.
+  * Rename mission to selection API.
 
 #### Notable Fixes
 
