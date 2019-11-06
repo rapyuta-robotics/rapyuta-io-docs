@@ -10,5 +10,6 @@ In order to facilitate the software composition the platform implements a number
 
 To learn more, please refer to the following documents
 
-* [HTTP/WebSocket/TLS communication](./std-comms)
-* [ROS Communication](./ros-support)
+* [HTTP/WebSocket/TLS communication](/developer-guide/manage-software-cycle/communication-topologies/std-comms/)
+* [ROS Communication](/developer-guide/manage-software-cycle/communication-topologies/ros-support/)
+* [Local Communication Broker](/developer-guide/manage-software-cycle/communication-topologies/local-communication-broker/)
