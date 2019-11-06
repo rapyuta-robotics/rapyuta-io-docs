@@ -11,8 +11,11 @@ There are significant updates in this version that we hope you will like.
 
 #### Features
 
-* Show/hide deployments in a dependency graph
-* Deploy local communication broker with preferred network interface
+* **Show/hide deployments in a dependency graph**    
+  Toggle between show/hide of stopped deployments in a dependency graph.
+* **Deploy local communication broker with preferred network interface**    
+  Ability to specify a network IP address while delploying the local communication
+  broker.
 
 #### Notable Fixes
 
@@ -20,4 +23,6 @@ There are significant updates in this version that we hope you will like.
 
 #### Documentation
 
-* A total revamp of user documentation
+* A complete overhaul of user documentation.
+* Read about specifying network interfaces while deploying the local
+  communication broker.
