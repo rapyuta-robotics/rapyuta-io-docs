@@ -18,7 +18,7 @@ There are significant updates in this version that we hope you will like.
   broker.
 * **rapyuta.io SDK 0.9.0 released**
   * Added ability to create package from manifest file and manifest dictionary.
-  * Added ability to provide multile network interfaces for a deployment of local communication broker package.
+  * Added ability to connect preferred network interface of the local communication broker when local broker added as dependent deployment
   * Added *packageVersion* field to *Package* class.
   * Added ability to propagate error from REST client.
   * Rename mission to selection API.
