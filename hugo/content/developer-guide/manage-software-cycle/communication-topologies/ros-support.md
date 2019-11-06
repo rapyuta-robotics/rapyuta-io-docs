@@ -9,6 +9,18 @@ weight: 435
 
 The rapyuta.io platform relies on a sub-component called the *cloud bridge* for implicitly establishing a communication channel between two or more ROS environments. It is an application-level bridge that offers many compelling features to ROS developers including [ROS over the public internet](#ros-over-the-public-internet) and dedicated features for [**multi-robot ros communication**](#multi-robot-support)
 
+The list of topics explained are:
+
+- [ROS over the public internet](#ros-over-the-public-internet)
+- [Multi-robot Support](#multi-robot-support)
+    - [ROS Environment Aliases](#ros-environment-aliases)
+    - [Multi-Robot Communication Configuration](#multi-robot-communication-configuration)
+    - [Scoped - Topics, Actions, Services](#scoped---topics-actions-services)
+    - [Targeted Topics](#targeted-topics)
+    - [Inbound Targeted Topics](#inbound-targeted-topics)
+    - [Automatic Linking of ROS Interfaces](#automatic-linking-of-ros-interfaces)
+
+
 ## ROS over the public internet
 ROS takes a fully connected graph approach for connecting all relevant ROS nodes.
 While this works on a local network, it is suboptimal over a WAN link where it
