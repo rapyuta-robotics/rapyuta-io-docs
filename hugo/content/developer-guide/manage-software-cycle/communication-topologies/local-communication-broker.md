@@ -31,6 +31,6 @@ takes precedence. Make sure that the latter network interface falls in
 the same network as that defined in the dependent broker deployment.
 
 {{% notice info %}}
-Follow this wlkthrough to
+Follow this walkthrough to
 [deploy a local communication broker](/build-solutions/sample-walkthroughs/local-communication/).
 {{% /notice %}}
