@@ -1,6 +1,10 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.0.0 - 2019-10-30]
+- A complete revamp of the user documentation
+
+
 ## [1.4.0 - 2019-10-23]
 ### Added
 - Simulation page in core concepts
