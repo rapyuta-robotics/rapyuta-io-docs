@@ -18,9 +18,9 @@ by ensuring that the devices involved are in the same local
 network.
 
 **Rapyuta IO Local Communication Broker** is a communication package,
-which is a public package that is available to all users out of the box.
+which is a public package.
 You cannot delete or modify communication packages, and they are
-available to each user.
+available to all users.
 
 You can optionally specify a ***network interface*** (i.e., an IP address)
 parameter while deploying a local communication broker public package.
