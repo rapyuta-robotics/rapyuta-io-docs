@@ -17,17 +17,18 @@ local network, thus, reducing the robotics application latency
 by ensuring that the devices involved are in the same local
 network.
 
-**Rapyuta IO Local Communication Broker** is a storage package, which is
-a public package that is available to all users out of the box. You
-cannot delete or modify storage packages, and they are available to
+**Rapyuta IO Local Communication Broker** is a communication package,
+which is a public package that is available to all users out of the box.
+You cannot delete or modify storage packages, and they are available to
 each user.
 
-You can specify a ***network interface*** (i.e., an IP address) parameter
-while deploying a local communication broker public package. If any
-deployment depends on the deployment of local communication
-broker, you must specify the network interface value by providing
-an IP address that is in the same network as that defined in the
-dependent broker deployment.
+You can optionally specify a ***network interface*** (i.e., an IP address)
+parameter while deploying a local communication broker public package.
+You can also specify the network interface value for a local communication
+broker deployment while deploying a package that depends on it.
+In this case, the latter network interface
+takes precedence. Make sure that the latter network interface falls in
+the same network as that defined in the dependent broker deployment.
 
 {{% notice info %}}
 Follow this wlkthrough to
