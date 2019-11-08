@@ -110,3 +110,10 @@ The **Secure TCP (TLS/SNI)** protocol uses [SNI](https://en.wikipedia.org/wiki/S
 
 rapyuta.io creates an accessible public IP address for externally exposed network endpoint. Hence, you can view the Fully Qualified Domain Name (FQDN) of the endpoint on successful deployments' details page.
 
+{{% notice info %}}
+Each incoming request from an externally exposed endpoint will have the
+**Host header port** set to the same port the application is listening
+on. For example, an application configured with target port as 5000 will
+receive requests with the Host header port set to 5000.
+{{% /notice %}}
+
