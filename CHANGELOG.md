@@ -1,6 +1,11 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+- More details on simulation page about robot_description, latency issues, and more.
+
+
+
 ## [2.0.0 - 2019-10-30]
 - A complete revamp of the user documentation
 
