@@ -1,5 +1,5 @@
 ---
-title: "Basic Publisher Sublisher"
+title: "Basic Publisher Subcriber"
 description:
 type: developer-guide
 date: 2019-10-25T13:41:24+05:30

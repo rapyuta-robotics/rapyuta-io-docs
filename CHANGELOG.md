@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Fixed
+- Fix broken code example for SDK
+
 ## [2.0.7 - 2019-12-24]
 ### Added
 - Explain ROS service timeout feature
