@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Fixed
+- Fixed broken code example for SDK
+
 ## [2.0.2 - 2019-11-13]
 ### Added
 - Add release summary page for November 13, 2019

@@ -8,19 +8,23 @@ weight: 565
 ---
 ## Learning objectives
 
-1. Set up a storage volume.
-2. Mount the storage volume to an application deployment.
+1. Set up storage volume for application.
+2. Add configuration parameters like secret and access
+   keys to application.
 
-using [rapyuta.io Python SDK](/python-sdk/introduction) in your
-Python application.
+programmatically using
+[rapyuta.io Python SDK](/python-sdk/introduction) in your
+applications.
 
 ## Prerequisites
-1. Read about the [core concepts](/core-concepts/) of rapyuta.io
-2. Ensure Python2.7 is installed in your development environment.
-3. Learn
-   [how to obtain authorization token, project ID, package ID and plan ID](/python-sdk/determine-unique-identifiers/)
-4. Read the
-   [persistent volume developer tutorial](/core-concepts/persistent-volume-storage/).
+
+1. Install rapyuta.io SDK in your development environment.
+2. Learn how to obtain
+   1. authorization token
+   2. project ID
+   3. package ID
+   4. plan ID
+3. Read the object storage walkthrough.
 
 ## Difficulty
 Intermediate
@@ -43,65 +47,83 @@ Intermediate
 
 As a user of rapyuta_io Python SDK, you must create an interface for accessing
 rapyuta.io services from within your Python application.
+
 ```python
 # Authorisation code snippet
-from rapyuta_io import Client
 
-client = Client(AUTH_TOKEN, "project_id")
+from rapyuta_io import Client, DiskType
+
+client = Client(AUTH_TOKEN, PROJECT_ID)
 ```
 
 You create a persistent volume, `"my_sample_volume"`, of **_32GiB_** capacity and of
 default disk type, `DiskType.DEFAULT`. You may also choose the **_SSD_** type for the
 disk, `DiskType.SSD`
-```python
-# Create Volume code snippet
-from rapyuta_io import DiskType
 
-persistent_volume = client.get_persistent_volume()
-volume_instance = persistent_volume.create_volume_instance("my_sample_volume", 32, DiskType.DEFAULT)
+```python
+## Define instance of storage volume
+
+volume = client.get_persistent_volume()
+storage_volume = volume.create_volume_instance("Storage Volume", 32, DiskType.SSD)
+storage_volume.poll_deployment_till_ready()
 ```
 
 Mount the volume you just created on a component of a deployment of the `sample_pkg`
 at the mount path.
 
 ```python
-# Mount Volume code snippet
-sample_pkg = client.get_package("package_id")
-pkg_provision_config = sample_pkg.get_provision_configuration("plan_id")
-pkg_provision_config.mount_volume(component_name="sample_component_name", volume_instance=volume_instance, mount_path="mount_path")
+# Get Minio File Server package details
+
+minio_file_server = client.get_package(PACKAGE_ID)
+pkg_provision_config = minio_file_server.get_provision_configuration(PACKAGE_PLAN_ID)
+pkg_provision_config.mount_volume(component_name="Minio", volume_instance=storage_volume, mount_path="/data")
+pkg_provision_config.add_parameter("Minio", "MINIO_SECRET_KEY", "secretphrase")
+pkg_provision_config.add_parameter("Minio", "MINIO_ACCESS_KEY", "griffindor")
 ```
 
 You will deploy `sample_pkg` with the mounted persistent volume `'my_sample_volume'`
 on the cloud. The corresponding deployment is `'volume_mounted_deployment'`.
+
 ```python
-# Deploy package with mounted volume code snippet
-deployment_with_volume_mounted = sample_pkg.provision(deployment_name="volume_mounted_deployment", provision_configuration=pkg_provision_config)
+# Deploy file server with storage volume
+
+volume_powered_deployment = minio_file_server.provision(deployment_name="Minio With Data Permanence", provision_configuration=pkg_provision_config)
+
+volume_powered_deployment.poll_deployment_till_ready(retry_count=100)
+print volume_powered_deployment.get_status()
 ```
 
 Put together the above code snippets in a single file, _persistent-volume.py_,
 save the program and close the file.
 ```python
-# persistent-volume.py
-
+# deployment-composition.py
 from rapyuta_io import Client, DiskType
 
-client = Client(AUTH_TOKEN, "project_id")
+# Authorisation code snippet
+client = Client(AUTH_TOKEN, PROJECT_ID)
 
-persistent_volume = client.get_persistent_volume()
-volume_instance = persistent_volume.create_volume_instance("my_sample_volume", 32, DiskType.DEFAULT)
+## Define instance of storage volume
+volume = client.get_persistent_volume()
+storage_volume = volume.create_volume_instance("Storage Volume", 32, DiskType.SSD)
+storage_volume.poll_deployment_till_ready()
 
-sample_pkg = client.get_package("package_id")
-pkg_provision_config = sample_pkg.get_provision_configuration("plan_id")
-pkg_provision_config.mount_volume(component_name="sample_component_name", volume_instance=volume_instance, mount_path="mount_path")
+# Get Minio File Server package details
+minio_file_server = client.get_package(PACKAGE_ID)
+pkg_provision_config = minio_file_server.get_provision_configuration(PACKAGE_PLAN_ID)
+pkg_provision_config.mount_volume(component_name="Minio", volume_instance=storage_volume, mount_path="/data")
+pkg_provision_config.add_parameter("Minio", "MINIO_SECRET_KEY", "secretphrase")
+pkg_provision_config.add_parameter("Minio", "MINIO_ACCESS_KEY", "griffindor")
 
-deployment_with_volume_mounted = sample_pkg.provision(deployment_name="volume_mounted_deployment", provision_configuration=pkg_provision_config)
+# Deploy file server with storage volume
+volume_powered_deployment = minio_file_server.provision(deployment_name="Minio With Data Permanence", provision_configuration=pkg_provision_config)
 
-print deployment_with_volume_mounted.get_status()
+volume_powered_deployment.poll_deployment_till_ready(retry_count=100)
+print volume_powered_deployment.get_status()
 ```
 
 At the terminal prompt, run the program using the command:
 ```bash
-$ python persistent-volume.py
+$ python deployment-composition.py
 ```
 
 The output is an object of the class [***DeploymentStatus***](https://sdkdocs.apps.rapyuta.io/#rapyuta_io.clients.deployment.DeploymentStatus),
