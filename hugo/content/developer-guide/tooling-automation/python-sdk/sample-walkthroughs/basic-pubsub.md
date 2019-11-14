@@ -1,5 +1,5 @@
 ---
-title: "Basic Publisher Subcriber"
+title: "Basic Publisher Subscriber"
 description:
 type: developer-guide
 date: 2019-10-25T13:41:24+05:30
@@ -7,7 +7,7 @@ pre: "1. "
 weight: 560
 ---
 ## Learning objectives
-The walkthrough gives an overview on how to:
+The walkthrough gives an overview of how to:
 
 1. configure and provision a package
 2. deploy a package on the cloud
@@ -50,7 +50,7 @@ Beginner
    respectively. The values are of type *string*.
 5. ***TALKER_PLAN_ID*** and ***LISTENER_PLAN_ID***
    are the plan IDs of the default plan of ***Talker*** and
-   ***Listener*** packages respectively. The values are of
+   ***Listener*** packages, respectively. The values are of
    type *string*.
 6. ***AUTH_TOKEN*** is the authorization token for accessing rapyuta.io 
    resources and services. Its value is of type *string*.
@@ -74,7 +74,7 @@ Beginner
 11. Ensure **Is ROS Component** is selected.
 12. Select **Kinetic** for **ROS Version**.
 13. The default value of **Replicas to run the component** is set to 1
-14. In the **Executable Name** box, enter a name for an executable
+14. In the **Executable Name** box, enter a name for an executable,
     say `talker_executable`.
 15. Click **Git** for **Executable Type**.
 16. In the **Git repository** box, enter the URL address:
