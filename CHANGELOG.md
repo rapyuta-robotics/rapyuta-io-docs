@@ -4,6 +4,7 @@
 ## [2.0.2 - 2019-11-13]
 ### Added
 - Add release summary page for November 13, 2019
+- Describe DEP_E162 and DEP_E163 error codes
 
 ## [2.0.1 - 2019-11-06]
 ### Added
