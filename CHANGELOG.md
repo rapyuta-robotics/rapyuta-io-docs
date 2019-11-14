@@ -9,6 +9,7 @@
 ### Fixed
 - Fix broken links
 - Correct typographical errors
+- Fix broken code example for SDK
 
 
 ## [2.0.3 - 2019-11-27]
