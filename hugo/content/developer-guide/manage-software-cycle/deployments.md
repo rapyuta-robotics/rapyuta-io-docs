@@ -92,6 +92,8 @@ and the recommendations you should take:
 | DEP_E155 | executables of the component deployed on cloud failed | troubleshoot the failed component by analysing deployment logs |
 | DEP_E156 | dependent deployment is in error state | troubleshoot the dependent deployment that is in error state |
 | DEP_E161 | docker image is not found for executables of components deployed on device | verify that the path of the docker image is valid |
+| DEP_E162 | Validation error. Cases include:<ul><li>Inconsistent values of ROS distro and CPU architecture variables for the device and package being provisioned.</li><li>rapyuta.io docker images not present on docker device.</li></ul> | <ul><li>Create package with appropriate values for ROS distro and CPU architecture variables.</li><li>Onboard the device again.</li></ul> |
+| DEP_E163 | application has stopped and exited unexpectedly, and crashes continuously | debug the application using the corresponding deployment logs |
 | DEP_E2xx | internal rapyuta.io error in the components deployed on cloud | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
 | DEP_E3xx | internal rapyuta.io error in the components deployed on a device | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
 | DEP_E4xx | internal rapyuta.io error | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |

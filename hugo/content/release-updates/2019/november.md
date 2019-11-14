@@ -5,6 +5,36 @@ type: release-updates
 date: 2019-11-06T15:04:39+05:30
 weight: 874
 ---
+## November 13
+Welcome to the November 13, 2019 release of rapyuta.io platform (v0.34.0).
+There are significant updates in this version that we hope you will like.
+
+#### Features
+
+**Import packages to rapyuta.io**    
+Import packages to rapyuta.io by uploading, or pasting JSON package
+manifests in the editor, or from external JSON URLs.
+  
+When an external JSON URL redirects to rapyuta.io, the redirect
+URL is constructed with ***uo*** and ***link*** parameters:
+
+***https://console.rapyuta.io/catalog?uo=1&link=<JSON URL>***
+  
+Consequently, the editor will be auto-filled with the
+data from the JSON URL. 
+  
+This feature is useful when you have a JSON package manifest ready,
+and would not want to manually enter data values for various fields
+while creating packages.
+
+#### Notable Fixes
+
+* Added validation check for the length of file name while uploading
+  logs.
+* Fixed internal bugs for rapyuta.io's device agent while onboarding
+  a device on to rapyuta.io platform.
+* Fixed minor user interface bugs.
+
 ## November 06
 Welcome to the November 06, 2019 release of rapyuta.io platform (v0.33.0).
 There are significant updates in this version that we hope you will like.
