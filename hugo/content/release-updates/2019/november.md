@@ -11,11 +11,21 @@ There are significant updates in this version that we hope you will like.
 
 #### Features
 
-* **Import packages to rapyuta.io**    
-  Import packages to rapyuta.io by uploading or pasting JSON package
-  manifests in the editor. This feature is useful when you
-  have a JSON package manifest ready, and would not want to manually
-  enter data values for various fields while creating packages.
+**Import packages to rapyuta.io**    
+Import packages to rapyuta.io by uploading, or pasting JSON package
+manifests in the editor, or from external JSON URLs.
+  
+When an external JSON URL redirects to rapyuta.io, the redirect
+URL is constructed with ***uo*** and ***link*** parameters:
+
+***https://console.rapyuta.io/catalog?uo=1&link=<JSON URL>***
+  
+Consequently, the editor will be auto-filled with the
+data from the JSON URL. 
+  
+This feature is useful when you have a JSON package manifest ready,
+and would not want to manually enter data values for various fields
+while creating packages.
 
 #### Notable Fixes
 
