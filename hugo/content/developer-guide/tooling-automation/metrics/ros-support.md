@@ -6,7 +6,6 @@ date: 2019-10-25T13:27:22+05:30
 pre: "c. "
 weight: 541
 ---
-## ROS Data Collection
 You can collect data by subscribing to ROS topics of deployed
 ROS applications. rapyuta.io supports primitive data types:
 
@@ -85,10 +84,41 @@ After flattening the above nested ROS message, it will look like:
 Any other data type (like bytearray, empty ROS message type) is
 not be supported and will be silently ignored.
 
-{{% notice note %}}
 Suppose a ROS topic is defined such that its data type is
 string alone (that is the data type contains no other
-primitive types). As you subscribe to this ROS topic you will
-be instantly unsubscribed from that topic. This is the expected
-behaviour for ROS topics of *purely string* data type.
-{{% /notice %}}
+primitive types). For example, consider a message
+***geographic_msgs/KeyValue***,
+
+```bash
+{
+    key:"continent",
+    value:"arctic"
+}
+```
+
+As you subscribe to the above ROS topic you will
+be instantly unsubscribed from that topic.
+This is the expected behaviour for ROS topics, which
+publish *purely string* data type.
+
+If a ROS topic is composed of integer and string data types,
+for instance, consider a message ***sensor_msgs/BatteryState***,
+
+```bash
+{
+    header:{
+        stamp:now,
+        frame_id:"map"
+    },
+    location:"B1",
+    serial_number:"AAA",
+    capacity:4.5,
+    charge:3,
+    current:3,
+    voltage:9
+}
+```
+
+When you subscribe to the above ROS topic, only the integer
+data will be subscribed to and collected while the string
+data will be ignored.
