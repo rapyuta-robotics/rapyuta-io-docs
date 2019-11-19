@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Added
 - DEV_108 device failure error code
+- Support for custom ROS messages
 
 ## [2.0.2 - 2019-11-13]
 ### Added
