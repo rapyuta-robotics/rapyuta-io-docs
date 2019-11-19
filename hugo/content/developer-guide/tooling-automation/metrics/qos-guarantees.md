@@ -19,9 +19,11 @@ There are three QoS levels:
 * High
 
 #### Low QoS guarantee
-The minimum QoS level is *Low*. This level guarantees best-effort delivery, but delivers with some data loss. Use Low QoS level when you have a
-completely or mostly stable connection between sender and receiver,
-or if the loss of some metrics or logs is acceptable, or when the
+The minimum QoS level is *Low*. This level guarantees best-effort
+delivery, but delivers with some data loss. Use Low QoS level when you
+have a completely or mostly stable connection between sender and receiver,
+or if the loss of data (metrics or logs)  is acceptable.
+It is suggested to set the QoS level to low when the
 rate of data generation is high so as to reduce the overhead cost and
 lower the latency while sending messages.
 

@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+- Support for custom ROS messages.
 ## [2.0.1 - 2019-11-06]
 ### Added
 - Explain automatic linking of ROS interfaces in deployment composition.
