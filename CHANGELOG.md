@@ -1,12 +1,18 @@
 # CHANGELOG
 
 ## [Unreleased]
+<<<<<<< HEAD
 ### Added
 - Support for custom ROS messages.
 ## [2.0.2 - 2019-11-13]
 ### Added
 - Add release summary page for November 13, 2019
 - Describe DEP_E162 and DEP_E163 error codes
+||||||| merged common ancestors
+=======
+### Added
+- Support for custom ROS messages.
+>>>>>>> e24d13e4bc1c8247f2152e9e72501c3ed36adddc
 ## [2.0.1 - 2019-11-06]
 ### Added
 - Explain automatic linking of ROS interfaces in deployment composition.
