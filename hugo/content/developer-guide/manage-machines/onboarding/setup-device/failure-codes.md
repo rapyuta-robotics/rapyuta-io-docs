@@ -110,6 +110,16 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
             <td>Internal service failed to start</td>
             <td><a href="#" onclick="javascript:FreshWidget.show();" class="highlight">Contact support</a></td>
         </tr>
+        <tr>
+            <td>DEV_E108</td>
+            <td>Initialization time exceeded</td>
+            <td>
+                <ul>
+                    <li><a href="/getting-started/add-new-device/#setting-up-a-device" class="highlight">Set up the device</a> again.</li>
+                    <li><a href="#" onclick="javascript:FreshWidget.show();" class="highlight">Contact support</a></li>
+                </ul>
+            </td>
+        </tr>
     </tbody>
 </table>
 

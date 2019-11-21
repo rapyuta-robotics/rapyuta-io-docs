@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+- DEV_108 device failure error code
+
 ## [2.0.2 - 2019-11-13]
 ### Added
 - Add release summary page for November 13, 2019
