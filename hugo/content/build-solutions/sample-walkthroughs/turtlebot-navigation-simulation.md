@@ -21,6 +21,7 @@ application is run on either a computer or an instance of the cloud.
 3. Install **catkin-tools** package on the device.
 4. Install Google Chrome web browser on a computer.
 5. Familiarity with tools like git, UNIX/LINUX command terminal.
+6. ***Optional***: If you want to run your applications with Gazebo on rapyuta.io in future, it is recommended that you understand ROS launch system concepts and ROS navigation stack structure. It will help you understand the usage better.
 
 ## Difficulty
 Intermediate
@@ -212,5 +213,12 @@ checking if the progress bar reaches **Succeeded** and status is
 1. On the **Details** tab of **SIMULATION** deployment, copy the value of the network endpoint ***vnc***.
 2. Paste the copied URL address in the address bar of the web browser and press Enter.
 3. Enter the value of ***VNC_PASSWORD***, which you provided while deploying the package, when prompted.
-4. 
+
+## Advanced Tips
+If you want to run your software with Gazebo on rapyuta.io,
+
+Time synchronization: Since the set up runs two ROS Masters-in cloud with Gazebo and on computer with navigation nodes, these two system clocks need to be in sync. This is achieved by /clock ROS topic, which is published by Gazebo.
+
+* /use_sim_time is enabled in launch files to use /clock topic
+* rospy.wait_for_message(/clock, Time) on line 13 in demo_app.py is the waiting /clock arrived in sync. Otherwise jump in time may happen. 
 
