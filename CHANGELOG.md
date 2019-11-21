@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Added
 - DEV_108 device failure error code
+- Add turtlebot3 navigation simulation walkthrough
 
 ## [2.0.2 - 2019-11-13]
 ### Added
