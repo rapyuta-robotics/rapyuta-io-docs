@@ -120,20 +120,56 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 
 #### Navigation Application Package
 
-1. On the left navigation bar, click CATALOG.
-2. Click ADD NEW PACKAGE.
-3. The name of the package: Navigation Application
-4. Make sure Is a singleton package is not selected.
-5. Ensure Is a bindable package is selected.
-6. The version of the package is 1.0.0
-7. The purpose of the package is to Controlled navigation of turtlebot3
-8. Click NEXT.
-9. The name of the component: navigate_component
-10. The runtime of the component is Device.
-11. Ensure Is ROS Component is selected.
-12. Choose Melodic for ROS Version.
-13. Set Restart Policy to No.
-14. The name of the executable: navigation_exec
-15. The Executable Type is Default.
-16. In the Command to run in the docker container box, enter the command: `roslaunch io_gazebo_turtlebot_bringup app.launch`
-17. 
+1. On the left navigation bar, click **CATALOG**.
+2. Click **ADD NEW PACKAGE**.
+3. The name of the package: `Navigation Application`
+4. Make sure **Is a singleton package** is ***not selected***.
+5. Ensure **Is a bindable package** is ***selected***.
+6. The version of the package is `1.0.0`
+7. The purpose of the package is to `Controlled navigation of turtlebot3`
+8. Click **NEXT**.
+9. The name of the component: `navigate_component`
+10. The runtime of the component is **Device**.
+11. Ensure **Is ROS Component** is selected.
+12. Choose **Melodic** for **ROS Version**.
+13. Set **Restart Policy** to **No**.
+14. The name of the executable: `navigation_executable`
+15. The **Executable Type** is **Default**.
+16. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup app.launch`
+17. Click on **Add ROS topic**. The name of the ROS topic is `/cmd_vel`, and its **QoS** is set to **Low**.
+18. Add a configuration parameter by clicking on **Add Parameter**. The name of the parameter is `SPAWN_TURTLEBOT_ROBOT`. The **Default** value is `true`.
+19.  Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+
+#### Simulation Package
+
+1. On the left navigation bar, click **CATALOG**.
+2. Click **ADD NEW PACKAGE**.
+3. The name of the package: `Simulation`
+4. Make sure **Is a singleton package** is ***not selected***.
+5. Ensure **Is a bindable package** is ***selected***.
+6. The version of the package is `1.0.0`
+7. The purpose of the package is to `Run simulation of turtlebot3`
+8. Click **NEXT**.
+9. The name of the component: `simulate_component`
+10. The runtime of the component is **Cloud**.
+11. Ensure **Is ROS Component** is selected.
+12. Choose **Melodic** for **ROS Version**.
+13. The number of **Replicas to run the component** is **1**
+14. The name of the executable: `simulation_executable`
+15. The **Executable Type** is **Git**.
+16. The **Git Repository** is `https://github.com/rapyuta-robotics/io_tutorials`
+17. The context directory: `gazebo_examples`
+18. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup sim.launch gui:=true`
+19. Select **Simulation** option.
+20. Set **Resource Limit** to **Med:2 cpu cores, 8 GiB memory**
+{{% notice warning %}}
+For simulation, the resource limit should either be **Med** or **High**. Simulation has issues with **Low** resource limits.
+{{% /notice %}}
+21. Add the following **ROS topics**:
+    1.  Name: `/joint_states`, QoS: Low
+    2.  Name: `/tf`, QoS: Low
+    3.  Name: `/scan`, QoS: Low
+    4.  Name: `/odom`, QoS: Low
+22. Click **NEXT**.
+23. Under **Inbound ROS Interfaces**, Click on **Add Topic** to add the ROS topic `/cmd_vel` as an inbound ROS topic.
+24. Click **CONFIRM PACKAGE CREATION**.
