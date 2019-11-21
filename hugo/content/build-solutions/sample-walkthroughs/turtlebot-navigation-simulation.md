@@ -97,11 +97,11 @@ cd ../
 ```
 
 ```bash
-source catkin_ws/devel/setup.bash
+catkin build
 ```
 
 ```bash
-catkin build
+source catkin_ws/devel/setup.bash
 ```
 
 ## Onboard Device
@@ -166,10 +166,51 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 For simulation, the resource limit should either be **Med** or **High**. Simulation has issues with **Low** resource limits.
 {{% /notice %}}
 21. Add the following **ROS topics**:
-    1.  Name: `/joint_states`, QoS: Low
-    2.  Name: `/tf`, QoS: Low
-    3.  Name: `/scan`, QoS: Low
-    4.  Name: `/odom`, QoS: Low
+    1.  **Name**: `/joint_states`, **QoS**: Low
+    2.  **Name**: `/tf`, **QoS**: Low
+    3.  **Name**: `/scan`, **QoS**: Low
+    4.  **Name**: `/odom`, **QoS**: Low
 22. Click **NEXT**.
 23. Under **Inbound ROS Interfaces**, Click on **Add Topic** to add the ROS topic `/cmd_vel` as an inbound ROS topic.
 24. Click **CONFIRM PACKAGE CREATION**.
+
+## Deploy Packages
+
+You will first deploy the Simulation package, and then the Navigation Application package.
+
+#### Deploy Simulation Package
+
+1. On the left navigation bar, click **CATALOG**.
+2. Select **Simulation** package.
+3. Click **Deploy package**.
+4. The name of deployment: `SIMULATION`
+5. Enter the value for **VNC_PASSWORD**
+6. Click **CREATE DEPLOYMENT** > **Confirm**
+
+You will be redirected to the **Details** tab of the newly
+created deployment. The **SIMULATION** is successfully running
+if the progress bar reaches **Succeeded** and the status is **Running**.
+
+#### Deploy Navigation Application Package
+
+1. On the left navigation bar, click **CATALOG**.
+2. Select **Navigation Application** package.
+3. Click **Deploy package**.
+4. The name of deployment: **NAVIGATION**
+5. Select **Turtlebot3 Navigation Simulation Device** as the device for deploying the **navigate_component** on.
+6. Check if the **SPAWN_TURTLEBOT_ROBOT** parameter has the value *true*.
+7. Check if the **ros_wokspace** and **ros_distro** device configuration variables have values */home/rapyuta/catkin_ws* and *melodic* respectively.
+8. Click **Add dependency** to add **SIMULATION** deployment as a dependent deployment.
+9. Click **CREATE DEPLOYMENT** > **Confirm**
+
+You can verify if **NAVIGATION APPLICATION** is running successfully by
+checking if the progress bar reaches **Succeeded** and status is
+**Running**.
+
+## Result
+
+1. On the **Details** tab of **SIMULATION** deployment, copy the value of the network endpoint ***vnc***.
+2. Paste the copied URL address in the address bar of the web browser and press Enter.
+3. Enter the value of ***VNC_PASSWORD***, which you provided while deploying the package, when prompted.
+4. 
+
