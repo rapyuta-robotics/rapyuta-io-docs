@@ -25,6 +25,20 @@ Initialising the Rapyuta Platform
 Successfully installed!
 root@ubuntu:/home/ubuntu#
 ```
+The process of installing a device progresses through various stages to successful completion. The stages are:
+
+1. **Package Installation**: Install system and pip packages on the device
+2. **Prerequisites Check**: check for prerequisites on the device
+3. **Device Setup**: Set up the device for onboarding
+4. **DM Collector Installation**: Install metrics collector on the device
+5. **DM Communication Service Installation**: Install communication service on the device
+6. **DM Publisher Service Installation**: Install publisher service on the device
+7. **Collector Component Installation**: Pull metrics collector docker component on to the device
+8. **Communication Component Installation**: Pull communication docker component on to the device
+9. **Publisher Component Installation**: Pull publisher docker component on to the device
+10. **Supervisor Installation**: Start supervisor on the device
+11. **ROS Component Installation**: Pull ROS docker component on to the device
+
 
 {{% notice warning %}}
 In case you face issues on-boarding the device. Please refer to the [section on failure codes](./failure-codes) to help you troubleshoot.
