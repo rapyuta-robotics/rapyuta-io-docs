@@ -82,15 +82,15 @@ git clone https://github.com/rapyuta-robotics/io_tutorials.git
 ```
 
 ```bash
-sudo rosdep init
+rosdep init
 ```
 
 ```bash
-sudo rosdep update
+rosdep update
 ```
 
 ```bash
-rosdep install --from-paths --ignore-src . -y
+rosdep install --from-paths --ignore-src io_tutorials/gazebo_examples/turtlebot/ -y --rosdistro melodic
 ```
 
 ```bash
@@ -98,22 +98,26 @@ cd ../
 ```
 
 ```bash
-catkin build
+source /opt/ros/melodic/setup.bash
 ```
 
 ```bash
-source catkin_ws/devel/setup.bash
+catkin build io_gazebo_turtlebot_bringup io_gazebo_turtlebot_demo_app io_gazebo_turtlebot_description io_gazebo_turtlebot_navigation
+```
+
+```bash
+source devel/setup.bash
 ```
 
 ## Onboard Device
 
-1. On the left navigation bar, click DEVICES.
-2. Click ADD NEW DEVICE.
-3. The name of the device is Turtlebot3 Navigation Simulation Device.
-4. Provide the absolute path of the catkin workspace in the ROS Catkin Workspace box. In this case, the workspace will be /home/rapyuta/catkin_ws
-5. Define the purpose of the device in the Description box.
-6. Click CONTINUE.
-7. Click COPY to copy the generated device token.
+1. On the left navigation bar, click **DEVICES**.
+2. Click **ADD NEW DEVICE**.
+3. The name of the device is `Turtlebot3 Navigation Simulation Device`.
+4. Provide the absolute path of the catkin workspace in the **ROS Catkin Workspace** box. In this case, the workspace is `/home/rapyuta/catkin_ws`. The absolute path of your catkin workspace may be different, which can be determined by executing command ***pwd*** at the root of the catkin workspace on the device's terminal. 
+5. Define the purpose of the device in the **Description** box.
+6. Click **CONTINUE**.
+7. Click **COPY** to copy the generated device token.
 8. Execute the token at the device's terminal so as to set up rapyuta.io's device agent on the device.
 
 ## Create Packages
@@ -129,11 +133,11 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 6. The version of the package is `1.0.0`
 7. The purpose of the package is to `Controlled navigation of turtlebot3`
 8. Click **NEXT**.
-9. The name of the component: `navigate_component`
+9. The name of the component: `navigation_component`
 10. The runtime of the component is **Device**.
 11. Ensure **Is ROS Component** is selected.
 12. Choose **Melodic** for **ROS Version**.
-13. Set **Restart Policy** to **No**.
+13. Set **Restart Policy** to **Never**.
 14. The name of the executable: `navigation_executable`
 15. The **Executable Type** is **Default**.
 16. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup app.launch`
@@ -151,7 +155,7 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 6. The version of the package is `1.0.0`
 7. The purpose of the package is to `Run simulation of turtlebot3`
 8. Click **NEXT**.
-9. The name of the component: `simulate_component`
+9. The name of the component: `simulation_component`
 10. The runtime of the component is **Cloud**.
 11. Ensure **Is ROS Component** is selected.
 12. Choose **Melodic** for **ROS Version**.
@@ -197,10 +201,10 @@ if the progress bar reaches **Succeeded** and the status is **Running**.
 1. On the left navigation bar, click **CATALOG**.
 2. Select **Navigation Application** package.
 3. Click **Deploy package**.
-4. The name of deployment: **NAVIGATION**
-5. Select **Turtlebot3 Navigation Simulation Device** as the device for deploying the **navigate_component** on.
+4. The name of deployment: `NAVIGATION`
+5. Select **Turtlebot3 Navigation Simulation Device** as the device for deploying the **navigation_component** on.
 6. Check if the **SPAWN_TURTLEBOT_ROBOT** parameter has the value *true*.
-7. Check if the **ros_wokspace** and **ros_distro** device configuration variables have values */home/rapyuta/catkin_ws* and *melodic* respectively.
+7. Check if the **ros_wokspace** and **ros_distro** device configuration variables have values set to the correct absolute path for *catkin_ws* and *melodic* respectively.
 8. Click **Add dependency** to add **SIMULATION** deployment as a dependent deployment.
 9. Click **CREATE DEPLOYMENT** > **Confirm**
 
