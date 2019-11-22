@@ -15,9 +15,8 @@ The tutorial will show you how to create a dependent deployment using
 [rapyuta.io console](https://console.rapyuta.io).
 
 ## Prerequisites
-1. You are recommended to complete the [ROS publisher subscriber](/dev-tutorials/ros-publisher-subscriber/)
-tutorial.
-2. Device requirements
+
+1. Device requirements
 	1. You should have access to a device (computer and/or Raspberry PI 2 or 3)
 	with an internet connection.
 	2. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is
@@ -30,9 +29,8 @@ installed on it, replace ***Kinetic*** with ***Melodic*** in all places
 where a specific version of ROS is asked for. The tutorial should still
 work the same.
 {{% /notice %}}
-3. You should be familiar with the [core concepts](/core-concepts/) of rapyuta.io
-4. You should be familiar with the [map_server](https://wiki.ros.org/map_server) ROS package.
-5. You should be familiar with the below tools:
+1. You should be familiar with the [map_server](https://wiki.ros.org/map_server) ROS package.
+2. You should be familiar with the below tools:
 	1. [Git](https://git-scm.com/doc)
 	2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
 	3. [ROS topics](https://wiki.ros.org/Topics)
@@ -107,7 +105,7 @@ underscore _ character, and must not begin with a digit.
 
 The package takes about five minutes to build the source code in the *io_tutorials*
 repository into a running container. You may analyse the corresponding
-[build logs](/core-concepts/logging/build-logs) for debugging build failures.
+[build logs](/developer-guide/tooling-automation/logging/build-logs/) for debugging build failures.
 
 A flickering yellow dot against the package name indicates that the **Build Status**
 is **BuildInProgress**, while a green dot indicates that the **Build Status** is **Complete**.
@@ -116,7 +114,7 @@ Additionally, you may verify if the package is built successfully and is ready
 to be deployed by clicking to see if the **Deploy package** button is enabled.
 
 #### Prepare and add a device
-You will [prepare](/getting-started/prepare-raspberry-pi) a Raspberry Pi 2 or 3
+You will [prepare](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3) a Raspberry Pi 2 or 3
 as the device for this tutorial.
 
 If you are using custom rapyuta.io image on the device, the catkin workspace is already created, and the *io_tutorials* repository is already present in the workspace. Moreover, the source code is built for you.
@@ -174,8 +172,8 @@ If you experience the error ***catkin:command not found***,
 then the *python-catkin-tools* package is missing on the device, which is required for executing *catkin build* command. Install the package by running the command `sudo apt-get install python-catkin-tools` at the device terminal.
 {{% /notice %}}
 
-And then, you will [add the device](/getting-started/add-new-device)
-to [rapyuta.io](https://console.rapyuta.io).
+And then, you will [add the device](/developer-guide/manage-machines/onboarding/)
+to rapyuta.io.
 {{% notice note %}}
 While adding the device, ensure that **Use docker compose as default runtime** checkbox is ***not selected***.
 {{% /notice %}}
@@ -258,7 +256,7 @@ checking if the green colored progress bar indicates that the **DEPLOYMENT PHASE
 
 Ensure that the dependent deployment **STATUS** is _Running_ as well.
 
-The corresponding [dependency graph](/core-concepts/deployments/#dependency-graph) will look as shown below:
+The corresponding [dependency graph](/developer-guide/manage-software-cycle/compose-software/dependency-graph/) will look as shown below:
 ![Dependency graph](/images/tutorials/dms/dms-dgraph.png?classes=border,shadow&width=50pc)
 
 To know whether *map_listener* has received the map data, execute the below
