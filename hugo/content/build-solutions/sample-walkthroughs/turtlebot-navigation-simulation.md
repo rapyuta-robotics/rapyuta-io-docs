@@ -30,6 +30,9 @@ Intermediate
 25 minutes
 
 ## Background
+Code for the walkthrough is located in the io_tutorials repository at GitHub.
+
+The simulation and navigation application are 
 The package, ***io_gazebo_turtlebot_bringup***, includes files
 that start a demo application for navigating a turtlebot3 model
 in a Gazebo simulation. These files are:
