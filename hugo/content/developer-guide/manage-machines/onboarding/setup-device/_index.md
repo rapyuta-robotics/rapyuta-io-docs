@@ -34,11 +34,13 @@ The process of installing a device progresses through various stages to successf
 * **Stage 5**: Installing monitoring package.
 * **Stage 6**: Installing ROS base.
 
-{{% notice note %}}
 Not all devices go through all of the stages in the device initialization
-process. For example, a pre-installed device, which will run non-ROS components, will
+process. For example:
+
+1. a pre-installed device, which will run non-ROS components, will
 not pass through **Stage 2** and **Stage 3**.
-{{% /notice %}}
+2. only devices that have docker-compose option set will pass through
+   **Stage 6**.
 
 {{% notice warning %}}
 In case you face issues on-boarding the device. Please refer to the [section on failure codes](./failure-codes) to help you troubleshoot.
