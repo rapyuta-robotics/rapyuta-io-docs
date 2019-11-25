@@ -74,7 +74,7 @@ cd catkin_ws/src
 ```
 
 ```bash
-git clone https://github.com/rapyuta-robotics/io_tutorials.git
+git clone https://github.com/rapyuta-robotics/io_simulation_tutorials.git
 ```
 
 ```bash
@@ -158,8 +158,8 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 13. The number of **Replicas to run the component** is **1**
 14. The name of the executable: `simulation_executable`
 15. The **Executable Type** is **Git**.
-16. The **Git Repository** is `https://github.com/rapyuta-robotics/io_tutorials`
-17. The context directory: `gazebo_examples`
+16. The **Git Repository** is `https://github.com/rapyuta-robotics/io_simulation_tutorials`
+17. The context directory: `turtlebot_navigation`
 18. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup sim.launch gui:=true`
 19. Select **Simulation** option.
 20. Set **Resource Limit** to **Med:2 cpu cores, 8 GiB memory**
