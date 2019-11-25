@@ -36,7 +36,7 @@ The process of installing a device progresses through various stages to successf
 
 {{% notice note %}}
 Not all devices go through all of the stages in the device initialization
-process. A pre-installed device, which will run non-ROS components, will
+process. For example, a pre-installed device, which will run non-ROS components, will
 not pass through **Stage 2** and **Stage 3**.
 {{% /notice %}}
 
