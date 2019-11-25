@@ -27,18 +27,18 @@ root@ubuntu:/home/ubuntu#
 ```
 The process of installing a device progresses through various stages to successful completion. The stages are:
 
-1. **Package Installation**: Install system and pip packages on the device
-2. **Prerequisites Check**: check for prerequisites on the device
-3. **Device Setup**: Set up the device for onboarding
-4. **DM Collector Installation**: Install metrics collector on the device
-5. **DM Communication Service Installation**: Install communication service on the device
-6. **DM Publisher Service Installation**: Install publisher service on the device
-7. **Collector Component Installation**: Pull metrics collector docker component on to the device
-8. **Communication Component Installation**: Pull communication docker component on to the device
-9. **Publisher Component Installation**: Pull publisher docker component on to the device
-10. **Supervisor Installation**: Start supervisor on the device
-11. **ROS Component Installation**: Pull ROS docker component on to the device
+* **Stage 1**: Checking and installing required packages.
+* **Stage 2**: Installing ROS messages collector package.
+* **Stage 3**: Installing communication package.
+* **Stage 4**: Installing metrics collector package.
+* **Stage 5**: Installing monitoring package.
+* **Stage 6**: Installing ROS base.
 
+{{% notice note %}}
+Not all devices go through all of the stages in the device initialization
+process. A pre-installed device, which will run non-ROS components, will
+not pass through **Stage 2** and **Stage 3**.
+{{% /notice %}}
 
 {{% notice warning %}}
 In case you face issues on-boarding the device. Please refer to the [section on failure codes](./failure-codes) to help you troubleshoot.
