@@ -41,31 +41,20 @@ The package, ***io_gazebo_turtlebot_bringup***, includes files
 that start a demo application for navigating a turtlebot3 model
 in a Gazebo simulation. These files are:
 
-* **app.launch**    
-  * loads common configuration parameters that are shared between
-    ***app.launch*** and ***sim.launch*** files by including
-    ***common.launch*** file if ***load_common_param*** variable is
-    true.
-  * includes ***demo_app.launch*** file.
-  * loads ***io_turtle_gazebo_navigation.launch*** file.
-* **sim.launch**    
-  * loads common configuration parameters that are shared between
-    ***app.launch*** and ***sim.launch*** files by including ***common.launch***
-    file if ***load_common_param*** variable is true.
-  * loads Gazebo simulation of turtlebot3 by launching
-    ***io_gazebo_turtlebot_gazebo.launch*** file.
 * **common.launch**    
   * loads common configuration parameters that are shared between
-    ***app.launch*** and ***sim.launch*** files by including ***common_config.yaml***
-    file. The shared configuration parameters are the *initial
-    location of turtlebot3* and *use_sim_time*.
-  * robot description used in ***app.launch*** and ***sim.launch*** files.
+    simulation and navigation application to ROS parameter server,
+    for example, *robot_description*, initial position of the turtlebot.
+* **app.launch**    
+  * launches amcl, move_base and other navigation related nodes through ***io_gazebo_turtlebot_navigation.launch***
+  * launches demo application that sends sequential move_base goals through ***demo_app.launch***
+  * loads common configuration parameters via ***common.launch***
+* **sim.launch**     
+  * loads Gazebo simulation of turtlebot3 via
+    ***io_gazebo_turtlebot_gazebo.launch*** file.
 * **bringup.launch**    
-  * gets ***sim.launch*** up and running.
-  * gets ***app.launch*** up and running.
-  * the variable, ***load_common_param***, is set to true only at
-    one place while launching ***sim.launch*** files so as to load common configurations shared between
-    ***app.launch*** and ***sim.launch*** files only once.
+  * launches both ***sim.launch*** and ***app.launch***.
+  * ensures ***common.launch*** is called only once.
 
 ## Prepare Device
 On the device's command line terminal, execute the following commands
