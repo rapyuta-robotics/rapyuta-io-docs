@@ -30,9 +30,13 @@ Intermediate
 25 minutes
 
 ## Background
-Code for the walkthrough is located in the io_tutorials repository at GitHub.
+The source code for the walkthrough is found in the
+[io_simulation_tutorials](https://github.com/rapyuta-robotics/io_simulation_tutorials) repository on GitHub.
 
-The simulation and navigation application are 
+The simulation and navigation application are put in separate folders
+so that the former can be run on the cloud and the latter can be run
+on a device.
+
 The package, ***io_gazebo_turtlebot_bringup***, includes files
 that start a demo application for navigating a turtlebot3 model
 in a Gazebo simulation. These files are:
