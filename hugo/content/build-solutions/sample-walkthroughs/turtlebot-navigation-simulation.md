@@ -215,10 +215,13 @@ checking if the progress bar reaches **Succeeded** and status is
 3. Enter the value of ***VNC_PASSWORD***, which you provided while deploying the package, when prompted.
 
 ## Advanced Tips
-If you want to run your software with Gazebo on rapyuta.io,
+If you want to run your application separate from Gazebo simulation on
+rapyuta.io, your application will need time synchronization. Since the set
+up runs two ROS Masters, one in the cloud with Gazebo and the other on a
+computer with navigation nodes. The clock for these two applications will need
+to be in sync. This is achieved by ***/clock*** ROS topic, which is published by
+Gazebo.
 
-Time synchronization: Since the set up runs two ROS Masters-in cloud with Gazebo and on computer with navigation nodes, these two system clocks need to be in sync. This is achieved by /clock ROS topic, which is published by Gazebo.
-
-* /use_sim_time is enabled in launch files to use /clock topic
-* rospy.wait_for_message(/clock, Time) on line 13 in demo_app.py is the waiting /clock arrived in sync. Otherwise jump in time may happen. 
+* ***/use_sim_time*** is set to ***true*** in ROS parameter server to use /clock topic
+* ***rospy.wait_for_message(/clock, Time)*** on line 13 in ***demo_app.py*** is the waiting /clock arrived in sync. Otherwise jump in time may happen. 
 
