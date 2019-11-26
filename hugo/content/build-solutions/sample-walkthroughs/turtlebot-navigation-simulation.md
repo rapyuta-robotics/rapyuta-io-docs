@@ -224,6 +224,8 @@ computer with navigation nodes. The clock for these two applications will need
 to be in sync. This is achieved by ***/clock*** ROS topic, which is published by
 Gazebo.
 
-* ***/use_sim_time*** is set to ***true*** in ROS parameter server to use /clock topic
-* ***rospy.wait_for_message(/clock, Time)*** on line 13 in ***demo_app.py*** is the waiting /clock arrived in sync. Otherwise jump in time may happen. 
+* [***/use_sim_time*** is set to ***true***](https://github.com/rapyuta-robotics/io_simulation_tutorials/blob/e50ccd9b9d8a99af8d4ae15b361d1370443bd2aa/turtlebot_navigation/io_gazebo_turtlebot_bringup/config/common_config.yaml#L5) in ROS parameter server
+  to use ***/clock*** topic
+* If your application requires time synchronization, you have to wait on
+  the ***/clock*** topic as shown [here](https://github.com/rapyuta-robotics/io_simulation_tutorials/blob/e50ccd9b9d8a99af8d4ae15b361d1370443bd2aa/turtlebot_navigation/io_gazebo_turtlebot_demo_app/scripts/demo_app.py#L13).
 
