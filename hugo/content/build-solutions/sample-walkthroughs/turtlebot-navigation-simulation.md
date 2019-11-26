@@ -31,11 +31,11 @@ Intermediate
 
 ## Background
 The source code for the walkthrough is found in the
-[io_simulation_tutorials](https://github.com/rapyuta-robotics/io_simulation_tutorials) repository on GitHub.
+[turtlebot_navigation](https://github.com/rapyuta-robotics/io_simulation_tutorials/tree/master/turtlebot_navigation) repository on GitHub.
 
-The simulation and navigation application are put in separate folders
-so that the former can be run on the cloud and the latter can be run
-on a device.
+The simulation and navigation application are started from separate
+launch files so that the former can be run on the cloud and the
+latter can be run on a device.
 
 The package, ***io_gazebo_turtlebot_bringup***, includes files
 that start a demo application for navigating a turtlebot3 model
@@ -43,15 +43,17 @@ in a Gazebo simulation. These files are:
 
 * **common.launch**    
   * loads common configuration parameters that are shared between
-    simulation and navigation application to ROS parameter server,
-    for example, *robot_description*, initial position of the turtlebot.
+    simulation and navigation application to respective ROS parameter
+    servers, for example, *robot_description*, initial position
+    of the turtlebot.
 * **app.launch**    
   * launches amcl, move_base and other navigation related nodes through ***io_gazebo_turtlebot_navigation.launch***
   * launches demo application that sends sequential move_base goals through ***demo_app.launch***
   * loads common configuration parameters via ***common.launch***
 * **sim.launch**     
   * loads Gazebo simulation of turtlebot3 via
-    ***io_gazebo_turtlebot_gazebo.launch*** file.
+  ***io_gazebo_turtlebot_gazebo.launch*** file.
+  * loads common configuration parameters via ***common.launch***
 * **bringup.launch**    
   * launches both ***sim.launch*** and ***app.launch***.
   * ensures ***common.launch*** is called only once.
@@ -110,7 +112,7 @@ source devel/setup.bash
 1. On the left navigation bar, click **DEVICES**.
 2. Click **ADD NEW DEVICE**.
 3. The name of the device is `Turtlebot3 Navigation Simulation Device`.
-4. Provide the absolute path of the catkin workspace in the **ROS Catkin Workspace** box. In this case, the workspace is `/home/rapyuta/catkin_ws`. The absolute path of your catkin workspace may be different, which can be determined by executing command ***pwd*** at the root of the catkin workspace on the device's terminal. 
+4. Provide the absolute path of the catkin workspace in the **ROS Catkin Workspace** box. In this case, the workspace is `/home/rapyuta/catkin_ws`. The absolute path of your catkin workspace may be different, which can be determined by executing command ***pwd*** inside the root of the catkin workspace on the device's terminal. 
 5. Define the purpose of the device in the **Description** box.
 6. Click **CONTINUE**.
 7. Click **COPY** to copy the generated device token.
