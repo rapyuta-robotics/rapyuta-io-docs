@@ -218,10 +218,18 @@ b, strong {
     }
 }
 
-@media only screen and (max-width: 480px)  {
+@media only screen and (max-width: 520px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
     #body .highlightable.padding {
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    #chapter #body-inner {
+        max-width: 100%;
     }
 
     #body-inner {
