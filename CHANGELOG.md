@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Added
 - DEV_108 device failure error code
+- Mention the different stages involved in the process of onboarding devices
 
 ## [2.0.2 - 2019-11-13]
 ### Added
