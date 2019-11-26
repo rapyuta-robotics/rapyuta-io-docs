@@ -41,7 +41,9 @@ process. For example:
 
 1. a pre-installed device, which will run non-ROS components, will
 not have ROS messages collector and communication packages installed on it.
-2. only devices that have docker-compose option set will have ROS base installed on it.
+2. While devices with docker-compose option set will have ROS base
+   installed on them, those with preinstalled runtime will have monitoring
+   package installed on them.
 
 {{% notice warning %}}
 In case you face issues on-boarding the device. Please refer to the [section on failure codes](./failure-codes) to help you troubleshoot.
