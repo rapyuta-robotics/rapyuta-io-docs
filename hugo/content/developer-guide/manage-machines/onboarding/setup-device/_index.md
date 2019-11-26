@@ -25,14 +25,16 @@ Initialising the Rapyuta Platform
 Successfully installed!
 root@ubuntu:/home/ubuntu#
 ```
-The process of installing a device progresses through various stages to successful completion. The stages are:
+The process of installing a device consists of different stages towards
+successful completion of onboarding the device on to rapyuta.io.
+These stages are described below:
 
-* **Stage 1**: Checking and installing required packages.
-* **Stage 2**: Installing ROS messages collector package.
-* **Stage 3**: Installing communication package.
-* **Stage 4**: Installing metrics collector package.
-* **Stage 5**: Installing monitoring package.
-* **Stage 6**: Installing ROS base.
+* Checking and installing required packages.
+* Installing ROS messages collector package.
+* Installing communication package.
+* Installing metrics collector package.
+* Installing monitoring package.
+* Installing ROS base.
 
 Not all devices go through all of the stages in the device initialization
 process. For example:
