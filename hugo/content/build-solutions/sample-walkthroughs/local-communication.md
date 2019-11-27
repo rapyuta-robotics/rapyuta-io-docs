@@ -193,7 +193,7 @@ are also installed on these custom images.
 {{% /notice %}}
 
 {{% notice info %}}
-Learn how to [prepare Raspberry PI](/getting-started/prepare-raspberry-pi)
+Learn how to [prepare Raspberry PI](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3)
 {{% /notice %}}
 
 If you are using custom rapyuta.io image on the device, the catkin workspace is
