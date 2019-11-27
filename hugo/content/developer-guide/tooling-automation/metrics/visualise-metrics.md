@@ -3,8 +3,8 @@ title: "Metrics Visualization"
 description:
 type: developer-guide
 date: 2019-10-30T16:28:20+05:30
-pre: "c. "
-weight: 541
+pre: "d. "
+weight: 542
 ---
 [rapyuta.io](https://console.rapyuta.io) enables you to visualize metrics data that is
 collected from a device like a sensor measuring the temperature of its surroundings.
