@@ -7,6 +7,9 @@
 - Support for custom ROS messages
 - More information on simulation page about robot_description, latency issues etc.
 
+### Updated
+- Update Python SDK version to v0.9.1
+
 ## [2.0.2 - 2019-11-13]
 ### Added
 - Add release summary page for November 13, 2019
