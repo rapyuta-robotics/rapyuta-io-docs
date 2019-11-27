@@ -6,6 +6,7 @@
 - Add turtlebot3 navigation simulation walkthrough
 - Support for custom ROS messages
 - More information on simulation page about robot_description, latency issues etc.
+- Add release update page for November 27, 2019
 
 ### Updated
 - Update Python SDK version to v0.9.1
