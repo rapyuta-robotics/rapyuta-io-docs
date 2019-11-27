@@ -4,6 +4,8 @@
 ### Added
 - DEV_108 device failure error code
 - Support for custom ROS messages
+- More information on simulation page about robot_description, latency issues etc.
+
 ## [2.0.2 - 2019-11-13]
 ### Added
 - Add release summary page for November 13, 2019
@@ -16,7 +18,6 @@
 
 ### Updated
 - Update SDK version to 0.9.0
-
 
 ## [2.0.0 - 2019-10-30]
 - A complete revamp of the user documentation
