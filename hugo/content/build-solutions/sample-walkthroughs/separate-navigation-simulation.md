@@ -231,3 +231,4 @@ Gazebo.
 * If your application requires time synchronization, you have to wait on
   the ***/clock*** topic as shown [here](https://github.com/rapyuta-robotics/io_simulation_tutorials/blob/e50ccd9b9d8a99af8d4ae15b361d1370443bd2aa/turtlebot_navigation/io_gazebo_turtlebot_demo_app/scripts/demo_app.py#L13).
 
+
