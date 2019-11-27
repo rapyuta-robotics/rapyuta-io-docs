@@ -45,7 +45,7 @@ It will take nearly about 15 minutes to finish the tutorial.
 
 ## Preparing your device
 The tutorial will use Raspberry PI as the device.
-Learn [how to prepare your Raspberry PI](/getting-started/prepare-raspberry-pi)
+Learn [how to prepare your Raspberry PI](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3)
 
 If you are using the custom rapyuta.io image on the device, the catkin workspace is
 already created for you and the *io_tutorials* repository is already present in the workspace.
