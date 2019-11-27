@@ -216,6 +216,8 @@ checking if the progress bar reaches **Succeeded** and status is
 2. Paste the copied URL address in the address bar of the web browser and press Enter.
 3. Enter the value of ***VNC_PASSWORD***, which you provided while deploying the package, when prompted.
 
+<video controls style="max-width: 1500px" width="100%" class="border shadow" src="/images/tutorials/separate-navigation-simulation/expected-outcome.webm"></video>
+
 ## Advanced Tips
 If you want to run your application separate from Gazebo simulation on
 rapyuta.io, your application will need time synchronization. Since the set
