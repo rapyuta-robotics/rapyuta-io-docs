@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.0.3 - 2019-11-27]
 ### Added
 - Add turtlebot3 navigation simulation walkthrough
 - Support for custom ROS messages
