@@ -1,11 +1,20 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.0.3 - 2019-11-27]
+### Added
+- Add turtlebot3 navigation simulation walkthrough
+- Support for custom ROS messages
+- More information on simulation page about robot_description, latency issues etc.
+- Add release update page for November 27, 2019
+
+### Updated
+- Update Python SDK version to v0.9.1
+
 ## [2.0.2 - 2019-11-13]
 ### Added
 - Add release summary page for November 13, 2019
 - Describe DEP_E162 and DEP_E163 error codes
-
 ## [2.0.1 - 2019-11-06]
 ### Added
 - Explain automatic linking of ROS interfaces in deployment composition.
@@ -14,7 +23,6 @@
 
 ### Updated
 - Update SDK version to 0.9.0
-
 
 ## [2.0.0 - 2019-10-30]
 - A complete revamp of the user documentation

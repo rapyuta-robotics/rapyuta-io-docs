@@ -1,5 +1,5 @@
 ---
-title: "Turtlebot Simulation"
+title: "Basic Simulation With Teleoperation"
 description:
 type: build-solutions
 date: 2019-10-24T13:48:07+05:30
@@ -13,7 +13,7 @@ The tutorial will show you how to simulate a robot in a 3D world using rapyuta.i
 
 1. The CPU Architecture of the device is AMD64.
 2. The version of ROS running on the device is ROS Melodic.
-3. Install Google Chrome browser.
+3. Install the Google Chrome browser.
 4. Be familiar with git, UNIX/LINUX command terminal.
 
 ## Difficulty
@@ -25,7 +25,7 @@ Intermediate
 ## Tutorial Walkthrough
 In this tutorial, you will first add a device to rapyuta.io.
 You will run turtlebot3 simulation on the cloud, and then run
-keyboard teleoperation from device.
+keyboard teleoperation from the device.
 
 ## Add a Device
 
@@ -60,9 +60,9 @@ You will create two packages in the tutorial.
 13. The number of replicas to run the component is `1`
 14. The name of the executable is `turtlebot3_autotrace_launcher`
 15. The **Executable Type** is **Git**.
-16. The **Git Repository** is `https://github.com/rapyuta-robotics/io_turtlebot3`
+16. The **Git Repository** is `https://github.com/rapyuta-robotics/io_simulation_tutorials`
 17. In the **Command to run in the docker container** box, enter the command: `roslaunch turtlebot3_gazebo turtlebot3_autorace.launch`
-18. The **context directory** is `simulations/melodic`
+18. The **context directory** is `turtlebot_teleoperation`
 19. Select **Simulation** option. Enabling simulation feature automatically adds a Gazebo simulation specific endpoint, topics, services, inbound ROS interfaces and a configuration parameter.
 20. Set **Resource Limit** to **Med:2 cpu cores, 8 GiB memory**.
 {{% notice warning %}}
@@ -75,7 +75,7 @@ For simulation, the resource limit should either be **Med** or **High**. Simulat
 22. Click **Add Topic** under **Inbound ROS Interfaces** to add the ROS topic a deployment of this package subscribes to for velocity commands. The name of the topic is `/cmd_vel`
 23. Click **CONFIRM PACKAGE CREATION**. 
 
-The package takes a couple of minutes to build the source code in ***io_turtlebot3*** repository into a running docker container. You may analyze the corresponding build logs, which help debug failing builds. A flickering yellow dot against the name of the package indicates that the **Build Status** is **New**, while a green dot indicates that the **Build Status** is **Complete**.
+The package takes a couple of minutes to build the source code in ***io_simulation_tutorials*** repository into a running docker container. You may analyze the corresponding build logs, which help debug failing builds. A flickering yellow dot against the name of the package indicates that the **Build Status** is **New**, while a green dot indicates that the **Build Status** is **Complete**.
 
 Aditionally, when the **Deploy package** button is automatically enabled it indicates that the ***Turtlebot3 Robot Simulation*** package is successfully built and is ready to be deployed.
 
