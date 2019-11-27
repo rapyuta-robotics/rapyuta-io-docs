@@ -12,16 +12,16 @@ turtlebot3 in a Gazebo simulation on rapyuta.io
 
 It shows the separation of launch files into application and simulation.
 It is recommended to run the simulation on the cloud and the
-application is run on either a computer or an instance of the cloud.
+application on either a computer or an instance of the cloud.
 
 ## Prerequisites
 
 1. The CPU architecture of the device is **AMD64**
 2. Install **ROS Melodic** on the device.
 3. Install **catkin-tools** package on the device.
-4. Install Google Chrome web browser on a computer.
+4. Install the [Chrome web browser](https://www.google.com/chrome/) on a computer.
 5. Familiarity with tools like git, UNIX/LINUX command terminal.
-6. ***Optional***: If you want to run your applications with Gazebo on rapyuta.io in future, it is recommended that you understand ROS launch system concepts and ROS navigation stack structure. It will help you understand the usage better.
+6. ***Optional***: ROS launch system concepts and ROS navigation stack structure are suggested readings if you want to run your applications with Gazebo on rapyuta.io. It will help you understand the usage better.
 
 ## Difficulty
 Intermediate
@@ -30,22 +30,22 @@ Intermediate
 25 minutes
 
 ## Background
-The source code for the walkthrough is found in the
+The source code for the walkthrough is in the
 [turtlebot_navigation](https://github.com/rapyuta-robotics/io_simulation_tutorials/tree/master/turtlebot_navigation) repository on GitHub.
 
-The simulation and navigation application are started from separate
-launch files so that the former can be run on the cloud and the
-latter can be run on a device.
+The simulation and navigation application start from separate
+launch files so that the former runs on the cloud and the
+latter runs on a device.
 
 The package, ***io_gazebo_turtlebot_bringup***, includes files
 that start a demo application for navigating a turtlebot3 model
 in a Gazebo simulation. These files are:
 
 * **common.launch**    
-  * loads common configuration parameters that are shared between
+  * load configuration parameters shared between
     simulation and navigation application to respective ROS parameter
-    servers, for example, *robot_description*, initial position
-    of the turtlebot.
+    servers, for example, *robot_description*, an initial position
+    of the TurtleBot.
 * **app.launch**    
   * launches amcl, move_base and other navigation related nodes through ***io_gazebo_turtlebot_navigation.launch***
   * launches demo application that sends sequential move_base goals through ***demo_app.launch***
@@ -116,7 +116,7 @@ source devel/setup.bash
 5. Define the purpose of the device in the **Description** box.
 6. Click **CONTINUE**.
 7. Click **COPY** to copy the generated device token.
-8. Execute the token at the device's terminal so as to set up rapyuta.io's device agent on the device.
+8. Execute the token at the device's terminal to set up rapyuta.io's device agent on the device.
 
 ## Create Packages
 You will create and add two packages, namely, Navigation Application and Turtlebot3 Simulation.
@@ -139,7 +139,7 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 14. The name of the executable: `navigation_executable`
 15. The **Executable Type** is **Default**.
 16. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup app.launch`
-17. Click on **Add ROS topic**. The name of the ROS topic is `/cmd_vel`, and its **QoS** is set to **Low**.
+17. Click on **Add ROS topic**. The name of the ROS topic is `/cmd_vel`, and it is set **QoS** to **Low**.
 18. Add a configuration parameter by clicking on **Add Parameter**. The name of the parameter is `SPAWN_TURTLEBOT_ROBOT`. The **Default** value is `true`.
 19.  Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
@@ -151,7 +151,7 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 4. Make sure **Is a singleton package** is ***not selected***.
 5. Ensure **Is a bindable package** is ***selected***.
 6. The version of the package is `1.0.0`
-7. The purpose of the package is to `Run simulation of turtlebot3`
+7. The purpose of the package is to `Simulation of turtlebot3`
 8. Click **NEXT**.
 9. The name of the component: `simulation_component`
 10. The runtime of the component is **Cloud**.
@@ -190,9 +190,9 @@ You will first deploy the Simulation package, and then the Navigation Applicatio
 5. Enter the value for **VNC_PASSWORD**
 6. Click **CREATE DEPLOYMENT** > **Confirm**
 
-You will be redirected to the **Details** tab of the newly
+You will redirect to the **Details** tab of the newly
 created deployment. The **SIMULATION** is successfully running
-if the progress bar reaches **Succeeded** and the status is **Running**.
+if the progress bar reaches **Succeeded**, and the status is **Running**.
 
 #### Deploy Navigation Application Package
 
@@ -200,7 +200,7 @@ if the progress bar reaches **Succeeded** and the status is **Running**.
 2. Select **Navigation Application** package.
 3. Click **Deploy package**.
 4. The name of deployment: `NAVIGATION`
-5. Select **Turtlebot3 Navigation Simulation Device** as the device for deploying the **navigation_component** on.
+5. Select **Turtlebot3 Navigation Simulation Device** as the device on which the **navigation_component** will be deployed.
 6. Check if the **SPAWN_TURTLEBOT_ROBOT** parameter has the value *true*.
 7. Check if the **ros_wokspace** and **ros_distro** device configuration variables have values set to the correct absolute path for *catkin_ws* and *melodic* respectively.
 8. Click **Add dependency** to add **SIMULATION** deployment as a dependent deployment.
@@ -214,16 +214,16 @@ checking if the progress bar reaches **Succeeded** and status is
 
 1. On the **Details** tab of **SIMULATION** deployment, copy the value of the network endpoint ***vnc***.
 2. Paste the copied URL address in the address bar of the web browser and press Enter.
-3. Enter the value of ***VNC_PASSWORD***, which you provided while deploying the package, when prompted.
+3. Enter the value of ***VNC_PASSWORD***, which you provided while deploying the package when prompted.
 
 <video controls style="max-width: 1500px" width="100%" class="border shadow" src="/images/tutorials/separate-navigation-simulation/expected-outcome.webm"></video>
 
 ## Advanced Tips
-If you want to run your application separate from Gazebo simulation on
-rapyuta.io, your application will need time synchronization. Since the set
+If you want to run your application separate from the Gazebo simulation on
+rapyuta.io, it will need time synchronization. Since the set
 up runs two ROS Masters, one in the cloud with Gazebo and the other on a
 computer with navigation nodes. The clock for these two applications will need
-to be in sync. This is achieved by ***/clock*** ROS topic, which is published by
+to be in sync. The clock synchronization is by ***/clock*** ROS topic, which is published by
 Gazebo.
 
 * [***/use_sim_time*** is set to ***true***](https://github.com/rapyuta-robotics/io_simulation_tutorials/blob/e50ccd9b9d8a99af8d4ae15b361d1370443bd2aa/turtlebot_navigation/io_gazebo_turtlebot_bringup/config/common_config.yaml#L5) in ROS parameter server
