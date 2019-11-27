@@ -8,7 +8,7 @@
     --MAIN-ANCHOR-color: #dc1d30; /* color of anchors on titles */
 
     --MENU-HEADER-BG-color: #fff; /* Background color of menu header */
-    --MENU-HEADER-BORDER-color: #f6f6f6; /* Color of menu header border */ 
+    --MENU-HEADER-BORDER-color: #f6f6f6; /* Color of menu header border */
     --MENU-HEADER-LINK-color: #222222; /* Color of menu header link */
     --MENU-HEADER-LINK-HOVER-color: #222222; /* Color of menu header link, when header */
 
@@ -114,6 +114,7 @@ a:hover {
 #body-inner {
     background: #fff;
     padding: 0.5rem 3rem 3rem 3rem;
+    margin-bottom: 0;
 }
 
 #logo {
@@ -148,7 +149,7 @@ pre {
 }
 
 .hljs {
-    color: #222222; 
+    color: #222222;
     background: #f6f6f6;
 }
 
@@ -172,3 +173,66 @@ b, strong {
     width: 95%;
 }
 
+/* Fix search autocomplete box scroll bug */
+.autocomplete-suggestions  {
+    position: fixed;
+}
+
+@media only screen and (min-width: 768px) {
+    .collapse #sidebar {
+        display: none;
+    }
+
+    .collapse #body {
+        margin-left: 0;
+    }
+
+    #top-bar {
+        position: relative;
+    }
+
+    .sidebar-collapse-btn {
+        position: absolute;
+        width: 16px;
+        padding: 0;
+        right: 10px;
+        bottom: 18px;
+        padding: 0;
+    }
+
+    #body .sidebar-collapse-btn > img {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .sidebar-collapse-btn {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 959px)  {
+    #body .highlightable.padding {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #body .highlightable.padding {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #chapter #body-inner {
+        max-width: 100%;
+    }
+
+    #body-inner {
+        padding: 15px;
+    }
+}
