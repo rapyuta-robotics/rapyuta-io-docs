@@ -6,8 +6,8 @@ date: 2019-10-24T11:47:03+05:30
 pre: "2. "
 weight: 235
 ---
-The following is the list of requirements for devices to be
-registered on rapyuta.io
+The following is the list of requirements for registering devices
+on rapyuta.io
 
 * Mandatory
     * Python >=2.7.8, <3
