@@ -6,12 +6,12 @@ date: 2019-10-25T12:36:16+05:30
 pre: "5. "
 weight: 290
 ---
-Applications running on the cloud deallocate
-any resources consumed by them when they stop, scale down or fail.
-This implies that the working storage associated to them is ephemeral.
+Applications running on the cloud de-allocate
+any resources consumed when they stop, scale down, or fail.
+This implies that the working storage associated with them is ephemeral.
 To get around this problem rapyuta.io provides a mechanism to consume persistent [block storage](https://en.wikipedia.org/wiki/Block-level_storage)
 for your applications running in the cloud. This storage can be
-associated to at most one running deployment at any given point
+associated with at most one running deployment at any given point
 of time. A user is typically required to manage the lifecycle of
 the application code independently from the associated storage.
 

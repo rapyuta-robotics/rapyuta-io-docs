@@ -26,8 +26,7 @@ A list of cmake options that you want to use while building the ROS package.
 5. **Catkin Make arguments**    
 A list of make options that you want to use while building ROS packages.
 
-The catkin build parameters are optional. If you choose to not specify any of them,
-the ROS Builder will build all ROS packages in its catkin workspace.
+The catkin build parameters are optional. If you do not want to specify any of them, the ROS Builder will build all ROS packages in its catkin workspace.
 
 The context directory is a specific project directory (folder) relative to the
 git repository. It is copied to the ROS Builder's catkin workspace, and
@@ -37,7 +36,6 @@ context directory, all of the folders in the git repository are built.
 To add a set of catkin build parameters, click **Add Parameter** against
 **CATKIN BUILD PARAMETERS** while adding a package using rapyuta.io
 
-You may provide multiple sets of catkin build parameters for a single ROS package,
-thus you can run multiple catkin builds on a ROS package.
+You may provide multiple sets of catkin build parameters for a single ROS package. Thus you can run multiple catkin builds on the ROS package.
 
 ![Catkin build parameters](/images/core-concepts/packages/multiple-sets-catkin-build-params.png?classes=border,shadow&width=50pc)

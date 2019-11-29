@@ -7,9 +7,11 @@ pre: "2. "
 weight: 275
 ---
 ### What is a package ?
-A package is a fundamental rapyuta.io resource that represents a declaration of your application. A package is the smallest unit of deployment in rapyuta.io. It can be deployed either on a device or the cloud or both. To make this possible a package must encapsulate information about how it should be built, it’s compatibility and runtime requirements, network endpoints and ROS interfaces it exposes, and any configuration information it may require.
+A package is a fundamental rapyuta.io resource that represents a declaration of your application. A package is the smallest unit of deployment in rapyuta.io. It can be deployed either on a device or the cloud or both.
 
-Each package consists of components which in turn are made up of individual executables. 
+A package encapsulates information about what strategy is used to build it, its compatibility and runtime requirements, network endpoints and ROS interfaces it exposes, and any configuration information it may require.
+
+Each package consists of components, which are made up of individual executables. 
 
 {{% notice note %}}
  **Advanced users** of rapyuta.io should note a package internally supports multiple **plans**, each  which in turn contain the necessary components.
@@ -30,24 +32,18 @@ of the docker container.
 The maximum size of the docker image is 10GB for cloud deployment.
 {{% /notice %}}
 2. **Git repository**    
-You may provide a git repository for an executable. rapyuta.io builds the source
-code in the git repository into a docker image. Moreover, you may also specify a
-bash shell command, which will be run in tandem with the executable.
+You may provide a git repository for an executable. rapyuta.io builds the source code in the git repository into a docker image. Moreover, you may also specify a bash shell command, which will be run in tandem with the executable.
 3. **Bash command**    
-A simple bash shell command is an executable. If you choose the **Executable Type**
-as **Default**, the bash shell command becomes an executable. In this case, the
-executable can run only on **Preinstalled device** runtime. rapyuta.io assumes that all dependencies
-that are required to run the command are already present on the device where
+A simple bash shell command is an executable. If you choose the **Executable Type** as **Default**, the bash shell command becomes an executable. In this case, the executable can run only on **Preinstalled device** runtime. rapyuta.io assumes that all dependencies that are required to run the command are already present on the device where
 the command will execute.
 
 ### Components
 A component is a set of executables. All executables are deployed in unison on
 the desired [*Component Runtime*](/developer-guide/create-software-packages/package-internals/#component-runtime).
-All executables of a component communicate via Inter Process Communication (IPC). An executable listening
-on a port is accessible to its sibling executables via localhost.
+All executables of a component communicate via Inter-Process Communication (IPC). An executable listening on a port is accessible to its sibling executables via localhost.
 
 {{% notice note %}}
-Components are further nested into **plans**. A rapyuta.io "package" may contain multiple plans, each plan represents a different configuration of a package. At this point, when you add a new package in the rapyuta.io console , there is always a single plan associated with the package. A plan is uniquely identified by its plan ID
+Components are further nested into **plans**. A rapyuta.io "package" may contain multiple plans, and each plan represents a different configuration of a package. At this point, when you add a new package in the rapyuta.io, there is always a single plan associated with the package. A plan is uniquely identified by its plan ID
 {{% /notice %}}
 
 ### Component Runtime
@@ -60,9 +56,9 @@ When deployed on the cloud, the component has cloud runtime. Whereas, the compon
 configuration parameters operate at the level of component, and apply to executables in the component only
 {{% /notice %}}
 
-In line with the 12-Factor application philosophy rapyuta.io allows the package author to pass configuration as environment variables that may be consumed by executables running  within a component.
+In line with the 12-Factor application philosophy, rapyuta.io allows the package author to pass configuration as environment variables that may be consumed by executables running within a component.
 
-These are mapped to environment variables made available to your code. They are modelled as key-value pairs (where both the key and the value are strings) accessible by the user’s code using standard environment variable look up techniques provided by the programming language.
+These are mapped to environment variables made available to your code. They are modelled as key-value pairs (where both the key and the value are strings) accessible by the user’s code using standard environment variable look-up techniques provided by the programming language.
 
 The package author can choose to provide default values. These values may be overridden by the user while deploying the package.
 
@@ -76,11 +72,11 @@ The platform injects environment variables corresponding to exposed parameters a
 
 ### Network Endpoints
 {{% notice info %}}
-network endpoints are exposed by individual components 
+Network endpoints are exposed by individual components of a package.
 {{% /notice %}}
 Components, which are deployed on the cloud, may have network endpoints. A network endpoint is a combination of an IP address and a port number. The endpoints may or may not be exposed publicly.
 
-When creating an endpoint you must provide a name for the endpoint, select the desired network protocol and specify a target port.
+When creating an endpoint, you must provide a name for the endpoint, select the desired network protocol, and specify a target port.
 
 {{% notice info %}}
 The name of a network endpoint must consist of alphabets, digits or an underscore ( _ ), and must not begin with a digit.
@@ -91,7 +87,7 @@ The name of a network endpoint must consist of alphabets, digits or an underscor
 **Target port** is where the application needs to be listening for network requests for the service to work.
 
 #### Exposing Endpoints Internally
-You can restrict access to a network endpoint by ensuring that **Exposed externally** checkbox is not selected.
+You can restrict access to a network endpoint by ensuring that **Exposed externally** option is not selected.
 
 The only protocol available is the **TCP** for which the value of the **Port** field is set to ***443*** by default. However, you can change the port's value.
 ![internal endpoint](/images/core-concepts/network-endpoints/internal-endpoint.png?classes=border,shadow&width=40pc)
@@ -99,7 +95,7 @@ The only protocol available is the **TCP** for which the value of the **Port** f
 #### Exposing Endpoints Externally
 Select **Exposed externally** checkbox to expose a network endpoint publicly over the internet.
 
-The following are the supported protocols that are exposed on their respective ports (cannot be modified):
+The supported protocols at their respective ports (cannot be modified) are:
 
 * HTTP/Websocket exposed on port ***80***
 * HTTPS/WSS exposed on port ***443***
@@ -108,5 +104,5 @@ The following are the supported protocols that are exposed on their respective p
 The **Secure TCP (TLS/SNI)** protocol uses [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication) headers for routing the request to the desired backend.
 ![external endpoint](/images/core-concepts/network-endpoints/external-endpoint.png?classes=border,shadow&width=40pc)
 
-rapyuta.io creates an accessible public IP address for externally exposed network endpoint. Hence, you can view the Fully Qualified Domain Name (FQDN) of the endpoint on successful deployments' details page.
+rapyuta.io creates an accessible public IP address for externally exposed network endpoints. Hence, you can view the Fully Qualified Domain Name (FQDN) of endpoints on the details page of deployments.
 
