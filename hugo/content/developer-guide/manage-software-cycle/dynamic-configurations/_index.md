@@ -24,22 +24,22 @@ The most common pattern in the robotics developer community is to
 arrive at a list of base parameters that are required for the
 application to run. When moving from the developer testbed to
 real-world operations, the operators, developers, and vendors
-often wish to override the base parameters so as to satisfy various
+often wish to override the base parameters to satisfy various
 requirements.
 
 Let's look at a practical example. It is likely you only want to
 override a subset of parameters amongst numerous parameters defined
 for a robot based on a particular criterion, say, the velocity of an
 AGV defaults to 5m/s, but the regulation in Japan requires you to
-limit its velocity to 3m/s. For an AGV to be deployed in Japan
+limit its velocity to 3m/s. For an AGV to be deployed in Japan,
 you override its default velocity (5m/s)) to 3m/s. Any other AGV
 deployed outside of Japan will still default to a velocity of 5m/s.
 
-rapyuta.io organises a configuration into a tree-like hierarchical
+rapyuta.io organizes a configuration into a tree-like hierarchical
 structure called a *configuration hierarchy*. Consider the sample
 configuration hierarchy, ***example***, as shown in the figure below.
 The parameters of ***example*** are arranged in a specific order. The
-hierarchy lets you to override parameter defaults (or base parameters)
+hierarchy lets you override parameter defaults (or base parameters)
 or extend existing parameters.
 
 ![example configuration](/images/core-concepts/configurations/example-config.png?classes=border,shadow&width=50pc)
@@ -65,7 +65,7 @@ In this case, the root node is consequently ***example***.
 An attribute node is intended to represent a semantic meaning. It is
 used to create branches in the configuration hierarchy tree. For instance,
 the ***country*** attribute splits the hierarchy subtree based on
-the value of its children such as ***USA*** and ***Japan*** (represented as
+the value of its children, such as ***USA*** and ***Japan*** (represented as
 value nodes). rapyuta.io represents these distinctions as key-value pairs to
 allow developers arbitrary flexibility in how they define their hierarchies. 
 
@@ -75,12 +75,11 @@ branch that you wish to represent. In the case of ***example*** configuration, a
 
 #### Value node
 A value node maps to a specific kind of its parent attribute. It is of
-the same colour as the colour of its parent attribute. It can contain
+the same color as the color of its parent attribute. It can contain
 multiple file nodes and only one attribute node, corresponding to any further
 branching you may wish to define under that particular value.
 
-In ***example*** configuration, ***USA*** and ***Japan*** are value nodes of **country**
-attribute.
+In ***example*** configuration, ***USA*** and ***Japan*** are value nodes of **country** attribute.
 ![value node](/images/core-concepts/configurations/value-node.png?classes=border,shadow&width=30pc)
 
 #### File node
@@ -100,9 +99,9 @@ either override or extend the existing ***example/sample.yaml*** file.
 ## Consuming configuration hierarchies
 Often the people responsible for defining configuration
 parameters and hierarchies are different from those using them or
-operating robots. This calls for decoupling the consumption of the
+operating robots. It calls for decoupling the consumption of the
 parameters from the operation of robots. So, rapyuta.io
-lets you to define a set of key-value pairs, called
+lets you define a set of key-value pairs, called
 device labels to tag a robot.
 {{% notice info %}}
 Refer to [device labels](/developer-guide/manage-software-cycle/dynamic-configurations/device-labels/) for more information.
@@ -116,7 +115,7 @@ hierarchy in the ***example*** configuration.
 ## Overriding configuration parameters
 The base parameters (or parameters defaults) file is usually located at
 the root of the configuration hierarchy. In ***example*** configuration,
-***example/sample.yaml*** file is the base parameters file and it is located
+***example/sample.yaml*** file is the base parameters file, and it is located
 under the ***example*** root node.
 
 ![parameter defaults](/images/core-concepts/configurations/parameter-defaults.png?classes=border,shadow&width=50pc)
@@ -141,7 +140,7 @@ The final parameters file is a result of merging the base parameters
 (***Japan/sample.yaml***).
 
 ## Extending configuration parameters
-You can add new parameters so as to extend the list of base
+You can add new parameters to extend the list of base
 parameters. For instance, the ***USA/sample.yaml*** defines an additional parameter, ***example_param_usa: val***.
 
 The resultant file after merging the base parameters in ***example/sample.yaml***
@@ -156,7 +155,7 @@ Learn how to
 {{% /notice %}}
 
 {{% notice info %}}
-You may ***clone an existing configuration*** in to another project.
+You may ***clone an existing configuration*** into another project.
 Cloning saves you from the redundant task of defining the
 same configurations from scratch again. However, cloning a configuration
 inside the same project is not supported.
