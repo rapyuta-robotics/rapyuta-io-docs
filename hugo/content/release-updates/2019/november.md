@@ -17,6 +17,7 @@ Welcome to the November 27, 2019 release of rapyuta.io SDK.
 
 #### Documentation
 
+* UI enhancements like hide-sidebar button, mobile optimizations, support for search engine indexing, and other minor fixes.
 * Read the new walkthrough on [separating a navigation application and its simulation](/build-solutions/sample-walkthroughs/separate-navigation-simulation/) on rapyuta.io
 * Read about the [support for custom ROS messages](/developer-guide/tooling-automation/metrics/ros-support/).
 
