@@ -15,7 +15,7 @@ The list of topics explained are:
 - [Multi-robot Support](#multi-robot-support)
     - [ROS Environment Aliases](#ros-environment-aliases)
     - [Multi-Robot Communication Configuration](#multi-robot-communication-configuration)
-    - [Scoped - Topics, Actions, Services](#scoped---topics-actions-services)
+    - [Scoped: Topics, Actions, Services](#scoped-topics-actions-services)
     - [Targeted Topics](#targeted-topics)
     - [Inbound Targeted Topics](#inbound-targeted-topics)
     - [Automatic Linking of ROS Interfaces](#automatic-linking-of-ros-interfaces)
@@ -143,7 +143,7 @@ deployment time.
 
 ![Robot soccer block diagram](/images/multi-robot-communication/robotSoccer-blk-diagram.png?classes=border,shadow&width=50pc)
 
-#### Scoped - Topics, Actions, Services
+#### Scoped: Topics, Actions, Services
 In this configuration, a user may declare a topic/service/action as
 scoped by selecting the Scoped option. This indicates that when the
 component is deployed the topic/service or action gets namespaced as

@@ -47,7 +47,7 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
                         <ul>
                             <li><strong><em>docker-ce==17.12.1~ce-0~ubuntu</em></strong> for Ubuntu 16.04</li>
                             <li><strong><em>docker-ce==5:18.09.7~3-0~ubuntu-bionic</em></strong> for Ubuntu 18.04</li>
-                        </ul>If not, uninstall it and <a href="/getting-started/add-new-device/#setting-up-a-device" class="highlight">set up the device</a> again.</li>
+                        </ul>If not, uninstall it and <a href="/developer-guide/manage-machines/onboarding/setup-device/" class="highlight">set up the device</a> again.</li>
                 </ul>
             </td>
         </tr>
@@ -59,11 +59,11 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
                     <li><a href="#check-for-active-internet-connection" class="highlight">Ensure device has an active internet connection.</a></li>
                     <li><a href="#check-for-disk-space" class="highlight">Ensure there is adequate disk space on device.</a></li>
                     <li>Ensure the version of Python on device is <strong><em>Python&gt;=2.7.8,&lt;3</em></strong><br>
-                    If not, uninstall it and <a href="/getting-started/add-new-device/#setting-up-a-device" class="highlight">set up the device</a> again.</li>
+                    If not, uninstall it and <a href="/developer-guide/manage-machines/onboarding/setup-device/" class="highlight">set up the device</a> again.</li>
                     <li>Try installing the package manually by executing<br>
                     <code>source /opt/rapyuta/venv/bin/activate &amp;&amp; <br>pip install &lt;python-package&gt;</code> and see if it fails.<br>
                     If it doesn’t fail, the issue may be transient.<br>
-                    Now, <a href="/getting-started/add-new-device/#setting-up-a-device" class="highlight">set up the device</a> on successful installation of python package.</li>
+                    Now, <a href="/developer-guide/manage-machines/onboarding/setup-device/">set up the device</a> on successful installation of python package.</li>
                 </ul>
             </td>
         </tr>
@@ -78,7 +78,7 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
                         <ul>
                             <li><strong><em>docker-ce==17.12.1~ce-0~ubuntu</em></strong> for Ubuntu 16.04</li>
                             <li><strong><em>docker-ce==5:18.09.7~3-0~ubuntu-bionic</em></strong> for Ubuntu 18.04</li>
-                        </ul>If not, uninstall it and <a href="/getting-started/add-new-device/#setting-up-a-device" class="highlight">set up the device</a> again.</li>
+                        </ul>If not, uninstall it and <a href="/developer-guide/manage-machines/onboarding/setup-device/" class="highlight">set up the device</a> again.</li>
                 </ul>
             </td>
         </tr>
@@ -91,7 +91,7 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
                     <li><a href="#check-for-disk-space" class="highlight">Ensure there is adequate disk space on device.</a></li>
                     <li>Try installing the package manually by executing<br>
                     <code>apt-get install &lt;system-package&gt;</code> and see if it fails. If it doesn’t fail, the issue may be transient.<br>
-                    Now, <a href="/getting-started/add-new-device/#setting-up-a-device" class="highlight">set up the device</a> on successful installation of system package.</li>
+                    Now, <a href="/developer-guide/manage-machines/onboarding/setup-device/">set up the device</a> on successful installation of system package.</li>
                 </ul>
             </td>
         </tr>

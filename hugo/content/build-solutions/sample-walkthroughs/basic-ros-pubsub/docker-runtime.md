@@ -30,8 +30,7 @@ installed on it, replace ***Kinetic*** with ***Melodic*** in all places
 where a specific version of ROS is asked for. The tutorial should still
 work the same.
 {{% /notice %}}
-2. You should be familiar with the [core concepts](/core-concepts) of rapyuta.io
-3. You should be familiar with the below tools:
+1. You should be familiar with the below tools:
 	1. [Git](https://git-scm.com/doc)
 	2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
 	3. [ROS topics](https://wiki.ros.org/Topics)
@@ -45,14 +44,12 @@ It will take nearly about 15 minutes to finish the tutorial.
 
 ## Preparing your device
 The tutorial will use Raspberry PI as the device.
-Learn [how to prepare your Raspberry PI](/getting-started/prepare-raspberry-pi)
+Learn [how to prepare your Raspberry PI](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3)
 
 ## Setting up your device
 To integrate the device into rapyuta.io using the [console](https://console.rapyuta.io):
 
-1. [Create a user account](/getting-started/create-new-user) if you do not
-have one yet.
-2. [Add the device](/getting-started/add-new-device) to the console.
+1. [Add the device](/developer-guide/manage-machines/onboarding/) to the console.
 Ensure that you select the **Use docker compose as default runtime** checkbox
 while adding the device.
 
@@ -137,7 +134,7 @@ and an underscore _ character, and must not begin with a digit.
 
 The package takes about two to five minutes to build the source code in the *io_tutorials*
 repository into a running docker container. You may analyse the corresponding
-[build logs](/core-concepts/logging/build-logs), which help debug failing builds.
+[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
 
 A flickering yellow dot against the name of the package indicates that the
 **Build Status** is **New**, while a green dot indicates that the **Build Status**
@@ -161,13 +158,13 @@ follow the steps:
    an updated list of online devices.
 6. Select the device from the **Select device for deploying the component**
    drop-down list.
-8. Click **CREATE DEPLOYMENT** > **Confirm**.
+7. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** page where a green coloured bar
 moves from **In progress** to **Succeeded** with **Status:Running** indicating that
 the **DEPLOYMENT PHASE** has **Succeeded** and the **STATUS** is **Running**.
 
-You may also analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs)
+You may also analyse the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/)
 to check if everything is working OK.
 
 ![Docker Publisher Subscriber Deployment](/images/tutorials/docker-pub-sub/docker-pubsub-deployment.png?classes=border,shadow&width=50pc)

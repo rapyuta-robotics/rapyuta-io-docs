@@ -45,6 +45,6 @@ Learn more about [**dedicated ROS communication support**](/developer-guide/mana
 {{% /notice %}}
 
 {{% notice note %}}
-In complex dependency patterns rapyuta.io allows parent child relations where a package must whitelist ros interfaces it can bind to from a child as [**inbound ROS interfaces**](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#note-on-inbound-interfaces).
+In complex dependency patterns rapyuta.io allows parent child relations where a package must whitelist ros interfaces it can bind to from a child as **inbound ROS interfaces**.
 {{% /notice %}}
 
