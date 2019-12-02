@@ -39,7 +39,7 @@ and software catalogs.
 ## What does it solve
 Given the multi-domain and embryonic stage of the robotics
 industry, robotics solution developers face the following three
-challenges: lack of expertise, limited budget and time.
+challenges: lack of expertise, limited budget, and time.
 The pain points of the solution provider and gains using the
 project's J-curve.
 
@@ -48,7 +48,7 @@ project's J-curve.
 ## Vision
 Our mission is to empower lives with connected machines. Machine - from
 robots, automation equipment, servers to network devices - connected and
-coordinated in a streamlined way to increase the efficiency and reduce
+coordinated in a streamlined way to increase efficiency and reduce
 the human effort in 3K - kitanai (dirty), kiken (dangerous),
 kitsui (demanding) - work.
 
@@ -58,8 +58,8 @@ model defined as
 > Cloud Robotics is a model enabling self-service, elastic, and ubiquitous
 access to a shared pool of robotics resources with open interfaces.
 
-This model is inspired from the cloud computing model[1] is a broader
-definition of Cloud Robotics compared to the Cloud connected Robotics
+This model is inspired by the cloud computing model[1] is a broader
+definition of Cloud Robotics compared to the Cloud-connected Robotics
 definition by Kuffner[2].
 
 [1]Mell, Peter, and Tim Grance. "The NIST definition of cloud computing."(2011).
@@ -68,7 +68,7 @@ definition by Kuffner[2].
 
 ## Our Origins
 Our journey on Cloud Robotics started with [RoboEarth](http://roboearth.ethz.ch/),
-an EU-funded project from 2010 to 2014, with a goal to create an
+an EU-funded project from 2010 to 2014, whose goal is to create an
 ***internet for robots***, where robots could enjoy both a *shared*
 (via a common knowledge base) and an *extended* (via servers in a data center)
 brain.
