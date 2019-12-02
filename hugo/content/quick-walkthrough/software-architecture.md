@@ -6,20 +6,20 @@ date: 2018-11-23T10:46:51+05:30
 pre: "1. "
 weight: 101
 ---
-rapyuta.io recommends a modularised software architecture design. This
-implies responsibilities should be divided across various packages because a
+rapyuta.io recommends a modularized software architecture design. This
+implies responsibilities are divided across various packages because a
 modularised software is easy to maintain, share, and scale.
 
 Turtlesim is composed of four packages. They are:
 
 * **User Interface**     
-  An interactive, web based user interface for visualising the state of the
+  An interactive, web-based user interface for visualizing the state of the
   Turtles and for passing control commands to the Turtles.
 * **Command Center**     
   A central node for registering Turtles, as well as a router for passing
   commands and telemetry messages between the User Interface and the Turtles.
 * **Turtle**       
-  A package that emulates the behaviour of an autonomous ground vehicle with
+  A package that emulates the behavior of an autonomous ground vehicle with
   [non-holonomic](https://en.wikipedia.org/wiki/Nonholonomic_system) constraints and two distance sensors through the Simulator.
   There can be multiple instances of this component, each representing a
   single robot entity.
@@ -54,7 +54,7 @@ and/or ROS actions.
 There may be multiple instances (or deployments) of Turtle. Each Turtle
 instance publishes the /sim/cmd_vel ROS topic. The Simulator subscribes to
 the /sim/cmd_vel topic. You'll define an inbound ROS topic interface for
-/sim/cmd_vel to help Simulator recognise the different Turtle instances.
+/sim/cmd_vel to help Simulator recognize the different Turtle instances.
 
 In general, if you have a Package-A that expects data from Package-B, and
 there can be multiple deployments of Package-B, you must list the expected
@@ -62,7 +62,7 @@ data interfaces as inbound interfaces at the package-level.
 
 ## Dependent deployment
 Package A depends on Package B, that is Package B is a dependent deployment of
-Package A. The arrow in the diagram represents dependency relationship.
+Package A. The arrow in the diagram represents the dependency relationship.
 Package B injects configuration parameters and/or network endpoints into
 Package A as environment variables.
 
