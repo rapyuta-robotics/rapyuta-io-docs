@@ -14,4 +14,4 @@ There is an open [discussion forum](https://forum.rapyuta.io) for
 rapyuta.io users, where you can ask clarifying questions, discuss relevant topics, share knowledge and help others by answering queries about
 rapyuta.io platform.
 
-You need to be a registered rapyuta.io user to interact in the discussion forum. Please be *respectful*, *kind* and *empathetic* in your interactions with other users in the discussion forum.
+You need to be a registered rapyuta.io user to interact in the discussion forum. Please be *respectful*, *kind*, and *empathetic* in your interactions with other users in the discussion forum.
