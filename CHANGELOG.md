@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+- Mention the different stages involved in the process of onboarding devices
 ## [2.0.3 - 2019-11-27]
 ### Added
 - Add turtlebot3 navigation simulation walkthrough
