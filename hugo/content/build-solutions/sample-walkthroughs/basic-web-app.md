@@ -7,9 +7,7 @@ pre: "1. "
 weight: 610
 ---
 An executable of a package can be a dockerfile. In that case, rapyuta.io
-applies [dockerfile build strategy](/developer-guide/create-software-packages/builds/#dockerfile-strategy)
-while deploying the package. The tutorial illustrates this strategy, where
-a dockerfile builds a docker image.
+applies [dockerfile build strategy](/developer-guide/create-software-packages/builds/#dockerfile-strategy) while deploying the package. The tutorial illustrates this strategy, where a dockerfile builds a docker image.
 
 ## Learning objectives
 The tutorial will show you how to use a dockerfile to build an executable
@@ -46,7 +44,7 @@ follow the below instructions in sequence:
 6. Select **Cloud** for **Component Runtime**.
 7. Ensure **Is ROS Component** is *not selected*.
 8. The value of **Replicas to run the component** is set to the default value of *1*
-9.  In the **Executable Name** box, type in a name for the executable say `flask_runner`.
+9.  In the **Executable Name** box, type in a name for the executable, say `flask_runner`.
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}
@@ -58,7 +56,7 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 14. You must expose a network endpoint for viewing the output of the tutorial:
     1.  Click **Add Endpoint**.
     2.  Provide a name for the endpoint, like `HELLO_WORLD`, in the **Endpoint Name** box.
-    3.  Make sure **Exposed exernally** is *selected*.
+    3.  Make sure **Exposed externally** is *selected*.
     4.  Click **HTTPS/WSS** under **Protocol**.
     5.  The value of **Port** is automatically set to *443* because the protocol is HTTPS/WSS.
     6.  In the **Target Port** box, enter `5000`.
@@ -90,16 +88,16 @@ instructions in sequence:
 
 You will be redirected to the **Details** page of the newly created deployment.
 The **Simple Flask Application** deployment is successfully running only when
-the green colored bar moves to **Succeeded** and **Status:Running** indicating that
-the **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
+the green colored bar moves to **Succeeded** and **Status:Running** indicating that the **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
 
 ![Deployment details](/images/tutorials/hello-world/successful-deployment.png?classes=border,shadow&width=50pc)
 
 You can also analyze the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/) to check if everything is working as expected by clicking on **Historical Logs** or **Live Logs** tab.
 
-Once the package is successfully deployed, the **NETWORK ENDPOINTS** generates a
-URL address on the **Details** page. Copy this specific URL address (it may be different
-from that shown in the below image), paste in the web browser and press *Enter*.
+Once the package is successfully deployed, the **NETWORK ENDPOINTS**
+generates a URL address on the **Details** page. Copy this specific
+URL address (it may be different from that shown in the below image),
+paste in the web browser, and press *Enter*.
 
 ![Network endpoint](/images/tutorials/hello-world/network-endpoint.png?classes=border,shadow&width=50pc)
 
