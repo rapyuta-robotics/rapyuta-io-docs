@@ -3,7 +3,6 @@
 ## [Unreleased]
 ## [2.0.3 - 2019-11-27]
 ### Added
-- DEV_108 device failure error code
 - Add turtlebot3 navigation simulation walkthrough
 - Support for custom ROS messages
 - More information on simulation page about robot_description, latency issues etc.
