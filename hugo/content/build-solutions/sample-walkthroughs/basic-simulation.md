@@ -11,7 +11,7 @@ The tutorial will show you how to simulate a robot in a 3D world using rapyuta.i
 
 ## Prerequisites
 
-1. The CPU Architecture of the device is AMD64.
+1. The CPU architecture of the device is AMD64.
 2. The version of ROS running on the device is ROS Melodic.
 3. Install the Google Chrome browser.
 4. Be familiar with git, UNIX/LINUX command terminal.
@@ -39,7 +39,7 @@ keyboard teleoperation from the device.
 8. Click **COPY** to copy the generated token.
 9. Run the copied token in the device's terminal. The token sets up rapyuta.io device agent on the device.
 
-When the device is successfully registered, you will see a green dot next to the device's name indicating that the device is online.
+When the device is successfully registered, you will see a green dot next to the device's name, indicating that the device is online.
 
 ## Create Packages
 You will create two packages in the tutorial.
@@ -63,7 +63,7 @@ You will create two packages in the tutorial.
 16. The **Git Repository** is `https://github.com/rapyuta-robotics/io_simulation_tutorials`
 17. In the **Command to run in the docker container** box, enter the command: `roslaunch turtlebot3_gazebo turtlebot3_autorace.launch`
 18. The **context directory** is `turtlebot_teleoperation`
-19. Select **Simulation** option. Enabling simulation feature automatically adds a Gazebo simulation specific endpoint, topics, services, inbound ROS interfaces and a configuration parameter.
+19. Select **Simulation** option. Enabling simulation feature automatically adds a Gazebo simulation specific endpoint, topics, services, inbound ROS interfaces, and a configuration parameter.
 20. Set **Resource Limit** to **Med:2 cpu cores, 8 GiB memory**.
 {{% notice warning %}}
 For simulation, the resource limit should either be **Med** or **High**. Simulation has issues with **Low** resource limits.
@@ -77,7 +77,7 @@ For simulation, the resource limit should either be **Med** or **High**. Simulat
 
 The package takes a couple of minutes to build the source code in ***io_simulation_tutorials*** repository into a running docker container. You may analyze the corresponding build logs, which help debug failing builds. A flickering yellow dot against the name of the package indicates that the **Build Status** is **New**, while a green dot indicates that the **Build Status** is **Complete**.
 
-Aditionally, when the **Deploy package** button is automatically enabled it indicates that the ***Turtlebot3 Robot Simulation*** package is successfully built and is ready to be deployed.
+Additionally, when the **Deploy package** button is automatically enabled, it indicates that the ***Turtlebot3 Robot Simulation*** package is successfully built and is ready to be deployed.
 
 ### Turtlebot3 Keyboard Teleoperation Package
 
@@ -109,7 +109,7 @@ The command, ***sleep infinity***, will keep the deployment running and does not
 
 The package takes a couple of minutes to build the source code in ***turtlebot3*** repository into a running docker container. You may analyze the corresponding build logs, which help debug failing builds. A flickering yellow dot against the name of the package indicates that the **Build Status** is **New**, while a green dot indicates that the **Build Status** is **Complete**.
 
-Aditionally, when the **Deploy package** button is automatically enabled it indicates that the ***Turtlebot3 Keyboard Teleoperation*** package is successfully built and is ready to be deployed.
+Additionally, when the **Deploy package** button is automatically enabled, it indicates that the ***Turtlebot3 Keyboard Teleoperation*** package is successfully built and is ready to be deployed.
 
 ## Deploy Packages
 You will deploy all the packages created in the previous step.
@@ -123,7 +123,7 @@ You will deploy all the packages created in the previous step.
 5. Enter the value for **VNC_PASSWORD**.
 6. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You will be redirected to the **Details** tab of the newly created deployment. The **ROBOT SIMULATION** is successfully running if the progress bar reaches **Succeeded** and the status is **Running**.
+You will be redirected to the **Details** tab of the newly created deployment. The **ROBOT SIMULATION** is successfully running if the progress bar reaches **Succeeded**, and the status is **Running**.
 
 ### Keyboard Teleoperation
 
