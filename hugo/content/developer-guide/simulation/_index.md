@@ -12,10 +12,10 @@ During application development a robotics simulator can greatly help by cutting 
 
 [Gazebo](http://gazebosim.org) is popular open-source 3D robotics simulator that has been around for more than a decade, and is used by robotics developers around the world. It has an active [community](http://answers.gazebosim.org/questions) and plethora of [documentation](http://gazebosim.org/tutorials) that helps new users get on-board easily. Gazebo team maintains quite a few 3D [models](https://bitbucket.org/osrf/gazebo_models/) that are readily available for use in projects. The team also maintains [ROS packages](http://wiki.ros.org/gazebo_ros_pkgs) for applications that want to interact with Gazebo through ROS interfaces (topics, services, and actions).
 
-rapyuta.io lets users run their simulation application with Gazebo simulator on the cloud. It provides a web interface to watch and interact with Gazebo GUI client running on the cloud. ROS interfaces provided by its ROS packages compliments rapyuta.io’s [ROS communication support](/developer-guide/manage-software-cycle/communication-topologies/ros-support/), and enhances the ways users architect their simulation and robotics applications. For instance, robotics application **running on a device** can interact with Gazebo **running on cloud** through ROS interfaces (e.g. to get model state, set physics properties, etc). This requires, however, that launch files for simulation are not tightly coupled with the rest of the application so they can be run independently.
+rapyuta.io lets users run their simulation application with Gazebo simulator on the cloud. It provides a web interface to watch and interact with Gazebo GUI client running on the cloud. ROS interfaces provided by its ROS packages complements rapyuta.io’s [ROS communication support](/developer-guide/manage-software-cycle/communication-topologies/ros-support/), and enhances the ways users architect their simulation and robotics applications. For instance, robotics application **running on a device** can interact with Gazebo **running on cloud** through ROS interfaces (e.g. to get model state, set physics properties). This requires, however, that launch files for simulation are not tightly coupled with the rest of the application so they can be run independently.
 
 {{% notice info %}}
-The following sample-walkthrough demonstrates how to create such a setup keeping in mind that it should still run on local machine besides rapyuta.io: [Turtlebot Navigation Simulation](/build-solutions/sample-walkthroughs/turtlebot-navigation-simulation/).
+The following sample-walkthrough demonstrates how to create such a setup keeping in mind that it should still run on local machine besides rapyuta.io: [Separating Simulation and Application](/build-solutions/sample-walkthroughs/separate-navigation-simulation/).
 {{% /notice %}}
 
 {{% notice note %}}
@@ -25,16 +25,15 @@ As of now rapyuta.io supports **Gazebo version 9**, and only for executables wit
 
 ### Using robot_description and other parameters for both Simulation and Application
 
-One limitation while running the aforementioned setup is that ROS parameter server is not shared. This means, for instance, *robot_description* loaded by robotics application on device (for use by [robot_state_publisher](http://wiki.ros.org/robot_state_publisher)) will not be available to Gazebo simulation running on cloud (to spawn URDF model). Since such parameters that need to be shared are not modified after being set, both simulation launch files and application launch files can set them for their respective ROS masters. [Controller](http://wiki.ros.org/ros_control#Controllers) parameters are another example besides *robot_description*.
+One limitation while running the above setup is that the ROS parameter server is not shared. This means, for instance, *robot_description* loaded by robotics application on device (for use by [robot_state_publisher](http://wiki.ros.org/robot_state_publisher)) will not be available to Gazebo simulation running on cloud (to spawn URDF model). Since such parameters that need to be shared are not modified after being set, both simulation launch files and application launch files can set them for their respective ROS masters. [Controller](http://wiki.ros.org/ros_control#Controllers) parameters are another example besides *robot_description*.
 
 
 ### Accounting for network delays while communicating over the internet
+When [communicating over the public internet](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#ros-over-the-public-internet) through ROS interfaces, communication can incur significant delays. The delays may or may not affect simulation and robotics applications, depending on how much tolerant application is towards these delays. The following ways can be used to account for such delays:
 
-When [communicating over the public internet](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#ros-over-the-public-internet) through ROS interfaces, communication can incur significant delays. This may or may not affect simulation and robotics application, depending on how tolerant application is towards these delays. The following ways can be used to account for such delays:
+- Have low [QoS](/developer-guide/create-software-packages/ros-support/#defining-qos) for high-frequency topics like [/clock](http://gazebosim.org/tutorials/?tut=ros_comm#GazeboPublishedTopics). It is the default value when enabling simulation for an executable.
 
-- Have low [QoS](/developer-guide/create-software-packages/ros-support/#defining-qos) for high-frequency topics like [/clock](http://gazebosim.org/tutorials/?tut=ros_comm#GazeboPublishedTopics). This is the default when enabling simulation for an executable.
-
-- Run Gazebo at slower speed by reducing real-time factor (which in turn reduces */clock* frequency). This can be done by modifying *max_step_size* and *real_time_update_rate* to decrease the real-time factor. In gzclient, they can be updated by selecting *Physics* in the *World* tab. Or, in SDF world file, they can be updated in *\<physics>* tag. The following changes in SDF world file will reduce the real-time factor from 1 (the default) to 0.5, thus running Gazebo simulation at half the normal speed:
+- Run Gazebo at a slower speed by reducing real-time factors (which in turn reduces */clock* frequency). This can be done by modifying *max_step_size* and *real_time_update_rate* to decrease the real-time factor. In gzclient, these are updated by selecting *Physics* in the *World* tab. Or, in SDF world file, they can be updated in *\<physics>* tag. The following changes in SDF world file will reduce the real-time factor from 1 (the default) to 0.5, thus running Gazebo simulation at half the normal speed:
 
 ```xml
 <physics type='ode'>
@@ -57,7 +56,7 @@ If none of this helps and sharing ROS master is the only way, then simulation an
 
 ### gazebo9 ROS kinetic packages on Ubuntu 16.04 (xenial)
 
-rapyuta.io only supports Gazebo version 9. When using Gazebo ROS packages it assumes those to be gazebo9. When working on Ubuntu xenial, specifying Gazebo ROS dependencies in *package.xml* will fetch gazebo7 ROS packages. For instance, `<depend>gazebo_ros</depend>` in *package.xml* will fetch `ros-kinetic-gazebo-ros`, which is a package for gazebo7. To install gazebo9 packages, user will need to add the rosdep source-list from https://github.com/osrf/osrf-rosdep/blob/master/gazebo9/00-gazebo9.list. On the local machine execute in terminal:
+rapyuta.io only supports Gazebo version 9. When using Gazebo ROS packages, it assumes those to be gazebo9. When working on Ubuntu xenial, specifying Gazebo ROS dependencies in *package.xml* will fetch gazebo7 ROS packages. For instance, `<depend>gazebo_ros</depend>` in *package.xml* will fetch `ros-kinetic-gazebo-ros`, which is a package for gazebo7. To install gazebo9 packages, the user will need to add the rosdep source-list from https://github.com/osrf/osrf-rosdep/blob/master/gazebo9/00-gazebo9.list. On the local machine execute in terminal:
 
 ```bash
 wget -qP /etc/ros/rosdep/sources.list.d/ https://raw.githubusercontent.com/osrf/osrf-rosdep/master/gazebo9/00-gazebo9.list
@@ -68,5 +67,5 @@ After this, installing `<depend>gazebo_ros</depend>` should fetch you `ros-kinet
 
 
 {{% notice info %}}
-Follow the sample walkthrough: [Turtlebot Simulation](/build-solutions/sample-walkthroughs/turtlebot-simulation/)
+Follow the sample walkthrough: [Basic Simulation](/build-solutions/sample-walkthroughs/basic-simulation/)
 {{% /notice %}}

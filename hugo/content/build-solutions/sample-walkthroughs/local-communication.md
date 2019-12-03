@@ -27,10 +27,9 @@ installed on it, replace ***Kinetic*** with ***Melodic*** in all places
 where a specific version of ROS is asked for. The tutorial should still
 work the same.
 {{% /notice %}}
-2. You should be familiar with the [core concepts](/core-concepts) of rapyuta.io
-3. You should be familiar with the following tools:
-	4. ROS [topics](http://wiki.ros.org/Topics)
-	5. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
+1. You should be familiar with the following tools:
+	1. ROS [topics](http://wiki.ros.org/Topics)
+	2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
 
 ## Difficulty
 Intermediate
@@ -86,7 +85,7 @@ are also installed on these custom images.
 {{% /notice %}}
 
 {{% notice info%}}
-Learn how to [prepare Raspberry PI](/getting-started/prepare-raspberry-pi)
+Learn how to [prepare Raspberry PI](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3)
 {{% /notice %}}
 
 If you are using custom rapyuta.io image on the device, the catkin workspace is
@@ -194,7 +193,7 @@ are also installed on these custom images.
 {{% /notice %}}
 
 {{% notice info %}}
-Learn how to [prepare Raspberry PI](/getting-started/prepare-raspberry-pi)
+Learn how to [prepare Raspberry PI](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3)
 {{% /notice %}}
 
 If you are using custom rapyuta.io image on the device, the catkin workspace is
@@ -372,7 +371,7 @@ The package is successfully deployed when the green coloured bar moves
 from **In progress** to **Succeeded** indicating that the **DEPLOYMENT PHASE**
 has **Succeeded** and the **STATUS** is **Running**.
 
-You may analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs)
+You may analyse the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/)
 so you may debug if the deployment fails.
 
 ## Deploy ROS Publisher package
@@ -403,10 +402,10 @@ and the **STATUS** is **Running**.
 
 Ensure that the dependent deployment **STATUS** is **Running** as well.
 
-You may analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs) so you may debug
+You may analyse the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/) so you may debug
 if the deployment fails.
 
-The corresponding [dependency graph](/core-concepts/deployments/#dependency-graph) of **ROS Publisher Deployment** looks like:
+The corresponding [dependency graph](/developer-guide/manage-software-cycle/compose-software/dependency-graph/) of **ROS Publisher Deployment** looks like:
 ![Dependency graph](/images/tutorials/local-comm-broker/dgraph-pub-broker.png?classes=border,shadow&width=50pc)
 
 ## Deploy ROS Subscriber package
@@ -435,10 +434,10 @@ and the **STATUS** is **Running**.
 
 Ensure that the dependent deployment **STATUS** is **Running** as well.
 
-You may analyse the corresponding [deployment logs](/core-concepts/logging/deployment-logs) so you may debug
+You may analyse the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/) so you may debug
 if the deployment fails.
 
-The corresponding [dependency graph](/core-concepts/deployments/#dependency-graph) of **ROS Subscriber Deployment** looks like:
+The corresponding [dependency graph](/developer-guide/manage-software-cycle/compose-software/dependency-graph/) of **ROS Subscriber Deployment** looks like:
 ![Dependency graph](/images/tutorials/local-comm-broker/dgraph-sub-broker.png?classes=border,shadow&width=50pc)
 
 If all of the above three deployments are successfully running, the

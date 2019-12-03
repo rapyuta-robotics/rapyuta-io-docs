@@ -15,20 +15,20 @@ The walkthrough gives an overview on how to:
 4. add a dependent deployment
 
 programmatically using
-[rapyuta.io Python SDK](/python-sdk/introduction) in your
+[rapyuta.io Python SDK](/developer-guide/tooling-automation/python-sdk/) in your
 python application.
 
 ## Prerequisites
-1. Read about the [core concepts](/core-concepts/)
+1. Read the [developer guide](/developer-guide/)
    of rapyuta.io
-2. [Install rapyuta.io SDK](/python-sdk/introduction/#installation)
+2. [Install rapyuta.io SDK](/developer-guide/tooling-automation/python-sdk/#installation)
    in your development environment.
 3. Learn how to obtain:
-   1. [authorization token](/python-sdk/determine-unique-identifiers/#auth-token)
-   2. [project ID](/python-sdk/determine-unique-identifiers/#project-id)
-   3. [package ID](/python-sdk/determine-unique-identifiers/#package-id)
-   4. [plan ID](/python-sdk/determine-unique-identifiers/#plan-id)
-   5. [device ID](/python-sdk/determine-unique-identifiers/#device-id)
+   1. [authorization token](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#auth-token)
+   2. [project ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#project-id)
+   3. [package ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#package-id)
+   4. [plan ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#plan-id)
+   5. [device ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#device-id)
 
 ## Difficulty
 Beginner

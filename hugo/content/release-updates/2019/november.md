@@ -5,6 +5,22 @@ type: release-updates
 date: 2019-11-06T15:04:39+05:30
 weight: 874
 ---
+## November 27
+Welcome to the November 27, 2019 release of rapyuta.io SDK.
+
+#### Features
+
+**rapyuta.io SDK 0.9.1 released**    
+
+* Improved ***poll_deployment_till_ready*** method for ***Deployment*** and ***VolumeInstance*** classes.
+* Fixed minor formatting issues in [SDK reference](https://sdkdocs.apps.rapyuta.io/).
+
+#### Documentation
+
+* UI enhancements like hide-sidebar button, mobile optimizations, support for search engine indexing, and other minor fixes.
+* Read the new walkthrough on [separating a navigation application and its simulation](/build-solutions/sample-walkthroughs/separate-navigation-simulation/) on rapyuta.io
+* Read about the [support for custom ROS messages](/developer-guide/tooling-automation/metrics/ros-support/).
+
 ## November 13
 Welcome to the November 13, 2019 release of rapyuta.io platform (v0.34.0).
 There are significant updates in this version that we hope you will like.

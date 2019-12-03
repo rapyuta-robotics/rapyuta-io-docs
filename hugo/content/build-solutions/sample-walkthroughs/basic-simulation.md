@@ -1,5 +1,5 @@
 ---
-title: "Turtlebot Simulation"
+title: "Basic Simulation With Teleoperation"
 description:
 type: build-solutions
 date: 2019-10-24T13:48:07+05:30
@@ -13,7 +13,7 @@ The tutorial will show you how to simulate a robot in a 3D world using rapyuta.i
 
 1. The CPU Architecture of the device is AMD64.
 2. The version of ROS running on the device is ROS Melodic.
-3. Install Google Chrome browser.
+3. Install the Google Chrome browser.
 4. Be familiar with git, UNIX/LINUX command terminal.
 
 ## Difficulty
@@ -25,7 +25,7 @@ Intermediate
 ## Tutorial Walkthrough
 In this tutorial, you will first add a device to rapyuta.io.
 You will run turtlebot3 simulation on the cloud, and then run
-keyboard teleoperation from device.
+keyboard teleoperation from the device.
 
 ## Add a Device
 

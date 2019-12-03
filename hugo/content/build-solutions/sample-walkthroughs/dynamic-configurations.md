@@ -22,8 +22,8 @@ installed on it, replace ***Kinetic*** with ***Melodic*** in all places
 where a specific version of ROS is asked for. The tutorial should still
 work the same.
 {{% /notice %}}
-2. You should be familiar with the [configurations](/core-concepts/config-params/) concept.
-3. Read the quick starting guide on [how to apply configurations to devices](/getting-started/apply-config-params/).
+2. You should be familiar with the [configurations](/developer-guide/manage-software-cycle/dynamic-configurations/) concept.
+3. Read the quick starting guide on [how to apply configurations to devices](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configs/).
 4. You should be familiar with the following tools:
    1. [Git](https://git-scm.com/doc)
    2. [UNIX/Linux command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
@@ -55,7 +55,7 @@ You will define the configuration ***robots*** as follows:
 5. Add a new file, ***name.yaml***, below the root node ***robots***.
 6. Define parameters in the ***name.yaml***.
 {{% notice info %}}
-Refer to the quick starting guide on [how to define parameters](/getting-started/apply-config-params/#creating-configuration-parameters).
+Refer to the quick starting guide on [how to define parameters](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configs/#creating-configuration-parameters).
 {{% /notice %}}
 ![robots configuration](/images/tutorials/talker-supervisor/robots-configuration.png?classes=border,shadow&width=40pc)
 
@@ -69,7 +69,7 @@ Similarly, define parameters in all of the ***name.yaml*** files occurring below
 ![drone-1 parameter file](/images/tutorials/talker-supervisor/drone1-name-file.png?classes=border,shadow&width=40pc)
 
 #### Preparing device
-The tutorial will use Raspberry PI as the device. Learn [how to prepare the device](/getting-started/prepare-raspberry-pi).
+The tutorial will use Raspberry PI as the device. Learn [how to prepare the device](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3).
 
 If you are using the custom rapyuta.io image on the device, you need to execute the following command to update the ***io_tutorials*** repository at the root of your catkin workspace.
 
@@ -84,7 +84,7 @@ catkin build param_talker
 ```
 
 #### Adding device to rapyuta.io
-When [onboarding the device to rapyuta.io](/getting-started/add-new-device/) the environment variable **RIO_CONFIGS_DIR** is set locally on the device. It is the location of the directory where all of the configurations that will be applied to the device are stored.
+When [onboarding the device to rapyuta.io](/developer-guide/manage-machines/onboarding/) the environment variable **RIO_CONFIGS_DIR** is set locally on the device. It is the location of the directory where all of the configurations that will be applied to the device are stored.
 {{% notice info %}}
 The value of **RIO_CONFIGS_DIR** is set to **/opt/rapyuta/configs**
 {{% /notice %}}
@@ -95,7 +95,7 @@ The value of **RIO_CONFIGS_DIR** is set to **/opt/rapyuta/configs**
 {{% /notice %}}
 
 #### Applying configuration to device
-You should [define labels for the device](/getting-started/apply-config-params/#defining-labels-for-devices) so you can apply configuration parameters to it. You will define the following labels in this tutorial:
+You should [define labels for the device](/developer-guide/manage-software-cycle/dynamic-configurations/device-labels/) so you can apply configuration parameters to it. You will define the following labels in this tutorial:
 
 * robot_type: drone
 * robot_name: drone-1
@@ -132,7 +132,7 @@ The robots configuration is stored in **RIO_CONFIGS_DIR** and its parameters fil
 You can use **RIO_CONFIGS_DIR** in ROS launch files for loading configurations.
 ![configuration environment variable in ROS launch file](/images/tutorials/talker-supervisor/launch-file-content.png?classes=border,shadow&width=50pc)
 
-You can remotely access **RIO_CONFIGS_DIR** by [SSH-ing into the device via rapyuta.io](/getting-started/how-to-webssh/)
+You can remotely access **RIO_CONFIGS_DIR** by [SSH-ing into the device via rapyuta.io](/developer-guide/tooling-automation/#remote-web-terminal-webssh)
 ![SSH access](/images/tutorials/talker-supervisor/SSH-into-device.png?classes=border,shadow&width=40pc)
 
 #### Creating the package
