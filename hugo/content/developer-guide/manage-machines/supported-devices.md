@@ -19,7 +19,7 @@ registered on rapyuta.io
       * [Kinetic Kame](http://wiki.ros.org/kinetic) or [Melodic Morenia](http://wiki.ros.org/melodic)
 
 {{% notice note%}}
-Make sure you install libraries in ROS-Base or above it.
+Ensure you install **ros-kinetic-ros-base**, or **ros-melodic-ros-base**, or above it.
 {{% /notice %}}
 
 {{% notice info %}}
