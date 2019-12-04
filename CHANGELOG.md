@@ -1,6 +1,10 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Fixed
+- Correct typographical errors
+
+
 ## [2.0.4 - 2019-12-04]
 ### Added
 - Mention the different stages involved in the process of onboarding devices
@@ -12,7 +16,6 @@
 
 ### Fixed
 - Fix broken links
-- Correct typographical errors
 
 
 ## [2.0.3 - 2019-11-27]
