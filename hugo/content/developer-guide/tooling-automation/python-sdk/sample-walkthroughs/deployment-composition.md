@@ -13,18 +13,18 @@ weight: 565
    keys to application.
 
 programmatically using
-[rapyuta.io Python SDK](/python-sdk/introduction) in your
+[rapyuta.io Python SDK](/developer-guide/tooling-automation/python-sdk/) in your
 applications.
 
 ## Prerequisites
 
-1. Install rapyuta.io SDK in your development environment.
+1. [Install](/developer-guide/tooling-automation/python-sdk/#installation) rapyuta.io SDK in your development environment.
 2. Learn how to obtain
-   1. authorization token
-   2. project ID
-   3. package ID
-   4. plan ID
-3. Read the object storage walkthrough.
+   1. [authorization token](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#auth-token)
+   2. [project ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#project-id)
+   3. [package ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#package-id)
+   4. [plan ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#plan-id)
+3. Read the [object storage walkthrough](/developer-guide/create-software-packages/persistent-storage/obj-store-deployment-tutorial/).
 
 ## Difficulty
 Intermediate
@@ -34,11 +34,11 @@ Intermediate
 
 ## Assumptions
 
-1. `'my_sample_volume'` is the persistent volume you will create in the tutorial.
-2. ***PROJECT_ID*** is a unique identification value
-   of the project in which **Publisher** and **Subscriber**
-   packages are created. It is of type *string*.
-3. The package is called `sample_pkg` with package ID `'package_id'` and component
+1. ***Storage Volume*** is the persistent volume you will create in the tutorial.
+2. ***PROJECT_ID*** is a unique identification value of the project
+   in which **Publisher** and **Subscriber** packages are created.
+   It is of type *string*.
+3. The package is called ***Minio*** with package ID `'package_id'` and component
 `'sample_component_name'`
 3. `'plan_id'` is the plan ID of `sample_pkg` package.
 4. The final deployment name is `'volume_mounted_deployment'`
