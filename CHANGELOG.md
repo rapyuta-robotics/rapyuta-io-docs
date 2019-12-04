@@ -1,6 +1,22 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Fixed
+- Correct typographical errors
+
+## [2.0.4 - 2019-12-04]
+### Added
+- Mention the different stages involved in the process of onboarding devices
+- Add DEV_E108 device failed error code
+- Add release summary page for December 04, 2019
+
+### Updated
+-  Add ros-kinetic-ros-base and ros-melodic-ros-base terms
+
+### Fixed
+- Fix broken links
+
+
 ## [2.0.3 - 2019-11-27]
 ### Added
 - Add turtlebot3 navigation simulation walkthrough

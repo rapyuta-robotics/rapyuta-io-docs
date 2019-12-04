@@ -7,9 +7,9 @@ pre: "1. "
 weight: 610
 ---
 An executable of a package can be a dockerfile. In that case, rapyuta.io
-applies [dockerfile build strategy](/core-concepts/builds/#dockerfile-strategy)
+applies [dockerfile build strategy](/developer-guide/create-software-packages/builds/#dockerfile-strategy)
 while deploying the package. The tutorial illustrates this strategy, where
-a dockerfile is built into a docker image.
+a dockerfile builds a docker image.
 
 ## Learning objectives
 The tutorial will show you how to use a dockerfile to build an executable
@@ -18,7 +18,7 @@ of a package.
 ## Prerequisites
 1. Ensure that the [Google Chrome browser](https://www.google.com/chrome/)
    is installed on a computer.
-2. You should be familiar with the [core concepts](/core-concepts/) of rapyuta.io
+2. You should be familiar with the [developer guide](/developer-guide/) of rapyuta.io
 
 ## Difficulty
 Beginner
@@ -66,7 +66,7 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 15. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 The package takes about five minutes to build the dockerfile in the *flask_helloworld* directory into a running docker container. You can
-analyze the corresponding [build logs](/core-concepts/logging/build-logs/)
+analyze the corresponding [build logs](/developer-guide/tooling-automation/logging/build-logs/)
 for debugging failing builds.
 
 A flickering yellow dot next to the package name indicates that the
@@ -95,7 +95,7 @@ the **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
 
 ![Deployment details](/images/tutorials/hello-world/successful-deployment.png?classes=border,shadow&width=50pc)
 
-You can also analyze the corresponding [deployment logs](/core-concepts/logging/deployment-logs/) to check if everything is working as expected by clicking on **Historical Logs** or **Live Logs** tab.
+You can also analyze the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/) to check if everything is working as expected by clicking on **Historical Logs** or **Live Logs** tab.
 
 Once the package is successfully deployed, the **NETWORK ENDPOINTS** generates a
 URL address on the **Details** page. Copy this specific URL address (it may be different

@@ -15,7 +15,7 @@ During application development a robotics simulator can greatly help by cutting 
 rapyuta.io lets users run their simulation application with Gazebo simulator on the cloud. It provides a web interface to watch and interact with Gazebo GUI client running on the cloud. ROS interfaces provided by its ROS packages complements rapyuta.io’s [ROS communication support](/developer-guide/manage-software-cycle/communication-topologies/ros-support/), and enhances the ways users architect their simulation and robotics applications. For instance, robotics application **running on a device** can interact with Gazebo **running on cloud** through ROS interfaces (e.g. to get model state, set physics properties). This requires, however, that launch files for simulation are not tightly coupled with the rest of the application so they can be run independently.
 
 {{% notice info %}}
-The following sample-walkthrough demonstrates how to create such a setup keeping in mind that it should still run on local machine besides rapyuta.io: [Turtlebot Navigation Simulation](/build-solutions/sample-walkthroughs/separate-navigation-simulation/).
+The following sample-walkthrough demonstrates how to create such a setup keeping in mind that it should still run on local machine besides rapyuta.io: [Separating Simulation and Application](/build-solutions/sample-walkthroughs/separate-navigation-simulation/).
 {{% /notice %}}
 
 {{% notice note %}}
