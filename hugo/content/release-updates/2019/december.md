@@ -11,15 +11,15 @@ There are significant updates in this version that we hope you will like.
 
 #### Features
 
-* **Visualization of device initialization stages**    
-  The process of initializing or on-boarding a device is made up of different stages. A progress bar indicates the on-going and completed stages of the process. The stages vary based on the kind of device initialized on the platform.
-* **Support time outs for ROS services**    
-  Set a time out when adding a ROS service to a rapyuta.io package.
+* **Visualization of device on-boarding stages**    
+  The process of on-boarding a device is made up of different stages. A progress bar indicates the on-going and completed stages of the process.
+* **Support timeout for ROS services**    
+  Set a timeout when adding a ROS service to a rapyuta.io package. It is the number of seconds to wait for a ROS service response before timing out.
 
 #### Notable Fixes
 
 * Fixed disappearing blinking dots indicating build status of a package.
-* Improved the reliability of WebSSH. There will be less frequent disconnections.
+* Improved the reliability of WebSSH. There will be lesser frequent disconnections.
 * Fixed terminal resize issue of WebSSH.
 
 #### Documentation
