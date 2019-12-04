@@ -4,7 +4,6 @@
 ### Fixed
 - Correct typographical errors
 
-
 ## [2.0.4 - 2019-12-04]
 ### Added
 - Mention the different stages involved in the process of onboarding devices
