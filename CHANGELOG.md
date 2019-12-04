@@ -5,6 +5,7 @@
 - Mention the different stages involved in the process of onboarding devices
 - Add DEV_E108 device failed error code
 - Add ros-kinetic-ros-base and ros-melodic-ros-base terms
+- Add release summary page for December 04, 2019
 
 ### Fixed
 - Fix broken links
