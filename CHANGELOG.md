@@ -1,11 +1,14 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.0.4 - 2019-12-04]
 ### Added
 - Mention the different stages involved in the process of onboarding devices
 - Add DEV_E108 device failed error code
-- Add ros-kinetic-ros-base and ros-melodic-ros-base terms
 - Add release summary page for December 04, 2019
+
+### Updated
+-  Add ros-kinetic-ros-base and ros-melodic-ros-base terms
 
 ### Fixed
 - Fix broken links
