@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Fixed
 - Correct typographical errors
+- fix sitemap generated and is validated in google console
 
 ## [2.0.4 - 2019-12-04]
 ### Added
