@@ -54,52 +54,55 @@ To deploy ***MinIO File Server*** package without persistent volume, follow the 
 3. Under **COMPONENT DETAILS**, the **Parameters** for **MinIO_FS (Cloud runtime)** are:
 	1. In **MINIO_SECRET_KEY** box, enter a value for the secret key say `secretphrase`, and it is mandatory that
        the secret key must be between 8 and 40 characters.
-	2. In the **MINIO_ACCESS_KEY** box, enter a value for the access key say `griffindor` and ensure the access key must be at least three characters.
+	2. In the **MINIO_ACCESS_KEY** box, enter a value for the access key say `accesskey` and ensure the access key must be at least three characters.
 4. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You will be redirected to the newly created deployment's **Details** tab. When the green colored bar moves from **In progress** to **Succeeded**, it indicates that the **DEPLOYMENT PHASE** has **Succeeded** and the **STATUS** is **Running**. Then, the package is deployed successfully.
+You will be redirected to the newly created deployment's **Details** tab. When the green-colored bar moves from **In progress** to **Succeeded**, it indicates that the **DEPLOYMENT PHASE** has **Succeeded** and the **STATUS** is **Running**. Then, the package is deployed successfully.
 
 To access the object storage at the provided
 endpoint, copy and paste the highlighted URL address in a new browser tab.
 
-You can now access the dashboard of MinIO object store at the provided endpoint. You can add buckets where unstructured data files can be stored.
+You can now access the dashboard of the MinIO object store at the provided endpoint. You can add buckets where unstructured data files can be stored.
 
 In the **Access Key** and **Secret Key** boxes, enter the same access key and secret key that you provided while creating the above deployment, respectively.
 
 Since this deployment does not use a persistent volume, any files that you add on the server will be lost when you stop (or de-provision) the deployment of the package.
 
 ## Deploy with a persistent volume
-To preserve data files saved on the file server,
-add the deployment of the **Rapyuta IO Persistent Volume** package as a dependent deployment.
+To preserve data files saved on the file server, deploy a persistent
+volume and add it to the file server.
 
-To deploy the **Rapyuta IO Persistent Volume** package, follow the below instructions in sequence:
+To deploy the **Rapyuta IO Persistent Volume** package, follow the below instructions:
 
 1. On the left navigation bar, click **CATALOG**.
-2. Select **Rapyuta IO Persistent Volume** package from **Storage packages**.
+2. Select the public package, **Rapyuta IO Persistent Volume**, from **Storage packages**.
 3. Click **Deploy package**.
 4. The **Name of deployment** is `Volume Storage`
-5. Ensure the ***diskType*** parameter of the **volumeComponent** is **SSD**. It provisions an SSD for block storage.
+5. Ensure the ***disk type*** parameter of the **volumeComponent** is **SSD**. It provisions an SSD for block storage.
 6. Ensure the ***capacity*** parameter of the **volumeComponent** is **32GiB**. It refers to the size of block storage.
 7. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-To add ***Volume Storage*** as a dependent deployment, follow these steps:
+To add ***Volume Storage*** to an instance of the MinIO file server, follow the steps:
 
 1. On the left navigation bar, click **CATALOG**.
 2. Select **MinIO File Server** package > **Deploy package**.
-3. The **Name of deployment** is `Data With Permanence`
-3. For **MINIO_SECRET_KEY** provide the value `secretphrase`, and for **MINIO_ACCESS_KEY** provide the value `griffindor` respectively.
+3. The **Name of deployment** is `Data Permanence`
+3. For **MINIO_SECRET_KEY** provide the value `secretphrase`, and for **MINIO_ACCESS_KEY** provide the value `accesskey` respectively.
 4. Click **Add volume**.
 5. Under **Deployment**, select the persistent volume deployment that you created, **Volume Storage**
 6. Select the name of the cloud component that needs persistent volume from the **Applicable Component** drop-down list. In this example, choose the **MinIO_FS** component.
-7. The persistent volume is mounted at mount path. Since Minio stores data files at ***/data***, provide `/data` as the value of **Mount path**.
+7. Mount the persistent volume on a mount path. Since MinIO stores data files at ***/data***, provide `/data` as the value of **Mount path**.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-It will create the deployment of an object store with a persistent volume attached at `/data`.
-
 The corresponding dependency graph looks like:
+![]()
 
-If you de-provision **Data With Permanence** deployment, the **Volume Storage** deployment will not be de-provisioned. Furthermore, the **Volume Storage** deployment can be used
-for another deployment of **MinIO File Server** package.
+Thus, the object store will be deployed with a persistent volume
+attached to it at ***/data***. The persistent volume enables the file
+server to preserve data stored in it even if its deployment is stopped.
 
-1. A deployment of a persistent volume cannot be de-provisioned if it is already in use by another deployment.
-2. A deployment of a persistent volume cannot be used by another deployment if it is already in use by another deployment.
+A couple of observations made are:
+
+1. If **Data Permanence** deployment is stopped, the **Volume Storage** deployment will continue to remain deployed.
+2. If both **Data Permanence** and **Volume Storage** are running, you cannot stop the volume because it is actively in use by the file server.
+3. The volume deployment, **Volume Storage**, is added to one deployment of an application at a given time.
