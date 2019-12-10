@@ -6,18 +6,18 @@ date: 2019-10-25T13:22:44+05:30
 pre: "a. "
 weight: 515
 ---
-An executable of a rapyuta.io package is either a git repository or a docker image.
-Build logs are generated when rapyuta.io converts the source code of a git repository
-into a runnable docker image.
+An executable of a rapyuta.io package is either a git repository or a
+docker image. Build logs are generated when rapyuta.io converts the
+source code of a git repository into a runnable docker image.
 
 To view build logs of a package on rapyuta.io,
 follow these steps:
 
 1. On the left navigation bar, click **Catalog**.
-2. Select a package which has a git repository for an executable.
+2. Select a package that has a git repository for an executable.
 3. Click **Builds** tab. The tab displays information on the current build
    generation number, the time of build creation, the author who created it,
-   the build status and the error string.
+   the build status, and the error string.
 4. To view details of the git repository such as repository's name, commit
    number, commit message and the git hosting platform for an executable of a
    component for which builds logs are available, click **View details/logs**.
@@ -33,5 +33,4 @@ click **Refresh**.
 ![build Logs](/images/core-concepts/logging/build-logs/build-logs.png?classes=border,shadow&width=60pc)
 
 You can see the name of the executable together with the name of its component
-whose build logs you're currently viewing. To view build logs of another executable,
-click the executable drop-down list (top right corner of the terminal window).
+whose build logs you're currently viewing. To view build logs of another executable, click the executable drop-down list (top right corner of the terminal window).

@@ -6,22 +6,18 @@ date: 2019-10-25T12:52:17+05:30
 pre: "c. "
 weight: 425
 ---
-A dependency graph is a set of deployments and the relationships between them. The
-rectangular node of the graph represents a deployment (running or non-running).
-For example, consider the dependency graph shown below. The *COMMAND CENTER* and
-*SIMULATOR* are running deployments. The weighted red arrow connecting the two deployments
-indicates the relationship between them.
+A dependency graph is a set of deployments and the relationships between them. The rectangular node of the graph represents a deployment (running or non-running). For example, consider the dependency graph shown below. The *COMMAND CENTER* and *SIMULATOR* are running deployments. The weighted red arrow connecting the two deployments indicates the relationship between them.
 
 ![dependency graph without ROS details](/images/core-concepts/deployments/dgraph-wo-ros.png?classes=border,shadow&width=30pc)
 
 There are three types of relationships:
 
 * **Dependent Deployment**    
-  A rectangular node that is highlighted in red colour is the running deployment
-  whose Details you are currently viewing. The arrow points from a deployment to the deployment(s) it depends on.
+  A rectangular node that is highlighted in red color is the running deployment
+  whose **Details** you are currently viewing. The arrow points from a deployment to the deployment(s) it depends on.
   For instance, in the above graph, *COMMAND CENTER* depends on *SIMULATOR*, that is, *SIMULATOR* is a
   dependency (or "dependent deployment") of *COMMAND CENTER*.
-* **ROS topic publisher - subscriber**    
+* **ROS topic publisher-subscriber**    
   A green arrow represents one ROS Topic. It points from the deployment providing (publishing) the topic
   to the deployment consuming (subscribing to) the topic.
   For example, *SIMULATOR* publishes */sim/sensors* and */sim/pose* while *COMMAND
@@ -47,5 +43,5 @@ To view ROS details of a dependency graph, select **Show ROS Communication Detai
 
 
  You may click anywhere near a dependency graph (ensure you click anywhere only
-in the blue colour highlighted checkbox) to enlarge or shrink the graph. Press
+in the blue color highlighted checkbox) to enlarge or shrink the graph. Press
 the *ESC* key to exit after adjusting the graph's size.

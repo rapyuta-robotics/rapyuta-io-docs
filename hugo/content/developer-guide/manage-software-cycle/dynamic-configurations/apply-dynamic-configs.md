@@ -83,15 +83,15 @@ Ensure you read the
     ![sample file of Japan](/images/getting-started/apply-config-paramas/japan-sample.png?classes=border,shadow&width=65pc)
 
 ## Applying configuration parameters to devices
-Labels of a device help in associating it to a set of configuration
-parameters. The configuartion parameters are resolved by matching device labels
+Labels of a device help in associating it with a set of configuration
+parameters. The configuration parameters are resolved by matching device labels
 with attributes defined in configuration hierarchies. There are two ways of applying parameters to devices.
 
 1. If you want to apply a set of parameters to multiple devices at once.    
-   Hover over the attribute node whose configuration parameters files you want to apply to a group of devices. Then, click on **Apply** option (a check or tick mark).
+   Hover over the attribute node whose configuration parameter files you want to apply to a group of devices. Then, click on **Apply** option (a check or tick mark).
 2. If you want to aggregate all parameters across all configuration
    hierarchies and then apply them to a single device.    
-   Select the device from **DEVICES** panel on left navigation bar.
+   Select the device from **DEVICES** panel on the left navigation bar.
    Click on **Apply Configuration
    Parameters**.
 

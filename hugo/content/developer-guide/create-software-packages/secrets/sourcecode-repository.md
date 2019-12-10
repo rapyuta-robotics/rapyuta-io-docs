@@ -8,7 +8,7 @@ weight: 310
 ---
 You can create packages using the source code from a private git repository.
 A source secret allows rapyuta.io to access a private git repository or a git
-repository with self assigned or untrusted SSL certificate.
+repository with self-assigned or untrusted SSL certificate.
 
 The two types of source secrets are:
 
@@ -27,7 +27,7 @@ want to use for creating a package, follow the steps:
 4. In the **Name** box, enter a name for the source secret.
    For instance, you may name the source secret as _source-secret-name_    
    Ensure that the name should be no greater than 253 characters. It must
-   consist of lower case alphanumeric characters or hypen -, and it must begin
+   consist of lower case alphanumeric characters or hyphen -, and it must begin
    and end with an alphanumeric character.
 5. You may grant access via either your git username and password or the
    repository's git access token. Select **Basic Authentication** from the
@@ -53,8 +53,8 @@ want to use for creating a package, follow the steps:
     To add additional URL patterns, click **Add URL pattern**.    
 8. Click **Submit**.
 
-Source URL pattern lets you specify your git repository url pattern. The
-***Build Engine*** will match the git repository url that you will provide while adding a package to the source url pattern so as to use the corresponding source secret to build the package. Alternatively, it is a regular expression representing git repositories' URLs.
+The Source URL pattern lets you specify your git repository URL pattern. The
+***Build Engine*** will match the git repository URL that you will provide while adding a package to the source URL pattern to use the corresponding source secret to build the package. Alternatively, it is a regular expression representing git repositories' URLs.
 
 A source url pattern consists of the following segments:
 
@@ -65,6 +65,6 @@ A source url pattern consists of the following segments:
 
 The character * is a wild card character popular in regular expressions.
 
-Source url patterns match only git repository urls that conform to [RFC3986](https://tools.ietf.org/html/rfc3986).
+Source URL patterns match only git repository URLs that conform to [RFC3986](https://tools.ietf.org/html/rfc3986).
 For example https://github.com/rapyuta/io_tutorials.git is a valid match,
 whereas _git@github.com:rapyuta/sample.git_ is an invalid match. Moreover, it is discouraged to include a username and password components in a URL pattern.

@@ -9,7 +9,7 @@ weight: 720
 This pricing example is set outside the free 7-day trial period.
 
 Let’s assume your ROS software application has two modules say
-*A* and *B*. You intend to deploy 3 instances of
+*A* and *B*. You intend to deploy three instances of
 A in the cloud, an instance of B on your device, and attach
 a *persistent storage volume of 32GiB size* to your application.
 You also want the ROS application to run for 10 hours a day.
@@ -29,7 +29,7 @@ You will create a ROS package with two components say *compA* and
   The compute and memory values for one of the executables
   are (1vCPU, 4GiB) while the other executable has (8vCPU, 32GiB).
   You will create 3 replicas of *compA*.
-* Suppose *compB* will have a single executable that actually gets
+* Suppose *compB* will have a single executable that gets
   deployed when *compB* is deployed on a device. So, *compB* is charged
   for device deployment hours.
   

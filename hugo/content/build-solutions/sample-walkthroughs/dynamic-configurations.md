@@ -6,14 +6,14 @@ date: 2019-10-24T13:47:57+05:30
 pre: "6. "
 weight: 645
 ---
-The *Publisher for Configured Devices* is a ROS package that will be deployed on a device, which is configured based on a set of parameters like *name*, *location*, *velocity* etc.
+The *Publisher for Configured Devices* is a ROS package that will be deployed on a device, which is configured based on a set of parameters like *name*, *location*, *velocity*, etc.
 
 ## Learning objective
 The tutorial will show you how to apply configuration parameters to a device before deploying a rapyuta.io package on it.
 
 ## Prerequisites
 1. Device requirements
-   1. You should have access to a device (computer and/or Raspberry PI 2 or 3) with an internet connection.
+   1. You should have access to a device (computer or Raspberry PI 2 or 3) with an internet connection.
    2. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is installed on the computer.
    3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation) is installed on the device.
 {{% notice note %}}
@@ -118,7 +118,7 @@ name:
     last_name: RDrone
 ```
 {{% notice note %}}
-Had you given a device label say *robot_type: drone*, rapyuta.io would traverse the configuration tree, select the **drone/name.yaml** file and apply the configuration parameters found in the file. Similarly, if no device label is defined, **name.yaml** file will be selected for application of configuration parameters defined in the file.
+Had you given a device label say *robot_type: drone*, rapyuta.io would traverse the configuration tree, select the **drone/name.yaml** file and apply the configuration parameters found in the file. Similarly, if no device label is defined, **name.yaml** file will be selected for the application of configuration parameters defined in the file.
 {{% /notice %}}
 {{% notice info %}}
 You may apply more than one configuration to a single device.
@@ -143,7 +143,7 @@ To create the *Publisher for Configured Devices* package, follow the steps:
 3. Provide a name for the package say `Publisher for Configured Devices` in the **Package Name** box.
 4. Make sure **Is singleton package** is ***not selected***.
 5. Ensure **Is a bindable package** is ***indeed selected***.
-6. In the **Description** box, provide a brief summary of the package, say, `Demo package to illustrate configuration parameters concept`
+6. In the **Description** box, provide a summary of the package, say, `Demo package to illustrate configuration parameters concept`
 7. Click **NEXT**.
 8. In the **Component Name** box, enter a name for the component say `parameter_talker`.
 9. Select **Device** for **Component Runtime**.
@@ -170,14 +170,14 @@ To deploy the *Publisher for Configured Devices* package, follow the steps:
 7. For the **parameter_talker** component, ensure that **ros_workspace** and **ros_distro** are selected.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You will be redirected to the newly created deployment's **Details** page. The **Configurations Publisher** is successfully running only when the green coloured bar moves to **Succeeded** and **Status:Running** point indicating that the **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
+You will be redirected to the newly created deployment's **Details** page. The **Configurations Publisher** is successfully running when the green colored bar moves to **Succeeded** and **Status:Running** point indicating that the **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
 
 ![Configurations Publisher](/images/tutorials/talker-supervisor/talker-supervisor-deployment.png?classes=border,shadow&width=40pc)
 
 ## Verifying deployment logs
-You may verify the correctness of the tutorial by analysing the corresponding deployment logs by clicking on the **Historical Logs**.
+You may verify the correctness of the tutorial by analyzing the corresponding deployment logs by clicking on the **Historical Logs**.
 
-The historical logs will display an output as shown:
+The historical logs will display the output as shown:
 
 ```bash
 hello Drone 1.0 RDrone
