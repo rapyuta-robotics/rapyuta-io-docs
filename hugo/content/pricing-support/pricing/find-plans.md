@@ -54,7 +54,7 @@ applications to use.
 
 ## Professional Plan
 
-With professional plan, you can get started with rapyuta.io for free for ***seven*** days. On subscribing to the plan, the subscription fee is applied monthly and prorated for partial months. Your credit card will be charged with
+With the professional plan, you can get started with rapyuta.io for free for ***seven*** days. On subscribing to the plan, the subscription fee is applied monthly and prorated for partial months. Your credit card will be charged with
 the subscription fee at the start of the free trial period. You will be automatically moved to the professional plan once the free trial period ends.
 {{% notice note %}}
 ***Fair use*** during the free 7-day trial period restricts you to *50 cloud deployment hours* and *200 device deployment hours*. If you unsubscribe from the plan before the free trial period ends, the full subscription fee will be refunded. However, you may be charged for additional consumption of resources beyond their fair use before.
@@ -62,7 +62,7 @@ the subscription fee at the start of the free trial period. You will be automati
 
 ## Consumable Items
 
-Device deployment hours, cloud deployment hours, volume deployment hours and add-ons are the consumable items or billable items in rapyuta.io.
+Device deployment hours, cloud deployment hours, volume deployment hours, and add-ons are the consumable items or billable items in rapyuta.io.
 
 You will incur overage charges when you exhaust all deployment hours of your subscribed plan. These additional charges are levied only for what you use.
 

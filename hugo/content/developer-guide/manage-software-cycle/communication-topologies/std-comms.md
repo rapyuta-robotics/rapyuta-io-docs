@@ -6,7 +6,7 @@ date: 2019-10-25T12:53:52+05:30
 pre: "a. "
 weight: 431
 ---
-In order to facilitate the communication for common protocols such as HTTP, WebSocket, TLS the platform  relies on Link Injection between the dependent deployments
+rapyuta.io facilitates the communication for common protocols such as HTTP, WebSocket, TLS with the help of *Link Injection* between the dependent deployments
 
 {{% notice note %}}
 Link injection is the mechanism rapyuta.io relies on for composition features corresponding to exposed network endpoints.
@@ -20,11 +20,11 @@ the rapyuta.io platform can use the above URL to determine the corresponding **H
 * **HOST**: *inst-awesomesauce-url.apps.rapyuta.io*
 * **PORT**: *443*
 
-The platform can now make this information available to any other resource it manages such as deployments.
+rapyuta.io can now make this information available to any other resource it manages like deployments.
 
 Consider another deployment, for instance, *C* such that user deploying *C* selects *P* as a ***dependent deployment***. Now for the purpose of linking deployments a parent-child relationship is established between deployments *P* (the parent) and *C* (the child). 
 
-The platform will make exposed endpoint information avaiable to *C* (the child) by constructing and injecting environment variables corresponding to each endpoint exposed by *P* (the parent) using the following rule.
+rapyuta.io will make exposed endpoint information available to *C* (the child) by constructing and injecting environment variables corresponding to each endpoint exposed by *P* (the parent) using the following rule.
 
 * **\<ENDPOINT_NAME\>**
 * **\<ENDPOINT_NAME\>_HOST**

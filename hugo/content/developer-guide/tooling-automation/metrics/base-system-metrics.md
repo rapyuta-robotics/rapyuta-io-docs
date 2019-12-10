@@ -7,9 +7,9 @@ pre: "a. "
 weight: 535
 ---
 ## Network IO Interface
-You can monitor and analyse real-time network performance metrics.
-For instance, you can collect upload and download rate per second for all interfaces for the last hour. When you subscribe to network IO per interface metric,
-you will be shown a visualisation (like a graph with x-axis and y-axis) with the following measurements:
+You can monitor and analyze real-time network performance metrics.
+For instance, you can collect upload and download rate per second for all interfaces for the last hour. When you subscribe to network IO per-interface metric,
+you will be shown a visualization (like a graph with x-axis and y-axis) with the following measurements:
 
 * ***bytes_sent*** is the total number of bytes sent by the network interface
 * ***bytes_recv*** is the total number of bytes received by the network interface
@@ -46,7 +46,7 @@ to the disk IO, the graph of which displays a list of data measurements as given
 * ***iops_in_progress*** is the count of the number of IO requests that have been issued to the device but have not yet completed. It does not include IO requests that are in the queue but not yet issued to the device.
 
 ## Memory usage
-You can collect and visualise device memory metrics by subscribing to the memory usage system metric. A graph is displayed with a list of data measurements as given below:
+You can collect and visualize device memory metrics by subscribing to the memory usage system metric. A graph is displayed with a list of data measurements as given below:
 
 * ***available*** is the amount of memory that is available. It is an integer value shown as byte
 * ***available_percent*** is the percentage of memory that is available. It is a floating-point value shown as percentage
@@ -54,15 +54,15 @@ You can collect and visualise device memory metrics by subscribing to the memory
 * ***cached*** is the amount of physical RAM used as cache memory. It is an integer value shown as byte
 * ***free*** is the amount of free RAM. It is an integer value shown as byte
 * ***inactive*** is the amount of memory that hasn't been used in some way. It is an integer value shown as byte
-* ***slab*** is the amount of memory used by the kernel to cache data structures for its own use. It is an integer value shown as byte
+* ***slab*** is the amount of memory used by the kernel to cache data structures for its use. It is an integer value shown as byte
 * ***total*** is the total amount of physical RAM. It is an integer value shown as byte.
 * ***used*** is the amount of RAM in use. It is an integer value shown as byte.
 * ***used_percent*** is the percentage of memory currently in use. It is a floating-point value shown as percentage
 * ***active*** is the amount of memory that has been used in some way. It is an integer value shown as byte.
-* ***wired*** is the memory where the kernel and other low level components like device drivers and vitual memory objects are stored.
+* ***wired*** is the memory where the kernel and other low-level components like device drivers and virtual memory objects are stored.
 
 ## CPU load average
-You can determine the percentage of CPU used by a user, process or system by subscribing to CPU load average metric. You can analyse the following data measurements from its graph:
+You can determine the percentage of CPU used by a user, process, or system by subscribing to CPU load average metric. You can analyze the following data measurements from its graph:
 
 * ***usage_guest*** is the percentage of time that the CPU is running a virtual CPU for a guest operating system
 * ***usage_guest_nice*** is the percentage of time that the CPU is running a virtual CPU for a guest operating system, which is low priority and can be interrupted by other processes.
@@ -71,6 +71,6 @@ You can determine the percentage of CPU used by a user, process or system by sub
 * ***usage_irq*** is the percentage of time that the CPU is servicing interrupts
 * ***usage_nice*** is the percentage of time that the CPU is in user mode with a low priority process, which a higher priority process can interrupt
 * ***usage_softirq*** is the percentage of time that the CPU is servicing software interrupts 
-* ***usage_steal*** is the percentage of time that the CPU is in stolen time or time spent in other operating systems in a virtualised environment
+* ***usage_steal*** is the percentage of time that the CPU is in stolen time or time spent in other operating systems in a virtualized environment
 * ***usage_system*** is the percentage of time that the CPU is in system mode
 * ***usage_user*** is the percentage of time that the CPU is in user mode

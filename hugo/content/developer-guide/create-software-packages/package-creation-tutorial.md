@@ -9,14 +9,14 @@ weight: 285
 To add a new package using rapyuta.io, follow the steps:
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
-2. **Package information** contains basic information of a package like the name of the package, its version, and a brief summary of the package.
+2. **Package information** contains the basic information of a package like the name of the package, its version, and a summary of the package.
    1. In the **Package Name** box, type in the name for the package. For instance, let's call the package as `Demo Package`.
    2. In the **Package Version** box, enter the version of the package. It is set to _1.0.0_ by default.
    3. Ensure that **Is a singleton package** is ***not selected***.
    4. Ensure that **Is bindable package** checkbox ***is selected***.
    5. It is optional to describe the package in the **Description** box.
 3. Click **NEXT**.
-4. **Components** contains details about the package's components, and executables of each component. Fill in the **COMPONENT METADATA** information.
+4. **Components** contains details about the package's components and executables of each component. Fill in the **COMPONENT METADATA** information.
    1. In the **Component Name** box, enter the name of the component. For example, `Talker`.
 {{% notice info %}}
 The name of a component must consist of alphabets [A-Z, a-z], digits [0-9] and an underscore _ character, and must not begin with a digit.
@@ -58,7 +58,6 @@ when the **Deploy package** button is enabled.
 ![Demo package](/images/getting-started/create-new-pkg/demo-pkg.png?classes=border,shadow&width=50pc)
 
 You can download the manifest of the package by clicking
-**Download Manifest**. You may also clone the package so as to modify it by
-clicking **Clone Package**. You can trigger a new build by clicking
-**Trigger build** and deploy the package by
+**Download Manifest**. You may also clone the package if you want to
+modify it by clicking **Clone Package**. You can trigger a new build by clicking **Trigger build** and deploy the package by
 clicking **Deploy package**.
