@@ -44,27 +44,35 @@ To add the ***MinIO File Server*** package, follow the steps:
 20. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ## Deploy without persistent volume
-You can deploy a MinIO server without persistent volume,
-that is, even though a *MinIO File Server* package is provisioned, the data files are lost after de-provisioning the deployment.
+In the case of deploying a MinIO file server without adding a
+persistent volume to it, the data files are lost, or not preserved,
+after de-provisioning the deployment. 
 
-To deploy ***MinIO File Server*** package without persistent volume, follow the below steps:
+To deploy ***MinIO File Server*** package without persistent volume,
+follow the below steps:
 
 1. Click **CATALOG** > Select **MinIO File Server** package > Click **Deploy package**.
-2. The **Name of deployment** is `Data Without Permanence`
+2. The **Name of deployment** is `No Data Permanence`
 3. Under **COMPONENT DETAILS**, the **Parameters** for **MinIO_FS (Cloud runtime)** are:
-	1. In **MINIO_SECRET_KEY** box, enter a value for the secret key say `secretphrase`, and it is mandatory that
-       the secret key must be between 8 and 40 characters.
+	1. In **MINIO_SECRET_KEY** box, enter a value for the secret key say `secretphrase`, and the secret key must be between 8 and 40 characters.
 	2. In the **MINIO_ACCESS_KEY** box, enter a value for the access key say `accesskey` and ensure the access key must be at least three characters.
 4. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** tab. When the green-colored bar moves from **In progress** to **Succeeded**, it indicates that the **DEPLOYMENT PHASE** has **Succeeded** and the **STATUS** is **Running**. Then, the package is deployed successfully.
 
+![No Data Permanence Deployment](/images/chapters/walkthroughs/object-store/no-data-permanence.png?classes=border,shadow&width=40pc)
+
 To access the object storage at the provided
-endpoint, copy and paste the highlighted URL address in a new browser tab.
+endpoint, copy and paste the highlighted URL address in a
+new browser tab.
+
+![File Storage Endpoint](/images/chapters/walkthroughs/object-store/file-storage-endpoint.png?classes=border,shadow&width=50pc)
 
 You can now access the dashboard of the MinIO object store at the provided endpoint. You can add buckets where unstructured data files can be stored.
 
 In the **Access Key** and **Secret Key** boxes, enter the same access key and secret key that you provided while creating the above deployment, respectively.
+
+![MinIO Dashboard Sign In](/images/chapters/walkthroughs/object-store/MinIO-signin-page.png?classes=border,shadow&width=40pc)
 
 Since this deployment does not use a persistent volume, any files that you add on the server will be lost when you stop (or de-provision) the deployment of the package.
 
@@ -95,7 +103,7 @@ To add ***Volume Storage*** to an instance of the MinIO file server, follow the 
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 The corresponding dependency graph looks like:
-![]()
+![Dependency Graph](/images/chapters/walkthroughs/object-store/volume-dgraph.png?classes=border,shadow&width=40pc)
 
 Thus, the object store will be deployed with a persistent volume
 attached to it at ***/data***. The persistent volume enables the file
