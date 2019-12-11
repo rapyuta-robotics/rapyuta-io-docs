@@ -7,12 +7,14 @@ pre: "3. "
 weight: 220
 ---
 
-Any rapyuta.io resource that you create, allocate and use must belong
-to a project. You can think of a project as the organisational unit
-for what you are building. A project is made up of the settings,
-configuration, and other metadata that describe your applications.
-Resources within a single project can work together easily, for
-example, by communicating through an internal network. The
+Any rapyuta.io resource that you create, or allocate or
+use must belong to a project. You can think of a project as
+the organizational unit for what you are building. A project is
+made up of the settings, configuration, and other metadata that
+describe your applications.
+
+Resources within a single project can work together,
+for example, by communicating through an internal network. The
 resources that each project contains remain separate across project
 boundaries; you can only interconnect them through an external
 connection.
@@ -32,7 +34,7 @@ project can alone add or remove users from the project.
 To create a new project, you will follow the below instructions:
 
 1. On the left navigation bar, click **PROJECTS**. You will view a dashboard,
-   which enlists all the current rapyuta.io projects in your organization. The list displays the name of the project, its creator and the valid action for the project.
+   which enlists all the current rapyuta.io projects in your organization. The list displays the name of the project, its creator, and the valid action for the project.
 2. Click **CREATE NEW PROJECT**.
    ![Create new project](/images/getting-started/organization/project/proj-dashboard.png?classes=border,shadow&width=50pc)
 3. Provide a name for the project say `example-2`
@@ -48,7 +50,8 @@ dashboard. A project is highlighted in red if you are either the project's creat
 
 ![Project dashboard](/images/getting-started/organization/project/proj-list-other-user.png?classes=border,shadow&width=50pc)
 
-The admin of the organization can see all the rapyuta.io projects that are created for the organization, while the other users can see only the projects that they are a member of.
+The admin of the organization can see all the rapyuta.io projects that are created for the organization, while the other users can see only the
+projects that they are a member of.
 
 ![Admin's project dashboard](/images/getting-started/organization/project/project-list-admin.png?classes=border,shadow&width=50pc)
 
@@ -66,12 +69,12 @@ To switch from *example-0* to *example-3*, you will follow the below instruction
    ![project three](/images/getting-started/organization/project/switch-projs/example-3.png?classes=border,shadow&width=50pc)
 
 ## Delete Existing Project
-The creator of a project can alone delete the project. Prior to deleting a
-project, ensure that the project's resources are de-allocated and its users
-are removed.
+The creator of a project can alone delete the project. Before deleting a
+project, de-allocate the project's resources and remove its users.
 
 {{% notice note %}}
-Deletion of a project is irreversible. Once de-allocated, the resources of the project cannot be retained.
+The act of deleting a project is irreversible. Once de-allocated, you
+cannot retain the resources of the project.
 {{% /notice %}}
 
 To delete an existing project, you will follow the below instructions:
@@ -92,12 +95,12 @@ All users in a rapyuta.io project belong to the same organization as that of its
 
 To add a user to a project, you will follow the below instructions:
 
-1. On the left navigation bar, click **PROJECTS** to view the projects dashboard.
+1. On the left navigation bar, click **PROJECTS**.
 2. Select the project to which you want to add a user.
-3. Under **Users** tab, select the name of the user from the drop down menu. Ensure that the user you are adding is in **Activated** state.
+3. Under **Users** tab, select the name of the user from the drop-down menu. Ensure that the user you are adding is in **Activated** state.
 4. Click **ADD USER**.
    ![Add user to project](/images/getting-started/organization/project/add-user-to-proj.png?classes=border,shadow&width=50pc)
-5. The name of the user and their email address is added to the list of **EXISTING USERS**.
+5. Add the user's name and their email address to the list of **EXISTING USERS**.
 
 ![newly added user](/images/getting-started/organization/project/after-usr-added.png?classes=border,shadow&width=50pc)
 
@@ -107,7 +110,7 @@ However, the project’s creator cannot remove themself.
 
 To remove a user from a project, you will have to follow the below instructions:
 
-1. On the left navigation bar, click **PROJECTS** to view the projects dashboard.
+1. On the left navigation bar, click **PROJECTS**.
 2. Select the project you want to remove a user from.
    ![Select project](/images/getting-started/organization/project/select-proj.png?classes=border,shadow&width=50pc)
 3. Select the user you want to remove in the project.

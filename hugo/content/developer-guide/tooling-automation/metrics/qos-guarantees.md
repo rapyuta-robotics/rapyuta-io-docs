@@ -24,11 +24,11 @@ delivery, but delivers with some data loss. Use Low QoS level when you
 have a completely or mostly stable connection between sender and receiver,
 or if the loss of data (metrics or logs)  is acceptable.
 It is suggested to set the QoS level to low when the
-rate of data generation is high so as to reduce the overhead cost and
+rate of data generation is high to reduce the overhead cost and
 lower the latency while sending messages.
 
 #### Medium QoS guarantee
-*Medium* QoS level guarantees that metrics or logs are delivered at least once to the receiver. It is possible for the data to be delivered multiple times. Use Medium QoS level when you need to get every data and your application can tolerate duplicates and be able to process them accordingly.
+*Medium* QoS level guarantees that metrics or logs are delivered at least once to the receiver. It is possible for the data to be delivered multiple times. Use Medium QoS level when you need to get every data, and your application can tolerate duplicates and be able to process them accordingly.
 
 #### High QoS guarantee
 The maximum QoS level is *High*. This level guarantees that each metric

@@ -11,9 +11,8 @@ This Fair Use Policy (this **Policy**) governs the use of rapyuta.io (the
 users. It describes prohibited uses of the Services offered by
 Rapyuta Robotics Inc. (the **Rapyuta Robotics**). The examples described
 in this Policy are not exhaustive. We may modify this Policy at any time by
-posting a revised version on rapyuta.io. By using the rapyuta.io, you agree to the
-latest version of this Policy. If you violate this Policy or authorize or
-help others to do so, we may suspend or terminate your use of the rapyuta.io
+posting a revised version on rapyuta.io. By using the rapyuta.io, you agree to the latest version of this Policy. If you violate this Policy or authorize or
+help others to do so we may suspend or terminate your use of the rapyuta.io
 
 ## Acceptable Use Limits
 
@@ -31,7 +30,7 @@ help others to do so, we may suspend or terminate your use of the rapyuta.io
 You agree to not, or not to allow third parties, use the rapyuta.io or its Services:
 
 * To impair or disrupt the rapyuta.io by monitoring or crawling;
-* To inundate the rapyuta.io so as to make it ineffective by Denial of Service (DOS) attack;
+* To inundate the rapyuta.io to make it ineffective by Denial of Service (DOS) attack;
 * To manually or electronically avoid any use limitations placed on the rapyuta.io such as access and storage restrictions;
 * To intentionally distribute viruses, worms, Trojan horses, corrupted files, hoaxes, or other items of a destructive or deceptive nature;
 * To disable or interfere with or circumvent the use of the rapyuta.io, its Services, or the equipment used to provide the rapyuta.io, by customers, or other authorized users;
@@ -40,5 +39,4 @@ You agree to not, or not to allow third parties, use the rapyuta.io or its Servi
 
 ## Reporting of Violation of this Policy
 If you become aware of any violation of this Policy, you will immediately
-notify us and provide us with assistance, as requested, to stop or remedy
-the violation. To report any violation of this Policy, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
+notify us and provide us with assistance, as requested, to stop or remedy the violation. To report any violation of this Policy, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.

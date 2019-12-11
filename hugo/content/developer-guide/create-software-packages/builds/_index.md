@@ -11,7 +11,7 @@ reference source code from a VCS like GitHub or Bitbucket. The
 platform then takes the responsibility of cloning, building and
 delivering the software across the cloud and device.
 
-Under the hood rapyuta.io solves the hard problems of native arm
+Under the hood, rapyuta.io solves the hard problems of native arm
 compiles, software versioning, artifact delivery, transactional
 upgrades and provisioning.
 
@@ -27,7 +27,7 @@ whether the package contains a git repository with Dockerfile or
 without it or a docker image.
 
 The goal of each build strategy is to generate a running docker container
-at the end of package creation process.
+at the end of the package creation process.
 
 You may analyse [build logs](/developer-guide/tooling-automation/logging/build-logs/) for
 debugging build failures. In the case of source code and Dockerfile
@@ -40,30 +40,31 @@ is usually stored in a git repository. If it is a private git repository,
 you need to [add a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)
 to access the repository contents. rapyuta.io uses ***ROS Builder***, a subset of *catkin build*, to build source code into a docker image. If a package contains a ROS component, the component's ROS version can be *Kinetic* or *Melodic*. When building the source code, the ***ROS Builder*** takes into account its corresponding component's ROS version. 
 
-Set the **Executable Type** as **Git** and provide the url address of
+Set the **Executable Type** as **Git** and provide the URL address of
 a git repository. Suppose you want to add the address of a git repository
 say https://github.com/rapyuta-robotics/io_tutorials,
 where ***io_tutorials*** is the project folder that contains the source
 code on the master branch and is hosted on GitHub.
 
-If you want to add source code located on a different branch say
-***io_turtlesim_qos*** of the same project, your git repository url
+If you want to add source code located on a different branch, say
+***io_turtlesim_qos*** of the same project, your git repository URL
 will look like:
 https://github.com/rapyuta-robotics/io_tutorials#io_turtlesim_qos
 
-The [ROS Publisher Subscriber](/build-solutions/sample-walkthroughs/basic-ros-pubsub/preinstalled-runtime/) walkthrough is an example of source code build strategy.
+The [ROS Publisher Subscriber](/build-solutions/sample-walkthroughs/basic-ros-pubsub/preinstalled-runtime/) walkthrough is an example of
+the source code build strategy.
 
 {{% notice info %}}
-rapyuta.io supports cross compilation of source code
+rapyuta.io supports cross-compilation of source code
 to be able to run on devices with *arm64*, *arm32* CPU
 architectures.
 {{% /notice %}}
 
 {{% notice note %}}
 rapyuta.io supports cloning and fetching from repositories
-that deal with large files (as large as a couple GB in size) with
+that deal with large files (as large as a couple of GB in size) with
 [Git Large File System (LFS)](https://git-lfs.github.com/) extension.
-If you want to use Git LFS with a private git repository, you must select *SSH authentication* while [adding a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)because the LFS extension will fail with the *Basic authentiontion*, and the corresponding source secret will not be applied to the private repository.
+If you want to use Git LFS with a private git repository, you must select *SSH authentication* while [adding a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)because the LFS extension will fail with the *Basic authentication*, and the corresponding source secret will not be applied to the private repository.
 {{% /notice %}}
 
 ### Dockerfile strategy
@@ -75,7 +76,7 @@ to access the repository contents.
 You may explicitly specify the absolute path of the Dockerfile, or
 the root of the git repository is set as the location of the Dockerfile.
 
-The [Basic Web Application](/build-solutions/sample-walkthroughs/basic-web-app/) walkthrough is an example of dockerfile build strategy.
+The [Basic Web Application](/build-solutions/sample-walkthroughs/basic-web-app/) walkthrough is an example of the dockerfile build strategy.
 
 ### Docker image strategy
 This strategy uses a pre-built docker image. The docker image is usually
@@ -87,8 +88,8 @@ The maximum size of a docker image for cloud deployment is **10GB**.
 {{% /notice %}}
 
 If you are going to deploy a docker image onto a device, ensure that the
-CPU architecture of the device is compatiable with that of the image being
+CPU architecture of the device is compatible with that of the image being
 deployed. You may use the ***Build Engine*** for compiling for a different
 target architecture.
 
-The [Hardware Interfacing](/build-solutions/sample-walkthroughs/hardware-interfacing/) walkthrough illustrates docker image strategy.
+The [Hardware Interfacing](/build-solutions/sample-walkthroughs/hardware-interfacing/) walkthrough illustrates the docker image strategy.

@@ -6,24 +6,24 @@ date: 2019-10-24T13:47:13+05:30
 pre: "b. "
 weight: 625
 ---
-A _ROS publisher_ is part of a ROS package. It is a public git repository, which
-is built into a running docker container on the fly when the package is being deployed.
-A _ROS subscriber_ is also a part of the same ROS package. It is downloaded on a
-device, and is launched when the package is deployed.
+A _ROS publisher_ is part of a ROS package. It is a public git
+repository, which is built into a running docker container on the
+fly when the package is being deployed. A _ROS subscriber_ is also
+a part of the same ROS package. It is downloaded on a device and
+is launched when the package is deployed.
 
 ## Learning objectives
-The tutorial will show you how to deploy a basic ROS package with a _ROS publisher_
-running on the cloud and a _ROS subscriber_ running on a device such as Raspberry
-PI. It also shows how to use docker compose runtime on a device.
+The tutorial will show you how to deploy a basic ROS package
+with a _ROS publisher_ running on the cloud and a
+_ROS subscriber_ running on a device such as Raspberry PI.
+It also shows how to use dockercompose runtime on a device.
 
 ## Prerequisites
 1. Device requirements
-	1. You should have access to a device (computer and/or Raspberry PI 2 or 3)
+	1. You should have access to a device (computer or Raspberry PI 2 or 3)
 	with an internet connection.
-	2. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is
-	installed on the computer.
-	3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation)
-	is installed on the device.
+	2. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is installed on the computer.
+	3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation) is installed on the device.
 {{% notice note %}}
 If the device has [ROS Melodic Morenia](http://wiki.ros.org/melodic)
 installed on it, replace ***Kinetic*** with ***Melodic*** in all places
@@ -40,7 +40,7 @@ work the same.
 Beginner
 
 ## Estimated time
-It will take nearly about 15 minutes to finish the tutorial.
+15 minutes
 
 ## Preparing your device
 The tutorial will use Raspberry PI as the device.
@@ -65,17 +65,16 @@ To create the _Docker publisher subscriber_ package using the
    The default value is _1.0.0_
 5. Ensure **Is a singleton package** is not selected.
 6. Make sure **Is a bindable package** is selected.
-5. In the **Description** box, provide a brief summary of the package.
+5. In the **Description** box, provide a summary of the package.
 6. Click **NEXT**.
 
 The package has two components: the **talker** running on the cloud and the
 **listener** running on the device.
 
 1. Talker component (aka _ROS publisher_)
-	1. In the **Component Name** box, enter a name for the component say `talker`      
+	1. In the **Component Name** box, enter a name for the component, say `talker`      
 {{% notice info %}}
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
-and an underscore _ character. It must not begin with a digit.
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}
 	2. For **Component Runtime**, click **Cloud**.
 	3. Ensure **Is ROS Component** is selected.
@@ -83,8 +82,7 @@ and an underscore _ character. It must not begin with a digit.
 	5. In the **Executable Name** box, enter a name for the executable say
 	   `talkerExecutable`  
 {{% notice info %}}
-The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hypen -
-and an underscore _ character, and must not start with a digit.
+The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 	6. For **Executable Type**, click **Git**.
 	7. In the **Git repository** box, enter the url address:
@@ -100,13 +98,11 @@ and an underscore _ character, and must not start with a digit.
 		eventually, the deployment will fail as well.
 		![talkerExecutable](/images/tutorials/docker-pub-sub/docker-pubsub-talker-exec.png?classes=border,shadow&width=50pc)
 	9. The _talkerExecutable_ publishes a ROS topic, `/telemetry`    
-	   To add a ROS topic, click **Add ROS topic**. In the **Name** box, enter the
-	   name of the ROS topic. Select **Maximum** for **QoS**.
+	   To add a ROS topic, click **Add ROS topic**. In the **Name** box, enter the name of the ROS topic. Select **Maximum** for **QoS**.
 2. Listener component (aka _ROS subscriber_)
-	1. In the **Component Name** box, type in a name for the component say `listener`      
+	1. In the **Component Name** box, type in a name for the component, say `listener`      
 {{% notice info %}}
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
-and an underscore _ character, and must not begin with a digit.
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 	2. For **Component Runtime**, click **Device**.
 	3. Ensure **Is ROS Component** is selected.
@@ -115,11 +111,10 @@ and an underscore _ character, and must not begin with a digit.
 	6. In the **Executable Name** box, type in a name for the executable say
 	   `listenerExecutable`   
 {{% notice info %}}
-The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hypen -
-and an underscore _ character, and must not begin with a digit.
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 	7. For **Executable Type**, select **Git**.
-	8. In the **Git repository** box, enter the url address: `https://github.com/rapyuta/io_tutorials`
+	8. In the **Git repository** box, enter the URL address: `https://github.com/rapyuta/io_tutorials`
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
 		roslaunch listener listener.launch
@@ -132,13 +127,11 @@ and an underscore _ character, and must not begin with a digit.
 		![listenerExecutable](/images/tutorials/docker-pub-sub/docker-pubsub-listener-exec.png?classes=border,shadow&width=50pc)
 	10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-The package takes about two to five minutes to build the source code in the *io_tutorials*
-repository into a running docker container. You may analyse the corresponding
+The package takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding
 [build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
 
 A flickering yellow dot against the name of the package indicates that the
-**Build Status** is **New**, while a green dot indicates that the **Build Status**
-is **Complete**.
+**Build Status** is **New**, while a green dot indicates that the **Build Status** is **Complete**.
 
 Additionally, when the **Deploy package** button is automatically enabled, it
 indicates that the _Docker publisher subscriber_ package has been successfully
@@ -154,15 +147,13 @@ follow the steps:
 4. In the **Name of deployment** box, enter a name for the deployment you are
    creating say `Docker Publisher Subscriber Deployment`
 5. Since _listener_ has device runtime, you must select the device you want to
-   deploy the component on. Click **Refresh the list of online devices** to retrieve
-   an updated list of online devices.
+   deploy the component on. Click **Refresh the list of online devices** to retrieve an updated list of online devices.
 6. Select the device from the **Select device for deploying the component**
-   drop-down list.
+   dropdown list.
 7. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You will be redirected to the newly created deployment's **Details** page where a green coloured bar
-moves from **In progress** to **Succeeded** with **Status:Running** indicating that
-the **DEPLOYMENT PHASE** has **Succeeded** and the **STATUS** is **Running**.
+You will be redirected to the newly created deployment's **Details** page where a green colored bar
+moves from **In progress** to **Succeeded** with **Status:Running** indicating that the **DEPLOYMENT PHASE** has **Succeeded**, and the **STATUS** is **Running**.
 
 You may also analyse the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/)
 to check if everything is working OK.

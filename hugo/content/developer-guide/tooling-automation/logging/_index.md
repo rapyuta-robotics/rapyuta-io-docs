@@ -6,7 +6,7 @@ date: 2019-10-25T13:22:14+05:30
 pre: "1. "
 weight: 510
 ---
-Logs are verbose text messages, and are used for debugging and monitoring.
+Logs are verbose text messages and are used for debugging and monitoring.
 Logs are generated when rapyuta.io builds the source code of a git repository,
 by a device and during the life cycle of deployment.
 
