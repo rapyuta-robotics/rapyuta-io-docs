@@ -8,30 +8,28 @@ weight: 100
 ---
 
 This tutorial will show you how to set up and run a variation of the ROS
-Turtlesim on rapyuta.io. This tutorial targets individuals who like to get thier hands dirty and explore a wider variety of functionality found in the rapyuta.io platform. 
+Turtlesim on rapyuta.io. This tutorial targets individuals who like to get their hands dirty and explore a wider variety of functionality found in the rapyuta.io platform. 
 
-In order to attain a deeper understanding of rapyuta.io it is highly reccommended that the developer refer to the [developer guide](/developer-guide) section for in-depth documentation on each topic and/or pick from one of the more nuanced [sample walkthroughs](/build-solutions/sample-walkthroughs/) that deal with individual concepts and topics.
+In order to attain a deeper understanding of rapyuta.io it is highly recommended that the developer refer to the [developer guide](/developer-guide) section for in-depth documentation on each topic and/or pick from one of the more nuanced [sample walkthroughs](/build-solutions/sample-walkthroughs/) that deal with individual concepts and topics.
 
-Some of the packages that are used in this tutorial
+Some of the packages used in this tutorial
 can be reused to control real robots such as [Turtlebot](https://www.turtlebot.com/).
 
 ## Learning objectives
-In this tutorial you will learn how to add and deploy packages using
+In this tutorial, you will learn how to add and deploy packages using
 [rapyuta.io console](https://console.rapyuta.io). Specifically, you'll
 learn how to:
 
-1. Source your packages from a public docker registry and from a public git
+1. Source your packages from a public docker registry and a public git
    repository.
-2. Expose ROS topics, services, actions and network endpoints as component-level
-   interfaces and as package-level inbound interfaces.
+2. Expose ROS topics, services, actions, and network endpoints as component-level interfaces and as package-level inbound interfaces.
 3. Create dependent deployments.
 4. Control a Turtlebot in simulation through a web browser.
 
 ## Prerequisites
 
 1. You should have access to a computer with an internet connection.
-   Ensure that the latest [Google Chrome](https://www.google.com/chrome/) browser
-   is installed on it.
+   Ensure that the latest [Google Chrome](https://www.google.com/chrome/) browser is installed on it.
 2. You should be familiar with the following tools:
 	* [Git](https://git-scm.com/doc)
 	* [Docker](https://docs.docker.com/get-started/)
@@ -43,22 +41,22 @@ learn how to:
 Advanced
 
 ## Estimated time
-It will take nearly about 60 minutes to complete the tutorial.
+40 minutes
 
 ## Software architecture
 Turtlesim’s software consists of packages or modules. Each package has a
-specific purpose and contributes to the whole of Turtlesim. A modularised
-software is easy to maintain, share and scale. A package contains interfaces
+specific purpose and contributes to the whole of Turtlesim. A modularized
+software is easy to maintain, share, and scale. A package contains interfaces
 that determine how it may interact with other packages. A deployment of a
 package may depend on deployments of other packages. Learn more about
 Turtlesim's [software architecture](./software-architecture) and [constituent packages](./packages)
 
-## Create Turtle package
-The Turtle package emulates the behaviour of a Turtlebot through the Simulator.
+## Create the Turtle package
+The Turtle package emulates the behavior of a Turtlebot through the Simulator.
 There may be multiple instances (deployments) of Turtle component, each
-representing a single robot entity. In the real world implementation,
+representing a single robot entity. In a real-world implementation,
 the Turtle package would directly control a robot. Since this is a simulation,
-the dynamics of the Turtle's behaviour is obtained from the Simulator. Learn
+the dynamics of the Turtle's behavior is obtained from the Simulator. Learn
 more about [Turtle package](./packages/#turtle-package).
 
 To add _Turtle_ package using [rapyuta.io console](https://console.rapyuta.io),
@@ -69,17 +67,15 @@ follow the steps:
    package, its version, whether it is a singleton package and a short
    description.
    1. In the **Package Name** box, enter a name say `Turtle`
-   2. In the **Package Version** box, specify a version for the package. Initially,
-      the version is set to the default value _1.0.0_
+   2. In the **Package Version** box, specify a version for the package. Initially, the version is set to the default value _1.0.0_
    3. Make sure **Is singleton package** is not selected.
    4. Ensure **Is bindable package** is selected.
-   5. In the **Description** box, provide short summary of the package. For
+   5. In the **Description** box, provide a summary of the package. For
       example, `An emulation of Turtlebot`
    6. Click **NEXT**.
 3. In the **Component Name** box, enter a name for the component such as `turtle`      
 {{% notice info %}}
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -
-and an underscore _ character, and must not start with a digit.
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -, and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 4. Select **Cloud** as the **Component Runtime**.
 5. Ensure **Is ROS Component** is selected.
@@ -87,18 +83,17 @@ and an underscore _ character, and must not start with a digit.
 7. In the **Executable Name** box, type in a name for the executable. For example,
    `turtle_executable`       
 {{% notice info %}}
-The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - 
-and an underscore _ character, and must not start with a digit.
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -, and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 8. Select **Git** for the **Executable Type**.
-9. In the **Git repository** box, enter the url address of the git
+9. In the **Git repository** box, enter the URL address of the git
    repository: `https://github.com/rapyuta/io_tutorials`
 10. In the **Command to run in the docker container** box, enter the command:
     ```bash
 	roslaunch io_turtle turtle.launch
     ```
 
-	Ensure you always execute the *roslaunch* command to explicitly start the
+	Ensure you always execute the *roslaunch* command for explicitly starting the
 	[ROS Master](http://wiki.ros.org/Master). However, it's not recommended to
 	run the *rosrun* command because the ROS Master will fail to start, and thus,
 	the deployment fails.
@@ -120,46 +115,41 @@ The ROS actions are dynamically created when the _Turtle_ registers with the
 _Command Center_. Each _Turtle_ uses one of the defined actions.
 
 ## Create User Interface package
-The _User Interface_ is an interactive, web based visualisation of the original
-ROS Turtlesim. You can visualise the state of the Turtles, pass control commands
-to the Turtles. A docker container encapsulates its application code and
-dependencies. It communicates with the _Command Center_ through a WebSecureSocket.
-It is the only non-ROS package based on Nginix. Learn more about
+The _User Interface_ is an interactive, web-based visualization of the
+original ROS Turtlesim. You can visualize the state of the Turtles, pass control commands to the Turtles. A docker container encapsulates its application code and dependencies. It communicates with the
+_Command Center_ through a WebSecureSocket. It is the only non-ROS
+package based on Nginix. Learn more about
 [User Interface package](./packages/#user-interface-package).
 
-To add _User Interface_ package using the [console](https://console.rapyuta.io),
-follow the instructions:
+To add _User Interface_ package using the [console](https://console.rapyuta.io), follow the instructions:
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
-2. You should provide information about the package such as the name of the package,
-   its version, whether it is a singleton package and a short description of the package.
+2. You should provide information about the package, such as the name of the package,
+   its version, whether it is a singleton package, and a short description of the package.
    1. In the **Package Name** box, enter a name say `User Interface`
    2. In the **Package Version** box, specify a version for the package. Initially,
       the version is set to the default value _1.0.0_
    3. Make sure **Is singleton package** is not selected.
    4. Ensure **Is bindable package** is selected.
-   5. In the **Description** box, enter short summary of the package such as
+   5. In the **Description** box, enter a summary of the package such as
       `An interactive, web based version of ROS Turtlesim's user interface`
    6. Click **NEXT**.
 3. In the **Component Name** box, enter a name for the component say `user_interface`   
 {{% notice info %}}
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - 
-and an underscore _ character, and must not start with a digit.
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -, and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 4. Select **Cloud** for **Component Runtime**.
 5. Deselect **Is ROS Component** because _User Interface_ is a non-ROS package.
 6. Set **Replicas to run the component** to number 1 (default value).
 7. In the **Executable Name** box, enter a name for the executable say `uiexecutable`    
 {{% notice info %}}
-The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - 
-and an underscore _ character, and must not start with a digit.
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -, and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 8. Select **Docker** for **Executable Type**.
 9. In the **Docker image** box, enter the address of the docker image that contains
    the application code. The address of the image is `rrdockerhub/io_turtlesim_ui`
    as the image is held in the public docker registry, [DockerHub](https://hub.docker.com/).
-10. The **Command to run in the docker container** remains empty because the docker
-    image will automatically execute when you deploy the _User Interface_ package.
+10. The **Command to run in the docker container** remains empty because the docker image will automatically execute when you deploy the _User Interface_ package.
 11. Deselect **Run command from bash shell** checkbox.
 12. Expose a communication endpoint to access _User Interface_ as well as interact
     with the Turtles. To add an endpoint, follow the steps:
@@ -178,21 +168,20 @@ their sensors. Learn more about [Simulator package](./packages/#simulator-packag
 To add the _Simulator_ package, follow the steps:
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
-2. You must provide information about the package such as the name of the package,
+2. You must provide information about the package, such as the name of the package,
    its version, whether it is a singleton package, and a short description.
    1. In the **Package Name** box, type in the name for the package say
       `Simulator`
    2. In the **Package Version** box, enter the version of the package.
       The default value is set to _1.0.0_
-   3. Ensure **Is singleton package** checkbox is not selected.
+   3. Ensure **Is singleton package** is not selected.
    4. Ensure **Is bindable package** is selected.
    5. In the **Description** box, enter a short summary of the package such as
       `Simulator simulates physical dynamics of 2D robots and their sensors`
    6. Click **NEXT**.
-3. In the **Component Name** box, type in a name for the component say `simulator`  
+3. In the **Component Name** box, type in a name for the component, say `simulator`  
 {{% notice info %}}
-The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - 
-and an underscore _ character, and must not start with a digit.
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -, and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 4. Select **Cloud** for **Component Runtime**.
 5. Ensure **Is ROS Component** is selected.
@@ -200,18 +189,17 @@ and an underscore _ character, and must not start with a digit.
 7. In the **Executable Name** box, enter a name for the executable say
    `simulator_executable`   
 {{% notice info %}}
-The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - 
-and an underscore _ character, and must not start with a digit.
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -, and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 8. For the **Executable type**, click **Git**.
-9. In the **Git Repository** box, enter the url address of the git repository,
+9. In the **Git Repository** box, enter the URL address of the git repository,
    that is, `https://github.com/rapyuta-robotics/io_tutorials`
 10. In the **Command to run in the docker container** box, enter the command:
     ```bash
     roslaunch io_turtle_sim_env simulation.launch
     ```
 
-    Ensure you always execute the *roslaunch* command to explicitly start the
+    Ensure you always execute the *roslaunch* command for explicitly starting the
     [ROS Master](http://wiki.ros.org/Master). However, it's not recommended to
     run the *rosrun* command because the ROS Master will fail to start, and
     thus the deployment fails.
@@ -221,12 +209,11 @@ and an underscore _ character, and must not start with a digit.
     In the **Name** box, type in `/sim/sensors` and select **Low** for **QoS**.    
 {{% notice info %}}
 The value of **QoS** is set to **Low** because it is not necessary to guarantee
-the delivery of each topic. Instead it is essential to receive the most
+the delivery of each topic. Instead, it is essential to receive the most
 recent message at the expense of losing some information.
 {{% /notice %}}
-13. To add a ROS service, click **Add ROS service**. In the **Name** box, enter the
-    name of the service `/register_sim_turtle`. Similarly, add another
-    ROS service `/teleport_turtle`.
+13. To add a ROS service, click **Add ROS service**. In the **Name** box, enter the name of the service `/register_sim_turtle`. Similarly, add another
+ROS service `/teleport_turtle`.
 14. Click **NEXT**.
 15. Since _Simulator_ subscribes to the ROS topic `/sim/cmd_vel` published by
     _Turtle_, you must add `/sim/cmd_vel` as an **INBOUND ROS INTERFACE** topic.
@@ -248,7 +235,7 @@ To add _Command Center_ package, follow the steps:
       say `Command Center`
    2. In the **Package Version** box, enter the version of the package.
       The default value is _1.0.0_
-   3. Ensure **Is singleton package** checkbox is not selected.
+   3. Ensure **Is singleton package** is not selected.
    4. Ensure **Is bindable package** is selected.
    5. In the **Description** box, enter a short description of the package such
       as `Command Center is responsible for communication between
@@ -270,17 +257,16 @@ The name of an executable must consist of alphabets [A-Z, a-z],
 digits [0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 8. For **Executable type**, click **Git**.
-9. In the **Git Repository** box, enter the url address of the git repository:      `https://github.com/rapyuta-robotics/io_tutorials`
+9. In the **Git Repository** box, enter the URL address of the git repository:      `https://github.com/rapyuta-robotics/io_tutorials`
 
 10. In the **Command to run in the docker container** box, enter the command:
     ```bash
     roslaunch io_turtle_command_center command_center.launch
     ```
 
-    Ensure you always execute the *roslaunch* command to explicitly start
+    Ensure you always execute the *roslaunch* command for explicitly starting
     the ROS Master. However, it's not recommended to run the
-    *rosrun* command because the [ROS Master](http://wiki.ros.org/Master) will fail to start, and thus the
-    deployment fails.
+    *rosrun* command because the [ROS Master](http://wiki.ros.org/Master) will fail to start, and thus the deployment fails.
 
 11. You must expose a communication network endpoint for
     publicly accessing _Command Center_.
@@ -295,8 +281,7 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
 
 13. To add a ROS service, click **Add ROS service** > enter `/register_turtle` in the **Name** box.
 
-14. The environment variables: *WS_ADDR* and *WS_PORT*, defined in the ROS launch
-    file, determine the WebSecureSocket address and port. You can adjust
+14. The environment variables: *WS_ADDR* and *WS_PORT*, defined in the ROS launch file, determine the WebSecureSocket address and port. You can adjust
     their values as configuration parameters defined in the [console](https://console.rapyuta.io)
     during the process of deploying the *command_center* component.
     To add *WS_ADDR* as configuration parameter, follow the steps:
@@ -311,7 +296,7 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
 15. Click **NEXT** to move to **Additional Information** page.
 
 16. The _Command Center_ is responsible for coordination among the _Turtles_.
-    The inbound ROS interfaces help recognise ROS topics, services and
+    The inbound ROS interfaces help recognize ROS topics, services, and
     actions broadcasted from the various Turtles' deployments.
     1. To add `/pose` as an Inbound ROS topic, click **Add Topic** under
        **INBOUND ROS INTERFACES** > enter `/pose` in the **Name** box.
@@ -327,13 +312,13 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
 ## Package build status
 Each package takes about 5 minutes to build the source code into a running
 docker executable. You can view the [build logs](/developer-guide/tooling-automation/logging/build-logs/)
-of a specific package, which help in debugging failing builds.
+of a specific package, which helps in debugging failing builds.
 
 A flickering yellow dot against the package name indicates that
-the **Build Status : New**.
+the **Build Status:New**.
 
 A green dot against the package name indicates that
-the **Build Status : Complete**.
+the **Build Status:Complete**.
 
 ## Deploy packages
 In this tutorial, you have created four packages. They are:
@@ -380,26 +365,24 @@ any other deployment, follow the steps:
    you are creating say `SIMULATOR deployment`
 3. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You will be redirected to the deployment **Details** page where a green progress
-bar moves up to **Succeeded** along with **Status:Running** point indicating that the
-**DEPLOYMENT PHASE** has **Succeeded** and the deployment **STATUS** is **Running**.
+You will be redirected to the deployment **Details** page where a green progress bar moves up to **Succeeded** along with **Status:Running** point indicating that the
+**DEPLOYMENT PHASE** has **Succeeded**, and the deployment **STATUS** is **Running**.
 
 ## Deploy Command Center package
-The _Command Center_ deployment depends on the deployment of _Simulator_. That is
-the _Simulator_ deployment is a dependent deployment of _Command Center_ deployment.
+The _Command Center_ deployment depends on the deployment of _Simulator_.
+That is the _Simulator_ deployment is a dependent deployment of _Command Center_ deployment.
 To deploy the _Command Center_ package, follow the steps:
 
 1. click **CATALOG**  >  select **COMMAND CENTER** package  >  click **Deploy package**.
 2. In the **Name of deployment** box, enter a name for the deployment say
    `COMMAND CENTER deployment`
 3. Ensure that the value of **WS_ADDR** is **0.0.0.0** and **WS_PORT** is **9090**
-4. Under **DEPENDENT DEPLOYMENTS**, click **Add dependency**  >  select the Simulator's
-   deployment ID from the dropdown list.
+4. Under **DEPENDENT DEPLOYMENTS**, click **Add dependency**  >  select the Simulator's deployment ID from the dropdown list.
 5. Click **CREATE DEPLOYMENT**  >  **Confirm**.
 
 You are redirected to the deployment's **Details** page where a green progress bar
 moves up to **Succeeded** and **Status:Running** point indicating that the
-**DEPLOYMENT PHASE** has **Succeeded** and the deployment **STATUS** is **running**.
+**DEPLOYMENT PHASE** has **Succeeded**, and the deployment **STATUS** is **running**.
 Since _COMMAND CENTER deployment_ depends on _SIMULATOR deployment_,
 ensure that the dependent deployment's **STATUS** is **running** as well.
 
@@ -420,15 +403,15 @@ the dependent deployment as well, _User Interface_ package is successfully deplo
 The **NETWORK ENDPOINTS** generates a URL on the deployment **Details** tab.
 Copy this specific URL (your URL address will be different from that shown in the screen
 capture), paste it in the web browser, and run it. You will view the
-Turtlesim user interface without any Turtles. However, if you do not
+Turtlesim's user interface without any Turtles. However, if you do not
 see the Turtlesim user interface, try refreshing the web page for
-couple of times.
+a couple of times.
 
 ![Network Endpoint for User Interface package](/images/tutorials/turtlesim/UI-endpoint.png?classes=border,shadow&width=60pc)
 
 ## Deploy Turtle package
 The procedure for deploying the _Turtle_ package is similar to that of any
-package whose deployment depends on another deployments. A deployment of
+package whose deployment depends on another deployment. A deployment of
 _Turtle_ depends on the running deployments of the _Command Center_ and the
 _Simulator_, that is **COMMAND CENTER deployment** and **SIMULATOR deployment**.
 You may provide a name for the deployment say `TURTLE deployment`

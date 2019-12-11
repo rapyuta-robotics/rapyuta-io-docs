@@ -6,7 +6,7 @@ date: 2019-10-29T14:32:13+05:30
 pre: "4. "
 weight: 262
 ---
-This document details on how to setup popular devices.
+Consider the following devices.
 
 * [Generic x64](#generic-x64) - UP Board
 * [ARM](#arm) - raspberry-pi
@@ -34,9 +34,8 @@ Moreover, the [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tuto
 are also installed on the custom image.
 {{% /notice %}}
 1. Burn the downloaded image on a USB disk using [Etcher](https://etcher.io/) tool.
-2. Insert the USB installer disk into an empty USB port on the device, and proceed
-with the normal Ubuntu installation.
-4. Reboot the device after successful installation of Ubuntu.
+2. Insert the USB installer disk into an empty USB port on the device and proceed with the normal Ubuntu installation.
+4. Reboot the device once Ubuntu is installed.
 5. Connect the ethernet port of the device to a router.
 
 You may use [nmap](https://nmap.org/) to determine the device IP.
@@ -75,7 +74,7 @@ are also installed on these custom images.
 {{% /notice %}}
 2. You can easily flash the SD card using [Etcher](https://etcher.io) or other [options](https://www.raspberrypi.org/documentation/installation/installing-images/).
 3. Insert the SD card into the Raspberry PI microSD slot and power the device.
-4. Connect the ethernet port of the Raspberry PI to a router to access internet.  
+4. Connect the ethernet port of the Raspberry PI to a router to access the internet.  
 You may use [nmap](https://nmap.org/) to determine the device IP.
 Replace *1.2.3.0/24* in the below command with your local IP address.
 

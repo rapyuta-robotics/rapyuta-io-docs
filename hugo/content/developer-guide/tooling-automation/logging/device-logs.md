@@ -13,11 +13,11 @@ Before viewing device logs, it is necessary to have the ROS Master up and runnin
 Add a _ROS Publisher_ package that has a _Talker_ component with device runtime.
 It publishes */telemetry* ROS topic with **High** **QoS**.
 
-1. On left navigation bar, click **Devices**.
+1. On the left navigation bar, click **Devices**.
 2. Select a device whose device logs you want to view. In this example,
    _ROS Publisher Subscriber Device_ is selected.
 3. Under **Logs** tab, to subscribe to a ROS topic, click **Subscribe** against
-   the topic. In this example, the topic `/telemetry` is subscribed to.
+   the topic. In this example, the topic `/telemetry` is subscribed.
    Ensure the status of the subscribed topic(s) is **Subscribed** and is highlighted
    in green.
 
@@ -27,8 +27,7 @@ Once you subscribe to a topic, the device logs are displayed in the
 _logging area_ (a terminal-like window).
 
 Initially, you will see the latest 500 logs in the logging area. As you scroll
-up to the top of the terminal window previous 500 logs are displayed. You may
-continue scrolling up till all the logs are exhausted.
+up to the top of the terminal window, the previous 500 logs are displayed. You may continue scrolling up till all the logs are exhausted.
 
 ![Logging Area](/images/core-concepts/logging/device-logs/logging-terminal-window.png?classes=border,shadow&width=60pc)
 
@@ -36,9 +35,7 @@ To get updated logs, scroll down to the bottom of the logging area, and then
 click **Get recent logs**.
 
 To switch between the topics, click the drop-down list (at the top-left corner
-of logging area) and select one of the subscribed topics. A tick mark against
-the topic `/telemetry` indicates that you are currently viewing the logs
-belonging to `/telemetry`.
+of the logging area) and select one of the subscribed topics. A tick mark against the topic `/telemetry` indicates that you are currently viewing the logs belonging to `/telemetry`.
 
 You can search the logs for matching phrases using the **Search** bar. All
 occurrences of a match are highlighted.
@@ -51,13 +48,13 @@ ROS-based device.
 
 ## Batch Upload
 You can upload logs collected from a device (like dmesg,
-journalctl, rosbags etc.) to rapyuta.io. This lets you:
+journalctl, rosbags etc.) to rapyuta.io. It lets you:
 
 * *Save* logs for future reference. The logs are saved to the
   cloud storage.
 * *Process* and *analyze* logs for insights as per your requirements.
 
-The log data can be text, images or videos. You can upload
+The log data can be text, images, or videos. You can upload
 log files by clicking on the **Upload** button, which
 is found on the device's **Manage** tab.
 ![Manage Tab](/images/core-concepts/logging/device-logs/upload-logs/manage-tab.png?classes=border,shadow&width=40pc)
@@ -74,16 +71,16 @@ They are:
 There are certain parameters to take care of while uploading a
 log file from a device to rapyuta.io
 
-When providing the absolute path of the log file ensure it does
+When providing the absolute path of the log file, ensure it does
 not end with a backslash. Hence, folders are not supported. You are
 only allowed to upload a single log file at a time.
 
 Sometimes constrained resources can limit a device's ability to
 execute tasks while uploading logs. For instance, a significant amount
 of network bandwidth is consumed while uploading
-enormous log data, which can affect execution of other high priority
+enormous log data, which can affect the execution of other high priority
 tasks on the device. In this case, rapyuta.io lets you tune network
-bandwidth based on the device and its environment limitations. This lets
+bandwidth based on the device and its environment limitations. It lets
 you upload log files without interfering with task execution. You can
 choose the upload rate value in ***Mega bytes***, or ***Giga bytes***.
 

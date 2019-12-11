@@ -96,9 +96,9 @@ primitive types). For example, consider a message
 }
 ```
 
-As you subscribe to the above ROS topic you will
+As you subscribe to the above ROS topic, you will
 be instantly unsubscribed from that topic.
-This is the expected behaviour for ROS topics, which
+This is the expected behavior for ROS topics, which
 publish *purely string* data type.
 
 If a ROS topic is composed of integer and string data types,

@@ -67,10 +67,9 @@ _minio-without-persistent-volume_
        The access key must be at least three characters.
 4. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You will be redirected to the newly created deployment's **Details** tab. The package
-is successfully deployed when the green coloured bar moves from **In progress** to
-**Succeeded** indicating that the **DEPLOYMENT PHASE** has **Succeeded** and the **STATUS** is
-**Running**.
+You will be redirected to the newly created deployment's **Details** tab.
+The package is successfully deployed when the green colored bar moves from **In progress** to **Succeeded** indicating that the **DEPLOYMENT PHASE**
+has **Succeeded** and the **STATUS** is **Running**.
 
 ![minio deployment without persistent volume](/images/core-concepts/persistent-vol-storage/minio-wo-pv-deployment.png?classes=border,shadow&width=60pc)
 
@@ -90,7 +89,7 @@ Since this deployment does not use a persistent volume, any files that you add
 on the server will be lost when you de-provision the deployment.
 
 ## Deploy with a persistent volume
-If you wish to not lose files/data of a running instance of minio even after
+If you wish to not lose files/data of a running instance of Minio even after
 de-provisioning it, you need to use **Rapyuta IO Persistent Volume**. To use a
 persistent volume for _minio_, follow the below process:
 
@@ -109,19 +108,17 @@ To use _minio-volume_ for the deployment of _minio_, follow these steps:
 1. click **CATALOG** > Select _minio_ package > **Deploy package**.
 2. In the **Name of deployment** box, enter a name for the deployment, such as
 _minio-deployment-with-pv_.
-3. For **MINIO_SECRET_KEY** and **MINIO_ACCESS_KEY**, provide the values _hassecrets_
-   and _vivek_ respectively.
+3. For **MINIO_SECRET_KEY** and **MINIO_ACCESS_KEY**, provide the values _hassecrets_ and _vivek_ respectively.
 4. Click **Add volume**.
 5. Under **Deployment**, select the persistent volume deployment that you created, _minio-volume_
-6. Select the name of the cloud component that needs the persistent volume from
-   the **Applicable Component** drop-down list. In this example, choose the _Minio_
-   component.
-7. Persistent volume will be mounted at mount path. Since Minio stores
+6. Select the name of the cloud component that needs a persistent volume from
+   the **Applicable Component** drop-down list. In this example, choose the _Minio_ component.
+7. A persistent volume will be mounted at mount path. Since Minio stores
    data/files at `/data`, provide `/data` as the value of **Mount path**.
    ![Add volume](/images/core-concepts/persistent-vol-storage/add-volume.png?classes=border,shadow&width=50pc)
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-This will create the deployment of minio with a persistent volume attached at `/data`.
+A deployment of Minio with a persistent volume attached at `/data` is created.
 
 ![minio deployment with persistent volume](/images/core-concepts/persistent-vol-storage/minio-deployment-with-pv.png?classes=border,shadow&width=50pc)
 
@@ -129,11 +126,9 @@ The corresponding dependency graph for the *minio-deployment-with-pv* looks like
 
 ![dependency graph for minio deployment with persistent volume](/images/core-concepts/persistent-vol-storage/minio-with-pv-dgraph.png?classes=border,shadow&width=50pc)
 
-If you de-provision **minio-deployment-with-pv** deployment, the **minio-volume** deployment
-will not be de-provisioned. Furthermore, the **minio-volume** deployment can be used
-for another deployment of _minio_ package.
+If you de-provision **minio-deployment-with-pv** deployment, the **minio-volume** deployment will not be de-provisioned. Furthermore, the **minio-volume** deployment can be used for another deployment of _minio_ package.
 
-1. A deployment of a persistent volume cannot be de-provisioned if it is already
+1. Deployment of a persistent volume cannot be de-provisioned if it is already
 in use by another deployment.
-2. A deployment of a persistent volume cannot be used by another deployment if
+2. Deployment of a persistent volume cannot be used by another deployment if
 it is already in use by another deployment.
