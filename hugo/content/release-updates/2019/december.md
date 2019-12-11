@@ -39,3 +39,4 @@ There are minor updates in this version that we hope you will like.
 
 #### Documentation
 Access rapyuta.io's user documentation from the [home page](https://console.rapyuta.io/) of rapyuta.io
+![User Documentation](/images/updates/user-docs-link.png?classes=shadow,border&width=50pc)
