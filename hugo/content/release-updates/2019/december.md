@@ -26,3 +26,16 @@ There are significant updates in this version that we hope you will like.
 
 * Read about the [different stages of the device initialization process](/developer-guide/manage-machines/onboarding/setup-device/).
 * Added a new device failed error code: [DEV_E108](/developer-guide/manage-machines/onboarding/setup-device/failure-codes)
+
+## December 11
+Welcome to the December 11, 2019 release of rapyuta.io platform (v0.36.0).
+There are minor updates in this version that we hope you will like.
+
+#### Notable Fixes
+
+* Fixed maintenance issues.
+* Fixed User Interface bugs related to credit card payment billing.
+* Fixed the issue of redirecting to rapyuta.io dashboard on sign in every time the user signs out of rapyuta.io
+
+#### Documentation
+Access rapyuta.io's user documentation from the [home page](https://console.rapyuta.io/) of rapyuta.io
