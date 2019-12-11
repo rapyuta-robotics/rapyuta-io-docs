@@ -34,9 +34,9 @@ There are minor updates in this version that we hope you will like.
 #### Notable Fixes
 
 * Fixed maintenance issues.
-* Fixed User Interface bugs related to credit card payment billing.
+* Fixed the user interface bug related to credit card billing.
 * Fixed the issue of redirecting to rapyuta.io dashboard on sign in every time the user signs out of rapyuta.io
 
 #### Documentation
-Access rapyuta.io's user documentation from the [home page](https://console.rapyuta.io/) of rapyuta.io
+Open the user documentation from the [home page](https://console.rapyuta.io/) of rapyuta.io
 ![User Documentation](/images/updates/user-docs-link.png?classes=shadow,border&width=50pc)

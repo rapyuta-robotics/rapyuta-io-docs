@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+- Release summary page for December 11, 2019
+
 ### Fixed
 - Correct typographical errors
 - fix sitemap generated and is validated in google console
