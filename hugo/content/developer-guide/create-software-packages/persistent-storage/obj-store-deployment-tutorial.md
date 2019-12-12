@@ -6,12 +6,15 @@ date: 2019-10-25T12:36:50+05:30
 pre: "a. "
 weight: 295
 ---
-You will learn how to use the **Rapyuta IO Persistent Volume** package in a [MinIO](https://www.minio.io/) file server to persist files and reuse them.
+## Learning Objective
+To add a persistent volume to a file server application using
+rapyuta.io
 
-You will create a [Minio](https://www.minio.io/) file server using the given [docker image](https://hub.docker.com/r/rrdockerhub/minio-server/).
-The docker image, which is maintained by rapyuta.io, stores all the file data in the path
-`/data`. You will create a new package called ***MinIO File Server*** for [MinIO](https://www.minio.io/) file server.
+The file server application is an instance of
+[MinIO](https://www.minio.io/), which is a high performance
+object storage.
 
+## Create MinIO File Server Package
 To add the ***MinIO File Server*** package, follow the steps:
 
 1. On the left navigation bar, Click **CATALOG**
@@ -23,27 +26,29 @@ To add the ***MinIO File Server*** package, follow the steps:
 7. The purpose of the package is to `store images, videos, and other unstructured data files in an object-store.`
 8. Click **NEXT**.
 9.  The name of the component is `MinIO_FS`
-11. Select **Cloud** as **Component Runtime**.
-12. Ensure **Is ROS Component** is selected.
-13. Choose **Kinetic** for the **ROS version**.
-14. Ensure the value of **Replicas to run the component** is set to **1**
-15. The name of the executable is `minio_executable`
-16. Select **Docker** for **Executable Type**.
-17. In the **Docker image** box, enter `rrdockerhub/minio-server`
-18. Click **Add Endpoint**.
+10. Select **Cloud** as **Component Runtime**.
+11. Ensure **Is ROS Component** is selected.
+12. Choose **Kinetic** for the **ROS version**.
+13. Ensure the value of **Replicas to run the component** is set to **1**
+14. The name of the executable is `minio_executable`
+15. Select **Docker** for **Executable Type**.
+16. In the **Docker image** box, enter `rrdockerhub/minio-server`
+17. Click **Add Endpoint**.
 	1. The name for the endpoint is `FileStorage`
 	2. Select **Exposed externally** checkbox.
 	3. Select **HTTPS/WSS** for **Protocol**.
 	4. In the **Port** box, the default value is `443`, and it cannot be modified.
 	5. In the **Target Port** box, enter `9000`
-19. Add two **CONFIGURATION PARAMETERS**: *MINIO_SECRET_KEY* and *MINIO_ACCESS_KEY*.
+18. Add two **CONFIGURATION PARAMETERS**: *MINIO_SECRET_KEY* and *MINIO_ACCESS_KEY*.
 	6. Click **Add Parameter**.
 	7. In the **Name** box, enter `MINIO_SECRET_KEY`
 	8. In the **Description** box, describe the parameter, say `secret key`
 	9. Similarly, add another parameter `MINIO_ACCESS_KEY`, and enter `secret access key` in the **Description** box.
-20. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+19. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-## Deploy without persistent volume
+## Deploy MinIO File Server Package
+
+#### Without Persistent Volume
 In the case of deploying a MinIO file server without adding a
 persistent volume to it, the data files are lost, or not preserved,
 after de-provisioning the deployment. 
@@ -76,7 +81,7 @@ In the **Access Key** and **Secret Key** boxes, enter the same access key and se
 
 Since this deployment does not use a persistent volume, any files that you add on the server will be lost when you stop (or de-provision) the deployment of the package.
 
-## Deploy with a persistent volume
+#### With Persistent Volume
 To preserve data files saved on the file server, deploy a persistent
 volume and add it to the file server.
 
