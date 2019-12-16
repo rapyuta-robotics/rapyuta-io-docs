@@ -23,28 +23,26 @@ To add the ***MinIO File Server*** package, follow the steps:
 4. The version of the package is set to **1.0.0** by default. 
 5. Ensure **Is a singleton package** is ***not selected***.
 6. Ensure **Is a bindable package** is ***selected***.
-7. The purpose of the package is to `store images, videos, and other unstructured data files in an object-store.`
+7. Write a summary of the package in the **Description** box. The package stores images, videos, and other unstructured data files in an object-store.`
 8. Click **NEXT**.
 9.  The name of the component is `MinIO_FS`
 10. Select **Cloud** as **Component Runtime**.
-11. Ensure **Is ROS Component** is selected.
-12. Choose **Kinetic** for the **ROS version**.
-13. Ensure the value of **Replicas to run the component** is set to **1**
-14. The name of the executable is `minio_executable`
-15. Select **Docker** for **Executable Type**.
-16. In the **Docker image** box, enter `rrdockerhub/minio-server`
-17. Click **Add Endpoint**.
+11. De-select **Is ROS Component**.
+12. Ensure the value of **Replicas to run the component** is set to **1**
+13. The name of the executable is `minio_executable`
+14. Select **Docker** for **Executable Type**.
+15. In the **Docker image** box, enter `rrdockerhub/minio-server`
+16. Click **Add Endpoint**.
 	1. The name for the endpoint is `FileStorage`
 	2. Select **Exposed externally** checkbox.
 	3. Select **HTTPS/WSS** for **Protocol**.
 	4. In the **Port** box, the default value is `443`, and it cannot be modified.
 	5. In the **Target Port** box, enter `9000`
-18. Add two **CONFIGURATION PARAMETERS**: *MINIO_SECRET_KEY* and *MINIO_ACCESS_KEY*.
+17. Add two **CONFIGURATION PARAMETERS**: *MINIO_SECRET_KEY* and *MINIO_ACCESS_KEY*.
 	6. Click **Add Parameter**.
 	7. In the **Name** box, enter `MINIO_SECRET_KEY`
-	8. In the **Description** box, describe the parameter, say `secret key`
-	9. Similarly, add another parameter `MINIO_ACCESS_KEY`, and enter `secret access key` in the **Description** box.
-19. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+	8. Similarly, add another parameter `MINIO_ACCESS_KEY`, and enter `secret access key` in the **Description** box.
+18. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ## Deploy MinIO File Server Package
 
@@ -111,11 +109,11 @@ The corresponding dependency graph looks like:
 ![Dependency Graph](/images/chapters/walkthroughs/object-store/volume-dgraph.png?classes=border,shadow&width=40pc)
 
 Thus, the object store will be deployed with a persistent volume
-attached to it at ***/data***. The persistent volume enables the file
+mounted at path ***/data***. The persistent volume enables the file
 server to preserve data stored in it even if its deployment is stopped.
 
 A couple of observations made are:
 
 1. If **Data Permanence** deployment is stopped, the **Volume Storage** deployment will continue to remain deployed.
-2. If both **Data Permanence** and **Volume Storage** are running, you cannot stop the volume because it is actively in use by the file server.
-3. The volume deployment, **Volume Storage**, is added to one deployment of an application at a given time.
+2. If both **Data Permanence** and **Volume Storage** are running, you cannot stop **Volume Storage** before stopping **Data Permanence** because the volume is in use actively.
+3. The volume deployments of **Persistent Volume** package can be added to only one deployment at a given time.
