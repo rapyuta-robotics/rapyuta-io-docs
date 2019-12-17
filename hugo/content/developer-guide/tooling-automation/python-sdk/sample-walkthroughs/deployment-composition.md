@@ -8,13 +8,13 @@ weight: 565
 ---
 ## Learning objectives
 
-1. Set up block storage for application.
+1. Set up block storage for an application.
 2. Add configuration parameters like secret and access
    keys to application.
 
-programmatically using
+Programmatically using
 [rapyuta.io Python SDK](/developer-guide/tooling-automation/python-sdk/)
-in your applications.
+in Python applications.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ in your applications.
    2. [project ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#project-id)
    3. [package ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#package-id)
    4. [plan ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#plan-id)
-3. Read the [object storage walkthrough](/developer-guide/create-software-packages/persistent-storage/obj-store-deployment-tutorial/).
+3. Follow the [object store deployment walkthrough](/developer-guide/create-software-packages/persistent-storage/obj-store-deployment-tutorial/).
 
 ## Difficulty
 Intermediate
@@ -43,8 +43,8 @@ Intermediate
 6. ***AUTH_TOKEN*** is the authorization token for accessing rapyuta.io resources and services. Its value is of type *string*.
 
 ### Create MinIO File Server Package
-Create a package called MinIO File Server on rapyuta.io platform.
-A step-wise guide for creating the package is detailed in the prerequisite walkthrough.
+Create a package called **MinIO File Server** on the rapyuta.io platform.
+A [step-wise guide](/developer-guide/create-software-packages/persistent-storage/obj-store-deployment-tutorial/) for creating the package is detailed in the prerequisite walkthrough.
 
 ### Code Walkthrough
 Firstly, you must authenticate for accessing rapyuta.io services
