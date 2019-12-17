@@ -11,8 +11,7 @@ weight: 565
 1. Set up block storage for an application.
 2. Add configuration parameters like secret and access
    keys to application.
-
-Programmatically using
+3. Programmatically use
 [rapyuta.io Python SDK](/developer-guide/tooling-automation/python-sdk/)
 in Python applications.
 
