@@ -41,11 +41,11 @@ Open the user documentation from the [home page](https://console.rapyuta.io/) of
 ![User Documentation](/images/updates/user-docs-link.png?classes=shadow,border&width=50pc)
 
 ## December 18
-Welcome to the December 18, 2019 release of rapyuta.io Python SDK 1.10.0
+Welcome to the December 18, 2019 release of rapyuta.io Python SDK 0.10.0
 
 #### Features
 
-**rapyuta.io Python SDK 1.10.0 released**
+**rapyuta.io Python SDK 0.10.0 released**
 
 * **Added methods for interacting with configuration parameters**    
   Use ***upload_configurations()*** and ***download_configurations()*** methods to upload and download configuration parameters using the SDK.
