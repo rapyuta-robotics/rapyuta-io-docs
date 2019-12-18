@@ -1,8 +1,12 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.0.6 - 2019-12-18]
 ### Added
 - Release summary page for December 18, 2019
+
+### Updated
+- Python SDK version v0.10.0
 
 ## [2.0.5 - 2019-12-11]
 ### Added
