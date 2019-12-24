@@ -33,7 +33,6 @@ There are minor updates in this version that we hope you will like.
 
 #### Notable Fixes
 
-* Fixed maintenance issues.
 * Fixed the issue of redirecting to rapyuta.io dashboard on sign in every time the user signs out of rapyuta.io
 
 #### Documentation
