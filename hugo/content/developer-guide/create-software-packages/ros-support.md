@@ -16,7 +16,19 @@ In the special case where the user chooses to use the **preinstalled** runtime o
 ### ROS Native Communication Interfaces
 The unique communication architecture in rapyuta.io solves many of the challenges associated with running ROS1 across multiple robots in a local network or even across the public internet.
 
-It provides first-class support for ROS topics, services, and actions adding crucial features like QoS, compression, transport multiplexing, authentication,encryption, etc. while protecting you against adverse effects of transient network errors.
+It provides first-class support for ROS topics, services, and actions,
+adding crucial features like QoS, compression, transport multiplexing, authentication, encryption, etc. while protecting you against adverse effects of transient network errors.
+
+A ROS service call is blocking in nature. It prevents the client
+thread from continuing to execute further instructions until it
+receives a reply from a ROS server. Occasionally, the service call
+waits much longer than expected, and in more adverse cases, the call
+never returns due to software or network failure. Hence, further
+execution of the client program is stalled.
+
+rapyuta.io defines ROS service timeout as the number of seconds to wait
+for a response to the service request before timing out and erroring out.
+The application developer must add appropriate logic to handle these exceptions as required. The default timeout is 120 seconds.
 
 The platform adopts a declarative approach to describing the ROS interfaces (topics/services/actions) your application publishes or provides. This information is later used by the platform while binding/linking different deployments together to automatically proxy the right information to the correct deployment. It works for arbitrary message types and only requires the user to providing topic/service/action names and zero changes to your application source.
 
