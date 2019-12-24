@@ -1,6 +1,10 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.0.7 - 2019-12-24]
+### Added
+- Release summary page for December 24, 2019
+
 ## [2.0.6 - 2019-12-18]
 ### Added
 - Release summary page for December 18, 2019
