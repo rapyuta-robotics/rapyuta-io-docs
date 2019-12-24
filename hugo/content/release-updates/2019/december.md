@@ -11,8 +11,8 @@ There are significant updates in this version that we hope you will like.
 
 #### Features
 
-* **Visualization of device on-boarding stages**    
-  The process of on-boarding a device is made up of different stages. A progress bar indicates the on-going and completed stages of the process.
+* **Visualization of device onboarding stages**    
+  The process of onboarding a device is made up of different stages. A progress bar indicates the on-going and completed stages of the process.
 * **Support timeout for ROS services**    
   Set a timeout when adding a ROS service to a rapyuta.io package. It is the number of seconds to wait for a ROS service response before timing out.
 
@@ -33,7 +33,6 @@ There are minor updates in this version that we hope you will like.
 
 #### Notable Fixes
 
-* Fixed maintenance issues.
 * Fixed the issue of redirecting to rapyuta.io dashboard on sign in every time the user signs out of rapyuta.io
 
 #### Documentation
@@ -51,3 +50,13 @@ Welcome to the December 18, 2019 release of rapyuta.io Python SDK 0.10.0
   Use ***upload_configurations()*** and ***download_configurations()*** methods to upload and download configuration parameters using the SDK.
 * **Added method for applying configuration parameters to devices**    
   Use ***apply_parameters()*** method for applying configuration parameters to devices using the SDK.
+
+## December 24
+Welcome to the December 24, 2019 release of rapyuta.io platform.
+
+#### Feature
+
+**Access user-defined endpoints as environment variables**    
+Access user-defined endpoints in a deployment of a rapyuta.io
+package using environment variables via the deployment's
+shell access option.
