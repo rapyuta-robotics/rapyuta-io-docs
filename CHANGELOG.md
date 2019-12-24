@@ -3,6 +3,7 @@
 ## [Unreleased]
 ## [2.0.7 - 2019-12-24]
 ### Added
+- Explain ROS service timeout feature
 - Release summary page for December 24, 2019
 
 ## [2.0.6 - 2019-12-18]
