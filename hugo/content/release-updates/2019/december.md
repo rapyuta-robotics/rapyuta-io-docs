@@ -58,7 +58,7 @@ Welcome to the December 24, 2019 release of rapyuta.io platform.
 #### Features
 
 **Access user-defined endpoints as environment variables**    
-rapyuta.io provides access to user-defined endpoints, which are
-defined in a package, as environment variables. A deployment of
-the package lets you access the environemnt variables through
+Access to user-defined endpoints, which arevdefined in a
+rapyuta.io package, as environment variables. A deployment of
+the package lets you access the environment variables through
 the shell access option.
