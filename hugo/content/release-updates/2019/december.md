@@ -55,10 +55,9 @@ Welcome to the December 18, 2019 release of rapyuta.io Python SDK 0.10.0
 ## December 24
 Welcome to the December 24, 2019 release of rapyuta.io platform.
 
-#### Features
+#### Feature
 
 **Access user-defined endpoints as environment variables**    
-Access to user-defined endpoints, which arevdefined in a
-rapyuta.io package, as environment variables. A deployment of
-the package lets you access the environment variables through
-the shell access option.
+Access user-defined endpoints in a deployment of a rapyuta.io
+package using environment variables via the deployment's
+shell access option.
