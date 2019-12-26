@@ -108,6 +108,6 @@ The **Secure TCP (TLS/SNI)** protocol uses [SNI](https://en.wikipedia.org/wiki/S
 rapyuta.io creates an accessible public IP address for externally exposed network endpoints. Hence, you can view the Fully Qualified Domain Name (FQDN) of endpoints on the details page of deployments.
 
 {{% notice info %}}
-rapyuta.io injects network endpoints as environment variables during the deployment binding phase. Refer to the section on [Link Injection](/developer-guide/manage-software-cycle/communication-topologies/std-comms/) for more details.
+rapyuta.io injects network endpoints as environment variables during the deployment and deployment binding phases. Refer to the section on [Link Injection](/developer-guide/manage-software-cycle/communication-topologies/std-comms/) for more details.
 {{% /notice %}}
 
