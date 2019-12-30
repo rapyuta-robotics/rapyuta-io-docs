@@ -72,7 +72,7 @@ The platform injects environment variables corresponding to exposed parameters.
 
 ### Network Endpoints
 {{% notice info %}}
-Individual components of a package expose network endpoints, which may
+Individual components of a package expose network endpoints, which are
 be defined by users.
 {{% /notice %}}
 Components, which are deployed on the cloud, may have network endpoints. A network endpoint is a combination of an IP address and a port number. The endpoints may or may not be exposed publicly.
@@ -86,6 +86,8 @@ The name of a network endpoint must consist of alphabets, digits, or an undersco
 **Port** is where the application's service is made visible to other services.
 
 **Target port** is where the application needs to be listening for network requests for the service to work.
+
+rapyuta.io injects network endpoints as environment variables during the deployment phase.
 
 #### Exposing Endpoints Internally
 You can restrict access to a network endpoint by ensuring that **Exposed externally** option is not selected.
@@ -108,6 +110,6 @@ The **Secure TCP (TLS/SNI)** protocol uses [SNI](https://en.wikipedia.org/wiki/S
 rapyuta.io creates an accessible public IP address for externally exposed network endpoints. Hence, you can view the Fully Qualified Domain Name (FQDN) of endpoints on the details page of deployments.
 
 {{% notice info %}}
-rapyuta.io injects network endpoints as environment variables during the deployment and deployment binding phases. Refer to the section on [Link Injection](/developer-guide/manage-software-cycle/communication-topologies/std-comms/) for more details.
+In the case of dependent deployments, refer to the section on [Link Injection](/developer-guide/manage-software-cycle/communication-topologies/std-comms/).
 {{% /notice %}}
 
