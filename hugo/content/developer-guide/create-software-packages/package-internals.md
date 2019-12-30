@@ -73,7 +73,7 @@ The platform injects environment variables corresponding to exposed parameters.
 ### Network Endpoints
 {{% notice info %}}
 Individual components of a package expose network endpoints, which are
-be defined by users.
+defined by users.
 {{% /notice %}}
 Components, which are deployed on the cloud, may have network endpoints. A network endpoint is a combination of an IP address and a port number. The endpoints may or may not be exposed publicly.
 
