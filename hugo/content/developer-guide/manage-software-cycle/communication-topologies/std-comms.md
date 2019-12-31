@@ -45,3 +45,32 @@ os.getenv('SAMPLE_ENDPOINT')
 os.getenv('SAMPLE_ENDPOINT_HOST')
 os.getenv('SAMPLE_ENDPOINT_PORT')
 ```
+
+### Self Injection
+rapyuta.io injects network endpoints as environment variables
+during the deployment phase.
+
+Suppose that **ENP** is a network endpoint of
+a package, which is externally exposed. The port and target
+port are set to 443 and 5000, respectively. When the package is
+deployed, rapyuta.io injects **ENP** as an environment variable.
+You can access all of the environment variables in a deployment
+via **Shell Access** option.
+
+Click on **Shell Access** > **SSH** to open a Linux terminal
+of the deployment. Enter the following commands the network endpoint,
+its host URL address, and port.
+
+```bash
+echo $ENP
+```
+
+```bash
+echo $ENP_HOST
+```
+
+```bash
+echo $ENP_PORT
+```
+
+![Network endpoint](/images/chapters/developer-guide/create-software-pkgs/pkg-internals/endpoint-env-var.png?classes=border,shadow&width=40pc)
