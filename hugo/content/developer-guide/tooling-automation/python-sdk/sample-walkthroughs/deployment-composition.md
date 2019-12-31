@@ -12,8 +12,7 @@ weight: 565
 2. Add configuration parameters like secret and access
    keys to application.
 3. Programmatically use
-[rapyuta.io Python SDK](/developer-guide/tooling-automation/python-sdk/)
-in Python applications.
+[rapyuta.io Python SDK](/developer-guide/tooling-automation/python-sdk/) in Python applications.
 
 ## Prerequisites
 
@@ -33,13 +32,12 @@ Intermediate
 
 ## Assumptions
 
-1. ***Volume Storage*** is the persistent volume that will be added to
-   the application.
+1. ***Volume Storage*** is the persistent volume that will be added to the file server application.
 2. ***PROJECT_ID*** is a unique identification value of the project in which the package, **MinIO File Server**, is created. It is of type *string*.
 3. The package is ***MinIO File Server*** with package ID ***PACKAGE_ID***, which is of type *string*.
 4. ***MinIO_FS*** is a component of the package, ***MinIO File Server***. 
 5. ***PLAN_ID*** is the plan ID of ***MinIO File Server*** package. It is of type *string*. 
-6. ***AUTH_TOKEN*** is the authorization token for accessing rapyuta.io resources and services. Its value is of type *string*.
+6. ***AUTH_TOKEN*** is the authorization token for accessing rapyuta.io resources and services. It is of type *string*.
 
 ### Create MinIO File Server Package
 Create a package called **MinIO File Server** on the rapyuta.io platform.
@@ -57,7 +55,7 @@ from rapyuta_io import Client, DiskType
 client = Client(AUTH_TOKEN, PROJECT_ID)
 ```
 
-As rapyuta.io provides a persistent volume, you can deploy it with ***32GiB*** capacity and ***SSD*** disk type.
+Deploy the persistent volume, which is provided by rapyuta.io, with ***32GiB*** capacity and ***SSD*** disk type.
 
 ```python
 ## Define instance of persistent volume
@@ -67,8 +65,7 @@ storage_volume = volume.create_volume_instance("Volume Storage", 32, DiskType.SS
 storage_volume.poll_deployment_till_ready()
 ```
 
-Mount the volume on the only component of **MinIO File Server**
-package's deployment at the ***/data*** mount point.
+Mount the volume on the **MinIO_FS** component of **MinIO File Server** package at the ***/data*** mount point.
 
 ```python
 # Mount volume on the file server application
@@ -77,8 +74,9 @@ minio_file_server = client.get_package(PACKAGE_ID)
 pkg_provision_config = minio_file_server.get_provision_configuration(PACKAGE_PLAN_ID)
 pkg_provision_config.mount_volume(component_name="MinIO_FS", volume_instance=storage_volume, mount_path="/data")
 ```
-Define secret and access keys for signing into the MinIO
-file server at the externally exposed endpoint **FileStorage**.
+Define secret and access keys for signing in to MinIO
+file server application at the externally exposed
+endpoint **FileStorage**.
 
 ```python
 # Define secret and access keys for file server
@@ -87,9 +85,9 @@ pkg_provision_config.add_parameter("MinIO_FS", "MINIO_SECRET_KEY", "secretphrase
 pkg_provision_config.add_parameter("MinIO_FS", "MINIO_ACCESS_KEY", "accesskey")
 ```
 
-Deploy **MinIO File Server** with the added persistent volume
-**Volume Storage** on the cloud. The corresponding deployment is
-called **File Storage With Data Permanence**.
+Deploy **MinIO File Server** with the added persistent
+volume **Volume Storage** on the cloud. The corresponding deployment is called
+**File Storage With Data Permanence**.
 
 ```python
 # Deploy file server with storage volume
