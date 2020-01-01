@@ -15,7 +15,8 @@ The file server application is an instance of
 object storage.
 
 ## Create MinIO File Server Package
-To add the ***MinIO File Server*** package, follow the steps:
+To add the ***MinIO File Server*** package, either directly import
+package to rapyuta.io or follow the below steps:
 
 1. On the left navigation bar, Click **CATALOG**
 2. Click **ADD NEW PACKAGE**.
@@ -47,9 +48,9 @@ To add the ***MinIO File Server*** package, follow the steps:
 ## Deploy MinIO File Server Package
 
 #### Without Persistent Volume
-In the case of deploying a MinIO file server without adding a
-persistent volume to it, the data files are lost, or not preserved,
-after de-provisioning the deployment. 
+When deploying a MinIO file server without adding a
+persistent volume to it, the data files, which are saved on
+the file server, are lost after de-provisioning the deployment. 
 
 To deploy ***MinIO File Server*** package without persistent volume,
 follow the below steps:
@@ -71,11 +72,11 @@ new browser tab.
 
 ![File Storage Endpoint](/images/chapters/walkthroughs/object-store/file-storage-endpoint.png?classes=border,shadow&width=50pc)
 
-You can now access the dashboard of the MinIO object store at the provided endpoint. You can add buckets where unstructured data files can be stored.
-
 In the **Access Key** and **Secret Key** boxes, enter the same access key and secret key that you provided while creating the above deployment, respectively.
 
 ![MinIO Dashboard Sign In](/images/chapters/walkthroughs/object-store/MinIO-signin-page.png?classes=border,shadow&width=40pc)
+
+You can now access the dashboard of the MinIO object store at the provided endpoint. You can add buckets where unstructured data files can be stored.
 
 Since this deployment does not use a persistent volume, any files that you add on the server will be lost when you stop (or de-provision) the deployment of the package.
 
