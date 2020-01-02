@@ -15,8 +15,7 @@ The file server application is an instance of
 object storage.
 
 ## Create MinIO File Server Package
-To add the ***MinIO File Server*** package, either directly import
-package to rapyuta.io or follow the below steps:
+To add the ***MinIO File Server*** package, either directly <a href="https://console.rapyuta.io/catalog?uo=1&link=https%3A%2F%2Fraw.githubusercontent.com%2Frapyuta-robotics%2Fio_tutorials%2Fmaster%2Fio_manifests%2Fminio_file_server_manifest.json&p=project-qywrzqwpeilnkvtklkufndmh"><img src="https://storage.googleapis.com/artifacts.rapyuta.io/images/import-package-button.svg" atl="Import Package"></a>or follow the below steps:
 
 1. On the left navigation bar, Click **CATALOG**
 2. Click **ADD NEW PACKAGE**.
