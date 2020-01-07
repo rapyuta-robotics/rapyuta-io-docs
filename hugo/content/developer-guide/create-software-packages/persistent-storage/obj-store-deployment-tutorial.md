@@ -7,17 +7,16 @@ pre: "a. "
 weight: 295
 ---
 ## Learning Objective
-To add a persistent volume to a file server application using
-rapyuta.io
-
-The file server application is an instance of
-[MinIO](https://www.minio.io/), which is a high performance
-object storage.
+The walkthrough demonstrates how a user can deploy software to the cloud
+and leverage rapyuta.io persistent storage. For this, the walkthrough
+will use the popular opensource S3 compatible object store,
+[MinIO](https://www.minio.io/).
 
 ## Create MinIO File Server Package
-To add the ***MinIO File Server*** package, either directly
-<a href="https://console.rapyuta.io/catalog?uo=1&link=https%3A%2F%2Fraw.githubusercontent.com%2Frapyuta-robotics%2Fio_tutorials%2Fmaster%2Fio_manifests%2Fminio_file_server_manifest.json&p=project-qywrzqwpeilnkvtklkufndmh" target="_blank"><img src="https://storage.googleapis.com/artifacts.rapyuta.io/images/import-package-button.svg" atl="Import Package"></a>
-or follow the below steps:
+To add the ***MinIO File Server*** package, follow the below steps
+or click the below button:
+
+<a href="https://console.rapyuta.io/catalog?uo=1&link=https%3A%2F%2Fraw.githubusercontent.com%2Frapyuta-robotics%2Fio_tutorials%2Fmaster%2Fio_manifests%2Fminio_file_server_manifest.json&p=project-qywrzqwpeilnkvtklkufndmh" target="_blank"><img class="pkg-import-btn" src="https://storage.googleapis.com/artifacts.rapyuta.io/images/import-package-button.svg" atl="Import Package"></a>
 
 1. On the left navigation bar, Click **CATALOG**
 2. Click **ADD NEW PACKAGE**.
@@ -49,9 +48,11 @@ or follow the below steps:
 ## Deploy MinIO File Server Package
 
 #### Without Persistent Volume
-When deploying a MinIO file server without adding a
-persistent volume to it, the data files, which are saved on
-the file server, are lost after de-provisioning the deployment. 
+Create transient storage by deploying the MinIO file server
+without adding a persistent volume to it. The transient storage is
+lost on intermittent failures, or when the deployment is stopped.
+So, the data saved in temporary storage is permanently lost.
+This example is only for testing purposes and gives no guarantee of your data.
 
 To deploy ***MinIO File Server*** package without persistent volume,
 follow the below steps:
