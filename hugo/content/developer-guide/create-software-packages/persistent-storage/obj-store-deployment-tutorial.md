@@ -16,7 +16,7 @@ will use the popular opensource S3 compatible object store,
 To add the ***MinIO File Server*** package, follow the below steps
 or click the below button:
 
-<a href="https://console.rapyuta.io/catalog?uo=1&link=https%3A%2F%2Fraw.githubusercontent.com%2Frapyuta-robotics%2Fio_tutorials%2Fmaster%2Fio_manifests%2Fminio_file_server_manifest.json&p=project-qywrzqwpeilnkvtklkufndmh" target="_blank"><img class="pkg-import-btn" src="https://storage.googleapis.com/artifacts.rapyuta.io/images/import-package-button.svg" atl="Import Package"></a>
+{{< importpackage manifest="https://console.rapyuta.io/catalog?uo=1&link=https%3A%2F%2Fraw.githubusercontent.com%2Frapyuta-robotics%2Fio_tutorials%2Fmaster%2Fio_manifests%2Fminio_file_server_manifest.json&p=project-qywrzqwpeilnkvtklkufndmh" >}}
 
 1. On the left navigation bar, Click **CATALOG**
 2. Click **ADD NEW PACKAGE**.
