@@ -14,7 +14,7 @@ A package encapsulates information about what strategy is used to build it, its 
 Each package consists of components, which are made up of individual executables. 
 
 {{% notice note %}}
- **Advanced users** of rapyuta.io should note a package internally supports multiple **plans**, each  which in turn contain the necessary components.
+ **Advanced users** of rapyuta.io should note a package internally supports multiple **plans**, each which in turn contains the necessary components.
   This feature is intended to facilitate complex usecases that require the developer to maintain the user to represent a slightly different configuration of a software package. *For more details <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.*
 {{% /notice %}}
 
@@ -53,12 +53,12 @@ When deployed on the cloud, the component has cloud runtime. Whereas, the compon
 
 ### Configuration Parameters
 {{% notice info %}}
-configuration parameters operate at the level of component, and apply to executables in the component only
+configuration parameters operate at the level of component and apply to executables in the component only
 {{% /notice %}}
 
 In line with the 12-Factor application philosophy, rapyuta.io allows the package author to pass configuration as environment variables that may be consumed by executables running within a component.
 
-These are mapped to environment variables made available to your code. They are modelled as key-value pairs (where both the key and the value are strings) accessible by the user’s code using standard environment variable look-up techniques provided by the programming language.
+These are mapped to environment variables made available to your code. They are modeled as key-value pairs (where both the key and the value are strings) accessible by the user’s code using standard environment variable look-up techniques provided by the programming language.
 
 The package author can choose to provide default values. These values may be overridden by the user while deploying the package.
 
@@ -67,24 +67,53 @@ A **package** may choose to declare environment variables as exposed from within
 {{% /notice %}}
 
 {{% notice note %}}
-The platform injects environment variables corresponding to exposed parameters and linked network endpoints during deployment binding phase. Refer to the section on [Link Injection](/developer-guide/manage-software-cycle/communication-topologies/std-comms/) for more details.
+The platform injects environment variables corresponding to exposed parameters.
 {{% /notice %}}
 
 ### Network Endpoints
 {{% notice info %}}
-Network endpoints are exposed by individual components of a package.
+Individual components of a package expose network endpoints, which are
+defined by users.
 {{% /notice %}}
 Components, which are deployed on the cloud, may have network endpoints. A network endpoint is a combination of an IP address and a port number. The endpoints may or may not be exposed publicly.
 
 When creating an endpoint, you must provide a name for the endpoint, select the desired network protocol, and specify a target port.
 
 {{% notice info %}}
-The name of a network endpoint must consist of alphabets, digits or an underscore ( _ ), and must not begin with a digit.
+The name of a network endpoint must consist of alphabets, digits, or an underscore ( _ ) and must not begin with a digit.
 {{% /notice %}}
 
 **Port** is where the application's service is made visible to other services.
 
 **Target port** is where the application needs to be listening for network requests for the service to work.
+
+rapyuta.io injects network endpoints as environment variables during the deployment phase.
+
+Suppose that a package defines a network endpoint, **SAMPLE_INTERFACE_POINT**, which is externally exposed.
+The port and target port are set to 443 and 5000, respectively.
+When the package is deployed, rapyuta.io injects **SAMPLE_INTERFACE_POINT**
+as an environment variable. You can access all of the environment
+variables in a deployment via the **Shell Access** option.
+
+![Example network endpoint](/images/chapters/developer-guide/create-software-pkgs/pkg-internals/sample-enp.png?classes=border,shadow&width=40pc)
+
+Click on **Shell Access** > **SSH** to open a Linux terminal
+of the deployment. Enter the following commands the network endpoint,
+its host URL address, and port.
+
+```bash
+echo $SAMPLE_INTERFACE_POINT
+```
+
+```bash
+echo $SAMPLE_INTERFACE_POINT_HOST
+```
+
+```bash
+echo $SAMPLE_INTERFACE_POINT_PORT
+```
+
+![Network endpoint](/images/chapters/developer-guide/create-software-pkgs/pkg-internals/endpoint-env-var.png?classes=border,shadow&width=40pc)
 
 #### Exposing Endpoints Internally
 You can restrict access to a network endpoint by ensuring that **Exposed externally** option is not selected.
@@ -105,4 +134,8 @@ The **Secure TCP (TLS/SNI)** protocol uses [SNI](https://en.wikipedia.org/wiki/S
 ![external endpoint](/images/core-concepts/network-endpoints/external-endpoint.png?classes=border,shadow&width=40pc)
 
 rapyuta.io creates an accessible public IP address for externally exposed network endpoints. Hence, you can view the Fully Qualified Domain Name (FQDN) of endpoints on the details page of deployments.
+
+{{% notice info %}}
+rapyuta.io injects environment variables corresponding to linked network endpoints during deployment binding phase. Refer to the section on [Link Injection](/developer-guide/manage-software-cycle/communication-topologies/std-comms/) for more details.
+{{% /notice %}}
 
