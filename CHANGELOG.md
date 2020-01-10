@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Fixed
+- Fixed search bar autocomplete container when scrolled down
+
 ## [2.0.7 - 2019-12-24]
 ### Added
 - Explain ROS service timeout feature
