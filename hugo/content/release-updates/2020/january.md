@@ -22,7 +22,6 @@ that we hope you will like.
 * Removed ***ros_distro*** key in non-ROS package manifests.
 * Removed **Ctrl + F** key binding that overrides browser default function.
 * Fixed the issue of improperly resizing of SSH terminal when toggled from fullscreen mode.
-* Hide restart policy information in ***Rapyuta IO Communication Broker*** package.
 
 #### Documentation
 
