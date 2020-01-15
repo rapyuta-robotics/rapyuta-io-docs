@@ -94,7 +94,7 @@ volume **Volume Storage** on the cloud. The corresponding deployment is called
 
 volume_powered_deployment = minio_file_server.provision(deployment_name="File Storage With Data Permanence", provision_configuration=pkg_provision_config)
 
-volume_powered_deployment.poll_deployment_till_ready(retry_count=100)
+volume_powered_deployment.poll_deployment_till_ready(retry_count=10)
 print volume_powered_deployment.get_status()
 ```
 
@@ -130,7 +130,7 @@ pkg_provision_config.add_parameter("MinIO_FS", "MINIO_ACCESS_KEY", "accesskey")
 # Deploy file server with storage volume
 volume_powered_deployment = minio_file_server.provision(deployment_name="File Storage With Data Permanence", provision_configuration=pkg_provision_config)
 
-volume_powered_deployment.poll_deployment_till_ready(retry_count=100)
+volume_powered_deployment.poll_deployment_till_ready(retry_count=10)
 print volume_powered_deployment.get_status()
 ```
 
