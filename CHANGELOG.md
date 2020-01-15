@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+- Release summary page for January 15, 2020
 ### Fixed
 - Fix search bar autocomplete container when scrolled down
 - Fix broken code example for Python SDK
