@@ -14,8 +14,7 @@ that we hope you will like.
 
 * Accurate error reporting for deployment status.
 * Stale deployment phase in list endpoint.
-* Internal improvements for better reliability.
-* Improvements to platform infrastructure.
+* Internal improvements to platform infrastructure for better reliability.
 * Update webpack to v4
 * Enhance deployment dependency graph based on namespace grouping.
 
