@@ -88,7 +88,7 @@ rosdep update
 ```
 
 ```bash
-rosdep install --from-paths --ignore-src io_simulation_tutorials/turlebot_navigation/ -y --rosdistro melodic
+rosdep install --from-paths --ignore-src io_simulation_tutorials/turtlebot_navigation/ -y --rosdistro melodic
 ```
 
 ```bash
