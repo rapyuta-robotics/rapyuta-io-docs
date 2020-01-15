@@ -18,7 +18,7 @@ that we hope you will like.
 #### Notable Fixes
 
 * Fixed the issue of duplicate APT entries caused by the downloading script during a device onboarding process.
-* Stale deployment phase in list endpoint.
+* Stale deployment phase in list view.
 * Removed ***ros_distro*** key in non-ROS package manifests.
 * Removed **Ctrl + F** key binding that overrides browser default function.
 * Fixed the issue of improperly resizing of SSH terminal when toggled from fullscreen mode.
