@@ -2,8 +2,8 @@
 
 ## [Unreleased]
 ### Fixed
-- Fix broken code example for SDK
-- Fix search bar autocomplete when scrolled down
+- Fix search bar autocomplete container when scrolled down
+- Fix broken code example for Python SDK
 
 ## [2.0.7 - 2019-12-24]
 ### Added
