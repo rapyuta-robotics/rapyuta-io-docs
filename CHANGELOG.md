@@ -1,8 +1,10 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.0.8 - 2020-01-15]
 ### Added
 - Release summary page for January 15, 2020
+- Explain network endpoints injected as environment variables
 ### Fixed
 - Fix search bar autocomplete container when scrolled down
 - Fix broken code example for Python SDK
