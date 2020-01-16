@@ -27,3 +27,14 @@ that we hope you will like.
 
 * Try out the revised [object-store deployment walkthrough](/developer-guide/create-software-packages/persistent-storage/obj-store-deployment-tutorial).
 * Try out the revised [sample walkthroughs](/developer-guide/tooling-automation/python-sdk/sample-walkthroughs/) for getting started with rapyuta.io Python SDK.
+
+## January 16
+
+Welcome to the January 16, 2020 release of rapyuta.io Python SDK **0.10.2**
+
+#### Notable Fixes
+
+* Bug fix: **poll_deployment_till_ready()** raises **DeploymentNotRunningException** in invalid cases.
+
+#### Documentation
+Updated the [SDK Reference](https://sdkdocs.apps.rapyuta.io/) with more usage examples.
