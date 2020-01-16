@@ -1,6 +1,13 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.0.10 - 2020-01-16]
+### Added
+- Release summary page for Python SDK 0.10.2
+
+### Updated
+- Update Python SDK version: 0.10.2
+
 ## [2.0.9 - 2020-01-16]
 ### Updated
 - Release summary page for January 15, 2020
@@ -9,10 +16,12 @@
 ### Added
 - Release summary page for January 15, 2020
 - Explain network endpoints injected as environment variables
+
 ### Fixed
 - Fix search bar autocomplete container when scrolled down
 - Fix broken code example for Python SDK
 - Fix typo in rosdep command of separating navigation and simulation walkthrough
+
 ### Updated
 - Rewrite object-store deployment walkthrough
 
