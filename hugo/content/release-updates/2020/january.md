@@ -7,7 +7,7 @@ weight: "838"
 ---
 ## January 15
 Welcome to the January 15, 2020 release of rapyuta.io
-platform (v0.36.3). There are significant updates in this version
+platform. There are significant updates in this version
 that we hope you will like.
 
 #### Improvements
