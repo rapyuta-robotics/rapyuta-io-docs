@@ -173,9 +173,15 @@ b, strong {
     width: 95%;
 }
 
+#body .pkg-import-btn {
+    width: 200px;
+    margin: 0;
+}
+
 /* Fix search autocomplete box scroll bug */
 .autocomplete-suggestions  {
     position: fixed;
+    top: 123px !important;
 }
 
 @media only screen and (min-width: 768px) {
