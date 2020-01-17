@@ -84,6 +84,7 @@ After flattening the above nested ROS message, it will look like:
 Any other data type (like bytearray, empty ROS message type) is
 not supported and will be silently ignored.
 
+## Type Introspection and Changing Data Types
 When you subscribe to a ROS topic-based metric with a certain rosmsg
 type, rapyuta.io introspects the data being published to the topic
 so to generate metric types. The generated metric types are implicitly
