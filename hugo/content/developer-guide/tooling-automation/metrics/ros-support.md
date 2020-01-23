@@ -82,12 +82,23 @@ After flattening the above nested ROS message, it will look like:
 }
 ```
 Any other data type (like bytearray, empty ROS message type) is
-not be supported and will be silently ignored.
+not supported and will be silently ignored.
 
-Suppose a ROS topic is defined such that its data type is
-string alone (that is the data type contains no other
-primitive types). For example, consider a message
-***geographic_msgs/KeyValue***,
+## Type Introspection and Changing Data Types
+When you subscribe to a ROS topic-based metric with a certain rosmsg
+type, rapyuta.io introspects the data being published to the topic
+so to generate metric types. The generated metric types are implicitly
+bound to the name of the ROS topic just like a given ROS topic is
+implicitly bound to a specific rosmsg type.
+
+If you change the rosmsg type of the ROS topic in the future,
+subscribing to the metrics of the topic will fail.
+For example, consider a ROS topic **/geography** is defined such that
+the data published to it is of type **std_msgs/String**, but if a new
+or different publisher attempts to publish data of type
+**custom_msg/KeyValuePair** as shown below and as you subscribe to
+**/geography**, you will be automatically unsubscribed with the
+error message: ***Invalid message format for topic /geography***
 
 ```bash
 {
@@ -95,12 +106,6 @@ primitive types). For example, consider a message
     value:"arctic"
 }
 ```
-
-As you subscribe to the above ROS topic, you will
-be instantly unsubscribed from that topic.
-This is the expected behavior for ROS topics, which
-publish *purely string* data type.
-
 If a ROS topic is composed of integer and string data types,
 for instance, consider a message ***sensor_msgs/BatteryState***,
 
