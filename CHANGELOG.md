@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ## [Unreleased]
+#### Fixed
+- Code style of code sample examples for Python SDK
+
 ## [2.0.10 - 2020-01-16]
 ### Added
 - Release summary page for Python SDK 0.10.2
