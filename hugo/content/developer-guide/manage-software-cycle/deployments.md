@@ -102,17 +102,18 @@ and the recommendations you should take:
 | DEP_E4xx | internal rapyuta.io error | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
 
 ## Restart Policy
-Unlike deployments running on the cloud, which are automatically restarted
-if they stop due to some error, deployments that are running on devices
-do not automatically restart if they exit due to an error or when devices
+Unlike deployments running on the cloud, which automatically restart
+if stopped due to an error, deployments that are running on devices
+do not automatically restart if exited due to an error or when devices
 are rebooted.
 
 You can configure the behavior of deployments running on devices by
-setting the restart policies. There are three kinds of restart policies
+setting their restart policies. There are three kinds of restart policies
 available for a device deployment:
 
 * **Always**    
-  Always restart deployments if the deployment executables are in an error state or if the device is rebooted.
+  Always restart deployments if the deployment executables are in an
+  error state sor if the device is rebooted.
 * **On-failure**    
   Restart deployments only if the deployment executables exit due to an
   error, and the exit code is non-zero.
@@ -132,6 +133,11 @@ There are a couple of *exceptions* while applying the restart policies:
   manually by stopping its docker container,
   both **on-failure** and **always** policies (if selected) are not
   applied unless the device is rebooted.
+
+{{% notice info %}}
+You can modify or override the initial setting of restart policy while
+deploying a package
+{{% /notice %}}
 
 For a deployment running on a device, the variable
 **Restart Count** (on the deployment details page) represents the
