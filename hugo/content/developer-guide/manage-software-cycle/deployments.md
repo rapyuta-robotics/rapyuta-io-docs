@@ -113,7 +113,7 @@ available for a device deployment:
 
 * **Always**    
   Always restart deployments if the deployment executables are in an
-  error state sor if the device is rebooted.
+  error state or if the device is rebooted.
 * **On-failure**    
   Restart deployments only if the deployment executables exit due to an
   error, and the exit code is non-zero.
