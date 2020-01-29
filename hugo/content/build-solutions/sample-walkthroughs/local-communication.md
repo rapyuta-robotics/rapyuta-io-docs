@@ -359,6 +359,9 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 4. In the **Name of Deployment** box, enter a name for the broker deployment say `Communication Broker Deployment`
 5. Since **brokerComponent** has **Device runtime** select the device you want to deploy on by clicking **Refresh the list of online devices**. It retrieves
 an updated list of online devices.
+{{% notice note %}}
+As the component will be deployed on a device, its restart policy is already set to **Always**, however, you may override this value at the time of creating a deployment of the package.
+{{% /notice %}}
 6. Select **Broker Device** from **Select device for deploying the component** drop-down list.
 7. Select the network interface parameter value as per your device on
    which you are deploying by clicking **NETWORK_INTERFACE** drop-down list.
