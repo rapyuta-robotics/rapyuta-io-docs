@@ -102,8 +102,10 @@ To onboard the device on to rapyuta.io,[add the device](/developer-guide/manage-
 the **Use docker compose as default runtime** checkbox while adding the device.
 
 ## Creating the package
-To create a package using the [console](https://console.rapyuta.io), follow
-the steps:
+To create the package using the [console](https://console.rapyuta.io), follow the numbered steps in sequence or click on the button below:
+
+{{< importpackage manifest="" >}}
+
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.

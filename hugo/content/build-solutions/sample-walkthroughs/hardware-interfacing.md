@@ -39,7 +39,10 @@ and ensure that you select the **Use docker compose as default runtime** checkbo
 while adding the device.
 
 ## Creating the package
-To create ***led_trigger*** package, follow the steps:
+To create the ***led_trigger*** package, follow the sequential steps or click on the button below:
+
+{{< importpackage manifest="" >}}
+
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.

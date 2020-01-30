@@ -54,8 +54,11 @@ Ensure that you select the **Use docker compose as default runtime** checkbox
 while adding the device.
 
 ## Creating the package
-To create the _Docker publisher subscriber_ package using the
-[console](https://console.rapyuta.io), follow the steps:
+To create the ***Docker publisher subscriber*** package using the
+[console](https://console.rapyuta.io), follow the numbered steps in sequence or click on the button below:
+
+{{< importpackage manifest="" >}}
+
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.

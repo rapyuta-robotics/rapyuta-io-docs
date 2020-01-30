@@ -44,6 +44,9 @@ When the device is successfully registered, you will see a green dot next to the
 ## Create Packages
 You will create two packages in the tutorial.
 ### Turtlebot3 Robot Simulation Package
+To create the ***Turtlebot3 Robot Simulation*** package, either follow the numbered instructions in sequence or click on the button below:
+
+{{< importpackage manifest="" >}}
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.
@@ -80,6 +83,9 @@ The package takes a couple of minutes to build the source code in ***io_simulati
 Additionally, when the **Deploy package** button is automatically enabled, it indicates that the ***Turtlebot3 Robot Simulation*** package is successfully built and is ready to be deployed.
 
 ### Turtlebot3 Keyboard Teleoperation Package
+To create the ***Turtlebot3 Keyboard Teleoperation*** package, either follow the numbered instructions in sequence or click on the button below:
+
+{{< importpackage manifest="" >}}
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.

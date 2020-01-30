@@ -49,6 +49,10 @@ navigation map to other deployments that depend on it. Besides exposing the ROS 
 which replaces the map published by */map* topic.
 
 #### Create dynamic_map_server package
+To create the ***dynamic_map_server*** package, either follow the numbered instructions in sequence or click on the button below:
+
+{{< importpackage manifest="" >}}
+
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.
 3. You should provide information about the package, such as the name of the
@@ -175,8 +179,9 @@ While adding the device, ensure that **Use docker compose as default runtime** c
 {{% /notice %}}
 
 #### Create map_listener package
-You will create *map_listener* package, which will be deployed on the device.
-To create the package, follow the instructions:
+You will create the ***map_listener*** package, which will be deployed on the device. To create the package, either follow the numbered instructions in sequence or click on the button below:
+
+{{< importpackage manifest="" >}}
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
 2. You should provide information about the package such as the name of the

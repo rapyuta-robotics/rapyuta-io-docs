@@ -136,7 +136,9 @@ You can remotely access **RIO_CONFIGS_DIR** by [SSH-ing into the device via rapy
 ![SSH access](/images/tutorials/talker-supervisor/SSH-into-device.png?classes=border,shadow&width=40pc)
 
 #### Creating the package
-To create the *Publisher for Configured Devices* package, follow the steps:
+To create the ***Publisher for Configured Devices*** package, either follow the numbered instructions in sequence or click on the button below:
+
+{{< importpackage manifest="" >}}
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.

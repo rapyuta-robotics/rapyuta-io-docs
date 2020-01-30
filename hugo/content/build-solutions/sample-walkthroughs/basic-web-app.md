@@ -25,8 +25,9 @@ Beginner
 10 minutes
 
 ## Tutorial walkthrough
-You will add and deploy ***simple-hello-world*** package. To create a new package,
-follow the below instructions in sequence:
+You will add and deploy ***simple-hello-world*** package. To create a new package, follow the numbered instructions in sequence or click on the button below:
+
+{{< importpackage manifest="" >}}
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.

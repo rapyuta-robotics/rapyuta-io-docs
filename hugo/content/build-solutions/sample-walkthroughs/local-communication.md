@@ -290,6 +290,9 @@ Ensure that there's a <span style="color:green">**green**</span> dot next to
 the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 
 ## Create ROS Publisher package
+To create the ***ROS Publisher*** package, either follow the numbered instructions in sequence or click on the button below:
+
+{{< importpackage manifest="" >}}
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
 2. You should provide information about the package such as the name of the
@@ -321,6 +324,9 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ## Create ROS Subscriber package
+To create the ***ROS Subscriber*** package, either follow the numbered instructions in sequence or click on the button below:
+
+{{< importpackage manifest="" >}}
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
 2. You should provide information about the package such as the name of the

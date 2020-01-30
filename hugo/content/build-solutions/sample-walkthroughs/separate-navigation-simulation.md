@@ -122,6 +122,9 @@ source devel/setup.bash
 You will create and add two packages, namely, Navigation Application and Turtlebot3 Simulation.
 
 #### Navigation Application Package
+To create the ***Navigation Application*** package, either follow the numbered instructions in sequence or click on the button below:
+
+{{< importpackage manifest="" >}}
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.
@@ -144,6 +147,9 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 19.  Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 #### Simulation Package
+To create the ***Simulation*** package, either follow the numbered instructions or click on the button below:
+
+{{< importpackage manifest="" >}}
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.
