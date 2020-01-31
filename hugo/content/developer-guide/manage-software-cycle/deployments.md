@@ -136,7 +136,7 @@ There are a couple of *exceptions* while applying the restart policies:
 
 {{% notice info %}}
 You can modify or override the initial setting of restart policy while
-deploying a package
+deploying a package. Read [deploying a package](/developer-guide/manage-software-cycle/deployments/#deploying-a-package) topic to learn how to do so.
 {{% /notice %}}
 
 For a deployment running on a device, the variable
@@ -152,7 +152,7 @@ To deploy a package in rapyuta.io, follow the steps:
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, enter a name for the specific deployment
 you are creating for the package.
-5. A _LABEL_ is a key-value pair. If you want to add a label, click **Add label**.
+5. A *LABEL* is a key-value pair. If you want to add a label, click **Add label**.
 6. If a component of the package has *cloud* runtime, skip to instruction 9.
 7. If a component of the package has *device* runtime, you must select the device
 you want to deploy the component on. Click **Refresh the list of online
@@ -168,7 +168,9 @@ a deployment you want to add as a dependency from the drop-down list of
 deployment IDs.
 10. If you want to add a volume, click **Add volume**. Ensure that a running volume
 deployment is available before you add one.
-11. Click **CREATE DEPLOYMENT** > **Confirm**.
+11. If you want to modify the initial setting of restart policy of components with ***device runtime***, click **Modify**.
+![Modify restart policy](/images/dev-guide/deployments/modify-restart-policy.png?classes=border,shadow&width=40pc)
+1.  Click **CREATE DEPLOYMENT** > **Confirm**.
 
 ![Deploy demo package](/images/getting-started/deploy-pkg/deploy-demo-pkg.png?classes=border,shadow&width=50pc)
 You will be redirected to the **Details** page of the newly created deployment.
