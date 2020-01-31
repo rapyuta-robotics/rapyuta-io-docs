@@ -27,7 +27,7 @@ Beginner
 ## Tutorial walkthrough
 You will add and deploy ***simple-hello-world*** package. To create a new package, follow the numbered instructions in sequence or click on the button below:
 
-{{< importpackage manifest="" >}}
+{{< importpackage manifest="https://raw.githubusercontent.com/rapyuta-robotics/io_tutorials/master/io_manifests/simple_hello_world_manifest.json" >}}
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.

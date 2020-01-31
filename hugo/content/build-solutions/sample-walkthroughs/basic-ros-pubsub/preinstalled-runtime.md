@@ -104,7 +104,7 @@ the **Use docker compose as default runtime** checkbox while adding the device.
 ## Creating the package
 To create the package using the [console](https://console.rapyuta.io), follow the numbered steps in sequence or click on the button below:
 
-{{< importpackage manifest="" >}}
+{{< importpackage manifest="https://raw.githubusercontent.com/rapyuta-robotics/io_tutorials/master/io_manifests/basic_ros_publisher_subscriber/preinstalled_ros_publisher_subsciber_manifest.json" >}}
 
 
 1. On the left navigation bar, click **CATALOG**.
