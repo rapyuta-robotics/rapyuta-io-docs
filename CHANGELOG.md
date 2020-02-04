@@ -3,6 +3,7 @@
 ## [Unreleased]
 #### Fixed
 - Code style of code sample examples for Python SDK
+- Import button stretches to entire line
 
 ## [2.0.10 - 2020-01-16]
 ### Added
