@@ -31,4 +31,4 @@ Python SDK [0.11.0](/developer-guide/tooling-automation/python-sdk/#installation
 ### Documentation
 
 * Read about overriding [restart policies](/developer-guide/manage-software-cycle/deployments/#restart-policy).
-* Read about static routes feature and its effect on [subscription plans](/pricing-support/pricing/find-plans/).
+* Read about [static routes](/developer-guide/create-software-packages/package-internals/#exposing-endpoints-with-static-url) feature and its effect on [subscription plans](/pricing-support/pricing/find-plans/).
