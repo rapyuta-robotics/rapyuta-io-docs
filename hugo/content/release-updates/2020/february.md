@@ -16,6 +16,11 @@ Modify or override the initial setting of restart policy for components with dev
 Bind a static route to an externally exposed network endpoint of a cloud deployment to access the deployed application over a public network or an external network. It introduces determinism to a deployment's endpoint URL addresses.
 * **rapyuta.io Python SDK 0.11.0 released**    
 Python SDK [0.11.0](/developer-guide/tooling-automation/python-sdk/#installation) defines a method that adds restart policy for a device component.
+To use newer SDK, install it by using:
+
+```bash
+pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.11.0-py2-none-any.whl
+```
 
 ### Improvements
 
