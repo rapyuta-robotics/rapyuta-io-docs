@@ -11,7 +11,8 @@ weight: 710
 | **Base Price** | <center>**FREE**</center> | <center>**$99/month**</center> |
 | Number of active users | <center>1</center> | <center>5</center> |
 | Number of devices | <center>2</center> | <center>5</center> |
-| Add-ons | <center>$5/device/month<br>$10/user/month</center> | <center>$5/device/month<br>$30/user/month</center> |
+| Number of static routes | <center>1</center> | <center>10</center> |
+| Add-ons | <center>$5/device/month<br>$10/user/month<br>$5/route/month</center> | <center>$5/device/month<br>$30/user/month<br>$5/route/month</center> |
 | Device deployment hours<br><br>*represents hours of deployments consumed on devices* | <center>500</center> | <center>2500</center> |
 | Additional deployment hours on device | <center>$0.004/hour</center> | <center>$0.004/hour</center> |
 | Cloud deployment hours<br><br>*represents hours of deployments consumed in the cloud* | <center>100 vCPU-hour</center> | <center>500 vCPU-hour</center> |

@@ -156,8 +156,10 @@ To create a static route:
 
 Observe that the name of the static route will be suffixed with ***.rapyuta.net*** to form a static route URL, for instance, if the name of the static route is ***transient-data***, the static route URL will be ***transient-data.rapyuta.net***
 
+![Create static route](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/create-sr.png?classes=border,shadow&width=40pc)
+
 {{% notice info %}}
-The name of a static route has lowercase alphanumeric characters or a hyphen - and must begin and end with alphanumeric character and it must be at least 4 characters and less than 64 characters long.
+The name of a static route has lowercase alphanumeric characters or a hyphen - and must begin and end with an alphanumeric character and it must be at least 4 characters and less than 64 characters long.
 {{% /notice %}}
 
 {{% notice note %}}
@@ -170,13 +172,17 @@ To bind a static route to an externally exposed endpoint, which is defined in a 
 2. Select an external network endpoint from the drop-down list.
 3. Select a static route from the drop-down list.
 
-It creates a mapping between an external network endpoint and a static route. You can unbind a static route from a network endpoint by clicking on the delete icon.
+![Add static route](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/add-sr.png?classes=border,shadow&width=40pc)
+
+It creates a mapping between an external network endpoint and a static route. You can unbind a static route from a network endpoint by clicking on the delete icon. In this example, the static route ***tempstorage*** is bound to the network endpoint ***FileStorage*** as shown below: 
+
+![Bind static route](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/mapping-bind-sr.png?classes=border,shadow&width=40pc)
 
 On deploying the package after binding a static route, the network endpoint URL address becomes deterministic and is a constant. It implies that even if the deployment is stopped and provisioned again, the network endpoint URL address remains the same.
 
 A package deployment can have multiple static routes. However, a single static route is used for a single deployment.
 
-Static routes are ***globally unique*** across rapyuta.io platform.
+Static routes are ***globally unique*** across the rapyuta.io platform.
 
 
 
