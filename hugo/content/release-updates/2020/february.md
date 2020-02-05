@@ -6,12 +6,14 @@ date: 2020-02-05T15:40:05+05:30
 weight: "837"
 ---
 ## February 05
-Welcome to the February 05, 2020 release of rapyuta.io platform. There are significant updates in this release that we hope you will like.
+Welcome to the February 05, 2020 release of the rapyuta.io platform. There are significant updates in this release that we hope you will like.
 
 ### Features
 
 * **Override restart policy option**    
 Modify or override the initial setting of restart policy for components with device runtime while deploying a package.
+* **Rapyuta IO Communication Broker package's restart policy**    
+The restart policy for **Rapyuta IO Communication Broker** package is ***Always***.
 * **Static routes**    
 To get a deterministic URL/route for your application while exposing the network endpoint externally, you must bind it to a static route. When you add a static route, an externally exposed endpoint is essentially guaranteed to be available at the URL of that particular static route. It makes externally exposed endpoints (and hence the deployments exposing them) resilient to failure or re-deployment, facilitates maintenance and upgrades to the backend/deployment while retaining the same unique globally available URL.
 * **rapyuta.io Python SDK 0.11.0 released**    
