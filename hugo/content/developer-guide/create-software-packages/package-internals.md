@@ -139,7 +139,7 @@ rapyuta.io creates an accessible public IP address for externally exposed networ
 rapyuta.io injects environment variables corresponding to linked network endpoints during deployment binding phase. Refer to the section on [Link Injection](/developer-guide/manage-software-cycle/communication-topologies/std-comms/) for more details.
 {{% /notice %}}
 
-##### Static Routes
+#### Static Routes
 Binding a static route to an external endpoint of a cloud deployment makes it
 deterministic to access the deployed application over a public network or an
 external network. It implies that even if the deployment is stopped (or de-provisioned)
@@ -154,9 +154,7 @@ To create a static route:
 3. Enter a name for **Static Route URL**.
 4. Click **CONTINUE**.
 
-Observe that the name of the static route will be suffixed with ***.rapyuta.net*** to form a static route URL, for instance, if the name of the static route is ***transient-data***, the static route URL will be ***transient-data.rapyuta.net***
-
-![Create static route](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/create-sr.png?classes=border,shadow&width=40pc)
+Observe that the name of the static route will be suffixed with ***.ep-r.io*** to form a static route URL, for instance, if the name of the static route is ***transient-data***, the static route URL will be ***transient-data.ep-r.io***
 
 {{% notice info %}}
 The name of a static route has lowercase alphanumeric characters or a hyphen - and must begin and end with an alphanumeric character and it must be at least 4 characters and less than 64 characters long.
@@ -174,15 +172,17 @@ To bind a static route to an externally exposed endpoint, which is defined in a 
 
 ![Add static route](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/add-sr.png?classes=border,shadow&width=40pc)
 
-It creates a mapping between an external network endpoint and a static route. You can unbind a static route from a network endpoint by clicking on the delete icon. In this example, the static route ***tempstorage*** is bound to the network endpoint ***FileStorage*** as shown below: 
+It creates a mapping between an external network endpoint and a static route. You can unbind a static route from a network endpoint by clicking on the delete icon. In this example, the static route ***my_example_server*** is bound to the network endpoint ***server_endpoint*** as shown below: 
 
-![Bind static route](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/mapping-bind-sr.png?classes=border,shadow&width=40pc)
-
-On deploying the package after binding a static route, the network endpoint URL address becomes deterministic and is a constant. It implies that even if the deployment is stopped and provisioned again, the network endpoint URL address remains the same.
+On deploying the package after binding a static route, the network endpoint URL address becomes deterministic and is a constant. It implies that even if the deployment is stopped and provisioned again with the same static route, the network endpoint URL address remains the same.
 
 A package deployment can have multiple static routes. However, a single static route is used for a single deployment.
 
 A static route is ***globally unique*** across the rapyuta.io platform.
+
+{{% notice note %}}
+Refer to [billing and usage](/pricing-support/pricing/billing-usage) to understand the limits applied on static routes for different subscription plans.
+{{% /notice %}}
 
 
 
