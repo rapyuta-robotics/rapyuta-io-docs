@@ -155,6 +155,8 @@ To create a static route:
 
 Observe that the name of the static route will be a subdomain belonging to ***.ep-r.io*** (essentially the provided name will be suffixed with ***.ep-r.io*** to form the FQDN). For instance, if the name of the static route is ***my-example-server***, the static route URL will be ***my-example-server.ep-r.io***
 
+![Create static route](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/create-sr.png?classes=border,shadow&width=40pc)
+
 {{% notice info %}}
 The name of a static route has lowercase alphanumeric characters, or a hyphen, and must begin and end with an alphanumeric character, and must not be certain keywords, and it must be at least 4 characters and less than 64 characters long.
 {{% /notice %}}
