@@ -154,7 +154,7 @@ To create a static route:
 3. Enter a name for **Static Route URL**.
 4. Click **CONTINUE**.
 
-Observe that the name of the static route will be suffixed with ***.ep-r.io*** to form a static route URL, for instance, if the name of the static route is ***transient-data***, the static route URL will be ***transient-data.ep-r.io***
+Observe that the name of the static route will be suffixed with ***.ep-r.io*** to form a static route URL, for instance, if the name of the static route is ***my-example-server***, the static route URL will be ***my-example-server.ep-r.io***
 
 {{% notice info %}}
 The name of a static route has lowercase alphanumeric characters, or a hyphen, and must begin and end with an alphanumeric character, and must not be certain keywords, and it must be at least 4 characters and less than 64 characters long.
