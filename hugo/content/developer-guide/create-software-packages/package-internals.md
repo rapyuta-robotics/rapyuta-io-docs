@@ -139,3 +139,45 @@ rapyuta.io creates an accessible public IP address for externally exposed networ
 rapyuta.io injects environment variables corresponding to linked network endpoints during deployment binding phase. Refer to the section on [Link Injection](/developer-guide/manage-software-cycle/communication-topologies/std-comms/) for more details.
 {{% /notice %}}
 
+##### Static Routes
+Binding a static route to an external endpoint of a cloud deployment makes it
+deterministic to access the deployed application over a public network or an
+external network. It implies that even if the deployment is stopped (or de-provisioned)
+and provisioned again, the application will be reachable on the same static route.
+rapyuta.io enables the user to create a static route and give it a DNS name and
+ensures that the name of the static route is globally unique.
+
+To create a static route:
+
+1. On the left navigation bar, click **STATIC ROUTES**.
+2. Click **ADD NEW STATIC ROUTE**.
+3. Enter a name for **Static Route URL**.
+4. Click **CONTINUE**.
+
+Observe that the name of the static route will be suffixed with ***.rapyuta.net*** to form a static route URL, for instance, if the name of the static route is ***transient-data***, the static route URL will be ***transient-data.rapyuta.net***
+
+{{% notice info %}}
+The name of a static route has lowercase alphanumeric characters or a hyphen - and must begin and end with alphanumeric character and it must be at least 4 characters and less than 64 characters long.
+{{% /notice %}}
+
+{{% notice note %}}
+Once created, you cannot edit the name of a static route.
+{{% /notice %}}
+
+To bind a static route to an externally exposed endpoint, which is defined in a package, during the deployment process:
+
+1. Click **Add Static Route**.
+2. Select an external network endpoint from the drop-down list.
+3. Select a static route from the drop-down list.
+
+It creates a mapping between an external network endpoint and a static route. You can unbind a static route from a network endpoint by clicking on the delete icon.
+
+On deploying the package after binding a static route, the network endpoint URL address becomes deterministic and is a constant. It implies that even if the deployment is stopped and provisioned again, the network endpoint URL address remains the same.
+
+A package deployment can have multiple static routes. However, a single static route is used for a single deployment.
+
+Static routes are ***globally unique*** across rapyuta.io platform.
+
+
+
+
