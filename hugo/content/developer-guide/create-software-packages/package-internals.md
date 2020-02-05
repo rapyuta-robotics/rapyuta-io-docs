@@ -182,7 +182,7 @@ On deploying the package after binding a static route, the network endpoint URL 
 
 A package deployment can have multiple static routes. However, a single static route is used for a single deployment.
 
-Static routes are ***globally unique*** across the rapyuta.io platform.
+A static route is ***globally unique*** across the rapyuta.io platform.
 
 
 
