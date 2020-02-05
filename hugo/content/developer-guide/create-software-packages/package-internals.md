@@ -167,12 +167,14 @@ Once created, you cannot edit the name of a static route.
 To bind a static route to an externally exposed endpoint, which is defined in a package, during the deployment process:
 
 1. Click **Add Static Route**.
+![Add static route](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/add-sr.png?classes=border,shadow&width=40pc)
 2. Select an external network endpoint from the drop-down list.
 3. Select a static route from the drop-down list.
+![Select endpoint static route pair](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/selection.png?classes=border,shadow&width=40pc)
 
-![Add static route](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/add-sr.png?classes=border,shadow&width=40pc)
+It creates a mapping between an external network endpoint and a static route. You can unbind a static route from a network endpoint by clicking on the delete icon. In this example, the static route ***my-example-server*** is bound to the network endpoint ***server_endpoint*** as shown below:
 
-It creates a mapping between an external network endpoint and a static route. You can unbind a static route from a network endpoint by clicking on the delete icon. In this example, the static route ***my_example_server*** is bound to the network endpoint ***server_endpoint*** as shown below: 
+![Bind static route](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/mapping-bind-sr.png?classes=border,shadow&width=40pc)
 
 On deploying the package after binding a static route, the network endpoint URL address becomes deterministic and is a constant. It implies that even if the deployment is stopped and provisioned again with the same static route, the network endpoint URL address remains the same.
 
