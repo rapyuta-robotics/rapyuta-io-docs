@@ -26,12 +26,10 @@ pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.11.0-py2-
 
 * Improved the logging infrastructure.
 * The default filter value for device logs is set to all.
-* The value of filter on the deployments page is retained after refreshing the page.
 
 ### Notable Fixes
 
-* Fixed install and uninstall script giving ***deployments running*** error due to invalid regex.
-* Added validation checks.
+* Fixed install and uninstall script giving false ***deployments running*** error.
 
 ### Documentation
 
