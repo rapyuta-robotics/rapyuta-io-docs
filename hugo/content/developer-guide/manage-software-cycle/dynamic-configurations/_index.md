@@ -44,7 +44,7 @@ or extend existing parameters.
 
 ![example configuration](/images/core-concepts/configurations/example-config.png?classes=border,shadow&width=50pc)
 
-A configuration hierarchy consists of three kinds of nodes:
+A configuration hierarchy consists of four kinds of nodes:
 
 * Root node
 * Attribute node
