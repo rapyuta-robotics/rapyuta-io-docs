@@ -133,19 +133,18 @@ The supported protocols at their respective ports (cannot be modified) are:
 The **Secure TCP (TLS/SNI)** protocol uses [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication) headers for routing the request to the desired backend.
 ![external endpoint](/images/core-concepts/network-endpoints/external-endpoint.png?classes=border,shadow&width=40pc)
 
-rapyuta.io creates an accessible public IP address for externally exposed network endpoints. Hence, you can view the Fully Qualified Domain Name (FQDN) of endpoints on the details page of deployments.
+rapyuta.io generates a random URL/route that is exposed on the public internet for the required endpoint when the deployment is created. You can view the Fully Qualified Domain Name (FQDN) of an endpoint on the details page of deployments.
+
+![FQDN of external endpoint](/images/tutorials/hello-world/network-endpoint.png?classes=border,shadow&width=50pc)
 
 {{% notice info %}}
 rapyuta.io injects environment variables corresponding to linked network endpoints during deployment binding phase. Refer to the section on [Link Injection](/developer-guide/manage-software-cycle/communication-topologies/std-comms/) for more details.
 {{% /notice %}}
 
-#### Static Routes
-Binding a static route to an external endpoint of a cloud deployment makes it
-deterministic to access the deployed application over a public network or an
-external network. It implies that even if the deployment is stopped (or de-provisioned)
-and provisioned again, the application will be reachable on the same static route.
-rapyuta.io enables the user to create a static route and give it a DNS name and
-ensures that the name of the static route is globally unique.
+#### Exposing Endpoints with Static URL
+To get a deterministic URL/route for your application while exposing the network endpoint externally, you must bind it to a static route.
+
+rapyuta.io enables you to create a static route URL and give it a globally unique FQDN. When you add a static route, an externally exposed endpoint is essentially guaranteed to be available at the URL of that particular static route. It makes externally exposed endpoints (and hence the deployments exposing them) resilient to failure or re-deployment, facilitates maintenance and upgrades to the backend/deployment while retaining the same unique globally available URL.
 
 To create a static route:
 
@@ -154,7 +153,7 @@ To create a static route:
 3. Enter a name for **Static Route URL**.
 4. Click **CONTINUE**.
 
-Observe that the name of the static route will be suffixed with ***.ep-r.io*** to form a static route URL, for instance, if the name of the static route is ***my-example-server***, the static route URL will be ***my-example-server.ep-r.io***
+Observe that the name of the static route will be a subdomain belonging to ***.ep-r.io*** (essentially the provided name will be suffixed with ***.ep-r.io*** to form the FQDN). For instance, if the name of the static route is ***my-example-server***, the static route URL will be ***my-example-server.ep-r.io***
 
 {{% notice info %}}
 The name of a static route has lowercase alphanumeric characters, or a hyphen, and must begin and end with an alphanumeric character, and must not be certain keywords, and it must be at least 4 characters and less than 64 characters long.
