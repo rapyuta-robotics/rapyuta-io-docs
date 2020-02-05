@@ -13,7 +13,7 @@ Welcome to the February 05, 2020 release of rapyuta.io platform. There are signi
 * **Override restart policy option**    
 Modify or override the initial setting of restart policy for components with device runtime while deploying a package.
 * **Static routes**    
-Bind a static route to an externally exposed network endpoint of a cloud deployment to access the deployed application over a public network or an external network. It introduces determinism to a deployment's endpoint URL addresses.
+To get a deterministic URL/route for your application while exposing the network endpoint externally, you must bind it to a static route. When you add a static route, an externally exposed endpoint is essentially guaranteed to be available at the URL of that particular static route. It makes externally exposed endpoints (and hence the deployments exposing them) resilient to failure or re-deployment, facilitates maintenance and upgrades to the backend/deployment while retaining the same unique globally available URL.
 * **rapyuta.io Python SDK 0.11.0 released**    
 Python SDK [0.11.0](/developer-guide/tooling-automation/python-sdk/#installation) defines a method that adds restart policy for a device component.
 To use newer SDK, install it by using:
