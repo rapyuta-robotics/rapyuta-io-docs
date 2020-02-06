@@ -1,6 +1,20 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.1.0 - 2020-02-05]
+#### Added
+- Explain static routes functionality
+- Explain ability to modify restart policy
+- Release summary page
+
+#### Updated
+- Update Python SD version 0.11.0
+
+#### Fixed
+- Typo issues
+- Code style of code sample examples for Python SDK
+- Import button stretches to the entire line
+
 ## [2.0.10 - 2020-01-16]
 ### Added
 - Release summary page for Python SDK 0.10.2

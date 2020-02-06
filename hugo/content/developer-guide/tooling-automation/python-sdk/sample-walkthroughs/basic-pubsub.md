@@ -127,11 +127,9 @@ it on the cloud. The resulting deployment is called ***ROS PUBLISHER***.
 ```python
 # Deploy Talker package on cloud
 talker = client.get_package(TALKER_ID)
-
 talker_configuration = talker.get_provision_configuration(TALKER_PLAN_ID)
-
-talker_cloud_deployment = talker.provision(deployment_name="ROS PUBLISHER", provision_configuration=talker_configuration)
-
+talker_cloud_deployment = talker.provision(deployment_name="ROS PUBLISHER",
+                                           provision_configuration=talker_configuration)
 talker_cloud_deployment.poll_deployment_till_ready()
 ```
 
@@ -142,15 +140,12 @@ deployment, add the later as a dependent deployment of the former.
 ```python
 # Deploy Listener package on device
 listener = client.get_package(LISTENER_ID)
-
 listener_configuration = listener.get_provision_configuration(LISTENER_PLAN_ID)
-
 device = client.get_device(DEVICE_ID)
 listener_configuration.add_device("LISTENER", device)
 listener_configuration.add_dependent_deployment(talker_cloud_deployment)
-
-listener_device_deployment = listener.provision(deployment_name="ROS SUBSCRIBER", provision_configuration=listener_configuration)
-
+listener_device_deployment = listener.provision(deployment_name="ROS SUBSCRIBER",
+                                                provision_configuration=listener_configuration)
 listener_device_deployment.poll_deployment_till_ready()
 ```
 
@@ -160,8 +155,9 @@ save the program and close the file.
 ```python
 # talker-listener.py
 
-# Authentication
 from rapyuta_io import Client
+
+# Authentication
 client = Client(AUTH_TOKEN, PROJECT_ID)
 
 # Deploy Talker on cloud
@@ -170,17 +166,13 @@ talker_configuration = talker.get_provision_configuration(TALKER_PLAN_ID)
 talker_cloud_deployment = talker.provision(deployment_name="ROS PUBLISHER", provision_configuration=talker_configuration)
 talker_cloud_deployment.poll_deployment_till_ready()
 
-
 # Deploy Listener on device
 listener = client.get_package(LISTENER_ID)
 listener_configuration = listener.get_provision_configuration(LISTENER_PLAN_ID)
-
 device = client.get_device(DEVICE_ID)
 listener_configuration.add_device("LISTENER", device)
 listener_configuration.add_dependent_deployment(talker_cloud_deployment)
-
 listener_device_deployment = listener.provision(deployment_name="ROS SUBSCRIBER", provision_configuration=listener_configuration)
-
 listener_device_deployment.poll_deployment_till_ready()
 
 # Get status of ROS SUBSCRIBER deployment

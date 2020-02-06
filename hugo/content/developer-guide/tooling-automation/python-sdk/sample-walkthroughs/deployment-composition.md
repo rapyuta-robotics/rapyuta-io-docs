@@ -49,7 +49,6 @@ and resources from your Python application.
 
 ```python
 # Authorization code snippet
-
 from rapyuta_io import Client, DiskType
 
 client = Client(AUTH_TOKEN, PROJECT_ID)
@@ -59,7 +58,6 @@ Deploy the persistent volume, which is provided by rapyuta.io, with ***32GiB*** 
 
 ```python
 ## Define instance of persistent volume
-
 volume = client.get_persistent_volume()
 storage_volume = volume.create_volume_instance("Volume Storage", 32, DiskType.SSD)
 storage_volume.poll_deployment_till_ready()
@@ -69,10 +67,10 @@ Mount the volume on the **MinIO_FS** component of **MinIO File Server** package 
 
 ```python
 # Mount volume on the file server application
-
 minio_file_server = client.get_package(PACKAGE_ID)
 pkg_provision_config = minio_file_server.get_provision_configuration(PACKAGE_PLAN_ID)
-pkg_provision_config.mount_volume(component_name="MinIO_FS", volume_instance=storage_volume, mount_path="/data")
+pkg_provision_config.mount_volume(component_name="MinIO_FS",
+                                  volume_instance=storage_volume, mount_path="/data")
 ```
 Define secret and access keys for signing in to MinIO
 file server application at the externally exposed
@@ -80,7 +78,6 @@ endpoint **FileStorage**.
 
 ```python
 # Define secret and access keys for file server
-
 pkg_provision_config.add_parameter("MinIO_FS", "MINIO_SECRET_KEY", "secretphrase")
 pkg_provision_config.add_parameter("MinIO_FS", "MINIO_ACCESS_KEY", "accesskey")
 ```
@@ -91,9 +88,8 @@ volume **Volume Storage** on the cloud. The corresponding deployment is called
 
 ```python
 # Deploy file server with storage volume
-
-volume_powered_deployment = minio_file_server.provision(deployment_name="File Storage With Data Permanence", provision_configuration=pkg_provision_config)
-
+volume_powered_deployment = minio_file_server.provision(deployment_name="File Storage With Data Permanence",
+                                                        provision_configuration=pkg_provision_config)
 volume_powered_deployment.poll_deployment_till_ready(retry_count=10)
 print volume_powered_deployment.get_status()
 ```
@@ -108,6 +104,8 @@ Put together the above code snippets in a single file, ***deployment-composition
 
 ```python
 # deployment-composition.py
+
+
 from rapyuta_io import Client, DiskType
 
 # Authorisation code snippet
@@ -128,8 +126,8 @@ pkg_provision_config.add_parameter("MinIO_FS", "MINIO_SECRET_KEY", "secretphrase
 pkg_provision_config.add_parameter("MinIO_FS", "MINIO_ACCESS_KEY", "accesskey")
 
 # Deploy file server with storage volume
-volume_powered_deployment = minio_file_server.provision(deployment_name="File Storage With Data Permanence", provision_configuration=pkg_provision_config)
-
+volume_powered_deployment = minio_file_server.provision(deployment_name="File Storage With Data Permanence",
+                                                        provision_configuration=pkg_provision_config)
 volume_powered_deployment.poll_deployment_till_ready(retry_count=10)
 print volume_powered_deployment.get_status()
 ```

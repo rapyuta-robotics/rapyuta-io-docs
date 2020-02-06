@@ -133,9 +133,60 @@ The supported protocols at their respective ports (cannot be modified) are:
 The **Secure TCP (TLS/SNI)** protocol uses [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication) headers for routing the request to the desired backend.
 ![external endpoint](/images/core-concepts/network-endpoints/external-endpoint.png?classes=border,shadow&width=40pc)
 
-rapyuta.io creates an accessible public IP address for externally exposed network endpoints. Hence, you can view the Fully Qualified Domain Name (FQDN) of endpoints on the details page of deployments.
+rapyuta.io generates a random URL/route that is exposed on the public internet for the required endpoint when the deployment is created. You can view the Fully Qualified Domain Name (FQDN) of an endpoint on the details page of deployments.
+
+![FQDN of external endpoint](/images/tutorials/hello-world/network-endpoint.png?classes=border,shadow&width=50pc)
 
 {{% notice info %}}
 rapyuta.io injects environment variables corresponding to linked network endpoints during deployment binding phase. Refer to the section on [Link Injection](/developer-guide/manage-software-cycle/communication-topologies/std-comms/) for more details.
 {{% /notice %}}
+
+#### Exposing Endpoints with Static URL
+To get a deterministic URL/route for your application while exposing the network endpoint externally, you must bind it to a static route.
+
+rapyuta.io enables you to create a static route URL and give it a globally unique FQDN. When you add a static route, an externally exposed endpoint is essentially guaranteed to be available at the URL of that particular static route. It makes externally exposed endpoints (and hence the deployments exposing them) resilient to failure or re-deployment, facilitates maintenance and upgrades to the backend/deployment while retaining the same unique globally available URL.
+
+To create a static route:
+
+1. On the left navigation bar, click **STATIC ROUTES**.
+2. Click **ADD NEW STATIC ROUTE**.
+3. Enter a name for **Static Route URL**.
+4. Click **CONTINUE**.
+
+Observe that the name of the static route will be a subdomain belonging to ***.ep-r.io*** (essentially the provided name will be suffixed with ***.ep-r.io*** to form the FQDN). For instance, if the name of the static route is ***my-example-server***, the static route URL will be ***my-example-server.ep-r.io***
+
+![Create static route](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/create-sr.png?classes=border,shadow&width=40pc)
+
+{{% notice info %}}
+The name of a static route has lowercase alphanumeric characters, or a hyphen, and must begin and end with an alphanumeric character, and must not be certain keywords, and it must be at least 4 characters and less than 64 characters long.
+{{% /notice %}}
+
+{{% notice note %}}
+Once created, you cannot edit the name of a static route.
+{{% /notice %}}
+
+To bind a static route to an externally exposed endpoint, which is defined in a package, during the deployment process:
+
+1. Click **Add Static Route**.
+![Add static route](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/add-sr.png?classes=border,shadow&width=40pc)
+2. Select an external network endpoint from the drop-down list.
+3. Select a static route from the drop-down list.
+![Select endpoint static route pair](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/selection.png?classes=border,shadow&width=40pc)
+
+It creates a mapping between an external network endpoint and a static route. You can unbind a static route from a network endpoint by clicking on the delete icon. In this example, the static route ***my-example-server*** is bound to the network endpoint ***server_endpoint*** as shown below:
+
+![Bind static route](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/mapping-bind-sr.png?classes=border,shadow&width=40pc)
+
+On deploying the package after binding a static route, the network endpoint URL address becomes deterministic and is a constant. It implies that even if the deployment is stopped and provisioned again with the same static route, the network endpoint URL address remains the same.
+
+A package deployment can have multiple static routes. However, a single static route is used for a single deployment.
+
+A static route is ***globally unique*** across the rapyuta.io platform.
+
+{{% notice note %}}
+Refer to [billing and usage](/pricing-support/pricing/billing-usage) to understand the limits applied on static routes for different subscription plans.
+{{% /notice %}}
+
+
+
 

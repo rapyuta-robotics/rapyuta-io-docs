@@ -31,7 +31,7 @@ the payment of the final bill including taxes.
 The total available units for use is the sum of included units and add-ons.
 {{% /notice %}}
 
-![Billing Usage](/images/pricing/billing/billing-lower-part.png?classes=border,shadow&width=50pc)
+![Billing Usage](/images/pricing/billing/billing-usage.png?classes=border,shadow&width=50pc)
 
 {{% notice info %}}
 As an admin of an organization, you can **add multiple credit cards** to your organization's billing account. But, only one credit card is made the **primary** or **default** card, which is used to charge the subscription fee and additional amount for using rapyuta.io resources.
