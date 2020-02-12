@@ -43,4 +43,4 @@ pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.11.0-py2-
 Welcome to the February 12, 2020 release of rapyuta.io platform. This release includes several internal improvements, optimizations and bug fixes.
 
 #### Improvements
-The rapyuta-agent services introduce a delay between device restarts in case of device failure.
+The rapyuta-agent services now have a delay between restarts in case of failure.
