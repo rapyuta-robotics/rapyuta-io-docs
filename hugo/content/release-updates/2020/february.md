@@ -37,3 +37,7 @@ pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.11.0-py2-
 
 * Read about overriding [restart policies](/developer-guide/manage-software-cycle/deployments/#restart-policy).
 * Read about [static routes](/developer-guide/create-software-packages/package-internals/#exposing-endpoints-with-static-url) feature and its effect on [subscription plans](/pricing-support/pricing/find-plans/).
+
+## February 12
+
+Welcome to the February 12, 2020 release of rapyuta.io platform. This release includes several internal improvements, optimizations and bug fixes. The device downloading script (rapyuta-agent) introduces a delay between multiple device restarts.
