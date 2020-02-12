@@ -1,6 +1,13 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.1.1 - 2020-02-12]
+### Added
+- Release summary page
+
+### Fixed
+- Inconsistent formatting of February 2020 release update page
+
 ## [2.1.0 - 2020-02-05]
 #### Added
 - Explain static routes functionality
