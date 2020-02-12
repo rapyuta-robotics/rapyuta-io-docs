@@ -8,7 +8,7 @@ weight: "837"
 ## February 05
 Welcome to the February 05, 2020 release of the rapyuta.io platform. There are significant updates in this release that we hope you will like.
 
-### Features
+#### Features
 
 * **Override restart policy option**    
 Modify or override the initial setting of restart policy for components with device runtime while deploying a package.
@@ -24,20 +24,23 @@ To use newer SDK, install it by using:
 pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.11.0-py2-none-any.whl
 ```
 
-### Improvements
+#### Improvements
 
 * Improved the logging infrastructure.
 * The default filter value for device logs is set to all.
 
-### Notable Fixes
+#### Notable Fixes
 
 * Fixed install and uninstall script giving false ***deployments running*** error.
 
-### Documentation
+#### Documentation
 
 * Read about overriding [restart policies](/developer-guide/manage-software-cycle/deployments/#restart-policy).
 * Read about [static routes](/developer-guide/create-software-packages/package-internals/#exposing-endpoints-with-static-url) feature and its effect on [subscription plans](/pricing-support/pricing/find-plans/).
 
 ## February 12
 
-Welcome to the February 12, 2020 release of rapyuta.io platform. This release includes several internal improvements, optimizations and bug fixes. The device downloading script (rapyuta-agent) introduces a delay between multiple device restarts.
+Welcome to the February 12, 2020 release of rapyuta.io platform. This release includes several internal improvements, optimizations and bug fixes.
+
+#### Improvements
+The rapyuta-agent services introduce a delay between device restarts in case of device failure.
