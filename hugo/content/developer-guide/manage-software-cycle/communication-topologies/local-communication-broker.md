@@ -11,8 +11,8 @@ Complex distributed robotics applications require multiple devices
 over LAN. This kind of communication can prove to be highly latent
 if the application service is distributed over WAN.
 
-rapyuta.io provides a public package, **Rapyuta IO Local Communication**
-Broker, to help support multi-device communication in the same
+rapyuta.io provides a public package, **Rapyuta IO Local Communication
+Broker**, to help support multi-device communication in the same
 local network, thus, reducing the robotics application latency
 by ensuring that the devices involved are in the same local
 network.
