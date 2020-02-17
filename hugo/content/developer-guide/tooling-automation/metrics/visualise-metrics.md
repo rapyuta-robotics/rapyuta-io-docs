@@ -6,23 +6,27 @@ date: 2019-10-30T16:28:20+05:30
 pre: "d. "
 weight: 542
 ---
-[rapyuta.io](https://console.rapyuta.io) enables you to visualize metrics data that is
-collected from a device like a sensor measuring the temperature of its surroundings.
-A graph is generated with the data plotted against the time intervals.
+[rapyuta.io](https://console.rapyuta.io) enables you to visualize ROS topic metrics data and system metrics data of a device. After device onboarding is successful, deploy a package on the device to get the ROS Master up and running. Now, you can subscribe to the system metrics and/or ROS topics for visualizing the respective metrics data as interactive graphs.
 
-1. Click **DEVICES** > select a device for visualizing its metrics > click **Metrics**.
-2. You will have to first subscribe to a ROS topic so as to visualize the data being published by the topic. To subscribe to a topic, click **Subscribe**.
-![Subscribe Topic](/images/getting-started/collect-visualise-metrics/subscribe-sys-metrics.png?classes=border,shadow&width=40pc)
-3. To add a new visualization, click **Add Cell**.
+In this quick how-to guide on visualizing metrics data, you will first publish data to a topic in rate mode by executing the command below on the device.
+
+```bash
+rostopic pub -r 1 /random std_msgs/Float32 5.0
+```
+
+1. Click **DEVICES** > select the device for visualizing its metrics > click **Metrics**.
+2. You will have to first subscribe to a ROS topic so as to visualize the data being published by the topic. To subscribe to a topic, click **Subscribe**. In this case, subscribe to the ***/random*** ROS topic.
+![Subscribe Topic](/images/chapters/developer-guide/tooling-automation/metrics/subscribe-rostopic.png?classes=border,shadow&width=50pc)
+1. To add a new visualization, click **Add Cell**.
 ![Add Cell](/images/getting-started/add-cell.png?classes=border,shadow&width=70pc)
 4. Click **Add a Query**.
 ![Add Query](/images/getting-started/add-query.png?classes=border,shadow&width=70pc)
-5. Select a metric, for instance, **TestIntTopic** in this example.
+5. Select the topic whose metrics need to be plotted on a graph. In this example, select the ***/random*** topic.
 6. Select field like **data** in this example.
 ![Select Data](/images/getting-started/select-field-data.png?classes=border,shadow&width=70pc)
-7. You may plot multiple functions such as mean, sum, median by clicking **1 Function**. Select the functions you want to visualize on the graph like *mean* in this example, and then click **Apply**.
+7. You may plot multiple functions such as mean, sum, median in the same graph. Select the functions you want to visualize on the graph like *mean* in this example, and then click **Apply**.
 ![Plot Function](/images/getting-started/function.png?classes=border,shadow&width=70pc)
-8. You may change the shape of the graph by selecting one of the available graph forms like *line*, *stacked*, *step-plot* or *bar*. In this example, a **Bar** graph is selected. To confirm the current settings, click the red colored check mark box at the top-right corner.
+8. You may change the shape of the graph by selecting one of the available graph forms like *line*, *stacked*, *step-plot* or *bar*. In this example, a **Bar** graph is selected. To confirm the current settings, click the red colored checkmark at the top-right corner.
 ![Bar chart](/images/getting-started/bar-chart.png?classes=border,shadow&width=70pc)
 9. To edit the ***title*** of the graph, click the pencil icon at the top right corner of the cell as indicated by 1 in the below image.
 10. To modify the ***current graph settings***, click the wheel icon at the top right corner of the cell as indicated by 2 in the below image.
@@ -32,3 +36,5 @@ A graph is generated with the data plotted against the time intervals.
 ![Refresh Interval](/images/getting-started/refresh-interval.png?classes=border,shadow&width=70pc)
 13. To change the time range, click **Past 5 minutes** drop-down list and select your desired range.
 ![Time Range](/images/getting-started/time-range.png?classes=border,shadow&width=70pc)
+14. The final graph may look like the one below:
+![Final graph](/images/chapters/developer-guide/tooling-automation/metrics/final-graph.png?classes=border,shadow&width=50pc)
