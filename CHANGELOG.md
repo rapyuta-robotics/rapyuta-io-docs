@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+- Release summary page for February 19, 2020
 ## [2.1.1 - 2020-02-12]
 ### Added
 - Release summary page
