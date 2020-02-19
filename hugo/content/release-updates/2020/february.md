@@ -76,4 +76,4 @@ pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.12.0-py2-
 * Fixed the shorter timeout value when remotely accessing cloud deployments and devices on rapyuta.io; it is increased to 15 minutes.
 
 #### Documentation
-Read more about the new panel that displays error logs when subscribing/unsubscribing metrics of a device here.
+Read more about the new panel that displays error logs when subscribing/unsubscribing metrics of a device [here](/developer-guide/tooling-automation/metrics/ros-support/#type-introspection-and-changing-data-types).
