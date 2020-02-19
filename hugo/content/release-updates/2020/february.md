@@ -44,3 +44,34 @@ Welcome to the February 12, 2020 release of rapyuta.io platform. This release in
 
 #### Improvements
 The rapyuta-agent services now have a delay between restarts in case of failure.
+
+## February 19
+Welcome to the February 19, 2020 release of rapyuta.io platform. There are significant updates in this release that we hope you will like.
+
+#### Features
+
+* **New system metric: Wireless**    
+  Subscribe to the new system metric for devices, Wireless, which provides information on the WiFi signal strength.
+* **Error logs for device metrics**    
+  A new panel for viewing error logs when subscribing/unsubscribing to metrics of a device is added.
+* **rapyuta.io Python SDK 0.12.0 released**    
+  * Defines a new system metric for subscription: Wireless
+  * Fixed typographical error in the SDK documentation
+
+```bash
+pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.12.0-py2-none-any.whl
+```
+
+#### Improvements
+
+* Improved the UI for editing the name of a device.
+* Improved the UI for updating or editing device configuration variables of a device.
+
+#### Notable Fixes
+
+* Fixed the issue in sorting a list of deployments based on ACTION.
+* Fixed the issue while toggling to the fullscreen mode when remotely SSHing into a device. Press ***CTRL+ESC*** to toggle to the fullscreen mode.
+* Fixed the issue in the help and support form. The form will be automatically filled with the registered email address.
+
+#### Documentation
+Read more about the new panel that displays error logs when subscribing/unsubscribing metrics of a device here.
