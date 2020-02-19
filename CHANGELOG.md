@@ -5,6 +5,8 @@
 - Update Python SDK version 0.12.0
 ### Added
 - Explain metrics subscribe/unsubscrbe error logs
+### Added
+- Release summary page for February 19, 2020
 ## [2.1.1 - 2020-02-12]
 ### Added
 - Release summary page

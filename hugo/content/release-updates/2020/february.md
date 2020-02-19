@@ -51,12 +51,13 @@ Welcome to the February 19, 2020 release of rapyuta.io platform. There are signi
 #### Features
 
 * **New system metric: Wireless**    
-  Subscribe to the new system metric for devices, Wireless, which provides information on the WiFi signal strength.
+  Subscribe to the new system metric, ***Wireless***, for devices. It provides information on the WiFi signal strength.
 * **Error logs for device metrics**    
   A new panel for viewing error logs when subscribing/unsubscribing to metrics of a device is added.
+  ![Metrics error logs](/images/chapters/developer-guide/tooling-automation/metrics/metrics-error-logs.png?classes=border,shadow&width=50pc)
 * **rapyuta.io Python SDK 0.12.0 released**    
   * Defines a new system metric for subscription: Wireless
-  * Fixed typographical error in the SDK documentation
+  * Fixed typographical errors in the SDK documentation
 
 ```bash
 pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.12.0-py2-none-any.whl
@@ -65,13 +66,14 @@ pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.12.0-py2-
 #### Improvements
 
 * Improved the UI for editing the name of a device.
-* Improved the UI for updating or editing device configuration variables of a device.
+* Improved the UI for updating or editing device configuration variables on the device details page.
 
 #### Notable Fixes
 
-* Fixed the issue in sorting a list of deployments based on ACTION.
-* Fixed the issue while toggling to the fullscreen mode when remotely SSHing into a device. Press ***CTRL+ESC*** to toggle to the fullscreen mode.
+* Fixed sort-by-action on the deployment list page.
+* Fixed use of ***ESC*** key to toggle fullscreen when remotely accessing cloud deployments or devices, which interfered with terminal applications like *vim*. Now, use ***CTRL+ESC*** to toggle fullscreen. 
 * Fixed the issue in the help and support form. The form will be automatically filled with the registered email address.
+* Fixed the shorter timeout value when remotely accessing cloud deployments and devices on rapyuta.io; it is increased to 15 minutes.
 
 #### Documentation
 Read more about the new panel that displays error logs when subscribing/unsubscribing metrics of a device here.
