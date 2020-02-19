@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Updated
+- Update Python SDK version 0.12.0
 ## [2.1.1 - 2020-02-12]
 ### Added
 - Release summary page
