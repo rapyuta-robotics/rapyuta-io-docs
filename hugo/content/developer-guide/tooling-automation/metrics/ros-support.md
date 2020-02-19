@@ -106,6 +106,9 @@ error message: ***Invalid message format for topic /geography***
     value:"arctic"
 }
 ```
+You can view the error logs when subscribing/unsubscribing to metrics of a device at the **Subscribe/Unsubscribe error logs** table.
+![Metrics error logs](/images/chapters/developer-guide/tooling-automation/metrics/metrics-error-logs.png?classes=border,shadow&width=50pc)
+
 If a ROS topic is composed of integer and string data types,
 for instance, consider a message ***sensor_msgs/BatteryState***,
 
