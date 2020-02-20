@@ -30,6 +30,13 @@ In this case, the latter network interface
 takes precedence. Make sure that the latter network interface falls in
 the same network as that defined in the dependent broker deployment.
 
+When the local communication broker reboots or reconnects to a
+network connection, the broker can change its
+IP address. The broker's IP address will not be the same as the one
+before rebooting or reconnecting. In production-like scenarios, it is
+recommended for the broker to not change its IP address. Hence, assign
+a static IP address to the local communication broker.
+
 {{% notice info %}}
 Follow this walkthrough to
 [deploy a local communication broker](/build-solutions/sample-walkthroughs/local-communication/).
