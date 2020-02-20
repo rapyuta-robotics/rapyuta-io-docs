@@ -76,4 +76,4 @@ You can determine the percentage of CPU used by a user, process, or system by su
 * ***usage_user*** is the percentage of time that the CPU is in user mode
 
 ## Wireless
-You can monitor and analyze information on the signal strength of a wifi connection by subscribing to the wireless metric. This information is extracted from /proc/net/wireless if a device is connected to a wifi connection.
+You can monitor and analyze the signal strength of a wifi connection by subscribing to the wireless metric. This information is extracted from ***/proc/net/wireless*** when a device is connected to a wifi connection.
