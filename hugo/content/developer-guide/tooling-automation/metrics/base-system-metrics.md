@@ -74,3 +74,6 @@ You can determine the percentage of CPU used by a user, process, or system by su
 * ***usage_steal*** is the percentage of time that the CPU is in stolen time or time spent in other operating systems in a virtualized environment
 * ***usage_system*** is the percentage of time that the CPU is in system mode
 * ***usage_user*** is the percentage of time that the CPU is in user mode
+
+## Wireless
+You can monitor and analyze information on the signal strength of a wifi connection by subscribing to the wireless metric. This information is extracted from /proc/net/wireless if a device is connected to a wifi connection.
