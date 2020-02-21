@@ -27,9 +27,9 @@ rostopic pub -r 1 /random std_msgs/Float32 5.0
 ![Select topic](/images/chapters/developer-guide/tooling-automation/metrics/select-random.png?classes=border,shadow&width=50pc)
 6. Select the topic's field like **data** in this example.
 ![Select Data](/images/chapters/developer-guide/tooling-automation/metrics/select-data.png?classes=border,shadow&width=50pc)
-1. You may plot multiple functions such as mean, sum, median in the same graph. Select the functions you want to visualize on the graph like *mean* in this example, and then click **Apply**.
+7. You may plot multiple functions such as mean, sum, median in the same graph. Click on **1Function** button to open the list of fuctions available. Select the functions you want to visualize on the graph like *mean* in this example, and then click **Apply**.
 ![Plot Function](/images/chapters/developer-guide/tooling-automation/metrics/select-function.png?classes=border,shadow&width=50pc)
-8. You may change the shape of the graph by selecting one of the available graph forms like *line*, *stacked*, *step-plot* or *bar*. In this example, a **Bar** graph is selected. To confirm the current settings, click the red colored checkmark at the top-right corner.
+8. You may change the shape of the graph by selecting one of the available graph forms like ***line***, ***stacked***, ***step-plot*** or ***bar***. In this example, a **Bar** graph is selected. To confirm the current settings, click the red colored checkmark at the top-right corner.
 ![Bar graph](/images/chapters/developer-guide/tooling-automation/metrics/bar-graph.png?classes=border,shadow&width=50pc)
 9. To edit the ***title*** of the graph, click the pencil icon at the top right corner of the cell as indicated by 1 in the below image.
 10. To modify the ***current graph settings***, click the wheel icon at the top right corner of the cell as indicated by 2 in the below image.
