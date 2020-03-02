@@ -4,7 +4,7 @@ description:
 type: developer-guide
 date: 2019-10-25T13:27:22+05:30
 pre: "c. "
-weight: 541
+weight: 540
 ---
 You can collect data by subscribing to ROS topics of deployed
 ROS applications. rapyuta.io supports primitive data types:
