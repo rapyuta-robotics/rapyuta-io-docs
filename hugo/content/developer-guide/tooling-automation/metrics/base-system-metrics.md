@@ -20,7 +20,7 @@ For instance, you can collect upload and download rate per second for all interf
 ## Disk usage
 Subscribing to disk usage metrics displays a graph that shows
 the information on disk usage metrics like available disk space,
-percentage of disk space used, etc. Read [more](/tooling-automation/metrics/reference/#disk-usage) to know the kind of disk usage metrics that are collected.
+percentage of disk space used, etc. Read [more](/developer-guide/tooling-automation/metrics/reference/#disk-usage) to know the kind of disk usage metrics that are collected.
 
 ## Disk IO
 You can gather metrics about disk traffic and timing by subscribing
