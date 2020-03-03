@@ -1,10 +1,10 @@
 ---
-title: "QOS Guarantees"
+title: "QOS Guarantee"
 description:
 type: developer-guide
-date: 2019-11-12T11:48:49+05:30
-pre: "b. "
-weight: 541
+date: 2020-03-03T16:14:19+05:30
+pre: "1. "
+weight: 536
 ---
 The QoS guarantee level is an agreement between the sender of a message and the receiver of a message that defines the guarantee of delivery for a specific message. In rapyuta.io, the messages are generally metrics or logs of a device, which are sent to rapyuta.io servers.
 

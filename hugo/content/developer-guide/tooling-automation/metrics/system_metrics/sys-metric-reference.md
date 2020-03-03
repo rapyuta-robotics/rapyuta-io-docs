@@ -2,9 +2,9 @@
 title: "System Metrics Reference"
 description:
 type: developer-guide
-date: 2020-02-28T14:39:10+05:30
-pre: "e. "
-weight: 543
+date: 2020-03-03T16:10:43+05:30
+pre: "2. "
+weight: 537
 ---
 ## Network IO interface
 Some of the metrics data measured in a network IO interface graph are:

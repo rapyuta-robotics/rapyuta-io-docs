@@ -1,9 +1,9 @@
 ---
-title: "ROS Topics Metrics"
+title: "Metrics from ROS Topics"
 description:
 type: developer-guide
 date: 2019-10-25T13:27:22+05:30
-pre: "c. "
+pre: "b. "
 weight: 540
 ---
 You can collect data by subscribing to ROS topics of deployed
