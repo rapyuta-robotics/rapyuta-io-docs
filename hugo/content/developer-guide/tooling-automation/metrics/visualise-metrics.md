@@ -6,7 +6,7 @@ date: 2019-10-30T16:28:20+05:30
 pre: "d. "
 weight: 542
 ---
-rapyuta.io enables you to visualize ROS topic metrics and system metrics data of a device. After onboarding, deploy a package on a device to get the ROS Master up and running. Now, you can subscribe to the system metrics and/or ROS topics for visualizing the respective metrics data as interactive graphs.
+rapyuta.io enables you to visualize a ROS topic and system metrics of a device. After onboarding, deploy a package on a device to get the ROS Master up and running. Now, you can subscribe to the system metrics and/or ROS topics for visualizing the respective metrics data as interactive graphs.
 
 In this quick how-to guide on visualizing metrics data, you will first publish data to a topic in rate mode by executing the command below on the device.
 
@@ -17,9 +17,8 @@ rostopic pub -r 1 /random std_msgs/Float32 5.0
 1. Click **DEVICES** > select the device for visualizing its metrics > click **Metrics**.
 2. You will have to first subscribe to a ROS topic to visualize the data being published by the topic. To subscribe to a topic, click **Subscribe**. In this case, subscribe to the ***/random*** ROS topic.
 ![Subscribe topic](/images/chapters/developer-guide/tooling-automation/metrics/click-subscribe.png?classes=border,shadow&width=50pc)
-![Metrics tags fields](/images/chapters/developer-guide/tooling-automation/metrics/tags-fields.png?classes=border,shadow&width=50pc)
 ![Subscribed topic](/images/chapters/developer-guide/tooling-automation/metrics/subscribe-rostopic.png?classes=border,shadow&width=50pc)
-3. To add a new visualization, click **Add Cell**.
+1. To add a new visualization, click **Add Cell**.
 ![Add Cell](/images/getting-started/add-cell.png?classes=border,shadow&width=70pc)
 1. Click **Add a Query**.
 ![Add Query](/images/getting-started/add-query.png?classes=border,shadow&width=70pc)
@@ -33,7 +32,7 @@ rostopic pub -r 1 /random std_msgs/Float32 5.0
 ![Bar graph](/images/chapters/developer-guide/tooling-automation/metrics/bar-graph.png?classes=border,shadow&width=50pc)
 9. To edit the ***title*** of the graph, click the pencil icon at the top right corner of the cell as indicated by 1 in the below image.
 10. To modify the ***current graph settings***, click the wheel icon at the top right corner of the cell as indicated by 2 in the below image.
-11. To ***close*** the cell, click on the cross mark at the top right corner of the cell as indicated by 3 in the below picture.
+11. To ***delete*** the cell, click on the cross mark at the top right corner of the cell as indicated by 3 in the below picture.
 ![Graph Window Options](/images/getting-started/graph-window.png?classes=border,shadow&width=70pc)
 12. To change the refresh interval, click **Every 60 seconds** drop-down list and select your desired interval.
 13. To change the time range, click **Past 5 minutes** drop-down list and select your desired range.
