@@ -6,15 +6,15 @@ date: 2019-10-30T16:28:20+05:30
 pre: "d. "
 weight: 542
 ---
-rapyuta.io enables you to visualize a ROS topic and system metrics of a device. After onboarding, deploy a package on a device to get the ROS Master up and running. Now, you can subscribe to the system metrics and/or ROS topics for visualizing the respective metrics data as interactive graphs.
-
-In this quick how-to guide on visualizing metrics data, you will first publish data to a topic in rate mode by executing the command below on the device.
+In this quick how-to guide on visualizing metrics data, you will first
+publish data to a topic in rate mode by executing the command below on
+the device.
 
 ```bash
 rostopic pub -r 1 /random std_msgs/Float32 5.0
 ```
 
-1. Click **DEVICES** > select the device for visualizing its metrics > click **Metrics**.
+1. Click **DEVICES** > select the device which is publishing ***/random*** topic > click **Metrics**.
 2. You will have to first subscribe to a ROS topic to visualize the data being published by the topic. To subscribe to a topic, click **Subscribe**. In this case, subscribe to the ***/random*** ROS topic.
 ![Subscribe topic](/images/chapters/developer-guide/tooling-automation/metrics/click-subscribe.png?classes=border,shadow&width=50pc)
 ![Subscribed topic](/images/chapters/developer-guide/tooling-automation/metrics/subscribe-rostopic.png?classes=border,shadow&width=50pc)
@@ -38,3 +38,10 @@ rostopic pub -r 1 /random std_msgs/Float32 5.0
 13. To change the time range, click **Past 5 minutes** drop-down list and select your desired range.
 14. The final graph may look like the one below:
 ![Final graph](/images/chapters/developer-guide/tooling-automation/metrics/graph-1.png?classes=border,shadow&width=50pc)
+
+
+{{% notice note %}}
+The procedure to visualize the system metrics is the same as
+the procedure to visualize metrics from a ROS topic as explained
+above.
+{{% /notice %}}
