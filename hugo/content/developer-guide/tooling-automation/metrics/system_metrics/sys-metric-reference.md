@@ -73,6 +73,6 @@ The following are the data measurements plotted in the graph viualization of CPU
 * ***usage_user*** is the percentage of time that the CPU is in user mode
 
 ## Wireless
-The wireless statistics are device dependent. Each driver will provide
-only some statistics based on hardware support. As the values depend on the driver, the range of values may change. Hence, you need to refer to your driver documentation for the correct interpretation of those values.
-For more information, read the manual page of [iwconfig(8)](https://linux.die.net/man/8/iwconfig).
+The wireless statistics are device-dependent. Each driver will provide
+only some statistics based on hardware support. As the values depend on the driver, the range of values may change. Hence, you need to refer to your driver documentation for the correct interpretation of those values. rapyuta.io extractss wireless metric data from ***/proc/net/wireless***.
+For more information, read the manual page of [iwconfig](https://linux.die.net/man/8/iwconfig).
