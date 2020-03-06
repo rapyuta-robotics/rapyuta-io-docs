@@ -68,6 +68,10 @@ Successfully Installed!
 Ensure that there's a <span style="color:green">**green**</span> dot next to the ***Broker Device***,
 which indicates that it is online on rapyuta.io.
 
+{{% notice note %}}
+In production-like scenarios, ensure the [broker device is assigned a static IP address](/developer-guide/manage-software-cycle/communication-topologies/local-communication-broker/).
+{{% /notice %}}
+
 #### Prepare Publisher Device
 The _Publisher Device_ is:
 
