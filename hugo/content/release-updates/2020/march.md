@@ -18,10 +18,10 @@ Search for dynamic configuration parameters using the new search feature.
 * Improved the device onboarding process; made it more resilient.
 * Restricted the ability of a user to remotely access (or SSH) into erroneous executables of deployments.
 
-#### Notable Bugs
+#### Notable Fixes
 
-* Fixed the error message seen for redundant device names when trying to update the names of devices.
-* Fixed an internal bug for lingering internal rapyuta.io service.
+* Fixed the error message seen for duplicate device names when trying to update the names of devices.
+* Fixed a bug for a lingering internal rapyuta.io service that occurs in specific cases on devices.
 * Fixed the issue of inconsistent error messages across validation tests for user input while creating packages in rapyuta.io
 
 #### Documentation
