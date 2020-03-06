@@ -1,15 +1,13 @@
 ---
-title: "Base System Metrics"
+title: "System Metrics Reference"
 description:
 type: developer-guide
-date: 2019-10-25T13:27:01+05:30
-pre: "a. "
-weight: 535
+date: 2020-03-03T16:10:43+05:30
+pre: "2. "
+weight: 537
 ---
-## Network IO Interface
-You can monitor and analyze real-time network performance metrics.
-For instance, you can collect upload and download rate per second for all interfaces for the last hour. When you subscribe to network IO per-interface metric,
-you will be shown a visualization (like a graph with x-axis and y-axis) with the following measurements:
+## Network IO interface
+Some of the metrics data measured in a network IO interface graph are:
 
 * ***bytes_sent*** is the total number of bytes sent by the network interface
 * ***bytes_recv*** is the total number of bytes received by the network interface
@@ -21,7 +19,7 @@ you will be shown a visualization (like a graph with x-axis and y-axis) with the
 * ***drop_out*** is the total number of transmitted packets dropped by the network interface
 
 ## Disk usage
-When you subscribe to disk usage metrics, a graph is shown with the following data measurements:
+The disk usage metrics data includes the following fields:
 
 * ***free*** is the amount of disk space that is freely available. It is an integer value shown as byte.
 * ***total*** is the total amount of disk space. It is an integer value shown as byte.
@@ -32,8 +30,7 @@ When you subscribe to disk usage metrics, a graph is shown with the following da
 * ***inodes_total*** is the total number of inodes. It is an integer value shown as files.
 
 ## Disk IO
-You can gather metrics about disk traffic and timing by subscribing
-to the disk IO, the graph of which displays a list of data measurements as given below:
+The following fields comprise the disk io metric:
 
 * ***reads*** is a counter that increments when a read request completes. It is an integer value.
 * ***writes*** is a counter that increments when a write request completes. It is an integer value.
@@ -46,7 +43,7 @@ to the disk IO, the graph of which displays a list of data measurements as given
 * ***iops_in_progress*** is the count of the number of IO requests that have been issued to the device but have not yet completed. It does not include IO requests that are in the queue but not yet issued to the device.
 
 ## Memory usage
-You can collect and visualize device memory metrics by subscribing to the memory usage system metric. A graph is displayed with a list of data measurements as given below:
+Some of the data collected by this metric includes:
 
 * ***available*** is the amount of memory that is available. It is an integer value shown as byte
 * ***available_percent*** is the percentage of memory that is available. It is a floating-point value shown as percentage
@@ -62,7 +59,7 @@ You can collect and visualize device memory metrics by subscribing to the memory
 * ***wired*** is the memory where the kernel and other low-level components like device drivers and virtual memory objects are stored.
 
 ## CPU load average
-You can determine the percentage of CPU used by a user, process, or system by subscribing to CPU load average metric. You can analyze the following data measurements from its graph:
+The following are the data measurements plotted in the graph viualization of CPU load average metric:
 
 * ***usage_guest*** is the percentage of time that the CPU is running a virtual CPU for a guest operating system
 * ***usage_guest_nice*** is the percentage of time that the CPU is running a virtual CPU for a guest operating system, which is low priority and can be interrupted by other processes.
@@ -74,3 +71,8 @@ You can determine the percentage of CPU used by a user, process, or system by su
 * ***usage_steal*** is the percentage of time that the CPU is in stolen time or time spent in other operating systems in a virtualized environment
 * ***usage_system*** is the percentage of time that the CPU is in system mode
 * ***usage_user*** is the percentage of time that the CPU is in user mode
+
+## Wireless
+The wireless statistics are device-dependent. Each driver will provide
+only some statistics based on hardware support. As the values depend on the driver, the range of values may change. Hence, you need to refer to your driver documentation for the correct interpretation of those values. rapyuta.io extractss wireless metric data from ***/proc/net/wireless***.
+For more information, read the manual page of [iwconfig](https://linux.die.net/man/8/iwconfig).

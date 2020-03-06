@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+- Explain wireless system metric
 ## [2.1.2 - 2020-02-19]
 ### Added
 - Explain metrics subscribe/unsubscrbe error logs
