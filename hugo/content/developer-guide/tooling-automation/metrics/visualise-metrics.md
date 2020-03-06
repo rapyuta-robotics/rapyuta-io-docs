@@ -6,7 +6,7 @@ date: 2019-10-30T16:28:20+05:30
 pre: "c. "
 weight: 542
 ---
-In this quick how-to guide on visualizing metrics data, you will first
+In this quick how-to guide on visualizing metrics from a ROS topic, you will
 publish data to a topic in rate mode by executing the command below on
 the device.
 
@@ -15,7 +15,7 @@ rostopic pub -r 1 /random std_msgs/Float32 5.0
 ```
 
 1. Click **DEVICES** > select the device which is publishing ***/random*** topic > click **Metrics**.
-2. You will have to first subscribe to a ROS topic to visualize the data being published by the topic. To subscribe to a topic, click **Subscribe**. In this case, subscribe to the ***/random*** ROS topic.
+2. To visualize the data being published by a ROS topic, you will have to first subscribe to the ROS topic by clicking **Subscribe**. In this example, subscribe to the ***/random*** ROS topic.
 ![Subscribe topic](/images/chapters/developer-guide/tooling-automation/metrics/click-subscribe.png?classes=border,shadow&width=50pc)
 ![Subscribed topic](/images/chapters/developer-guide/tooling-automation/metrics/subscribe-rostopic.png?classes=border,shadow&width=50pc)
 1. To add a new visualization, click **Add Cell**.
