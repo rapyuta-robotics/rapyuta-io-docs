@@ -27,5 +27,5 @@ Search for dynamic configuration parameters using the new search feature.
 
 #### Documentation
 
-* Read about the new wireless system metric that is now available for subscription.
-* Read the improved how-to guide on device metrics visualization.
+* Read about the new [wireless system metric](/developer-guide/tooling-automation/metrics/system_metrics/#wireless) that is now available for subscription.
+* Read the improved [how-to guide on device metrics visualization](/developer-guide/tooling-automation/metrics/visualise-metrics/).
