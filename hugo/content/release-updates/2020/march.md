@@ -11,6 +11,7 @@ Welcome to the March 11, 2020 release of the rapyuta.io platform. There are sign
 #### Features
 **Ability to search configurations**    
 Search for dynamic configuration parameters using the new search feature.
+![Search dynamic configurations](/images/search-configs-feature.png??classes=border,shadow&width=50pc)
 
 #### Improvements
 
