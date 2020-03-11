@@ -50,7 +50,7 @@ These are intermediate levels offered between the two extremes that may be more 
 The user may optionally enable transparent compression. The platform relies on “snappy” compression algorithm. Compression is not free. You usually pay a small penalty, with messages long repeats and sparse data such as laser scans, maps, etc. The benefits of a reduced payload more than compensate for this penalty and let the user send much larger volumes of data over the communication link.
 
 #### Multi-robot Support
-ROS has several key pain points when working with multi-robot systems that often need error-prone setups involving specific launch sequences, roslaunch/xml files, and remappings. rapyuta.io ships with special support for multi-robot systems and enforces runtime identities to robots automatically wrap and unwrap the for the right agent. 
+ROS has several key pain points when working with multi-robot systems that often need error-prone setups involving specific launch sequences, roslaunch/xml files, and remappings. rapyuta.io ships with special support for multi-robot systems and enforces runtime identities to robots automatically wrap and unwrap for the right agent. 
 
 {{% notice info %}}
 Learn more about [**dedicated ROS communication support**](/developer-guide/manage-software-cycle/communication-topologies/ros-support/)
