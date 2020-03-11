@@ -44,8 +44,8 @@ in multiple locations.
 
 rapyuta.io has first-class support for containers on the
 device and the cloud. It strives to maintain identical
-workflows, tools and interfaces while providing tools
-like the build engine that enbale developers to leverage
+workflows, tools, and interfaces while providing tools
+like the build engine that enables developers to leverage
 these new workflow patterns like gitops for robots.
 
 To set docker-compose as the default runtime on a device
@@ -60,7 +60,7 @@ application is a ROS package, a singleton ROS Master starts in
 an individual docker container different from that of the executables.
 
 All docker containers that are deployed are configured to
-use host the network driver. With the host network driver, the
+use the host network driver. With the host network driver, the
 container’s network stack is not isolated from the host. For example,
 if you run a docker container that uses port 80, the container’s
 application will be available on port 80 on the host’s IP address.

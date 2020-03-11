@@ -1,13 +1,16 @@
 ---
-title: "ROS Support"
+title: "Metrics from ROS Topics"
 description:
 type: developer-guide
 date: 2019-10-25T13:27:22+05:30
-pre: "c. "
-weight: 541
+pre: "b. "
+weight: 540
 ---
-You can collect data by subscribing to ROS topics of deployed
-ROS applications. rapyuta.io supports primitive data types:
+Once a device is onboarded on to rapyuta.io, deploy a package on it to get
+the ROS Master up and running. Now, you can subscribe to the ROS topic
+for collecting the metrics data published by the topic.
+ 
+rapyuta.io supports primitive data types:
 
 * boolean
 * integer (8, 16, 32, 64-bit)

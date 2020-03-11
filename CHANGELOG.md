@@ -1,6 +1,16 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.1.3 - 2020-03-11]
+### Added
+- Explain wireless system metric
+- Explain local IP static address
+- Release summary page for March 11, 2020
+### Updated
+- Device metrics visualization guide
+### Fixed
+- incorrect spelling and typos
+
 ## [2.1.2 - 2020-02-19]
 ### Added
 - Explain metrics subscribe/unsubscrbe error logs
