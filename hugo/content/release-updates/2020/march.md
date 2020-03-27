@@ -38,7 +38,7 @@ Welcome to the March 27, 2020 release of rapyuta.io Python **SDK 0.13.0**
 
 Python SDK 0.13.0 adds new methods to support static routes functionality. A static route
 provides a deterministic URL/route for an application while exposing a network endpoint
-externally, thus making the endpoint resilient to failure or re-deployment, facilitates
+externally, thus making the endpoint resilient to re-deployment, facilitates
 maintenance and upgrades to the backend/deployment while retaining the same unique
 globally available URL.
 
