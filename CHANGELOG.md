@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Updated
+- Update Python SDK version: 0.13.0
 ## [2.1.3 - 2020-03-11]
 ### Added
 - Explain wireless system metric
