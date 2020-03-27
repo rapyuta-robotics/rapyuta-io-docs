@@ -29,3 +29,20 @@ Search for dynamic configuration parameters using the new search feature.
 
 * Read about the new [wireless system metric](/developer-guide/tooling-automation/metrics/system_metrics/#wireless) that is now available for subscription.
 * Read the improved [how-to guide on device metrics visualization](/developer-guide/tooling-automation/metrics/visualise-metrics/).
+
+## March 27
+Welcome to the March 27, 2020 release of rapyuta.io Python **SDK 0.13.0**
+
+#### Feature
+**New methods to support static routes**    
+
+Python SDK 0.13.0 adds new methods to support static routes functionality. A static route
+provides a deterministic URL/route for an application while exposing a network endpoint
+externally, thus making the endpoint resilient to re-deployment, facilitates
+maintenance and upgrades to the backend/deployment while retaining the same unique
+globally available URL.
+
+Install the new SDK:
+```bash
+pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.13.0-py2-none-any.whl
+```
