@@ -65,7 +65,7 @@ They are:
 * **In Progress**: uploading a log file (to the cloud storage) is underway.
 * **Failed**: uploading a log file failed due to an error.
 * **Complete**: uploading a log file (to the storage) is succeeded.
-* **Cancelled**: ongoing process of uploading a log file is cancelled 
+* **Cancelled**: ongoing process of uploading a log file is canceled 
 
 #### Parameters for Uploading Log Files
 There are certain parameters to take care of while uploading a
@@ -94,18 +94,29 @@ with a new log file with the same name.
 
 ![Upload Parameters](/images/core-concepts/logging/device-logs/upload-logs/upload-log-dialog-box.png?classes=border,shadow&width=40pc)
 
+#### Direct Links for Sharing Log Files
+
 After successfully uploading the log file, a summary of the log details is shown.
 It includes information like the name of the log file, its size, creator and creation time
 among other details. It lets you download the log file, and also share it publicly outside
-rapyuta.io platform.
+rapyuta.io platform by creating ***direct links***.
 
-The ability to generate a publicly accessible permalink (URL) enables you to share a log
-file. Set an expiration time for the permalink for the duration for which the URL will be
-valid. You can create multiple permalinks that will be publicly accessible.
+![Log information](/images/core-concepts/logging/device-logs/upload-logs/log-information.png?classes=border,shadow&width=40pc)
+
+Sharing a log file requires you to generate a publicly accessible direct link (URL) by
+setting an expiration time for the direct link. The expiration time defines the duration
+for which the link will be valid. Multiple publicly accessible direct links are generated
+with different expiration times.
+
+![Direct link](/images/core-concepts/logging/device-logs/upload-logs/direct-link.png?classes=border,shadow&width=40pc)
 
 {{% notice note %}}
-A permalink is valid as long as the log file it's referring to is present in the
-cloud storage even if the device is deleted or is in a failed state.
+A direct link is valid as long as a log file is not deleted
+even if the device is deleted or is in a failed state.
+{{% /notice %}}
+
+{{% notice info %}}
+Private URL restricts the access of a log file within rapyuta.io platform.
 {{% /notice %}}
 
 You may also:
