@@ -94,13 +94,23 @@ with a new log file with the same name.
 
 ![Upload Parameters](/images/core-concepts/logging/device-logs/upload-logs/upload-log-dialog-box.png?classes=border,shadow&width=40pc)
 
-A summary of the log file is generated after completion as shown below:
-![Summary Post Upload](/images/core-concepts/logging/device-logs/upload-logs/log-file-summary.png?classes=border,shadow&width=40pc)
+After successfully uploading the log file, a summary of the log details is shown.
+It includes information like the name of the log file, its size, creator and creation time
+among other details. It lets you download the log file, and also share it publicly outside
+rapyuta.io platform.
 
-After successfully uploading the log file:
+The ability to generate a publicly accessible permalink (URL) enables you to share a log
+file. Set an expiration time for the permalink for the duration for which the URL will be
+valid. You can create multiple permalinks that will be publicly accessible.
+
+{{% notice note %}}
+A permalink is valid as long as the log file it's referring to is present in the
+cloud storage even if the device is deleted or is in a failed state.
+{{% /notice %}}
+
+You may also:
 
 *   ***view*** a list of all the log files that you uploaded for a device.
-*   ***download*** a log file locally on your system.
 *   ***delete*** a log file from the cloud storage.
 *   ***filter*** list of log files based on upload status.
 *   ***sort*** list of log files based on filename, file size and time of creation.
