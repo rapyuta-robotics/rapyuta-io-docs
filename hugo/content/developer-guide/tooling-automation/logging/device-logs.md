@@ -104,8 +104,8 @@ rapyuta.io platform by creating ***direct links***.
 ![Log information](/images/core-concepts/logging/device-logs/upload-logs/log-information.png?classes=border,shadow&width=40pc)
 
 Sharing a log file requires you to generate a publicly accessible direct link (URL) by
-setting an expiration time for the direct link. The expiration time defines the duration
-for which the link will be valid. Multiple publicly accessible direct links are generated
+setting an expiration time for the link. The expiration time defines the duration
+for which the link will be valid. Multiple publicly accessible direct links can be generated
 with different expiration times.
 
 ![Direct link](/images/core-concepts/logging/device-logs/upload-logs/direct-link.png?classes=border,shadow&width=40pc)
@@ -116,7 +116,8 @@ even if the device is deleted or is in a failed state.
 {{% /notice %}}
 
 {{% notice info %}}
-Private URL restricts the access of a log file within rapyuta.io platform.
+The private URL is a permanent URL of a log file. It provides access to the log file
+to rapyuta.io users in a project.
 {{% /notice %}}
 
 You may also:
