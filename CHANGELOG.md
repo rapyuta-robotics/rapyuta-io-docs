@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+#### Updated
+- Images showing new executable resource limits
 ## [2.1.4 - 2020-03-27]
 ### Added
 - release summary page for March 27, 2020
