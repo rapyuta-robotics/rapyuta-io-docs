@@ -65,7 +65,6 @@ They are:
 * **In Progress**: uploading a log file (to the cloud storage) is underway.
 * **Failed**: uploading a log file failed due to an error.
 * **Complete**: uploading a log file (to the storage) is succeeded.
-* **Cancelled**: ongoing process of uploading a log file is canceled 
 
 #### Parameters for Uploading Log Files
 There are certain parameters to take care of while uploading a
@@ -126,3 +125,4 @@ You may also:
 *   ***delete*** a log file from the cloud storage.
 *   ***filter*** list of log files based on upload status.
 *   ***sort*** list of log files based on filename, file size and time of creation.
+*   ***Cancel upload*** of an ongoing process of uploading a log file.
