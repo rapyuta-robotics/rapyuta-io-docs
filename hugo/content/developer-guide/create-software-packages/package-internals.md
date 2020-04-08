@@ -47,7 +47,7 @@ The number of volumes attached to a component must be less than or equal to the 
 {{% /notice %}}
 
 Mathematically,    
-number of volumes attached to a component **<=** floor(sum of all the cpu cores of all executables in the component)
+number of volumes attached to a component **<=** [floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions)(sum of all the cpu cores of all executables in the component)
 
 Suppose a component has two executables, **execA** and **execB**. The executables may have the following cpu core values:
 
