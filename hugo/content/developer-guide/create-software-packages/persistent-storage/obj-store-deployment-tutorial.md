@@ -33,17 +33,18 @@ or click the below button:
 13. The name of the executable is `minio_executable`
 14. Select **Docker** for **Executable Type**.
 15. In the **Docker image** box, enter `rrdockerhub/minio-server`
-16. To expose the file server application publicly over the internet, create a network endpoint by clicking **Add Endpoint**.
+16. Set **Resource limit** to **Small: 1 cpu core, 4 GiB memory**
+17. To expose the file server application publicly over the internet, create a network endpoint by clicking **Add Endpoint**.
 	1. The name for the endpoint is `FileStorage`
 	2. Select **Exposed externally** checkbox.
 	3. Select **HTTPS/WSS** for **Protocol**.
 	4. In the **Port** box, the default value is `443`, and it cannot be modified.
 	5. In the **Target Port** box, enter `9000`
-17. To restrict access to the publicly available file server application, add the below **CONFIGURATION PARAMETERS**: *MINIO_SECRET_KEY* and *MINIO_ACCESS_KEY*.
+18. To restrict access to the publicly available file server application, add the below **CONFIGURATION PARAMETERS**: *MINIO_SECRET_KEY* and *MINIO_ACCESS_KEY*.
 	6. Click **Add Parameter**.
 	7. In the **Name** box, enter `MINIO_SECRET_KEY`
 	8. Similarly, add another parameter `MINIO_ACCESS_KEY`
-18. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+19. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ## Deploy MinIO File Server Package
 
