@@ -1,10 +1,13 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.1. - 2020-04-08]
 #### Updated
 - Images showing new executable resource limits
+- Object store deployment walkthrough to specify a note on number of volumes that can be attached to a component
 ### Added
 - device logs permalink
+- release update page for April 08, 2020
 ## [2.1.4 - 2020-03-27]
 ### Added
 - release summary page for March 27, 2020
