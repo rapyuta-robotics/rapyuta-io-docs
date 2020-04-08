@@ -164,9 +164,9 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 17. The context directory: `turtlebot_navigation`
 18. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup sim.launch gui:=true`
 19. Select **Simulation** option.
-20. Set **Resource Limit** to **Med:2 cpu cores, 8 GiB memory**
+20. Set **Resource Limit** to **Medium:2 cpu cores, 8 GiB memory**
 {{% notice warning %}}
-For simulation, the resource limit should either be **Med** or **High**. Simulation has issues with **Low** resource limits.
+For simulation, the resource limit should either be **Medium** or **Large**. Simulation has issues with **Small** resource limits.
 {{% /notice %}}
 21. Add the following **ROS topics**:
     1.  **Name**: `/joint_states`, **QoS**: Low

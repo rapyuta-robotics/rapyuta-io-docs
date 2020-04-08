@@ -64,9 +64,9 @@ You will create two packages in the tutorial.
 17. In the **Command to run in the docker container** box, enter the command: `roslaunch turtlebot3_gazebo turtlebot3_autorace.launch`
 18. The **context directory** is `turtlebot_teleoperation`
 19. Select **Simulation** option. Enabling simulation feature automatically adds a Gazebo simulation specific endpoint, topics, services, inbound ROS interfaces, and a configuration parameter.
-20. Set **Resource Limit** to **Med:2 cpu cores, 8 GiB memory**.
+20. Set **Resource Limit** to **Medium:2 cpu cores, 8 GiB memory**.
 {{% notice warning %}}
-For simulation, the resource limit should either be **Med** or **High**. Simulation has issues with **Low** resource limits.
+For simulation, the resource limit should either be **Medium** or **Large**. Simulation has issues with **Small** resource limits.
 {{% /notice %}}
 21. Under **Catkin Build Parameters**,
     1. add the following **ROS Packages**:`turtlebot3_gazebo turtlebot3_description`
