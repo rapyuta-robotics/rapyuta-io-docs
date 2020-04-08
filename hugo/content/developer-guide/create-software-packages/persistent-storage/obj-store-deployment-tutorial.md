@@ -33,18 +33,17 @@ or click the below button:
 13. The name of the executable is `minio_executable`
 14. Select **Docker** for **Executable Type**.
 15. In the **Docker image** box, enter `rrdockerhub/minio-server`
-16. Set **Resource limit** to **Small: 1 cpu core, 4 GiB memory**
-17. To expose the file server application publicly over the internet, create a network endpoint by clicking **Add Endpoint**.
+16. To expose the file server application publicly over the internet, create a network endpoint by clicking **Add Endpoint**.
 	1. The name for the endpoint is `FileStorage`
 	2. Select **Exposed externally** checkbox.
 	3. Select **HTTPS/WSS** for **Protocol**.
 	4. In the **Port** box, the default value is `443`, and it cannot be modified.
 	5. In the **Target Port** box, enter `9000`
-18. To restrict access to the publicly available file server application, add the below **CONFIGURATION PARAMETERS**: *MINIO_SECRET_KEY* and *MINIO_ACCESS_KEY*.
+17. To restrict access to the publicly available file server application, add the below **CONFIGURATION PARAMETERS**: *MINIO_SECRET_KEY* and *MINIO_ACCESS_KEY*.
 	6. Click **Add Parameter**.
 	7. In the **Name** box, enter `MINIO_SECRET_KEY`
 	8. Similarly, add another parameter `MINIO_ACCESS_KEY`
-19. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+18. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ## Deploy MinIO File Server Package
 
@@ -124,16 +123,4 @@ A couple of observations made are:
 1. If **Data Permanence** deployment is stopped, the **Volume Storage** deployment will continue to remain deployed.
 2. If both **Data Permanence** and **Volume Storage** are running, you cannot stop **Volume Storage** before stopping **Data Permanence** because the volume is in use actively.
 3. The volume deployments of **Persistent Volume** package can be added to only one deployment at a given time.
-
-{{% notice note %}}
-The number of volumes attached to a component must be less than or equal to the sum of all the cores of all executables of a component.
-{{% /notice %}}
-
-Mathematically,    
-number of volumes attached to a component **<=** floor(sum of all the cores of all executables in the component)
-
-Suppose a component has two executables, **execA** and **execB**. The executables may have the following core cpu values:
-
-1. **execA**: 1 core cpu, **execB**: 0.5 core cpu, number of volumes attached is 1
-2. **execA**: 1 core cpu, **execB**: 2 core cpu, number of volumes attached <= 3
-3. **execA**: 0.5 core cpu, **execB**: 0.5 core cpu, number of volumes attached is 1
+4. The number of volumes attached to a component must be less than or equal to the sum of all the cores of all executables of a component. Learn more in [package internals](/developer-guide/create-software-packages/package-internals/#components).
