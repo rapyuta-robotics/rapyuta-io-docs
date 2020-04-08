@@ -124,7 +124,6 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 		[ROS Master](https://wiki.ros.org/Master) instead of running the *rosrun*
 		command, because the ROS Master will fail to start on _rosrun_, and
 		eventually, the deployment will fail as well.
-		![listenerExecutable](/images/tutorials/docker-pub-sub/docker-pubsub-listener-exec.png?classes=border,shadow&width=50pc)
 	10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 The package takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding
