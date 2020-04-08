@@ -47,13 +47,13 @@ The number of volumes attached to a component must be less than or equal to the 
 {{% /notice %}}
 
 Mathematically,    
-number of volumes attached to a component **<=** floor(sum of all the cores of all executables in the component)
+number of volumes attached to a component **<=** floor(sum of all the cpu cores of all executables in the component)
 
-Suppose a component has two executables, **execA** and **execB**. The executables may have the following core cpu values:
+Suppose a component has two executables, **execA** and **execB**. The executables may have the following cpu core values:
 
-1. **execA**: 1 core cpu, **execB**: 0.5 core cpu, number of volumes attached is 1
-2. **execA**: 1 core cpu, **execB**: 2 core cpu, number of volumes attached <= 3
-3. **execA**: 0.5 core cpu, **execB**: 0.5 core cpu, number of volumes attached is 1
+1. **execA**: 1 cpu core, **execB**: 0.5 cpu core, number of volumes attached is 1
+2. **execA**: 1 cpu core, **execB**: 2 cpu cores, number of volumes attached <= 3
+3. **execA**: 0.5 cpu core, **execB**: 0.5 cpu core, number of volumes attached is 1
 
 {{% notice note %}}
 Components are further nested into **plans**. A rapyuta.io "package" may contain multiple plans, and each plan represents a different configuration of a package. At this point, when you add a new package in the rapyuta.io, there is always a single plan associated with the package. A plan is uniquely identified by its plan ID
