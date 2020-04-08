@@ -124,3 +124,16 @@ A couple of observations made are:
 1. If **Data Permanence** deployment is stopped, the **Volume Storage** deployment will continue to remain deployed.
 2. If both **Data Permanence** and **Volume Storage** are running, you cannot stop **Volume Storage** before stopping **Data Permanence** because the volume is in use actively.
 3. The volume deployments of **Persistent Volume** package can be added to only one deployment at a given time.
+
+{{% notice note %}}
+The number of volumes attached to a component must be less than or equal to the sum of all the cores of all executables of a component.
+{{% /notice %}}
+
+Mathematically,    
+number of volumes attached to a component **<=** floor(sum of all the cores of all executables in the component)
+
+Suppose a component has two executables, **execA** and **execB**. The executables may have the following core cpu values:
+
+1. **execA**: 1 core cpu, **execB**: 0.5 core cpu, number of volumes attached is 1
+2. **execA**: 1 core cpu, **execB**: 2 core cpu, number of volumes attached <= 3
+3. **execA**: 0.5 core cpu, **execB**: 0.5 core cpu, number of volumes attached is 1
