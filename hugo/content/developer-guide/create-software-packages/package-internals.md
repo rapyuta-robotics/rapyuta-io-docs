@@ -42,6 +42,19 @@ A component is a set of executables. All executables are deployed in unison on
 the desired [*Component Runtime*](/developer-guide/create-software-packages/package-internals/#component-runtime).
 All executables of a component communicate via Inter-Process Communication (IPC). An executable listening on a port is accessible to its sibling executables via localhost.
 
+{{% notice info %}}
+The number of volumes attached to a component must be less than or equal to the sum of all the cpu cores of all executables of a component.
+{{% /notice %}}
+
+Mathematically,    
+number of volumes attached to a component **<=** [floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions)(sum of all the cpu cores of all executables in the component)
+
+Suppose a component has two executables, **execA** and **execB**. The executables may have the following cpu core values:
+
+1. **execA**: 1 cpu core, **execB**: 0.5 cpu core, number of volumes attached is 1
+2. **execA**: 1 cpu core, **execB**: 2 cpu cores, number of volumes attached <= 3
+3. **execA**: 0.5 cpu core, **execB**: 0.5 cpu core, number of volumes attached is 1
+
 {{% notice note %}}
 Components are further nested into **plans**. A rapyuta.io "package" may contain multiple plans, and each plan represents a different configuration of a package. At this point, when you add a new package in the rapyuta.io, there is always a single plan associated with the package. A plan is uniquely identified by its plan ID
 {{% /notice %}}
