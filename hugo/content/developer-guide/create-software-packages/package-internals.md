@@ -43,7 +43,7 @@ the desired [*Component Runtime*](/developer-guide/create-software-packages/pack
 All executables of a component communicate via Inter-Process Communication (IPC). An executable listening on a port is accessible to its sibling executables via localhost.
 
 {{% notice info %}}
-The number of volumes attached to a component must be less than or equal to the sum of all the cores of all executables of a component.
+The number of volumes attached to a component must be less than or equal to the sum of all the cpu cores of all executables of a component.
 {{% /notice %}}
 
 Mathematically,    
