@@ -11,8 +11,8 @@ When running behind such a reverse proxy, `rosbridge_websocket` fails at the con
 
 To workaround this limitation,
 
-1. An additional argument, `websocket_external_port` needs to be included in the launch spec and set it to 80.
-2. The `rosbridge_suite` needs to be added as a git submodule into your workspace.
+1. An additional argument, `websocket_external_port` needs to be included in the launch spec and should be set to 80.
+2. The `rosbridge_suite` repo needs to be added as a git submodule into your workspace.
 
 An example launch spec would look something like this:
 ```
@@ -32,9 +32,9 @@ An example launch spec would look something like this:
 
 The [command center](/quick-walkthrough/#create-command-center-package) package in the quick walkthrough can be used as a reference as to how to pass `websocket_external_port`.
 
-Some things to note in the command center package mentioned above:
+Some things to note in the example command center package mentioned above:
 
-1. The latest version of rosbridge is not yet released as a package (as on 13/04/2020). Hence, the [`rosbridge_suite`](https://github.com/RobotWebTools/rosbridge_suite) repo is added as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) into the [io_tutorials](https://github.com/rapyuta-robotics/io_tutorials) repository.
-2. The launch file of the command center at `io_turtlesim/io_turtle_command_center/launch/command_center.launch` has an additional argument called `websocket_external_port` and is set to `80`. This is irrespective of the port on which the websocket server is listening on.
+1. The [PR](https://github.com/RobotWebTools/rosbridge_suite/pull/468) for the external port feature has not been released and packaged yet (as on 13/04/2020). Hence, the [`rosbridge_suite`](https://github.com/RobotWebTools/rosbridge_suite) repo (devel branch) is added as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) into the [io_tutorials](https://github.com/rapyuta-robotics/io_tutorials) repository. You can choose to add a different commit other than devel, as long as it includes the commits in the above linked PR. 
+2. The launch file of the command center at `io_turtlesim/io_turtle_command_center/launch/command_center.launch` has an additional argument called `websocket_external_port` and is set to `80`. Due to the way our proxies work, irrespective of the port on which the websocket server is listening on, the external port needs to be set to 80 in the launch file.
 
-**P.S.:** This github issue throws more light on the issue and why the external port needs to be set: [https://github.com/RobotWebTools/rosbridge_suite/pull/468] (https://github.com/RobotWebTools/rosbridge_suite/pull/468)
+**P.S.:** This github PR and the issues linked under it, throws more light on the issue and the need for external port: [https://github.com/RobotWebTools/rosbridge_suite/pull/468] (https://github.com/RobotWebTools/rosbridge_suite/pull/468)
