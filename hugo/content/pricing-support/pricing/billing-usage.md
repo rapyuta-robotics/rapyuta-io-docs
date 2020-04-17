@@ -42,3 +42,25 @@ You can **delete any existing credit card** except the primary card because it i
 If you want to unsubscribe, or cancel the current plan, or upgrade to another plan,
 please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
 {{% /notice %}}
+
+## Consumable Items
+
+Device deployment hours, cloud deployment hours, volume deployment hours, and add-ons are the consumable items or billable items in rapyuta.io.
+
+You will incur overage charges when you exhaust all deployment hours of your subscribed plan. These additional charges are levied only for what you use.
+
+{{% notice info %}}
+In the case of volume deployment hours, rapyuta.io provides SSD disks as persistent storage volumes. The disks are of ***32GiB***, ***64GiB***, ***128GiB***, ***256GiB*** and ***512GiB*** sizes.
+{{% /notice %}}
+
+Add-ons are discrete and countable items such as devices added to rapyuta.io or active users of rapyuta.io. You can purchase add-ons to increase the available
+limits on devices and users provided by your subscribed plan.
+
+To add or remove add-ons in rapyuta.io:
+
+1. Click **Add/Remove add-ons** adjacent to the add-on name.
+   ![Add device add-on](/images/pricing/billing/add-device-addon.png?classes=border,shadow&width=50pc)
+2. Increase or decrease the count of devices or users by using the arrows.
+3. Click **UPDATE**.
+
+![Add-ons](/images/pricing/billing/device-addons.png?classes=border,shadow&width=50pc)
