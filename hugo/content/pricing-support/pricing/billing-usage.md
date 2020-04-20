@@ -7,7 +7,7 @@ pre: "2. "
 weight: 715
 ---
 ## Consumable Items
-Cloud deployment hours, volume deployment hours, and add-ons (devices, users and static routes) are the consumable items in rapyuta.io.
+Each subscription plan in rapyuta.io includes a predefined number of complementary units of consumable resources or units such as cloud deployment hours, volume deployment hours, connected devices, users, and static routes. To cater to different user requirements rapyuta.io allows you to purchase specific additional resources (up-to-the predefined maximum caps for the plan) at an additional cost.
 
 ![Billing Usage](/images/pricing/billing/billing-usage.png?classes=border,shadow&width=50pc)
 
@@ -60,7 +60,7 @@ The subscription fee is recurring and prepaid. The credit card will be charged m
 * The pie chart provides you insights into the relative component of any
   *additional usage charges* and *standard subscription charges*. Additional usage indicates the count of additional devices, users, cloud deployment hours, device deployment hours, and volume deployment hours.
 
-## Credit Card Information
+## Payment Method
 The admin of an organization can **add multiple credit cards** to the organization's billing account. But, only one credit card is made the **primary** or **default** card, which is used to charge the subscription fee and additional amount for using rapyuta.io resources.
 
 You can **delete any existing credit card** except the primary card because it is used for monetary transactions. If you want to delete the primary credit card, ensure you make another card a primary card before deleting the previous one.
