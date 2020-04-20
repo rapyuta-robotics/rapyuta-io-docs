@@ -30,13 +30,11 @@ You will create a ROS package with two components say *compA* and
   are (1 cpu core, 4GiB memory) while the other executable has (2 cpu core, 8GiB memory).
   You will create 3 replicas of *compA*.
 * Suppose *compB* will have a single executable that gets
-  deployed when *compB* is deployed on a device. So, *compB* is charged
-  for device deployment hours.
-  
-You will deploy a persistent storage volume of 32GiB size,
-which will be used by a deployment of the ROS package.
-So, this persistent volume deployment is charged for
-volume deployment hours.
+  deployed when *compB* is deployed on a device.
+* You will deploy a persistent storage volume of 32GiB size,
+  which will be used by a deployment of the ROS package.
+  So, this persistent volume deployment is charged for
+  volume deployment hours.
 
 You will then deploy the ROS package and have it run for 10 hours
 a day.
