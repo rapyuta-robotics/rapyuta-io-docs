@@ -38,14 +38,4 @@ The professional plan is advocated for small and medium businesses, and startups
 ## Enterprise Plan
 
 If you are building large commercial prototypes and are looking
-for a customized plan for your needs, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
-
-## pay-as-you-go and included units
-
-The three plans - community, professional and enterprise - mention about included units and pay-as-you-go units.
-
-* **pay-as-you-go**    
-You pay for what you use. Nothing more or less.
-
-* **included**    
-The number of units provided by rapyuta.io in the subscribed plan.
+for a customized plan for your needs, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.    

@@ -7,17 +7,27 @@ pre: "2. "
 weight: 715
 ---
 ## Consumable Items
-Cloud deployment hours, device deployment hours, volume deployment hours, and add-ons (devices, users and static routes) are the consumable items or billable items in rapyuta.io.
+Cloud deployment hours, volume deployment hours, and add-ons (devices, users and static routes) are the consumable items in rapyuta.io.
 
 ![Billing Usage](/images/pricing/billing/billing-usage.png?classes=border,shadow&width=50pc)
 
-Overage charges will be incurred when all of the deployment hours of the subscribed plan are exhausted. These additional charges are levied only for what you use.
+Overage charges will be incurred for each resource in the instance where the included quota corresponding to that resource in the subscribed plan is exhausted. These additional charges are levied only for what you use.
 
 * The ***Current Usage*** is the count of units currently being used.
 * The ***Included Units*** is the count of units included in the subscribed plan.
+* The ***Max Units*** is the count of maximum units available in the subscribed plan.
 * The ***Add-Ons*** is the current count of add-ons you have purchased.
 
-Add-ons are discrete and countable items such as devices added to rapyuta.io or active users of rapyuta.io. You can purchase add-ons to increase the available limits on devices and users provided by your subscribed plan.
+{{% notice info %}}
+In the case of volume deployment hours, rapyuta.io provides SSD disks as persistent storage volumes. The disks are of **1TiB** and **2TiB** size for community and professional plans respectively.
+{{% /notice %}}
+
+#### Purchasing Additional Consumable Resources
+You can augment the number of allocated consumable resources in a subscription plan to suit your needs by purchasing the required
+prepaid add-ons.
+
+These additional allocations augment the allowed resource limits
+against your subscription and are charged monthly on a pro-rata basis.
 
 Add or remove add-ons in rapyuta.io:
 
@@ -27,8 +37,11 @@ Add or remove add-ons in rapyuta.io:
 3. Click **UPDATE**.
    ![Add-ons](/images/pricing/billing/increase-addon-count.png?classes=border,shadow&width=50pc)
 
+#### pay-as-you-go units
+You pay for what you use. Nothing more or less.
+
 {{% notice info %}}
-The total available units for use is the sum of included units and add-ons.
+The total available units for use is the sum of maximum units, included units and add-ons.
 {{% /notice %}}
 
 ## Billing
