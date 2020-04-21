@@ -18,11 +18,11 @@ rapyuta.io offers a community plan with a basic set of bundled complementary res
 Additional [consumable units](/pricing-support/pricing/billing-usage/#consumable-items) (upto the predefined limits for the plan) or optional resources such as persistent storage can be availed on a pay-as-you-go basis. This requires the user to add a valid [payment method](/pricing-support/pricing/billing-usage/#credit-card-information) on the platform.
 
 #### Expiry of cloud deployment resource quota
-On __expiry of credits__ for cloud deployement hours the platform will __stop all running  cloud deployments__. All other functionality of the platform remains unaffected.
+On the __expiry of credits__ for cloud deployment hours in the Community Plan, the platform will __stop all running  cloud deployments__. All other functionality of the platform remains unaffected.
 
 To continue using cloud deployments the user __must__ add a valid payment method by visiting the [Billing](/pricing-support/pricing/billing-usage/) panel.
 
-__Email Reminders:__ - a notification is sent  at **60%**, and another one at **90%**. A final email notification with a payment method is sent out when usage hits **100%** 
+__Email Reminders:__ - a notification is sent when usage hits **60%**, and next at **90%**. A final email notification with a payment method is sent out  **100%** 
 
 {{% notice note %}}
 Definition of cloud deployment is: any deployment with at least single cloud component
@@ -31,7 +31,7 @@ Definition of cloud deployment is: any deployment with at least single cloud com
 
 #### Expiry of trial period
 
-On __end of the stipulated trial period__ the platform will __stop all running deployments__ and __delete all devices__ onboarded by the user. 
+At the __end of the stipulated trial period__ of the Community Plan, the platform will __stop all running deployments__ and __delete all devices__ on-boarded by the user. 
 Since the deletion of resources is *__irreversible__*, the deployments and devices cannot be restored. Consequently, you will lose any information, like logs, associated with those resources.
 
 

@@ -7,7 +7,7 @@ pre: "2. "
 weight: 715
 ---
 ## Consumable Items
-Each subscription plan in rapyuta.io includes a predefined number of complementary units of consumable resources or units such as cloud deployment hours, volume deployment hours, devices, users, and static routes. To cater to different user requirements rapyuta.io allows you to purchase specific additional resources (up-to-the predefined maximum caps for the plan) at an additional cost.
+Each subscription plan in rapyuta.io includes a predefined number of complementary consumable resources or units such as cloud deployment hours, volume deployment hours, devices, users, and static routes. To cater to different user requirements rapyuta.io allows you to purchase specific add-on units (up-to-the predefined maximum caps for the plan) at an additional cost.
 
 ![Billing Usage](/images/pricing/billing/billing-usage.png?classes=border,shadow&width=50pc)
 
@@ -25,9 +25,7 @@ There also exists a cap on the total allocable quota of volumes and total disk s
 
 #### Additional Consumable Resources
 You can augment the number of allocated consumable resources in a subscription plan to suit your needs by purchasing the required
-prepaid add-ons.
-
-These additional allocations augment the allowed resource limits against your subscription and are charged on a monthly basis.
+prepaid add-ons. These additional allocations augment the allowed resource limits against your subscription and are charged on a monthly basis.
 
 ##### Add or remove add-ons in rapyuta.io:
 
