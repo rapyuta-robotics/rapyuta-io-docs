@@ -54,37 +54,37 @@ $0.00025 * 32 * 10 * 30 = ***$2.4***
 Total pay as you use charges: $270 + $2.4 = **$272.4**
 
 Let’s assume you may require more add-ons, for example, you
-add 5 robots.
+add 5 devices.
 
-Add-ons price per robot per month is $100<br>
-Add-ons price for 5 robots per month: $100 * 5 = **$500**
+Add-ons price per device per month is $100<br>
+Add-ons price for 5 devices per month: $100 * 5 = **$500**
 
 Total charges: $272.4 + $500 = **$772.4**
 
 ### Add-ons Pricing Calculation
-The add-ons (robots, users and static-routes) are charged differently
+The add-ons (devices, users and static-routes) are charged differently
 from the deployment hours.
 
 For example, let's assume you have subscribed to one of the plans on
-March 1. Suppose you add 5 additional robots on March 10. You will
-be charged for those 5 robots. Now, going further, you may experience
+March 1. Suppose you add 5 additional devices on March 10. You will
+be charged for those 5 devices. Now, going further, you may experience
 either of the following three cases:
 
 #### Case 1
-Suppose you add 3 more robots on March 20. You will be charged for
-these robots. So, the total number of robots added till now is 8
-(5 + 3), and an overage charge for 8 robots is reflected in the final
+Suppose you add 3 *devices add-on* on March 20. You will be charged for
+these devices. So, the total number of devices added till now is 8
+(5 + 3), and an overage charge for 8 devices is reflected in the final
 bill.
 
 #### Case 2
-Suppose you remove 2 robots on March 20. The robots add-on count
+Suppose you remove 2 *devices add-on* on March 20. The *devices add-on* count
 will immediately decrease to 3. You will be charged for
-5 robots (that were added on March 10) in the current bill.
-The removed robots will not be charged in the next month's bill.
+5 devices (that were added on March 10) in the current bill.
+The removed devices will not be charged in the next month's bill.
 
 #### Case 3
-Suppose you neither add nor remove any robots after March 10. You will be
-charged for the 5 robots that you added on March 10.
+Suppose you neither add nor remove any *devices add-on* after March 10. You will be
+charged for the 5 *devices add-on* that you added on March 10.
 
 Your credit card will, eventually, be charged with the final bill amount
 on the first day of the next month.

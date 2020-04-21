@@ -7,7 +7,7 @@ pre: "2. "
 weight: 715
 ---
 ## Consumable Items
-Each subscription plan in rapyuta.io includes a predefined number of complementary units of consumable resources or units such as cloud deployment hours, volume deployment hours, connected devices, users, and static routes. To cater to different user requirements rapyuta.io allows you to purchase specific additional resources (up-to-the predefined maximum caps for the plan) at an additional cost.
+Each subscription plan in rapyuta.io includes a predefined number of complementary units of consumable resources or units such as cloud deployment hours, volume deployment hours, devices, users, and static routes. To cater to different user requirements rapyuta.io allows you to purchase specific additional resources (up-to-the predefined maximum caps for the plan) at an additional cost.
 
 ![Billing Usage](/images/pricing/billing/billing-usage.png?classes=border,shadow&width=50pc)
 
@@ -19,30 +19,23 @@ Overage charges will be incurred for each resource in the instance where the inc
 * The ***Add-Ons*** is the current count of add-ons you have purchased.
 
 {{% notice info %}}
-In the case of volume deployment hours, rapyuta.io provides SSD disks as persistent storage volumes. The disks are of **1TiB** and **2TiB** size for community and professional plans respectively.
+In the case of volume deployment hours, rapyuta.io provides SSD disks as persistent storage volumes. The disks are of 32GiB, 64GiB, 128GiB, 256GiB and 512GiB sizes. 
+There also exists a cap on the total allocable quota of volumes and total disk space per account which is **10 volumes / 1TiB** and **20 volumes / 2TiB** size for community and professional plans respectively.
 {{% /notice %}}
 
-#### Purchasing Additional Consumable Resources
+#### Additional Consumable Resources
 You can augment the number of allocated consumable resources in a subscription plan to suit your needs by purchasing the required
 prepaid add-ons.
 
-These additional allocations augment the allowed resource limits
-against your subscription and are charged monthly on a pro-rata basis.
+These additional allocations augment the allowed resource limits against your subscription and are charged on a monthly basis.
 
-Add or remove add-ons in rapyuta.io:
+##### Add or remove add-ons in rapyuta.io:
 
 1. Click **Add/Remove add-ons** adjacent to the add-on name.
-   ![Add device add-on](/images/pricing/billing/add-user-addon.png?classes=border,shadow&width=50pc)
-2. Increase or decrease the count of devices or users by using the arrows.
+   ![Add device add-on](/images/pricing/billing/add-route-addon.png?classes=border,shadow&width=50pc)
+2. Increase or decrease the count of static routes by using the arrows.
 3. Click **UPDATE**.
    ![Add-ons](/images/pricing/billing/increase-addon-count.png?classes=border,shadow&width=50pc)
-
-#### pay-as-you-go units
-You pay for what you use. Nothing more or less.
-
-{{% notice info %}}
-The total available units for use is the sum of maximum units, included units and add-ons.
-{{% /notice %}}
 
 ## Billing
 On subscribing to one of the plans, you (the admin of organization or
@@ -58,7 +51,7 @@ The subscription fee is recurring and prepaid. The credit card will be charged m
 * The **NEXT BILLING DATE** is the date when the credit card will be charged towards the payment of the final bill including taxes.
 * The **PLAN** displays the plan you have subscribed to.
 * The pie chart provides you insights into the relative component of any
-  *additional usage charges* and *standard subscription charges*. Additional usage indicates the count of additional devices, users, cloud deployment hours, device deployment hours, and volume deployment hours.
+  *additional usage charges* and *standard subscription charges*. Additional usage indicates the count of additional devices, users, cloud deployment hours and volume deployment hours.
 
 ## Payment Method
 The admin of an organization can **add multiple credit cards** to the organization's billing account. But, only one credit card is made the **primary** or **default** card, which is used to charge the subscription fee and additional amount for using rapyuta.io resources.
