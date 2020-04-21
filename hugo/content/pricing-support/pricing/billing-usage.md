@@ -7,7 +7,7 @@ pre: "2. "
 weight: 715
 ---
 ## Consumable Items
-Each subscription plan in rapyuta.io includes a predefined number of complementary consumable resources or units such as cloud deployment hours, volume deployment hours, devices, users, and static routes. To cater to different user requirements rapyuta.io allows you to purchase specific add-on units (up-to-the predefined maximum caps for the plan) at an additional cost.
+Each subscription plan in rapyuta.io includes a predefined number of complementary consumable resources or units such as cloud deployment hours, volume deployment hours, devices, users, and static routes. To cater to different user requirements rapyuta.io allows you to purchase specific add-on units (up to predefined maximum caps for the plan) at an additional cost.
 
 ![Billing Usage](/images/pricing/billing/billing-usage.png?classes=border,shadow&width=50pc)
 
@@ -19,15 +19,14 @@ Overage charges will be incurred for each resource in the instance where the inc
 * The ***Add-Ons*** is the current count of add-ons you have purchased.
 
 {{% notice info %}}
-In the case of volume deployment hours, rapyuta.io provides SSD disks as persistent storage volumes. The disks are of 32GiB, 64GiB, 128GiB, 256GiB and 512GiB sizes. 
-There also exists a cap on the total allocable quota of volumes and total disk space per account which is **10 volumes / 1TiB** and **20 volumes / 2TiB** size for community and professional plans respectively.
+In the case of volume deployment hours, rapyuta.io provides SSD disks as persistent storage volumes. The disks are of **32GiB**, **64GiB**, **128GiB**, **256GiB** and **512GiB** sizes. There also exists a cap on the total allocated quota of volumes and total disk space per account which is **10 volumes / 1TiB** and **20 volumes / 2TiB** size for community and professional plans respectively.
 {{% /notice %}}
 
 #### Additional Consumable Resources
 You can augment the number of allocated consumable resources in a subscription plan to suit your needs by purchasing the required
 prepaid add-ons. These additional allocations augment the allowed resource limits against your subscription and are charged on a monthly basis.
 
-##### Add or remove add-ons in rapyuta.io:
+##### Add or remove add-ons
 
 1. Click **Add/Remove add-ons** adjacent to the add-on name.
    ![Add device add-on](/images/pricing/billing/add-route-addon.png?classes=border,shadow&width=50pc)
@@ -37,9 +36,9 @@ prepaid add-ons. These additional allocations augment the allowed resource limit
 
 ## Billing
 On subscribing to one of the plans, you (the admin of organization or
-individual user) can access the **Billing** panel. *Billing* aggregates information
-on the charges incurred on consumable units, and displays it in
-tabular and graphical forms.
+individual user) can access the **Billing** panel.
+*Billing* aggregates information on the charges incurred on
+consumable units, and displays it in tabular and graphical forms.
 
 The subscription fee is recurring and prepaid. The credit card will be charged monthly on the first day of the month. It means the payment receipt is generated at the start of the month. You will receive an email with the payment receipt at the start of every month. The payment receipt shows the subscription fee of the current month and usage charges of the previous month.
 

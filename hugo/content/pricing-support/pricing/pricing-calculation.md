@@ -6,7 +6,8 @@ date: 2019-10-24T14:00:41+05:30
 pre: "3. "
 weight: 720
 ---
-This pricing example is set outside the free trial period.
+This pricing example is based on the **Professional Plan**
+subscription.
 
 Let’s assume your ROS software application has two modules say
 *A* and *B*. You intend to deploy three instances of
@@ -77,14 +78,15 @@ these devices. So, the total number of devices added till now is 8
 bill.
 
 #### Case 2
-Suppose you remove 2 *devices add-on* on March 20. The *devices add-on* count
-will immediately decrease to 3. You will be charged for
-5 devices (that were added on March 10) in the current bill.
-The removed devices will not be charged in the next month's bill.
+Suppose you remove 2 *devices add-on* on March 20.
+The *devices add-on* count will immediately decrease to 3.
+You will be charged for 5 devices (that were added on March 10)
+in the current bill. The removed devices will not be charged in
+the next month's bill.
 
 #### Case 3
-Suppose you neither add nor remove any *devices add-on* after March 10. You will be
-charged for the 5 *devices add-on* that you added on March 10.
+Suppose you neither add nor remove any *devices add-on* after March 10. You will be charged for the 5 *devices add-on* that you
+added on March 10.
 
 Your credit card will, eventually, be charged with the final bill amount
 on the first day of the next month.
