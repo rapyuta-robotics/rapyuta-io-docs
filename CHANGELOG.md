@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.1.6 - 2020-04-22]
 ### Added
 - Release update page for April 22, 2020
 ### Updated
