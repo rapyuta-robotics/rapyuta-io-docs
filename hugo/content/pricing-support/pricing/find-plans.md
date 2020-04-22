@@ -37,7 +37,7 @@ Since the deletion of resources is ***irreversible***, the deployments and devic
 
 To activate the full functionality of the platform again, you **must** add a valid payment method on the [Billing](/pricing-support/pricing/billing-usage/) panel.
 
-The first reminder to add a payment method is sent ***7 days*** prior to the expiration date, the next one ***2 days*** prior to the expiration date and the final one ***3 hours*** before expiry.
+The first reminder to add a payment method is sent ***7 days*** prior to the expiration date, the second one ***2 days*** prior to the expiration date, the third one ***1 day*** prior to the expiration date and the final one ***3 hours*** before expiry.
 
 ## Professional Plan
 The professional plan is recommended for small and medium businesses and startups in the pilot phase. This plan includes a larger quota of [consumable resources](/pricing-support/pricing/billing-usage/#consumable-items), email support, basic SLA guarantees and access to premium consulting support from Rapyuta engineers that empower the user to build increasingly complex solutions.
