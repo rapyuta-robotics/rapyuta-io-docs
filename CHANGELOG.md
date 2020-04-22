@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+- Release update page for April 22, 2020
 ### Updated
 - New pricing plans and information
 ## [2.1.5 - 2020-04-08]
