@@ -6,7 +6,7 @@ weight: 835
 ---
 ## May 4
 
-We have released an hotfix to address a vulnerability in SaltStack(which is internally used by rapyuta.io for managing devices.) 
+We have released a hotfix to address a vulnerability in SaltStack(which is internally used by rapyuta.io for managing devices.) 
 As a security precaution, we have updated authentication keys for all the devices on-boarded to the platform, if you already have an existing device on rapyuta.io platform, please re-onboard the device to use it. 
 To re-onboard your device, follow the below steps:     
 1. Please select the device    
