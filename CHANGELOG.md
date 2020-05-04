@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ## [Unreleased]
+
+## [2.1.7 - 2020-05-04]
+- Release update page about vulernability for May 4, 2020
 ## [2.1.6 - 2020-04-22]
 ### Added
 - Release update page for April 22, 2020
