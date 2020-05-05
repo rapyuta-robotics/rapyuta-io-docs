@@ -35,7 +35,7 @@ to arbitrary ROS topic types. One could use this to collect measurements
 about parameters like temperature, distance or even application and
 business metrics such as orders completed or time to delivery.
 
-After collecting metrics of s device, the user can query and visualize this information on a dashboard.
+After collecting metrics of a device, the user can query and visualize this information on a dashboard.
 
 ## Communication for Robots
 #### ROS Native
