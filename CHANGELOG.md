@@ -4,8 +4,15 @@
 ### Added
 - Rosbridge compatibility issue and workaround
 
+## [2.1.7 - 2020-05-04]
+- Release update page about vulernability for May 4, 2020
+## [2.1.6 - 2020-04-22]
+### Added
+- Release update page for April 22, 2020
+### Updated
+- New pricing plans and information
 ## [2.1.5 - 2020-04-08]
-#### Updated
+### Updated
 - Images showing new executable resource limits
 - Object store deployment walkthrough to specify a note on number of volumes that can be attached to a component
 ### Added
