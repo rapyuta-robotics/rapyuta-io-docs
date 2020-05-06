@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## [Unreleased]
+## [2.1.8 - 2020-05-06]
 ### Added
 - Rosbridge compatibility issue and workaround
 
