@@ -292,7 +292,7 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
     5. Ensure **This parameter is exposed externally** is not selected.    
     Similarly, add *WS_PORT* configuration parameter. Set **Name** as `WS_PORT` and
     **Default** value to `9090`, and describe it as `WebSocket Port`.
-
+    
 15. Click **NEXT** to move to **Additional Information** page.
 
 16. The _Command Center_ is responsible for coordination among the _Turtles_.
@@ -308,6 +308,7 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
        `/turtle_1/goto_action`.
 
 17. Click **CONFIRM PACKAGE CREATION**.
+
 
 ## Package build status
 Each package takes about 5 minutes to build the source code into a running
@@ -385,6 +386,8 @@ moves up to **Succeeded** and **Status:Running** point indicating that the
 **DEPLOYMENT PHASE** has **Succeeded**, and the deployment **STATUS** is **running**.
 Since _COMMAND CENTER deployment_ depends on _SIMULATOR deployment_,
 ensure that the dependent deployment's **STATUS** is **running** as well.
+
+**If you're having trouble with getting the websocket connection to work with `rosbridge-server`, please check [this](/build-solutions/quirks/rosbridge-compatibility).**
 
 ## Deploy User Interface package
 When you deploy _User Interface_ package (non-ROS package), ensure you add the
