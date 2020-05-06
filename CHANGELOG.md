@@ -1,6 +1,8 @@
 # CHANGELOG
 
-## [Unreleased]
+## [2.1.8 - 2020-05-06]
+### Added
+- Rosbridge compatibility issue and workaround
 
 ## [2.1.7 - 2020-05-04]
 - Release update page about vulernability for May 4, 2020
