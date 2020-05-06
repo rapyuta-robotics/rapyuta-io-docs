@@ -6,7 +6,7 @@ weight: 835
 ---
 ## May 6
 
-We have relased a fix for the [quick walkthrough](/quick-walkthrough/) that was broken due to a change in upstream. Please refer to this [page](/build-solutions/quirks/rosbridge-compatibility) for details about the workaround.
+We have relased a fix for the [quick walkthrough](/quick-walkthrough/) that was broken due to a change in upstream. Following the steps in the walkthrough should help with getting it up and running. If you want to understand more about the workaround, please refer to this [page](/build-solutions/quirks/rosbridge-compatibility).
 
 ## May 4
 
