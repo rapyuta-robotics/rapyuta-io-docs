@@ -4,6 +4,10 @@ type: release-updates
 date: 2020-05-04T16:18:22+05:30
 weight: 835
 ---
+## May 6
+
+We have relased a fix for the [quick walkthrough](/quick-walkthrough/) that was broken due to a change in upstream. Following the steps in the walkthrough should help with getting it up and running. If you want to understand more about the workaround, please refer to this [page](/build-solutions/quirks/rosbridge-compatibility).
+
 ## May 4
 
 We have released a hotfix to address a vulnerability in SaltStack(which is internally used by rapyuta.io for managing devices.) 
