@@ -11,7 +11,7 @@ The catalog serves as the portal in rapyuta.io to streamline the software lifecy
 
 It is also responsible for implementing design patterns that allow a user to leverage powerful build-time or run-time semantics to combine multiple packages and compose new behavior.
 
-#### Packages Categories
+#### Package Categories
 rapyuta.io divides all packages in _Catalog_ into following categories:
 
 1. **Public packages**     

@@ -14,8 +14,7 @@ A package encapsulates information about what strategy is used to build it, its 
 Each package consists of components, which are made up of individual executables. 
 
 {{% notice note %}}
- **Advanced users** of rapyuta.io should note a package internally supports multiple **plans**, each which in turn contains the necessary components.
-  This feature is intended to facilitate complex usecases that require the developer to maintain the user to represent a slightly different configuration of a software package. *For more details <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.*
+ **Advanced users** of rapyuta.io should note a package internally supports multiple **plans**, each which in turn contains the necessary components. This feature is intended to facilitate complex use cases that require the user to represent a slightly different configuration of a software package. *For more details <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.*
 {{% /notice %}}
 
 ### Executables
@@ -34,7 +33,7 @@ The maximum size of the docker image is 10GB for cloud deployment.
 2. **Git repository**    
 You may provide a git repository for an executable. rapyuta.io builds the source code in the git repository into a docker image. Moreover, you may also specify a bash shell command, which will be run in tandem with the executable.
 3. **Bash command**    
-A simple bash shell command is an executable. If you choose the **Executable Type** as **Default**, the bash shell command becomes an executable. In this case, the executable can run only on **Preinstalled device** runtime. rapyuta.io assumes that all dependencies that are required to run the command are already present on the device where
+A simple bash shell command is an executable. If you choose the **Executable Type** as **Default**, the bash shell command becomes the executable. In this case, the executable can run only on **Preinstalled device** runtime. rapyuta.io assumes that all dependencies that are required to run the command are already present on the device where
 the command will execute.
 
 ### Components
@@ -56,7 +55,7 @@ Suppose a component has two executables, **execA** and **execB**. The executable
 3. **execA**: 0.5 cpu core, **execB**: 0.5 cpu core, number of volumes attached is 1
 
 {{% notice note %}}
-Components are further nested into **plans**. A rapyuta.io "package" may contain multiple plans, and each plan represents a different configuration of a package. At this point, when you add a new package in the rapyuta.io, there is always a single plan associated with the package. A plan is uniquely identified by its plan ID
+Components are further nested into **plans**. A rapyuta.io "package" may contain multiple plans, and each plan represents a different configuration of a package. At this point, when you add a new package in the rapyuta.io, there is always a single plan associated with the package. A plan is uniquely identified by its plan ID.
 {{% /notice %}}
 
 ### Component Runtime
@@ -66,7 +65,7 @@ When deployed on the cloud, the component has cloud runtime. Whereas, the compon
 
 ### Configuration Parameters
 {{% notice info %}}
-configuration parameters operate at the level of component and apply to executables in the component only
+Configuration parameters operate at the level of component and apply to executables in the component only.
 {{% /notice %}}
 
 In line with the 12-Factor application philosophy, rapyuta.io allows the package author to pass configuration as environment variables that may be consumed by executables running within a component.
