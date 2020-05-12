@@ -10,22 +10,21 @@ weight: 280
 You do not have to include the ROS Master as an executable of a component if it is meant to run on the cloud. The platform manages running ROS Master for you on the cloud and the container preinstalled device runtime. 
 
 {{% notice note %}}
-In the special case where the user chooses to use the **preinstalled** runtime on the device it is not possible for rapyuta.io to ascertain the state and configuration of your system in a non-invasive manner. Here we require the user to ensure it is started before platform tools interact with it. The user could handle this during device boot, or ensure it is added in the corresponding package as an executable.
+In the special case where the user chooses to use the **preinstalled** runtime on the device it is not possible for rapyuta.io to ascertain the state and configuration of your system in a non-invasive manner. Here we require the user to ensure it is started before the platform-tools interact with it. The user could handle this during device boot, or ensure it is added in the corresponding package as an executable.
 {{% /notice %}}
 
 ## Augmented ROS 
-In the ROS1 world all relevant ROS nodes form a fully connected communication graph with peer-to-peer data transfer mediated by a single point of discovery (ROSMASTER).
+In the ROS1 world, all relevant ROS nodes form a fully connected communication graph with peer-to-peer data transfer mediated by a single point of discovery (ROSMASTER).
 This is a fairly reliable approach when dealing with communication on the same piece of hardware. 
 
-Core ROS1 architecture (rosmaster,params,protocol) is not designed to handle any kind of node/network failure or transient loss. While one may get lucky on a local network, it is destined for failure in most real-world network environments and the public internet. It also lacks necessary features such as QoS, encryption/security, compression required while building enterprise grade applications. Additionally while working with multiple robots/multiple hardware nodes, it mandates complex configurations and namesapcing to assign identitis avoid inadvertant cross talk (eg: two robots publishing to the same */odom* topic).
-
+Core ROS1 architecture (rosmaster, params, protocol) is not designed to handle any kind of node/network failure or transient loss. While one may get lucky on a local network, it is destined for failure in most real-world network environments and the public internet. It also lacks necessary features such as QoS, encryption/security, compression required while building enterprise-grade applications. Additionally, while working with multiple robots/multiple hardware nodes, it mandates complex configurations and namespacing to assign identities, and avoid inadvertent cross-talk (e.g. two robots publishing to the same */odom* topic).
 
 To facilitate communication topologies that involve ROS nodes on multiple nodes, in different physical environments, with different robot kinds and diverse application needs. 
-rapyuta.io's communication fabric transparently implements a number of key features to agument the shortcomings of ROS while adding crucial enterprise features.
+rapyuta.io's communication fabric transparently implements key features to augment the shortcomings of ROS while adding crucial enterprise features.
 
-*  A declarative **application level whitelist** based approach to select only the needed information (topic/service/actions) flows out of a robot - this prevents cross-talk and saves valuable bandwidth over the 
-* **Automated ROS message schema & metatdata detection**  enabling type-agonistic behaviour for arbitrary messages (includeing the users custom messages). 
-* Built-in **remote peer-detection**, ROS topic/service/action **announcemets** with **liveliness** checks for safe-guards against transitent node and network failure.
+*  A declarative **application-level whitelist** based approach to select only the needed information (topic/service/actions) flows out of a robot - this prevents cross-talk and saves valuable bandwidth over the 
+* **Automated ROS message schema & metadata detection**  enabling type-agonistic behavior for arbitrary messages (including the users custom messages). 
+* Built-in **remote peer-detection**, ROS topic/service/action **announcements** with **liveliness** checks for safe-guards against transient node and network failure.
 * Tunable __per-topic QoS settings__ as not all ROS topics are equal. 
   Some are more relevant than others. For instance, some applications would prefer losing
 a few telemetry messages while ensuring they arrive within a reasonable time-bound.
@@ -35,7 +34,7 @@ that are required to be delivered.
 * __Transparent tunable compression__ for topics/services/actions - potentially reduce payload size (up to 80% for sparse messages for eg. PointCloud)
 * __Transparent 2048-bit encryption for all data__.
 * Per-deployment __randomization of connection endpoints, credentials and encryption-keys__
-* Elegant semantics enabling simple __dynamic multirobot communication toplogies without complex launchfile and namespace hacks__.
+* Elegant semantics enabling simple __dynamic multi-robot communication topologies without complex launchfile and namespace hacks__.
 * Built-in features and optimizations to provide robust connectivity over the public internet transparently such as retries, connection-pooling, order reassembly mechanisms 
 
 
@@ -87,10 +86,10 @@ The lowest possible QoS is **Low** and is used for rapidly produced data such as
 These are intermediate levels offered between the two extremes that may be more suited in more intermediate cases. Each level trades off to balance reliability and performance differently.
 
 ### Compression
-The user may optionally enable transparent compression. The platform relies on “snappy” compression algorithm. Compression is not free. You usually pay a small penalty, with messages long repeats and sparse data such as laser scans, maps, etc. The benefits of a reduced payload more than compensate for this penalty and let the user send much larger volumes of data over the communication link.
+The user may optionally enable transparent compression. The platform relies on a *snappy* compression algorithm. Compression is not free. You usually pay a small penalty, with messages long repeats and sparse data such as laser scans, maps, etc. The benefits of a reduced payload more than compensate for this penalty and let the user send much larger volumes of data over the communication link.
 
 ### Multi-robot Support
-ROS has several key pain points when working with multi-robot systems that often need error-prone setups involving specific launch sequences, roslaunch/xml files, and remappings. rapyuta.io ships with special support for multi-robot systems and enforces runtime identities to robots automatically wrap and unwrap for the right agent. 
+ROS has several key pain points when working with multi-robot systems that often need error-prone setups involving specific launch sequences, roslaunch/XML files, and remappings. rapyuta.io ships with special support for multi-robot systems and enforces runtime identities to robots automatically wrap and unwrap for the right agent. 
 
 {{% notice info %}}
 Learn more about [**dedicated ROS communication support**](/developer-guide/manage-software-cycle/communication-topologies/ros-support/)

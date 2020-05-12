@@ -18,16 +18,15 @@ The below list of topics are explained:
 - [Multi-Robot ROS Communication](#multi-robot-ros-communication)
   - [Illustrating a Multi-Robot Scenario](#illustrating-a-multi-robot-scenario)
   - [Dynamic Multi-Robot Communication Semantics](#dynamic-multi-robot-communication-semantics)
-    - [ROS Environment Aliases - runtime identity assignment](#ros-environment-aliases---runtime-identity-assignment)
+    - [ROS Environment Aliases: runtime identity assignment](#ros-environment-aliases-runtime-identity-assignment)
     - [Discovering peers in an ensemble](#discovering-peers-in-an-ensemble)
-    - [Scoping -  auto prefix/namespace by self identity](#scoping---auto-prefixnamespace-by-self-identity)
-    - [Targeting - auto prefix/namespace unwrapping for peers](#targeting---auto-prefixnamespace-unwrapping-for-peers)
+    - [Scoping: auto prefix or namespace by self identity](#scoping-auto-prefix-or-namespace-by-self-identity)
+    - [Targeting: auto prefix or namespace unwrapping for peers](#targeting-auto-prefix-or-namespace-unwrapping-for-peers)
     - [Targeting and Inbound ROS Interfaces](#targeting-and-inbound-ros-interfaces)
 - [Automatic Linking of ROS Interfaces](#automatic-linking-of-ros-interfaces)
 
 
 ## Multi-Robot ROS Communication
-
 The rapyuta.io platform offers an elegant solution for multiple robots
 communication as a primary feature. 
 In the rapyuta paradigm, the component of each package is treated as
@@ -77,7 +76,7 @@ namespaces(e.g. <node ns=robot_A>). This mandates the delicate
 arrangement of files is frozen while building the software and
 consistently distributed to all involved agents. As the needs/software change
 and the number of variables and robots increase, this approach becomes increasingly
-error prone.
+error-prone.
 
 
 ![Robot soccer block diagram](/images/multi-robot-communication/robotSoccer-blk-diagram.png?classes=border,shadow&width=50pc)
@@ -89,13 +88,13 @@ Additionally, it is more flexible/dynamic to assign and use deploy-time identiti
 than hard-coded robot names. 
 
 The process of assigning an identity to a robot and the mechanisms to
-consume/discover identities of all alive robots is described in the [ROS environment aliases](#ros-environment-aliases-runtime-indentitiy-assignment) topic.
+consume/discover identities of all alive robots is described in the [ROS environment aliases](#ros-environment-aliases-runtime-identity-assignment) topic.
 
 The mechanisms and features offered by the platform to deal with automatic prefix addition and removal is described in the
 [scoping](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#scoping-auto-prefix-namespace-by-self-identity) and
 [targeting](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#targeting-auto-prefix-namespace-unwrapping-for-peers) topics.
 
-#### ROS Environment Aliases - runtime identity assignment 
+#### ROS Environment Aliases: runtime identity assignment 
 When __deploying a component__ to a robot in a multi-robot scenario,
 the platform expects the user to input a unique alias per component
 , thereby, assigning a stable identity to that deployment for the
@@ -121,7 +120,7 @@ present in this case.
 #### Discovering peers in an ensemble
 rapyuta.io automatically exposes a latched ROS topic
 __/rapyuta_io_peers__ of type *std_msgs/String*, which contains the
-list of all connected peers in a comma-separated string, the first
+list of all connected peers aliases, the first
 entity is always the alias of the local bridge.
 
 For example, **My_alias,peer_1,peer_2**
@@ -136,19 +135,19 @@ messages. In each case, the first element is always the alias of the
 bridge that published this message.
 {{% /notice %}}
 
-#### Scoping -  auto prefix/namespace by self identity
+#### Scoping: auto prefix or namespace by self identity
 In this configuration, a user may declare a topic/service/action
-as _**scoped**_ by selecting the **Scoped** option. 
+as ***scoped*** by selecting the **Scoped** option. 
 
 This indicates that when a component is deployed its local ROS interfaces
-(topic/service/action) get __automatically prefixed/namespaced byits own dynamic identity__
-(its own "ROS environment alias") __as seen by all other other robots/peers__ in
-the ensemble in thier respective ROS graph.
+(topic/service/action) get __automatically prefixed/namespaced bits own dynamic identity__
+(its own ROS environment alias) __as seen by all other robots/peers__ in
+the ensemble in their respective ROS graph.
 
 For example, suppose robotA publishes */odom* topic in its local
 ROS environment. While routing */odom* to either of the robot
 peers (for instance a controller) the topic is prefixed with that
-specific robot’s name, in this case */robotA/odom*.
+specific robot’s name, in this case, */robotA/odom*.
 
 ![Scoped topic](/images/multi-robot-communication/scoped-topic.png?classes=border,shadow&width=50pc)
 
@@ -161,27 +160,33 @@ A scoped topic is a mapping from a /topic to /robot-peer-name/topic.
 ![Scoped topic as shown](/images/multi-robot-communication/scoped-as-shown.png?classes=border,shadow&width=50pc)
 
 {{% notice note %}}
-If in the ROS service logs you experience the error: ***incoming connection failed: unable to receive data from sender, check sender's logs for details***, please ignore it. The error message is generated by ROS internally as a side effect of the sniffing done by the cloud bridge so as to determine metadata related to ROSmsg type for the service. It has no other effects on your code and/or the code's functionality, and you can safely ignore it.
+If in the ROSmsg logs you experience the error: ***incoming connection failed: unable to receive data from sender, check sender's logs for details***, please ignore it. The error message is generated by ROS internally as a side effect of the sniffing done by the cloud bridge so as to determine metadata related to ROSmsg type for the service. It has no other effects on your code and/or the code's functionality, and you can safely ignore it.
 {{% /notice %}}
 
-#### Targeting - auto prefix/namespace unwrapping for peers
-In this configuration, a user may declare a topic/service/action as _**targeted**_ by selecting the "Targeted" option. 
+#### Targeting: auto prefix or namespace unwrapping for peers
+In this configuration, a user may declare a topic/service/action as ***targeted***
+by selecting the **Targeted** option. 
 
-This indicates that when a component is deployed its local ROS interfaces (topic/service/action) __containing a prefix/namespace corresponding to another individual peer's dynamic identitiy__(peers "ROS environment alias") gets __routed to the corresponding peer__ and __automatically unwraps the prefix/namespace__ in its ROS graph.
-
+This indicates that when a component is deployed its local
+ROS interfaces (topic/service/action)
+__containing a prefix/namespace corresponding to another individual peer's dynamic identitiy__
+(peers ROS environment alias)
+gets __routed to the corresponding peer__ and
+__automatically unwraps the prefix/namespace__ in its ROS graph.
 
 For example, suppose robots in a particular scenario subscribe to the
-topic */cmd_vel* to move about and a central controller needs to ask a
-specific robot say robotA to move, then it needs to be able to target
+topic */cmd_vel* to move and a central controller needs to ask a
+specific robot, say robotA, to move, then it needs to be able to target
 only robotA and send messages to its */cmd_vel* subscription.
 
 The controller in the above scenario publishes */robotA/cmd_vel* topic.
 While routing */robotA/cmd_vel* the bridge strips the prefix ***robotA***
-and publish the messages on the topic ***/cmd_vel*** in robotA’s local ros environment.
+and publish the messages on the topic ***/cmd_vel*** in robotA’s local ROS
+environment.
 
 ![Targeted topic](/images/multi-robot-communication/targeted-topic.png?classes=border,shadow&width=50pc)
 
-Mathematically, you can express ***targeted*** as:
+You can express ***targeted*** as:
 A targeted topic is a mapping from /robot-alias/topic to /topic.
 {{% notice info %}}
 **/robotP/cmd_vel -----------> /cmd_vel**
@@ -190,16 +195,19 @@ A targeted topic is a mapping from /robot-alias/topic to /topic.
 ![Targeted topic as shown](/images/multi-robot-communication/target-as-shown.png?classes=border,shadow&width=50pc)
 
 #### Targeting and Inbound ROS Interfaces
-When a package allows for [inbound ROS interfaces](/developer-guide/create-software-packages/ros-support/#inbound-interfaces) the user must provide hints to leverage the automatic targeting feature
-The platform introspects the package to determine if it must enforce the unique identity constraints required for multi-robot communication.
+When a package allows for [inbound ROS interfaces](/developer-guide/create-software-packages/ros-support/#inbound-interfaces), you must provide hints to leverage the automatic
+targeting feature. The platform introspects the package to determine if it must enforce the unique identity constraints required for multi-robot communication.
 
-As the platform follows a provider only semantic determining this is straightforward for *_scoped_* as it is based on the identity of the deployment itself.
-Matters get more complicated for targeting as this depends on the identity or other peers. When a package is the first to be deployed (or root in any particular subtree of dependants) it becomes necessary to provide a hint to indicate that the interfaces will part-take in communication topologies that require the presence of a stable unique identity.
+As the platform follows a provider only semantic, determining this is
+straightforward for ***scoped*** as it is based on the identity of the deployment
+itself. It gets complicated for targeting as this depends on the identity of
+other peers. When a package is the first to be deployed (or root in any particular subtree of dependants) it becomes necessary to provide a hint to indicate that
+the interfaces will participate in communication topologies that require the
+presence of a stable unique identity.
 
-
-To provide this hint while creating the package, in the additional information
+To provide this hint while creating the package, in the *Additional Information*
 section, when one adds inbound ROS topics one can select the
-***can be targeted*** . This metadata is used by the platform to
+***can be targeted***. This metadata is used by the platform to
 bridge communications and enforce alias constraints.
 
 ![Can be targeted](/images/multi-robot-communication/can-be-targeted.png?classes=border,shadow&width=50pc)
