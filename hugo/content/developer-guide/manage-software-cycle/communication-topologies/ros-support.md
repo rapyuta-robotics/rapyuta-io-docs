@@ -69,10 +69,10 @@ and */robotC/move* to robot B and robot C respectively)
 * wants to seek odom from _robot A_, it must explicitly subscribe to */robotA/odom* that is published by _robot A_  (or */robotB/odom*
 and */robotC/odom* from robot B and robot C respectively)
 
-This is, typically, achieved using carefully crafted launchfiles using
+This isvachieved using carefully crafted launchfiles using
 remaps (e.g. /move to /robot_A/move), conditionals (e.g. unless ns!="" or
 if robot_name=="robot_A"), arguments(e.g. robot_name:=robot_A) and
-namespaces(e.g. <node ns=robot_A>). This mandates the delicate
+namespaces(e.g. &lt;node ns=robot_A&gt;). This mandates the delicate
 arrangement of files is frozen while building the software and
 consistently distributed to all involved agents. As the needs/software change
 and the number of variables and robots increase, this approach becomes increasingly
