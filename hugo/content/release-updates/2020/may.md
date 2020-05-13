@@ -34,5 +34,5 @@ Ability to set ROS services and ROS actions as targeted.
 * Fixed the hyperlink of included packages in package details page.
 
 #### Documentation
-Read about how to [set ROS services and ROS actions as targeted]().
+Read about how to [set ROS services and ROS actions as targeted](/developer-guide/manage-software-cycle/communication-topologies/ros-support/).
 
