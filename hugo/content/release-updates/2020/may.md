@@ -24,13 +24,14 @@ We have relased a fix for the [quick walkthrough](/quick-walkthrough/) that was 
 ## May 13
 Welcome to the May 13, 2020 release of the rapyuta.io platform. There
 are significant updates in this release that we hope you will like.
+This release has many internal bug fixes and improvements.
 
 #### Features
 Ability to set ROS services and ROS actions as targeted.
 
 #### Notable Fixes
 
-* Fixed the limit on the count of components in a package.
+* Fixed the limit on the count of components in a package while creating packages.
 * Fixed the hyperlink of included packages in package details page.
 
 #### Documentation
