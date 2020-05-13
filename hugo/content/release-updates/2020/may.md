@@ -22,7 +22,7 @@ Please reach out to us on support@rapyuta-robotics.com if you have any questions
 We have relased a fix for the [quick walkthrough](/quick-walkthrough/) that was broken due to a change in upstream. Following the steps in the walkthrough should help with getting it up and running. If you want to understand more about the workaround, please refer to this [page](/build-solutions/quirks/rosbridge-compatibility).
 
 ## May 13
-Welcome to the April 13, 2020 release of the rapyuta.io platform. There
+Welcome to the May 13, 2020 release of the rapyuta.io platform. There
 are significant updates in this release that we hope you will like.
 
 #### Features
