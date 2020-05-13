@@ -1,8 +1,10 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.1.9 - 2020-05-13]
 ### Added
 - Explain targeted services and actions
+- Release update page for May 13, 2020
 
 ## [2.1.8 - 2020-05-06]
 ### Added
