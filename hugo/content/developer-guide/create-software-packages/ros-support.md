@@ -56,7 +56,7 @@ that are required to be delivered.
 * __Transparent tunable compression__ for topics/services/actions - potentially reduce payload size (up to 80% for sparse messages for e.g. PointCloud)
 * __Transparent 2048-bit encryption for all data__.
 * [Per-deployment](/developer-guide/manage-software-cycle/deployments/) __randomization of connection endpoints, credentials and encryption-keys__
-* Elegant semantics enabling simple __dynamic multi-robot communication topologies without complex launchfile and namespace hacks__.
+* Elegant [semantics](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#scoping-auto-prefix-or-namespace-by-self-identity) enabling simple __dynamic multi-robot communication topologies without complex launchfile and namespace hacks__.
 * Built-in features and optimizations to provide robust connectivity over the public internet transparently such as retries, connection-pooling, order reassembly mechanisms. 
 
 {{% notice note %}}
