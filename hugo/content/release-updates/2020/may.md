@@ -28,3 +28,11 @@ are significant updates in this release that we hope you will like.
 #### Features
 Ability to set ROS services and ROS actions as targeted.
 
+#### Notable Fixes
+
+* Fixed the limit on the count of components in a package.
+* Fixed the hyperlink of included packages in package details page.
+
+#### Documentation
+Read about how to [set ROS services and ROS actions as targeted]().
+
