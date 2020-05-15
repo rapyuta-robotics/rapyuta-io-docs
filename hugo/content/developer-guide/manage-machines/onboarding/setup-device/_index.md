@@ -50,3 +50,10 @@ When the device is successfully registered, you will see a
 device's name, which indicates that the device is online.
 
 ![Registered Status of Device](/images/getting-started/add-new-device/demo-device.png?classes=border,shadow&width=40pc)
+
+
+{{% notice info %}}
+Learn how to [remotely access an online device](/developer-guide/tooling-automation/) for debugging and accessing
+various device environment variables.
+{{% /notice %}}
+
