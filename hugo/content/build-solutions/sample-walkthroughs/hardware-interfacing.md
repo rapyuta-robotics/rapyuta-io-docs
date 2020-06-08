@@ -3,7 +3,7 @@ title: "Hardware Interfacing"
 description:
 type: build-solutions
 date: 2019-10-24T13:47:25+05:30
-pre: "3. "
+pre: "4. "
 weight: 630
 ---
 The tutorial will teach you how to deploy a basic non-ROS package that will change
