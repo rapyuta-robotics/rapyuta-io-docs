@@ -5,8 +5,8 @@ date: 2020-06-01T16:18:22+05:30
 weight: 834
 ---
 
-## June 3
-Welcome to the June 3, 2020 release of the rapyuta.io platform. There
+## June 8
+Welcome to the June 8, 2020 release of the rapyuta.io platform. There
 are significant updates in this release that we hope you will like.
 
 #### Features
