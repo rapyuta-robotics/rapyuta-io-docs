@@ -6,18 +6,10 @@ date: 2020-05-15T11:04:37+05:30
 pre: "6. "
 weight: 266
 ---
-Besides device configuration variables, the name of
-a device, its unique identifier, and
-the identifier of the project in which the device has been
-created are stored as environment variables on the device.
+Some environment variables are available on the device after its successful onboarding.
+These are also available to the deployments on the device. These are:
 
-*  **RIO_DEVICE_NAME_LAST_SEEN** saves the name of a device. It does not reflect any changes made to the name if the name is explicitly modified after onboarding the device on to rapyuta.io platform.
-*  **RIO_DEVICE_UUID** holds the unique identifier of the device.
-*  **RIO_PROJECT_UUID** stores the unique identifier of the project in which the device has been created.
-
-{{% notice info %}}
-You may [remotely access](/developer-guide/tooling-automation/) all of the device environment variables of an online device.
-{{% /notice %}}
-
-
+*  **RIO_DEVICE_NAME_LAST_SEEN**: Stores the name of the device that was present at the time of onboarding. Please note that changes made to the device’s name through rapyuta.io UI or APIs will not reflect back on this environment variable.
+*  **RIO_DEVICE_ID**: Stores the unique identifier of the device.
+*  **RIO_PROJECT_ID**: Stores the unique identifier of the project in which the device was created.
 
