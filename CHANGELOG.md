@@ -1,6 +1,10 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+- Details around new device and deployment environment variables
+
+
 ## [2.2.0 - 2020-06-08]
 ###Added
 - Explain routed network resource
