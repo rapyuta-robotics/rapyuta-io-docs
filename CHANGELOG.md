@@ -1,6 +1,11 @@
 # CHANGELOG
 
 ## [Unreleased]
+## [2.2.0 - 2020-06-08]
+###Added
+- Explain routed network resource
+- Release update page for June 8, 2020
+
 ## [2.1.9 - 2020-05-13]
 ### Added
 - Explain targeted services and actions

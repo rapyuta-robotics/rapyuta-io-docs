@@ -163,16 +163,19 @@ The list of devices is a set of online devices, which are pre-filtered to match
 the architecture (amd64, arm32v7, arm64v8) and device runtime (docker or preinstalled)
 required by the component in question.
 {{% /notice %}}
-9. If you want to add a dependent deployment, click **Add dependency**, and select
+9. If the package has a component with `Is ROS` true, then you will need to select **Routed Network** from the drop-down list.
+    * If there are no **Routed Network** successfully running, you would not be able to deploy the package. Please create a [Routed Network](build-solutions/sample-walkthroughs/routed-network.md) first. 
+    * If you have a cloud component in your package, you will be able to select only cloud routed networks.
+10. If you want to add a dependent deployment, click **Add dependency**, and select
 a deployment you want to add as a dependency from the drop-down list of
 deployment IDs.
-10. If you want to add a volume, click **Add volume**. Ensure that a running volume
+11. If you want to add a volume, click **Add volume**. Ensure that a running volume
 deployment is available before you add one.
-11. If you want to modify the initial setting of restart policy of components with ***device runtime***, click **Modify**.
+12. If you want to modify the initial setting of restart policy of components with ***device runtime***, click **Modify**.
 ![Modify restart policy](/images/dev-guide/deployments/modify-restart-policy.png?classes=border,shadow&width=40pc)
-1.  Click **CREATE DEPLOYMENT** > **Confirm**.
+13.  Click **CREATE DEPLOYMENT** > **Confirm**.
 
-![Deploy demo package](/images/getting-started/deploy-pkg/deploy-demo-pkg.png?classes=border,shadow&width=50pc)
+![Deploy demo package](/images/dev-guide/manage-software-lifecycle/deployment-routed-network.png?classes=border,shadow&width=50pc)
 You will be redirected to the **Details** page of the newly created deployment.
 The package is successfully deployed when the green colored bar moves from
 **In progress** to **Provisioning** to **Succeeded** indicating that the
