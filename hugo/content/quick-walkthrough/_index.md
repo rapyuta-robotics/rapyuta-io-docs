@@ -22,8 +22,8 @@ learn how to:
 
 1. Source your packages from a public docker registry and a public git
    repository.
-2. Expose ROS topics, services, actions, and network endpoints as component-level interfaces and as package-level inbound interfaces.
-3. Create dependent deployments.
+2. Expose ROS topics, services, actions, and network endpoints as component-level interfaces.
+3. Create [Routed Networks](/build-solutions/sample-walkthroughs/routed-network) and dependent deployments.
 4. Control a Turtlebot in simulation through a web browser.
 
 ## Prerequisites
@@ -215,10 +215,7 @@ recent message at the expense of losing some information.
 13. To add a ROS service, click **Add ROS service**. In the **Name** box, enter the name of the service `/register_sim_turtle`. Similarly, add another
 ROS service `/teleport_turtle`.
 14. Click **NEXT**.
-15. Since _Simulator_ subscribes to the ROS topic `/sim/cmd_vel` published by
-    _Turtle_, you must add `/sim/cmd_vel` as an **INBOUND ROS INTERFACE** topic.
-    Click **Add Topic** > enter `/sim/cmd_vel` in the **Name** box.
-16. Click **CONFIRM PACKAGE CREATION**.
+15. Click **CONFIRM PACKAGE CREATION**.
 
 ## Create Command Center package
 The _Command Center_ is a node for registering _Turtles_, and a router for
@@ -295,19 +292,7 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
     
 15. Click **NEXT** to move to **Additional Information** page.
 
-16. The _Command Center_ is responsible for coordination among the _Turtles_.
-    The inbound ROS interfaces help recognize ROS topics, services, and
-    actions broadcasted from the various Turtles' deployments.
-    1. To add `/pose` as an Inbound ROS topic, click **Add Topic** under
-       **INBOUND ROS INTERFACES** > enter `/pose` in the **Name** box.
-    2. To add `/teleport_turtle` as an Inbound ROS service, click **Add Service**
-       under **INBOUND ROS INTERFACES** > enter `/teleport_turtle` in the **Name** box.
-    3. To add `/turtle_0/goto_action` as Inbound ROS actions, click **Add Action**
-       under **INBOUND ROS INTERFACES** > enter `/turtle_0/goto_action` in the
-       **Name** box. Similarly, add another Inbound ROS action,
-       `/turtle_1/goto_action`.
-
-17. Click **CONFIRM PACKAGE CREATION**.
+16. Click **CONFIRM PACKAGE CREATION**.
 
 
 ## Package build status
@@ -331,54 +316,34 @@ In this tutorial, you have created four packages. They are:
 
 You may click **CATALOG** to view all of the above packages in one place.
 
-Since a deployment may depend on another deployment(s), you will initially
-deploy the package that is independent of other deployments, and you will
-work your way up the dependency chain.
+Out of these packages Turtle, Simulator and Command Center packages would share a routed network. Routed network enables ROS communication between different ROS package deployments.
+Binding a routed network to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package.
 
-[ROS publisher subscriber](/build-solutions/sample-walkthroughs/basic-ros-pubsub/preinstalled-runtime/) describes the standard procedure for deploying
-a ROS package. In this tutorial, the _Simulator_ deployment is independent of
-any other deployment. The _Command Center_ deployment relies on that of
-_Simulator_, while the _User Interface_ deployment is based on that of
-_Command Center_. Lastly, the _Turtle_ deployment depends on deployments of
-both the _Simulator_ and the _Command Center_.
-
-The table summarises dependency relationships between all of the
-packages in Turtlesim tutorial.
-
-| Package | Dependent Deployment(s) |
-| ------- | ----------------------- |
-| Simulator | None |
-| Command Center | Simulator |
-| User Interface | Command Center |
-| Turtle | Command Center, Simulator |
-
-The below diagram illustrates the dependencies among packages in
-Turtlesim tutorial.
-
-![Dependent deployment block diagram](/images/tutorials/turtlesim/turtlesim-ddeploy-blk-diagram.png?classes=border,shadow)
+You will need to create a routed network for them. Please follow this [tutorial](/build-solutions/sample-walkthroughs/routed-network#creating-cloud-routed-network) on how to create a routed network.
 
 ## Deploy Simulator package
-To deploy the _Simulator_ package whose deployment is independent of
-any other deployment, follow the steps:
+To deploy the _Simulator_ package, follow the steps:
 
 1. Click **CATALOG** > select _Simulator_ package > click **Deploy package**.
+
 2. In the **Name of the deployment** box, type in a name for the deployment
    you are creating say `SIMULATOR deployment`
-3. Click **CREATE DEPLOYMENT** > **Confirm**.
+   
+3. Click on **ROUTED NETWORK** > **Add**, select the routed network created by you from the dropdown list.    
+
+4. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the deployment **Details** page where a green progress bar moves up to **Succeeded** along with **Status:Running** point indicating that the
 **DEPLOYMENT PHASE** has **Succeeded**, and the deployment **STATUS** is **Running**.
 
 ## Deploy Command Center package
-The _Command Center_ deployment depends on the deployment of _Simulator_.
-That is the _Simulator_ deployment is a dependent deployment of _Command Center_ deployment.
 To deploy the _Command Center_ package, follow the steps:
 
-1. click **CATALOG**  >  select **COMMAND CENTER** package  >  click **Deploy package**.
+1. Click **CATALOG**  >  select **COMMAND CENTER** package  >  click **Deploy package**.
 2. In the **Name of deployment** box, enter a name for the deployment say
    `COMMAND CENTER deployment`
 3. Ensure that the value of **WS_ADDR** is **0.0.0.0** and **WS_PORT** is **9090**
-4. Under **DEPENDENT DEPLOYMENTS**, click **Add dependency**  >  select the Simulator's deployment ID from the dropdown list.
+4. Click on **ROUTED NETWORK** > **Add**, select the routed network created by you from the dropdown list.
 5. Click **CREATE DEPLOYMENT**  >  **Confirm**.
 
 You are redirected to the deployment's **Details** page where a green progress bar
@@ -388,6 +353,14 @@ Since _COMMAND CENTER deployment_ depends on _SIMULATOR deployment_,
 ensure that the dependent deployment's **STATUS** is **running** as well.
 
 **If you're having trouble with getting the websocket connection to work with `rosbridge-server`, please check [this](/build-solutions/quirks/rosbridge-compatibility).**
+
+## Deploy Turtle package
+To deploy the _Turtle_ package, follow the steps:
+ 
+1. Click **CATALOG** > select **Turtle** package > click **Deploy package**.
+2. In the **Name of the deployment box**, type in a name for the deployment you are creating say  `TURTLE deployment` 
+3. Click on **ROUTED NETWORK** > **Add**, select the routed network created by you from the dropdown list.
+4. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 ## Deploy User Interface package
 When you deploy _User Interface_ package (non-ROS package), ensure you add the
@@ -412,14 +385,7 @@ a couple of times.
 
 ![Network Endpoint for User Interface package](/images/tutorials/turtlesim/UI-endpoint.png?classes=border,shadow&width=60pc)
 
-## Deploy Turtle package
-The procedure for deploying the _Turtle_ package is similar to that of any
-package whose deployment depends on another deployment. A deployment of
-_Turtle_ depends on the running deployments of the _Command Center_ and the
-_Simulator_, that is **COMMAND CENTER deployment** and **SIMULATOR deployment**.
-You may provide a name for the deployment say `TURTLE deployment`
-To add multiple dependent deployments, click **Add dependency** and select the
-desired deployment ID for each dependent deployment.
+
 
 If the deployment fails, click **Deprovision deployment**; delete the
 corresponding package; create the package and deploy it again.
