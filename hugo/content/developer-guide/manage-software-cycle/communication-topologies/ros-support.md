@@ -110,6 +110,11 @@ are considered a __part of an ensemble__.
 The platform detects duplicates aliases explicitly for the case of
 components and deployment and its immediate parent. 
 
+{{% notice info %}}
+This alias is available to Deployment [Executables](/developer-guide/create-software-packages/package-internals/#executables)
+(both cloud and device) through **RIO_ROS_ENV_ALIAS** environment variable.
+{{% /notice %}}
+
 {{% notice note %}}
 In the case of siblings (two deployments depending on the same parent), the component with
 a duplicate alias is considered a conflict and may enter an error
