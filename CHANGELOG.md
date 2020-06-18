@@ -5,6 +5,10 @@
 - Details around new device and deployment environment variables
 
 
+## [2.2.1 - 2020-06-17]
+###Fixed
+- Fixed quick walkthrough to use routed networks 
+
 ## [2.2.0 - 2020-06-08]
 ###Added
 - Explain routed network resource
