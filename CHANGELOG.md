@@ -1,6 +1,13 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+
+## [2.3.0 - 2020-06-24]
+
+###Added
+- Details around new device and deployment environment variables
+
 
 ## [2.2.1 - 2020-06-17]
 ###Fixed

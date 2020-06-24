@@ -50,3 +50,4 @@ When the device is successfully registered, you will see a
 device's name, which indicates that the device is online.
 
 ![Registered Status of Device](/images/getting-started/add-new-device/demo-device.png?classes=border,shadow&width=40pc)
+
