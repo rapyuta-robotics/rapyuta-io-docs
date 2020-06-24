@@ -38,8 +38,8 @@ are significant updates in this release that we hope you will like.
 Read about how to [set ROS services and ROS actions as targeted](/developer-guide/manage-software-cycle/communication-topologies/ros-support/).
 
 
-## June 24
-Welcome to the June 24, 2020 release of the rapyuta.io platform. There
+## June 25
+Welcome to the June 25, 2020 release of the rapyuta.io platform. There
 are significant updates in this release that we hope you will like.
 
 #### Features
