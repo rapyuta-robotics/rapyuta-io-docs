@@ -51,8 +51,7 @@ are significant updates in this release that we hope you will like.
 #### Improvements
 * **Improved ROS communication**
 
-	ROS communication from a Device Component to another device component, 
-	or from a cloud component to another cloud component has been improved.
+	ROS communication between device components, or between cloud components has been improved.
 		
 We have also done minor bug fixes to rapyuta io APIs.		
 	
