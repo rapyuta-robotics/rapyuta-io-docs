@@ -51,11 +51,10 @@ are significant updates in this release that we hope you will like.
 #### Improvements
 * **Improved ROS communication**
 
-	ROS communication between device components, or between cloud components has been improved.
+	ROS communication between device components, and between cloud components has been improved.
 * **Gzip Compression for API responses**
 
 	API responses are compressed using gzip to enable faster responses.
 		
-We have also done minor bug fixes to rapyuta io APIs.		
-	
-	
+We have also done minor bug fixes to rapyuta.io APIs.		
+
