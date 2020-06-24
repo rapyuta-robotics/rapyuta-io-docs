@@ -37,3 +37,24 @@ are significant updates in this release that we hope you will like.
 
 Read about how to [set ROS services and ROS actions as targeted](/developer-guide/manage-software-cycle/communication-topologies/ros-support/).
 
+
+## June 25
+Welcome to the June 25, 2020 release of the rapyuta.io platform. There
+are significant updates in this release that we hope you will like.
+
+#### Features
+* **New environment variables**
+
+	Environment variables that store some [device details](/developer-guide/manage-machines/device-environment-variables).
+	Also, an environment variable that stores [ROS Environment Alias](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#ros-environment-aliases-runtime-identity-assignment).
+	
+#### Improvements
+* **Improved ROS communication**
+
+	ROS communication between device components, and between cloud components has been improved.
+* **Gzip Compression for API responses**
+
+	API responses are compressed using gzip to enable faster responses.
+		
+We have also done minor bug fixes to rapyuta.io APIs.		
+
