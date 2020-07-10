@@ -18,6 +18,8 @@ on rapyuta.io
     * Robot Operating System (ROS)
       * [Kinetic Kame](http://wiki.ros.org/kinetic) or [Melodic Morenia](http://wiki.ros.org/melodic)
 
+By default the hostname of the device points to localhost, and this is required by `roscore` to function. You can quickly check by running `nslookup $(hostname)`, if you get an IP address, you are probably good to go.
+
 {{% notice note%}}
 Ensure you install **ros-kinetic-ros-base**, or **ros-melodic-ros-base**, or above it.
 {{% /notice %}}
