@@ -18,7 +18,7 @@ on rapyuta.io
     * Robot Operating System (ROS)
       * [Kinetic Kame](http://wiki.ros.org/kinetic) or [Melodic Morenia](http://wiki.ros.org/melodic)
 
-By default the hostname of the device points to localhost, and this is required by `roscore` to function. You can quickly check by running `nslookup $(hostname)`, if you get an IP address, you are probably good to go.
+Ubuntu(16.04 and 18.04) by default resolves the hostname to localhost. If you do change this behaviour on the host OS, roscore **will** not be able to start. A simple way to check if roscore can be started is to do `nslookup $(hostname)` if it returns a DNS record you are probably good to go.
 
 {{% notice note%}}
 Ensure you install **ros-kinetic-ros-base**, or **ros-melodic-ros-base**, or above it.

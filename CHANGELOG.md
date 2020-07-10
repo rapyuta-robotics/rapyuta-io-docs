@@ -5,7 +5,7 @@
 
 ## [2.3.1 - 2020-07-10]
 ### Changed
-- Added changedlog and changed the supported devices page to include info about hostnames.
+- Added changelog and changed the supported devices page to include information about hostnames.
 
 ## [2.3.0 - 2020-06-24]
 
