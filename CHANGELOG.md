@@ -3,18 +3,22 @@
 ## [Unreleased]
 ### Added
 
+## [2.3.1 - 2020-07-10]
+### Changed
+- Added changedlog and changed the supported devices page to include info about hostnames.
+
 ## [2.3.0 - 2020-06-24]
 
-###Added
+### Added
 - Details around new device and deployment environment variables
 
 
 ## [2.2.1 - 2020-06-17]
-###Fixed
+### Fixed
 - Fixed quick walkthrough to use routed networks 
 
 ## [2.2.0 - 2020-06-08]
-###Added
+### Added
 - Explain routed network resource
 - Release update page for June 8, 2020
 
