@@ -142,7 +142,7 @@ By default the Target Port is same as the Port.
 A maximum 50 ports are allowed for an endpoint.
 {{% /notice %}}
 {{% notice info %}}
-Allowed format is comma separated Port Ranges. Each Port Range is either a single port or a range of port mentioning the from port and to port separated by a hyphen ( - ).
+Allowed format is comma separated Port Ranges. Each Port Range is either a single port or a range of port mentioning the from port and to port separated by a hyphen (-). Examples: 5000 or 443-445 or 3446-3449,3500,3510-3530
 {{% /notice %}}
 ![internal endpoint port range](/images/core-concepts/network-endpoints/internal-endpoint-port-range.png?classes=border,shadow&width=40pc)
 #### Exposing Endpoints Externally
