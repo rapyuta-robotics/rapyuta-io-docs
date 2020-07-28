@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 ### Added
+
+## [2.3.2 - 2020-07-29]
+### Added
 - Added port range details
 
 ## [2.3.1 - 2020-07-10]
