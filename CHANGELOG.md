@@ -6,6 +6,9 @@
 ## [2.3.2 - 2020-07-29]
 ### Added
 - Added port range details
+- Release update page for July 29, 2020
+### Changed
+- Bumped sdk version to v0.15.0
 
 ## [2.3.1 - 2020-07-10]
 ### Changed
