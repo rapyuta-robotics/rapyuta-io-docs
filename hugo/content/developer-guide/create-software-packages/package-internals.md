@@ -134,6 +134,17 @@ You can restrict access to a network endpoint by ensuring that **Exposed externa
 The only protocol available is the **TCP** for which the value of the **Port** field is set to ***443*** by default. However, you can change the port's value.
 ![internal endpoint](/images/core-concepts/network-endpoints/internal-endpoint.png?classes=border,shadow&width=40pc)
 
+You can also use port range for an endpoint by selecting **Port Range** toggle. A Port Range on an endpoint will allow you to open multiple ports on a single DNS hostname.
+{{% notice info %}}
+By default the Target Port is same as the Port.
+{{% /notice %}}
+{{% notice info %}}
+A maximum 50 ports are allowed for an endpoint.
+{{% /notice %}}
+{{% notice info %}}
+Allowed format is comma separated Port Ranges. Each Port Range is either a single port or a range of port mentioning the from port and to port separated by a hyphen (-). Examples: 5000 or 443-445 or 3446-3449,3500,3510-3530
+{{% /notice %}}
+![internal endpoint port range](/images/core-concepts/network-endpoints/internal-endpoint-port-range.png?classes=border,shadow&width=40pc)
 #### Exposing Endpoints Externally
 Select **Exposed externally** checkbox to expose a network endpoint publicly over the internet.
 
