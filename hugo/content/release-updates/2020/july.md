@@ -20,6 +20,7 @@ Welcome to the July 29, 2020 release of the rapyuta.io platform.
 
 #### Updates
 - Ability to add port ranges for internally exposed endpoints: [Port ranges](/developer-guide/create-software-packages/package-internals/#exposing-endpoints-externally)
+
 #### SDK
 - **rapyuta.io Python SDK [0.15.0](/developer-guide/tooling-automation/python-sdk/#installation) released** 
 - Added network interface in routed network sdk method
