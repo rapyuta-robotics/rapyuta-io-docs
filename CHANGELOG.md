@@ -3,6 +3,10 @@
 ## [Unreleased]
 ### Added
 
+## [2.3.3 - 2020-07-30]
+### Fixed
+- Fix broken link and formatting for release update page
+
 ## [2.3.2 - 2020-07-29]
 ### Added
 - Added port range details
