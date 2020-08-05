@@ -10,4 +10,4 @@ weight: 834
 Welcome to the August 5, 2020 release of the rapyuta.io platform.
 
 ### Updates
-- Minor bufixes and improved validation for the rapyuta.io APIs
+- Minor bugfixes and improved validation for the rapyuta.io APIs
