@@ -1,7 +1,10 @@
 # CHANGELOG
 
 ## [Unreleased]
+
+## [2.4.0 - 2020-08-05]
 ### Added
+- Release update page for August 5, 2020
 
 ## [2.3.3 - 2020-07-30]
 ### Fixed
