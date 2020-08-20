@@ -123,17 +123,27 @@ The package has two components: the **talker** running on the cloud and the
 {{% notice info %}}
 The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}
-	1. For **Component Runtime**, click **Cloud**.
-	2. Ensure **Is ROS Component** is selected.
-	3. Set the value of **Replicas to run the component** number 1 (default value).
-	4. In the **Executable Name** box, enter a name for the executable say `talkerExecutable`   
+	2. For **Component Runtime**, click **Cloud**.
+	3. Ensure **Is ROS Component** is selected.
+	4. Set the value of **Replicas to run the component** number 1 (default value).
+	5. In the **Executable Name** box, enter a name for the executable say `talkerExecutable`   
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-	6. For **Executable Type**, click **Git**.
-	7. In the **Git repository** box, enter the url address:
-	   `https://github.com/rapyuta/io_tutorials`
-	8. In the **Command to run in the docker container** box, enter the command:
+	6. For **Executable Type**, click on **Build**.
+	7. Follow below steps to create the build  
+		1. On the left navigation bar, click **Builds**
+		2. Click on **ADD NEW BUILD**
+		3. In the Build Name box, enter a name for the build say `rosPSBuild` 
+		4. In the **Git repository** box, enter the url address : 
+		`https://github.com/rapyuta/io_tutorials` and select Build Recipe as Catkin.
+		5. Go to the next step and click on next, the build will be created.
+		
+		The build takes about two to five minutes to build the source code in the *io_tutorials*
+		repository into a running docker container. You may analyse the corresponding
+		[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
+	8. In the **Choose Build** select the above Build from drop-down list.	
+	9. In the **Command to run in the docker container** box, enter the command:
 	   	```bash
 	   	roslaunch talker talker.launch
 	   	```
@@ -143,7 +153,7 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyp
 	   	command, because the ROS Master will fail to start on *rosrun*, and
 	   	eventually, the deployment will fail as well.
 	   ![talkerExecutable](/images/tutorials/ros-pub-sub/ros-pubsub-talker-exec-details.png?classes=border,shadow&width=50pc)
-	9. The _talkerExecutable_ publishes a ROS topic, `/telemetry`    
+	10. The _talkerExecutable_ publishes a ROS topic, `/telemetry`    
 	   To add a ROS topic, click **Add ROS topic**. In the **Name** box, enter the name of the ROS topic. Select **Maximum** for **QoS**.
 2. Listener component (aka _ROS subscriber_)
 	1. In the **Component Name** box, type in a name for the component, say `listener` 
@@ -171,16 +181,7 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 	   ![listenerExecutable](/images/tutorials/ros-pub-sub/ros-pubsub-listener-exec.png?classes=border,shadow&width=50pc)
 	8. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-The package takes about two to five minutes to build the source code in the *io_tutorials*
-repository into a running docker container. You may analyse the corresponding
-[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
-A flickering yellow dot against the name of the package indicates that the
-**Build Status** is **New**, while a green dot indicates that the **Build Status**
-is **Complete**.
 
-Additionally, when the **Deploy package** button is automatically enabled, it
-indicates that the _ROS publisher subscriber_ package has been successfully
-built, and it can be deployed.
 
 ## Deploying the package
 To deploy a package using the [console](https://console.rapyuta.io),

@@ -40,8 +40,8 @@ is usually stored in a git repository. If it is a private git repository,
 you need to [add a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)
 to access the repository contents. rapyuta.io uses ***ROS Builder***, a subset of *catkin build*, to build source code into a docker image. If a package contains a ROS component, the component's ROS version can be *Kinetic* or *Melodic*. When building the source code, the ***ROS Builder*** takes into account its corresponding component's ROS version. 
 
-Set the **Executable Type** as **Git** and provide the URL address of
-a git repository. Suppose you want to add the address of a git repository
+In the **Builds** section to add a new build, add the Build name and provide 
+the URL address of git repository. Suppose you want to add the address of a git repository
 say https://github.com/rapyuta-robotics/io_tutorials,
 where ***io_tutorials*** is the project folder that contains the source
 code on the master branch and is hosted on GitHub.

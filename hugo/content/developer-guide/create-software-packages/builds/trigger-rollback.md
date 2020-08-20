@@ -6,7 +6,7 @@ date: 2019-10-25T12:39:12+05:30
 pre: "a. "
 weight: 320
 ---
-Consider a package whose executable is a git repository. The source
+Consider a package whose executable is a git repository build. The source
 code in the git repository is built into a runnable docker
 container. Each time you update the source code in the repository
 you expect the changes to be reflected the next time you deploy
@@ -14,15 +14,15 @@ the package, which implies, you expect the executable to pick up the latest
 git commit hash of the repository. Thus, you’ll trigger a new build for
 the package.
 
-When you add a package, the **Builds** tab displays information about the current build such as build generation number, time of build generation,
-name of the user who triggered the build, the status of the build, and
-error message if there is any.
+In the **Details** tab of the package, go to Components and check the **EXECUTABLES**. It displays information on the build,
+current build generation number, git repository etc.
 
 Suppose the current build generation number is _i_. If you update the
 source code in the git repository, you may want to trigger a new build
 for building the same package to reflect the new code changes. As a result,
-a new build generation number _(i+1)_ is generated. To trigger a new build
-for a package, click **Trigger build**.
+a new build generation number _(i+1)_ is generated. To trigger a new build, 
+select the particular build and click **Trigger build** for that build.
+
 
 You may always **Trigger** a new build irrespective of the status of the previous
 build. That is you can trigger a new build from either a **Complete** build or an
@@ -41,15 +41,14 @@ is any, irrespective of the previous build status. Rollbacking to a
 previous build does not restart the build process. Instead, it would
 run the corresponding docker container that was created for that build generation.
 
-The **Current build generation** number is shown below the package ID.
+The **Current build generation** number is shown below the build ID.
 
-![Current build generation number](/images/core-concepts/builds/current-build-number.png?classes=border,shadow&width=50pc)
+![Current build generation number](/images/core-concepts/builds/current-build-number.png?classes=border,shadow&width=30pc)
 
-When you deploy a package, the deployment process automatically chooses the
-current build generation number. Once a package is deployed, the build generation
-number used in the deployment process is displayed adjacent to the package name.
+Package’s executable automatically chooses the current build generation number. 
+The build generation number is shown in the Details tabs EXECUTABLE section.
 
-![Build generation number during deployment](/images/core-concepts/builds/build-number-deploy.png?classes=border,shadow&width=50pc)
+![Build generation number during deployment](/images/core-concepts/builds/build-number-package.png?classes=border,shadow&width=50pc)
 
 The builds are automatically restarted on software infrastructure failures.
 Click **Refresh** if you observe that the build logs are abruptly disconnected or stopped

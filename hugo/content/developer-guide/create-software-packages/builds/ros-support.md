@@ -33,8 +33,13 @@ git repository. It is copied to the ROS Builder's catkin workspace, and
 subsequently, catkin build parameters are applied to it. In the absence of a
 context directory, all of the folders in the git repository are built.
 
-To add a set of catkin build parameters, click **Add Parameter** against
-**CATKIN BUILD PARAMETERS** while adding a package using rapyuta.io
+
+To add a set of catkin build parameters follow below steps.
+
+1. On the left navigation bar, click **Builds**
+2. Click on **ADD NEW BUILD**
+3. Enter build name, git repository and select **Build Recipe** as Catkin. 
+4. In the next step Click **Add Parameter** against **CATKIN BUILD PARAMETERS** 
 
 You may provide multiple sets of catkin build parameters for a single ROS package. Thus you can run multiple catkin builds on the ROS package.
 
