@@ -21,13 +21,8 @@ possible for the developer to automate the flow from
 systems and QA processes.
 
 ## Build Strategies
-rapyuta.io builds ROS and non-ROS packages using various build strategies.
-The ***Build Engine*** selects an appropriate build strategy based on
-whether the package contains a git repository with Dockerfile or
-without it or a docker image.
-
-The goal of each build strategy is to generate a running docker container
-at the end of the package creation process.
+rapyuta.io builds as source code and docker build strategies. 
+The goal of each build strategy is to generate a running docker container at the end of the build creation process.
 
 You may analyse [build logs](/developer-guide/tooling-automation/logging/build-logs/) for
 debugging build failures. In the case of source code and Dockerfile
@@ -38,7 +33,8 @@ strategies, you can
 This strategy builds source code into a docker image. The source code
 is usually stored in a git repository. If it is a private git repository,
 you need to [add a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)
-to access the repository contents. rapyuta.io uses ***ROS Builder***, a subset of *catkin build*, to build source code into a docker image. If a package contains a ROS component, the component's ROS version can be *Kinetic* or *Melodic*. When building the source code, the ***ROS Builder*** takes into account its corresponding component's ROS version. 
+to access the repository contents. rapyuta.io uses *catkin build*, to build source code into a docker image. 
+
 
 In the **Builds** section to add a new build, add the Build name and provide 
 the URL address of git repository. Suppose you want to add the address of a git repository
@@ -67,7 +63,7 @@ that deal with large files (as large as a couple of GB in size) with
 If you want to use Git LFS with a private git repository, you must select *SSH authentication* while [adding a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)because the LFS extension will fail with the *Basic authentication*, and the corresponding source secret will not be applied to the private repository.
 {{% /notice %}}
 
-### Dockerfile strategy
+### Docker strategy
 This strategy builds a [Dockerfile](https://docs.docker.com/engine/reference/builder/) into a docker image. The Dockerfile is
 usually saved in a git repository. If it is a private git repository,
 you need to [add a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)
@@ -76,20 +72,8 @@ to access the repository contents.
 You may explicitly specify the absolute path of the Dockerfile, or
 the root of the git repository is set as the location of the Dockerfile.
 
-The [Basic Web Application](/build-solutions/sample-walkthroughs/basic-web-app/) walkthrough is an example of the dockerfile build strategy.
-
-### Docker image strategy
-This strategy uses a pre-built docker image. The docker image is usually
-stored in either a public docker registry (i.e., Dockerhub) or a private
-docker registry. You need to [add a docker pull secret](/developer-guide/create-software-packages/secrets/docker-registry/) for rapyuta.io to access a private docker image.
+The [Basic Web Application](/build-solutions/sample-walkthroughs/basic-web-app/) walkthrough is an example of the docker build strategy.
 
 {{% notice info %}}
-The maximum size of a docker image for cloud deployment is **10GB**.
+Follow this walkthrough to create and use a [build](/build-solutions/sample-walkthroughs/build-creation/).
 {{% /notice %}}
-
-If you are going to deploy a docker image onto a device, ensure that the
-CPU architecture of the device is compatible with that of the image being
-deployed. You may use the ***Build Engine*** for compiling for a different
-target architecture.
-
-The [Hardware Interfacing](/build-solutions/sample-walkthroughs/hardware-interfacing/) walkthrough illustrates the docker image strategy.
