@@ -36,7 +36,7 @@ context directory, all of the folders in the git repository are built.
 
 To add a set of catkin build parameters follow below steps.
 
-1. On the left navigation bar, click **Builds**
+1. On the left navigation bar, click **BUILDS**
 2. Click on **ADD NEW BUILD**
 3. Enter build name, git repository and select **Build Recipe** as Catkin. 
 4. In the next step Click **Add Parameter** against **CATKIN BUILD PARAMETERS** 

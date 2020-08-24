@@ -41,6 +41,46 @@ keyboard teleoperation from the device.
 
 When the device is successfully registered, you will see a green dot next to the device's name, indicating that the device is online.
 
+## Create builds
+You will create two builds in the tutorial.
+### Simulation build
+To create the build, follow below steps : 
+
+1. On the left navigation bar, click **BUILDS**
+2. Click on **ADD NEW BUILD**
+3. In the Build Name box, enter a name for the build say `simulationBuild` 
+4. In the **Git repository** box, enter the url address : 
+`https://github.com/rapyuta-robotics/io_simulation_tutorials` and select **Build Recipe** as Catkin.
+5. In the context directory, enter `turtlebot_teleoperation`
+6. Click on next, select **ROS Version** as **Melodic** and select the **Has Simulation** option.  
+7. Click on **Add Parameter** under **CATKIN BUILD PARAMETERS**,
+    1. add the following **ROS Packages**:`turtlebot3_gazebo turtlebot3_description`
+    2. add the following packages to **Blacklist**:
+    `turtlebot3 turtlebot3_bringup turtlebot3_example turtlebot3_navigation turtlebot3_slam`	
+8. Click on next, the build will be created.
+
+The build takes about two to five minutes to build the source code in the ***io_simulation_tutorials***
+repository into a running docker container. You may analyse the corresponding
+[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
+
+### Teleoperation build
+To create the build, follow below steps : 
+
+1. On the left navigation bar, click **BUILDS**
+2. Click on **ADD NEW BUILD**
+3. In the Build Name box, enter a name for the build say `teleoperationBuild` 
+4. In the **Git repository** box, enter the url address : 
+`https://github.com/ROBOTIS-GIT/turtlebot3#melodic-devel` and select **Build Recipe** as Catkin.
+5. Click on next, select **Architecture** as amd64 and select **ROS Version** as **Melodic**.  
+6. Click on **Add Parameter** under **CATKIN BUILD PARAMETERS**,
+    1. add the following **ROS Packages**:`turtlebot3_teleop`
+    2. add the following packages to **Blacklist**:`turtlebot3 turtlebot3_bringup turtlebot3_example turtlebot3_navigation turtlebot3_slam turtlebot3_description`	
+7. Click on next, the build will be created.
+
+The build takes about two to five minutes to build the source code in the ***turtlebot3***
+repository into a running docker container. You may analyse the corresponding
+[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
+
 ## Create Packages
 You will create two packages in the tutorial.
 ### Turtlebot3 Robot Simulation Package
@@ -59,25 +99,17 @@ You will create two packages in the tutorial.
 12. Choose **Melodic** for **ROS Version**.
 13. The number of replicas to run the component is `1`
 14. The name of the executable is `turtlebot3_autotrace_launcher`
-15. The **Executable Type** is **Git**.
-16. The **Git Repository** is `https://github.com/rapyuta-robotics/io_simulation_tutorials`
+15. For **Executable Type**, click on **Build**.
+16. In the **Choose Build** select the Build [created above](/build-solutions/sample-walkthroughs/basic-simulation/#simulation-build)
+	from the drop-down list
 17. In the **Command to run in the docker container** box, enter the command: `roslaunch turtlebot3_gazebo turtlebot3_autorace.launch`
-18. The **context directory** is `turtlebot_teleoperation`
-19. Select **Simulation** option. Enabling simulation feature automatically adds a Gazebo simulation specific endpoint, topics, services, inbound ROS interfaces, and a configuration parameter.
-20. Set **Resource Limit** to **Medium:2 cpu cores, 8 GiB memory**.
+18. Set **Resource Limit** to **Medium:2 cpu cores, 8 GiB memory**.
 {{% notice warning %}}
 For simulation, the resource limit should either be **Medium** or **Large**. Simulation has issues with **Small** resource limits.
 {{% /notice %}}
-21. Under **Catkin Build Parameters**,
-    1. add the following **ROS Packages**:`turtlebot3_gazebo turtlebot3_description`
-    2. add the following packages to **Blacklist**:
-    `turtlebot3 turtlebot3_bringup turtlebot3_example turtlebot3_navigation turtlebot3_slam`
-22. Click **Add Topic** under **Inbound ROS Interfaces** to add the ROS topic a deployment of this package subscribes to for velocity commands. The name of the topic is `/cmd_vel`
-23. Click **CONFIRM PACKAGE CREATION**. 
+19. Click **Add Topic** under **Inbound ROS Interfaces** to add the ROS topic a deployment of this package subscribes to for velocity commands. The name of the topic is `/cmd_vel`
+20. Click **CONFIRM PACKAGE CREATION**. 
 
-The package takes a couple of minutes to build the source code in ***io_simulation_tutorials*** repository into a running docker container. You may analyze the corresponding build logs, which help debug failing builds. A flickering yellow dot against the name of the package indicates that the **Build Status** is **New**, while a green dot indicates that the **Build Status** is **Complete**.
-
-Additionally, when the **Deploy package** button is automatically enabled, it indicates that the ***Turtlebot3 Robot Simulation*** package is successfully built and is ready to be deployed.
 
 ### Turtlebot3 Keyboard Teleoperation Package
 
@@ -95,21 +127,16 @@ Additionally, when the **Deploy package** button is automatically enabled, it in
 12. The CPU architecture is **amd64**.
 13. Set **Restart Policy** to **Always**.
 14. The name of the executable is `sleep`
-15. The **Executable Type** is **Git**.
-16. The **Git Repository** is `https://github.com/ROBOTIS-GIT/turtlebot3#melodic-devel`
+15. For **Executable Type**, click on **Build**.
+16. In the **Choose Build** select the Build [created above](/build-solutions/sample-walkthroughs/basic-simulation/#teleoperation-build)
+	from the drop-down list
 17. In the **Command to run in the docker container** box, enter the command: `sleep infinity`
 {{% notice info %}}
 The command, ***sleep infinity***, will keep the deployment running and does not serve any other purpose. 
 {{% /notice %}}
-18. In **Catkin Build Parameters**,
-    1. add the following **ROS Packages**:`turtlebot3_teleop`
-    2. add the following packages to **Blacklist**:`turtlebot3 turtlebot3_bringup turtlebot3_example turtlebot3_navigation turtlebot3_slam turtlebot3_description`
-19. Add a ROS topic by clicking on **Add ROS topic**. The name of the topic is `/cmd_vel`, and its **QoS** is set to **Low**.
-20. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+18. Add a ROS topic by clicking on **Add ROS topic**. The name of the topic is `/cmd_vel`, and its **QoS** is set to **Low**.
+19. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-The package takes a couple of minutes to build the source code in ***turtlebot3*** repository into a running docker container. You may analyze the corresponding build logs, which help debug failing builds. A flickering yellow dot against the name of the package indicates that the **Build Status** is **New**, while a green dot indicates that the **Build Status** is **Complete**.
-
-Additionally, when the **Deploy package** button is automatically enabled, it indicates that the ***Turtlebot3 Keyboard Teleoperation*** package is successfully built and is ready to be deployed.
 
 ## Deploy Packages
 You will deploy all the packages created in the previous step.

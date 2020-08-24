@@ -6,6 +6,19 @@ date: 2019-10-25T12:35:41+05:30
 pre: "4. "
 weight: 285
 ---
+
+## Creating the build
+Follow below steps to create the build : 
+
+1. On the left navigation bar, click **BUILDS**
+2. Click on **ADD NEW BUILD**
+3. In the Build Name box, enter a name for the build say `demoBuild` 
+4. In the **Git repository** box, enter the url address : `https://github.com/rapyuta/io_tutorials` 
+and select **Build Recipe** as Catkin.
+5. Go to the next step and click on next, the build will be created.
+
+
+## Creating the package
 To add a new package using rapyuta.io, follow the steps:
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
@@ -34,16 +47,10 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9] and
 {{% notice note %}}
 The maximum size of the docker image is 10 GB for cloud deployment
 {{% /notice %}}
-   3. Follow below steps to create the build  
-		1. On the left navigation bar, click **Builds**
-		2. Click on **ADD NEW BUILD**
-		3. In the Build Name box, enter a name for the build say `demoBuild` 
-		4. In the **Git repository** box, enter the url address : 
-		`https://github.com/rapyuta/io_tutorials` and select Build Recipe as Catkin.
-		5. Go to the next step and click on next, the build will be created.
 		
-   4. In the **Choose Build** select the above Build from drop-down list.
-   5. In the **Command to run in the docker container** box, enter the command:`roslaunch talker talker.launch`     
+   3. In the **Choose Build** select the Build [created above](/developer-guide/create-software-packages/package-creation-tutorial/#creating-the-build)
+   from the drop-down list.
+   4. In the **Command to run in the docker container** box, enter the command:`roslaunch talker talker.launch`     
     Ensure that you always execute the *roslaunch* command to explicitly start the [ROS
 	Master](http://wiki.ros.org/Master) instead of running the *rosrun* command,
 	because the ROS Master will fail to start on *rosrun* command in the console,

@@ -24,7 +24,24 @@ Beginner
 ## Estimated time
 10 minutes
 
-## Tutorial walkthrough
+## Creating the build
+To create the build, follow below steps : 
+
+1. On the left navigation bar, click **BUILDS**
+2. Click on **ADD NEW BUILD**
+3. In the Build Name box, enter a name for the build say `fhwBuild` 
+4. In the **Git repository** box, enter the url address : 
+`https://github.com/rapyuta/io_tutorials` and select **Build Recipe** as **Docker**.
+5.In the **Context directory box**, enter the name of the parent directory that contains the dockerfile. 
+In this example, it is `flask_helloworld`
+6. Go to the next step and click on next, the build will be created.
+
+The build takes about two to five minutes to build the source code in the *io_tutorials*
+repository into a running docker container. You may analyse the corresponding
+[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
+
+
+## Creating the package
 You will add and deploy ***simple-hello-world*** package. To create a new package,
 follow the below instructions in sequence:
 
@@ -48,10 +65,9 @@ follow the below instructions in sequence:
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}
-10. Select **Git** for **Executable Type**.
-11. In the **Git Repository** box, enter the git repository's URL address: `https://github.com/rapyuta-robotics/io_tutorials`
-12. In the **Context directory** box, enter the name of the parent directory that contains the dockerfile. In this example, it is `flask_helloworld`.
-13. Select **Use docker build strategy**.
+10. For **Executable Type**, click on **Build**.
+11. In the **Choose Build** select the Build [created above](/build-solutions/sample-walkthroughs/basic-web-app/#creating-the-build)
+	from the drop-down list.
 ![Executable details](/images/tutorials/hello-world/exec-details.png?classes=border,shadow&width=50pc)
 14. You must expose a network endpoint for viewing the output of the tutorial:
     1.  Click **Add Endpoint**.
@@ -63,20 +79,13 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 ![Network endpoint](/images/tutorials/hello-world/endpoint-details.png?classes=border,shadow&width=50pc)
 15. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-The package takes about five minutes to build the dockerfile in the *flask_helloworld* directory into a running docker container. You can
-analyze the corresponding [build logs](/developer-guide/tooling-automation/logging/build-logs/)
-for debugging failing builds.
-
-A flickering yellow dot next to the package name indicates that the
-**Build Status** is **BuildInProgress**, while a green dot indicates
-that the **Build Status** is **Complete**.
-
 ![Package build](/images/tutorials/hello-world/build-pkg-success.png?classes=border,shadow&width=50pc)
 
 Additionally, you may verify if the package is built successfully and is
 ready to be deployed by checking to see if the **Deploy package** button is
 active.
 
+## Deploying the package
 To deploy the ***simple-hello-world*** package, walk through the below
 instructions in sequence:
 

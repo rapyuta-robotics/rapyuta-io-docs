@@ -101,6 +101,21 @@ If you experience an error ***catkin:command not found***, then the *python-catk
 To onboard the device on to rapyuta.io,[add the device](/developer-guide/manage-machines/onboarding/) to the console. Ensure that you do not select
 the **Use docker compose as default runtime** checkbox while adding the device.
 
+## Creating the build
+To create the build, follow below steps : 
+
+1. On the left navigation bar, click **BUILDS**
+2. Click on **ADD NEW BUILD**
+3. In the Build Name box, enter a name for the build say `rosPSBuild` 
+4. In the **Git repository** box, enter the url address : 
+`https://github.com/rapyuta/io_tutorials` and select Build Recipe as Catkin.
+5. Go to the next step and click on next, the build will be created.
+
+The build takes about two to five minutes to build the source code in the *io_tutorials*
+repository into a running docker container. You may analyse the corresponding
+[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
+
+
 ## Creating the package
 To create a package using the [console](https://console.rapyuta.io), follow
 the steps:
@@ -131,19 +146,9 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 	6. For **Executable Type**, click on **Build**.
-	7. Follow below steps to create the build  
-		1. On the left navigation bar, click **Builds**
-		2. Click on **ADD NEW BUILD**
-		3. In the Build Name box, enter a name for the build say `rosPSBuild` 
-		4. In the **Git repository** box, enter the url address : 
-		`https://github.com/rapyuta/io_tutorials` and select Build Recipe as Catkin.
-		5. Go to the next step and click on next, the build will be created.
-		
-		The build takes about two to five minutes to build the source code in the *io_tutorials*
-		repository into a running docker container. You may analyse the corresponding
-		[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
-	8. In the **Choose Build** select the above Build from drop-down list.	
-	9. In the **Command to run in the docker container** box, enter the command:
+	7. In the **Choose Build** select the Build [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/preinstalled-runtime/#creating-the-build)
+	from the drop-down list.	
+	8. In the **Command to run in the docker container** box, enter the command:
 	   	```bash
 	   	roslaunch talker talker.launch
 	   	```
@@ -153,7 +158,7 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyp
 	   	command, because the ROS Master will fail to start on *rosrun*, and
 	   	eventually, the deployment will fail as well.
 	   ![talkerExecutable](/images/tutorials/ros-pub-sub/ros-pubsub-talker-exec-details.png?classes=border,shadow&width=50pc)
-	10. The _talkerExecutable_ publishes a ROS topic, `/telemetry`    
+	9. The _talkerExecutable_ publishes a ROS topic, `/telemetry`    
 	   To add a ROS topic, click **Add ROS topic**. In the **Name** box, enter the name of the ROS topic. Select **Maximum** for **QoS**.
 2. Listener component (aka _ROS subscriber_)
 	1. In the **Component Name** box, type in a name for the component, say `listener` 

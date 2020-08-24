@@ -15,7 +15,7 @@ git commit hash of the repository. Thus, you’ll trigger a new build for
 the package.
 
 In the **Details** tab of the package, go to Components and check the **EXECUTABLES**. It displays information on the build,
-current build generation number, git repository etc.
+current build generation number,git repository etc.
 
 Suppose the current build generation number is _i_. If you update the
 source code in the git repository, you may want to trigger a new build
@@ -41,7 +41,7 @@ is any, irrespective of the previous build status. Rollbacking to a
 previous build does not restart the build process. Instead, it would
 run the corresponding docker container that was created for that build generation.
 
-The **Current build generation** number is shown below the build ID.
+The **Current build generation** number (Gen) is shown below the build ID.
 
 ![Current build generation number](/images/core-concepts/builds/current-build-number.png?classes=border,shadow&width=30pc)
 
