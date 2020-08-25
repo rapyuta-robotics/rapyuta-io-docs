@@ -60,7 +60,7 @@ Beginner
 
 ### Creating the **io-tutorial** build
  
-To create the build, follow below steps. Skip the following steps if you have already created an *io_tutorial* build earlier.
+To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
 
 1. On the left navigation bar, click **BUILDS**
 2. Click on **ADD NEW BUILD**
@@ -69,6 +69,9 @@ To create the build, follow below steps. Skip the following steps if you have al
 and select **Build Recipe** as Catkin.
 5. Go to the next step and click on next, the build will be created.
 
+The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding
+[build logs](/developer-guide/tooling-automation/logging/build-logs/), which helps in debugging failed builds.
+Please proceed to creation of package once the build is Complete.
 
 ### Create Talker Package
 

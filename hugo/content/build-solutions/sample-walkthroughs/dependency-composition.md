@@ -61,6 +61,8 @@ The build takes about two to five minutes to build the source code in the *io_tu
 repository into a running docker container. You may analyse the corresponding
 [build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
 
+Please proceed to creation of package once the build is Complete.
+
 #### Create dynamic_map_server package
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.

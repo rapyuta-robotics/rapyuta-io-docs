@@ -111,9 +111,9 @@ To create the build, follow below steps. Skip the following steps if you have al
 `https://github.com/rapyuta/io_tutorials` and select Build Recipe as Catkin.
 5. Go to the next step and click on next, the build will be created.
 
-The build takes about two to five minutes to build the source code in the *io_tutorials*
-repository into a running docker container. You may analyse the corresponding
-[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
+The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding
+[build logs](/developer-guide/tooling-automation/logging/build-logs/), which helps in debugging failed builds.
+Please proceed to creation of package once the build is Complete.
 
 
 ## Creating the package
@@ -146,7 +146,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 	6. For **Executable Type**, click on **Build**.
-	7. In the **Choose Build** select the Build [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/preinstalled-runtime/#creating-the-build)
+	7. In the **Choose Build** select the Build(`io-tutorials`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/preinstalled-runtime/#creating-the-build)
 	from the drop-down list.	
 	8. In the **Command to run in the docker container** box, enter the command:
 	   	```bash

@@ -44,11 +44,11 @@ When the device is successfully registered, you will see a green dot next to the
 ## Create builds
 You will create two builds in the tutorial.
 ### Simulation build
-To create the build, follow below steps. Skip the following steps if you have already created an *io-simulation-tutorials* build earlier.
+To create the build, follow below steps:
 
 1. On the left navigation bar, click **BUILDS**
 2. Click on **ADD NEW BUILD**
-3. In the Build Name box, enter a name for the build say `io-simulation-tutorials` 
+3. In the Build Name box, enter a name for the build say `io-simulation-teleoperation` 
 4. In the **Git repository** box, enter the url address : 
 `https://github.com/rapyuta-robotics/io_simulation_tutorials` and select **Build Recipe** as Catkin.
 5. In the context directory, enter `turtlebot_teleoperation`
@@ -82,6 +82,8 @@ The build takes about two to five minutes to build the source code in the ***tur
 repository into a running docker container. You may analyse the corresponding
 [build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
 
+Please proceed to creation of package once the builds are Complete.
+
 ## Create Packages
 You will create two packages in the tutorial.
 ### Turtlebot3 Robot Simulation Package
@@ -101,7 +103,7 @@ You will create two packages in the tutorial.
 13. The number of replicas to run the component is `1`
 14. The name of the executable is `turtlebot3_autotrace_launcher`
 15. For **Executable Type**, click on **Build**.
-16. In the **Choose Build** select the Build (`io-simulation-tutorials`) [created above](/build-solutions/sample-walkthroughs/basic-simulation/#simulation-build)
+16. In the **Choose Build** select the Build (`io-simulation-teleoperation`) [created above](/build-solutions/sample-walkthroughs/basic-simulation/#simulation-build)
 	from the drop-down list
 17. In the **Command to run in the docker container** box, enter the command: `roslaunch turtlebot3_gazebo turtlebot3_autorace.launch`
 18. Set **Resource Limit** to **Medium:2 cpu cores, 8 GiB memory**.

@@ -79,7 +79,8 @@ and select Build Recipe as Catkin.
 
 
 The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding
-[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
+[build logs](/developer-guide/tooling-automation/logging/build-logs/), which helps in debugging failed builds.
+Please proceed to creation of package once the builds is Complete.
 
 
 ## Creating the package

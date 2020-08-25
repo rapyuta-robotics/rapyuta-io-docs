@@ -40,6 +40,7 @@ The build takes about two to five minutes to build the source code in the *io_tu
 repository into a running docker container. You may analyse the corresponding
 [build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
 
+Please proceed to creation of package once the build is Complete.
 
 ## Creating the package
 You will add and deploy ***simple-hello-world*** package. To create a new package,
@@ -66,7 +67,7 @@ follow the below instructions in sequence:
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}
 10. For **Executable Type**, click on **Build**.
-11. In the **Choose Build** select the Build [created above](/build-solutions/sample-walkthroughs/basic-web-app/#creating-the-build)
+11. In the **Choose Build** select the Build(`web-app-build`) [created above](/build-solutions/sample-walkthroughs/basic-web-app/#creating-the-build)
 	from the drop-down list.
 ![Executable details](/images/tutorials/hello-world/exec-details.png?classes=border,shadow&width=50pc)
 14. You must expose a network endpoint for viewing the output of the tutorial:
