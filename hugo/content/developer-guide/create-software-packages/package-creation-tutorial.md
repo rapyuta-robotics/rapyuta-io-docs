@@ -43,7 +43,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9] and a
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9] and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-   2. For **Executable Type**, click on **Build**.
+   2. For **Executable Type**, click on **Builds**.
 {{% notice note %}}
 The maximum size of the docker image is 10 GB for cloud deployment
 {{% /notice %}}

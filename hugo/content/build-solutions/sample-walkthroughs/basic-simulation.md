@@ -102,7 +102,7 @@ You will create two packages in the tutorial.
 12. Choose **Melodic** for **ROS Version**.
 13. The number of replicas to run the component is `1`
 14. The name of the executable is `turtlebot3_autotrace_launcher`
-15. For **Executable Type**, click on **Build**.
+15. For **Executable Type**, click on **Builds**.
 16. In the **Choose Build** select the Build (`io-simulation-teleoperation`) [created above](/build-solutions/sample-walkthroughs/basic-simulation/#simulation-build)
 	from the drop-down list
 17. In the **Command to run in the docker container** box, enter the command: `roslaunch turtlebot3_gazebo turtlebot3_autorace.launch`
@@ -130,7 +130,7 @@ For simulation, the resource limit should either be **Medium** or **Large**. Sim
 12. The CPU architecture is **amd64**.
 13. Set **Restart Policy** to **Always**.
 14. The name of the executable is `sleep`
-15. For **Executable Type**, click on **Build**.
+15. For **Executable Type**, click on **Builds**.
 16. In the **Choose Build** select the Build (`turtlebot-teleoperation`) [created above](/build-solutions/sample-walkthroughs/basic-simulation/#teleoperation-build)
 	from the drop-down list
 17. In the **Command to run in the docker container** box, enter the command: `sleep infinity`

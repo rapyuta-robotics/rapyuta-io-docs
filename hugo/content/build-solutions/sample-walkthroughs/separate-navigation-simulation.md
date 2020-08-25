@@ -177,7 +177,7 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 12. Choose **Melodic** for **ROS Version**.
 13. The number of **Replicas to run the component** is **1**
 14. The name of the executable: `simulation_executable`
-15. For **Executable Type**, click on **Build**.
+15. For **Executable Type**, click on **Builds**.
 16. In the **Choose Build** select the Build (`io-simulation-navigation`) [created above](/build-solutions/sample-walkthroughs/separate-navigation-simulation/#create-build)
 	from the drop-down list
 17. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup sim.launch gui:=true`

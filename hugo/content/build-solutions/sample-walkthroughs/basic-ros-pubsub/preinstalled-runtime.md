@@ -145,8 +145,8 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-	6. For **Executable Type**, click on **Build**.
-	7. In the **Choose Build** select the Build(`io-tutorials`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/preinstalled-runtime/#creating-the-build)
+	6. For **Executable Type**, click on **Builds**.
+	7. In the **Choose Build** select the Build [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/preinstalled-runtime/#creating-the-build)
 	from the drop-down list.	
 	8. In the **Command to run in the docker container** box, enter the command:
 	   	```bash
