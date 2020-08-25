@@ -50,7 +50,8 @@ Click **Refresh** if you observe that the build logs are abruptly disconnected o
 
 When a build fails, it is recommended to check the corresponding
 [build logs](/developer-guide/tooling-automation/logging/build-logs/) to debug. It can be due to multiple reasons like:
-* Repository access issue
-* Incorrect context directory path
-* Incorrect catkin parameters
-* Incorrect dockerfile path
+
+1. Repository access issue
+2. Incorrect context directory path
+3. Incorrect catkin parameters
+4. Incorrect dockerfile path

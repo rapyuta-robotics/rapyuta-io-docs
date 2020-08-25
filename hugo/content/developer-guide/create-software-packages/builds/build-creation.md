@@ -1,25 +1,11 @@
 ---
-title: "Build Creation"
+title: "Build Creation and Deletion"
 description:
 type: developer-guide
 date: 2019-10-24T13:46:19+05:30
 pre: "a. "
 weight: 320
 ---
-
-## Learning Objective
-The tutorial will show you how to create and delete a build.
-
-## Prerequisites
-
-1. Install the [Chrome web browser](https://www.google.com/chrome/) on a computer.
-2. You should be familiar with the [developer guide](https://userdocs.rapyuta.io/) of rapyuta.io
-
-## Difficulty
-Easy
-
-## Estimated Time
-20 minutes
 
 ## Creating Build by Catkin recipe 
 Follow below steps to create the build by catkin recipe : 
@@ -31,7 +17,7 @@ Follow below steps to create the build by catkin recipe :
 5. If it is a **Private Git**, then select **Private Git** and select the applicable **Credentials** from the drop-down list. 
 You will need to [create a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret), 
 if already not created.
-![goo](/images/tutorials/build-creation/catkin-recipe.png?classes=border,shadow&width=40pc)
+![goo](/images/core-concepts/builds/build-creation/catkin-recipe.png?classes=border,shadow&width=40pc)
 6. Click on next, select appropriate **Architecture**, **ROS Version** and select the **Has Simulation** option if applicable.
 7. Click on **Add Parameter** against **CATKIN BUILD PARAMETERS** to add any valid [catkin parameters](/developer-guide/create-software-packages/builds/ros-support/), 
  you can use this to include/exclude packages from being built.
