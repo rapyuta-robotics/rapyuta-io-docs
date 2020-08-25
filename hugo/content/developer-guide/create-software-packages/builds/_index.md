@@ -38,7 +38,7 @@ debugging build failures. If you have pushed a new commit, you can
 [trigger new builds or roll back previous builds](/developer-guide/create-software-packages/builds/trigger-rollback/).
 
 ### Catkin Recipe
-This recipe builds ros based source code using catkin into a docker image. We allow our users to add any valid [catkin parameters](/developer-guide/create-software-packages/builds/ros-support/) in 
+This recipe builds ros based source code using catkin into a container image. We allow our users to add any valid [catkin parameters](/developer-guide/create-software-packages/builds/ros-support/) in 
 this recipe. 
  
 
@@ -61,7 +61,7 @@ If you want to use Git LFS with a private git repository, you must select *SSH a
 
 
 ### Docker Recipe
-This recipe builds source code using [Dockerfile](https://docs.docker.com/engine/reference/builder/) into a docker image. The Dockerfile is usually saved in your git repository. You may explicitly specify the absolute path of the Dockerfile, or the root of the git repository is set as the location of the Dockerfile.
+This recipe builds source code using [Dockerfile](https://docs.docker.com/engine/reference/builder/) into a container image. The Dockerfile is usually saved in your git repository. You may explicitly specify the absolute path of the Dockerfile, or the root of the git repository is set as the location of the Dockerfile.
 
 The [Basic Web Application](/build-solutions/sample-walkthroughs/basic-web-app/) walkthrough is an example of the docker build recipe.
 
@@ -72,6 +72,6 @@ If it is a private git repository, you need to
 to access the repository contents. 
 {{% /notice %}}
 
-If you are going to deploy a docker image onto a device, ensure that the
+If you are going to deploy a docker container image onto a device, ensure that the
 CPU architecture of the device is compatible with that of the image being
 deployed. You may select the appropriate target architecture while creating the build.
