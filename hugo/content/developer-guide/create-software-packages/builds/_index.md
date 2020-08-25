@@ -79,7 +79,7 @@ the root of the git repository is set as the location of the Dockerfile.
 The [Basic Web Application](/build-solutions/sample-walkthroughs/basic-web-app/) walkthrough is an example of the docker build recipe.
 
 {{% notice info %}}
-Follow this walkthrough to create and use a [build](/build-solutions/sample-walkthroughs/build-creation/).
+Follow this walkthrough to create and use a [build](/developer-guide/create-software-packages/builds/build-creation/). 
 {{% /notice %}}
 
 If you are going to deploy a docker image onto a device, ensure that the

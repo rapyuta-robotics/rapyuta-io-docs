@@ -3,8 +3,8 @@ title: "ROS Support"
 description:
 type: developer-guide
 date: 2019-10-25T12:39:37+05:30
-pre: "b. "
-weight: 325
+pre: "c. "
+weight: 330
 ---
 You can control how ROS packages will be built by specifying catkin
 build parameters. rapyuta.io provides a handful of catkin build
