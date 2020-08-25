@@ -20,11 +20,11 @@ In this tutorial, you will learn how to add and deploy packages using
 [rapyuta.io console](https://console.rapyuta.io). Specifically, you'll
 learn how to:
 
-1. Source your packages from a public docker registry and a public git
-   repository.
-2. Expose ROS topics, services, actions, and network endpoints as component-level interfaces.
-3. Create [Routed Networks](/build-solutions/sample-walkthroughs/routed-network) and dependent deployments.
-4. Control a Turtlebot in simulation through a web browser.
+1. Create [Build](/developer-guide/create-software-packages/builds/), converting a public git repository to a container image. 
+2. Source your packages from a public docker registry and builds.
+3. Expose ROS topics, services, actions, and network endpoints as component-level interfaces.
+4. Create [Routed Networks](/build-solutions/sample-walkthroughs/routed-network) and dependent deployments.
+5. Control a Turtlebot in simulation through a web browser.
 
 ## Prerequisites
 
