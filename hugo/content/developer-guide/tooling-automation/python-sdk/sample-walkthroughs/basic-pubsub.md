@@ -57,6 +57,19 @@ Beginner
 7. ***DEVICE ID*** is a unique identification value of a device on
    rapyuta.io, and it is of type *string*.
 
+
+### Creating the **io-tutorial** build
+ 
+To create the build, follow below steps. Skip the following steps if you have already created an *io_tutorial* build earlier.
+
+1. On the left navigation bar, click **BUILDS**
+2. Click on **ADD NEW BUILD**
+3. In the Build Name box, enter a name for the build say `io-tutorials`
+4. In the Git repository box, enter the url address : `https://github.com/rapyuta/io_tutorials` 
+and select **Build Recipe** as Catkin.
+5. Go to the next step and click on next, the build will be created.
+
+
 ### Create Talker Package
 
 1. On the left navigation bar, click **CATALOG**.
@@ -76,9 +89,8 @@ Beginner
 13. The default value of **Replicas to run the component** is set to 1
 14. In the **Executable Name** box, enter a name for an executable,
     say `talker_executable`.
-15. Click **Git** for **Executable Type**.
-16. In the **Git repository** box, enter the URL address:
-    `https://github.com/rapyuta/io_tutorials`
+15. Click **Builds** for **Executable Type**.
+16. Select **io-tutorials** builds from the dropdown
 17. In the **Command to run in the docker container** box, enter the command:
     `roslaunch talker talker.launch`
 18. The ***talker_executable*** publishes a ROS topic `/telemetry`.
