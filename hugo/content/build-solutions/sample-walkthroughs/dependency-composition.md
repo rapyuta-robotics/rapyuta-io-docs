@@ -91,7 +91,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 9. For **Executable Type**, click on **Build**.
-10. In the **Choose Build** select the Build [created above](/build-solutions/sample-walkthroughs/dependency-composition/#creating-the-build)
+10. In the **Choose Build** select the Build (`io-tutorials`) [created above](/build-solutions/sample-walkthroughs/dependency-composition/#creating-the-build)
 	from the drop-down list
 11. In the **Command to run in the docker container** box, copy and paste the command:
 	```bash
