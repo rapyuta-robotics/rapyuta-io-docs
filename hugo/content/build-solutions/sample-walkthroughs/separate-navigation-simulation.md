@@ -123,7 +123,7 @@ To create the build, follow below steps :
 
 1. On the left navigation bar, click **BUILDS**
 2. Click on **ADD NEW BUILD**
-3. In the Build Name box, enter a name for the build say `simBuild` 
+3. In the Build Name box, enter a name for the build say `io-simulation-tutorials` 
 4. In the **Git repository** box, enter the url address : 
 `https://github.com/rapyuta-robotics/io_simulation_tutorials` and select **Build Recipe** as Catkin.
 5. In the context directory, enter `turtlebot_navigation`

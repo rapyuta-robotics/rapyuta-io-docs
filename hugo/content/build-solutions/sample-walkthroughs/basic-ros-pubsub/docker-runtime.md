@@ -56,14 +56,15 @@ while adding the device.
 ## Creating the build
 To create the build, follow below steps :
 
+
 1. On the left navigation bar, click **BUILDS**
 2. Click on **ADD NEW BUILD**
-3. In the Build Name box, enter a name for the build say `dockerPSBuild`
+3. In the Build Name box, enter a name for the build say `io-tutorials`
 4. In the Git repository box, enter the url address : `https://github.com/rapyuta/io_tutorials` 
 and select **Build Recipe** as Catkin.
 5. Go to the next step and click on next, the build will be created.
 6. Again click on **ADD NEW BUILD** to create another build 
-7. In the Build Name box, enter a name for the build say `dockerPSBuildl`
+7. In the Build Name box, enter a name for the build say `io-tutorials-arm32v7`
 8. In the Git repository box, enter the url address : `https://github.com/rapyuta/io_tutorials` 
 and select Build Recipe as Catkin.
 9. Go to next step, select arm32v7 as **Architecture** and ensure that the **ROS Version** is Kinetic.
@@ -134,7 +135,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 	7. For **Executable Type**, click on **Build**.
-	8. In the **Choose Build** select the second Build (`dockerPSBuildl`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/#creating-the-build)
+	8. In the **Choose Build** select the second Build (`io-tutorials-arm32v7`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/#creating-the-build)
 	from the drop-down list.
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash

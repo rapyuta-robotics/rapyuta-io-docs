@@ -6,9 +6,7 @@ date: 2019-10-25T12:38:46+05:30
 pre: "7. "
 weight: 315
 ---
-When defining packages rapyuta.io allows the developer to directly
-reference source code from a VCS like GitHub or Bitbucket. The
-platform then takes the responsibility of cloning, building and
+The rapyuta.io platform takes the responsibility of building and
 delivering the software across the cloud and device.
 
 Under the hood, rapyuta.io solves the hard problems of native arm
@@ -20,21 +18,9 @@ possible for the developer to automate the flow from
 *git to operations* and integrate it with existing CI/CD
 systems and QA processes.
 
-## Build Strategies
-rapyuta.io builds as source code and docker build strategies. 
-The goal of each build strategy is to generate a running docker container at the end of the build creation process.
-
-You may analyse [build logs](/developer-guide/tooling-automation/logging/build-logs/) for
-debugging build failures. In the case of source code and Dockerfile
-strategies, you can
-[trigger new builds or roll back previous builds](/developer-guide/create-software-packages/builds/trigger-rollback/).
-
-### Source code strategy
-This strategy builds source code into a docker image. The source code
-is usually stored in a git repository. If it is a private git repository,
-you need to [add a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)
-to access the repository contents. rapyuta.io uses *catkin build*, to build source code into a docker image. 
-
+## Build Recipes
+rapyuta.io builds as catkin and docker build recipes. 
+The goal of each build recipe is to generate a running docker container at the end of the build creation process.
 
 In the **Builds** section to add a new build, add the Build name and provide 
 the URL address of git repository. Suppose you want to add the address of a git repository
@@ -47,8 +33,24 @@ If you want to add source code located on a different branch, say
 will look like:
 https://github.com/rapyuta-robotics/io_tutorials#io_turtlesim_qos
 
+You may analyse [build logs](/developer-guide/tooling-automation/logging/build-logs/) for
+debugging build failures. In the case of Catkin and Docker
+recipes, you can
+[trigger new builds or roll back previous builds](/developer-guide/create-software-packages/builds/trigger-rollback/).
+
+### Catkin Recipe
+This recipe builds source code into a docker image. The source code
+is usually stored in a ros based git repository. rapyuta.io uses *catkin build* recipe, 
+to build source code into a docker image. 
+We allow our users to add any valid [catkin parameters](/developer-guide/create-software-packages/builds/ros-support/) in 
+this recipe. 
+If it is a private git repository, you need to 
+[add a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)
+to access the repository contents. 
+ 
+
 The [ROS Publisher Subscriber](/build-solutions/sample-walkthroughs/basic-ros-pubsub/preinstalled-runtime/) walkthrough is an example of
-the source code build strategy.
+the catkin build recipe.
 
 {{% notice info %}}
 rapyuta.io supports cross-compilation of source code
@@ -60,11 +62,13 @@ architectures.
 rapyuta.io supports cloning and fetching from repositories
 that deal with large files (as large as a couple of GB in size) with
 [Git Large File System (LFS)](https://git-lfs.github.com/) extension.
-If you want to use Git LFS with a private git repository, you must select *SSH authentication* while [adding a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)because the LFS extension will fail with the *Basic authentication*, and the corresponding source secret will not be applied to the private repository.
+If you want to use Git LFS with a private git repository, you must select *SSH authentication* while [adding a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret) because the LFS extension will fail with the *Basic authentication*, and the corresponding source secret will not be applied to the private repository.
 {{% /notice %}}
 
-### Docker strategy
-This strategy builds a [Dockerfile](https://docs.docker.com/engine/reference/builder/) into a docker image. The Dockerfile is
+
+
+### Docker Recipe
+This recipe builds a [Dockerfile](https://docs.docker.com/engine/reference/builder/) into a docker image. The Dockerfile is
 usually saved in a git repository. If it is a private git repository,
 you need to [add a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)
 to access the repository contents.
@@ -72,8 +76,12 @@ to access the repository contents.
 You may explicitly specify the absolute path of the Dockerfile, or
 the root of the git repository is set as the location of the Dockerfile.
 
-The [Basic Web Application](/build-solutions/sample-walkthroughs/basic-web-app/) walkthrough is an example of the docker build strategy.
+The [Basic Web Application](/build-solutions/sample-walkthroughs/basic-web-app/) walkthrough is an example of the docker build recipe.
 
 {{% notice info %}}
 Follow this walkthrough to create and use a [build](/build-solutions/sample-walkthroughs/build-creation/).
 {{% /notice %}}
+
+If you are going to deploy a docker image onto a device, ensure that the
+CPU architecture of the device is compatible with that of the image being
+deployed. You may select the appropriate target architecture while creating the build.

@@ -29,11 +29,11 @@ To create the build, follow below steps :
 
 1. On the left navigation bar, click **BUILDS**
 2. Click on **ADD NEW BUILD**
-3. In the Build Name box, enter a name for the build say `fhwBuild` 
+3. In the Build Name box, enter a name for the build say `web-app-build` 
 4. In the **Git repository** box, enter the url address : 
 `https://github.com/rapyuta/io_tutorials` and select **Build Recipe** as **Docker**.
-5.In the **Context directory box**, enter the name of the parent directory that contains the dockerfile. 
-In this example, it is `flask_helloworld`
+5. In the **Context directory box**, enter the name of the parent directory that contains the dockerfile. 
+In this example, it is `flask_helloworld`.
 6. Go to the next step and click on next, the build will be created.
 
 The build takes about two to five minutes to build the source code in the *io_tutorials*

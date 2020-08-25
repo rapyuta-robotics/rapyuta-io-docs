@@ -48,7 +48,7 @@ To create the build, follow below steps :
 
 1. On the left navigation bar, click **BUILDS**
 2. Click on **ADD NEW BUILD**
-3. In the Build Name box, enter a name for the build say `simulationBuild` 
+3. In the Build Name box, enter a name for the build say `io-simulation-tutorials` 
 4. In the **Git repository** box, enter the url address : 
 `https://github.com/rapyuta-robotics/io_simulation_tutorials` and select **Build Recipe** as Catkin.
 5. In the context directory, enter `turtlebot_teleoperation`
@@ -68,7 +68,7 @@ To create the build, follow below steps :
 
 1. On the left navigation bar, click **BUILDS**
 2. Click on **ADD NEW BUILD**
-3. In the Build Name box, enter a name for the build say `teleoperationBuild` 
+3. In the Build Name box, enter a name for the build say `turtlebot-teleoperation` 
 4. In the **Git repository** box, enter the url address : 
 `https://github.com/ROBOTIS-GIT/turtlebot3#melodic-devel` and select **Build Recipe** as Catkin.
 5. Click on next, select **Architecture** as amd64 and select **ROS Version** as **Melodic**.  
@@ -100,7 +100,7 @@ You will create two packages in the tutorial.
 13. The number of replicas to run the component is `1`
 14. The name of the executable is `turtlebot3_autotrace_launcher`
 15. For **Executable Type**, click on **Build**.
-16. In the **Choose Build** select the Build [created above](/build-solutions/sample-walkthroughs/basic-simulation/#simulation-build)
+16. In the **Choose Build** select the Build (`io-simulation-tutorials`) [created above](/build-solutions/sample-walkthroughs/basic-simulation/#simulation-build)
 	from the drop-down list
 17. In the **Command to run in the docker container** box, enter the command: `roslaunch turtlebot3_gazebo turtlebot3_autorace.launch`
 18. Set **Resource Limit** to **Medium:2 cpu cores, 8 GiB memory**.
@@ -128,7 +128,7 @@ For simulation, the resource limit should either be **Medium** or **Large**. Sim
 13. Set **Restart Policy** to **Always**.
 14. The name of the executable is `sleep`
 15. For **Executable Type**, click on **Build**.
-16. In the **Choose Build** select the Build [created above](/build-solutions/sample-walkthroughs/basic-simulation/#teleoperation-build)
+16. In the **Choose Build** select the Build (`turtlebot-teleoperation`) [created above](/build-solutions/sample-walkthroughs/basic-simulation/#teleoperation-build)
 	from the drop-down list
 17. In the **Command to run in the docker container** box, enter the command: `sleep infinity`
 {{% notice info %}}
