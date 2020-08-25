@@ -23,7 +23,9 @@ build. That is you can trigger a new build from either a **Complete** build or a
 **Error** build.
 
 {{% notice note %}}
+
 Packages which have builds that are in **Complete** status are suitable for a deployment. The **InProgress** and **Failed** builds are unfit for deployment.
+
 {{% /notice %}}
 
 You may also view details such as the git repository URL where the source code is hosted, 
@@ -46,5 +48,9 @@ The **Current build generation** number (Gen) is shown below the build ID.
 The builds are automatically restarted on rapyuta.io platform internal failures.
 Click **Refresh** if you observe that the build logs are abruptly disconnected or stopped
 
-When a build fails, you should analyze the corresponding
-[build logs](/developer-guide/tooling-automation/logging/build-logs/) to debug.
+When a build fails, it is recommended to check the corresponding
+[build logs](/developer-guide/tooling-automation/logging/build-logs/) to debug. It can be due to multiple reasons like:
+* Repository access issue
+* Incorrect context directory path
+* Incorrect catkin parameters
+* Incorrect dockerfile path
