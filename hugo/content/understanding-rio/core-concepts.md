@@ -6,6 +6,7 @@ date: 2019-10-25T14:10:43+05:30
 pre: "b. "
 weight: 12
 ---
+
 ## Package
 A package is a fundamental rapyuta.io *resource* that represents a
 declaration of your application. It is the smallest unit of deployment
@@ -20,6 +21,18 @@ information it may require.
 {{% notice info %}}
 Learn about the internals of a package [here](/developer-guide/create-software-packages/package-internals/).
 {{% /notice %}}
+
+## Builds
+Builds on rapyuta.io are a fundamental resource which convert your source code
+residing in your VCS into a container image.
+
+Builds can be referenced when assembling packages and
+enable a complete "Code to Deploy"pipeline for your Robotics solution.
+
+{{% notice info %}}
+Learn about Builds [here](/developer-guide/create-software-packages/builds/).
+{{% /notice %}}
+
 
 ## Catalog
 The catalog serves as the portal in rapyuta.io to streamline the software
