@@ -96,7 +96,7 @@ compiles, software versioning, artifact delivery, transactional
 upgrades and provisioning.
 
 Builds, Packages and Catalog together, backed by a REST API and an SDK, makes it
-possible for the developers to automate the flow of your robotics solution right
+possible for the developers to automate the flow of your robotics solution 
 right from git to your devices and cloud. 
 
 rapyuta.io can also integrates with existing CI/CD systems and Quality
