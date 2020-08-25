@@ -58,7 +58,7 @@ while adding the device.
 You will create two builds in the tutorial.
 
 ### io-tutorial build
-To create the build, follow below steps :
+To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
 
 1. On the left navigation bar, click **BUILDS**
 2. Click on **ADD NEW BUILD**
