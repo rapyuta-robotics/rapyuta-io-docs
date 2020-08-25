@@ -20,8 +20,11 @@ select the particular build and click **Trigger build** for that build.
 
 You may always **Trigger** a new build irrespective of the status of the previous
 build. That is you can trigger a new build from either a **Complete** build or an
-**Error** build. However, only those builds that are **Complete** are suitable for
-provisioning. The **Failed** builds are unfit for provisioning.
+**Error** build.
+
+{{% notice note %}}
+Packages which have builds that are in **Complete** status are suitable for a deployment. The **InProgress** and **Failed** builds are unfit for deployment.
+{{% /notice %}}
 
 You may also view details such as the git repository URL where the source code is hosted, 
 the latest commit SHA number, the commit message and the commit owner’s name by clicking **View details/logs** 
@@ -31,15 +34,16 @@ in the **Build history** tab of the build.
 
 You may also **Rollback** to a previous build generation number if there
 is any, irrespective of the previous build status. Rollbacking to a
-previous build does not restart the build process. Instead, it would
-run the corresponding docker container that was created for that build generation.
+previous build does not restart the build process. Instead, on using the build 
+in next deployment it would run the corresponding docker image that was generated 
+for that build generation.
 
 The **Current build generation** number (Gen) is shown below the build ID.
 
 ![Current build generation number](/images/core-concepts/builds/current-build-number.png?classes=border,shadow&width=30pc)
 
 
-The builds are automatically restarted on software infrastructure failures.
+The builds are automatically restarted on rapyuta.io platform internal failures.
 Click **Refresh** if you observe that the build logs are abruptly disconnected or stopped
 
 When a build fails, you should analyze the corresponding

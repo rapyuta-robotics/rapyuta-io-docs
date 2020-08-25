@@ -19,7 +19,7 @@ possible for the developer to automate the flow from
 systems and QA processes.
 
 ## Build Recipes
-rapyuta.io builds as catkin and docker build recipes. 
+rapyuta.io builds as *catkin* and *docker* build recipes. 
 The goal of each build recipe is to generate a running docker container at the end of the build creation process.
 
 In the **Builds** section to add a new build, add the Build name and provide 
@@ -34,19 +34,12 @@ will look like:
 https://github.com/rapyuta-robotics/io_tutorials#io_turtlesim_qos
 
 You may analyse [build logs](/developer-guide/tooling-automation/logging/build-logs/) for
-debugging build failures. In the case of Catkin and Docker
-recipes, you can
+debugging build failures. If you have pushed a new commit, you can
 [trigger new builds or roll back previous builds](/developer-guide/create-software-packages/builds/trigger-rollback/).
 
 ### Catkin Recipe
-This recipe builds source code into a docker image. The source code
-is usually stored in a ros based git repository. rapyuta.io uses *catkin build* recipe, 
-to build source code into a docker image. 
-We allow our users to add any valid [catkin parameters](/developer-guide/create-software-packages/builds/ros-support/) in 
+This recipe builds ros based source code using catkin into a docker image. We allow our users to add any valid [catkin parameters](/developer-guide/create-software-packages/builds/ros-support/) in 
 this recipe. 
-If it is a private git repository, you need to 
-[add a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)
-to access the repository contents. 
  
 
 The [ROS Publisher Subscriber](/build-solutions/sample-walkthroughs/basic-ros-pubsub/preinstalled-runtime/) walkthrough is an example of
@@ -68,18 +61,15 @@ If you want to use Git LFS with a private git repository, you must select *SSH a
 
 
 ### Docker Recipe
-This recipe builds a [Dockerfile](https://docs.docker.com/engine/reference/builder/) into a docker image. The Dockerfile is
-usually saved in a git repository. If it is a private git repository,
-you need to [add a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)
-to access the repository contents.
-
-You may explicitly specify the absolute path of the Dockerfile, or
-the root of the git repository is set as the location of the Dockerfile.
+This recipe builds source code using [Dockerfile](https://docs.docker.com/engine/reference/builder/) into a docker image. The Dockerfile is usually saved in your git repository. You may explicitly specify the absolute path of the Dockerfile, or the root of the git repository is set as the location of the Dockerfile.
 
 The [Basic Web Application](/build-solutions/sample-walkthroughs/basic-web-app/) walkthrough is an example of the docker build recipe.
 
 {{% notice info %}}
-Follow this walkthrough to create and use a [build](/developer-guide/create-software-packages/builds/build-creation/). 
+Follow this walkthrough to create and use a [build](/developer-guide/create-software-packages/builds/build-creation/).
+If it is a private git repository, you need to 
+[add a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret)
+to access the repository contents. 
 {{% /notice %}}
 
 If you are going to deploy a docker image onto a device, ensure that the
