@@ -22,19 +22,20 @@ Each package consists of components, which are made up of individual executables
 Executables within a component are always executed on the same physical/virtual compute node and share a ROS Master (in the case of ROS applications).
 An executable is a runnable entity such as:
 
-1. **rapyuta.io Builds**    
- Executables can reference existing **rapyuta.io Build**. Builds help you create a GitOps pipeline by
- specifying a repository and a build recipe.
- rapyuta.io can then build your git source code into a container image.
- Executables referencing builds use the generated images at the time of package deployment.
- Custom bash command can additionally be specified and is executed when the package is deployed.
+* **rapyuta.io Builds**    
+Executables can reference existing **rapyuta.io Build**. Builds help you create a GitOps pipeline by
+specifying a repository and a build recipe.
+rapyuta.io can then build your git source code into a container image.
+Executables referencing builds use the generated images at the time of package deployment.
+Custom bash command can additionally be specified and is executed when the package is deployed.
+
 
 {{% notice info %}}
 Executables referencing builds use docker images at the time of deployment,
 Packages containing such executables can't be deployed on devices with a Preinstalled runtime
 {{% /notice %}}
 
-2. **Docker image**    
+* **Docker image**    
 A docker image is used as an executable. When a deployment is triggered, rapyuta.io
 pulls a docker image from the docker registry. Additionally, you may specify a
 bash shell command, which overrides the
@@ -48,7 +49,7 @@ The maximum size of the docker image is 10GB for cloud deployment. If your docke
 
 
 
-3. **Bash command**    
+* **Bash command**    
 A simple bash shell command is an executable. If you choose the **Executable Type** as **Default**, the bash shell command becomes an executable. In this case, the executable can run only on **Preinstalled device** runtime. rapyuta.io assumes that all dependencies that are required to run the command are already present on the device where
 the command will execute.
 

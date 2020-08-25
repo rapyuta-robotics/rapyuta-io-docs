@@ -7,7 +7,7 @@ pre: "1. "
 weight: 610
 ---
 An executable of a package can be a dockerfile. In that case, rapyuta.io
-applies [dockerfile build strategy](/developer-guide/create-software-packages/builds/#dockerfile-strategy) while deploying the package. The tutorial illustrates this strategy, where a dockerfile builds a docker image.
+applies [docker build recipe](/developer-guide/create-software-packages/builds/#docker-recipe) while deploying the package. The tutorial illustrates this strategy, where a dockerfile builds a docker image.
 
 ## Learning objectives
 The tutorial will show you how to use a dockerfile to build an executable
