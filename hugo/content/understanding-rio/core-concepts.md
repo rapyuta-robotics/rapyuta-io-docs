@@ -26,8 +26,8 @@ Learn about the internals of a package [here](/developer-guide/create-software-p
 Builds on rapyuta.io are a fundamental resource which convert your source code
 residing in your VCS into a container image.
 
-Builds can be referenced when assembling packages and
-enable a complete "Code to Deploy"pipeline for your Robotics solution.
+Builds can be referenced when creating packages and enables an 
+end-to-end "Code to Deployment" pipeline for your Robotics solution.
 
 {{% notice info %}}
 Learn about Builds [here](/developer-guide/create-software-packages/builds/).
