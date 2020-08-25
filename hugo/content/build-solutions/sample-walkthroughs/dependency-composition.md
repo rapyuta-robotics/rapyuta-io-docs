@@ -48,7 +48,7 @@ navigation map to other deployments that depend on it. Besides exposing the ROS 
 which replaces the map published by */map* topic.
 
 #### Creating the build
-To create the build, follow below steps : 
+To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
 
 1. On the left navigation bar, click **BUILDS**
 2. Click on **ADD NEW BUILD**
