@@ -9,5 +9,21 @@ weight: 834
 
 Welcome to the August 5, 2020 release of the rapyuta.io platform.
 
-### Updates
+#### Updates
 - Minor bugfixes and improved validation for the rapyuta.io APIs
+
+## August 26
+Welcome to the August 26, 2020 release of the rapyuta.io platform. There
+are significant updates in this release that we hope you will like.
+
+#### Features
+* **Builds**
+
+	New [rapyuta.io resource](/developer-guide/create-software-packages/builds) which converts your source code into a container image.
+	Builds can be referenced when creating packages and makes it possible for the developer to automate the flow from git to operations 
+	and integrate it with existing CI/CD systems and QA processes. Your existing packages are backward compatible, 
+	to use the existing packages please clone them using the clone button.
+
+#### Improvements
+	
+- Minor bug fixes and improvements to rapyuta.io APIs.
