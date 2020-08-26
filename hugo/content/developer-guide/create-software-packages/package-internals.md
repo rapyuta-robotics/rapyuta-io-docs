@@ -22,18 +22,34 @@ Each package consists of components, which are made up of individual executables
 Executables within a component are always executed on the same physical/virtual compute node and share a ROS Master (in the case of ROS applications).
 An executable is a runnable entity such as:
 
-1. **Docker image**    
+* **rapyuta.io Builds**    
+Executables can reference existing **rapyuta.io Build**. Builds help you create a GitOps pipeline by
+specifying a repository and a build recipe.
+rapyuta.io can then build your git source code into a container image.
+Executables referencing builds use the generated images at the time of package deployment.
+Custom bash command can additionally be specified and is executed when the package is deployed.
+
+
+{{% notice info %}}
+Executables referencing builds use docker images at the time of deployment,
+Packages containing such executables can't be deployed on devices with a Preinstalled runtime
+{{% /notice %}}
+
+* **Docker image**    
 A docker image is used as an executable. When a deployment is triggered, rapyuta.io
 pulls a docker image from the docker registry. Additionally, you may specify a
 bash shell command, which overrides the
 [entry point](https://docs.docker.com/engine/reference/run/#cmd-default-command-or-options)
 of the docker container.
+
+
 {{% notice info %}}
-The maximum size of the docker image is 10GB for cloud deployment.
+The maximum size of the docker image is 10GB for cloud deployment. If your docker image is private, then you will need to [create a docker secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-pull-secret) and provide it in credentials.
 {{% /notice %}}
-2. **Git repository**    
-You may provide a git repository for an executable. rapyuta.io builds the source code in the git repository into a docker image. Moreover, you may also specify a bash shell command, which will be run in tandem with the executable.
-3. **Bash command**    
+
+
+
+* **Bash command**    
 A simple bash shell command is an executable. If you choose the **Executable Type** as **Default**, the bash shell command becomes an executable. In this case, the executable can run only on **Preinstalled device** runtime. rapyuta.io assumes that all dependencies that are required to run the command are already present on the device where
 the command will execute.
 

@@ -64,10 +64,6 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 15.  Deselect **Run command from bash shell**.
 16.  Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-A flickering yellow dot next to the package name indicates that the **Build Status** is **New**, while a green dot indicates that the **Build Status** is **Complete**.
-
-Additionally, you may verify if the package is built successfully and is ready
-to be deployed by clicking to see if the **Deploy package** button is enabled.
 
 ## Deploying the package
 To deploy a package from the rapyuta.io,

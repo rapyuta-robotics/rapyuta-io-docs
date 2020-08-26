@@ -43,10 +43,25 @@ Intermediate
 30 minutes
 
 ## Tutorial Walkthrough
-
 You will add and deploy the *dynamic_map_server* package. It is a modified version of the original *map_server* package. The package offers a
 navigation map to other deployments that depend on it. Besides exposing the ROS topics: */map* and */map_metadata*, the package also exposes the */set_map* service,
 which replaces the map published by */map* topic.
+
+#### Creating the build
+To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
+
+1. On the left navigation bar, click **BUILDS**
+2. Click on **ADD NEW BUILD**
+3. In the Build Name box, enter a name for the build say `io-tutorials` 
+4. In the **Git repository** box, enter the url address : 
+`https://github.com/rapyuta/io_tutorials` and select **Build Recipe** as Catkin.
+5. Go to the next step and click on next, the build will be created.
+
+The build takes about two to five minutes to build the source code in the *io_tutorials*
+repository into a running docker container. You may analyse the corresponding
+[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
+
+Please proceed to creation of package once the build is Complete.
 
 #### Create dynamic_map_server package
 1. On the left navigation bar, click **CATALOG**.
@@ -75,9 +90,9 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}} 
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-9. Select **Git** for **Executable Type**.
-10. In the **Git Repository** box, enter the git repository url:
-`https://github.com/rapyuta/io_tutorials`
+9. For **Executable Type**, click on **Builds**.
+10. In the **Choose Build** select the Build (`io-tutorials`) [created above](/build-solutions/sample-walkthroughs/dependency-composition/#creating-the-build)
+	from the drop-down list
 11. In the **Command to run in the docker container** box, copy and paste the command:
 	```bash
 	roslaunch dynamic_map_server map_server.launch
@@ -97,12 +112,6 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
     `/set_map`
 		![Add ROS service](/images/tutorials/dms/dms-add-ros-service.png?classes=border,shadow&width=50pc)
 14. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
-
-The package takes about five minutes to build the source code in the *io_tutorials* repository into a running container. You may analyze the corresponding
-[build logs](/developer-guide/tooling-automation/logging/build-logs/) for debugging build failures.
-
-A flickering yellow dot against the package name indicates that the **Build Status**
-is **BuildInProgress**, while a green dot indicates that the **Build Status** is **Complete**.
 
 Additionally, you may verify if the package is built successfully and is ready
 to be deployed by clicking to see if the **Deploy package** button is enabled.

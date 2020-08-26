@@ -6,6 +6,19 @@ date: 2019-10-25T12:35:41+05:30
 pre: "4. "
 weight: 285
 ---
+
+## Creating the build
+Follow below steps to create the build : 
+
+1. On the left navigation bar, click **BUILDS**
+2. Click on **ADD NEW BUILD**
+3. In the Build Name box, enter a name for the build say `demoBuild` 
+4. In the **Git repository** box, enter the url address : `https://github.com/rapyuta/io_tutorials` 
+and select **Build Recipe** as Catkin.
+5. Go to the next step and click on next, the build will be created.
+
+
+## Creating the package
 To add a new package using rapyuta.io, follow the steps:
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
@@ -30,11 +43,13 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9] and a
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9] and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-   2. An executable can be either a source code in a git repository or a Dockerfile or a docker image. In this example, you will provide source code as the executable. So, select **Git** as the **Executable Type**.
+   2. For **Executable Type**, click on **Builds**.
 {{% notice note %}}
 The maximum size of the docker image is 10 GB for cloud deployment
 {{% /notice %}}
-   3. In the **Git Repository** box, enter the git repository's URL address:`https://github.com/rapyuta/io_tutorials`
+		
+   3. In the **Choose Build** select the Build [created above](/developer-guide/create-software-packages/package-creation-tutorial/#creating-the-build)
+   from the drop-down list.
    4. In the **Command to run in the docker container** box, enter the command:`roslaunch talker talker.launch`     
     Ensure that you always execute the *roslaunch* command to explicitly start the [ROS
 	Master](http://wiki.ros.org/Master) instead of running the *rosrun* command,
@@ -47,13 +62,6 @@ The maximum size of the docker image is 10 GB for cloud deployment
 ![Add another component](/images/getting-started/create-new-pkg/add-another-component.png?classes=border,shadow&width=30pc) 
 3. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-A flickering yellow dot next to the newly added package indicates that its
-***Build Status*** is ***BuildInProgress***. You have successfully added
-the package when the dot turns green in color, which indicates that
-the package is successfully built and is ready to be deployed.
-
-Additionally, the package is successfully built and is ready to be deployed
-when the **Deploy package** button is enabled.
 
 ![Demo package](/images/getting-started/create-new-pkg/demo-pkg.png?classes=border,shadow&width=50pc)
 

@@ -164,7 +164,7 @@ the architecture (amd64, arm32v7, arm64v8) and device runtime (docker or preinst
 required by the component in question.
 {{% /notice %}}
 9. If the package has a component with `Is ROS` true, then you will need to select **Routed Network** from the drop-down list.
-    * If there are no **Routed Network** successfully running, you would not be able to deploy the package. Please create a [Routed Network](build-solutions/sample-walkthroughs/routed-network.md) first. 
+    * If there are no **Routed Network** successfully running, you would not be able to deploy the package. Please create a [Routed Network](/build-solutions/sample-walkthroughs/routed-network) first. 
     * If you have a cloud component in your package, you will be able to select only cloud routed networks.
 10. If you want to add a dependent deployment, click **Add dependency**, and select
 a deployment you want to add as a dependency from the drop-down list of

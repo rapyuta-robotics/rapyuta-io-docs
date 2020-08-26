@@ -88,18 +88,19 @@ tags to the device.
 
 ## GitOps for Robots
 When defining packages rapyuta.io allows the developer to directly
-reference source code from a VCS like GitHub or Bitbucket. The
-platform is then responsible for cloning, building, and delivering
-the software across the cloud and device.
+reference Builds. rapyuta.io platform is then responsible for building 
+and delivering the software to both cloud and device.
 
-Under the hood, rapyuta.io solves the hard problems of native arm
+With Builds, under the hood, rapyuta.io solves the hard problems of native arm
 compiles, software versioning, artifact delivery, transactional
 upgrades and provisioning.
 
-With all these features backed by a complete API, it makes it
-possible for the developer to automate the flow from git to
-operations and integrate it with existing CI/CD systems and QA
-processes.
+Builds, Packages and Catalog together, backed by a REST API and an SDK, makes it
+possible for the developers to automate the flow of your robotics solution 
+right from git to your devices and cloud. 
+
+rapyuta.io can also integrates with existing CI/CD systems and Quality
+Assurance processes for production ready Robotics.
 
 ## Software Composition
 Complex robotic applications are often built using more than one

@@ -118,6 +118,24 @@ source devel/setup.bash
 7. Click **COPY** to copy the generated device token.
 8. Execute the token at the device's terminal to set up rapyuta.io's device agent on the device.
 
+## Create build
+To create the build, follow below steps: 
+
+1. On the left navigation bar, click **BUILDS**
+2. Click on **ADD NEW BUILD**
+3. In the Build Name box, enter a name for the build say `io-simulation-navigation` 
+4. In the **Git repository** box, enter the url address : 
+`https://github.com/rapyuta-robotics/io_simulation_tutorials` and select **Build Recipe** as Catkin.
+5. In the context directory, enter `turtlebot_navigation`
+6. Click on next, select **ROS Version** as **Melodic** and select the **Has Simulation** option.  
+7. Click on next, the build will be created.
+
+The build takes about two to five minutes to build the source code in the ***io_simulation_tutorials***
+repository into a running docker container. You may analyse the corresponding
+[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
+
+Please proceed to creation of package once the build is Complete.
+
 ## Create Packages
 You will create and add two packages, namely, Navigation Application and Turtlebot3 Simulation.
 
@@ -159,23 +177,22 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 12. Choose **Melodic** for **ROS Version**.
 13. The number of **Replicas to run the component** is **1**
 14. The name of the executable: `simulation_executable`
-15. The **Executable Type** is **Git**.
-16. The **Git Repository** is `https://github.com/rapyuta-robotics/io_simulation_tutorials`
-17. The context directory: `turtlebot_navigation`
-18. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup sim.launch gui:=true`
-19. Select **Simulation** option.
-20. Set **Resource Limit** to **Medium:2 cpu cores, 8 GiB memory**
+15. For **Executable Type**, click on **Builds**.
+16. In the **Choose Build** select the Build (`io-simulation-navigation`) [created above](/build-solutions/sample-walkthroughs/separate-navigation-simulation/#create-build)
+	from the drop-down list
+17. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup sim.launch gui:=true`
+18. Set **Resource Limit** to **Medium:2 cpu cores, 8 GiB memory**
 {{% notice warning %}}
 For simulation, the resource limit should either be **Medium** or **Large**. Simulation has issues with **Small** resource limits.
 {{% /notice %}}
-21. Add the following **ROS topics**:
+19. Add the following **ROS topics**:
     1.  **Name**: `/joint_states`, **QoS**: Low
     2.  **Name**: `/tf`, **QoS**: Low
     3.  **Name**: `/scan`, **QoS**: Low
     4.  **Name**: `/odom`, **QoS**: Low
-22. Click **NEXT**.
-23. Under **Inbound ROS Interfaces**, Click on **Add Topic** to add the ROS topic `/cmd_vel` as an inbound ROS topic.
-24. Click **CONFIRM PACKAGE CREATION**.
+20. Click **NEXT**.
+21. Under **Inbound ROS Interfaces**, Click on **Add Topic** to add the ROS topic `/cmd_vel` as an inbound ROS topic.
+22. Click **CONFIRM PACKAGE CREATION**.
 
 ## Deploy Packages
 
