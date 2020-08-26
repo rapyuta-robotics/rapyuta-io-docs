@@ -21,9 +21,14 @@ are significant updates in this release that we hope you will like.
 
 	New [rapyuta.io resource](/developer-guide/create-software-packages/builds) which converts your source code into a container image.
 	Builds can be referenced when creating packages and makes it possible for the developer to automate the flow from git to operations 
-	and integrate it with existing CI/CD systems and QA processes. Your existing packages are backward compatible, 
-	to use the existing packages please clone them using the clone button.
-	
+	and integrate it with existing CI/CD systems and QA processes.
+
+
+{{% notice info %}}
+Your existing packages are backward compatible, to use the existing packages please clone them using the clone button.
+{{% /notice %}}	
+
+
 #### SDK
 - **rapyuta.io Python SDK [0.16.0](/developer-guide/tooling-automation/python-sdk/#installation) released** 
 - Added BuildEndpoints and BuildOperation SDK methods

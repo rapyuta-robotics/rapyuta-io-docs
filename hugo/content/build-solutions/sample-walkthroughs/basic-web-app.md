@@ -7,7 +7,7 @@ pre: "1. "
 weight: 610
 ---
 An executable of a package can be a dockerfile. In that case, rapyuta.io
-applies [docker build recipe](/developer-guide/create-software-packages/builds/#docker-recipe) while deploying the package. The tutorial illustrates this strategy, where a dockerfile builds a docker image.
+applies [docker build recipe](/developer-guide/create-software-packages/builds/#docker-recipe) while deploying the package. The tutorial illustrates this recipe, where a dockerfile builds a docker image.
 
 ## Learning objectives
 The tutorial will show you how to use a dockerfile to build an executable
@@ -53,7 +53,7 @@ follow the below instructions in sequence:
    2. In the **Package Version** box, type in the version of the package. By default, the version is set to *1.0.0*
    3. Ensure **Is a singleton package** is *not selected*.
    4. Make sure **Is a bindable package** is *selected*.
-   5. Describe the package in a sentence or two like `Demo package for dockerfile build strategy`.
+   5. Describe the package in a sentence or two like `Demo package for docker build recipe`.
 4. Click **NEXT**.
 5. In the **Component Name** box, enter a name for the component say `Flask_Application`.
    {{% notice info %}}
