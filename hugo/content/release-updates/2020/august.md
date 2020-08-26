@@ -31,7 +31,7 @@ are significant updates in this release that we hope you will like.
 
 
 {{% notice info %}}
-rapyuta.io SDK users are recommended to **upgraded their SDK to latest SDK release 0.16.0** as older SDK's will not allow 
+rapyuta.io SDK users are recommended to **upgrade their SDK to latest SDK release 0.16.0** as older SDKs will not allow 
 newly created packages which includes components building from source code repository 
 (without following [build recepies] (/developer-guide/create-software-packages/builds/)) to be deployed on device.
 {{% /notice %}}	
