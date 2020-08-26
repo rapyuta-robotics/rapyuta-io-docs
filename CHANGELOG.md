@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [2.5.1 - 2020-08-26]
+### Fixed
+- fixed python sdk versions
+
 ## [2.5.0 - 2020-08-26]
 ### Added
 - Explain builds 
