@@ -23,6 +23,20 @@ are significant updates in this release that we hope you will like.
 	Builds can be referenced when creating packages and makes it possible for the developer to automate the flow from git to operations 
 	and integrate it with existing CI/CD systems and QA processes. Your existing packages are backward compatible, 
 	to use the existing packages please clone them using the clone button.
+	
+#### SDK
+- **rapyuta.io Python SDK [0.16.0](/developer-guide/tooling-automation/python-sdk/#installation) released** 
+- Added BuildEndpoints and BuildOperation SDK methods
+- Added integration test for inbound incoming scoped and targeted
+
+
+{{% notice info %}}
+rapyuta.io SDK users are recommended to **upgraded their SDK to latest SDK release 0.16.0** as older SDK's will not allow 
+newly created packages which includes components building from source code repository 
+(without following [build recepies] (/developer-guide/create-software-packages/builds/)) to be deployed on device.
+{{% /notice %}}	
+
+
 
 #### Improvements
 	
