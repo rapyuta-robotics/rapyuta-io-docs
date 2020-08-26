@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 
+## [2.5.0 - 2020-08-26]
 ### Added
 - Explain builds 
 - Release update page for August 26, 2020
