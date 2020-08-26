@@ -32,7 +32,6 @@ Your existing packages are backward compatible, to use the existing packages ple
 #### SDK
 - **rapyuta.io Python SDK [0.16.0](/developer-guide/tooling-automation/python-sdk/#installation) released** 
 - Added BuildEndpoints and BuildOperation SDK methods
-- Added integration test for inbound incoming scoped and targeted
 
 
 {{% notice info %}}
