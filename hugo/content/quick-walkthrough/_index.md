@@ -20,11 +20,11 @@ In this tutorial, you will learn how to add and deploy packages using
 [rapyuta.io console](https://console.rapyuta.io). Specifically, you'll
 learn how to:
 
-1. Source your packages from a public docker registry and a public git
-   repository.
-2. Expose ROS topics, services, actions, and network endpoints as component-level interfaces.
-3. Create [Routed Networks](/build-solutions/sample-walkthroughs/routed-network) and dependent deployments.
-4. Control a Turtlebot in simulation through a web browser.
+1. Create [Build](/developer-guide/create-software-packages/builds/), converting a public git repository to a container image. 
+2. Source your packages from a public docker registry and builds.
+3. Expose ROS topics, services, actions, and network endpoints as component-level interfaces.
+4. Create [Routed Networks](/build-solutions/sample-walkthroughs/routed-network) and dependent deployments.
+5. Control a Turtlebot in simulation through a web browser.
 
 ## Prerequisites
 
@@ -50,6 +50,25 @@ software is easy to maintain, share, and scale. A package contains interfaces
 that determine how it may interact with other packages. A deployment of a
 package may depend on deployments of other packages. Learn more about
 Turtlesim's [software architecture](./software-architecture) and [constituent packages](./packages)
+
+
+## Creating the build
+To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
+
+1. On the left navigation bar, click **BUILDS**
+2. Click on **ADD NEW BUILD**
+3. In the Build Name box, enter a name for the build say `io-tutorials` 
+4. In the **Git repository** box, enter the url address : 
+`https://github.com/rapyuta/io_tutorials` and select **Build Recipe** as Catkin.
+5. Go to the next step and click on next, the build will be created.
+
+The build takes about two to five minutes to build the source code in the *io_tutorials*
+repository into a running docker container. You may analyse the corresponding
+[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
+
+Please proceed to creation of package once the build is Complete.
+
+
 
 ## Create the Turtle package
 The Turtle package emulates the behavior of a Turtlebot through the Simulator.
@@ -85,9 +104,9 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -, and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-8. Select **Git** for the **Executable Type**.
-9. In the **Git repository** box, enter the URL address of the git
-   repository: `https://github.com/rapyuta/io_tutorials`
+8. For **Executable Type**, click on **Builds**.
+9. In the **Choose Build** select the Build (`io-tutorials`) [created above](/quick-walkthrough/#creating-the-build)
+	from the drop-down list.	
 10. In the **Command to run in the docker container** box, enter the command:
     ```bash
 	roslaunch io_turtle turtle.launch
@@ -191,9 +210,9 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -, and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-8. For the **Executable type**, click **Git**.
-9. In the **Git Repository** box, enter the URL address of the git repository,
-   that is, `https://github.com/rapyuta-robotics/io_tutorials`
+8. For **Executable Type**, click on **Builds**.
+9. In the **Choose Build** select the Build (`io-tutorials`) [created above](/quick-walkthrough/#creating-the-build)
+	from the drop-down list.
 10. In the **Command to run in the docker container** box, enter the command:
     ```bash
     roslaunch io_turtle_sim_env simulation.launch
@@ -253,9 +272,10 @@ The name of a component must consist of alphabets [A-Z, a-z], digits
 The name of an executable must consist of alphabets [A-Z, a-z],
 digits [0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-8. For **Executable type**, click **Git**.
-9. In the **Git Repository** box, enter the URL address of the git repository:      `https://github.com/rapyuta-robotics/io_tutorials`
-
+8. For **Executable Type**, click on **Builds**.
+9. In the **Choose Build** select the Build (`io-tutorials`) [created above](/quick-walkthrough/#creating-the-build)
+	from the drop-down list.
+	
 10. In the **Command to run in the docker container** box, enter the command:
     ```bash
     roslaunch io_turtle_command_center command_center.launch
@@ -295,16 +315,6 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
 16. Click **CONFIRM PACKAGE CREATION**.
 
 
-## Package build status
-Each package takes about 5 minutes to build the source code into a running
-docker executable. You can view the [build logs](/developer-guide/tooling-automation/logging/build-logs/)
-of a specific package, which helps in debugging failing builds.
-
-A flickering yellow dot against the package name indicates that
-the **Build Status:New**.
-
-A green dot against the package name indicates that
-the **Build Status:Complete**.
 
 ## Deploy packages
 In this tutorial, you have created four packages. They are:

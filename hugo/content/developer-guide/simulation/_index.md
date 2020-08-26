@@ -19,7 +19,7 @@ The following sample-walkthrough demonstrates how to create such a setup keeping
 {{% /notice %}}
 
 {{% notice note %}}
-As of now rapyuta.io supports **Gazebo version 9**, and only for executables with [Source code strategy](/developer-guide/create-software-packages/builds/#source-code-strategy). Users are expected to use gazebo9 ROS packages for their corresponding ROS distros. For instance, `ros-melodic-gazebo-ros-pkgs` on ROS melodic, and `ros-kinetic-gazebo9-ros-pkgs` on ROS kinetic.
+As of now rapyuta.io supports **Gazebo version 9**, and only for executables with [Catkin recipe](/developer-guide/create-software-packages/builds/#catkin-recipe). Users are expected to use gazebo9 ROS packages for their corresponding ROS distros. For instance, `ros-melodic-gazebo-ros-pkgs` on ROS melodic, and `ros-kinetic-gazebo9-ros-pkgs` on ROS kinetic.
 {{% /notice %}}
 
 

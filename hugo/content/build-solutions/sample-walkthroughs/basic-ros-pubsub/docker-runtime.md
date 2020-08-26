@@ -53,14 +53,43 @@ To integrate the device into rapyuta.io using the [console](https://console.rapy
 Ensure that you select the **Use docker compose as default runtime** checkbox
 while adding the device.
 
+
+## Creating the build
+You will create two builds in the tutorial.
+
+### io-tutorial build
+To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
+
+1. On the left navigation bar, click **BUILDS**
+2. Click on **ADD NEW BUILD**
+3. In the Build Name box, enter a name for the build say `io-tutorials`
+4. In the Git repository box, enter the url address : `https://github.com/rapyuta/io_tutorials` 
+and select **Build Recipe** as Catkin.
+5. Go to the next step and click on next, the build will be created.
+
+### io-tutorials-arm32v7 build
+To create the build, follow below steps :
+
+1. Again click on **ADD NEW BUILD** to create another build 
+2. In the Build Name box, enter a name for the build say `io-tutorials-arm32v7`
+3. In the Git repository box, enter the url address : `https://github.com/rapyuta/io_tutorials` 
+and select Build Recipe as Catkin.
+4. Go to next step, select arm32v7 as **Architecture** and ensure that the **ROS Version** is Kinetic.
+5. Click on next, the build will be created.
+
+
+The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding
+[build logs](/developer-guide/tooling-automation/logging/build-logs/), which helps in debugging failed builds.
+Please proceed to creation of package once the builds is Complete.
+
+
 ## Creating the package
 To create the _Docker publisher subscriber_ package using the
 [console](https://console.rapyuta.io), follow the steps:
 
 1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.
-3. In the **Package Name** box, type in a name for the package say `Docker publisher
-   subscriber`
+3. In the **Package Name** box, type in a name for the package say `Docker publisher subscriber`
 4. In the **Package Version** box, enter the version of the package you are creating.
    The default value is _1.0.0_
 5. Ensure **Is a singleton package** is not selected.
@@ -84,9 +113,9 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-	6. For **Executable Type**, click **Git**.
-	7. In the **Git repository** box, enter the url address:
-	`https://github.com/rapyuta/io_tutorials`
+	6. For **Executable Type**, click on **Builds**.
+	7. In the **Choose Build** select the first Build (`io-tutorials`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/#io-tutorial-build)
+	from the drop-down list.	
 	8. In the **Command to run in the docker container** box, enter the command:
 		```bash
 		roslaunch talker talker.launch
@@ -113,8 +142,9 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-	7. For **Executable Type**, select **Git**.
-	8. In the **Git repository** box, enter the URL address: `https://github.com/rapyuta/io_tutorials`
+	7. For **Executable Type**, click on **Builds**.
+	8. In the **Choose Build** select the second Build (`io-tutorials-arm32v7`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/#io-tutorials-arm32v7-build)
+	from the drop-down list.
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
 		roslaunch listener listener.launch
@@ -126,15 +156,7 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 		eventually, the deployment will fail as well.
 	10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-The package takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding
-[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
 
-A flickering yellow dot against the name of the package indicates that the
-**Build Status** is **New**, while a green dot indicates that the **Build Status** is **Complete**.
-
-Additionally, when the **Deploy package** button is automatically enabled, it
-indicates that the _Docker publisher subscriber_ package has been successfully
-built and can be deployed.
 
 ## Deploying the package
 To deploy a package using the [console](https://console.rapyuta.io),
