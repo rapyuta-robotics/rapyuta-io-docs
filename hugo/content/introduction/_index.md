@@ -6,7 +6,7 @@ date: 2019-10-24T16:16:16+05:30
 pre: "<b>1. </b>"
 weight: 5
 ---
-## Welcome
+## Welcome to rapyuta.io
 Welcome to the rapyuta.io documentation, where you can find information
 and guides to help you learn about rapyuta.io and start exploring its
 features.
