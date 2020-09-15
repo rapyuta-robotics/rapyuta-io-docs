@@ -32,6 +32,7 @@ The following sections let the developer learn more about
 - [Error Codes](#error-codes)
 - [Restart Policy](#restart-policy)
 - [Deploying A Package](#deploying-a-package)
+- [Updating A Deployment](#updating-a-deployment)
 
 ## Phases
 The lifecycle of a deployment consists of multiple phases. The **DEPLOYMENT PHASE**
@@ -48,8 +49,9 @@ The below table lists the phases of deployment as they appear in the lifecycle:
 | Failed to start | error occurred during In progress phase |
 | Partially deprovisioned | you deprovisioned a deployment, but there is at least one component that could not be deprovisioned |
 | Deployment stopped | you deprovisioned a deployment, and all of its components are stopped |
+| Failed To Update | One or more component failed while updating the deployment |
 
-![Deployment](/images/core-concepts/deployments/deployment-phase.png?classes=border,shadow&width=50pc)
+![Deployment](/images/core-concepts/deployments/deployment-phase.png?classes=border,shadow&width=60pc)
 
 ## Status
 rapyuta.io enables you to monitor the current status of each executable of a
@@ -175,7 +177,7 @@ deployment is available before you add one.
 ![Modify restart policy](/images/dev-guide/deployments/modify-restart-policy.png?classes=border,shadow&width=40pc)
 13.  Click **CREATE DEPLOYMENT** > **Confirm**.
 
-![Deploy demo package](/images/dev-guide/manage-software-lifecycle/deployment-routed-network.png?classes=border,shadow&width=50pc)
+![Deploy demo package](/images/dev-guide/manage-software-lifecycle/deployment-routed-network.png?classes=border,shadow&width=40pc)
 You will be redirected to the **Details** page of the newly created deployment.
 The package is successfully deployed when the green colored bar moves from
 **In progress** to **Provisioning** to **Succeeded** indicating that the
@@ -192,3 +194,50 @@ generated while deploying a package.
 
 If a deployment fails, the **DEPLOYMENT PHASE** will
 read **Failed to start**. You may have to click **Deprovision Deployment**, delete the package, create the package all over again, and try deploying it.
+
+## Updating A Deployment
+This feature allows users to update a deployment of packages which have builds or docker images without the need of stopping the deployment. 
+It will help the users who want to try out newer builds or restart the deployment faster in the package. 
+In case of a dependent deployment, you do not need to restart each deployment if you want to use 
+a newer or older build for one of deployments and you can save a significant amount of time in updating the deployment.
+
+
+To update a deployment, follow the steps:
+
+1. On the left navigation bar, click **DEPLOYMENTS**.
+2. Select the deployment that you want to update, and click Update Deployment.
+The **Update Deployment** page appears.
+3. The **Update Deployment** page lists all the components added to the package. Click the **Update** field next to the component that you want to update.
+You can select at least one or more than one component to update.
+4. Click **Update**.
+
+It takes a few minutes and the deployment is updated. You can view the details of updated deployment in the **Details** tab.
+
+
+**Update Deployment** can be done when [DEPLOYMENT PHASE] (#phases) is either **Succeeded** or **Failed To Update**, 
+on any other Deployment Phase the **Update Deployment** button will be disabled. 
+In case of Failed To Update, users can check the **Historical Logs** but the **Live Logs** and **Shell Access** tabs will be disabled. 
+
+
+You can see the **Deployment Generation** in the **Details** tab of the deployment. 
+Suppose the current deployment generation is _i_ and if the user does Update Deployment then the new deployment generation will be _(i+1)_.
+
+
+![Update deployment](/images/dev-guide/deployments/update-deployment.png?classes=border,shadow&width=55pc)
+
+
+
+![Update deployment component](/images/dev-guide/deployments/update-deployment-component.png?classes=border,shadow&width=35pc)
+
+
+You can click the **History** tab to view the update deployment history, for example the time and generation of the update deployment, 
+user who updated the deployment, and the deployment status. **Deployment Status** of the updated deployment is shown in the **History** tab as below:
+
+- If the update deployment is successful, a _green success icon_ is displayed in the Deployment Status.
+- If the update deployment has failed (due to network issue or device being offline), a _red failure icon_ is displayed in the Deployment Status.
+
+![Update deployment history](/images/dev-guide/deployments/update-deployment-history.png?classes=border,shadow&width=60pc)
+
+{{% notice info %}}
+When **Update Deployment** is triggered, all the _replicas_ are deleted gracefully and the rapyuta.io platform automatically re-creates new replicas for the _component_.
+{{% /notice %}}	
