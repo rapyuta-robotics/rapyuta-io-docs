@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## [Unreleased]
+### Added
+- Binary param 
 
 ## [2.5.1 - 2020-08-26]
 ### Fixed
