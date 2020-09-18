@@ -47,7 +47,7 @@ or extend existing parameters.
 
 
 
-![example configuration](/images/core-concepts/configurations/example-config.png?classes=border,shadow&width=50pc)
+![example configuration](/images/core-concepts/configurations/example-config.png?classes=border,shadow&width=30pc)
 
 A configuration hierarchy consists of four kinds of nodes:
 

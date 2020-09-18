@@ -1,5 +1,5 @@
 ---
-title: "Apply Dynamic Configurations to Devices"
+title: "Adding Dynamic Configurations to Devices"
 description:
 type: developer-guide
 date: 2019-10-30T15:06:45+05:30

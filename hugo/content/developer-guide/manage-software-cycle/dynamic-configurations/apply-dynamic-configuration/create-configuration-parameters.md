@@ -12,26 +12,22 @@ weight: 403
 
 
 1. Log on to ***rapyuta.io*** console and on the left navigation bar, click **CONFIGURATIONS > ADD NEW CONFIGURATION**.
-
-3. In the **Add new configuration** pop-up window, type a name for the configuration and click **Confirm**.
+2. In the **Add new configuration** pop-up window, type a name for the configuration and click **Confirm**.
 The new configuration name is added to the **Configuration Name** list. To configure the root node (configuration name), click the configuration name.
-4. Hover over the root node. It allows you to create an attribute node and base configuration file.
+3. Hover over the root node. It allows you to create an attribute node and base configuration file.
 ![YAML file](/images/core-concepts/configurations/root-node-actions.png?classes=border,shadow&width=20pc)
 
  {{% notice info %}}
 You can add only one attribute node but multiple base configuration files from the root node.
    {{% /notice %}}
-5. Click **Add file**. 
-   
-6. In the **Create ne file** window, do the following.
-    1. From the File type drop-down menu, select either YAML or Binary file.
-    2. If you have selected the file type as YAML, in the File name field, type a name for the file and click **Confirm**. You can add the configuration in the File Contents area. For more information on how to add and edit the configuration in YAML format, see [rules for writing/editing configuration parameters files.] (/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/create-configuration-parameters/##Creating a configuration parameters in YAML file format) To see an example, [click here](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/create-configuration-parameters/#### Rules for writing YAML configuration parameters). 
+4. Click **Add file**. The **Create new file** window is displayed.
+    In the **Create new file** window, do the following.<br/>
+5. From the File type drop-down menu, select either YAML or Binary file.<br/>
+6. If you have selected the file type as YAML, in the File name field, type a name for the file and click **Confirm**. You can add the configuration in the File Contents area. For more information on how to add and edit the configuration in YAML format, see [rules for writing/editing configuration parameters files.] (/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/create-configuration-parameters/##Creating a configuration parameters in YAML file format) To see an example, [click here](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/create-configuration-parameters/#### Rules for writing YAML configuration parameters). 
 ![YAML file](/images/core-concepts/configurations/yaml-file.png?classes=border,shadow&width=30pc)
-
-    3. If you have selected the file type as Binary, in the File type field, you can upload or drag a binary configuration file from the local machine. To see an example, [click here] (/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/create-configuration-parameters/##Creating a configuration parameters in Binary file format).
+7. If you have selected the file type as Binary, in the File type field, you can upload or drag a binary configuration file from the local machine. To see an example, [click here] (/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/create-configuration-parameters/##Creating a configuration parameters in Binary file format).
 ![Binary file](/images/core-concepts/configurations/binary-file.png?classes=border,shadow&width=30pc)
-
-    4. Click **Confirm**.
+8. Click **Confirm**.
 
 The configuration parameter hierarchy is created. You can apply the configurations to a device now. For more information, see [Apply Dynamic Configurations] ((/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/apply-dynamic-configs))
 
@@ -102,25 +98,25 @@ In the following procedure, the configuraion parameter for a RGV robot is writte
 
 1. Log on to ***rapyuta.io*** console and on the left navigation bar, click **CONFIGURATIONS > ADD NEW CONFIGURATION**.
 
-3. In the **Add new configuration** pop-up window, type a name for the configuration and click **Confirm**. For this example, type the name as ***config_1***.
+2. In the **Add new configuration** pop-up window, type a name for the configuration and click **Confirm**. For this example, type the name as ***config_1***.
 The new configuration name is added to the **Configuration Name** list. To configure the root node (configuration name), click **Config_1** from the list.
-4. Hover over **Config_1** and add an attribute as **country**.
- 
-5. Hover over **Config_1** and click **Add file**. By default, the file type is selected as YAML.Type the file name as  **RGV_config** and click **Confirm**.  
+3. Hover over **Config_1** and add an attribute as **country**.
+
+4. Hover over **Config_1** and click **Add file**. By default, the file type is selected as YAML.Type the file name as  **RGV_config** and click **Confirm**.  
    
-6. In the **File Contents** area , type the RGV robot parameter values, as displayed in the following figure and click **Save**.
+5. In the **File Contents** area , type the RGV robot parameter values, as displayed in the following figure and click **Save**.
 {{% notice info %}}
 Ensure you read the
 [rules for writing/editing configuration parameters files](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configs/#rules-for-writing-configuration-parameters).
 {{% /notice %}}
     ![base parameters](/images/core-concepts/configurations/parameter-defaults.png?classes=border,shadow&width=40pc)
 
-7. Hover over the ***country*** attribute to view options to add new
+6. Hover over the ***country*** attribute to view options to add new
     value nodes.
-4.  Click **Add country value**. Give it a name, for example, ***USA***.
+7.  Click **Add country value**. Give it a name, for example, ***USA***.
     Click **CONFIRM**. Similarly, add another country value and give it the name ***Japan***.
 
-5.  Suppose that the manufacturer *Tesla* has signed the contract deal
+8.  Suppose that the manufacturer *Tesla* has signed the contract deal
     to manufacture the RGVs in the USA region. You can add *Tesla* to
     the existing list of ***allowed_manufacturers***. You will have to
     define ***RGV_Config.yaml*** under the ***USA*** value, which will extend the
@@ -128,13 +124,13 @@ Ensure you read the
     base parameters in **config_1/RGV_config.yaml** and the newly added parameters in
     **USA/RGV_config.yaml** will include **tesla** in addition to those already present.
     ![sample file of USA](/images/core-concepts/configurations/USA-sample.png?classes=border,shadow&width=65pc)
-6.  Suppose that the regulation in Japan requires you to limit the
+9.  Suppose that the regulation in Japan requires you to limit the
     maximum velocity of a RGV from *5m/s* to *3m/s*. You can override
     the ***max_velocity*** of the RGV by assigning a new value to it. You
     will have to define ***sample.yaml*** file under the ***Japan*** value,
     which will include the ***max_velocity*** parameter, but with its default
     overridden. The final parameters file is a result of merging the base parameters (**config_1/RGV_config.yaml**) and the overridden parameters (**Japan/RGV_config.yaml**).
-    ![sample file of Japan](/images/getting-started/apply-config-paramas/japan-sample.png?classes=border,shadow&width=65pc)
+    ![sample file of Japan](/images/core-concepts/configurations/japan-sample.png?classes=border,shadow&width=65pc)
 
 ## Creating a configuration parameters in Binary file format ##
 
