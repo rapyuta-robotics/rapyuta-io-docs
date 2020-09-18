@@ -31,13 +31,13 @@ from the root node.
 6. If you have selected the file type as YAML,
  in the File name field, type a name for the file and click **Confirm**. 
  You can add the configuration in the File Contents area. 
- For more information on how to add and edit the configuration in YAML format, see [rules for writing/editing configuration parameters files.] (/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/create-configuration-parameters/##Creating a configuration parameters in YAML file format) To see an example, [click here](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/create-configuration-parameters/#### Rules for writing YAML configuration parameters). 
+ For more information on how to add and edit the configuration in YAML format, see [Rules for writing/editing configuration parameters files.](/developer-guide/manage-software-cycle/dynamic-configurations/consume-dynamic-configuration/create-configuration-parameters/#Rules-for-writing-YAML-configuration-parameters) To see an example, [click here](/developer-guide/manage-software-cycle/dynamic-configurations/consume-dynamic-configuration/create-configuration-parameters/#Creating-a-configuration-parameters-in-YAML-file-format). 
 ![YAML file](/images/core-concepts/configurations/yaml-file.png?classes=border,shadow&width=30pc)
-7. If you have selected the file type as Binary, in the File type field, you can upload or drag a binary configuration file from the local machine. To see an example, [click here] (/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/create-configuration-parameters/##Creating a configuration parameters in Binary file format).
+7. If you have selected the file type as Binary, in the File type field, you can upload or drag a binary configuration file from the local machine. To see an example, [click here](/developer-guide/manage-software-cycle/dynamic-configurations/consume-dynamic-configuration/create-configuration-parameters/#Creating-a-configuration-parameters-in-Binary-file-format).
 ![Binary file](/images/core-concepts/configurations/binary-file.png?classes=border,shadow&width=30pc)
 8. Click **Confirm**.
 
-The configuration parameter hierarchy is created. You can apply the configurations to a device now. For more information, see [Apply Dynamic Configurations] ((/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/apply-dynamic-configs))
+The configuration parameter hierarchy is created. You can apply the configurations to a device now. For more information, see [Applying Dynamic Configurations](/developer-guide/manage-software-cycle/dynamic-configurations/consume-dynamic-configuration/apply-dynamic-configs)
 
 
 
