@@ -24,23 +24,28 @@ The most common pattern in the robotics developer community is to
 arrive at a list of base parameters that are required for the
 application to run. When moving from the developer testbed to
 real-world operations, the operators, developers, and vendors
-often wish to override the base parameters to satisfy various
+often wish to override or add new parameter values to the base parameters to satisfy various
 requirements.
+
+***rapyuta.io*** organizes a configuration that holds the parameter files into a tree-like hierarchical structure called a *configuration hierarchy*. You can add the configuration parameters in YAML format or upload the configuration parameters as a binary file (A binary file can be of any format, for example, .png, .json, .txt, .jpg etc). After defining the hirarchical configuration structure, you can apply the parameters to a device. For more information, see [Apply Dynamic Configurations to Devices] (/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/).
 
 Let's look at a practical example. It is likely you only want to
 override a subset of parameters amongst numerous parameters defined
-for a robot based on a particular criterion, say, the velocity of an
+for a robot based on a particular criterion, for example, the velocity of an
 AGV defaults to 5m/s, but the regulation in Japan requires you to
 limit its velocity to 3m/s. For an AGV to be deployed in Japan,
-you override its default velocity (5m/s)) to 3m/s. Any other AGV
-deployed outside of Japan will still default to a velocity of 5m/s.
+you override its default velocity (5m/s) to 3m/s. Any other AGV
+deployed outside of Japan might still require the default velocity of 5m/s.
 
-rapyuta.io organizes a configuration into a tree-like hierarchical
-structure called a *configuration hierarchy*. Consider the sample
-configuration hierarchy, ***example***, as shown in the figure below.
+Another example of using the configuration parameter is the map images for the robots stationed at differnt warehouses. The map image for a robot "A" stationed at japan warehouse might be different than the map image of the same type of robot stationed at USA warehouse. ***rapyuta.io*** allows you to upload differnt map images as the configuration hierarchy to suit your need.  
+
+ Consider the sample
+configuration hierarchy, ***example***, as shown in the following figure.
 The parameters of ***example*** are arranged in a specific order. The
-hierarchy lets you override parameter defaults (or base parameters)
+hierarchy allows you to override the default parameters(or base parameters)
 or extend existing parameters.
+
+
 
 ![example configuration](/images/core-concepts/configurations/example-config.png?classes=border,shadow&width=50pc)
 
@@ -55,7 +60,9 @@ A configuration hierarchy consists of four kinds of nodes:
 The root node is the root of the configuration hierarchy tree. There
 is only one root node per configuration hierarchy. Its name is the
 same as the name you provide while creating the configuration
-hierarchy. It may contain multiple file nodes and exactly one
+hierarchy. The root node allows you to add an attribute, add/upload configuration files, and apply the base lebel configuration parameters to a device.
+
+ It may contain multiple file nodes and exactly one
 attribute node.
 
 In this case, the root node is consequently ***example***.
@@ -63,7 +70,9 @@ In this case, the root node is consequently ***example***.
 
 #### Attribute node
 An attribute node is intended to represent a semantic meaning. It is
-used to create branches in the configuration hierarchy tree. For instance,
+used to create branches in the configuration hierarchy tree. An attribute node is presented in a key-value pair. Each attribute node should have at lease one value node. Furthermore, you can also create more attribute nodes from the corresponding value nodes and define the hierarchy of the configuration tree.
+
+For example,
 the ***country*** attribute splits the hierarchy subtree based on
 the value of its children, such as ***USA*** and ***Japan*** (represented as
 value nodes). rapyuta.io represents these distinctions as key-value pairs to
@@ -74,17 +83,15 @@ branch that you wish to represent. In the case of ***example*** configuration, a
 ![attribute node](/images/core-concepts/configurations/attribute-nodes.png?classes=border,shadow&width=30pc)
 
 #### Value node
-A value node maps to a specific kind of its parent attribute. It is of
-the same color as the color of its parent attribute. It can contain
-multiple file nodes and only one attribute node, corresponding to any further
-branching you may wish to define under that particular value.
+Each value node is mapped to its parent attribute node. The parent attribute and the corresponding child value node are of same color. It can contain
+multiple file nodes and only one attribute node. Furthermore, from the attribute node, you can create multiple value nodes and define the hierarchy of the configuration tree.
 
 In ***example*** configuration, ***USA*** and ***Japan*** are value nodes of **country** attribute.
 ![value node](/images/core-concepts/configurations/value-node.png?classes=border,shadow&width=30pc)
 
 #### File node
 A file node holds the actual configuration file containing
-parameters. The configuration file is written in **YAML** format. Files
+parameters. The configuration file is written either in a **YAML** format or you can upload a binary file as a configuration file from your local machine. Files
 from a sub-tree (a more specific set of attributes and values vis a
 vis its parent) **recursively override/extend** the parameters defined in
 any less specific file node with identical names. Subtrees may define
