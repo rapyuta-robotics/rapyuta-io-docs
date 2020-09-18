@@ -16,6 +16,8 @@ weight: 403
 3. In the **Add new configuration** pop-up window, type a name for the configuration and click **Confirm**.
 The new configuration name is added to the **Configuration Name** list. To configure the root node (configuration name), click the configuration name.
 4. Hover over the root node. It allows you to create an attribute node and base configuration file.
+![YAML file](/images/core-concepts/configurations/root-node-actions.png?classes=border,shadow&width=20pc)
+
  {{% notice info %}}
 You can add only one attribute node but multiple base configuration files from the root node.
    {{% /notice %}}
@@ -23,8 +25,12 @@ You can add only one attribute node but multiple base configuration files from t
    
 6. In the **Create ne file** window, do the following.
     1. From the File type drop-down menu, select either YAML or Binary file.
-    2. If you have selected the file type as YAML, in the File name field, type a name for the file and click **Confirm**. You can add the configuration in the File Contents area. For more information on how to add and edit the configuration in YAML format, see [rules for writing/editing configuration parameters files.] (/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/create-configuration-parameters/##Creating a configuration parameters in YAML file format) To see an example, [click here](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/create-configuration-parameters/#### Rules for writing YAML configuration parameters).  
+    2. If you have selected the file type as YAML, in the File name field, type a name for the file and click **Confirm**. You can add the configuration in the File Contents area. For more information on how to add and edit the configuration in YAML format, see [rules for writing/editing configuration parameters files.] (/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/create-configuration-parameters/##Creating a configuration parameters in YAML file format) To see an example, [click here](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/create-configuration-parameters/#### Rules for writing YAML configuration parameters). 
+![YAML file](/images/core-concepts/configurations/yaml-file.png?classes=border,shadow&width=30pc)
+
     3. If you have selected the file type as Binary, in the File type field, you can upload or drag a binary configuration file from the local machine. To see an example, [click here] (/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/create-configuration-parameters/##Creating a configuration parameters in Binary file format).
+![Binary file](/images/core-concepts/configurations/binary-file.png?classes=border,shadow&width=30pc)
+
     4. Click **Confirm**.
 
 The configuration parameter hierarchy is created. You can apply the configurations to a device now. For more information, see [Apply Dynamic Configurations] ((/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/apply-dynamic-configs))
@@ -121,7 +127,7 @@ Ensure you read the
     list of base parameters. The resultant file after merging the
     base parameters in **config_1/RGV_config.yaml** and the newly added parameters in
     **USA/RGV_config.yaml** will include **tesla** in addition to those already present.
-    ![sample file of USA](/images/getting-started/apply-config-paramas/USA-sample.png?classes=border,shadow&width=65pc)
+    ![sample file of USA](/images/core-concepts/configurations/USA-sample.png?classes=border,shadow&width=65pc)
 6.  Suppose that the regulation in Japan requires you to limit the
     maximum velocity of a RGV from *5m/s* to *3m/s*. You can override
     the ***max_velocity*** of the RGV by assigning a new value to it. You
@@ -138,19 +144,18 @@ In the following example, a configuration hirarchy is created with the binary co
 
 1. Log on to ***rapyuta.io*** console and on the left navigation bar, click **CONFIGURATIONS > ADD NEW CONFIGURATION**.
 
-3. In the **Add new configuration** pop-up window, type a name for the configuration and click **Confirm**. For this example, type the name as ***config_2***.
+2. In the **Add new configuration** pop-up window, type a name for the configuration and click **Confirm**. For this example, type the name as ***config_2***.
 The new configuration name is added to the **Configuration Name** list. To configure the root node (configuration name), click **Config_2** from the list.
-4. Hover over **Config_2** and add an attribute as **country**.
+3. Hover over **Config_2** and add an attribute as **country**.
+4. Hover over **Config_2** and click **Add file**. 
+5. Upload a base map image as the binary file from your local machine and click **Confirm**. If no configuration binary file is added at the file node, the configuration of base map image is applied to the device.
+6. Hover over the root node again to view options to add a new attribute node.
+7. Click Add attribute. Give it a name, say, country. Click CONFIRM.
+8. Hover over the country attribute to view options to add new value nodes.
+9. Click Add country value. Give it a name, for example, ***USA***. Click **CONFIRM**. Similarly, add another country value and give it the name Japan. 
 
-5.  Hover over **Config_2** and click **Add file**. 
-
-6. Upload a base map image as the binary file from your local machine and click **Confirm**. If no configuration binary file is added at the file node, the configuration of base map image is applied to the device.
-7. Hover over the root node again to view options to add a new attribute node.
-8. Click Add attribute. Give it a name, say, country. Click CONFIRM.
-9. Hover over the country attribute to view options to add new value nodes.
-10. Click Add country value. Give it a name, for example, ***USA***. Click **CONFIRM**. Similarly, add another country value and give it the name Japan.  ![sample image file](/images/getting-started/apply-config-paramas/binary-file.png?classes=border,shadow&width=65pc)
-
-11. For the attribute value ***USA***, add the binary configuration file from your local machine and click Confirm.(For this example the map image is warehouse_map ). Similarly you can upload a binary parameter file for the attribute value japan.
+![sample image file](/images/getting-started/apply-config-paramas/binary-file.png?classes=border,shadow&width=25pc)
+10. For the attribute value ***USA***, add the binary configuration file from your local machine and click Confirm.(For this example the map image is warehouse_map ). Similarly you can upload a binary parameter file for the attribute value japan.
 The binary configuration parameter values are saved. The configuration will be applied to the devices after you apply the configuration. For more information, see [Apply configuration parameters] (/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/apply-dynamic-configs).
 
 

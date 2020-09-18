@@ -156,6 +156,7 @@ and newly added parameters in ***USA/sample.yaml*** will include
 
 ![extend parameters](/images/core-concepts/configurations/extend-params.png?classes=border,shadow&width=80pc)
 
+
 {{% notice info %}}
 Learn how to
 [apply a configuration to a robot/device](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configs/).
