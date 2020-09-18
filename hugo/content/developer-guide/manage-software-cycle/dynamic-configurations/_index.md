@@ -16,39 +16,19 @@ parameters in your source code, modify a subset of parameters
 for a particular robot, or add new parameters and apply those to a
 group of robots.
 
-Every ROS node in a robot requires several parameters to be set as they
-are used to configure the robot. These parameters are usually a
-consequence of the software or hardware used in the robot.
+ ***rapyuta.io*** allows you to add/upload these parameters, 
+for example,
+device configurations, ROS parameters, map images etc on the devices. 
 
-The most common pattern in the robotics developer community is to
-arrive at a list of base parameters that are required for the
-application to run. When moving from the developer testbed to
-real-world operations, the operators, developers, and vendors
-often wish to override or add new parameter values to the 
-base parameters to satisfy various
-requirements.
+The configuration parameters in the ***rapyuta.io*** platforms are 
+represented by a tree-like hierarchical structure 
+called  *configuration hierarchy*. 
+Every configuration hierarchy consists of the following four kinds of nodes:
 
-***rapyuta.io*** organizes a configuration that holds the 
-parameter files into a tree-like hierarchical structure 
-called a *configuration hierarchy*. You can add the 
-configuration parameters in YAML format or upload the 
-configuration parameters as a binary file 
-(A binary file can be of any format, for 
-example, .png, .json, .txt, .jpg etc). 
-After defining the hirarchical configuration structure, 
-you can apply the parameters to a device. 
-For more information, 
-see [Apply Dynamic Configurations to Devices] (/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/).
-
-Let's look at a practical example. It is likely you only want to
-override a subset of parameters amongst numerous parameters defined
-for a robot based on a particular criterion, for example, the velocity of an
-AGV defaults to 5m/s, but the regulation in Japan requires you to
-limit its velocity to 3m/s. For an AGV to be deployed in Japan,
-you override its default velocity (5m/s) to 3m/s. Any other AGV
-deployed outside of Japan might still require the default velocity of 5m/s.
-
-Another example of using the configuration parameter is the map images for the robots stationed at differnt warehouses. The map image for a robot "A" stationed at japan warehouse might be different than the map image of the same type of robot stationed at USA warehouse. ***rapyuta.io*** allows you to upload differnt map images as the configuration hierarchy to suit your need.  
+* Root node
+* Attribute node
+* Value node
+* File node
 
  Consider the sample
 configuration hierarchy, ***example***, as shown in the following figure.
@@ -60,12 +40,7 @@ or extend existing parameters.
 
 ![example configuration](/images/core-concepts/configurations/example-config.png?classes=border,shadow&width=20pc)
 
-A configuration hierarchy consists of four kinds of nodes:
 
-* Root node
-* Attribute node
-* Value node
-* File node
 
 #### Root node
 The root node is the root of the configuration hierarchy tree. There
@@ -129,72 +104,5 @@ and ***Japan/sample.yaml*** are file nodes such that the last two files may
 either override or extend the existing ***example/sample.yaml*** file.
 ![file nodes](/images/core-concepts/configurations/parameters-files.png?classes=border,shadow&width=20pc)
 
-## Consuming configuration hierarchies
-Often the people responsible for defining configuration
-parameters and hierarchies are different from those using them or
-operating robots. It calls for decoupling the consumption of the
-parameters from the operation of robots. So, rapyuta.io
-lets you define a set of key-value pairs, called
-device labels to tag a robot.
-{{% notice info %}}
-Refer to [device labels](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/device-labels) for more information.
-{{% /notice %}}
-
-## Resolving parameters for devices
-When you apply a configuration to a robot, rapyuta.io
-utilizes the device labels to traverse the configuration
-hierarchy in the ***example*** configuration.
-
-## Overriding configuration parameters
-The base parameters (or parameters defaults) file is usually located at
-the root of the configuration hierarchy. In ***example*** configuration,
-***example/sample.yaml*** file is the base parameters file, and it is located
-under the ***example*** root node.
-
-![parameter defaults](/images/core-concepts/configurations/parameter-defaults.png?classes=border,shadow&width=50pc)
-
-The parameters are represented as **key: value** pairs like
-***max_velocity: 5***, which indicates that the maximum velocity of an
-AGV is 5m/s.
-
-You can override or extend base parameters by defining **sample.yaml**
-files at different levels of the configuration hierarchy.
-
-Suppose that the regulation in Japan requires you to limit the
-maximum velocity of an AGV from **5m/s** to **3m/s**. You can override the
-***max_velocity*** of the AGV by assigning a new value to it. The
-***sample.yaml*** file under the ***Japan*** value includes only the
-***max_velocity*** parameter, but with its default overridden.
-
-![override parameters](/images/core-concepts/configurations/override-max-vel.png?classes=border,shadow&width=65pc)
-
-The final parameters file is a result of merging the base parameters
-(***example/sample.yaml***) and the overridden parameters
-(***Japan/sample.yaml***).
-
-## Extending configuration parameters
-You can add new parameters to extend the list of base
-parameters. For instance, the ***USA/sample.yaml*** defines an additional parameter, ***example_param_usa: val***.
-
-The resultant file after merging the base parameters in ***example/sample.yaml***
-and newly added parameters in ***USA/sample.yaml*** will include
-***example_param_val*** in addition to those already present.
-
-![extend parameters](/images/core-concepts/configurations/extend-params.png?classes=border,shadow&width=80pc)
 
 
-{{% notice info %}}
-Learn how to
-[apply a configuration to a robot/device](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/device-labels).
-{{% /notice %}}
-
-{{% notice info %}}
-You may ***clone an existing configuration*** into another project.
-Cloning saves you from the redundant task of defining the
-same configurations from scratch again. However, cloning a configuration
-inside the same project is not supported.
-{{% /notice %}}
-
-{{% notice info %}}
-You may ***rename an already defined configuration***.
-{{% /notice %}}
