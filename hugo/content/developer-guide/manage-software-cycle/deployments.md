@@ -196,10 +196,11 @@ If a deployment fails, the **DEPLOYMENT PHASE** will
 read **Failed to start**. You may have to click **Deprovision Deployment**, delete the package, create the package all over again, and try deploying it.
 
 ## Updating A Deployment
-This feature allows users to update a deployment of packages which have builds or docker images without the need of stopping the deployment. 
-It will help the users who want to try out newer builds or restart the deployment faster in the package. 
-In case of a dependent deployment, you do not need to restart each deployment if you want to use 
-a newer or older build for one of deployments and you can save a significant amount of time in updating the deployment.
+This feature allows users to update a deployment without stopping it. 
+It will help the users who want to try out [newer or older build](/developer-guide/create-software-packages/builds/trigger-rollback/)
+faster in the package. 
+In case of a dependent deployment, you do not need to deprovision all the deployments when a single deployment needs an update 
+and this can save a significant amount of time.
 
 
 To update a deployment, follow the steps:
@@ -216,10 +217,10 @@ It takes a few minutes and the deployment is updated. You can view the details o
 
 **Update Deployment** can be done when [DEPLOYMENT PHASE] (#phases) is either **Succeeded** or **Failed To Update**, 
 on any other Deployment Phase the **Update Deployment** button will be disabled. 
-In case of Failed To Update, users can check the **Historical Logs** but the **Live Logs** and **Shell Access** tabs will be disabled. 
+In case of **Failed To Update**, you can check the **Historical Logs** but the **Live Logs** and **Shell Access** tabs will be disabled. 
 
 
-You can see the **Deployment Generation** in the **Details** tab of the deployment. 
+You can see the **Deployment Generation** in the **Details** tab of the deployment. The generation increments by 1 for each update deployment trigger. 
 Suppose the current deployment generation is _i_ and if the user does Update Deployment then the new deployment generation will be _(i+1)_.
 
 
@@ -230,11 +231,11 @@ Suppose the current deployment generation is _i_ and if the user does Update Dep
 ![Update deployment component](/images/dev-guide/deployments/update-deployment-component.png?classes=border,shadow&width=35pc)
 
 
-You can click the **History** tab to view the update deployment history, for example the time and generation of the update deployment, 
-user who updated the deployment, and the deployment status. **Deployment Status** of the updated deployment is shown in the **History** tab as below:
+You can click the **History** tab to view the update deployment history. It shows information like Time, Generation, 
+User who updated the deployment and Deployment Status. For successful update, it shows a _green success icon_ in **Deployment Status**. 
+While in case of update deployment failure (due to network issue or device being offline), it shows a _red failure icon_ in **Deployment Status**.  
 
-- If the update deployment is successful, a _green success icon_ is displayed in the Deployment Status.
-- If the update deployment has failed (due to network issue or device being offline), a _red failure icon_ is displayed in the Deployment Status.
+
 
 ![Update deployment history](/images/dev-guide/deployments/update-deployment-history.png?classes=border,shadow&width=60pc)
 
