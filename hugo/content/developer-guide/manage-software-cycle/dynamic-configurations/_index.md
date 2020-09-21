@@ -16,6 +16,8 @@ parameters in your source code, modify a subset of parameters
 for a particular robot, or add new parameters and apply those to a
 group of robots.
 
+Every ROS node in a robot requires several parameters to be set as they are used to configure the robot. These parameters are usually a consequence of the software or hardware used in the robot.
+
  ***rapyuta.io*** allows you to add/upload these parameters, 
 for example,
 device configurations, ROS parameters, map images etc on the devices. 
