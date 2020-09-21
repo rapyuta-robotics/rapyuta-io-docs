@@ -76,7 +76,7 @@ configuration, attributes are ***country***, ***motor_controller***.
 ![attribute node](/images/core-concepts/configurations/attribute-nodes.png?classes=border,shadow&width=20pc)
 
 #### ValueNode
-Each value node corresponds to one particular value that is of the type of the corresponding parent attribute node (eg device *country=**Japan***) corresponding to the branch of the hierarchy that will be used to override the more general configuration values.
+Each value node corresponds to one particular value that is of the type of the parent attribute node (eg device *country=**Japan***) corresponding to the branch of the hierarchy that will be used to override the more general configuration values.
 The parent attribute and the corresponding child  value node are of same color. It can contain
 multiple file nodes and only one attribute node. Furthermore, from the attribute node, 
 you can create multiple value nodes and define the hierarchy of the configuration tree.
