@@ -198,7 +198,7 @@ read **Failed to start**. You may have to click **Deprovision Deployment**, dele
 ## Updating A Deployment
 This feature allows users to update a deployment without stopping it. 
 It will help the users who want to try out [newer or older build](/developer-guide/create-software-packages/builds/trigger-rollback/)
-faster in the package. 
+faster in the package or update the deployment with existing docker image. 
 In case of a dependent deployment, you do not need to deprovision all the deployments when a single deployment needs an update 
 and this can save a significant amount of time.
 
@@ -214,13 +214,24 @@ You can select at least one or more than one component to update.
 
 It takes a few minutes and the deployment is updated. You can view the details of updated deployment in the **Details** tab.
 
+{{% notice info %}}
+We do not support **Update Deployment** on Device components which are of _Preinstalled Runtime_.
+{{% /notice %}}	
+
 
 **Update Deployment** can be done when [DEPLOYMENT PHASE] (#phases) is either **Succeeded** or **Failed To Update**, 
 on any other Deployment Phase the **Update Deployment** button will be disabled. 
 In case of **Failed To Update**, you can check the **Historical Logs** but the **Live Logs** and **Shell Access** tabs will be disabled. 
 
+{{% notice info %}}
+In case your deployment goes to **Failed To Update**, it will show appropriate error code like 
+[DEP_E151] (/developer-guide/manage-software-cycle/deployments/#error-codes) 
+which means **device is either offline or not reachable**.
+If you are not sure about the Error, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
+{{% /notice %}}	
 
-You can see the **Deployment Generation** in the **Details** tab of the deployment. The generation increments by 1 for each update deployment trigger. 
+
+You can see the **Deployment Generation** in the **Details** tab of the deployment. The generation increments by 1 for each update deployment. 
 Suppose the current deployment generation is _i_ and if the user does Update Deployment then the new deployment generation will be _(i+1)_.
 
 
