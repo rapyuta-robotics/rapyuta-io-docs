@@ -198,7 +198,7 @@ read **Failed to start**. You may have to click **Deprovision Deployment**, dele
 ## Update/Re-Deploy In-Place
 This feature allows users to re-deploy a running  a deployment without stopping and while retaining it's ID, dependencies,configuration and endpoints. 
 During the development phase this enables developers to switch between [newer or older build](/developer-guide/create-software-packages/builds/trigger-rollback/) version in a package without having to recreate a new package resource.
-It is also useful in scenarios when a developer fixes and pushes a new image of software to docker repository with an identical tag and wants to pull the most current version into the running deployment to test the fix. 
+It is also useful in scenarios when a developer fixes and pushes a new image of software to docker repository with an identical tag and wants to pull in the version with all the changes and fixes into the running deployment. 
 
 This is particularly useful in the case of a dependent deployment, as you do not need to deprovision all the deployments when a single deployment needs an update thus saving time.
 
