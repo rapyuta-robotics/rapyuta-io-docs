@@ -85,17 +85,17 @@ In ***example*** configuration, ***USA*** and ***Japan*** are value nodes of **c
 ![value node](/images/core-concepts/configurations/value-node.png?classes=border,shadow&width=20pc)
 
 #### FileNode
-A file node holds the actual configuration file containing parameters and data to be applied to the device. 
+A FileNode holds the actual configuration file containing parameters and data to be applied to the device. 
 *rapyuta.io* configuration parameters allow the user to use any arbitrary file format (eg:images,xml,json,binary) while providing *special overriding behavior* for the **YAML** format.
 
 FileNodes from a *sub-tree* (a more specific set of attributes and values vis a
 vis its parent) that **recursively override/extend** the parameters defined in
-any less specific file node with identical names. Subtrees may define
-entirely new file nodes (with different names), which are used in
+any less specific FileNode with identical names. Subtrees may define
+entirely new FileNodes (with different names), which are used in
 resolution at that level.
 
 In ***example*** configuration, ***example/sample.yaml***, ***USA/sample.yaml***
-and ***Japan/sample.yaml*** are file nodes such that the last two files may
+and ***Japan/sample.yaml*** are FileNodes such that the last two files may
 either override or extend the existing ***example/sample.yaml*** file.
 ![file nodes](/images/core-concepts/configurations/parameters-files.png?classes=border,shadow&width=20pc)
 
