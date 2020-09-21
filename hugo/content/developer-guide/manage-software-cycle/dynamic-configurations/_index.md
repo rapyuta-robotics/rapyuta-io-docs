@@ -12,15 +12,15 @@ weight: 401
 
 The behavior of a robot (device) is determined by a set of
 parameters, for instance the robot's velocity, controller gain threshold, or an image of a warehouse layout. 
-These parameters are usually a consequence of the software or hardware used in the robot.
+These parameters are usually a consequence of the software and hardware used in the robot and the environment.
 
-As a robotic developer, you need to represent, store, and review parameters. Additionally, you may want to access
+As a robotic developer, you need to represent, store, and review parameters. Additionally, you might want to access
 parameters in your source code, modify a subset of parameters for a particular robot, or add new parameters and apply those to a
-group of robots. A common pattern in the robotics developer community is to arrive at a list of base parameters that are required for the
-application to run. When moving from the developer testbed to real-world operations, the operators, developers, and vendors
+group of robots. A common pattern found in the robotics developer community is to arrive at a list of base parameters that are required for the application to run. When moving from the developer testbed to real-world operations, the operators, developers, and vendors
 often wish to override the base parameters to satisfy various requirements.
 
-The *rapyuta.io* platform provides a mechanism that allow a developer to set, review, update and override configuration for any connected robot. Configuration parameters in the ***rapyuta.io*** platform are represented by a *tree-like* hierarchical structure 
+The *rapyuta.io* platform provides a mechanism that allow a developer to set, review, update and override configuration for any connected robot. 
+Configuration parameters in the ***rapyuta.io*** platform are represented by a *tree-like* hierarchical structure 
 called  ***configuration hierarchy***.  
 
 
@@ -61,7 +61,8 @@ In this case, the RootNode is consequently ***example***.
 Devices in rapyuta.io allow the user to set arbitrary labels (modeled as key value pairs) corresponding to attributes of an onboarded device such as vendor, warehouse, country of operation, software version etc.
 
 The developer may need to override certain configuration based on one particular attribute of the device (eg device *country*).
-To do this the developer must create an  **AttributeNode** which effectively create a new overriding *"branch"* in the *configuration hierarchy*. Each attribute node should have at lease one value node. Furthermore, you can also create more AttributeNodes 
+To do this the developer must create an  **AttributeNode** which effectively create a new overriding *"branch"* in the *configuration hierarchy*. 
+Each attribute node should have at lease one value node. Furthermore, you can also create more AttributeNodes 
 from the corresponding value nodes and define the hierarchy of the configuration tree.
 
 For example,
@@ -76,7 +77,7 @@ configuration, attributes are ***country***, ***motor_controller***.
 ![attribute node](/images/core-concepts/configurations/attribute-nodes.png?classes=border,shadow&width=20pc)
 
 #### ValueNode
-Each value node corresponds to one particular value that is of the type of the parent attribute node (eg device *country=**Japan***) corresponding to the branch of the hierarchy that will be used to override the more general configuration values.
+Each value node corresponds to one particular value that is of the type of the parent attribute node (eg device *country=**Japan***)  corresponding to a particular branch of the configuration hierarchy that will be used to override the more general configuration values.
 The parent attribute and the corresponding child  value node are of same color. It can contain
 multiple file nodes and only one attribute node. Furthermore, from the attribute node, 
 you can create multiple value nodes and define the hierarchy of the configuration tree.
