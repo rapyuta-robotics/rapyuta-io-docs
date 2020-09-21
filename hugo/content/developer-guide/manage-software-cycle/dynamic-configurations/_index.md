@@ -11,7 +11,7 @@ weight: 401
 
 
 The behavior of a robot (device) is determined by a set of
-parameters for instance the robot's velocity, controller gain threshold, or an image of a warehouse layout. 
+parameters, for instance the robot's velocity, controller gain threshold, or an image of a warehouse layout. 
 These parameters are usually a consequence of the software or hardware used in the robot.
 
 As a robotic developer, you need to represent, store, and review parameters. Additionally, you may want to access
