@@ -32,7 +32,7 @@ The following sections let the developer learn more about
 - [Error Codes](#error-codes)
 - [Restart Policy](#restart-policy)
 - [Deploying A Package](#deploying-a-package)
-- [Updating A Deployment](#updating-a-deployment)
+- [Update/Re-Deploy A Deployment in-place](#updatere-deploy-in-place)
 
 ## Phases
 The lifecycle of a deployment consists of multiple phases. The **DEPLOYMENT PHASE**
@@ -195,15 +195,18 @@ generated while deploying a package.
 If a deployment fails, the **DEPLOYMENT PHASE** will
 read **Failed to start**. You may have to click **Deprovision Deployment**, delete the package, create the package all over again, and try deploying it.
 
-## Updating A Deployment
-This feature allows users to update a deployment without stopping it. 
-It will help the users who want to try out [newer or older build](/developer-guide/create-software-packages/builds/trigger-rollback/)
-faster in the package or update the deployment with existing docker image. 
-In case of a dependent deployment, you do not need to deprovision all the deployments when a single deployment needs an update 
-and this can save a significant amount of time.
+## Update/Re-Deploy In-Place
+This feature allows users to re-deploy a running  a deployment without stopping and while retaining it's ID, dependencies,configuration and endpoints. 
+During the development phase this enables developers to switch between [newer or older build](/developer-guide/create-software-packages/builds/trigger-rollback/) version in a package without having to recreate a new package resource.
+It is also useful in scenarios when a developer fixes and pushes a new image of software to docker repository with an identical tag and wants to pull the most current version into the running deployment to test the fix. 
 
+This is particularly useful in the case of a dependent deployment, as you do not need to deprovision all the deployments when a single deployment needs an update thus saving time.
 
-To update a deployment, follow the steps:
+{{% notice info %}}
+The "in-place" Update/Redeploy feature is currently only supported only on containers leveraging a [containerized device runtime](/developer-guide/manage-machines/device-runtime/#containerized-docker-runtime) an in the cloud. This feature is unavailable for device components powered by the [pre-installed](/developer-guide/manage-machines/device-runtime/#preinstalled) 
+{{% /notice %}}
+
+To update/re-deploy a deployment, follow the steps:
 
 1. On the left navigation bar, click **DEPLOYMENTS**.
 2. Select the deployment that you want to update, and click Update Deployment.
@@ -219,7 +222,7 @@ We do not support **Update Deployment** on Device components which are of _Prein
 {{% /notice %}}	
 
 
-**Update Deployment** can be done when [DEPLOYMENT PHASE] (#phases) is either **Succeeded** or **Failed To Update**, 
+**Update Deployment** can be done when [DEPLOYMENT PHASE](#phases) is either **Succeeded** or **Failed To Update**, 
 on any other Deployment Phase the **Update Deployment** button will be disabled. 
 In case of **Failed To Update**, you can check the **Historical Logs** but the **Live Logs** and **Shell Access** tabs will be disabled. 
 
