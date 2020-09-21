@@ -29,7 +29,8 @@ deployed outside of Japan might still require the default velocity of 5m/s.
 
 > Another example of using the configuration parameter is the map images for the robots stationed at differnt warehouses. The map image for a robot "A" stationed at japan warehouse might be different than the map image of the same type of robot stationed at USA warehouse. ***rapyuta.io*** allows you to upload differnt map images as the configuration hierarchy to suit your need.
 
-## Overriding configuration parameters
+
+### Overriding configuration parameters In YAML Files 
 The base parameters (or parameters defaults) file is usually located at
 the root of the configuration hierarchy. In ***example*** configuration,
 ***example/sample.yaml*** file is the base parameters file, and it is located
@@ -55,6 +56,16 @@ maximum velocity of an AGV from **5m/s** to **3m/s**. You can override the
 The final parameters file is a result of merging the base parameters
 (***example/sample.yaml***) and the overridden parameters
 (***Japan/sample.yaml***).
+
+### Overriding Configuration Parameters in Binary Files
+
+If you have uploaded the base parameters (or parameters defaults) as a binary file, and uploaded a different binary file (with the same file name) at a different configuration hierarchy, when applying the configuration at the attribute level, the base parameter file is replaced with the file at the attribute level.
+
+In the following images, the checksum file for the base parameters file and the configuration file at the attribute level  **test.html** are differnt.
+![base binary parameter](/images/core-concepts/configurations/root-binary-file.png?classes=border,shadow&width=65pc)
+
+When applying the configuration to the devices, the base parameter file is replaced by the file you had uploaded at the attribute level. The following image displays the configuration file that is applied to the device.
+![base binary parameter](/images/core-concepts/configurations/updated-binary-file.png?classes=border,shadow&width=65pc)
 
 ## Extending configuration parameters
 You can add new parameters to extend the list of base
