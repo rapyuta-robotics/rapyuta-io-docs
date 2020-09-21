@@ -17,7 +17,7 @@ requirements.
 
 When you apply a configuration to a robot, rapyuta.io
 utilizes the device labels to traverse the configuration
-hierarchy.
+hierarchy. While the platform provides simple override rules for binary files it provides a much cleverer approach for YAML type files commonly used in *roslaunch* configurations where it merges data from within the file as it traverses a hierarchy.
 
 > Let's look at a practical example. It is likely you only want to
 override a subset of parameters amongst numerous parameters defined
@@ -29,8 +29,23 @@ deployed outside of Japan might still require the default velocity of 5m/s.
 
 > Another example of using the configuration parameter is the map images for the robots stationed at differnt warehouses. The map image for a robot "A" stationed at japan warehouse might be different than the map image of the same type of robot stationed at USA warehouse. ***rapyuta.io*** allows you to upload differnt map images as the configuration hierarchy to suit your need.
 
+## Overriding configuration parameters
 
-### Overriding configuration parameters In YAML Files 
+### Overriding Rules for FileNodes (Binary)
+
+If you have uploaded the base parameters (or default parameters) as a binary file, and uploaded a binary file  with *different* content but the same file name at a *different level* but more specific level in the configuration hierarchy, when applying the configuration at the attribute level, the base parameter file is **replaced** with the file with the more specific attribute level.
+
+In the following images, the checksum file for the base parameters file and the configuration file at the attribute level  **test.html** are differnt.
+![base binary parameter](/images/core-concepts/configurations/root-binary-file.png?classes=border,shadow&width=65pc)
+
+When applying the configuration to the devices, the base parameter file is replaced by the file you had uploaded at the attribute level. The following image displays the configuration file that is applied to the device.
+![base binary parameter](/images/core-concepts/configurations/updated-binary-file.png?classes=border,shadow&width=65pc)
+
+### Overriding Rules for FileNodes of type YAML
+
+In the case of YAML files the while the order of resolution and overriding remains identical to binary files the result is a little different.
+The more specific FileNode content **does NOT replace** the content of the original file but **merges and replaces specific key value pairs within the YAML file**.  
+
 The base parameters (or parameters defaults) file is usually located at
 the root of the configuration hierarchy. In ***example*** configuration,
 ***example/sample.yaml*** file is the base parameters file, and it is located
@@ -57,15 +72,7 @@ The final parameters file is a result of merging the base parameters
 (***example/sample.yaml***) and the overridden parameters
 (***Japan/sample.yaml***).
 
-### Overriding Configuration Parameters in Binary Files
 
-If you have uploaded the base parameters (or parameters defaults) as a binary file, and uploaded a different binary file (with the same file name) at a different configuration hierarchy, when applying the configuration at the attribute level, the base parameter file is replaced with the file at the attribute level.
-
-In the following images, the checksum file for the base parameters file and the configuration file at the attribute level  **test.html** are differnt.
-![base binary parameter](/images/core-concepts/configurations/root-binary-file.png?classes=border,shadow&width=65pc)
-
-When applying the configuration to the devices, the base parameter file is replaced by the file you had uploaded at the attribute level. The following image displays the configuration file that is applied to the device.
-![base binary parameter](/images/core-concepts/configurations/updated-binary-file.png?classes=border,shadow&width=65pc)
 
 ## Extending configuration parameters
 You can add new parameters to extend the list of base
