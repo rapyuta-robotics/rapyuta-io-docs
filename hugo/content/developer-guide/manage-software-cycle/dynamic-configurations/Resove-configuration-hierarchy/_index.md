@@ -7,7 +7,7 @@ pre: "1.1. "
 weight: 403
 ---
 
-The most common pattern in the robotics developer community is to
+A common pattern in the robotics developer community is to
 arrive at a list of base parameters those are required for the
 application to run. When moving from the developer testbed to
 real-world operations, the operators, developers, and vendors
