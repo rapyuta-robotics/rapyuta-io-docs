@@ -35,7 +35,7 @@ deployed outside of Japan might still require the default velocity of 5m/s.
 
 If you have uploaded the base parameters (or default parameters) as a binary file, and uploaded a binary file  with *different* content but the same file name at a *different level* but more specific level in the configuration hierarchy, when applying the configuration at the attribute level, the base parameter file is **replaced** with the file with the more specific attribute level.
 
-In the following images, the checksum file for the base parameters file and the configuration file at the attribute level  **test.html** are differnt.
+In the following images, the checksum file for the base parameters file and the configuration file at the attribute level  **test.html** are different.
 ![base binary parameter](/images/core-concepts/configurations/root-binary-file.png?classes=border,shadow&width=65pc)
 
 When applying the configuration to the devices, the base parameter file is replaced by the file you had uploaded at the attribute level. The following image displays the configuration file that is applied to the device.
@@ -43,7 +43,7 @@ When applying the configuration to the devices, the base parameter file is repla
 
 ### Overriding Rules for FileNodes of type YAML
 
-In the case of YAML files the while the order of resolution and overriding remains identical to binary files the result is a little different.
+In the case of YAML files, while the order of resolution and overriding remains identical to binary files, the result is a little different.
 The more specific FileNode content **does NOT replace** the content of the original file but **merges and replaces specific key value pairs within the YAML file**.  
 
 The base parameters (or parameters defaults) file is usually located at

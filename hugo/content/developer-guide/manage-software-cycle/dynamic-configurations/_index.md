@@ -7,9 +7,6 @@ pre: "1. "
 weight: 401
 ---
 
-
-
-
 The behavior of a robot (device) is determined by a set of
 parameters, for instance the robot's velocity, controller gain threshold, or an image of a warehouse layout. 
 These parameters are usually a consequence of the software and hardware used in the robot and the environment.
@@ -27,10 +24,10 @@ called  ***configuration hierarchy***.
 
 Every configuration hierarchy consists of the following four kinds of nodes:
 
-* RootNode
-* AttributeNode
-* ValueNode
-* FileNode
+- [RootNode](#rootnode)
+- [AttributeNode](#attributenode)
+- [ValueNode](#valuenode)
+- [FileNode](#filenode)
 
  Consider the sample
 configuration hierarchy, ***example***, as shown in the following figure.
