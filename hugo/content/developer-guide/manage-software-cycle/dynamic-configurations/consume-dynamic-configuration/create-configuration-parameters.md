@@ -31,9 +31,9 @@ from the root node.
 6. If you have selected the file type as YAML,
  in the File name field, type a name for the file and click **Confirm**. 
  You can add the configuration in the File Contents area. 
- For more information on how to add and edit the configuration in YAML format, see [Rules for writing/editing configuration parameters files.](/developer-guide/manage-software-cycle/dynamic-configurations/consume-dynamic-configuration/create-configuration-parameters/#Rules-for-writing-YAML-configuration-parameters) To see an example, [click here](/developer-guide/manage-software-cycle/dynamic-configurations/consume-dynamic-configuration/create-configuration-parameters/#Creating-a-configuration-parameters-in-YAML-file-format). 
+ For more information on how to add and edit the configuration in YAML format, see [Rules for writing/editing configuration parameters files.](#rules-for-writing-yaml-configuration-parameters) To see an example, [click here](#creating-a-configuration-parameter-in-yaml-file-format). 
 ![YAML file](/images/core-concepts/configurations/yaml-file.png?classes=border,shadow&width=30pc)
-7. If you have selected the file type as Binary, in the File type field, you can upload or drag a binary configuration file from the local machine. To see an example, [click here](/developer-guide/manage-software-cycle/dynamic-configurations/consume-dynamic-configuration/create-configuration-parameters/#Creating-a-configuration-parameters-in-Binary-file-format).
+7. If you have selected the file type as Binary, in the File type field, you can upload or drag a binary configuration file from the local machine. To see an example, [click here](#creating-a-configuration-parameter-in-binary-file-format).
 ![Binary file](/images/core-concepts/configurations/binary-file.png?classes=border,shadow&width=30pc)
 8. Click **Confirm**.
 
@@ -98,7 +98,7 @@ parameters file. They are:
    a: e
    ```
 
-## Creating a configuration parameters in YAML file format ##
+## Creating a configuration parameter in YAML file format ##
 
 Rapyuta.io allows you to add the configuration parameters at every value node including the root node. When you hover and click the value node to add a configuration file, you get an option to choose to write the configuration parameter in YAML format or upload the configurations directly from your local machine.
 
@@ -115,7 +115,7 @@ The new configuration name is added to the **Configuration Name** list. To confi
 5. In the **File Contents** area , type the RGV robot parameter values, as displayed in the following figure and click **Save**.
 {{% notice info %}}
 Ensure you read the
-[rules for writing/editing configuration parameters files](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configs/#rules-for-writing-configuration-parameters).
+[rules for writing/editing configuration parameters files](#rules-for-writing-yaml-configuration-parameters).
 {{% /notice %}}
     ![base parameters](/images/core-concepts/configurations/parameter-defaults.png?classes=border,shadow&width=40pc)
 
@@ -140,7 +140,7 @@ Ensure you read the
     overridden. The final parameters file is a result of merging the base parameters (**config_1/RGV_config.yaml**) and the overridden parameters (**Japan/RGV_config.yaml**).
     ![sample file of Japan](/images/core-concepts/configurations/japan-sample.png?classes=border,shadow&width=65pc)
 
-## Creating a configuration parameters in Binary file format ##
+## Creating a configuration parameter in Binary file format ##
 
 A binary file can be of any format, for example, .png, .json, .txt, .jpg etc. ***rapyuta.io*** allows you to upload the configuration file as a binary file. You can upload the configuration file if the configuration file cannot be written in YAML format, for example a map image.
 
@@ -160,6 +160,6 @@ The new configuration name is added to the **Configuration Name** list. To confi
 
 ![sample image file](/images/getting-started/apply-config-paramas/binary-file.png?classes=border,shadow&width=20pc)
 10. For the attribute value ***USA***, add the binary configuration file from your local machine and click Confirm.(For this example the map image is warehouse_map ). Similarly you can upload a binary parameter file for the attribute value japan.
-The binary configuration parameter values are saved. The configuration will be applied to the devices after you apply the configuration. For more information, see [Apply configuration parameters] (/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configuration/apply-dynamic-configs).
+The binary configuration parameter values are saved. The configuration will be applied to the devices after you apply the configuration. For more information, see [Apply configuration parameters] (/developer-guide/manage-software-cycle/dynamic-configurations/consume-dynamic-configuration/apply-dynamic-configs).
 
 
