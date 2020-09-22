@@ -16,7 +16,7 @@ parameters in your source code, modify a subset of parameters for a particular r
 group of robots. A common pattern found in the robotics developer community is to arrive at a list of base parameters that are required for the application to run. When moving from the developer testbed to real-world operations, the operators, developers, and vendors
 often wish to override the base parameters to satisfy various requirements.
 
-The *rapyuta.io* platform provides a mechanism that allow a developer to set, review, update and override configuration for any connected robot. 
+The *rapyuta.io* platform provides a mechanism that allows a developer to set, review, update and override configuration for any connected robot. 
 Configuration parameters in the ***rapyuta.io*** platform are represented by a *tree-like* hierarchical structure 
 called  ***configuration hierarchy***.  
 
@@ -42,13 +42,13 @@ To view an example of how you may leverage configuration hierarchies please refe
 
 #### RootNode
 The RootNode is the root of the configuration hierarchy tree. There
-is only one RootNode per configuration hierarchy. Its name is the
+is only one RootNode per configuration hierarchy. Its name is
 same as the name you provide while creating the configuration
 hierarchy. The RootNode allows you to add an attribute, add/upload
  configuration files, and apply the base label configuration parameters
   to a device.
 
- It may contain multiple file nodes and exactly one
+ It might contain multiple file nodes and exactly one
 attribute node.
 
 In this case, the RootNode is consequently ***example***.
