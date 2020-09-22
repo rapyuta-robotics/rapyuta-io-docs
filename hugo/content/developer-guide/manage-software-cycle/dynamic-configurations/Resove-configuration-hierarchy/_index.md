@@ -27,7 +27,7 @@ limit its velocity to 3m/s. For an AGV to be deployed in Japan,
 you override its default velocity (5m/s) to 3m/s. Any other AGV
 deployed outside of Japan might still require the default velocity of 5m/s.
 
-> Another example of using the configuration parameter is the map images for the robots stationed at different warehouses. The map image for a robot "A" stationed at japan warehouse might be different than the map image of the same type of robot stationed at USA warehouse. ***rapyuta.io*** allows you to upload differnt map images as the configuration hierarchy to suit your need.
+> Another example of using the configuration parameter is the map images for the robots stationed at different warehouses. The map image for a robot "A" stationed at japan warehouse might be different than the map image of the same type of robot stationed at USA warehouse. ***rapyuta.io*** allows you to upload different map images as the configuration hierarchy to suit your need.
 
 ## Overriding configuration parameters
 
