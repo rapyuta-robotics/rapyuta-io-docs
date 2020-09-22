@@ -17,7 +17,7 @@ requirements.
 
 When you apply a configuration to a robot, rapyuta.io
 utilizes the device labels to traverse the configuration
-hierarchy. While the platform provides simple override rules for binary files it provides a much cleverer approach for YAML type files commonly used in *roslaunch* configurations where it merges data from within the file as it traverses a hierarchy.
+hierarchy. While the platform provides simple override rules for binary files, it provides a much cleverer approach for YAML type files commonly used in *roslaunch* configurations where it merges data from within the file as it traverses a hierarchy.
 
 > Let's look at a practical example. It is likely you only want to
 override a subset of parameters amongst numerous parameters defined

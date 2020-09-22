@@ -57,8 +57,8 @@ In this case, the RootNode is consequently ***example***.
 #### AttributeNode
 Devices in rapyuta.io allow the user to set arbitrary labels (modeled as key value pairs) corresponding to attributes of an onboarded device such as vendor, warehouse, country of operation, software version etc.
 
-The developer may need to override certain configuration based on one particular attribute of the device (eg device *country*).
-To do this the developer must create an  **AttributeNode** which effectively create a new overriding *"branch"* in the *configuration hierarchy*. 
+The developer might need to override certain configuration based on one particular attribute of the device (eg device *country*).
+To do this, the developer must create an  **AttributeNode** which effectively creates a new overriding *"branch"* in the *configuration hierarchy*. 
 Each attribute node should have at lease one value node. Furthermore, you can also create more AttributeNodes 
 from the corresponding value nodes and define the hierarchy of the configuration tree.
 
@@ -75,7 +75,7 @@ configuration, attributes are ***country***, ***motor_controller***.
 
 #### ValueNode
 Each value node corresponds to one particular value that is of the type of the parent attribute node (eg device *country=**Japan***)  corresponding to a particular branch of the configuration hierarchy that will be used to override the more general configuration values.
-The parent attribute and the corresponding child  value node are of same color. It can contain
+The parent attribute and the corresponding child  value nodes are of same color. It can contain
 multiple file nodes and only one attribute node. Furthermore, from the attribute node, 
 you can create multiple value nodes and define the hierarchy of the configuration tree.
 
