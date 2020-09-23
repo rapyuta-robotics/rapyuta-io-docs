@@ -21,8 +21,8 @@ are significant updates in this release that we hope you will like.
 
 #### Improvements
 	
-- you can now select the simulation option for docker deployments.
-- you can now select the resource limit (CPU/memory) while creating a routed network to handle high frequency of ros messages.
+- You can now select the simulation option for docker deployments.
+- You can now select the resource limit (CPU/memory) while creating a routed network to handle high frequency of ros messages.
 - Minor bug fixes and improvements to rapyuta.io APIs.
 
 #### SDK
@@ -33,5 +33,5 @@ are significant updates in this release that we hope you will like.
 
 ##### SDK Improvements
 
-- Introduced pwd and cwd to command class. For more information, [click here.](https://sdkdocs.apps.rapyuta.io/#rapyuta_io.clients.model.Command)
+- Fixed command API interface method in SDK. Introduced pwd and cwd to command class. 
 
