@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Added
 - Binary param 
+- Explain Update Deployment
 
 ## [2.5.1 - 2020-08-26]
 ### Fixed
