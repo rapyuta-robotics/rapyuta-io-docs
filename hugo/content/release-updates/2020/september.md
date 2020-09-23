@@ -27,4 +27,4 @@ are significant updates in this release that we hope you will like.
 
 #### Improvements
 	
-- Added support for both pwd and cwd for creating command to be executed on device.
+- Introduced pwd and cwd to command class.
