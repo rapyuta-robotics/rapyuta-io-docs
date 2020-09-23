@@ -23,6 +23,7 @@ are significant updates in this release that we hope you will like.
 	
 - you can now select the simulation option for docker deployments.
 - you can now select the resource limit (CPU/memory) while creating a routed network to handle high frequency of ros messages.
+- Minor bug fixes and improvements to rapyuta.io APIs.
 
 #### SDK
 **rapyuta.io Python SDK [0.17.0](/developer-guide/tooling-automation/python-sdk/#installation) released** 
