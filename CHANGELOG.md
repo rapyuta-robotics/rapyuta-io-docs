@@ -1,8 +1,12 @@
 # CHANGELOG
 
 ## [Unreleased]
+
+## [2.6.0 - 2020-08-26]
 ### Added
 - Binary param 
+- Update Deployment
+- Release update page for September 23, 2020
 
 ## [2.5.1 - 2020-08-26]
 ### Fixed
