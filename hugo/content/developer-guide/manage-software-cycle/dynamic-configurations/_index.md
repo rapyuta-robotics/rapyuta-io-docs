@@ -6,161 +6,96 @@ date: 2019-10-30T15:04:21+05:30
 pre: "1. "
 weight: 401
 ---
+
 The behavior of a robot (device) is determined by a set of
-parameters (as many as a hundred in a set) like the robot's
-velocity, controller gains, threshold value, etc.
+parameters, for instance the robot's velocity, controller gain threshold, or an image of a warehouse layout. 
+These parameters are usually a consequence of the software and hardware used in the robot and the environment.
 
-As a robotic developer, you may need to represent, store,
-and review parameters. Additionally, you may want to access
-parameters in your source code, modify a subset of parameters
-for a particular robot, or add new parameters and apply those to a
-group of robots.
+As a robotic developer, you need to represent, store, and review parameters. Additionally, you might want to access
+parameters in your source code, modify a subset of parameters for a particular robot, or add new parameters and apply those to a
+group of robots. A common pattern found in the robotics developer community is to arrive at a list of base parameters that are required for the application to run. When moving from the developer testbed to real-world operations, the operators, developers, and vendors
+often wish to override the base parameters to satisfy various requirements.
 
-Every ROS node in a robot requires several parameters to be set as they
-are used to configure the robot. These parameters are usually a
-consequence of the software or hardware used in the robot.
+The *rapyuta.io* platform provides a mechanism that allows a developer to set, review, update and override configuration for any connected robot. 
+Configuration parameters in the ***rapyuta.io*** platform are represented by a *tree-like* hierarchical structure 
+called  ***configuration hierarchy***.  
 
-The most common pattern in the robotics developer community is to
-arrive at a list of base parameters that are required for the
-application to run. When moving from the developer testbed to
-real-world operations, the operators, developers, and vendors
-often wish to override the base parameters to satisfy various
-requirements.
 
-Let's look at a practical example. It is likely you only want to
-override a subset of parameters amongst numerous parameters defined
-for a robot based on a particular criterion, say, the velocity of an
-AGV defaults to 5m/s, but the regulation in Japan requires you to
-limit its velocity to 3m/s. For an AGV to be deployed in Japan,
-you override its default velocity (5m/s)) to 3m/s. Any other AGV
-deployed outside of Japan will still default to a velocity of 5m/s.
 
-rapyuta.io organizes a configuration into a tree-like hierarchical
-structure called a *configuration hierarchy*. Consider the sample
-configuration hierarchy, ***example***, as shown in the figure below.
+Every configuration hierarchy consists of the following four kinds of nodes:
+
+- [RootNode](#rootnode)
+- [AttributeNode](#attributenode)
+- [ValueNode](#valuenode)
+- [FileNode](#filenode)
+
+ Consider the sample
+configuration hierarchy, ***example***, as shown in the following figure.
 The parameters of ***example*** are arranged in a specific order. The
-hierarchy lets you override parameter defaults (or base parameters)
-or extend existing parameters.
+hierarchy allows you to override the default parameters(or base parameters)
+or extend existing parameters based on the country of operation.
 
-![example configuration](/images/core-concepts/configurations/example-config.png?classes=border,shadow&width=50pc)
 
-A configuration hierarchy consists of four kinds of nodes:
+To view an example of how you may leverage configuration hierarchies please refer to the illustrated section on [overriding behavior](resove-configuration-hierarchy/) 
+ 
+![example configuration](/images/core-concepts/configurations/example-config.png?classes=border,shadow&width=20pc)
 
-* Root node
-* Attribute node
-* Value node
-* File node
-
-#### Root node
-The root node is the root of the configuration hierarchy tree. There
-is only one root node per configuration hierarchy. Its name is the
+#### RootNode
+The RootNode is the root of the configuration hierarchy tree. There
+is only one RootNode per configuration hierarchy. Its name is
 same as the name you provide while creating the configuration
-hierarchy. It may contain multiple file nodes and exactly one
+hierarchy. The RootNode allows you to add an attribute, add/upload
+ configuration files, and apply the base label configuration parameters
+  to a device.
+
+ It might contain multiple file nodes and exactly one
 attribute node.
 
-In this case, the root node is consequently ***example***.
-![root node](/images/core-concepts/configurations/root-node.png?classes=border,shadow&width=30pc)
+In this case, the RootNode is consequently ***example***.
+![root node](/images/core-concepts/configurations/root-node.png?classes=border,shadow&width=20pc)
 
-#### Attribute node
-An attribute node is intended to represent a semantic meaning. It is
-used to create branches in the configuration hierarchy tree. For instance,
+#### AttributeNode
+Devices in rapyuta.io allow the user to set arbitrary labels (modeled as key value pairs) corresponding to attributes of an onboarded device such as vendor, warehouse, country of operation, software version etc.
+
+The developer might need to override certain configuration based on one particular attribute of the device (eg device *country*).
+To do this, the developer must create an  **AttributeNode** which effectively creates a new overriding *"branch"* in the *configuration hierarchy*. 
+Each attribute node should have at lease one value node. Furthermore, you can also create more AttributeNodes 
+from the corresponding value nodes and define the hierarchy of the configuration tree.
+
+For example,
 the ***country*** attribute splits the hierarchy subtree based on
 the value of its children, such as ***USA*** and ***Japan*** (represented as
 value nodes). rapyuta.io represents these distinctions as key-value pairs to
 allow developers arbitrary flexibility in how they define their hierarchies. 
 
-Attribute nodes can contain only value nodes, each corresponding to a
-branch that you wish to represent. In the case of ***example*** configuration, attributes are ***country***, ***motor_controller***.
-![attribute node](/images/core-concepts/configurations/attribute-nodes.png?classes=border,shadow&width=30pc)
+AttributeNodes can contain only value nodes, each corresponding to a
+branch that you wish to represent. In the case of ***example*** 
+configuration, attributes are ***country***, ***motor_controller***.
+![attribute node](/images/core-concepts/configurations/attribute-nodes.png?classes=border,shadow&width=20pc)
 
-#### Value node
-A value node maps to a specific kind of its parent attribute. It is of
-the same color as the color of its parent attribute. It can contain
-multiple file nodes and only one attribute node, corresponding to any further
-branching you may wish to define under that particular value.
+#### ValueNode
+Each value node corresponds to one particular value that is of the type of the parent attribute node (eg device *country=**Japan***)  corresponding to a particular branch of the configuration hierarchy that will be used to override the more general configuration values.
+The parent attribute and the corresponding child  value nodes are of same color. It can contain
+multiple file nodes and only one attribute node. Furthermore, from the attribute node, 
+you can create multiple value nodes and define the hierarchy of the configuration tree.
 
 In ***example*** configuration, ***USA*** and ***Japan*** are value nodes of **country** attribute.
-![value node](/images/core-concepts/configurations/value-node.png?classes=border,shadow&width=30pc)
+![value node](/images/core-concepts/configurations/value-node.png?classes=border,shadow&width=20pc)
 
-#### File node
-A file node holds the actual configuration file containing
-parameters. The configuration file is written in **YAML** format. Files
-from a sub-tree (a more specific set of attributes and values vis a
-vis its parent) **recursively override/extend** the parameters defined in
-any less specific file node with identical names. Subtrees may define
-entirely new file nodes (with different names), which are used in
+#### FileNode
+A FileNode holds the actual configuration file containing parameters and data to be applied to the device. 
+*rapyuta.io* configuration parameters allow the user to use any arbitrary file format (eg:images,xml,json,binary) while providing *special overriding behavior* for the **YAML** format.
+
+FileNodes from a *sub-tree* (a more specific set of attributes and values vis a
+vis its parent) that **recursively override/extend** the parameters defined in
+any less specific FileNode with identical names. Subtrees may define
+entirely new FileNodes (with different names), which are used in
 resolution at that level.
 
 In ***example*** configuration, ***example/sample.yaml***, ***USA/sample.yaml***
-and ***Japan/sample.yaml*** are file nodes such that the last two files may
+and ***Japan/sample.yaml*** are FileNodes such that the last two files may
 either override or extend the existing ***example/sample.yaml*** file.
-![file nodes](/images/core-concepts/configurations/parameters-files.png?classes=border,shadow&width=30pc)
+![file nodes](/images/core-concepts/configurations/parameters-files.png?classes=border,shadow&width=20pc)
 
-## Consuming configuration hierarchies
-Often the people responsible for defining configuration
-parameters and hierarchies are different from those using them or
-operating robots. It calls for decoupling the consumption of the
-parameters from the operation of robots. So, rapyuta.io
-lets you define a set of key-value pairs, called
-device labels to tag a robot.
-{{% notice info %}}
-Refer to [device labels](/developer-guide/manage-software-cycle/dynamic-configurations/device-labels/) for more information.
-{{% /notice %}}
 
-## Resolving parameters for devices
-When you apply a configuration to a robot, rapyuta.io
-utilizes the device labels to traverse the configuration
-hierarchy in the ***example*** configuration.
-
-## Overriding configuration parameters
-The base parameters (or parameters defaults) file is usually located at
-the root of the configuration hierarchy. In ***example*** configuration,
-***example/sample.yaml*** file is the base parameters file, and it is located
-under the ***example*** root node.
-
-![parameter defaults](/images/core-concepts/configurations/parameter-defaults.png?classes=border,shadow&width=50pc)
-
-The parameters are represented as **key: value** pairs like
-***max_velocity: 5***, which indicates that the maximum velocity of an
-AGV is 5m/s.
-
-You can override or extend base parameters by defining **sample.yaml**
-files at different levels of the configuration hierarchy.
-
-Suppose that the regulation in Japan requires you to limit the
-maximum velocity of an AGV from **5m/s** to **3m/s**. You can override the
-***max_velocity*** of the AGV by assigning a new value to it. The
-***sample.yaml*** file under the ***Japan*** value includes only the
-***max_velocity*** parameter, but with its default overridden.
-
-![override parameters](/images/core-concepts/configurations/override-max-vel.png?classes=border,shadow&width=65pc)
-
-The final parameters file is a result of merging the base parameters
-(***example/sample.yaml***) and the overridden parameters
-(***Japan/sample.yaml***).
-
-## Extending configuration parameters
-You can add new parameters to extend the list of base
-parameters. For instance, the ***USA/sample.yaml*** defines an additional parameter, ***example_param_usa: val***.
-
-The resultant file after merging the base parameters in ***example/sample.yaml***
-and newly added parameters in ***USA/sample.yaml*** will include
-***example_param_val*** in addition to those already present.
-
-![extend parameters](/images/core-concepts/configurations/extend-params.png?classes=border,shadow&width=80pc)
-
-{{% notice info %}}
-Learn how to
-[apply a configuration to a robot/device](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configs/).
-{{% /notice %}}
-
-{{% notice info %}}
-You may ***clone an existing configuration*** into another project.
-Cloning saves you from the redundant task of defining the
-same configurations from scratch again. However, cloning a configuration
-inside the same project is not supported.
-{{% /notice %}}
-
-{{% notice info %}}
-You may ***rename an already defined configuration***.
-{{% /notice %}}
+To view an example of how you may leverage configuration hierarchies please refer to the illustrated section on [overriding behavior](resove-configuration-hierarchy/) 

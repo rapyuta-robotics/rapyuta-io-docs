@@ -1,9 +1,9 @@
 # CHANGELOG
 
-## [Unreleased] 
+## [Unreleased]
 ### Added
-- Explain Update Deployment 
-
+- Binary param 
+- Explain Update Deployment
 
 ## [2.5.1 - 2020-08-26]
 ### Fixed
