@@ -13,11 +13,16 @@ are significant updates in this release that we hope you will like.
 #### Features
 * **Binary Params**
 
-	New [rapyuta.io dynamic configuration](/developer-guide/manage-software-cycle/dynamic-configurations/consume-dynamic-configuration/create-configuration-parameters) allows you to upload binary files as a configuration file in addition to adding YAML configuration file.
+	New [rapyuta.io dynamic configuration](/developer-guide/manage-software-cycle/dynamic-configurations/consume-dynamic-configuration/create-configuration-parameters/#creating-a-configuration-parameter-in-binary-file-format) allows you to upload binary files as a configuration file in addition to adding YAML configuration file.
 
 * **Update Deployment**
 
-	**rapyuta.io** allows you to update a deployment of packages which have builds or docker images without the need of stopping the deployment. It will help the users who want to try out newer builds or restart the deployment faster in the package. For more information, [click here](/developer-guide/manage-software-cycle/deployments)
+	**rapyuta.io** allows you to update a deployment of packages which have builds or docker images without the need of stopping the deployment. It will help the users who want to try out newer builds or restart the deployment faster in the package. For more information, [click here](/developer-guide/manage-software-cycle/deployments/#update-re-deploy-in-place)
+
+#### Improvements
+	
+- you can now select the simulation option for docker deployments.
+- you can now select the resource limit (CPU/memory) while creating a routed network to handle high frequency of ros messages.
 
 #### SDK
 **rapyuta.io Python SDK [0.17.0](/developer-guide/tooling-automation/python-sdk/#installation) released** 
@@ -25,6 +30,7 @@ are significant updates in this release that we hope you will like.
 - Added "delete package functionality". 
 - Added support for uploading and downloading binary configurations files.
 
-#### Improvements
-	
-- Introduced pwd and cwd to command class.
+##### SDK Improvements
+
+- Introduced pwd and cwd to command class. For more information, [click here.](https://sdkdocs.apps.rapyuta.io/#rapyuta_io.clients.model.Command)
+
