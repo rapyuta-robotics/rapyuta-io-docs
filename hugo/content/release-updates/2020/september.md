@@ -22,11 +22,9 @@ are significant updates in this release that we hope you will like.
 #### SDK
 **rapyuta.io Python SDK [0.17.0](/developer-guide/tooling-automation/python-sdk/#installation) released** 
 
-- Added support for both pwd and cwd for creating command to be executed on device. (functionality improved)
-- Added delete package functionality in sdk. (this is new function, will confirm and let u know)
-- Added support for uploading and downloading binary configurations files (modified the upload and download functions to support binary files)
-
+- Added "delete package functionality". 
+- Added support for uploading and downloading binary configurations files.
 
 #### Improvements
 	
-- Minor bug fixes and improvements to rapyuta.io APIs.
+- Added support for both pwd and cwd for creating command to be executed on device.
