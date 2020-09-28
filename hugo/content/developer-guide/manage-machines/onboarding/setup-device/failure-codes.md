@@ -122,7 +122,7 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
         </tr>
         <tr>
             <td>DEV_E109</td>
-            <td>Network error occurred while communicating to the device</td>
+            <td>Intialization failed due to network error</td>
             <td>
                 <ul>
                     <li><a href="#check-for-active-internet-connection" class="highlight">Ensure device has an active internet connection.</a></li>
