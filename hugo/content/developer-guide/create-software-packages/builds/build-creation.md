@@ -17,7 +17,7 @@ Follow the below steps to create the build by catkin recipe :
 	b. Select the build recipe as **Catkin**.</br>
 	c. In the **Repository (URL)** field, enter the URL of the git repository from which you want to create a build. For example, https://github.com/rapyuta/io_tutorials.</br>
 	d. Optionally, if the git repository is a private git, then click the **Private Git** radio button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret).</br>
-	e. Optionally, if your repository has multiple directories, in the **Context Directory** field, enter the path of the directory where you want to create the build.
+	e. Optionally, if your repository has multiple directories, in the **Context Directory** field, enter the path of the directory where you want to create the build.</br>
 	f. Click **Next**. 
 ![goo](/images/core-concepts/builds/build-creation/catkin-recipe.png?classes=border,shadow&width=30pc)
 4. Under the **Build Info** tab, do the following.</br>
@@ -33,7 +33,7 @@ Follow the below steps to create the build by catkin recipe :
 	<li>Kinetic</li>
 	<li>Melodic</li>
 	</ul>
-	d. Optionally, to add ROS parameter to the build, in the **CATKIN BUILD PARAMETERS** area, click **Add Parameter**. For more information about the Catkin parameters, [click here.](/developer-guide/create-software-packages/builds/ros-support/)
+	d. Optionally, to add ROS parameter to the build, in the **CATKIN BUILD PARAMETERS** area, click **Add Parameter**. For more information about the Catkin parameters, [click here.](/developer-guide/create-software-packages/builds/ros-support/)</br>
 	e. Click **Next**.
 ![goo](/images/core-concepts/builds/build-creation/catkin-build-info.png?classes=border,shadow&width=30pc)
 5. To push and save the build image to a private registry, under the **Docker Secret** tab, do the following.</br>
@@ -55,7 +55,7 @@ Follow the below steps to create the build by docker recipe :
 	b. Select the build recipe as **Docker**.</br>
 	c. In the **Repository (URL)** field, enter the URL of the git repository from which you want to create a build. For example, https://github.com/rapyuta/io_tutorials.</br>
 	d. Optionally, if the git repository is a private git, then click the **Private Git** radio button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret).</br>
-	e. Optionally, if your repository has multiple directories, in the **Context Directory** field, enter the path of the directory where you want to create the build.
+	e. Optionally, if your repository has multiple directories, in the **Context Directory** field, enter the path of the directory where you want to create the build.</br>
 	f. Click **Next**. 
 ![goo](/images/core-concepts/builds/build-creation/docker-recipe.png?classes=border,shadow&width=30pc)
 4. Under the **Build Info** tab, do the following.</br>
