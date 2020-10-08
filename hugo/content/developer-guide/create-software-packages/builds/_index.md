@@ -18,9 +18,12 @@ possible for the developer to automate the flow from
 *git to operations* and integrate it with existing CI/CD
 systems and QA processes.
 
+
 ## Build Recipes
 rapyuta.io builds as *catkin* and *docker* build recipes. 
 The goal of each build recipe is to generate a running docker container at the end of the build creation process.
+
+The rapyuta.io platform also allows you to push a docker image to a private registry and you can use the image while creating a package. This helps the user who wants to try out the image on their local machine before deploying it on the device or cloud.
 
 In the **Builds** section to add a new build, add the Build name and provide 
 the URL address of git repository. Suppose you want to add the address of a git repository
