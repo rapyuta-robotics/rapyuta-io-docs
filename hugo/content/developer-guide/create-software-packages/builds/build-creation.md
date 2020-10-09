@@ -92,7 +92,7 @@ After you have created a build by either Catkin or Docker recipe, you can view t
     |Field|Description|
     |-----|-----------|
     |**Name/ID**| Provides the name of the build.
-    |**Status**| Provides the following status of the build. <ul><li>BuildinProgress: Displays when the build creation process is in progress.</li><li>Complete: Displays when the build creation process has been successfully completed.</li><li>BuildFailed: Displays if the build creation process has failed.</li></ul>
+    |**Status**| Provides the following status of the build. <ul><li>BuildInProgress: Displays when the build creation process is in progress.</li><li>Complete: Displays when the build creation process has been successfully completed.</li><li>BuildFailed: Displays if the build creation process has failed.</li></ul>
     |**Started**| Provides the time duration when the build creation process has started.
     |**Repository**| Provides the repository from which the build has been created.
     |**Action**| Allows you to [delete](/developer-guide/create-software-packages/builds/build-creation/#deleting-the-build) a build. 
