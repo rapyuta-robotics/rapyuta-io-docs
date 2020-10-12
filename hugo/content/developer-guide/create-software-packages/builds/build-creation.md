@@ -38,7 +38,7 @@ Follow the below steps to create the build by catkin recipe :
 ![goo](/images/core-concepts/builds/build-creation/catkin-build-info.png?classes=border,shadow&width=30pc)
 5. To push and save the build image to a private registry, under the **Docker Secret** tab, do the following.</br>
 	a. Click the **Docker Push Secret** radio-button.</br>
-	b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. For example, *docker.io/<your-username>/repo-name*. </br>
+	b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. For example, *docker.io/your-username/repo-name*. </br>
 	c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-secret).</br>
 	d. Click **Next**.
 ![goo](/images/core-concepts/builds/build-creation/catkin-push-secret.png?classes=border,shadow&width=30pc)
@@ -71,7 +71,7 @@ Follow the below steps to create the build by docker recipe :
 ![goo](/images/core-concepts/builds/build-creation/docker-build-info.png?classes=border,shadow&width=30pc)
 5. To push and save the build image to a private registry or to pull an image from a private repository, under the **Docker Secret** tab, do the following.</br>
 	a. Click the **Docker Push Secret** radio-button.</br>
-	b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage.</br>
+	b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. For example, *docker.io/your-username/repo-name*.</br>
 	c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-secret).</br>
 	d. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** radio-button and select the secret for the repository. If you have not created any secret for the repository, [create a secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-secret).</br> 
 	e. Click **Next**.
