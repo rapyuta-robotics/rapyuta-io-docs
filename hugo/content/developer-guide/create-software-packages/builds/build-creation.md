@@ -38,8 +38,8 @@ Follow the below steps to create the build by catkin recipe :
 ![goo](/images/core-concepts/builds/build-creation/catkin-build-info.png?classes=border,shadow&width=30pc)
 5. To push and save the build image to a private registry, under the **Docker Secret** tab, do the following.</br>
 	a. Click the **Docker Push Secret** radio-button.</br>
-	b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage.</br>
-	c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret).</br>
+	b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. For example, *docker.io/<your-username>/repo-name*. </br>
+	c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-secret).</br>
 	d. Click **Next**.
 ![goo](/images/core-concepts/builds/build-creation/catkin-push-secret.png?classes=border,shadow&width=30pc)
 The build is created. To view the details of the build, [click here](/developer-guide/create-software-packages/builds/build-creation/#viewing-build-details).
@@ -69,11 +69,11 @@ Follow the below steps to create the build by docker recipe :
 	c. Optionally, if the build has ROS component, then click the **Has ROS Components** radio-button, select the ROS version as either **Kinetic** or **Melodic**, and if the build has a simulation option, click the **Has Simulation** radio-button.</br>
 	d. Click **Next**.
 ![goo](/images/core-concepts/builds/build-creation/docker-build-info.png?classes=border,shadow&width=30pc)
-5. To push and save the build image to a private registry, under the **Docker Secret** tab, do the following.</br>
+5. To push and save the build image to a private registry or to pull an image from a private repository, under the **Docker Secret** tab, do the following.</br>
 	a. Click the **Docker Push Secret** radio-button.</br>
 	b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage.</br>
-	c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret).</br>
-	d. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** radio-button and select the secret for the repository. If you have not created any secret for the repository, [create a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret).</br> 
+	c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-secret).</br>
+	d. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** radio-button and select the secret for the repository. If you have not created any secret for the repository, [create a secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-secret).</br> 
 	e. Click **Next**.
 ![goo](/images/core-concepts/builds/build-creation/docker-push-secret.png?classes=border,shadow&width=30pc)
 The build is created. To view the details of the build, [click here](/developer-guide/create-software-packages/builds/build-creation/#viewing-build-details).
@@ -99,7 +99,14 @@ After you have created a build by either Catkin or Docker recipe, you can view t
 
 2. To view the details of a particular build, click the build. The following image is displayed.
 ![goo](/images/core-concepts/builds/build-creation/build-detail-action.png?classes=border,shadow&width=25pc)
-3. Click **Show More**. The details of the builds are displayed.
+
+The **Build Details** page allows you to do the following.</br>
+
+* Click **[Delete](#deleting-the-build)** to delete the build. 
+* Click **[Trigger](/developer-guide/create-software-packages/builds/trigger-rollback/)** to trigger a build. 
+* Click **Show More** to view the details of the build and view the [build log](/developer-guide/tooling-automation/logging/build-logs).
+
+After clicking **Show More**,  the following image is displayed.
 ![goo](/images/core-concepts/builds/build-creation/build-details.png?classes=border,shadow&width=45pc)
 
 
