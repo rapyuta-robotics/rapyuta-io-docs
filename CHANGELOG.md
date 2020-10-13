@@ -1,5 +1,9 @@
 # CHANGELOG
-## [Unreleased]
+## [Unreleasedz]
+
+## [2.7.0 - 2020-10-14]
+### Added
+- Added Docker Push/Pull Secret
 
 ## [2.6.0 - 2020-09-23]
 ### Added
