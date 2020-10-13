@@ -15,9 +15,9 @@ Follow the below steps to create the build by catkin recipe :
 3. Under **Git info** tab, do the following.</br>
 	a. In the **Build Name** field, enter a name for the build.</br>
 	b. Select the build recipe as **Catkin**.</br>
-	c. In the **Repository (URL)** field, enter the URL of the git repository from which you want to create a build. For example, https://github.com/rapyuta/io_tutorials.</br>
+	c. In the **Repository (URL)** field, enter the URL of the git repository from which you want to create a build. For example, `https://github.com/rapyuta/io_tutorials`.</br>
 	d. Optionally, if the git repository is a private git, then click the **Private Git** radio button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret).</br>
-	e. Optionally, if your repository has multiple directories, in the **Context Directory** field, enter the path of the directory where you want to create the build.</br>
+	e. Optionally, you can specify the **Context Directory** field by entering the path of the directory where you want to create the build.</br>
 	f. Click **Next**. 
 ![goo](/images/core-concepts/builds/build-creation/catkin-recipe.png?classes=border,shadow&width=30pc)
 4. Under the **Build Info** tab, do the following.</br>
@@ -36,8 +36,8 @@ Follow the below steps to create the build by catkin recipe :
 	d. Optionally, to add ROS parameter to the build, in the **CATKIN BUILD PARAMETERS** area, click **Add Parameter**. For more information about the Catkin parameters, [click here.](/developer-guide/create-software-packages/builds/ros-support/)</br>
 	e. Click **Next**.
 ![goo](/images/core-concepts/builds/build-creation/catkin-build-info.png?classes=border,shadow&width=30pc)
-5. To push and save the build image to a private registry, under the **Docker Secret** tab, do the following.</br>
-	a. Click the **Docker Push Secret** radio-button.</br>
+5. The *rapyuta.io* platform allows you to push and save the build image to an external docker registry.To push and save the build image to the private registry, do the following.</br>
+	a. Under the **Docker Secret** tab, click the **Docker Push Secret**  toggle button.</br>
 	b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. For example, *docker.io/your-username/repo-name*. </br>
 	c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-secret).</br>
 	d. Click **Next**.
@@ -53,9 +53,9 @@ Follow the below steps to create the build by docker recipe :
 3. Under **Git info** tab, do the following.</br>
 	a. In the **Build Name** field, enter a name for the build.</br>
 	b. Select the build recipe as **Docker**.</br>
-	c. In the **Repository (URL)** field, enter the URL of the git repository from which you want to create a build. For example, https://github.com/rapyuta/io_tutorials.</br>
-	d. Optionally, if the git repository is a private git, then click the **Private Git** radio button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret).</br>
-	e. Optionally, if your repository has multiple directories, in the **Context Directory** field, enter the path of the directory where you want to create the build.</br>
+	c. In the **Repository (URL)** field, enter the URL of the git repository from which you want to create a build. For example, `https://github.com/rapyuta/io_tutorials`.</br>
+	d. Optionally, if the git repository is a private git, then click the **Private Git** toggle button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret).</br>
+	e. Optionally, you can specify the **Context Directory** field by entering the path of the directory where you want to create the build.</br>
 	f. Click **Next**. 
 ![goo](/images/core-concepts/builds/build-creation/docker-recipe.png?classes=border,shadow&width=30pc)
 4. Under the **Build Info** tab, do the following.</br>
@@ -69,11 +69,14 @@ Follow the below steps to create the build by docker recipe :
 	c. Optionally, if the build has ROS component, then click the **Has ROS Components** radio-button, select the ROS version as either **Kinetic** or **Melodic**, and if the build has a simulation option, click the **Has Simulation** radio-button.</br>
 	d. Click **Next**.
 ![goo](/images/core-concepts/builds/build-creation/docker-build-info.png?classes=border,shadow&width=30pc)
-5. To push and save the build image to a private registry or to pull an image from a private repository, under the **Docker Secret** tab, do the following.</br>
-	a. Click the **Docker Push Secret** radio-button.</br>
+5. The *rapyuta.io* platform allows you to push and save the build image to an external docker registry or to pull an image from a private repository. To push or pull a docker image file, do the following.</br>
+	a. Under the **Docker Secret** tab, click the **Docker Push Secret**  toggle button.</br>
 	b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. For example, *docker.io/your-username/repo-name*.</br>
 	c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-secret).</br>
-	d. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** radio-button and select the secret for the repository. If you have not created any secret for the repository, [create a secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-secret).</br> 
+	d. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** toggle button and select the secret for the repository. If you have not created any secret for the repository, [create a secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-secret).</br> 
+{{% notice note %}}
+**Docker Pull Secret** field is only available if you are creating the build by docker recipe.</br>
+{{% /notice %}}
 	e. Click **Next**.
 ![goo](/images/core-concepts/builds/build-creation/docker-push-secret.png?classes=border,shadow&width=30pc)
 The build is created. To view the details of the build, [click here](/developer-guide/create-software-packages/builds/build-creation/#viewing-build-details).
