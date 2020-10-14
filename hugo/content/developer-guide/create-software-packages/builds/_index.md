@@ -30,7 +30,6 @@ The rapyuta.io platform also allows you to push a docker image to a private regi
 {{% notice note %}}
 If you are creating a build with *Docker* recipe and the Dockerfile contains a reference to a private image, then you must specify a docker Secret. The platform will use the docker secret to fetch the private image while building the Dockerfile. If you have not created any secret for the repository, [create a secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-secret).
 {{% /notice %}}
-The rapyuta.io platform also allows you to push a docker image to a private registry and you can use the image while creating a package. This helps the user who wants to try out the image on their local machine before deploying it on the device or cloud.
 
 In the **Builds** section to add a new build, add the Build name and provide 
 the URL address of git repository. Suppose you want to add the address of a git repository
