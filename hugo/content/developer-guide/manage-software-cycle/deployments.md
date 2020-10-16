@@ -31,6 +31,7 @@ The following sections let the developer learn more about
 - [Status](#status)
 - [Error Codes](#error-codes)
 - [Restart Policy](#restart-policy)
+- [Network Configuration for Executables](#network-configuration-for-executables)
 - [Deploying A Package](#deploying-a-package)
 - [Update/Re-Deploy A Deployment in-place](#update-re-deploy-in-place)
 
