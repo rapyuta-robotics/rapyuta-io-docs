@@ -99,9 +99,15 @@ and the recommendations you should take:
 | DEP_E161 | docker image not found for executables of components deployed on device | verify that the path of the docker image is valid |
 | DEP_E162 | Validation error. Cases include:<ul><li>Inconsistent values of ROS distro and CPU architecture variables for the device and package being provisioned.</li><li>rapyuta.io docker images not present on docker device.</li></ul> | <ul><li>Create package with appropriate values for ROS distro and CPU architecture variables.</li><li>Onboard the device again.</li></ul> |
 | DEP_E163 | application has stopped and exited unexpectedly, and crashes continuously | debug the application using the corresponding deployment logs |
+| DEP_E171 | same alias name is used by two different deployments under the same routed network. | change the alias name during deployment and ensure that there is no duplication of  alias name under the same routed network.</a> |
+| DEP_E172 | compress libraries used by the cloud bridge is missing. | re-onboard the device.</a> |
+| DEP_E173 | Underlying transport libraries used by the cloud bridge components  are missing. | re-onboard the device.</a> |
+| DEP_E174 | multiple components of a package under same routed network expose same ROS service. | do not add multiple deployments with the same ROS service endpoint under the same routed network.</a> |
+| DEP_E175 | python actionlib file is missing. | re-onboard the device.</a> |
 | DEP_E2xx | internal rapyuta.io error in the components deployed on cloud | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
 | DEP_E3xx | internal rapyuta.io error in the components deployed on a device | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
 | DEP_E4xx | internal rapyuta.io error | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
+
 
 ## Restart Policy
 Unlike deployments running on the cloud, which automatically restart
@@ -145,6 +151,24 @@ For a deployment running on a device, the variable
 **Restart Count** (on the deployment details page) represents the
 number of times the deployment has restarted due to restarting of
 deployment components.
+
+## Network Configuration for Executables
+ After you deploy a package that contains ROS components, you can view the cloud bridge and routed network statuses for each component used in the package. The rapyuta.io platform relies on a sub-component called the cloud bridge for implicitly establishing a communication channel between two or more ROS environments.
+ {{% notice note %}}
+cloud bridge instances are automatically generated for the ROS components only.
+{{% /notice %}}	
+ The rapyuta.io platform also displays the warning counts in form of a histogram graph if you click the warning icon next to the cloud bridge status. The following image displays the network configuration details for a component on the deployment details page.
+
+ ![Modify restart policy](/images/multi-robot-communication/cb-warning-log.png?classes=border,shadow&width=40pc)
+
+The following table displays the field description of the network configuration details section.
+
+| Field | Description |
+| ------ | ----------- |
+| Name/ID | Displays a unique name or ID of the cloud bridge component that is generated for a ROS component. |
+| Network | Displays the associated routed network for the component. |
+| Bridge Status | Displays the following cloud bridge statuses of each component for a package. <ul><li>If the cloud bridge is running successfully, then the status becomes **running**.</li><li>If the cloud bridge is running successfully with warnings, then the status becomes **running** with a warning icon. You can click on the warning icon to view the histogram of the warning messages those occured in the last 24 hours. You can also view the warning logs by clicking the warning message count bar in the histogram graph. It takes you to the [hitorical log section](/developer-guide/tooling-automation/logging/deployment-logs/#stdout-logs). You can also view the [live logs](/developer-guide/tooling-automation/logging/deployment-logs/#indexed-logs) of the cloud bridge those are generated for the ROS components in a deployment.</li><li>If the cloud bridge is failed due to some error, then the status becomes **error**.</li></ul> |
+|Network Ststus | Displays the following routed network statuses of each component for a package. <ul><li>If the routed network is running successfully, then the status becomes **running**.</li><li>If the routed network is failed due to some error, then the status becomes **error**.</li></ul> |
 
 ## Deploying A Package
 To deploy a package in rapyuta.io, follow the steps:
