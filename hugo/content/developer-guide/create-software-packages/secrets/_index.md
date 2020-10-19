@@ -11,5 +11,5 @@ data such as a password, SSH private key, SSL certificate. It grants rapyuta.io 
 
 There are two types of secrets available for you on rapyuta.io:
 
-1. [Docker pull secret](/developer-guide/create-software-packages/secrets/docker-registry/)
+1. [Docker secret](/developer-guide/create-software-packages/secrets/docker-registry/)
 2. [Source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/)

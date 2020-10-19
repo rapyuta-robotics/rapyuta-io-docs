@@ -11,11 +11,12 @@ weight: 285
 Follow below steps to create the build : 
 
 1. On the left navigation bar, click **BUILDS**
-2. Click on **ADD NEW BUILD**
+2. Click on **ADD NEW BUILD**.
+   The **Create new build** page is displayed.
 3. In the Build Name box, enter a name for the build say `demoBuild` 
 4. In the **Git repository** box, enter the url address : `https://github.com/rapyuta/io_tutorials` 
 and select **Build Recipe** as Catkin.
-5. Go to the next step and click on next, the build will be created.
+5. Go to the next step and click on next, the build will be created. For  more information about the field descriptions of the **Create new build** page, [click here](/developer-guide/create-software-packages/builds/build-creation/#creating-build-by-catkin-recipe).
 
 
 ## Creating the package
