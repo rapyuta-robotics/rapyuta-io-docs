@@ -1,5 +1,8 @@
 # CHANGELOG
 ## [Unreleased]
+- Explain docker push pull secret
+
+
 
 ## [2.6.0 - 2020-09-23]
 ### Added
