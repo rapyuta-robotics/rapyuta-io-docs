@@ -11,7 +11,7 @@ A source secret allows rapyuta.io to access a private git repository or a git
 repository with self-assigned or untrusted SSL certificate.
 
 {{% notice info %}}
-The rapyuta.io platform uses git version from 1.8.3 to 2.16.6 to create a package from the git repository.
+The rapyuta.io platform uses git version 2.16.6.
 {{% /notice %}}
 
 The two types of source secrets are:
