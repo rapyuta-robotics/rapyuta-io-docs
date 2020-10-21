@@ -6,11 +6,19 @@ weight: 834
 ---
 
 
-## October 14
-Welcome to the October 14, 2020 release of the rapyuta.io platform. There
+## October 21
+Welcome to the October 21, 2020 release of the rapyuta.io platform. There
 are significant updates in this release that we hope you will like.
 
 #### Features
 * **Docker Push/Pull Secret**
 
     The *rapyuta.io* platform allows you to push and save a docker image to a private registry and when you create a build by using a dockerfile and a private image is referenced, the platform uses a pull secret to fetch the image and create the build for you. For more information, [click here](/developer-guide/create-software-packages/builds/build-creation).
+
+* **Cloud Bridge Error List**
+    
+    New deployment [error codes](/developer-guide/manage-software-cycle/deployments/#error-codes) are introduced due to cloudbridge failure. Also, the *rapyuta.io* platform allows you to view the cloud bridge warning count histogram graph and the status in the deployment details page. For more information, [click here](/developer-guide/manage-software-cycle/deployments/#network-configuration-for-executables).
+
+#### Improvements
+	
+- Minor bug fixes and improvements to rapyuta.io APIs.

@@ -14,14 +14,14 @@ The two types of docker pull secrets that you can create are:
 1. Docker Hub
 2. Private Registry
 
-## Creating a docker pull secret
-To create a docker pull secret for a private docker registry, follow the steps:
+## Creating a docker secret
+To create a docker secret for a private docker registry, follow the steps:
 
 1. On the left navigation bar, click **SECRETS**.
 2. Click **ADD NEW SECRET**.
-3. Under **SELECT SECRET TYPE**, click **Docker pull secret**.
-3. In the **Name** box, enter a name for the docker pull secret. For instance,
-   you may enter the name _docker-pull-secret-name_.    
+3. Under **SELECT SECRET TYPE**, click **Docker secret**.
+3. In the **Name** box, enter a name for the docker secret. For instance,
+   you may enter the name _docker-secret-name_.    
    Make sure that the name should be no longer than 253 characters. It must
    consist of lower case alphanumeric characters or hyphen -, and it must begin
    and end with an alphanumeric character.
