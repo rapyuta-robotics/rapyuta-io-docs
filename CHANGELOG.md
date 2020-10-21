@@ -1,6 +1,12 @@
 # CHANGELOG
 ## [Unreleased]
 
+## [2.7.0 - 2020-10-21]
+### Added
+- Explain docker push pull secret
+- Explain cb error log
+- Latest git version updated 
+
 ## [2.6.0 - 2020-09-23]
 ### Added
 - Binary param 
