@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ## [2.7.0 - 2020-10-21]
+### Added
 - Explain docker push pull secret
 - Explain cb error log
 - Latest git version updated 
