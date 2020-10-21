@@ -14,6 +14,10 @@ repository with self-assigned or untrusted SSL certificate.
 The rapyuta.io platform uses git version 2.16.6.
 {{% /notice %}}
 
+{{% notice note %}}
+While cloning a git repository, ensure that you provide the appropriate protocol (HTTP/HTTPS). The HTTP to HTTPS redirection does not work while cloning the repositories.
+{{% /notice %}}
+
 The two types of source secrets are:
 
 1. **Basic authentication**    
