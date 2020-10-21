@@ -23,6 +23,10 @@ are significant updates in this release that we hope you will like.
 	
 - Minor bug fixes and improvements to rapyuta.io APIs.
 
+#### Breaking changes
+	
+- While cloning a git repository, ensure that you provide the appropriate protocol (HTTP/HTTPS). The HTTP to HTTPS redirection does not work while cloning the repositories.
+
 #### SDK
 **rapyuta.io Python SDK [0.17.1](/developer-guide/tooling-automation/python-sdk/#installation) released** 
 
