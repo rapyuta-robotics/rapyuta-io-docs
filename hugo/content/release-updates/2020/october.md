@@ -22,3 +22,8 @@ are significant updates in this release that we hope you will like.
 #### Improvements
 	
 - Minor bug fixes and improvements to rapyuta.io APIs.
+
+#### SDK
+**rapyuta.io Python SDK [0.17.1](/developer-guide/tooling-automation/python-sdk/#installation) released** 
+
+- Fixed *Client.get_static_route_by_name()* method. 
