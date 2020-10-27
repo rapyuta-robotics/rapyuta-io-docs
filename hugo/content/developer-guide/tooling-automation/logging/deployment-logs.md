@@ -68,19 +68,20 @@ a valid logs output is displayed in ***stdout*** window.
 ![stdout or stderr](/images/core-concepts/logging/deployment-logs/historical-logs/stdout-stderr.png?classes=border,shadow&width=50pc)
 
 ## Indexed Logs
-To view the corresponding deployment logs in real-time, click **Live Logs** tab. They are streamed in a terminal-like window and can be useful to view and debug your application in the cloud as it generates new logs.
+To view the corresponding deployment logs in real-time, click **Live Logs** tab. They are streamed in a terminal-like window and can be useful to view and debug your application in the cloud as it generates new logs. The rapyuta.io platform allows you to view the live 
 It is similar to the ***tail -f*** functionality one is used to in a UNIX terminal console.
-
 ![Live Logs tab](/images/core-concepts/logging/deployment-logs/realtime-logs/deployment-live-logs.png?classes=border,shadow&width=50pc)
 
-To search for a specific phrase in the continuous log stream, enter the phrase inside the **Search** box. If there is a match, all occurrences of matching patterns of the phrase are highlighted.
 
-![Search live logs](/images/core-concepts/logging/deployment-logs/realtime-logs/live-logs-search.png?classes=border,shadow&width=50pc)
+The **Live Logs** tab allows you to do the following.
 
-You may view logs in the full-screen mode by clicking on the **fullscreen** button that is located at the top left corner of the terminal-like window.
+* View the realtime logs of the deployed components and the associated cloud bridges.
 
-![View live logs in Full Screen](/images/core-concepts/logging/deployment-logs/realtime-logs/live-logs-FS.png?classes=border,shadow&width=50pc)
+* Download the live log details  to your local machine by clicking the download icon.
 
-On the other hand, the corresponding component-executable combination for which deployment logs are currently being streamed is displayed at the top right corner of the window.
+* Search for a specific phrase in the continuous log stream by entering the phrase inside the **Search** box. If there is a match, all occurrences of matching patterns of the phrase are highlighted.
 
-![component-executable combo](/images/core-concepts/logging/deployment-logs/realtime-logs/cmpnt-exec-combination.png?classes=border,shadow&width=50pc)
+* View logs in the full-screen mode by clicking on the **fullscreen** icon that is located at the top right corner of the terminal-like window.
+
+![Live Logs tab](/images/core-concepts/logging/deployment-logs/live-logs.png/?classes=border,shadow&width=50pc)
+

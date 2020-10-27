@@ -31,6 +31,7 @@ The following sections let the developer learn more about
 - [Status](#status)
 - [Error Codes](#error-codes)
 - [Restart Policy](#restart-policy)
+- [Network Configuration for Executables](#network-configuration-for-executables)
 - [Deploying A Package](#deploying-a-package)
 - [Update/Re-Deploy A Deployment in-place](#update-re-deploy-in-place)
 
@@ -99,9 +100,17 @@ and the recommendations you should take:
 | DEP_E161 | docker image not found for executables of components deployed on device | verify that the path of the docker image is valid |
 | DEP_E162 | Validation error. Cases include:<ul><li>Inconsistent values of ROS distro and CPU architecture variables for the device and package being provisioned.</li><li>rapyuta.io docker images not present on docker device.</li></ul> | <ul><li>Create package with appropriate values for ROS distro and CPU architecture variables.</li><li>Onboard the device again.</li></ul> |
 | DEP_E163 | application has stopped and exited unexpectedly, and crashes continuously | debug the application using the corresponding deployment logs |
+| DEP_E171 | cloud bridge encountered duplicate alias on the device. | change the alias name during deployment and ensure that there is no duplication of  alias name under the same routed network. For more information about alias, [click here.](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#ros-environment-aliases-runtime-identity-assignment)</a> |
+| DEP_E172 | compression library required for the cloud bridge is missing on the device. | re-onboard the device.</a> |
+| DEP_E173 | transport libraries required for the cloud bridge is missing on the device. | re-onboard the device.</a> |
+| DEP_E174 | cloud bridge on the device encountered multiple ROS service origins. | do not add multiple deployments with the same ROS service endpoint under the same routed network.</a> |
+| DEP_E175 | python actionlib/msgs required for the cloud bridge is missing on the device. | re-onboard the device.</a> |
+| DEP_E176 | cloud bridge encountered duplicate alias on the cloud component. | change the alias name during deployment and ensure that there is no duplication of  alias name under the same routed network. For more information about alias, [click here.](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#ros-environment-aliases-runtime-identity-assignment)</a> |
+| DEP_E177 | cloud bridge on the cloud component encountered multiple ROS service origins. | re-onboard the device.</a> |
 | DEP_E2xx | internal rapyuta.io error in the components deployed on cloud | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
 | DEP_E3xx | internal rapyuta.io error in the components deployed on a device | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
 | DEP_E4xx | internal rapyuta.io error | report the issue together with the relevant details to the <a href="#" onclick="javascript:FreshWidget.show();">support team</a> |
+
 
 ## Restart Policy
 Unlike deployments running on the cloud, which automatically restart
@@ -145,6 +154,24 @@ For a deployment running on a device, the variable
 **Restart Count** (on the deployment details page) represents the
 number of times the deployment has restarted due to restarting of
 deployment components.
+
+## Network Configuration for Executables
+ After you deploy a package that contains ROS components, you can view the cloud bridge and routed network statuses for each component used in the package. The rapyuta.io platform relies on a sub-component called the cloud bridge for implicitly establishing a communication channel between two or more ROS environments.
+ {{% notice note %}}
+cloud bridge instances are automatically generated for the ROS components only.
+{{% /notice %}}	
+ The rapyuta.io platform also displays the warning counts in form of a histogram graph for last 24 hours. To view the histogram, click the warning icon next to the cloud bridge status as displayed in the following image.
+
+ ![Modify restart policy](/images/multi-robot-communication/cb-warning-log.png?classes=border,shadow&width=40pc)
+
+The following table displays the field description of the network configuration details section.
+
+| Field | Description |
+| ------ | ----------- |
+| Name/ID | Displays a unique name or ID of the cloud bridge component that is generated for a ROS component. |
+| Network | Displays the associated routed network for the component. |
+| Routing Status | Displays the following cloud bridge statuses of each component for a package. <ul><li>If the cloud bridge is running successfully, then the status becomes **running**.</li><li>If the cloud bridge is running successfully with warnings, then the status becomes **running** with a warning icon. You can click on the warning icon to view the histogram of the warning messages those occured in the last 24 hours. You can also view the historical logs by clicking the warning message count bar in the histogram graph. It takes you to the [hitorical log section](/developer-guide/tooling-automation/logging/deployment-logs/#stdout-logs). You can also view the [live logs](/developer-guide/tooling-automation/logging/deployment-logs/#indexed-logs) of the cloud bridge generated for the ROS components in a deployment.</li><li>If the cloud bridge is failed due to some error, then the status becomes **error**.</li></ul> |
+|Network Status | Displays the following routed network statuses of each component for a package. <ul><li>If the routed network is running successfully, then the status becomes **running**.</li><li>If the routed network is failed due to some error, then the status becomes **error**.</li></ul> |
 
 ## Deploying A Package
 To deploy a package in rapyuta.io, follow the steps:
