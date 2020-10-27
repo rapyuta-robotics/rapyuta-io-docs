@@ -1,5 +1,7 @@
 # CHANGELOG
 ## [Unreleased]
+### Added
+- Added DEV_E109 error code details
 
 ## [2.7.0 - 2020-10-21]
 ### Added
