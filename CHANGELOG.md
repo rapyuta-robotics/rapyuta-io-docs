@@ -1,7 +1,10 @@
 # CHANGELOG
 ## [Unreleased]
+
+## [2.8.0 - 2020-11-04]
 ### Added
 - Added DEV_E109 error code details
+- Explain ROS bag feature
 
 ## [2.7.0 - 2020-10-21]
 ### Added
