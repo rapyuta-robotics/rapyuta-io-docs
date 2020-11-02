@@ -14,12 +14,12 @@ After you deploy a package, you can view the ROS bag jobs in the **ROS Bag Jobs*
 If you have added a ROS bag job for a component either during package creation or deployment, You can add new ROS bag jobs for the same components in the **ROS Bag Jobs** tab after you have deployed the package. To add new jobs, click **Add new ROS Bag job**. To know more about the field description, [click here](/developer-guide/create-software-packages/ros-support/#creating-rosbag-jobs).
 
 {{% notice note %}}
-If you have not added any ROS bag job for a cloud component during deplyment or package creation, you cannot add a ROS bag job later in the **ROS Bag Jobs** tab.
+If you have not added any ROS bag job for a cloud component during deployment or package creation, you cannot add a ROS bag job later in the **ROS Bag Jobs** tab.
 
 {{% /notice %}}
 
 {{% notice info %}}
-If the deployed component is a non-ROS component, or you have not added any ROS bag job during package creation or deployment, or the selected runtime is device, the **ROS Bag Jobs** tab is not avialable.
+If the deployed component is a non-ROS component, or you have not added any ROS bag job during package creation or deployment, or the selected runtime is device, the **ROS Bag Jobs** tab is not available.
 {{% /notice %}}
 
 The **ROS Bag Jobs** tab allows you to do the following.

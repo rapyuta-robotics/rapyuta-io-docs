@@ -126,7 +126,7 @@ Learn more about [dedicated ROS communication support](/developer-guide/manage-s
 {{% /notice %}}
 
 ## Ros Bag Job
-A rosbag is a file format in ROS for storing ROS topic message data. The rapyuta.io platform allows you to record the ROS messages (ros topics) for ROS enabled components deployed on the cloud. You can stop the recording and download the stored data for further analysis and troubleshooting. You must define the topics that you want to record while configuring the components in a package, or during deployment. If you have defined any ROS bag job during package creation or deployment, you can also add new ROS bag jobs for the same component after deployment.
+A ROS bag is a file format in ROS for storing ROS topic message data. The rapyuta.io platform allows you to record the ROS messages (ros topics) for ROS enabled components deployed on the cloud. You can stop the recording and download the stored data for further analysis and troubleshooting. You must define the topics that you want to record while configuring the components in a package, or during deployment. If you have defined any ROS bag job during package creation or deployment, you can also add new ROS bag jobs for the same component after deployment.
 
 {{% notice note %}}
 Rosbag is not supported on the components that are deployed on the device.</br>
@@ -161,10 +161,10 @@ BZ2 generally produces smaller bags than LZ4. For more information about ROS com
 ![add-rosbags](/images/dev-guide/rosbag-jobs/advanced-rosbagjob.png?classes=border,shadow&width=55pc)
     a. In the **Node Name** field, type the node for which you want to record all the topics subscribed by the specific node.</br>
     b. In the **Number of Message** field, type the number of messages that you want to store for each topic.</br>
-    c. **Max Split** field defines the the maximum number of splits of the ROS bag files that is saved. Older splits are deleted after the **Max Split** count is reached. To split the rosbag file, in the **Max Split** field, type the number of split that you want to allow. </br>
+    c. **Max Split** field defines the maximum number of splits of the ROS bag files that are saved. Older splits are deleted after the **Max Split** count is reached. To split the rosbag file, in the **Max Split** field, type the number of split that you want to allow. </br>
 {{% notice info %}}
 
-Maximum 10 splits are allowed for each rosbag job. After the message recording reaches the maximum allowed splits, the older split files are deleted to maintain the specified memory limit. 
+Maximum 10 splits are allowed for each ROS bag job. After the message recording reaches the maximum allowed splits, the older split files are deleted to maintain the specified memory limit. 
 {{% /notice %}}
     d. Split Size is the file size after which the file is splitted. In the **Split Size** field, type the memory size for each split of the recorded messages in MB.</br>
 {{% notice info %}}
@@ -180,7 +180,7 @@ For example, you can configure 10 splits and each split can store up to 500 MB (
 
 {{% notice info %}}
 
-You can also update the value of the ROS bag jobs during the time of deployment. The value added during the deployments overrides the value added during the package creation. 
+You can also update the value of the ROS bag jobs during the time of deployment. The values added during the deployments overrides the values added during the package creation. 
 {{% /notice %}}
     
 
