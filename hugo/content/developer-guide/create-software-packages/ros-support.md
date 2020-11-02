@@ -117,49 +117,6 @@ These are intermediate levels offered between the two extremes that may be more 
 ### Compression
 The user may optionally enable transparent compression. The platform relies on a *snappy* compression algorithm. Compression is not free. You usually pay a small penalty, with messages long repeats and sparse data such as laser scans, maps, etc. The benefits of a reduced payload more than compensate for this penalty and let the user send much larger volumes of data over the communication link.
 
-### Rosbag Job
-A rosbag is a file format in ROS for storing ROS topic message data. The rapyuta.io platform allows you to record the ROS messages (ros topics) for ROS enabled components deployed on the cloud. You can stop the recording and download the stored data for further analysis and troubleshooting. You must define the topics that you want to record while configuring the components in a package.
-
-{{% notice info %}}
-
-* Rosbag is not supported on the components that are deployed on the device.
-* Maximum three jobs can be added to a component.
-{{% /notice %}}
-
-#### Creating Rosbag Jobs
-If you want to record the topics for a component, perform the following procedure.
-
-*Pre-requisite*: Ensure that you have selected the device runtime as cloud when creating a package.
-
-1. On the **Create New Package** page, click **Add ROS Bag Job**.
-![add-rosbags](/images/dev-guide/rosbag-jobs/add-rosbag.png?classes=border,shadow&width=20pc)
-2. In the **Name** field, type a name for the ROS bag job.
-3. In the **Topic Name** field, type the name of the topic that you want to record.
-4. Optionally, if you want to record all the topics available in the component, click the **All Topics?** toggle button.
-![add-rosbags](/images/dev-guide/rosbag-jobs/rosbag-config.png?classes=border,shadow&width=35pc)
-2. In the **Name** field, type a name for the ROS bag job.
-5. Optionally, if you want to record a series of topics that should match a regular expression value or (regex), type the regex in the **Include Regex** field. 
-6. Optionally, if you want to exclude the recording of a series of topics that should match a regular expression value or (regex), type the regex in the **Exclude Regex** field. 
-{{% notice info %}}
-If you have enabled the **All Topics?** toggle button, **Topic Name** and  **Include/Exclude Regex** fields are disabled.
-{{% /notice %}}
-7. You can also provide either **BZ2** or **LZ4** compression to the recorded topics based on your requirement and available disk sizes.
-BZ2 generally produces smaller bags than LZ4, so use it if disk usage is your primary concern. However, BZ2 is typically much slower than LZ4, both during compression and later when a bag's chunks are decompressed for reading, so use it if you're willing to tolerate slightly larger bags.
-
-8. The advance option allows you to record the topics for a more granular report. To use the advance option, click **Show Advance Option** and do the following.</br>
-
-![add-rosbags](/images/dev-guide/rosbag-jobs/advanced-rosbagjob.png?classes=border,shadow&width=55pc)
-    a. In the **Node Name** field, type the node for which you want to record all the topics subscribed by the specific node.</br>
-    b. In the **Number of Message** field, type the number of messages that you want to store for each topic.</br>
-    c. To split the rosbag file after the number of messages has reached the defined value, in the **Max Split** field, type the number of split that you want to allow for the rosbag job.</br>
-    d. In the **Split Size** field, type the memory size for each split of recorded messages in MB.</br>
-{{% notice info %}}
-
-Maximum 10 splits are allowed for each rosbag job and the disk storage for each rosbag job can not go beyond 5120 MB (5 GB). However, you can reduce the number of split and increase the memory limit for each split up to 5 GB.</br>
-For example, you can configure 3 splits and each split can store 1706 MB (3x1706 MB=5 GB)  of recorded data or you can have 5 splits and each split can store 1024 MB (5x1024 MB=5 GB)  of recorded data. After the message recording reaches the maximum allowed splits, the older split files are deleted to maintain the specified memory limit. 
-{{% /notice %}}
-    e. To add the rosbag job and start recording the defined topics, click **Add**.
-    
 
 ### Multi-robot Support
 ROS has several key pain points when working with multi-robot systems that often need error-prone setups involving specific launch sequences, roslaunch/XML files, and remappings. rapyuta.io ships with special support for multi-robot systems and enforces runtime identities to robots automatically wrap and unwrap for the right agent. 
@@ -167,4 +124,63 @@ ROS has several key pain points when working with multi-robot systems that often
 {{% notice info %}}
 Learn more about [dedicated ROS communication support](/developer-guide/manage-software-cycle/communication-topologies/ros-support/)
 {{% /notice %}}
+
+## Ros Bag Job
+A rosbag is a file format in ROS for storing ROS topic message data. The rapyuta.io platform allows you to record the ROS messages (ros topics) for ROS enabled components deployed on the cloud. You can stop the recording and download the stored data for further analysis and troubleshooting. You must define the topics that you want to record while configuring the components in a package, or during deployment. If you have defined any ROS bag job during package creation or deployment, you can also add new ROS bag jobs for the same component after deployment.
+
+{{% notice note %}}
+Rosbag is not supported on the components that are deployed on the device.</br>
+
+{{% /notice %}}
+
+{{% notice note %}}
+Maximum three jobs can be added to a component.
+ 
+{{% /notice %}}
+### Creating Ros Bag Jobs
+If you want to record the topics for a component, perform the following procedure.
+
+*Pre-requisite*: Ensure that you have selected the runtime as cloud while creating a package and **Is ROS Component** is selected during package creation.
+
+1. On the **Create New Package** page, click **Add ROS Bag Job**.
+![add-rosbags](/images/dev-guide/rosbag-jobs/add-rosbag.png?classes=border,shadow&width=20pc)
+2. In the **Name** field, type a name for the ROS bag job.
+3. In the **Topic Names** field, type the name of the topic that you want to record.
+4. Optionally, if you want to record all the topics available in the component, click the **All Topics?** toggle button.
+![add-rosbags](/images/dev-guide/rosbag-jobs/rosbag-config.png?classes=border,shadow&width=35pc)
+5. Optionally, if you want to record a series of topics that should match a regular expression value or regex, type the regex in the **Include Regex** field. 
+6. Optionally, if you want to exclude the recording of a series of topics that should match a regular expression value or regex, type the regex in the **Exclude Regex** field. 
+{{% notice info %}}
+If you have enabled the **All Topics?** toggle button, **Topic Name** and  **Include Regex** fields are disabled.
+{{% /notice %}}
+7. You can also provide either **BZ2** or **LZ4** compression to the recorded topics based on your requirement and available disk sizes.
+BZ2 generally produces smaller bags than LZ4. For more information about ROS compression, [click here](http://wiki.ros.org/rosbag/Commandline#compress). 
+
+8. The advanced option allows you to record the topics with more granular report. Optionally, to use the advanced option, click **Show Advanced Option** and do the following.</br>
+
+![add-rosbags](/images/dev-guide/rosbag-jobs/advanced-rosbagjob.png?classes=border,shadow&width=55pc)
+    a. In the **Node Name** field, type the node for which you want to record all the topics subscribed by the specific node.</br>
+    b. In the **Number of Message** field, type the number of messages that you want to store for each topic.</br>
+    c. **Max Split** field defines the the maximum number of splits of the ROS bag files that is saved. Older splits are deleted after the **Max Split** count is reached. To split the rosbag file, in the **Max Split** field, type the number of split that you want to allow. </br>
+{{% notice info %}}
+
+Maximum 10 splits are allowed for each rosbag job. After the message recording reaches the maximum allowed splits, the older split files are deleted to maintain the specified memory limit. 
+{{% /notice %}}
+    d. Split Size is the file size after which the file is splitted. In the **Split Size** field, type the memory size for each split of the recorded messages in MB.</br>
+{{% notice info %}}
+Each split size must be more than 10 MB and less than 1024 MB or 1GB. 
+{{% /notice %}}
+
+{{% notice info %}}
+
+Maximum 10 splits are allowed with the split size of more than 10 MB and less than 1 GB. However, the disk storage for the ROS bag file can not go beyond 5120 MB (5 GB).</br>
+For example, you can configure 10 splits and each split can store up to 500 MB (10X500 MB=5 GB)  of recorded data or you configure 5 splits and each split can store up to 1024 MB (5x1024 MB=5 GB)  of recorded data. After the message recording reaches the maximum allowed splits, the older splits are deleted to maintain the specified memory limit. 
+{{% /notice %}}
+    e. To add the rosbag job and start recording the defined topics, click **Add**.
+
+{{% notice info %}}
+
+You can also update the value of the ROS bag jobs during the time of deployment. The value added during the deployments overrides the value added during the package creation. 
+{{% /notice %}}
+    
 
