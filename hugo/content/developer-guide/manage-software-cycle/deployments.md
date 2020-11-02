@@ -92,7 +92,7 @@ and the recommendations you should take:
 | Error code | Description | Recommended action |
 | ---------- | ----------- | ------------------ |
 | DEP_E151 | device is either offline or not reachable | check the internet connection of the device |
-| DEP_E152 | executables of the component deployed on the device either exited too early or failed | troubleshoot the failed component by analyzing deployment logs |
+| DEP_E152 | executables of the component deployed on the device either exited too early or failed | in the docker deployments this may indicate an error with the entrypoint or command, verify and fix it |
 | DEP_E153 | unable to either pull the docker image or build the source code for the component deployed on cloud | verify that the docker image provided while adding the package still exists at the specified registry endpoint |
 | DEP_E154 | executables of the component deployed on cloud exited too early | troubleshoot the failed component by analyzing deployment logs |
 | DEP_E155 | executables of the component deployed on cloud failed | troubleshoot the failed component by analyzing deployment logs |
