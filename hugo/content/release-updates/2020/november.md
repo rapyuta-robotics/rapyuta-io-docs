@@ -18,8 +18,8 @@ are significant updates in this release that we hope you will like.
 
 #### Improvements
 	
-- Handle timeouts while device onboarding
-- Improvements to Auth Console
+- New version of rapyuta-agent with patch to allow retries for network failure in device initialization
+- Improvements to Auth. console
 
 #### Bugfixes
 
