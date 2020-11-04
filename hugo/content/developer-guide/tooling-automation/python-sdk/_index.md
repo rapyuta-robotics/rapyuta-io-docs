@@ -3,7 +3,7 @@ title: "Python SDK"
 description:
 type: developer-guide
 date: 2019-10-25T13:38:33+05:30
-pre: "3. "
+pre: "4. "
 weight: 545
 ---
 rapyuta.io Python SDK enables you to provision packages
@@ -16,10 +16,10 @@ It is recommended you install the latest Python SDK
 using ***pip*** (most popular tool for installing
 python packages).
 ```bash
-pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.17.1-py2-none-any.whl
+pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.17.2-py2-none-any.whl
 ```
 If you are using an old version of the Python SDK, please upgrade to the latest
-[0.17.1](https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.17.1-py2-none-any.whl)
+[0.17.2](https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.17.2-py2-none-any.whl)
 version.
 
 ## Requirements

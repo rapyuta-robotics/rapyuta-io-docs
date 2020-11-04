@@ -64,3 +64,7 @@ use the host network driver. With the host network driver, the
 container’s network stack is not isolated from the host. For example,
 if you run a docker container that uses port 80, the container’s
 application will be available on port 80 on the host’s IP address.
+
+{{% notice note %}}  
+ROS_MASTER_URI on a device using docker runtime is  http://<*hostname*>:1234   and not <*localhost/ROSNAME*>:11311
+{{% /notice %}}
