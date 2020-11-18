@@ -34,8 +34,14 @@ A routed network can be deployed to a cloud or to a device.
 
 When a user deploys a routed network to the cloud it is considered a cloud routed network. Any compute resources (cpu/memory) consumed by this routed network deployment count against your cloud deployment hours quota.
 
-Package deployments in the cloud __OR__ device can bind to a cloud routed network.
+Package deployments in the cloud __OR__ device can bind to a cloud routed network. When you create a cloud routed neywork, you must define the resource limit of the routed network.
 
+{{% notice note %}}
+When creating a cloud routed network, the **Resource limit** field define the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can select one of the following resource limit based on your requirement.
+<ul><li>**Small: 1cpu core, 4 GiB memory** </li>
+<li>**Medium: 2cpu core, 8 GiB memory** </li>
+<li>**Large: 4cpu core, 16 GiB memory** </li></ul>
+{{% /notice %}}
 
 ## Device Routed Network
 
@@ -49,6 +55,7 @@ While avoiding a round trip of information to the cloud minimizes latency and al
 * __Device:__ Any online device with docker runtime and AMD64 architecture
 * __Device IP Interface:__ network interface (i.e., an IP address) that will be used by other deployments for communication to this routed network.
 * __Restart policy:__ Kindly refer to the [restart policy](/developer-guide/manage-software-cycle/deployments/#restart-policy).
+
 
 {{% notice tip %}}
 On reboot devices configured using DHCP may boot up with a new IP address. This will cause the network configuration of a routed network deployed on it to become invalid. This can be avoided by assigning a static IP  to the device you intend to deploy a routed network to esp in production systems.
