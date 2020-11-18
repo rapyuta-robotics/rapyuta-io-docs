@@ -129,6 +129,18 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
                 </ul>
             </td>
         </tr>
+        <tr>
+            <td>DEV_E110</td>
+            <td>Intialization failed due to docker login error</td>
+            <td>
+                <ul>
+                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure device has an active internet connection.</a></li>
+                    <li><a href="#check-for-disk-space" class="highlight">Ensure there is adequate disk space on device.</a></li>
+                    <li>Ensure that the package <strong><em>golang-docker-credential-helpers</em></strong> is not installed. If present remove it manually <br>
+                     by executing <code>apt-get remove golang-docker-credential-helpers</code>. Now, <a href="/developer-guide/manage-machines/onboarding/setup-device/" class="highlight">set up the device</a> again.</li>
+                </ul>
+            </td>
+        </tr>
     </tbody>
 </table>
 
