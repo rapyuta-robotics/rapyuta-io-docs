@@ -11,7 +11,7 @@ Routed network is a rapyuta.io resource to enable ROS communication between diff
 Data flow occurs only when another package chooses to subscribe to a topic, call a service or call an action. 
 
 #### Illustarted Example
-For the purpose of this illustration lets assume the following network and packages.
+For the purpose of this illustration, lets assume the following network and packages.
 
 * You have a routed network __networkN__
 * You have __PackageA__ publishing _“topicA”_
@@ -34,7 +34,7 @@ A routed network can be deployed to a cloud or to a device.
 
 When a user deploys a routed network to the cloud it is considered a cloud routed network. Any compute resources (cpu/memory) consumed by this routed network deployment count against your cloud deployment hours quota.
 
-Package deployments in the cloud __OR__ device can bind to a cloud routed network. When you create a cloud routed neywork, you must define the resource limit of the routed network.
+Package deployments in the cloud __OR__ device can bind to a cloud routed network. When you create a cloud routed network, you must define the resource limit of the routed network.
 
 {{% notice note %}}
 When creating a cloud routed network, the **Resource limit** field define the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can select one of the following resource limit based on your requirement.
@@ -45,7 +45,7 @@ When creating a cloud routed network, the **Resource limit** field define the me
 
 ## Device Routed Network
 
-In certain cases where communication is latency sensitive or has high throughput the user can choose to deploy a routed network to a device. 
+In certain cases where communication is latency-sensitive or has high throughput, the user can choose to deploy a routed network to a device. 
 While avoiding a round trip of information to the cloud minimizes latency and allows for better throughput __ONLY__ deployments on devices on the same local area network can bind to it. 
 
 
