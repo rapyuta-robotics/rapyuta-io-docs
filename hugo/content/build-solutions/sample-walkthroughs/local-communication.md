@@ -369,7 +369,8 @@ As the component will be deployed on a device, its restart policy is already set
 6. Select **Broker Device** from **Select device for deploying the component** drop-down list.
 7. Select the network interface parameter value as per your device on
    which you are deploying by clicking **NETWORK_INTERFACE** drop-down list.
-8. Click **CREATE DEPLOYMENT** > **Confirm**.
+8. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+9. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** tab.
 The package is successfully deployed when the green colored bar moves

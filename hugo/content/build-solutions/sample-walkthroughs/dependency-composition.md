@@ -84,16 +84,17 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% /notice %}}
 5. Select **Cloud** for **Component Runtime**.
 6. Ensure **Is ROS Component** is selected.
-7. Set the value of **Replicas to run the component** to number 1 (default value).
-8. In the **Executable Name** box, type in a name for the executable say
+7. Ensure the **ROS Version** is **Kinetic**.
+8. Set the value of **Replicas to run the component** to number 1 (default value).
+9. In the **Executable Name** box, type in a name for the executable say
    `dmsexecutable`  
 {{% notice info %}} 
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-9. For **Executable Type**, click on **Builds**.
-10. In the **Choose Build** select the Build (`io-tutorials`) [created above](/build-solutions/sample-walkthroughs/dependency-composition/#creating-the-build)
+10. For **Executable Type**, click on **Builds**.
+11. In the **Choose Build** select the Build (`io-tutorials`) [created above](/build-solutions/sample-walkthroughs/dependency-composition/#creating-the-build)
 	from the drop-down list
-11. In the **Command to run in the docker container** box, copy and paste the command:
+12. In the **Command to run in the docker container** box, copy and paste the command:
 	```bash
 	roslaunch dynamic_map_server map_server.launch
 	```
@@ -104,14 +105,14 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 	eventually, the deployment will fail as well.
 
 	![Executable details](/images/tutorials/dms/dms-exec-details.png?classes=border,shadow&width=50pc)
-12. To add a ROS topic, click **Add ROS topic**. In the **Name** box,
+13. To add a ROS topic, click **Add ROS topic**. In the **Name** box,
     enter `/map_metadata` and set **QoS** to **Low**.
     Similarly, add another ROS topic `/map` and set **QoS** to **Low**.
 		![Add ROS topic](/images/tutorials/dms/dms-add-ros-topics.png?classes=border,shadow&width=50pc)
-13. To add a ROS service, click **Add ROS service**. In the **Name** box, enter
+14. To add a ROS service, click **Add ROS service**. In the **Name** box, enter
     `/set_map`
 		![Add ROS service](/images/tutorials/dms/dms-add-ros-service.png?classes=border,shadow&width=50pc)
-14. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+15. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 Additionally, you may verify if the package is built successfully and is ready
 to be deployed by clicking to see if the **Deploy package** button is enabled.
@@ -215,6 +216,21 @@ To create the package, follow the instructions:
 	![map_listener_executable](/images/tutorials/dms/maplistener_exec_details.png?classes=border,shadow&width=50pc)
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
+#### Create a Cloud Routed Network
+A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package.
+
+Perform the following procedure to create a routed network.
+
+1. On the left navigation bar, click **NETWORKS**.
+2. Click **ADD NEW ROUTED NETWORK**.
+3. Enter `cloud_routed_network_1` as the name for the routed network.
+4. Select **ROS Distro**, as **Kinetic**.
+5. Select the **Runtime** as **Cloud**.
+6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
+![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)
+7. Click **CONTINUE**.
+
+
 #### Deploy dynamic_map_server package
 To deploy *dynamic_map_server* package, follow the steps:
 
@@ -223,7 +239,8 @@ To deploy *dynamic_map_server* package, follow the steps:
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, provide a name for the specific deployment
    you are creating say `Dynamic Map Server Deployment`
-5. Click **CREATE DEPLOYMENT** > **Confirm**.
+5. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+6. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** page.
 The _Dynamic Map Server Deployment_ is successfully running only when the green
@@ -245,7 +262,8 @@ To deploy *map_listener* package, follow the steps:
    ![Add dependent deployment](/images/tutorials/dms/add-dependency.png?classes=border,shadow&width=40pc)
 7. Select _Dynamic Map Server Deployment_ from the drop-down list of deployments.
    Ensure that the _Dynamic Map Server Deployment_ is valid and is already running.
-8. Click **CREATE DEPLOYMENT** > **Confirm**.
+8. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+9. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You can verify if the _Map Listener Deployment_ is successfully running by
 checking if the green colored progress bar indicates that the **DEPLOYMENT PHASE** is _Succeeded_ and the **STATUS** is _Running_.
