@@ -1,5 +1,7 @@
 # CHANGELOG
 ## [Unreleased]
+### Added
+- Message abut docker multistage builds
 
 ## [2.8.0 - 2020-11-04]
 ### Added
