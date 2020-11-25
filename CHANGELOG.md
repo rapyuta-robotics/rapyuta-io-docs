@@ -1,5 +1,7 @@
 # CHANGELOG
 ## [Unreleased]
+## Added
+- Added DEV_E110 error code details
 
 ## [2.8.0 - 2020-11-04]
 ### Added
