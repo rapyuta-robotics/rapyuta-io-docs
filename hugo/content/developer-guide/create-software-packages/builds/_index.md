@@ -88,7 +88,7 @@ deployed. You may select the appropriate target architecture while creating the 
 
 #### Docker Mulitstage Build support
 
-The rapyuta.io platform supports [multistage build](https://docs.docker.com/develop/develop-images/multistage-build/). For security reasons we do not allow aliases of images to be used in another FROM.
+The rapyuta.io platform supports [multistage build](https://docs.docker.com/develop/develop-images/multistage-build/). For security reasons we do not allow aliases of images to be used in another `FROM`.
 
 Working Dockerfile
 
@@ -130,4 +130,4 @@ COPY --from=builder /build/* /root/
 CMD ["/root/test"]
 ```
 
-In this command `scratch` image gets aliased into `anotherimage` and we try to FROM it. This will cause an error. 
+In this command `scratch` image gets aliased into `anotherimage` and we try to `FROM` it. This will cause an error. 
