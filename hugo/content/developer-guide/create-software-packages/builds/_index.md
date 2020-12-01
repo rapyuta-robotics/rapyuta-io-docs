@@ -88,9 +88,9 @@ deployed. You may select the appropriate target architecture while creating the 
 
 #### Docker Mulitstage Build support
 
-The rapyuta.io platform supports [multistage build](https://docs.docker.com/develop/develop-images/multistage-build/). For security reasons we do not allow aliases of images to be used in another `FROM`.
+Multistage builds are useful to anyone who has struggled to optimize Dockerfiles while keeping them easy to read and maintain. The rapyuta.io platform supports [multistage build](https://docs.docker.com/develop/develop-images/multistage-build/). For security reasons we do not allow aliases of images to be used in another `FROM`.
 
-Working Dockerfile
+**Working Dockerfile**
 
 ```
 
@@ -111,7 +111,7 @@ CMD ["/root/test"]
 Here golang:1.11-0 stretch is aliased once as builder and COPY command works from it. 
 
 
-Nonworking Dockerfile
+**Nonworking Dockerfile**
 
 ```
 FROM golang:1.11.0-stretch as builder
