@@ -8,7 +8,7 @@ weight: 820
 
 
 ## December 02
-Welcome to the November 04, 2020 release of the rapyuta.io platform. There
+Welcome to the December 02, 2020 release of the rapyuta.io platform. There
 are significant updates in this release that we hope you will like.
 
 #### Features
@@ -18,12 +18,11 @@ are significant updates in this release that we hope you will like.
 
 #### Improvements
 	
-- better internal monitoring of device and cloud routed networks
+- Better internal monitoring of cloud routed networks
 
 
 #### Bugfixes
 
 - Fix and improvements around Historical Logs Download feature
-- Bugfixes on applying parameters on devices
 - Fix on APIs. 
 
