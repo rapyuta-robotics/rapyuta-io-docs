@@ -50,7 +50,7 @@ logs up to ***seven days*** in the past if a deployment has been running till no
 You can also download historical logs of a deployment as a ***.log*** file by clicking the download button.
 ![Download logs](/images/core-concepts/logging/deployment-logs/historical-logs/download-button.png?classes=border,shadow&width=50pc)
 
-The **Download Historical logs** page appears. You can download 100,000 lines at each download. Click the download button to download the logs.
+The **Download Historical logs** page appears. Clicking on the button with download icon, the **Paginated Download Logs** modal should appear. If the logs are less than 100,000 lines, they are directly downloaded, and the modal is not shown.
 ![Download button](/images/core-concepts/logging/deployment-logs/historical-logs/download-lines-button.png?classes=border,shadow&width=30pc)  
 
 You may want to refresh the logs by clicking the refresh button.
