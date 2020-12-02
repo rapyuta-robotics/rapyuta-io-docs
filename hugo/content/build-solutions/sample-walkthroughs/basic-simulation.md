@@ -140,6 +140,19 @@ The command, ***sleep infinity***, will keep the deployment running and does not
 18. Add a ROS topic by clicking on **Add ROS topic**. The name of the topic is `/cmd_vel`, and its **QoS** is set to **Low**.
 19. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
+## Create a Cloud Routed Network
+A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, skip the following steps.
+
+Perform the following procedure to create a routed network.
+
+1. On the left navigation bar, click **NETWORKS**.
+2. Click **ADD NEW ROUTED NETWORK**.
+3. Enter `cloud_routed_network_1` as the name for the routed network.
+4. Select **ROS Distro**, as   **Kinetic**.
+5. Select the **Runtime** as **Cloud**.
+6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
+![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)
+7. Click **CONTINUE**.
 
 ## Deploy Packages
 You will deploy all the packages created in the previous step.
