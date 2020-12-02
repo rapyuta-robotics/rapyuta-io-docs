@@ -23,6 +23,6 @@ are significant updates in this release that we hope you will like.
 
 #### Bugfixes
 
-- Fix and improvements around Historical Logs Download feature
-- Fix on APIs. 
+- Fixes and improvements around Historical Logs Download feature
+- Fixes on APIs. 
 
