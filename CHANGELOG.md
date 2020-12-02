@@ -2,6 +2,10 @@
 ## [Unreleased]
 
 
+## [2.9.2 - 2020-12-02]
+### Fixed
+- Image not getting displayed
+
 ## [2.9.1 - 2020-12-02]
 ### Added
 - Docker multistage builds
