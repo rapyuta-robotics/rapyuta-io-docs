@@ -84,3 +84,50 @@ to access the repository contents.
 If you are going to deploy a docker container image onto a device, ensure that the
 CPU architecture of the device is compatible with that of the image being
 deployed. You may select the appropriate target architecture while creating the build.
+
+
+#### Docker Mulitstage Build support
+
+Multistage builds are useful to anyone who has struggled to optimize Dockerfiles while keeping them easy to read and maintain. The rapyuta.io platform supports [multistage build](https://docs.docker.com/develop/develop-images/multistage-build/). For security reasons we do not allow aliases of images to be used in another `FROM`.
+
+**Working Dockerfile**
+
+```
+
+FROM golang:1.11.0-stretch as builder
+
+COPY . /build
+WORKDIR /build
+
+RUN CGO_ENABLED=0 GOOS=linux go build -o test
+
+FROM scratch
+
+COPY --from=builder /build/* /root/
+
+CMD ["/root/test"]
+```
+
+Here golang:1.11-0 stretch is aliased once as builder and COPY command works from it. 
+
+
+**Nonworking Dockerfile**
+
+```
+FROM golang:1.11.0-stretch as builder
+
+COPY . /build
+WORKDIR /build
+
+RUN CGO_ENABLED=0 GOOS=linux go build -o test
+
+FROM scratch as anotherimage
+
+FROM anotherimage
+
+COPY --from=builder /build/* /root/
+
+CMD ["/root/test"]
+```
+
+In this command `scratch` image gets aliased into `anotherimage` and we try to `FROM` it. This will cause an error. 

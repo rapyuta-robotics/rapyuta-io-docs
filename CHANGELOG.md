@@ -1,6 +1,11 @@
 # CHANGELOG
 ## [Unreleased]
 
+
+## [2.9.1 - 2020-12-02]
+### Added
+- Docker multistage builds
+
 ## [2.9.0 - 2020-12-02]
 ### Added
 - Added Historical Logs Newer UI
