@@ -76,5 +76,5 @@ The **Live Logs** tab allows you to do the following.
 
 * View logs in the full-screen mode by clicking on the **fullscreen** icon that is located at the top right corner of the terminal-like window.
 
-![Live Logs tab](/images/core-concepts/logging/deployment-logs/live-logs.png/?classes=border,shadow&width=50pc)
+![Live Logs tab](/images/core-concepts/logging/deployment-logs/live-logs.png?classes=border,shadow&width=50pc)
 
