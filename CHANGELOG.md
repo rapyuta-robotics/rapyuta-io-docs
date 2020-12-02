@@ -1,6 +1,10 @@
 # CHANGELOG
 ## [Unreleased]
 
+## [2.9.0 - 2020-12-02]
+### Added
+- Added Historical Logs Newer UI
+
 ## [2.8.0 - 2020-11-04]
 ### Added
 - Added DEV_E109 error code details
