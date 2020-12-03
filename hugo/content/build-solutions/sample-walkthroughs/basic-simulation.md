@@ -164,7 +164,8 @@ You will deploy all the packages created in the previous step.
 3. Click **Deploy Package**.
 4. The name of the deployment is `ROBOT SIMULATION`
 5. Enter the value for **VNC_PASSWORD**.
-6. Click **CREATE DEPLOYMENT** > **Confirm**.
+6. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+7. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the **Details** tab of the newly created deployment. The **ROBOT SIMULATION** is successfully running if the progress bar reaches **Succeeded**, and the status is **Running**.
 
@@ -176,7 +177,8 @@ You will be redirected to the **Details** tab of the newly created deployment. T
 4. The name of the deployment is `KEYBOARD TELEOPERATION`
 5. Select **Teleop Device** to deploy the ***teleop*** component.
 6. Add **ROBOT SIMULATION** as a dependent deployment by clicking **Add dependency**.
-7. Click **CREATE DEPLOYMENT** > **Confirm**.
+7. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You can verify if **KEYBOARD TELEOPERATION** is running successfully by checking if the progress bar reaches **Succeeded** and status is **Running**.
 

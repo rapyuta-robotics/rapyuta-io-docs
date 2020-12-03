@@ -355,6 +355,20 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 	eventually, the deployment will fail as well.
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
+## Create a Cloud Routed Network
+A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
+
+Perform the following procedure to create a routed network.
+
+1. On the left navigation bar, click **NETWORKS**.
+2. Click **ADD NEW ROUTED NETWORK**.
+3. Enter `cloud_routed_network_1` as the name for the routed network.
+4. Select **ROS Distro**, as   **Kinetic**.
+5. Select the **Runtime** as **Cloud**.
+6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
+![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)
+7. Click **CONTINUE**.
+
 ## Deploy local communication broker
 
 1. Click **CATALOG**.
@@ -395,7 +409,8 @@ updated list of online devices.
    deployments. Ensure that the **Communication Broker Deployment** is
    valid and is already running.
    ![Dependent deployment](/images/tutorials/local-comm-broker/ros-pub-dependent-deploy.png?classes=border,shadow&width=50pc)
-8. Click **CREATE DEPLOYMENT** > **Confirm**.
+8. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+9. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the **Details** tab of the newly created deployment. The package is successfully deployed when the green coloured bar moves from
 **In progress** to **Succeeded** indicating that the **DEPLOYMENT PHASE** has **Succeeded**
@@ -424,7 +439,8 @@ updated list of online devices.
 7. Select **Communication Broker Deployment** from the drop-down list of
    deployments. Ensure that the **Communication Broker Deployment** is valid
    and is already running.
-8. Click **CREATE DEPLOYMENT** > **Confirm**.
+8. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+9. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** tab.
 The package is successfully deployed when the green colored bar moves from

@@ -217,7 +217,8 @@ To create the package, follow the instructions:
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 #### Create a Cloud Routed Network
-A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package.
+A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
+
 
 Perform the following procedure to create a routed network.
 
