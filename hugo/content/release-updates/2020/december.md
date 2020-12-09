@@ -36,20 +36,22 @@ Welcome to the December 09, 2020 release of the rapyuta.io platform. There
 are significant updates in this release that we hope you will like.
 
 #### Features
-* **Pagination on Device Log tab**
+* **Pagination on Manage tab**
 
     The rapyuta.io platform displays the uploaded device log files in a paginated view and allows you to customize the view. For more information, [click here](/developer-guide/tooling-automation/logging/device-logs/#viewing-uploaded-log-files).
 
 
 #### Improvements
 	
-- Improved **Apply Parameters** performance allowing the user to download large binary files faster.
+- Improved **Apply Parameters** performance allowing the user to download binary files faster.
 
 #### Notable Fixes
 
-- When you try to cancel the upload of a device log file to the rapyuta.io platform, the cancellation fails with *FAILED CANCELLING LOG UPLOAD* error message. Fixed the bug that caused this error.
+- When you try to cancel the upload of a [device upload-log](/developer-guide/tooling-automation/logging/device-logs/#batch-upload) file on the *rapyuta.io* platform, the cancellation fails with *FAILED CANCELLING LOG UPLOAD* error message. Fixed the bug that caused this error.
 
 #### SDK
+
+**rapyuta.io Python SDK [0.18.0](/developer-guide/tooling-automation/python-sdk/#installation) released**
 
 - Added support for build docker push secrets and repositories.
 - Added support for creation of shared URLs for device logs.
