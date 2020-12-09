@@ -40,17 +40,18 @@ are significant updates in this release that we hope you will like.
 
     The rapyuta.io platform displays the uploaded device log files in a paginated view and allows you to customize the view. For more information, [click here](/developer-guide/tooling-automation/logging/device-logs/#viewing-uploaded-log-files).
 
-#### Notable Fixes
-- Fixed the bug that occurs when device log upload is cancelled.
-
 
 #### Improvements
 	
 - Improved **Apply Parameters** performance allowing the user to download large binary files faster.
 
+#### Notable Fixes
+
+- When you try to cancel the upload of a device log file to the rapyuta.io platform, the cancellation fails with *FAILED CANCELLING LOG UPLOAD* error message. Fixed the bug that caused this error.
+
 #### SDK
 
-- Added support for Build Docker Push Secrets and Repositories.
-- Added support for creation of Shared URLs for Device logs.
-- Added support for Project and Secret management. Also added support for *get_auth_token()* and *set_project()* methods.
-- Added retries in case of GET requests that fail with Internal server error.
+- Added support for build docker push secrets and repositories.
+- Added support for creation of shared URLs for device logs.
+- Added support for project and secret management. Also added support for *get_auth_token()* and *set_project()* methods.
+- Added retries in case of GET requests that fail with internal server error.
