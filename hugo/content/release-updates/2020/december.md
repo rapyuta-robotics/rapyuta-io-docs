@@ -41,7 +41,7 @@ are significant updates in this release that we hope you will like.
     The rapyuta.io platform displays the uploaded device log files in a paginated view and allows you to customize the view. For more information, [click here](/developer-guide/tooling-automation/logging/device-logs/#viewing-uploaded-log-files).
 
 #### Notable Fixes
-- Fixed Bug that occurs when device log upload is cancelled.
+- Fixed the bug that occurs when device log upload is cancelled.
 
 
 #### Improvements
