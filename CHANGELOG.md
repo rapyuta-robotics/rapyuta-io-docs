@@ -1,7 +1,9 @@
 # CHANGELOG
-
 ## [Unreleased]
+
+## [3.0.0 - 2020-12-09]
 - Explain paginated view for device log files
+- Release update page for December 09, 2020
 
 ## [2.9.2 - 2020-12-02]
 ### Fixed
