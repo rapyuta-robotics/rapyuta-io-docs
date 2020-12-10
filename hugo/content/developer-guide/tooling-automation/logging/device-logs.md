@@ -93,6 +93,12 @@ with a new log file with the same name.
 
 ![Upload Parameters](/images/core-concepts/logging/device-logs/upload-logs/upload-log-dialog-box.png?classes=border,shadow&width=40pc)
 
+#### Viewing Uploaded Log Files
+
+The rapyuta.io platform displays all the uploaded log files in a paginated view. You can customize the number of log files to be displayed by selecting the number of files per page drop-down menu. You can also directly jump to the page number by typing the page number in the **Go to** field.
+
+![View Uploaded Files](/images/core-concepts/logging/device-logs/upload-logs/log-files-view.png?classes=border,shadow&width=40pc)
+
 #### Direct Links for Sharing Log Files
 
 After successfully uploading the log file, a summary of the log details is shown.
