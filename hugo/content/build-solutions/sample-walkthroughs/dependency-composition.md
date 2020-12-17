@@ -241,7 +241,7 @@ To deploy *dynamic_map_server* package, follow the steps:
    you are creating say `Dynamic Map Server Deployment`
 5. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
 {{% notice note %}}
-Ensure that you use the same routed network while deploying the dynamic_map_server package and the map_listener package to enable communication between the deployments. 
+Ensure that you use the same routed network,`cloud_routed_network_1`, while deploying the dynamic_map_server package and the map_listener package to enable communication between the deployments. 
 {{% /notice %}}
 6. Click **CREATE DEPLOYMENT** > **Confirm**.
 
@@ -265,9 +265,9 @@ To deploy *map_listener* package, follow the steps:
    ![Add dependent deployment](/images/tutorials/dms/add-dependency.png?classes=border,shadow&width=40pc)
 7. Select _Dynamic Map Server Deployment_ from the drop-down list of deployments.
    Ensure that the _Dynamic Map Server Deployment_ is valid and is already running.
-8. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+8. Click on **ROUTED NETWORK** > **Add**, select the routed network, you created from the dropdown list.
 {{% notice note %}}
-Ensure that you use the same routed network while deploying the dynamic_map_server package and the map_listener package to enable communication between the deployments. 
+Ensure that you use the same routed network,`cloud_routed_network_1`, while deploying the dynamic_map_server package and the map_listener package to enable communication between the deployments. 
 {{% /notice %}}
 9. Click **CREATE DEPLOYMENT** > **Confirm**.
 
