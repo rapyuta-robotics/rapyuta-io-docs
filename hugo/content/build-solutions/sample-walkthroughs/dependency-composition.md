@@ -231,7 +231,6 @@ Perform the following procedure to create a routed network.
 ![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)
 7. Click **CONTINUE**.
 
-
 #### Deploy dynamic_map_server package
 To deploy *dynamic_map_server* package, follow the steps:
 
@@ -241,6 +240,9 @@ To deploy *dynamic_map_server* package, follow the steps:
 4. In the **Name of deployment** box, provide a name for the specific deployment
    you are creating say `Dynamic Map Server Deployment`
 5. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+{{% notice note %}}
+Ensure that you use the same routed network while deploying the dynamic_map_server package and the map_listener package to enable communication between the deployments. 
+{{% /notice %}}
 6. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** page.
@@ -264,6 +266,9 @@ To deploy *map_listener* package, follow the steps:
 7. Select _Dynamic Map Server Deployment_ from the drop-down list of deployments.
    Ensure that the _Dynamic Map Server Deployment_ is valid and is already running.
 8. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+{{% notice note %}}
+Ensure that you use the same routed network while deploying the dynamic_map_server package and the map_listener package to enable communication between the deployments. 
+{{% /notice %}}
 9. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You can verify if the _Map Listener Deployment_ is successfully running by

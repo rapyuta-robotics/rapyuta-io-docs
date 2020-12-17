@@ -355,19 +355,25 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 	eventually, the deployment will fail as well.
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-## Create a Cloud Routed Network
-A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
+## Create a Device Routed Network
+Follow these steps to create a device routed network. Make sure you have a rapyuta.io registered
+device with docker runtime.
 
-Perform the following procedure to create a routed network.
 
 1. On the left navigation bar, click **NETWORKS**.
 2. Click **ADD NEW ROUTED NETWORK**.
-3. Enter `cloud_routed_network_1` as the name for the routed network.
-4. Select **ROS Distro**, as   **Kinetic**.
-5. Select the **Runtime** as **Cloud**.
-6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
-![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)
-7. Click **CONTINUE**.
+3. Enter  `device_routed_network_1` as the name for the routed network.
+4. Select **ROS Distro**, as either Kinetic.
+5. Select the **Runtime** as **Device**.
+6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
+Select the **Device** as  `Subscriber Device` and it’s **IP Interface**. 
+7. Select the [Restart policy](/developer-guide/manage-software-cycle/deployments/#restart-policy).
+![goo](/images/tutorials/routed-networks/create-device-routed-network.png?classes=border,shadow&width=40pc)
+8. Click **CONTINUE**.
+
+Deploying a routed network is identical to deploying any other package and has identical corresponding phases and errors.
+Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
+![goo](/images/tutorials/routed-networks/routed-network-details.png?classes=border,shadow&width=40pc)
 
 ## Deploy local communication broker
 

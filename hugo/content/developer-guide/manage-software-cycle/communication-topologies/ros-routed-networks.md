@@ -37,10 +37,13 @@ When a user deploys a routed network to the cloud it is considered a cloud route
 Package deployments in the cloud __OR__ device can bind to a cloud routed network. When you create a cloud routed network, you must define the resource limit of the routed network.
 
 {{% notice note %}}
-When creating a cloud routed network, the **Resource limit** field define the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can select one of the following resource limit based on your requirement.
-<ul><li>**Small: 1cpu core, 4 GiB memory** </li>
-<li>**Medium: 2cpu core, 8 GiB memory** </li>
-<li>**Large: 4cpu core, 16 GiB memory** </li></ul>
+When creating a cloud routed network, the **Resource limit** field define the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can choose the resource limit of a routed network based on the following requirements.
+
+<ul><li>size of ros messages </li>
+<li>frequency of ros messages</li>
+<li>number of topics/services/actions </li>
+<li>QOS of ros message</li>
+<li>number of publishers/subscribers that will be active under a particular routed network</li></ul>
 {{% /notice %}}
 
 ## Device Routed Network

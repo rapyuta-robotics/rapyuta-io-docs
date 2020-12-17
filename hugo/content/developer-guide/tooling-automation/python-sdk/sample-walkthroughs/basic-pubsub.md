@@ -127,20 +127,14 @@ Please proceed to creation of package once the build is Complete.
     the command: `roslaunch listener listener.launch`
 17. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-### Create Cloud Roted Network
+### Create Cloud Routed Network
 A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
 
-
-Perform the following procedure to create a routed network.
-
-1. On the left navigation bar, click **NETWORKS**.
-2. Click **ADD NEW ROUTED NETWORK**.
-3. Enter `cloud_routed_network_1` as the name for the routed network.
-4. Select **ROS Distro**, as **Kinetic**.
-5. Select the **Runtime** as **Cloud**.
-6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
-![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)
-7. Click **CONTINUE**.
+Use the following code to create a routed network
+```
+routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.KINETIC, True)
+routed_network.poll_routed_network_till_ready()
+```
 
 ### Code Walkthrough
 Firstly, you need to authenticate so as to access rapyuta.io services from within
@@ -153,7 +147,7 @@ from rapyuta_io.clients.package import ROSDistro
 client = Client(AUTH_TOKEN, PROJECT_ID)
 
 # Create a Routed Network
-routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.MELODIC, True)
+routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.KINETIC, True)
 routed_network.poll_routed_network_till_ready()
 ```
 

@@ -169,7 +169,7 @@ Perform the following procedure to create a routed network.
 5. Select the **Runtime** as **Cloud**.
 6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
 ![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)
-7. Click **CONTINUE**.
+7. Click **CONTINUE** and wait for the routed network to be successfully running.
 
 ## Deploying the package
 To deploy a package using the [console](https://console.rapyuta.io),

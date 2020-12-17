@@ -219,7 +219,7 @@ You will first deploy the Simulation package, and then the Navigation Applicatio
 3. Click **Deploy package**.
 4. The name of deployment: `SIMULATION`
 5. Enter the value for **VNC_PASSWORD**
-6. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+6. Click on **ROUTED NETWORK** > **Add**, select `cloud_routed_network_1` as the routed network from the dropdown list.
 7. Click **CREATE DEPLOYMENT** > **Confirm**
 
 You will redirect to the **Details** tab of the newly
@@ -236,7 +236,7 @@ if the progress bar reaches **Succeeded**, and the status is **Running**.
 6. Check if the **SPAWN_TURTLEBOT_ROBOT** parameter has the value *true*.
 7. Check if the **ros_wokspace** and **ros_distro** device configuration variables have values set to the correct absolute path for *catkin_ws* and *melodic* respectively.
 8. Click **Add dependency** to add **SIMULATION** deployment as a dependent deployment.
-9. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+9. Click on **ROUTED NETWORK** > **Add**, select `cloud_routed_network_1` as the routed network from the drop-down list.
 10. Click **CREATE DEPLOYMENT** > **Confirm**
 
 You can verify if **NAVIGATION APPLICATION** is running successfully by
