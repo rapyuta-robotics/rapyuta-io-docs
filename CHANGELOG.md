@@ -3,6 +3,22 @@
 ## Added
 - Added DEV_E110 error code details
 
+## [3.0.0 - 2020-12-09]
+- Explain paginated view for device log files
+- Release update page for December 09, 2020
+
+## [2.9.2 - 2020-12-02]
+### Fixed
+- Image not getting displayed
+
+## [2.9.1 - 2020-12-02]
+### Added
+- Docker multistage builds
+
+## [2.9.0 - 2020-12-02]
+### Added
+- Added Historical Logs Newer UI
+
 ## [2.8.0 - 2020-11-04]
 ### Added
 - Added DEV_E109 error code details

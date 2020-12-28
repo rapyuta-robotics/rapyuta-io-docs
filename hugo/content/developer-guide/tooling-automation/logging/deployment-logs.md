@@ -6,8 +6,8 @@ date: 2019-10-25T13:23:04+05:30
 pre: "b. "
 weight: 520
 ---
-rapyuta.io provides tabular searchable logs (*historical logs*) for
-components of deployment both in the cloud or on a device.
+rapyuta.io provides searchable logs (*historical logs*) for
+components, executables, and associated cloud bridges of deployment both in the cloud or on a device.
 
 Additionally, for components deployed on the cloud, rapyuta.io offers a
 to stream (*live logs*) and follow stdout/stderr.
@@ -26,14 +26,12 @@ cloud runtime. It will publish the ROS topic _/telemetry_ with **Maximum** **QoS
 To view or analyse the corresponding deployment logs, click **Historical Logs**.
 ![Deployment detials page](/images/core-concepts/logging/deployment-logs/historical-logs/deployment-hist-logs.png?classes=border,shadow&width=50pc)
 
-A tabular listing of historical deployment logs is displayed, where each row consists of a log’s timestamp,
+The historical deployment logs is displayed, where you can view the log’s timestamp,
 its component name and executable name, and its information or message.
-![Historical logs table](/images/core-concepts/logging/deployment-logs/historical-logs/tabular-hist-logs.png?classes=border,shadow&width=50pc)
+![Historical logs](/images/core-concepts/logging/deployment-logs/historical-logs/hist-logs.png?classes=border,shadow&width=50pc)
 
-The table displays the most recent logs generated in the indicated time range. The widget fetches 500 log entries at a time. If the set of most recent logs contains more than 500 entries and you want to view logs not rendered in the first 500, use the **Load Previous Logs In Time Range** available at the top of the table. So each time, 500 new logs are fetched. You may use the time range selectors to narrow your search window.
-![Load Remaining Logs In Time Range](/images/core-concepts/logging/deployment-logs/historical-logs/load-remaining-logs.png?classes=border,shadow&width=50pc)
-As you scroll to the bottom of the table and click **Load More Logs**, the table will append additional logs that are yielded after ***now***.
-![Load Ahead Logs](/images/core-concepts/logging/deployment-logs/historical-logs/load-ahead-logs.png?classes=border,shadow&width=50pc) 
+You can use the toggle button to filter the logs based on the timestamp, component, or the executables available in the deployment.
+![Filters for Historical logs](/images/core-concepts/logging/deployment-logs/historical-logs/filter-hist-logs.png?classes=border,shadow&width=50pc)
 
 You can select a specific *component-executable* combination to view its corresponding logs.
 You may also select multiple such combinations. If you select only a component’s name, you will
@@ -48,17 +46,12 @@ logs up to ***seven days*** in the past if a deployment has been running till no
 
 ![Time Interval](/images/core-concepts/logging/deployment-logs/historical-logs/time-range.png?classes=border,shadow&width=50pc)
 
-You can filter logs based on component name, executable name, timestamp or information using
-[JavaScript regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
-The expression that you provide is wrapped in global modifier tags.
-![JS Regex](/images/core-concepts/logging/deployment-logs/historical-logs/JS-regex.png?classes=border,shadow&width=50pc)
 
-Moreover, for advanced searching of logs, you will have to write a [lucene query](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html)
-in the **Advanced Search** box.
-![Advanced search](/images/core-concepts/logging/deployment-logs/historical-logs/lucene-query.png?classes=border,shadow&width=50pc)
-
-You may download historical logs of a deployment as a ***.log*** file by clicking the download button.
+You can also download historical logs of a deployment as a ***.log*** file by clicking the download button.
 ![Download logs](/images/core-concepts/logging/deployment-logs/historical-logs/download-button.png?classes=border,shadow&width=50pc)
+
+The **Download Historical logs** page appears. Clicking on the button with download icon, the **Paginated Download Logs** modal should appear. If the logs are less than 100,000 lines, they are directly downloaded, and the modal is not shown.
+![Download button](/images/core-concepts/logging/deployment-logs/historical-logs/download-lines-button.png?classes=border,shadow&width=30pc)  
 
 You may want to refresh the logs by clicking the refresh button.
 ![Refresh logs](/images/core-concepts/logging/deployment-logs/historical-logs/refresh-button.png?classes=border,shadow&width=50pc)
@@ -83,5 +76,5 @@ The **Live Logs** tab allows you to do the following.
 
 * View logs in the full-screen mode by clicking on the **fullscreen** icon that is located at the top right corner of the terminal-like window.
 
-![Live Logs tab](/images/core-concepts/logging/deployment-logs/live-logs.png/?classes=border,shadow&width=50pc)
+![Live Logs tab](/images/core-concepts/logging/deployment-logs/live-logs.png?classes=border,shadow&width=50pc)
 
