@@ -1,5 +1,7 @@
 # CHANGELOG
 ## [Unreleased]
+## Added
+- Added DEV_E110 error code details
 
 ## [3.0.0 - 2020-12-09]
 - Explain paginated view for device log files
