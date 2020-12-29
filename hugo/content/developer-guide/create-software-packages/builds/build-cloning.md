@@ -19,5 +19,5 @@ Perform the following procedure to clone a build.
 {{% notice info %}}
 If you want to clone a project within the same project, you must rename the project name.
 {{% /notice %}}
-4. The build creation page appears and allows you to modify the build details. For more information about build creation, [click here](/developer-guide/create-software-packages/builds/build-creation).
-5. After reviewing the field details of the build creation pages, click **Next**. The build is cloned to the selected project.
+4. The build creation page appears and allows you to modify the build details. For more information about build creation, [click here](/developer-guide/create-software-packages/builds/build-creation).</br>
+5. After reviewing the field details of the build creation pages, click **Next**. The build is cloned to the selected project 
