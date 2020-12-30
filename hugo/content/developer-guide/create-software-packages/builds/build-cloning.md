@@ -17,7 +17,7 @@ Perform the following procedure to clone a build.
 ![build-clone](/images/core-concepts/builds/build-clone.png?classes=border,shadow&width=25pc)
 
 {{% notice info %}}
-If you want to clone a project within the same project, you must rename the project name.
+If you want to clone a project within the same project, you must rename the build name.
 {{% /notice %}}
 
 
