@@ -72,7 +72,7 @@ The rapyuta.io platform allows you to clone a build within the same or different
 
 #### Improvements
 	
-- Added new device error code and troubleshooting for docker login error. For more information, [click here](/developer-guide/manage-machines/onboarding/setup-device/failure-codes/)
+- Added new device error code, DEV_E110. For more information regarding the error description and troubleshooting, [click here](/developer-guide/manage-machines/onboarding/setup-device/failure-codes/).
 
 
 #### SDK
