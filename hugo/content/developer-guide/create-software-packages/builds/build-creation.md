@@ -98,7 +98,7 @@ After you have created a build by either Catkin or Docker recipe, you can view t
     |**Status**| Provides the following status of the build. <ul><li>BuildInProgress: Displays when the build creation process is in progress.</li><li>Complete: Displays when the build creation process has been successfully completed.</li><li>BuildFailed: Displays if the build creation process has failed.</li></ul>
     |**Started**| Provides the time duration when the build creation process has started.
     |**Repository**| Provides the repository from which the build has been created.
-    |**Action**| Allows you to [delete](/developer-guide/create-software-packages/builds/build-creation/#deleting-the-build) a build. 
+    |**Action**| Allows you to [delete](/developer-guide/create-software-packages/builds/build-creation/#deleting-the-build), [trigger](/developer-guide/create-software-packages/builds/trigger-rollback/), or [clone](/developer-guide/create-software-packages/builds/build-cloning/)  a build. 
 
 2. To view the details of a particular build, click the build. The following image is displayed.
 ![goo](/images/core-concepts/builds/build-creation/build-detail-action.png?classes=border,shadow&width=25pc)
@@ -107,6 +107,7 @@ The **Build Details** page allows you to do the following.</br>
 
 * Click **[Delete](#deleting-the-build)** to delete the build. 
 * Click **[Trigger](/developer-guide/create-software-packages/builds/trigger-rollback/)** to trigger a build. 
+* Click **[Clone](/developer-guide/create-software-packages/builds/build-cloning/)** to clone a build within the same or to different projects.
 * Click **Show More** to view the details of the build and view the [build log](/developer-guide/tooling-automation/logging/build-logs).
 
 After clicking **Show More**,  the following image is displayed.
@@ -117,9 +118,9 @@ After clicking **Show More**,  the following image is displayed.
 ## Deleting the build
 Follow the below steps to delete the build :
 
-1. On the left navigation bar, click **BUILDS**. It will display all the builds in a given project.
-2. Select the build which you want to delete. 
-3. Click on **Delete**.
+1. On the left navigation bar, click **BUILDS**. It  displays all the builds available for a project.
+2. Select the build that you want to delete. 
+3. Click **Delete**.
 4. Confirm on the build deletion message.
 
 
