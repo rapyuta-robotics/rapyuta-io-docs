@@ -1,7 +1,11 @@
 # CHANGELOG
 ## [Unreleased]
+
+## [3.1.0 - 2020-12-30]
 ## Added
 - Added DEV_E110 error code details
+- Added build clone functionality
+- Updated python SDK version for various fixes
 
 ## [3.0.0 - 2020-12-09]
 - Explain paginated view for device log files
