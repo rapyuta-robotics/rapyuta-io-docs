@@ -57,3 +57,28 @@ are significant updates in this release that we hope you will like.
 - Added support for creation of shared URLs for device logs.
 - Added support for project and secret management. Also added support for *get_auth_token()* and *set_project()* methods.
 - Added retries in case of GET requests that fail with internal server error.
+
+
+## December 30
+
+Welcome to the December 30, 2020 release of the rapyuta.io platform. There
+are significant updates in this release that we hope you will like.
+
+#### Features
+
+* **Cloning a Build**
+
+The rapyuta.io platform allows you to clone a build within the same or different project and reduces the time and effort required to create a build from scratch. For more information, [click here](/developer-guide/create-software-packages/builds/build-cloning).
+
+#### Improvements
+	
+- Added new device error code, DEV_E110. For more information regarding the error description and troubleshooting, [click here](/developer-guide/manage-machines/onboarding/setup-device/failure-codes/).
+
+
+#### SDK
+
+**rapyuta.io Python SDK [0.18.1](/developer-guide/tooling-automation/python-sdk/#installation) released**
+
+- Fixed retry_limit parameter in ProvisionClient.
+- Fixed the attribute error that was occuring while provisioning the same package with different deployment name and same configuration parameter.
+
