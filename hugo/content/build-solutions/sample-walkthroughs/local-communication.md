@@ -1,5 +1,5 @@
 ---
-title: "Local Communication"
+title: "Local Communication by Using Device Routed Network"
 description:
 type: build-solutions
 date: 2019-10-24T13:47:47+05:30
@@ -42,35 +42,6 @@ Intermediate
 In this tutorial, you will add three devices namely _Broker Device_,
 _Publisher Device_ and _Subscriber Device_. You will also create and deploy
 _ROS Publisher_ and _ROS Subscriber_ packages.
-
-#### Add Broker Device
-The _Broker Device_ must be of **amd64** CPU architecture.
-
-1. Click **DEVICES** > **ADD NEW DEVICE**.
-2. In the **Device Name** box, enter the name of the device say `Broker Device`
-3. Select **Use docker compose as default runtime** option.
-4. Ensure the **ROS Version** is **Kinetic**.
-5. In the **Description** box, provide a summary of the device
-   say `I am a communication broker`
-6. Click **CONTINUE**.
-7. Click **COPY** to copy the generated **Token**
-
-Paste and execute the token (otherwise called the device setup link) in the device's terminal to set up the rapyuta.io client on the device.
-
-If the device is set up successfully, you should see the following output at the device's terminal:
-```bash
-Initialising the Rapyuta Platform
-
-############(100%)
-Successfully Installed!
-```
-
-Ensure that there's a <span style="color:green">**green**</span> dot next to the ***Broker Device***,
-which indicates that it is online on rapyuta.io.
-
-{{% notice note %}}
-In production-like scenarios, ensure the [broker device is assigned a static IP address](/developer-guide/manage-software-cycle/communication-topologies/local-communication-broker/).
-{{% /notice %}}
 
 #### Prepare Publisher Device
 The _Publisher Device_ is:
@@ -375,10 +346,10 @@ Deploying a routed network is identical to deploying any other package and has i
 Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
 ![goo](/images/tutorials/routed-networks/routed-network-details.png?classes=border,shadow&width=40pc)
 
-## Deploy local communication broker
+## Deploy the Device Routed Network
 
 1. Click **CATALOG**.
-2. Under **Communication packages**, select **Rapyuta IO Local Communication Broker** package.
+2. Under **Communication packages**, select **device_routed_network_1** package.
 3. Click **Deploy package**.
 4. In the **Name of Deployment** box, enter a name for the broker deployment say `Communication Broker Deployment`
 5. Since **brokerComponent** has **Device runtime** select the device you want to deploy on by clicking **Refresh the list of online devices**. It retrieves
