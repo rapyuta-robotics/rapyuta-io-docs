@@ -334,7 +334,7 @@ device with docker runtime.
 1. On the left navigation bar, click **NETWORKS**.
 2. Click **ADD NEW ROUTED NETWORK**.
 3. Enter  `device_routed_network_1` as the name for the routed network.
-4. Select **ROS Distro**, as either Kinetic.
+4. Select **ROS Distro** as Kinetic.
 5. Select the **Runtime** as **Device**.
 6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
 Select the **Device** as  `Subscriber Device` and it’s **IP Interface**. 
@@ -342,34 +342,9 @@ Select the **Device** as  `Subscriber Device` and it’s **IP Interface**.
 ![goo](/images/tutorials/routed-networks/create-device-routed-network.png?classes=border,shadow&width=40pc)
 8. Click **CONTINUE**.
 
-Deploying a routed network is identical to deploying any other package and has identical corresponding phases and errors.
+The routed network is getting deployed and is identical to the deployment of any other package and has identical corresponding phases and errors.
 Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
 ![goo](/images/tutorials/routed-networks/routed-network-details.png?classes=border,shadow&width=40pc)
-
-## Deploy the Device Routed Network
-
-1. Click **CATALOG**.
-2. Under **Communication packages**, select **device_routed_network_1** package.
-3. Click **Deploy package**.
-4. In the **Name of Deployment** box, enter a name for the broker deployment say `Communication Broker Deployment`
-5. Since **brokerComponent** has **Device runtime** select the device you want to deploy on by clicking **Refresh the list of online devices**. It retrieves
-an updated list of online devices.
-{{% notice note %}}
-As the component will be deployed on a device, its restart policy is already set to **Always**, however, you may override this value at the time of creating a deployment of the package.
-{{% /notice %}}
-6. Select **Broker Device** from **Select device for deploying the component** drop-down list.
-7. Select the network interface parameter value as per your device on
-   which you are deploying by clicking **NETWORK_INTERFACE** drop-down list.
-8. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
-9. Click **CREATE DEPLOYMENT** > **Confirm**.
-
-You will be redirected to the newly created deployment's **Details** tab.
-The package is successfully deployed when the green colored bar moves
-from **In progress** to **Succeeded** indicating that the **DEPLOYMENT PHASE**
-has **Succeeded**, and the **STATUS** is **Running**.
-
-You may analyse the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/)
-so you may debug if the deployment fails.
 
 ## Deploy ROS Publisher package
 
@@ -381,13 +356,10 @@ updated list of online devices.
 4. Select **Publisher Device** from **Select device for deploying the component** drop-down list.
 5. Under **Device Config Variables**, ensure that the **ros_workspace** and
    **ros_distro** are selected.
-6. Click **Add dependency** to add a dependent deployment.
-7. Select **Communication Broker Deployment** from the drop-down list of
-   deployments. Ensure that the **Communication Broker Deployment** is
-   valid and is already running.
-   ![Dependent deployment](/images/tutorials/local-comm-broker/ros-pub-dependent-deploy.png?classes=border,shadow&width=50pc)
-8. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
-9. Click **CREATE DEPLOYMENT** > **Confirm**.
+6. Click **Add** next to the **Routed Network** field.
+7. From the **Network** drop-down menu, select `device_routed_network_1` as the device routed network.
+   ![Add routed network](/images/tutorials/local-comm-broker/ros-pub-dependent-deploy.png?classes=border,shadow&width=50pc)
+8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the **Details** tab of the newly created deployment. The package is successfully deployed when the green coloured bar moves from
 **In progress** to **Succeeded** indicating that the **DEPLOYMENT PHASE** has **Succeeded**
@@ -413,11 +385,9 @@ updated list of online devices.
 4. Select **Subscriber Device** from the **Select device for deploying the component** drop-down list.
 5. Ensure that **ros_workspace** and **ros_distro** are selected.
 6. Click **Add dependency** to add a dependent deployment.
-7. Select **Communication Broker Deployment** from the drop-down list of
-   deployments. Ensure that the **Communication Broker Deployment** is valid
-   and is already running.
-8. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
-9. Click **CREATE DEPLOYMENT** > **Confirm**.
+7. From the **Network** drop-down menu, select `device_routed_network_1` as the device routed network.
+   ![Add routed network](/images/tutorials/local-comm-broker/ros-pub-dependent-deploy.png?classes=border,shadow&width=50pc)
+8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** tab.
 The package is successfully deployed when the green colored bar moves from
