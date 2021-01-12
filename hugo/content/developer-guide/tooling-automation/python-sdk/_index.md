@@ -16,15 +16,17 @@ It is recommended you install the latest Python SDK
 using ***pip*** (most popular tool for installing
 python packages).
 ```bash
-pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.18.1-py2-none-any.whl
+pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.19.0-py2.py3-none-any.whl
 ```
 If you are using an old version of the Python SDK, please upgrade to the latest
-[0.18.1](https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.18.1-py2-none-any.whl)
+[0.19.0](https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.19.0-py2.py3-none-any.whl)
 version.
+
+
 
 ## Requirements
 The rapyuta.io Python SDK is compatible with python
-applications supporting Python2.7
+applications supporting Python2.7 and Python3.9.
 
 ## SDK reference
 If you are looking for more detailed information about any class in the SDK, feel
