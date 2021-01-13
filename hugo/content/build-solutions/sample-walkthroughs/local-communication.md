@@ -11,7 +11,7 @@ latent when the service is distributed across WAN. This tutorial demonstrates
 how to have multi-device communication within the same LAN.
 
 ## Learning objectives
-This tutorial will show you how to deploy a broker package locally for inter
+This tutorial will show you how to deploy a device routed network locally for inter
 device communication using [rapyuta.io console](https://console.rapyuta.io).
 
 ## Prerequisites
@@ -39,9 +39,36 @@ Intermediate
 
 ## Tutorial walkthrough
 
-In this tutorial, you will add three devices namely _Broker Device_,
+In this tutorial, you will add three devices namely _device_rn,
 _Publisher Device_ and _Subscriber Device_. You will also create and deploy
 _ROS Publisher_ and _ROS Subscriber_ packages.
+
+#### Add a Device for Routed Network
+Ensure that the device must be of **amd64** CPU architecture.
+
+1. Click **DEVICES** > **ADD NEW DEVICE**.
+2. In the **Device Name** box, enter the name of the device say `device_rn`
+3. Use **docker compose as the default runtime** option.
+4. Ensure the ROS Version is Kinetic.
+4. In the **Description** box, provide a summary of the device say
+   `I am a Device Routed Network`
+5. Click **CONTINUE**.
+6. Click **COPY** to copy the generated **Token**. 
+
+Paste and execute the token in the device's terminal to set up the
+rapyuta.io client on the device.
+
+If the device is set up successfully, you should see the following output
+at the device's terminal:
+```bash
+Initialising the Rapyuta Platform
+
+############(100%)
+Successfully Installed!
+```
+
+Ensure that there's a <span style="color:green">**green**</span> dot next to
+the ***Publisher Device***, which indicates that it is online on rapyuta.io.
 
 #### Prepare Publisher Device
 The _Publisher Device_ is:
@@ -295,6 +322,8 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
    and set **QoS** to **Maximum**.
 10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
+
+
 ## Create ROS Subscriber package
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
@@ -337,14 +366,13 @@ device with docker runtime.
 4. Select **ROS Distro** as Kinetic.
 5. Select the **Runtime** as **Device**.
 6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
-Select the **Device** as  `Subscriber Device` and it’s **IP Interface**. 
+Select the **Device** as  `Routed_Network_Device` and it’s **IP Interface**. 
 7. Select the [Restart policy](/developer-guide/manage-software-cycle/deployments/#restart-policy).
 ![goo](/images/tutorials/routed-networks/create-device-routed-network.png?classes=border,shadow&width=40pc)
 8. Click **CONTINUE**.
 
 The routed network is getting deployed and is identical to the deployment of any other package and has identical corresponding phases and errors.
 Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
-![goo](/images/tutorials/routed-networks/routed-network-details.png?classes=border,shadow&width=40pc)
 
 ## Deploy ROS Publisher package
 
@@ -358,7 +386,6 @@ updated list of online devices.
    **ros_distro** are selected.
 6. Click **Add** next to the **Routed Network** field.
 7. From the **Network** drop-down menu, select `device_routed_network_1` as the device routed network.
-   ![Add routed network](/images/tutorials/local-comm-broker/ros-pub-dependent-deploy.png?classes=border,shadow&width=50pc)
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the **Details** tab of the newly created deployment. The package is successfully deployed when the green coloured bar moves from
@@ -384,9 +411,7 @@ The corresponding [dependency graph](/developer-guide/manage-software-cycle/comp
 updated list of online devices.
 4. Select **Subscriber Device** from the **Select device for deploying the component** drop-down list.
 5. Ensure that **ros_workspace** and **ros_distro** are selected.
-6. Click **Add dependency** to add a dependent deployment.
-7. From the **Network** drop-down menu, select `device_routed_network_1` as the device routed network.
-   ![Add routed network](/images/tutorials/local-comm-broker/ros-pub-dependent-deploy.png?classes=border,shadow&width=50pc)
+6. From the **Network** drop-down menu, select `device_routed_network_1` as the device routed network.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** tab.

@@ -1,18 +1,13 @@
 ---
-title: "Dependency Composition"
+title: "Dynamic Map Server tutorial within a Routed Network"
 description:
 type: build-solutions
 date: 2019-10-24T13:47:35+05:30
 pre: "5. "
 weight: 635
 ---
-A deployment may depend on other deployments. It can access all
-topics, services, actions, endpoints and configuration parameters exposed by
-other deployments at runtime.
+The following tutorial describes the procedure to create and deploy a map server tutorial in the rapyuta.io platform.
 
-## Learning Objectives
-The tutorial will show you how to create a dependent deployment using
-[rapyuta.io console](https://console.rapyuta.io).
 
 ## Prerequisites
 
@@ -261,13 +256,11 @@ To deploy *map_listener* package, follow the steps:
 4. Select the device from the **Select device for deploying the component** drop-down list.
 5. Ensure that the **ros_workspace** and **ros_distro** are selected.
    ![Deploy map_listener package](/images/tutorials/dms/deploy-mplstnr.png?classes=border,shadow&width=40pc)
-6. Select _Dynamic Map Server Deployment_ from the drop-down list of deployments.
-   Ensure that the _Dynamic Map Server Deployment_ is valid and is already running.
-7. Click on **ROUTED NETWORK** > **Add**, select the routed network, you created from the dropdown list.
+6. Click on **ROUTED NETWORK** > **Add**, select the routed network, you created from the dropdown list.
 {{% notice note %}}
 Ensure that you use the same routed network,`cloud_routed_network_1`, while deploying the dynamic_map_server package and the map_listener package to enable communication between the deployments. 
 {{% /notice %}}
-8. Click **CREATE DEPLOYMENT** > **Confirm**.
+7. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You can verify if the _Map Listener Deployment_ is successfully running by
 checking if the green colored progress bar indicates that the **DEPLOYMENT PHASE** is _Succeeded_ and the **STATUS** is _Running_.
