@@ -39,10 +39,10 @@ Package deployments in the cloud __OR__ device can bind to a cloud routed networ
 {{% notice note %}}
 When creating a cloud routed network, the **Resource limit** field define the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can choose the resource limit of a routed network based on the following requirements.
 
-<ul><li>size of ros messages </li>
-<li>frequency of ros messages</li>
+<ul><li>size of ROS messages </li>
+<li>frequency of ROS messages</li>
 <li>number of topics/services/actions </li>
-<li>QOS of ros message</li>
+<li>QOS of ROS message</li>
 <li>number of publishers/subscribers that will be active under a particular routed network</li></ul>
 {{% /notice %}}
 

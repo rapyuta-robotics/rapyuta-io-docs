@@ -261,15 +261,13 @@ To deploy *map_listener* package, follow the steps:
 4. Select the device from the **Select device for deploying the component** drop-down list.
 5. Ensure that the **ros_workspace** and **ros_distro** are selected.
    ![Deploy map_listener package](/images/tutorials/dms/deploy-mplstnr.png?classes=border,shadow&width=40pc)
-6. Click **Add dependency** to add a dependent deployment.
-   ![Add dependent deployment](/images/tutorials/dms/add-dependency.png?classes=border,shadow&width=40pc)
-7. Select _Dynamic Map Server Deployment_ from the drop-down list of deployments.
+6. Select _Dynamic Map Server Deployment_ from the drop-down list of deployments.
    Ensure that the _Dynamic Map Server Deployment_ is valid and is already running.
-8. Click on **ROUTED NETWORK** > **Add**, select the routed network, you created from the dropdown list.
+7. Click on **ROUTED NETWORK** > **Add**, select the routed network, you created from the dropdown list.
 {{% notice note %}}
 Ensure that you use the same routed network,`cloud_routed_network_1`, while deploying the dynamic_map_server package and the map_listener package to enable communication between the deployments. 
 {{% /notice %}}
-9. Click **CREATE DEPLOYMENT** > **Confirm**.
+8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You can verify if the _Map Listener Deployment_ is successfully running by
 checking if the green colored progress bar indicates that the **DEPLOYMENT PHASE** is _Succeeded_ and the **STATUS** is _Running_.

@@ -1,5 +1,5 @@
 ---
-title: "Local Communication by Using Device Routed Network"
+title: "Local Communication Using Device Routed Network"
 description:
 type: build-solutions
 date: 2019-10-24T13:47:47+05:30
