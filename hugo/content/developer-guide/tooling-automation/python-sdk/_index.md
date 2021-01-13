@@ -26,7 +26,11 @@ version.
 
 ## Requirements
 The rapyuta.io Python SDK is compatible with python
-applications supporting Python2.7 and Python3.9.
+applications supporting Python2.7.
+
+{{% notice info %}}
+The rapyuta.io also provides an aplha support for Python3.9.
+{{% /notice %}}
 
 ## SDK reference
 If you are looking for more detailed information about any class in the SDK, feel
