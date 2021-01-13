@@ -56,6 +56,8 @@ The historical logs are available based on the specified timezone. When you want
 
 The rapyuta.io platform also allow you to copy the historical log to a clip board for further analysis. Click the **Copy** button to copy the displayed log.
 
+![Copy logs](/images/core-concepts/logging/deployment-logs/historical-logs/copy-button.png?classes=border,shadow&width=50pc)
+
 You can also download historical logs of a deployment as a ***.log*** file by clicking the download button.
 ![Download logs](/images/core-concepts/logging/deployment-logs/historical-logs/download-button.png?classes=border,shadow&width=50pc)
 
