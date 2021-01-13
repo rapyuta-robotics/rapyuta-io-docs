@@ -1,6 +1,10 @@
 # CHANGELOG
-## [Unreleased]
 
+
+## [Unreleased]
+## Added
+- Added copy functionality and timezone for historical log
+ 
 ## [3.1.0 - 2020-12-30]
 ## Added
 - Added DEV_E110 error code details

@@ -38,9 +38,7 @@ Packages containing such executables can't be deployed on devices with a Preinst
 * **Docker image**    
 A docker image is used as an executable. When a deployment is triggered, rapyuta.io
 pulls a docker image from the docker registry. Additionally, you may specify a
-bash shell command, which overrides the
-[entry point](https://docs.docker.com/engine/reference/run/#cmd-default-command-or-options)
-of the docker container.
+bash shell command for the docker container.
 
 
 {{% notice info %}}
