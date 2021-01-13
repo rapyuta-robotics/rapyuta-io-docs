@@ -432,9 +432,9 @@ If all of the above three deployments are successfully running, the
 logs of **ROS Subscriber Deployment** will print ***hello_world***.
 
 
-Since the communication broker is deployed on the **Broker Device** locally,
+Since the device routed network is deployed on the **device_rn** locally,
 and the bindable attribute is not selected (value is set to false) for both
 the **ROS Publisher** package and the **ROS Subscriber** package, the ROS topic
 (***/telemetry***) and in general, the data is transferred within the same
 local network. Thus, the application's latency is comparatively reduced
-provided the **Broker Device** is in the same network as the **Publisher Device**, and **Subscriber Device**.
+provided the **device_rn** is in the same network as the **Publisher Device**, and **Subscriber Device**.
