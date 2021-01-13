@@ -1,5 +1,9 @@
 # CHANGELOG
+
+
 ## [Unreleased]
+- Updated cloud routed network 
+- Updated tutorials with routed networks
 
 ## [3.1.0 - 2020-12-30]
 ## Added
