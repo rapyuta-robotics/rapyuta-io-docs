@@ -30,7 +30,7 @@ The historical deployment logs is displayed, where you can view the log’s time
 its component name and executable name, and its information or message.
 ![Historical logs](/images/core-concepts/logging/deployment-logs/historical-logs/hist-logs.png?classes=border,shadow&width=50pc)
 
-You can use the toggle button to either show or hide the logs based on the timestamp, time zone, component, or the executables available in the deployment.
+You can use the toggle button to either show or hide the columns of log details related to timestamp, component, or the executables available in the deployment. Also you can use the timezone selector to switch to desired timezone to display timestamps.
 ![Filters for Historical logs](/images/core-concepts/logging/deployment-logs/historical-logs/filter-hist-logs.png?classes=border,shadow&width=50pc)
 
 {{% notice info %}}
