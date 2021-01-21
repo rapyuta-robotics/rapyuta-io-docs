@@ -267,7 +267,6 @@ checking if the green colored progress bar indicates that the **DEPLOYMENT PHASE
 
 ![Map Listener Deployment](/images/tutorials/dms/mplstnr-deployment.png?classes=border,shadow&width=60pc)
 
-Ensure that the dependent deployment **STATUS** is _Running_ as well.
 
 The corresponding [dependency graph](/developer-guide/manage-software-cycle/compose-software/dependency-graph/) will look as shown below:
 ![Dependency graph](/images/tutorials/dms/dms-dgraph.png?classes=border,shadow&width=50pc)
