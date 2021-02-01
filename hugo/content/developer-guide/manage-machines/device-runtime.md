@@ -54,6 +54,10 @@ while adding the device.
 
 ![Dockercompose runtime for device](/images/core-concepts/device-management/docker-runtime-for-device.png?classes=border,shadow&width=40pc)
 
+{{% notice info %}}  
+If you select the device runtime as docker compose, the rapyuta.io platform allows you to record rosbag jobs on the sdevice and later you can upload the reosbag job files to the platform for further analysis.
+{{% /notice %}}
+
 When a package is deployed on a device, each executable
 in the package becomes a separate docker container. If your
 application is a ROS package, a singleton ROS Master starts in
