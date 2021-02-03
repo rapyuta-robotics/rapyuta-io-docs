@@ -2,8 +2,8 @@
 title: "February"
 description:
 type: release-updates
-date: 2021-02-12T17:52:46+05:30
-weight: 898
+date: 2021-02-03T17:52:46+05:30
+weight: 899
 ---
 
 
@@ -18,9 +18,9 @@ are significant updates in this release that we hope you will like.
     Now you can see the new collapsable navigation menus (Development, Devices, Networking, and Account) in the rapyuta.io platform. This new layout changes bring the logical breakdown of the platform capabilities and provid a better user experience.   
 
 #### Improvements
-* **Historical logs new functionalities**
+* **Quickly search log lines around a specific log line**
 
-    * The rapyuta.io platform allows you to do a quick searches on the historical logs for a set time duration.For more information, [click here](/developer-guide/tooling-automation/logging/deployment-logs).
+    * The rapyuta.io platform allows you to quickly find log lines around a particular log line and eliminates the need of setting the date and time frame .For more information, [click here](/developer-guide/tooling-automation/logging/deployment-logs).
 
   
 
