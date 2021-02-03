@@ -2,6 +2,11 @@
 
 
 ## [Unreleased]
+- Updated cloud routed network 
+- Updated tutorials with routed networks
+
+
+## [Unreleased]
 ## Added
 - Added copy functionality and timezone for historical log
  

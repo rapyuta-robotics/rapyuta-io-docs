@@ -11,7 +11,7 @@ Routed network is a rapyuta.io resource to enable ROS communication between diff
 Data flow occurs only when another package chooses to subscribe to a topic, call a service or call an action. 
 
 #### Illustarted Example
-For the purpose of this illustration lets assume the following network and packages.
+For the purpose of this illustration, lets assume the following network and packages.
 
 * You have a routed network __networkN__
 * You have __PackageA__ publishing _“topicA”_
@@ -34,12 +34,21 @@ A routed network can be deployed to a cloud or to a device.
 
 When a user deploys a routed network to the cloud it is considered a cloud routed network. Any compute resources (cpu/memory) consumed by this routed network deployment count against your cloud deployment hours quota.
 
-Package deployments in the cloud __OR__ device can bind to a cloud routed network.
+Package deployments in the cloud __OR__ device can bind to a cloud routed network. When you create a cloud routed network, you must define the resource limit of the routed network.
 
+{{% notice note %}}
+When creating a cloud routed network, the **Resource limit** field define the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can choose the resource limit of a routed network based on the following requirements.
+
+<ul><li>size of ROS messages </li>
+<li>frequency of ROS messages</li>
+<li>number of topics/services/actions </li>
+<li>QOS of ROS message</li>
+<li>number of publishers/subscribers that will be active under a particular routed network</li></ul>
+{{% /notice %}}
 
 ## Device Routed Network
 
-In certain cases where communication is latency sensitive or has high throughput the user can choose to deploy a routed network to a device. 
+In certain cases where communication is latency-sensitive or has high throughput, the user can choose to deploy a routed network to a device. 
 While avoiding a round trip of information to the cloud minimizes latency and allows for better throughput __ONLY__ deployments on devices on the same local area network can bind to it. 
 
 
@@ -49,6 +58,7 @@ While avoiding a round trip of information to the cloud minimizes latency and al
 * __Device:__ Any online device with docker runtime and AMD64 architecture
 * __Device IP Interface:__ network interface (i.e., an IP address) that will be used by other deployments for communication to this routed network.
 * __Restart policy:__ Kindly refer to the [restart policy](/developer-guide/manage-software-cycle/deployments/#restart-policy).
+
 
 {{% notice tip %}}
 On reboot devices configured using DHCP may boot up with a new IP address. This will cause the network configuration of a routed network deployed on it to become invalid. This can be avoided by assigning a static IP  to the device you intend to deploy a routed network to esp in production systems.
