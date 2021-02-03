@@ -13,19 +13,16 @@ are significant updates in this release that we hope you will like.
 
 
 #### Features
-* **Introduction of New Navigation Menu**
+* **Introduction of New Navigation Menus**
 
     Now you can see the new collapsable navigation menus (Development, Devices, Networking, and Account) in the rapyuta.io platform. This new layout changes bring the logical breakdown of the platform capabilities and provid a better user experience.   
 
 #### Improvements
 * **Historical logs new functionalities**
 
-    The rapyuta.io platform allows you to do a quick searches on the historical logs. For more information, [click here](/developer-guide/tooling-automation/logging/deployment-logs).
+    * The rapyuta.io platform allows you to do a quick searches on the historical logs for a set time duration.For more information, [click here](/developer-guide/tooling-automation/logging/deployment-logs).
 
-* ****
+  
 
 
-#### Bugfixes
-
-- You can now copy the text that is displayed in a remote ssh terminal in a firefox browser.
 
