@@ -20,7 +20,7 @@ are significant updates in this release that we hope you will like.
 #### Improvements
 * **Quickly search log lines around a specific log line**
 
-    * The rapyuta.io platform allows you to quickly find log lines around a particular log line and eliminates the need of setting the date and time frame .For more information, [click here](/developer-guide/tooling-automation/logging/deployment-logs).
+     The rapyuta.io platform allows you to quickly find log lines around a particular log line. For more information, [click here](/developer-guide/tooling-automation/logging/deployment-logs).
 
   
 
