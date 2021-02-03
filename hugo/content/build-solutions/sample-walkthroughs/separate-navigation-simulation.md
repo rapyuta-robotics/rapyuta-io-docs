@@ -194,6 +194,20 @@ For simulation, the resource limit should either be **Medium** or **Large**. Sim
 21. Under **Inbound ROS Interfaces**, Click on **Add Topic** to add the ROS topic `/cmd_vel` as an inbound ROS topic.
 22. Click **CONFIRM PACKAGE CREATION**.
 
+## Create a Cloud Routed Network
+A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
+
+Perform the following procedure to create a routed network.
+
+1. On the left navigation bar, click **NETWORKS**.
+2. Click **ADD NEW ROUTED NETWORK**.
+3. Enter `cloud_routed_network_1` as the name for the routed network.
+4. Select **ROS Distro**, as   **Kinetic**.
+5. Select the **Runtime** as **Cloud**.
+6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
+![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)
+7. Click **CONTINUE**.
+
 ## Deploy Packages
 
 You will first deploy the Simulation package, and then the Navigation Application package.
@@ -205,7 +219,8 @@ You will first deploy the Simulation package, and then the Navigation Applicatio
 3. Click **Deploy package**.
 4. The name of deployment: `SIMULATION`
 5. Enter the value for **VNC_PASSWORD**
-6. Click **CREATE DEPLOYMENT** > **Confirm**
+6. Click on **ROUTED NETWORK** > **Add**, select `cloud_routed_network_1` as the routed network from the dropdown list.
+7. Click **CREATE DEPLOYMENT** > **Confirm**
 
 You will redirect to the **Details** tab of the newly
 created deployment. The **SIMULATION** is successfully running
@@ -221,7 +236,8 @@ if the progress bar reaches **Succeeded**, and the status is **Running**.
 6. Check if the **SPAWN_TURTLEBOT_ROBOT** parameter has the value *true*.
 7. Check if the **ros_wokspace** and **ros_distro** device configuration variables have values set to the correct absolute path for *catkin_ws* and *melodic* respectively.
 8. Click **Add dependency** to add **SIMULATION** deployment as a dependent deployment.
-9. Click **CREATE DEPLOYMENT** > **Confirm**
+9. Click on **ROUTED NETWORK** > **Add**, select `cloud_routed_network_1` as the routed network from the drop-down list.
+10. Click **CREATE DEPLOYMENT** > **Confirm**
 
 You can verify if **NAVIGATION APPLICATION** is running successfully by
 checking if the progress bar reaches **Succeeded** and status is

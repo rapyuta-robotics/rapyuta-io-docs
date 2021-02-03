@@ -10,9 +10,10 @@ weight: 560
 The walkthrough gives an overview of how to:
 
 1. configure and provision a package
-2. deploy a package on the cloud
-3. deploy a package on a device
-4. add a dependent deployment
+2. create a routed network
+3. deploy a package on the cloud
+4. deploy a package on a device
+
 
 programmatically using
 [rapyuta.io Python SDK](/developer-guide/tooling-automation/python-sdk/) in your
@@ -126,14 +127,28 @@ Please proceed to creation of package once the build is Complete.
     the command: `roslaunch listener listener.launch`
 17. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
+### Create Cloud Routed Network
+A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
+
+Use the following code to create a routed network
+```
+routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.KINETIC, True)
+routed_network.poll_routed_network_till_ready()
+```
+
 ### Code Walkthrough
 Firstly, you need to authenticate so as to access rapyuta.io services from within
 your python application.
 ```python
 # Authentication
 from rapyuta_io import Client
+from rapyuta_io.clients.package import ROSDistro
 
 client = Client(AUTH_TOKEN, PROJECT_ID)
+
+# Create a Routed Network
+routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.KINETIC, True)
+routed_network.poll_routed_network_till_ready()
 ```
 
 Retrieve the ***Talker*** package by its package ID, and then deploy
@@ -143,8 +158,8 @@ it on the cloud. The resulting deployment is called ***ROS PUBLISHER***.
 # Deploy Talker package on cloud
 talker = client.get_package(TALKER_ID)
 talker_configuration = talker.get_provision_configuration(TALKER_PLAN_ID)
-talker_cloud_deployment = talker.provision(deployment_name="ROS PUBLISHER",
-                                           provision_configuration=talker_configuration)
+talker_configuration.add_routed_network(routed_network)
+talker_cloud_deployment = talker.provision(deployment_name="ROS PUBLISHER", provision_configuration=talker_configuration)
 talker_cloud_deployment.poll_deployment_till_ready()
 ```
 
@@ -158,9 +173,8 @@ listener = client.get_package(LISTENER_ID)
 listener_configuration = listener.get_provision_configuration(LISTENER_PLAN_ID)
 device = client.get_device(DEVICE_ID)
 listener_configuration.add_device("LISTENER", device)
-listener_configuration.add_dependent_deployment(talker_cloud_deployment)
-listener_device_deployment = listener.provision(deployment_name="ROS SUBSCRIBER",
-                                                provision_configuration=listener_configuration)
+listener_configuration.add_routed_network(routed_network)
+listener_device_deployment = listener.provision(deployment_name="ROS SUBSCRIBER", provision_configuration=listener_configuration)
 listener_device_deployment.poll_deployment_till_ready()
 ```
 
@@ -175,9 +189,14 @@ from rapyuta_io import Client
 # Authentication
 client = Client(AUTH_TOKEN, PROJECT_ID)
 
+# Create a Routed Network
+routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.MELODIC, True)
+routed_network.poll_routed_network_till_ready()
+
 # Deploy Talker on cloud
 talker = client.get_package(TALKER_ID)
 talker_configuration = talker.get_provision_configuration(TALKER_PLAN_ID)
+talker_configuration.add_routed_network(routed_network)
 talker_cloud_deployment = talker.provision(deployment_name="ROS PUBLISHER", provision_configuration=talker_configuration)
 talker_cloud_deployment.poll_deployment_till_ready()
 
@@ -186,7 +205,7 @@ listener = client.get_package(LISTENER_ID)
 listener_configuration = listener.get_provision_configuration(LISTENER_PLAN_ID)
 device = client.get_device(DEVICE_ID)
 listener_configuration.add_device("LISTENER", device)
-listener_configuration.add_dependent_deployment(talker_cloud_deployment)
+listener_configuration.add_routed_network(routed_network)
 listener_device_deployment = listener.provision(deployment_name="ROS SUBSCRIBER", provision_configuration=listener_configuration)
 listener_device_deployment.poll_deployment_till_ready()
 

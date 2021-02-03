@@ -34,8 +34,12 @@ Follow these steps to create a cloud routed network.
 3. Enter a name for routed network.
 4. Select **ROS Distro**, as either Kinetic or Melodic based on ROS version of package components it will be binding to.
 5. Select the **Runtime** as **Cloud**.
-![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=40pc)
-6. Click **CONTINUE**.
+6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can select one of the following resource limit based on your requirement.
+<ul><li>**Small: 1cpu core, 4 GiB memory** </li>
+<li>**Medium: 2cpu core, 8 GiB memory** </li>
+<li>**Large: 4cpu core, 16 GiB memory** </li></ul>
+![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)
+7. Click **CONTINUE**.
 
 
 ## Creating Device Routed Network 

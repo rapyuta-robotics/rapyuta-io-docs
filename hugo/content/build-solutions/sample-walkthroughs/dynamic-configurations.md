@@ -184,7 +184,6 @@ hello Drone 1.0 RDrone
 ```
 
 The output contains values of the *first_name* and *last_name* parameters for the *drone-1* device.
-![Successful deployment logs](/images/tutorials/talker-supervisor/successful-logs.png?classes=border,shadow&width=60pc)
 
 {{% notice note %}}
 Your output may be different based on the device labels you define.

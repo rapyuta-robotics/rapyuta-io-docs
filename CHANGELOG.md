@@ -1,6 +1,17 @@
 # CHANGELOG
 ## [Unreleased]
 
+
+## [3.3.0 - 2021-02-03]
+## Added
+- Added quick search functionality for historical log
+- Introduced new menu in the platform 
+
+## [3.2.0 - 2021-01-13]
+## Added
+- Added new functionalities for historical logs
+- New SDK version released (0.19)
+
 ## [3.1.0 - 2020-12-30]
 ## Added
 - Added DEV_E110 error code details
