@@ -50,7 +50,7 @@ logs up to ***seven days*** in the past if a deployment has been running till no
 
 ![Time Interval](/images/core-concepts/logging/deployment-logs/historical-logs/time-range.png?classes=border,shadow&width=50pc)
 
-You can also do a more granular search of the logs for a specific time duration of 1 minute, 5 minutes, 30 minutes, 1 hour, or 2 hours after setting the start and end dates. you can hover your mouse pointer on the available logs and a pop-up dialog-box appears to set the time limit. For example, if you want to view only the logs those are available only for a time duration of 5 minutes after the start (02-02-2021 01:10:39), click the log and click **5min** as displayed in the following image. Only the logs of the time duration of 5 minutes, dated 02-02-2021 01:10:39 to 02-02-2021 01:15:39  are available.
+The rapyuta.io platform allows you to quickly search logs around a particular logline. To quickly search logs, enable **TIMESTAMP** and hover over the log line's timestamp. Select an appropriate duration from the **Start date** and click **Yes** to get log lines between the start and end dates. For example, in the following image, hovering over the time stamp *02-02-2021 01:10:39* displays a dialog box with the start date as *02-02-2021 01:10:39*. If you select **5min** and click **Yes**, the logs between the time stamp of *02-02-2021 01:10:39* and *02-02-2021 01:15:39*  are displayed.
 ![Copy logs](/images/core-concepts/logging/deployment-logs/historical-logs/duration-selector.png?classes=border,shadow&width=50pc)
  
 
