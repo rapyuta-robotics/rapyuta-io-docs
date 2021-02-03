@@ -50,6 +50,10 @@ logs up to ***seven days*** in the past if a deployment has been running till no
 
 ![Time Interval](/images/core-concepts/logging/deployment-logs/historical-logs/time-range.png?classes=border,shadow&width=50pc)
 
+You can also do a more granular search of the logs for a specific time duration of 1 minute, 5 minutes, 30 minutes, 1 hour, or 2 hours after setting the start and end dates. you can hover your mouse pointer on the available logs and a pop-up dialog-box appears to set the time limit. For example, if you want to view only the logs those are available only for a time duration of 5 minutes after the start (02-02-2021 01:10:39), click the log and click **5min** as displayed in the following image. Only the logs of the time duration of 5 minutes, dated 02-02-2021 01:10:39 to 02-02-2021 01:15:39  are available.
+![Copy logs](/images/core-concepts/logging/deployment-logs/historical-logs/duration-selector.png?classes=border,shadow&width=50pc)
+ 
+
 {{% notice info %}}
 The historical logs are available based on the specified timezone. When you want to view the logs according to your local date and time, ensure that you select your local timezone from the **Timezone** drop-down menu.
 {{% /notice %}}
