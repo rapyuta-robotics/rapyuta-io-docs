@@ -8,7 +8,7 @@
 
 ## [Unreleased]
 ## Added
-- Added copy functionality and timezone for historical log
+- Added quick search functionality for historical log
  
 ## [3.1.0 - 2020-12-30]
 ## Added

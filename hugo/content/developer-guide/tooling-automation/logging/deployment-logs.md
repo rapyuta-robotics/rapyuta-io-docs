@@ -50,6 +50,10 @@ logs up to ***seven days*** in the past if a deployment has been running till no
 
 ![Time Interval](/images/core-concepts/logging/deployment-logs/historical-logs/time-range.png?classes=border,shadow&width=50pc)
 
+The rapyuta.io platform allows you to quickly search logs around a particular logline. To quickly search logs, enable **TIMESTAMP** and hover over the log line's timestamp. Select an appropriate duration from the **Start date** and click **Yes** to get log lines between the start and end dates. For example, in the following image, hovering over the time stamp *02-02-2021 01:10:39* displays a dialog box with the start date as *02-02-2021 01:10:39*. If you select **5min** and click **Yes**, the logs between the time stamp of *02-02-2021 01:10:39* and *02-02-2021 01:15:39*  are displayed.
+![Copy logs](/images/core-concepts/logging/deployment-logs/historical-logs/duration-selector.png?classes=border,shadow&width=50pc)
+ 
+
 {{% notice info %}}
 The historical logs are available based on the specified timezone. When you want to view the logs according to your local date and time, ensure that you select your local timezone from the **Timezone** drop-down menu.
 {{% /notice %}}
