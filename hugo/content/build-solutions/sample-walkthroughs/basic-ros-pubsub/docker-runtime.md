@@ -107,16 +107,17 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% /notice %}}
 	2. For **Component Runtime**, click **Cloud**.
 	3. Ensure **Is ROS Component** is selected.
-	4. Set the value of **Replicas to run the component** to the number 1 (default value).
-	5. In the **Executable Name** box, enter a name for the executable say
+	4. Ensure the **ROS Version** is **Kinetic**.
+	5. Set the value of **Replicas to run the component** to the number 1 (default value).
+	6. In the **Executable Name** box, enter a name for the executable say
 	   `talkerExecutable`  
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-	6. For **Executable Type**, click on **Builds**.
-	7. In the **Choose Build** select the first Build (`io-tutorials`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/#io-tutorial-build)
+	7. For **Executable Type**, click on **Builds**.
+	8. In the **Choose Build** select the first Build (`io-tutorials`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/#io-tutorial-build)
 	from the drop-down list.	
-	8. In the **Command to run in the docker container** box, enter the command:
+	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
 		roslaunch talker talker.launch
 		```
@@ -126,7 +127,7 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyp
 		command, because the ROS Master will fail to start on _rosrun_, and
 		eventually, the deployment will fail as well.
 		![talkerExecutable](/images/tutorials/docker-pub-sub/docker-pubsub-talker-exec.png?classes=border,shadow&width=50pc)
-	9. The _talkerExecutable_ publishes a ROS topic, `/telemetry`    
+	10. The _talkerExecutable_ publishes a ROS topic, `/telemetry`    
 	   To add a ROS topic, click **Add ROS topic**. In the **Name** box, enter the name of the ROS topic. Select **Maximum** for **QoS**.
 2. Listener component (aka _ROS subscriber_)
 	1. In the **Component Name** box, type in a name for the component, say `listener`      
@@ -156,7 +157,19 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 		eventually, the deployment will fail as well.
 	10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
+## Create a Cloud Routed Network
+A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
 
+Perform the following procedure to create a routed network.
+
+1. On the left navigation bar, click **NETWORKS**.
+2. Click **ADD NEW ROUTED NETWORK**.
+3. Enter `cloud_routed_network_1` as the name for the routed network.
+4. Select **ROS Distro**, as   **Kinetic**.
+5. Select the **Runtime** as **Cloud**.
+6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
+![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)
+7. Click **CONTINUE** and wait for the routed network to be successfully running.
 
 ## Deploying the package
 To deploy a package using the [console](https://console.rapyuta.io),
@@ -171,7 +184,8 @@ follow the steps:
    deploy the component on. Click **Refresh the list of online devices** to retrieve an updated list of online devices.
 6. Select the device from the **Select device for deploying the component**
    dropdown list.
-7. Click **CREATE DEPLOYMENT** > **Confirm**.
+7. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** page where a green colored bar
 moves from **In progress** to **Succeeded** with **Status:Running** indicating that the **DEPLOYMENT PHASE** has **Succeeded**, and the **STATUS** is **Running**.

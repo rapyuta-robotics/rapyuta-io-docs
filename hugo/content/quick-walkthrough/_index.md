@@ -23,7 +23,7 @@ learn how to:
 1. Create [Build](/developer-guide/create-software-packages/builds/), converting a public git repository to a container image. 
 2. Source your packages from a public docker registry and builds.
 3. Expose ROS topics, services, actions, and network endpoints as component-level interfaces.
-4. Create [Routed Networks](/build-solutions/sample-walkthroughs/routed-network) and dependent deployments.
+4. Create [Routed Networks](#create-a-cloud-routed-network) and dependent deployments.
 5. Control a Turtlebot in simulation through a web browser.
 
 ## Prerequisites
@@ -98,16 +98,17 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% /notice %}}
 4. Select **Cloud** as the **Component Runtime**.
 5. Ensure **Is ROS Component** is selected.
-6. Set **Replicas to run the component** to number 1 (default value).
-7. In the **Executable Name** box, type in a name for the executable. For example,
+6. From the **ROS version** drop-down menu, select the ROS version as **Melodic**.
+7. Set **Replicas to run the component** to number 1 (default value).
+8. In the **Executable Name** box, type in a name for the executable. For example,
    `turtle_executable`       
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -, and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-8. For **Executable Type**, click on **Builds**.
-9. In the **Choose Build** select the Build (`io-tutorials`) [created above](/quick-walkthrough/#creating-the-build)
+9. For **Executable Type**, click on **Builds**.
+10. In the **Choose Build** select the Build (`io-tutorials`) [created above](/quick-walkthrough/#creating-the-build)
 	from the drop-down list.	
-10. In the **Command to run in the docker container** box, enter the command:
+11. In the **Command to run in the docker container** box, enter the command:
     ```bash
 	roslaunch io_turtle turtle.launch
     ```
@@ -116,16 +117,16 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 	[ROS Master](http://wiki.ros.org/Master). However, it's not recommended to
 	run the *rosrun* command because the ROS Master will fail to start, and thus,
 	the deployment fails.
-11. Add `/pose` ROS topic with low QoS because there is no need to guarantee
+12. Add `/pose` ROS topic with low QoS because there is no need to guarantee
     the delivery of each control message. Instead, it is essential to receive
 	the most recent message at the expense of losing some information.
 	Click **Add ROS topic** > enter `/pose` in the **Name** box > click **Low** for **QoS**.
-12. Add `/sim/cmd_vel` ROS topic with high QoS because you will expect the
+13. Add `/sim/cmd_vel` ROS topic with high QoS because you will expect the
     Turtle to react when given such a command.
 	Click **Add ROS topic** > enter `/sim/cmd_vel` in the **Name** box > select **High** for **QoS**.
-13. To add a ROS action, click **Add ROS action**. In the **Name** box,
+14. To add a ROS action, click **Add ROS action**. In the **Name** box,
     enter `/turtle_0/goto_action`. Similarly, add another ROS action `/turtle_1/goto_action`
-14. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+15. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 You can deploy multiple instances of the _Turtle_ package. To deploy up to two
 instances of the package, you define two ROS actions. However, you may define
@@ -204,16 +205,17 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% /notice %}}
 4. Select **Cloud** for **Component Runtime**.
 5. Ensure **Is ROS Component** is selected.
-6. Set the value of **Replicas to run the component** to number 1 (default value).
-7. In the **Executable Name** box, enter a name for the executable say
+6. From the **ROS version** drop-down menu, select the ROS version as **Melodic**.
+7. Set the value of **Replicas to run the component** to number 1 (default value).
+8. In the **Executable Name** box, enter a name for the executable say
    `simulator_executable`   
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen -, and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-8. For **Executable Type**, click on **Builds**.
-9. In the **Choose Build** select the Build (`io-tutorials`) [created above](/quick-walkthrough/#creating-the-build)
+9. For **Executable Type**, click on **Builds**.
+10. In the **Choose Build** select the Build (`io-tutorials`) [created above](/quick-walkthrough/#creating-the-build)
 	from the drop-down list.
-10. In the **Command to run in the docker container** box, enter the command:
+11. In the **Command to run in the docker container** box, enter the command:
     ```bash
     roslaunch io_turtle_sim_env simulation.launch
     ```
@@ -222,19 +224,19 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
     [ROS Master](http://wiki.ros.org/Master). However, it's not recommended to
     run the *rosrun* command because the ROS Master will fail to start, and
     thus the deployment fails.
-11. To add `/sim/pose` ROS topic, click **Add ROS topic**. In the **Name** box, type in
+12. To add `/sim/pose` ROS topic, click **Add ROS topic**. In the **Name** box, type in
     `/sim/pose` and select **Low** for **QoS**.
-12. To add another ROS topic, `/sim/sensors`, click **Add ROS topic** again.
+13. To add another ROS topic, `/sim/sensors`, click **Add ROS topic** again.
     In the **Name** box, type in `/sim/sensors` and select **Low** for **QoS**.    
 {{% notice info %}}
 The value of **QoS** is set to **Low** because it is not necessary to guarantee
 the delivery of each topic. Instead, it is essential to receive the most
 recent message at the expense of losing some information.
 {{% /notice %}}
-13. To add a ROS service, click **Add ROS service**. In the **Name** box, enter the name of the service `/register_sim_turtle`. Similarly, add another
+14. To add a ROS service, click **Add ROS service**. In the **Name** box, enter the name of the service `/register_sim_turtle`. Similarly, add another
 ROS service `/teleport_turtle`.
-14. Click **NEXT**.
-15. Click **CONFIRM PACKAGE CREATION**.
+15. Click **NEXT**.
+16. Click **CONFIRM PACKAGE CREATION**.
 
 ## Create Command Center package
 The _Command Center_ is a node for registering _Turtles_, and a router for
@@ -265,18 +267,19 @@ The name of a component must consist of alphabets [A-Z, a-z], digits
 {{% /notice %}}
 4. Select **Cloud** for the **Component Runtime**.
 5. Ensure **Is ROS Component** is selected.
-6. Set the value of **Replicas to run the component** to number 1 (default value).
-7. In the **Executable Name** box, type in a name for the executable
+6. From the **ROS version** drop-down menu, select the ROS version as **Melodic**.
+7. Set the value of **Replicas to run the component** to number 1 (default value).
+8. In the **Executable Name** box, type in a name for the executable
    say `ccexecutable`
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z],
 digits [0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-8. For **Executable Type**, click on **Builds**.
-9. In the **Choose Build** select the Build (`io-tutorials`) [created above](/quick-walkthrough/#creating-the-build)
+9. For **Executable Type**, click on **Builds**.
+10. In the **Choose Build** select the Build (`io-tutorials`) [created above](/quick-walkthrough/#creating-the-build)
 	from the drop-down list.
 	
-10. In the **Command to run in the docker container** box, enter the command:
+11. In the **Command to run in the docker container** box, enter the command:
     ```bash
     roslaunch io_turtle_command_center command_center.launch
     ```
@@ -285,7 +288,7 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
     the ROS Master. However, it's not recommended to run the
     *rosrun* command because the [ROS Master](http://wiki.ros.org/Master) will fail to start, and thus the deployment fails.
 
-11. You must expose a communication network endpoint for
+12. You must expose a communication network endpoint for
     publicly accessing _Command Center_.
     1. Click **Add endpoint**.
     2. In the **Endpoint Name** box, enter `WS_ROSBRIDGE`
@@ -294,11 +297,11 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
     5. The value of **Port** is automatically set to _443_ because the Protocol is HTTPS/WSS.
     6. In the **Target Port** box, type in `9090`
 
-12. To add a ROS topic, click **Add ROS topic** > enter `/cmd_vel` in the **Name** box > click **Low** for **QoS**.
+13. To add a ROS topic, click **Add ROS topic** > enter `/cmd_vel` in the **Name** box > click **Low** for **QoS**.
 
-13. To add a ROS service, click **Add ROS service** > enter `/register_turtle` in the **Name** box.
+14. To add a ROS service, click **Add ROS service** > enter `/register_turtle` in the **Name** box.
 
-14. The environment variables: *WS_ADDR*, *WS_PORT*  defined in the ROS launch file, determine the WebSecureSocket address, port respectively. You can adjust
+15. The environment variables: *WS_ADDR*, *WS_PORT*  defined in the ROS launch file, determine the WebSecureSocket address, port respectively. You can adjust
     their values as configuration parameters defined in the [console](https://console.rapyuta.io)
     during the process of deploying the *command_center* component.
     To add *WS_ADDR* as configuration parameter, follow the steps:
@@ -310,11 +313,24 @@ digits [0-9], hyphen - and an underscore _ character, and must not start with a 
     Similarly, add *WS_PORT* configuration parameter. Set **Name** as `WS_PORT` and
     **Default** value to `9090`, and describe it as `WebSocket Port`.
     
-15. Click **NEXT** to move to **Additional Information** page.
+16. Click **NEXT** to move to **Additional Information** page.
 
-16. Click **CONFIRM PACKAGE CREATION**.
+17. Click **CONFIRM PACKAGE CREATION**.
 
 
+## Create a Cloud Routed Network
+A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package.
+
+Perform the following procedure to create a routed network.
+
+1. On the left navigation bar, click **NETWORKS**.
+2. Click **ADD NEW ROUTED NETWORK**.
+3. Enter `cloud_routed_network_1` as the name for the routed network.
+4. Select **ROS Distro**, as   *Melodic* as the turtle, simulator and command center packages are using *Melodic* as the ROS version.
+5. Select the **Runtime** as **Cloud**.
+6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
+![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)
+7. Click **CONTINUE**.
 
 ## Deploy packages
 In this tutorial, you have created four packages. They are:
@@ -339,7 +355,7 @@ To deploy the _Simulator_ package, follow the steps:
 2. In the **Name of the deployment** box, type in a name for the deployment
    you are creating say `SIMULATOR deployment`
    
-3. Click on **ROUTED NETWORK** > **Add**, select the routed network created by you from the dropdown list.    
+3. Click on **ROUTED NETWORK** > **Add**, select `cloud_routed_network_1` as the routed network from the dropdown list.    
 
 4. Click **CREATE DEPLOYMENT** > **Confirm**.
 
@@ -353,7 +369,7 @@ To deploy the _Command Center_ package, follow the steps:
 2. In the **Name of deployment** box, enter a name for the deployment say
    `COMMAND CENTER deployment`
 3. Ensure that the value of **WS_ADDR** is **0.0.0.0** and **WS_PORT** is **9090**
-4. Click on **ROUTED NETWORK** > **Add**, select the routed network created by you from the dropdown list.
+4. Click on **ROUTED NETWORK** > **Add**, select `cloud_routed_network_1` as the routed network from the dropdown list.
 5. Click **CREATE DEPLOYMENT**  >  **Confirm**.
 
 You are redirected to the deployment's **Details** page where a green progress bar
@@ -369,7 +385,8 @@ To deploy the _Turtle_ package, follow the steps:
  
 1. Click **CATALOG** > select **Turtle** package > click **Deploy package**.
 2. In the **Name of the deployment box**, type in a name for the deployment you are creating say  `TURTLE deployment` 
-3. Click on **ROUTED NETWORK** > **Add**, select the routed network created by you from the dropdown list.
+3. Click on **ROUTED NETWORK** > **Add**, select `cloud_routed_network_1` as the routed network from the dropdown list.
+
 4. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 ## Deploy User Interface package
