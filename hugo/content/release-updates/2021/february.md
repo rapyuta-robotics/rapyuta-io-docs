@@ -18,9 +18,9 @@ are significant updates in this release that we hope you will like.
     Now you can see the new collapsable navigation menus (Development, Devices, Networking, and Account) in the rapyuta.io platform. This new layout changes bring the logical breakdown of the platform capabilities and provid a better user experience.   
 
 #### Improvements
-* **Quickly search log lines around a specific log line**
+* **Quickly find logs around a specific log line**
 
-     The rapyuta.io platform allows you to quickly find log lines around a particular log line. For more information, [click here](/developer-guide/tooling-automation/logging/deployment-logs).
+     The rapyuta.io platform allows you to quickly find logs around a particular log line. For more information, [click here](/developer-guide/tooling-automation/logging/deployment-logs).
 
   
 
