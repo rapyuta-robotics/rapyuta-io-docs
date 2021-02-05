@@ -10,4 +10,4 @@ pre = "<b>6. </b>"
 
 # Pricing and Support
 
-{{% children %}}
+{{< children >}}

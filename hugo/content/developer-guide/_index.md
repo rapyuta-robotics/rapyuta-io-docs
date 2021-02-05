@@ -10,4 +10,4 @@ pre = "<b>4. </b>"
 
 # Developer Guide
 
-{{% children %}}
+{{< children >}}

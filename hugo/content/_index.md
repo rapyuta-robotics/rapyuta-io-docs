@@ -9,4 +9,4 @@ weight: 1
 
 ## rapyuta.io Documentation
 
-{{% children depth="1" sort="Weight" index="true" %}}
+{{< children depth="1" sort="Weight" index="true" >}}

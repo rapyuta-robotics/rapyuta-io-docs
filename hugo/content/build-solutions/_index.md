@@ -10,4 +10,4 @@ pre = "<b>5. </b>"
 
 # Build Solutions On rapyuta.io
 
-{{% children %}}
+{{< children >}}

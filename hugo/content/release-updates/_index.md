@@ -10,4 +10,4 @@ pre = "<b>7. </b>"
 
 # Release Updates
 
-{{% children %}}
+{{< children >}}
