@@ -21,7 +21,8 @@
     --MENU-SECTIONS-LINK-color: #444444; /* Color of links in menu */
     --MENU-SECTIONS-LINK-HOVER-color: #dc1d30; /* Color of links in menu, when hovered */
     --MENU-SECTION-ACTIVE-CATEGORY-color: #dc1d30; /* Color of active category text */
-    --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #fff; /* Color of background for the active category (only) */
+    --MENU-SECTION-ACTIVE-CATEGORY-PARENT-color: #e90d23; /* Color of active category text */
+    --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #ebe1e182; /* Color of background for the active category (only) */
 
     --MENU-VISITED-color: #ff3333; /* Color of 'page visited' icons in menu */
     --MENU-SECTION-HR-color: #2b2020; /* Color of <hr> separator in menu */
@@ -83,6 +84,7 @@ a:hover {
 #sidebar ul.topics > li.parent, #sidebar ul.topics > li.active {
     background: var(--MENU-SECTIONS-ACTIVE-BG-color);
 }
+
 #sidebar .searchbox * {
     color: var(--MENU-SEARCH-BOX-ICONS-color);
 }
@@ -98,6 +100,12 @@ a:hover {
 #sidebar ul li.active > a {
     background: var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color);
     color: var(--MENU-SECTION-ACTIVE-CATEGORY-color) !important;
+    font-weight: 400;
+}
+#sidebar ul li.parent > a {
+    background: var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color);
+    color: var(--MENU-SECTION-ACTIVE-CATEGORY-PARENT-color) !important;
+    font-weight: 300;
 }
 
 #sidebar hr {
