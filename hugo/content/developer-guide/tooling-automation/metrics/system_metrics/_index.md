@@ -3,7 +3,7 @@ title: "System Metrics"
 description:
 type: developer-guide
 date: 2019-10-25T13:27:01+05:30
-pre: "a. "
+pre: ""
 weight: 535
 ---
 Subscribing to system metrics will display a graphical visualization

@@ -3,7 +3,7 @@ title: "Local Communication Using Device Routed Network"
 description:
 type: build-solutions
 date: 2019-10-24T13:47:47+05:30
-pre: "6. "
+pre: ""
 weight: 640
 ---
 Complex robotic applications involving multi-device communication can be

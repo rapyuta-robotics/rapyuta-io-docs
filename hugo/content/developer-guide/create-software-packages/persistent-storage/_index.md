@@ -3,7 +3,7 @@ title: "Persistent Storage"
 description:
 type: developer-guide
 date: 2019-10-25T12:36:16+05:30
-pre: "5. "
+pre: ""
 weight: 290
 ---
 Applications running on the cloud de-allocate

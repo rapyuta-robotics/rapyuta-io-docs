@@ -2,7 +2,7 @@
 title: "Rosbridge Compatibility"
 description:
 type: dev-tutorials
-pre: "3. "
+pre: ""
 weight: 102
 ---
 ## Rosbridge WebSocket Compatibility

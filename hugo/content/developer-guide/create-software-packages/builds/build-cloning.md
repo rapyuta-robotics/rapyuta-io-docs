@@ -3,7 +3,7 @@ title: "Cloning a Build"
 description:
 type: developer-guide
 date: 2020-12-25T12:39:12+05:30
-pre: "b. "
+pre: ""
 weight: 325
 ---
 

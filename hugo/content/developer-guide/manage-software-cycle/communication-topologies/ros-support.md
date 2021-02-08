@@ -3,7 +3,7 @@ title: "ROS Communication"
 description:
 type: developer-guide
 date: 2019-10-25T12:54:26+05:30
-pre: "b. "
+pre: ""
 weight: 435
 ---
 The rapyuta.io platform relies on a sub-component called the *cloud bridge*

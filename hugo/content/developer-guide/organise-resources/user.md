@@ -3,7 +3,7 @@ title: "User"
 description:
 type: developer-guide
 date: 2019-10-24T11:28:56+05:30
-pre: "2. "
+pre: ""
 weight: 215
 ---
 A user is a *rapyuta.io resource* that maps to an individual developer

@@ -3,7 +3,7 @@ title: "Metrics Visualization"
 description:
 type: developer-guide
 date: 2019-10-30T16:28:20+05:30
-pre: "c. "
+pre: ""
 weight: 542
 ---
 In this quick how-to guide on visualizing metrics from a ROS topic, you will

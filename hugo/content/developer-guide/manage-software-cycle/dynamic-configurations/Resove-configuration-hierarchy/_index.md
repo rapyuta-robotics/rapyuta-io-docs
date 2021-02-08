@@ -3,7 +3,7 @@ title: "Resolving Configuration Hierarchy for a Device"
 description:
 type: developer-guide
 date: 2019-10-30T15:06:45+05:30
-pre: "1.1. "
+pre: ""
 weight: 403
 ---
 

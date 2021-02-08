@@ -3,7 +3,7 @@ title: "Preinstalled Runtime"
 description:
 type: build-solutions
 date: 2019-10-24T13:47:04+05:30
-pre: "a. "
+pre: ""
 weight: 620
 ---
 A _ROS publisher_ is part of a ROS package. It is a public git repository, which is built into a running docker container on the fly when the package
@@ -69,7 +69,7 @@ cd catkin_ws/src
 ```bash
 git clone https://github.com/rapyuta/io_tutorials
 ```
-```
+```bash
 source /opt/ros/kinetic/setup.bash
 ```
 ```bash

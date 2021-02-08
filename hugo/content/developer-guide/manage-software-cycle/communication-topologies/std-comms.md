@@ -3,7 +3,7 @@ title: "Standard Web Protocols"
 description:
 type: developer-guide
 date: 2019-10-25T12:53:52+05:30
-pre: "a. "
+pre: ""
 weight: 431
 ---
 rapyuta.io facilitates the communication for common protocols such as HTTP, WebSocket, TLS with the help of *Link Injection* between the dependent deployments

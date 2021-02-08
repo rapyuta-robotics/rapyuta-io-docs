@@ -3,7 +3,7 @@ title: "Dependency Graph"
 description:
 type: developer-guide
 date: 2019-10-25T12:52:17+05:30
-pre: "c. "
+pre: ""
 weight: 425
 ---
 A dependency graph is a set of deployments and the relationships between them. The rectangular node of the graph represents a deployment (running or non-running). For example, consider the dependency graph shown below. The *COMMAND CENTER* and *SIMULATOR* are running deployments. The weighted red arrow connecting the two deployments indicates the relationship between them.

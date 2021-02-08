@@ -3,7 +3,7 @@ title: "Pricing Calculation"
 description:
 type: pricing-support
 date: 2019-10-24T14:00:41+05:30
-pre: "3. "
+pre: ""
 weight: 720
 ---
 This pricing example is based on the **Professional Plan**

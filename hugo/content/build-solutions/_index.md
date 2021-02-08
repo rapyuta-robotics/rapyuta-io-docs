@@ -1,13 +1,13 @@
 +++
-title = "Build Solutions On rapyuta.io"
+title = "Build Solutions"
 date = 2019-10-24T13:44:09+05:30
 weight = 600
 chapter = true
-pre = "<b>5. </b>"
+pre = ""
 +++
 
-### rapyuta.io
+<!-- ### rapyuta.io -->
 
-# Build Solutions On rapyuta.io
+## Build Solutions On rapyuta.io
 
 {{< children >}}

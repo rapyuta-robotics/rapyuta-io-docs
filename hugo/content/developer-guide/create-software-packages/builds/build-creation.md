@@ -3,7 +3,7 @@ title: "Build Creation and Deletion"
 description:
 type: developer-guide
 date: 2019-10-24T13:46:19+05:30
-pre: "a. "
+pre: ""
 weight: 320
 ---
 

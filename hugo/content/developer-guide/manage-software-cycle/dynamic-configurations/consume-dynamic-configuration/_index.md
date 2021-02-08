@@ -3,7 +3,7 @@ title: "Consuming Dynamic Configurations on Devices"
 description:
 type: developer-guide
 date: 2019-10-30T15:06:45+05:30
-pre: "1.2. "
+pre: ""
 weight: 404
 ---
 Applying configuration parameters to a device consists of

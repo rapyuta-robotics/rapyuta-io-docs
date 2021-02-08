@@ -3,7 +3,7 @@ title: "Organization"
 description:
 type: developer-guide
 date: 2019-10-24T11:28:49+05:30
-pre: "1. "
+pre: ""
 weight: 210
 ---
 An organization is an enterprise customer or a small business team or

@@ -3,7 +3,7 @@ title: "Dynamic Map Server tutorial with a Routed Network"
 description:
 type: build-solutions
 date: 2019-10-24T13:47:35+05:30
-pre: "5. "
+pre: ""
 weight: 635
 ---
 The following tutorial describes the procedure to create and deploy a map server tutorial in the rapyuta.io platform and establish a communication by using a routed network.

@@ -3,7 +3,7 @@ title: "Supported Devices"
 description:
 type: developer-guide
 date: 2019-10-24T11:47:03+05:30
-pre: "2. "
+pre: ""
 weight: 235
 ---
 The following is the list of requirements for registering devices

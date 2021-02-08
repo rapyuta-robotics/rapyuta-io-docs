@@ -3,7 +3,7 @@ title: "System Metrics Reference"
 description:
 type: developer-guide
 date: 2020-03-03T16:10:43+05:30
-pre: "2. "
+pre: ""
 weight: 537
 ---
 ## Network IO interface

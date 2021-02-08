@@ -3,7 +3,7 @@ title: "Ros bag Jobs"
 description:
 type: developer-guide
 date: 2020-10-28T13:22:44+05:30
-pre: "2. "
+pre: ""
 weight: 515
 ---
 A ROS bag is a file format in ROS for storing ROS message data. The rapyuta.io platform allows you to record the ROS messages (ROS topics) for ROS enabled components deployed on the cloud.

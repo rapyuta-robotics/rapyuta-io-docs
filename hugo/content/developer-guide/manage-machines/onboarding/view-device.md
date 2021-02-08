@@ -3,7 +3,7 @@ title: "View Device"
 description:
 type: developer-guide
 date: 2019-10-24T11:47:55+05:30
-pre: "b. "
+pre: ""
 weight: 260
 ---
 rapyuta.io assigns a unique identifier, ***UUID***, to the device.

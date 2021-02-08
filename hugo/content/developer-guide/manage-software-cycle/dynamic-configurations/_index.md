@@ -3,7 +3,7 @@ title: "Dynamic Configurations"
 description:
 type: developer-guide
 date: 2019-10-30T15:04:21+05:30
-pre: "1. "
+pre: ""
 weight: 401
 ---
 

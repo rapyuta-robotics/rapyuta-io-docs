@@ -3,7 +3,7 @@ title: "Simulation"
 description:
 type: developer-guide
 date: 2019-10-30T15:55:25+05:30
-pre: "VI. "
+pre: ""
 weight: 575
 ---
 > A robotics simulator is a simulator used to create application for a physical robot without depending on the actual machine, thus saving cost and time. In some case, these applications can be transferred onto the physical robot (or rebuilt) without modifications. — [Wikipedia](https://en.wikipedia.org/wiki/Robotics_simulator)

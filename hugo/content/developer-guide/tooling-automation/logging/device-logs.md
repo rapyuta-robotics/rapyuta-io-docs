@@ -3,7 +3,7 @@ title: "Device Logs"
 description:
 type: developer-guide
 date: 2019-10-25T13:23:38+05:30
-pre: "c. "
+pre: ""
 weight: 525
 ---
 By default, device logs are not collected until you explicitly subscribe to a

@@ -3,7 +3,7 @@ title: "Device Runtime"
 description:
 type: developer-guide
 date: 2019-10-24T11:40:10+05:30
-pre: "1. "
+pre: ""
 weight: 230
 ---
 Different developers build and manage software for devices

@@ -17,8 +17,19 @@ disableSearch = false
     author = "Rapyuta Robotics"
     description = "Making robots more accessible to enterprise-level customers"
 
+[outputFormats.Algolia]
+  baseName = "algolia"
+  isPlainText = true
+  mediaType = "application/json"
+  notAlternative = true
+
+[params.algolia]
+  vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
+  params = ["categories", "tags"]
+
+
 [outputs]
-    home = ["HTML", "RSS", "JSON"]
+    home = ["HTML", "RSS", "JSON", "Algolia"]
 
 [[menu.shortcuts]]
     name = "<i class='fas fa-atlas'></i> API Documentation"

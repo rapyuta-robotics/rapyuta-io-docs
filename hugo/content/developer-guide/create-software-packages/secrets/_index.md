@@ -3,7 +3,7 @@ title: "Secrets"
 description:
 type: developer-guide
 date: 2019-10-25T12:37:31+05:30
-pre: "6. "
+pre: ""
 weight: 300
 ---
 A secret is an object containing sensitive information or confidential

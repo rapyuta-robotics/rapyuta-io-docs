@@ -3,7 +3,7 @@ title: "Projects and Resources"
 description:
 type: understanding-rio
 date: 2019-10-25T14:09:54+05:30
-pre: "a. "
+pre: ""
 weight: 11
 ---
 ## rapyuta.io Resources

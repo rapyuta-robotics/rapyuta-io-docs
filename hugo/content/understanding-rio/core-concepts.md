@@ -3,7 +3,7 @@ title: "Core Concepts"
 description:
 type: understanding-rio
 date: 2019-10-25T14:10:43+05:30
-pre: "b. "
+pre: ""
 weight: 12
 ---
 

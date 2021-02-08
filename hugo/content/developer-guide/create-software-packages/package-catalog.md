@@ -3,7 +3,7 @@ title: "Package Catalog"
 description:
 type: developer-guide
 date: 2019-10-25T17:46:54+09:00
-pre: "1. "
+pre: ""
 weight: 274
 ---
 ### Package Catalog

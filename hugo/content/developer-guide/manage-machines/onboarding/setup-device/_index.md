@@ -3,7 +3,7 @@ title: "Setup Device"
 description:
 type: developer-guide
 date: 2019-10-24T11:48:58+05:30
-pre: "a. "
+pre: ""
 weight: 250
 ---
 Copy, paste and run the device's token in the command terminal

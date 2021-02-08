@@ -3,7 +3,7 @@ title: "Basic Simulation With Teleoperation"
 description:
 type: build-solutions
 date: 2019-10-24T13:48:07+05:30
-pre: "8. "
+pre: ""
 weight: 650
 ---
 ## Learning Objective

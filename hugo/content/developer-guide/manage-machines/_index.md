@@ -3,7 +3,7 @@ title: "Managing Machines"
 description:
 type: developer-guide
 date: 2019-10-24T11:39:53+05:30
-pre: "II. "
+pre: ""
 weight: 225
 ---
 

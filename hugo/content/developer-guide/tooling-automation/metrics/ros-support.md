@@ -3,7 +3,7 @@ title: "Metrics from ROS Topics"
 description:
 type: developer-guide
 date: 2019-10-25T13:27:22+05:30
-pre: "b. "
+pre: ""
 weight: 540
 ---
 Once a device is onboarded on to rapyuta.io, deploy a package on it to get

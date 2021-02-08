@@ -3,7 +3,7 @@ title: "Device Metrics"
 description:
 type: developer-guide
 date: 2019-10-25T13:24:17+05:30
-pre: "3. "
+pre: ""
 weight: 530
 ---
 After onboarding a device, rapyuta.io lets you collect statistical

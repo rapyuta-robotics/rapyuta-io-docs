@@ -3,7 +3,7 @@ title: "Object Store Deployment Walkthrough"
 description:
 type: developer-guide
 date: 2019-10-25T12:36:50+05:30
-pre: "a. "
+pre: ""
 weight: 295
 ---
 ## Learning Objective

@@ -3,7 +3,7 @@ title: "Creating a Dynamic Configuration"
 description:
 type: developer-guide
 date: 2019-10-30T15:06:45+05:30
-pre: "b. "
+pre: ""
 weight: 403
 ---
 

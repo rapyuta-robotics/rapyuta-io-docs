@@ -3,7 +3,7 @@ title: "Understanding rapyuta.io"
 description:
 type: understanding-rio
 date: 2019-10-25T14:09:19+05:30
-pre: "<b>2. </b>"
+pre: ""
 weight: 10
 ---
 rapyuta.io is a platform-as-a-service providing managed cloud services

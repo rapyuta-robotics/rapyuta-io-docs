@@ -3,7 +3,7 @@ title: "Highlighted Features For Robots"
 description:
 type: understanding-rio
 date: 2019-10-25T14:12:00+05:30
-pre: "c. "
+pre: ""
 weight: 13
 ---
 ## Observability for Robots

@@ -3,7 +3,7 @@ title: "Build Logs"
 description:
 type: developer-guide
 date: 2019-10-25T13:22:44+05:30
-pre: "a. "
+pre: ""
 weight: 515
 ---
 Build logs are generated when rapyuta.io converts the

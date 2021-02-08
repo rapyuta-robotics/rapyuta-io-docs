@@ -3,7 +3,7 @@ title: "ROS Routed Networks"
 description:
 type: developer-guide
 date: 2019-10-25T12:54:26+05:30
-pre: "c. "
+pre: ""
 weight: 436
 ---
 

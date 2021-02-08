@@ -3,7 +3,7 @@ title: "Deployments"
 description:
 type: developer-guide
 date: 2019-10-25T12:49:01+05:30
-pre: "2. "
+pre: ""
 weight: 405
 ---
 A deployment is a rapyuta.io resource that represents a unique

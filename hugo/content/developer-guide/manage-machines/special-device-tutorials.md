@@ -3,7 +3,7 @@ title: "Special Device Tutorials"
 description:
 type: developer-guide
 date: 2019-10-29T14:32:13+05:30
-pre: "4. "
+pre: ""
 weight: 262
 ---
 Consider the following devices.

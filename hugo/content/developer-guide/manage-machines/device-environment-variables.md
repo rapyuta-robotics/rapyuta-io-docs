@@ -3,7 +3,7 @@ title: "Device Environment Variables"
 description:
 type: developer-guide
 date: 2020-05-15T11:04:37+05:30
-pre: "6. "
+pre: ""
 weight: 266
 ---
 Some environment variables are available on the device after its successful onboarding.

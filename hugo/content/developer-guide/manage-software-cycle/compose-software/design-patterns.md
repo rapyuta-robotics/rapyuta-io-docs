@@ -3,7 +3,7 @@ title: "Design Patterns"
 description:
 type: developer-guide
 date: 2019-10-25T12:51:38+05:30
-pre: "b. "
+pre: ""
 weight: 420
 ---
 The Catalog supports package composition - combining two or more packages to create a new package. Composing packages requires binding the packages together. If a package depends on another package or the deployment of another package, its bindings link to its dependencies.

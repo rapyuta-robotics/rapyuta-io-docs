@@ -3,7 +3,7 @@ title: "Source Code Repository"
 description:
 type: developer-guide
 date: 2019-10-25T12:38:19+05:30
-pre: "b. "
+pre: ""
 weight: 310
 ---
 You can create packages using the source code from a private git repository.

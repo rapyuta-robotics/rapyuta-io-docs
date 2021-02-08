@@ -3,7 +3,7 @@ title: "Package Internals"
 description:
 type: developer-guide
 date: 2019-10-25T12:34:08+05:30
-pre: "2. "
+pre: ""
 weight: 275
 ---
 ### What is a package ?

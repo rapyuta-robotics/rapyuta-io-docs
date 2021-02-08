@@ -3,7 +3,7 @@ title: "Applying Configurations to Devices"
 description:
 type: developer-guide
 date: 2019-10-30T15:06:45+05:30
-pre: "c. "
+pre: ""
 weight: 404
 ---
 

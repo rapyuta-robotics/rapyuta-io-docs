@@ -3,7 +3,7 @@ title: "Device Labels"
 description:
 type: developer-guide
 date: 2019-10-30T15:06:21+05:30
-pre: "a. "
+pre: ""
 weight: 402
 ---
 You can tag your devices with as many labels as you need. Labels are

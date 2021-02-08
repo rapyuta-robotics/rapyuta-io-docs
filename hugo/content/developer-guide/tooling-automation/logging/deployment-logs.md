@@ -3,7 +3,7 @@ title: "Deployment Logs"
 description:
 type: developer-guide
 date: 2019-10-25T13:23:04+05:30
-pre: "b. "
+pre: ""
 weight: 520
 ---
 rapyuta.io provides searchable logs (*historical logs*) for
