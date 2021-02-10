@@ -35,10 +35,16 @@ The only protocol available is the **TCP** for which the value of the **Port** f
 You can also use port range for an endpoint by selecting **Port Range** toggle. A Port Range on an endpoint will allow you to open multiple ports on a single DNS hostname.
 
 
+{{% notice note %}}
 
-> **NOTE** : By default the Target Port is same as the Port.
->
-> **NOTE** : A maximum 50 ports are allowed for an endpoint.
+By default the Target Port is same as the Port.
+
+{{%/notice%}}
+{{% notice note %}}
+
+A maximum 50 ports are allowed for an endpoint.
+
+{{%/notice%}}
 
 Allowed format is for Port Range
 
