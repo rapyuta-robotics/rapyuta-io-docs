@@ -23,7 +23,7 @@ url: /how-to-guides/account-management/setup-private-docker-registry
 ---
 
 
-> Related Links: [About Secrets](rapyuta.io/understanding-rio/#secrets)
+> Related Links: [About Secrets](/1_understanding-rio/12_core-concepts/#secrets)
 
 **rapyuta.io** uses your docker pull secret during **builds** as well as **package deployment** .
 

@@ -28,7 +28,7 @@ url: /how-to-guides/account-management/managing-projects
 
 1. In the left navigation bar, click **Account>Project**. The project dash board is displayed.
 2. In the project dash board, click **Create New Project**. **Create new project** dialog box appears.
-  <TBI:Image>
+  <img src="/images/getting-started/organization/project/proj-name.png" alt="Delete existing project" style="zoom:35%;" /> 
 3. In the **Project Name** field, type a name for the project and click **Continue**.
   The project is created and you can see the project in the project dash board.
 

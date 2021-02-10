@@ -31,13 +31,13 @@ The following is the list of requirements for registering devices
 on rapyuta.io
 
 * Mandatory
-    * Python >=2.7.8, <3
-    * [Ubuntu 16.04](http://releases.ubuntu.com/16.04/) (Xenial Xerus)
+   * Python >=2.7.8, <3
+   * [Ubuntu 16.04](http://releases.ubuntu.com/16.04/) (Xenial Xerus)
  or [Ubuntu 18.04](http://releases.ubuntu.com/18.04/) (Bionic Beaver)
 * Optional
     * [curl](https://curl.haxx.se/)
     * Robot Operating System (ROS)
-      * [Kinetic Kame](http://wiki.ros.org/kinetic) or [Melodic Morenia](http://wiki.ros.org/melodic)
+    * [Kinetic Kame](http://wiki.ros.org/kinetic) or [Melodic Morenia](http://wiki.ros.org/melodic)
 
 Ubuntu(16.04 and 18.04) by default resolves the hostname to localhost. If you do change this behaviour on the host OS, roscore **will** not be able to start. A simple way to check if roscore can be started is to do `nslookup $(hostname)` if it returns a DNS record you are probably good to go.
 
@@ -144,5 +144,5 @@ device's name, which indicates that the device is online.
 
 
 ## Related Links
-* [About Devices](rapyuta.io/understanding-rio/core-concepts/#devices)
-* [About Docker Runtime](rapyuta.io/deep-dives/managing-devices/device-runtime/dockercompose-runtime-for-device)
+* [About Devices](/1_understanding-rio/12_core-concepts?#devices)
+* [About Docker Runtime](/5_deep-dives/51_managing-devices/511_device-runtime/#dockercompose-runtime-for-device)
