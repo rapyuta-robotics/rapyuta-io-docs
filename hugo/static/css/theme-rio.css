@@ -424,8 +424,12 @@ pre .copy-to-clipboard:hover {
     height: 2rem;
 }
 
-#body-inner ul li, #body-inner ol li {
+#body-inner ul li  {
     list-style: katakana;
+}
+
+#body-inner ol li li{
+    list-style: lower-latin;
 }
 li.dd-item.parent.active a, 
 li.dd-item.active ul li a,
@@ -561,3 +565,14 @@ div.notices p {
             width: 100%;
          }
     }
+
+
+#body-inner h1 {
+    text-transform: capitalize;
+}
+
+
+div.notices.warning p {
+    border-top: 30px solid #f87a30!important;
+    background: #f2eeee!important;
+}

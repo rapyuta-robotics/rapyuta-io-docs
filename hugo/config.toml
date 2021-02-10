@@ -8,6 +8,9 @@ title = "rapyuta.io Documentation"
 theme = "hugo-theme-learn"
 disableSearch = false
 
+[markup.goldmark.renderer]
+  unsafe= true
+  
 [sitemap]
     changefreq = "monthly"
     priority = 1
@@ -52,3 +55,7 @@ disableSearch = false
     weight = 12
 
 
+[[menu.shortcuts]]
+    name = "<i class='fas fa-tags'></i> Tags"
+    url = "/tags"
+    weight = 30
