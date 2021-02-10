@@ -30,7 +30,6 @@ are significant updates in this release that we hope you will like.
 #### Bugfixes
 
 - If a user makes two deployments on the device connected to same routed network and deprovision the first deployment, the second deployment gives DEP_E314 error. The issue is fixed.
-- Fixed minor UI issue in Project selector modal.
 
   
 
