@@ -1,5 +1,6 @@
 ---
 title: "Networking and Communication"
+draft: true
 # shortTitle: "TODO: Change me"
 intro:  "Answers to most common questions about your account, applications and the platform"
 
@@ -25,8 +26,8 @@ guideLinks: []
 introLinks: {}
 ---
 
-ToDo :
 
-FAQs for Networking and Communication
 
-Qn : 
+ Networking and Communication
+
+Qn : ** Need info

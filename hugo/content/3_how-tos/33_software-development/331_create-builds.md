@@ -204,11 +204,11 @@ TODO: Check link  The build is created. To view the details of the build, [click
 
   * Click [Delete](#deleting-the-build) to delete the build. 
 
-  * Click **[**Trigger**]**(**/developer-guide/create-software-packages/builds/trigger-rollback/**)** to trigger a build. 
+  * Click [Trigger](/5_deep-dives/52_software-development/522_trigger-and-rollback-builds) to trigger a build. 
 
-  * Click **[**Clone**]**(**/developer-guide/create-software-packages/builds/build-cloning/**)** to clone a build within the same or to different projects.
+  * Click [Clone](/5_deep-dives/52_software-development/521_cloning-builds) to clone a build within the same or to different projects.
 
-  * Click **Show More** to view the details of the build and view the [build log](/developer-guide/tooling-automation/logging/build-logs).
+  * Click **Show More** to view the details of the build and view the [build log](/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs).
 
   
 
@@ -260,6 +260,6 @@ The dialog box to clone secret appears only for the builds that have a secret.
 
 ## Related Links
 
-* [About Build](hugo\content\1_understanding-rio\12_core-concepts\#builds)
-* [Deep Dive:: Trigger and Rollback](hugo\content\1_understanding-rio\12_core-concepts\#builds)
-* [Deep Dive : ROS Support]()
+* [About Build](/1_understanding-rio/12_core-concepts/#builds)
+* [Trigger and Rollback](/5_deep-dives/52_software-development/522_trigger-and-rollback-builds)
+*  [ROS Support](/5_deep-dives/52_software-development/523_ros-support-for-builds)
