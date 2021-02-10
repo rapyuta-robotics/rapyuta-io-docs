@@ -20,13 +20,7 @@ introLinks: {}
 slug: managing-users
 url: /how-to-guides/account-management/managing-users
 ---
-// user invitation process
 
-Projects have admin users. 
-
-Admin user can invite others. 
-
-Users go from  invited -> activated -> deactivated. 
 
 
 

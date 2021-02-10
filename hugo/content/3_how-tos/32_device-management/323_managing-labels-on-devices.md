@@ -29,8 +29,9 @@ Labels are key-value pairs that help you associate configuration parameters with
 a group of devices or a particular device.
 
 You can **tag** your **devices** with as many labels as you need. 
-{{notice note}}
->Ensure that the keys of all the labels of a device are **unique**.
+{{%notice note%}}
+Ensure that the keys of all the labels of a device are **unique**.
+{{%/notice%}}
 
 ## Adding Labels
 To add a new label to a device, do the following 
@@ -59,6 +60,5 @@ In this example, the value is **Japan**
 
 ## Related Links
 
-* For more information, [click here](rapyuta.io/deep-dives/managing-devices/dynamic-configurations)
-
-* [Tutorial](\rapyuta.io\4_tutorials\dynamic-configurations.md)
+* For more information, [click here](/5_deep-dives/51_managing-devices/dynamic-configuration)
+* [Tutorial](/4_tutorials/41_beginner/413_dynamic-configurations)

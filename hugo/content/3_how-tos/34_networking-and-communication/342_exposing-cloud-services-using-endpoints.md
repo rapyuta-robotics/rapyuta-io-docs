@@ -24,7 +24,7 @@ popularLinks: []
 guideLinks: []
 introLinks: {}
 ---
-#### Exposing Endpoints Externally
+## Exposing Endpoints Externally
 
 Select **Exposed externally** checkbox to expose a network endpoint publicly over the internet.
 
@@ -44,7 +44,7 @@ The supported protocols at their respective ports (cannot be modified) are:
 
 
 
-#### Accessing Exposed Endpoints over the public internet
+## Accessing Exposed Endpoints over the public internet
 
 **rapyuta.io** generates a **random URL/route** that is exposed on the public internet for the exposed endpoints when the deployment is created. 
 
@@ -56,7 +56,7 @@ You can view the Fully Qualified Domain Name (FQDN) of an endpoint on the detail
 
 
 
-#### Accessing Exposed Endpoints from Dependent Deployments
+## Accessing Exposed Endpoints from Dependent Deployments
 
 rapyuta.io injects environment variables corresponding to linked network endpoints when there is a dependent deployment.
 

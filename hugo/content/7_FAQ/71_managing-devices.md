@@ -24,12 +24,4 @@ popularLinks: []
 guideLinks: []
 introLinks: {}
 ---
-
-ToDo :
-
-FAQs for Managing Devices
-
-Qn : How to remove a device from the platform?
-Ans : 
-
-Qn : 
+ 
