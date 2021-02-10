@@ -1,11 +1,31 @@
 ---
-title: "Standard Web Protocols"
-description:
-type: developer-guide
-date: 2019-10-25T12:53:52+05:30
-pre: "a. "
-weight: 431
+
+title: "Standard Web Protocol"
+intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
+
+weigth: 532
+
+versions:
+  free-pro-team: '*'
+  enterprise-server: '*'
+
+layout: false
+permissions: 'rapyuta.io'
+
+showMiniToc: true
+miniTocMaxHeadingLevel: 4
+
+allowTitleToDifferFromFilename: false
+mapTopic: false
+hidden: false
+redirect_from: []
+gettingStartedLinks : []
+popularLinks: []
+guideLinks: []
+introLinks: {}
+
 ---
+
 rapyuta.io facilitates the communication for common protocols such as HTTP, WebSocket, TLS with the help of *Link Injection* between the dependent deployments
 
 {{% notice note %}}
