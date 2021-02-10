@@ -1,6 +1,7 @@
 ---
-title: Metrics & Alerts
+title: Account Management
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
+weight: 58
 versions:
   free-pro-team: '*'
   enterprise-server: '*'
@@ -16,8 +17,6 @@ gettingStartedLinks: []
 popularLinks: []
 guideLinks: []
 introLinks: {}
-slug: metrics-alerts
-weight: 372
+slug: plan-billing
 ---
 
-{{< children >}}

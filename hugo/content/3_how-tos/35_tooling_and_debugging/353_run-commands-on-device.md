@@ -2,6 +2,7 @@
 title: Remote Commands on Devices
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 weight: 353
+draft: true
 slug: remote-commands-devices
 versions:
   free-pro-team: '*'

@@ -21,11 +21,8 @@ introLinks: {}
 ---
 
 rapyuta.io Python SDK enables you to provision packages
-
 either on the cloud or on a device, add a dependent
-
 deployment, and access various rapyuta.io resources and
-
 services in your python applications.
 
 
@@ -33,11 +30,9 @@ services in your python applications.
 ## Installation
 
 It is recommended you install the latest Python SDK
-
 using **pip**(most popular tool for installing python packages).
 
 ```bash
-
 pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.18.1-py2-none-any.whl
 
 ```
@@ -49,10 +44,7 @@ If you are using an old version of the Python SDK, please upgrade to the latest 
 ## Requirements
 
 The rapyuta.io Python SDK is compatible with python
-
 applications supporting Python2.7
-
-
 
 
 
@@ -61,16 +53,12 @@ applications supporting Python2.7
 To determine the auth token:
 
 1. Click on your username to the top right corner of rapyuta.io dashboard.
-
 2. Click **Get Auth Token**.
-
 3. Enter the password.
-
 4. Click **COPY**.
-
 5. **Click here** to go back to the previous page.
 
-![Get Auth Token](/images/python-sdk-images/AuthToken.png?classes=border,shadow&width=50pc)
+![Get Auth Token](/images/python-sdk-images/AuthToken.png?classes=border,shadow&width=25pc)
 
 
 
@@ -79,14 +67,12 @@ To determine the auth token:
 To determine the unique identifier of the device on-boarded on to **rapyuta.io**:
 
 1. Click **DEVICES** on the left navigation bar.
-
 2. Select the device whose identifier you want to obtain.
-
 3. Copy the device's ID as shown in the figure.
 
 
 
-![Find device ID](/images/python-sdk-images/device-ID.png?classes=border,shadow&width=50pc)
+![Find device ID](/images/python-sdk-images/device-ID.png?classes=border,shadow&width=40pc)
 
 
 
@@ -95,12 +81,10 @@ To determine the unique identifier of the device on-boarded on to **rapyuta.io**
 To determine the unique identifier of the project in **rapyuta.io**:
 
 1. Click **PROJECTS** on the left navigation bar.
-
 2. Select the project whose identifier you want to obtain.
-
 3. Copy the project's ID as shown in the figure.
 
-![Find project ID](/images/python-sdk-images/project-id.png?classes=border,shadow&width=50pc)
+![Find project ID](/images/python-sdk-images/project-id.png?classes=border,shadow&width=40pc)
 
 
 
@@ -109,12 +93,10 @@ To determine the unique identifier of the project in **rapyuta.io**:
 To determine a rapyuta.io package's unique identifier:
 
 1. Click **PACKAGES** on the left navigation bar.
-
 2. Select the package whose ID you want to obtain.
-
 3. Copy the package's ID as shown in the figure.
 
-![Find package id](/images/python-sdk-images/package-id.png?classes=border,shadow&width=50pc)
+![Find package id](/images/python-sdk-images/package-id.png?classes=border,shadow&width=40pc)
 
 
 
@@ -123,43 +105,31 @@ To determine a rapyuta.io package's unique identifier:
 To determine a package's plan id in rapyuta.io:
 
 1. Click **PACKAGES** on the left navigation bar.
-
 2. Select the package whose plan ID you want to obtain.
-
 3. Under **Plans**, copy the value of **default**.
 
-![Find plan id](/images/python-sdk-images/plan-id.png?classes=border,shadow&width=50pc)
+![Find plan id](/images/python-sdk-images/plan-id.png?classes=border,shadow&width=40pc)
 
 
 
 ## SDK reference
 
 If you are looking for more detailed information about any class in the SDK, feel
-
 free to consult the [full SDK reference](https://sdkdocs.apps.rapyuta.io/).
 
 
 
 
-
-Read More
-
-## Examples
-
-The following example walkthroughs will help you get
-
-started quickly with rapyuta.io Python SDK:
-
-
-
-1. [Basic Publisher Subscriber](/developer-guide/tooling-automation/python-sdk/sample-walkthroughs/basic-pubsub/)
-
-2. [Deployment Composition](/developer-guide/tooling-automation/python-sdk/sample-walkthroughs/deployment-composition/)
-
-
+## Related Links
 
 {{% notice info %}}
 
 Before walking through the examples, ensure you [obtain the auth token, project ID, device ID, package ID and plan ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/).
 
 {{% /notice %}}
+
+
+1. [Tutorial : Python SDK : Publisher Subsciber](/developer-guide/tooling-automation/python-sdk/sample-walkthroughs/basic-pubsub/)
+
+<!-- 2. [Tutorial : Deployment Composition](/developer-guide/tooling-automation/python-sdk/sample-walkthroughs/deployment-composition/) -->
+
