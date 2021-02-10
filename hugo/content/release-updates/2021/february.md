@@ -22,6 +22,16 @@ are significant updates in this release that we hope you will like.
 
      The rapyuta.io platform allows you to quickly find logs around a particular log line. For more information, [click here](/developer-guide/tooling-automation/logging/deployment-logs).
 
+
+## February 10
+Welcome to the February 10, 2021 release of the rapyuta.io platform. There
+are significant updates in this release that we hope you will like.
+
+#### Bugfixes
+
+- If a user makes two deployments on the device connected to same routed network and deprovision the first deployment, the second deployment gives DEP_E314 error. The issue is fixed.
+- Fixed minor UI issue in Project selector modal.
+
   
 
 

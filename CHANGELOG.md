@@ -1,6 +1,9 @@
 # CHANGELOG
 ## [Unreleased]
 
+## [3.3.1 - 2021-02-10]
+### Added
+- Release update page for February 10, 2020
 
 ## [3.3.0 - 2021-02-03]
 ## Added
