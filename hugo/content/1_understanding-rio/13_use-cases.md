@@ -22,8 +22,6 @@ guideLinks: []
 introLinks: {}
 ---
 
-## TODO - Highlight Usecases
-
 ## Observability for Robots
 
 ### Logging And Debugging
