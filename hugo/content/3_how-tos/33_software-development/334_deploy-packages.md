@@ -23,19 +23,14 @@ popularLinks: []
 guideLinks: []
 introLinks: {}
 ---
-## Deploying a package
 
 To deploy a package in rapyuta.io, follow the steps:
 
-1. On the left navigation bar, click **CATALOG**.
-
+1. On the left navigation bar, click **Development>Catalog**.
 2. Select the package you want to deploy.
-
 3. Click **Deploy package**.
 
-4. In the **Name of deployment** box, enter a name for the specific deployment
-
-you are creating for the package.
+4. In the **Name of deployment** box, enter a name for the specific deployment that you are creating for the package.
 
 5. A **LABEL** is a key-value pair. If you want to add a label, click **Add label**.
 

@@ -43,5 +43,5 @@ url: /how-to-guides/account-management/managing-projects
 
   <img src="/images/getting-started/organization/project/delete-project.png" alt="Delete existing project" style="zoom:35%;" /> 
 
-1. A confirmation page appears, click **Confirm**.
-2. The Project is deleted.
+3. A confirmation page appears, click **Confirm**.
+4. The Project is deleted.

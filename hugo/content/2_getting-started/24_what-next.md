@@ -28,8 +28,9 @@ introLinks: {}
 
 ## Introduction to rapyuta.io documentation
 
-<xx>
-rapyuta.io documentation is divided into the following sub-sections
+The rapyuta.io platform documentation help you to use the platform affectively by providing  conceptual, procedurial, and turial information.
+
+The documentation is divided into the following sub-sections
 
 - [How-tos](rapyuta.io/how-tos): Contains step-by-step information needed to accomplish defined tasks on the platform. 
 - [Tutorials](rapyuta.io/tutorials): Are recipes for building different applications and use-cases on the platform. Tutorials help you explore the capabilities of the platform by building running applications. They aim to guide you to do things yourself without explicit instructions.
@@ -39,13 +40,13 @@ rapyuta.io documentation is divided into the following sub-sections
 <!-- Blog -->
 
 **Deep-dives**
-Link to deep-dive on packages. 
+
+*  Deep-dive on [Managing Devices](/5_deep-dives/51_managing-devices)
 
 
+**FAQ, Troubleshooting**
 
-
-
-**FAQ, Troubleshooting, Forum, Blogs**
+* FAQ on [Managing Devices](/7_FAQ/71_managing-devices)
 
 ---
 

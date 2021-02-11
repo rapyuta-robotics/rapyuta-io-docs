@@ -1,5 +1,6 @@
 ---
 title: "Simulation"
+draft: "true"
 # shortTitle: "TODO: Change me"
 intro:  "Answers to most common questions about your account, applications and the platform"
 

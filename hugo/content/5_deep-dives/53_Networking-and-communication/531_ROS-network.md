@@ -1,6 +1,6 @@
 ---
 
-title: "Standard Web Protocol"
+title: "ROS Routed Network"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 
 weigth: 531
@@ -64,4 +64,15 @@ When creating a cloud routed network, the Resource limit field define the memory
 * number of topics/services/actions
 * QOS of ROS message
 * number of publishers/subscribers that will be active under a particular routed network
+
+## Device Routed Network
+
+In certain cases where communication is latency-sensitive or has high throughput, the user can choose to deploy a routed network to a device. While avoiding a round trip of information to the cloud minimizes latency and allows for better throughput **ONLY** deployments on devices on the same local area network can bind to it.
+
+Routed networks can be deployed to a device with the following parameters:
+
+* **Device**: Any online device with docker runtime and AMD64 architecture
+* **Device IP Interface**: network interface (i.e., an IP address) that will be used by other deployments for communication to this routed network.
+* **Restart policy**: Kindly refer to the restart policy.
+On reboot, devices configured using DHCP may boot up with a new IP address and the network configuration of a deployed routed network becomes invalid. This can be avoided by assigning a static IP to the device you intend to deploy a routed network to esp in production systems.
 

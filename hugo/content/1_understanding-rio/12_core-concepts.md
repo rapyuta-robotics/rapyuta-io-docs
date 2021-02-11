@@ -38,7 +38,7 @@ Each project has:
 You may create multiple projects and use them to organize rapyuta.io resources.
 
 
-> Learn more about projects [here](/developer-guide/organise-resources/project/).
+For more information about projects [here](/developer-guide/organise-resources/project/)
 
 
 ### Secrets
@@ -54,10 +54,6 @@ private git repositories or use private docker images.
 There are two types of secrets available for you on rapyuta.io:
 1.  [Docker secret](/developer-guide/create-software-packages/secrets/docker-registry/)
 2.  [Source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/)
-
-
-> Learn more about deployments [deep-dive]()
-
 
 
 ## Device Management
@@ -78,7 +74,7 @@ to the device.
 
 
 
-> Learn more about devices [here](/developer-guide/manage-machines/).
+For more information about devices [here](/developer-guide/manage-machines/).
 
 
 ### Configuration
@@ -136,14 +132,37 @@ combine multiple different applications to help realize a potentially more
 complex robotics solution.
 
 
-> Learn more about deployments [here](/developer-guide/manage-software-cycle/deployments/).
+For more information about deployments [here](/developer-guide/manage-software-cycle/deployments/).
 
-## Networks and Communication
+## Communication and Storage
  
 ### Networks
 
+rapyuta.io implements various features for automatically linking different deployments, and hence, aid software composition. It implements a set of features for common protocols such as HTTP, WebSocket, TLS and a dedicated commmunication plane for ROS.
+
+The rapyuta.io platform supports the following types of communications for the packages deployed on device or on the rapyuta.io platform.
+  * ROS communication
+  * NON-ROS communication
+
+ For more information, [click here](/rapyuta.io/deep-dives/networking-and-communication)
 
 ### Static Routes
+
+rapyuta.io enables you to create a static route URL and give it a globally unique FQDN. When you add a static route, an externally exposed endpoint is essentially guaranteed to be available at the URL of that particular static route. It makes externally exposed endpoints (and hence the deployments exposing them) resilient to failure or re-deployment, facilitates maintenance and upgrades to the backend/deployment while retaining the same unique globally available URL.
+
+
+
+Static routes are used frequently to get a deterministic URL/route for your application while exposing the network endpoint externally
+
+> **💡 Pro tip :** A static route is **globally unique** across the rapyuta.io platform.
+
+### Storage
+
+Applications running on the cloud de-allocate any resources consumed when they stop, scale down, or fail. This implies that the working storage associated with them is ephemeral. To get around this problem rapyuta.io provides a mechanism to consume persistent block storage for your applications running in the cloud. This storage can be associated with at most one running deployment at any given point of time. A user is typically required to manage the lifecycle of the application code independently from the associated storage.
+
+The Rapyuta IO Persistent Volume is a storage package. A storage package is a public package which is available to all users out of the box. You cannot delete or modify storage packages, and they are available to every user.
+
+For more information, [click here](/3_how-tos/33_software-development/335_adding-persistent-storage-to-a-deployment)
 
 
 

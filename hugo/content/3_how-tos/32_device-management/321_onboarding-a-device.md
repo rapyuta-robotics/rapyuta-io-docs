@@ -56,8 +56,7 @@ To register a new device on rapyuta.io, follow the below steps:
 2. Click **ADD NEW DEVICE**.
 3. Type a name for the device in the **Device Name** box.
 4. You can choose to build the application's source code inside the device or outside it.
-   1. Do ***not*** select **Use docker compose as default runtime** option if the application source code is already built locally in the device.</br>
-   If you have not selected **Use docker compose as default runtime** option, provide the absolute path of your catkin workspace as
+   1. If the application source code is already built locally in the device, de-select **Use docker compose as default runtime** option and provide the absolute path of your catkin workspace as
    the **ROS Catkin Workspace** value. If you are using custom rapyuta.io
    image on the device, your catkin workspace will be
    `/home/rapyuta/catkin_ws` where *catkin_ws* is the name of the catkin workspace.
@@ -67,7 +66,7 @@ To register a new device on rapyuta.io, follow the below steps:
    The **ROS Catkin Workspace** can be empty, and you may provide this value on
    the device's **Details** page.
    {{% /notice %}}
-   2. Select **Use docker compose as default runtime** option if you want to build the application source code in rapyuta.io and push the build to the device remotely. On selecting this option, you will be asked to choose the version of ROS installed on the device.
+   2. If you want to build the application source code in rapyuta.io and push the build to the device remotely, select **Use docker compose as default runtime** option . On selecting this option, you will be asked to choose the version of ROS installed on the device.
    ![Select ROS version](/images/getting-started/add-new-device/select-ROS-version.png?classes=border,shadow&width=40pc)
 6. In the **Description** box, enter a brief summary of the device.
 7. Click **CONTINUE**. The device is added in the rapyuta.io console
@@ -77,7 +76,7 @@ To register a new device on rapyuta.io, follow the below steps:
    ![Device Token](/images/getting-started/add-new-device/device-token.png?classes=border,shadow&width=40pc)
 
 
-**What to do next:** Adding a device to the rapyuta.io platform deos not mean that the device is connected. To connect your device to the platform, you must set up the device. For more information about setting up the device, [click here](/developer-guide/manage-machines/onboarding/setup-device/).
+**What to do next:** Adding a device to the rapyuta.io platform deos not mean that the device is connected. To connect your device to the platform, you must set up the device.
 
 ## Setting Up Your Device
 
@@ -138,9 +137,6 @@ device's name, which indicates that the device is online.
 
 
 ![Registered Status of Device](/images/getting-started/add-new-device/demo-device.png?classes=border,shadow&width=40pc)
-
-
-
 
 
 ## Related Links

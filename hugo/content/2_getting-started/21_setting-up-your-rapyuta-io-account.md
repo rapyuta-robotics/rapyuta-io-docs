@@ -37,10 +37,10 @@ Perform the following procedure to set up your rapyuta.io account.
   2. In the **Name**, **Email**, **Password** and **Confirm Password** fields, enter your details in the respective fields.
 3. Click **I am Not a Robot** and follow the instruction for your verification.
 4. Click **Create an Account**
-5. A verification email would be sent to your email address. Click on the **Verify Email**  to complete your registration process.
+5. A verification email is sent to your email address. Click the **Verify Email**  to complete your registration process.
    > If you can't see an invitaion email in your inbox, check your spam folder. 
-6. The rapyuta.io platform opens are asked to confirm plan choices. 
-7. Once you have selected the plan, we will ask  you for your organization details. 
+6. The rapyuta.io platform opens. In the platform,  select a plan of your choices. 
+7. After you have selected the plan, enter the following details of your organization. 
    1. Organization Name
    2. URL which you can leave blank
    3. Country - For billing 
@@ -59,7 +59,6 @@ To begin using the platform, create your project by complete the following steps
 
 1. In the left navigation bar, click **Account>Project**. The project dash board is displayed.
 2. In the project dash board, click **Create New Project**. **Create new project** dialog box appears.
-  <TBI:Image>
 3. In the **Project Name** field, type a name for the project and click **Continue**.
   The project is created and you can see the project in the project dash board.
 

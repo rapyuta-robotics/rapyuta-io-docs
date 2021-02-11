@@ -41,19 +41,23 @@ Creating a software package consists of the following high-level procedures.
 To add the metadata of the package, do the following.
 
 1. On the left navigation bar, click **Development>catalog**.
-[!package-creation](rapyuta.io\how-tos\33_software-development\images\package-information.png)
+
+![package-creation](/images/core-concepts/builds/build-creation/define-package-info.png?classes=border,shadow&width=25pc)
+
 2. In the package information section, do the following.
 
-​     a. Type a package name in the Package Name field.
+    a. Type a package name in the Package Name field.
 
-​     b. Type the package version in the package version field.
+    b. Type the package version in the package version field.
 
-​     c. Click  one of the following.
-       * **Is a singleton package**: Select this option if a package is not dependent on   another  package.
-      * **Is a bindable package**: Select this option if a package depends on another package or deployment of another package, the package bindings link the package to its dependencies.
+    c. Click  one of the following.
+
+    * **IS Singleton package**: Select this option if a package is not dependent on another package.
+
+
+    * **Is a bindable package**: Select this option if a package depends on another package or deployment of another package, the package bindings link the package to its dependencies.
 
 3. In the **Description** field, type a brief description about the package and click **Next**.
-
 
 ## Step 2: Creating Components
 
@@ -65,98 +69,82 @@ Perform the following procedure to create  components
 
 2. In the component metadata area, do the following.
 
-​     a. In the **Component Name** field, type a name for the component. 
+    a.  In the **Component Name** field, type a name for the component.
+![component meta](/images/core-concepts/builds/build-creation/component-meta.png?classes=border,shadow&width=25pc)
 
-​     b. In the **Component Runtime** field, select the component runtime either as **Device** or **Cloud**. 
+    b. In the **Component Runtime** field, select the component runtime either as **Device** or **Cloud**. For more information about device run-time, [click here](/5_deep-dives/51_managing-devices/511_device-runtime)
 
-    *​  Select  the component runtime as **```Cloud```**, if this component runs on cloud
+    c. If the component is to be deployed on a ROS enabled device, click the **IS ROS Component** check-box.
 
-     * 	Select the runtime as **```Device```** if the component is to run on a device
-
-​     c. If the component is to be deployed on a ROS enabled device, click the **IS ROS Component** check-box.
-
-​     d. In the Replicas to run the component, type the number of replication of the component required for the package.
-
-
+    d. In the Replicas to run the component, type the number of replication of the component that you want to includee.</br>
 
 3. In the executables area, do the following.
 
-​     a. In the **Executable Name** field, type a name of the executable.  Executables within a component are always executed on the same physical/virtual compute node and share a ROS Master (in the case of ROS applications). 
+    a. In the **Executable Name** field, type a name of the executable. 
+![package executable](/images/core-concepts/builds/build-creation/package-executables.png?classes=border,shadow&width=25pc)
 
-​     b. From the **executable Type** drop-down menu, select either one of the following executable type. </br>
+    b. From the **executable Type** drop-down menu, select either one of the following executable type. </br>
 
-​      **Build**: Executables can reference existing rapyuta.io Build. Builds help you create a GitOps pipeline by specifying a repository and a build recipe. rapyuta.io can then build your git source code into a container image. Executables referencing builds use the generated images at the time of package deployment. Custom bash command can additionally be specified and is executed when the package is deployed.
+    * **Build**
+    * **Docker**
+    * **Default**
 
-​     **Docker**: A docker image is used as an executable. When a deployment is triggered, rapyuta.io pulls a docker image from the docker registry. Additionally, you may specify a bash shell command, which overrides the entry point of the docker container.
+    For more information about the type of executables, [click here](/1_understanding-rio/12_core-concepts/#builds)
 
-​      **Default**: Executables which run a command on the device directly can use the Default option. 
+    c. If you have selected the executable type as **Builds**, from the Choose **Build** drop-down menu, select the build. 
 
-> ```Default``` option is only applicable for Device Components and packages with  default executables can only be deployed on devices with preinstalled runtime
+    d. If you have selected the executable type as **Docker**, in the Docker Image field, type the docker image that you want to use. For more information about creating the build recipe as docker, click here.
 
-​     c. If you have selected the executable type as **Builds**, from the Choose **Build** drop-down menu, select the build. 
+    e. Optionally, if the docker image is a private image, click the **Private Image** check-box and select the credential from the **Credentials** drop-down menu.
 
-​     d. If you have selected the executable type as **Docker**, in the Docker Image field, type the docker image that you want to use. For more information about creating the build recipe as docker, click here.
+    f. In the **Command to Run** field, in the docker container box, enter the command to run the executables.
 
-​     e. Optionally, if the docker image is a private image, click the **Private Image** check-box and select the credential from the **Credentials** drop-down menu.
-
-​     f. In the **Command to Run** field, in the docker container box, enter the command to run the executables.
-
-​     g. From the Resource limit drop-down menu, select the CPU and memory requirement for the executable.
-
+    g. From the Resource limit drop-down menu, select the CPU and memory requirement for the executable.
 
 
 4.  Optionally, to add an end-point, click **Add Endpoint** and do the following.
 
-​     a. In the Endpoint Name field, type a name for the endpoint.
+    a. In the **Endpoint Name** field, type a name for the endpoint.
 
-​     b. If the endpoint is exposed publicly, click the Exposed externally radio button and do the following.
+    b. If the endpoint is exposed publicly, click the Exposed externally radio button and do the following.
 
-​          i. From the protocol section, select one of the following available protocols. 
+      i. From the protocol section, select one of the following available protocols. 
 
-​       <ul> <li>HTTP/Websocket exposed on port 80</li>
+      * HTTP/Websocket exposed on port 80</li>
 
-​       <li>HTTP/Websocket exposed on port 443</li>
+      * HTTP/Websocket exposed on port 443</li>
 
-​       <li>Secure TCP (TLS/SNI) exposed on port 443</li>
+      * Secure TCP (TLS/SNI) exposed on port 443</li>
 
-​          ii. In the Target Port field, type the target port. Port is where the application’s service is made visible to other services.
+      ii. In the Target Port field, type the target port. Port is where the application’s service is made visible to other services.
+{{%notice info%}}
+ The Secure TCP (TLS/SNI) protocol uses SNI headers for routing the request to the desired backend.
+{{%/notice%}}
+  
+    c. If the endpoint is accessed internally, do the following.
 
-> **INFO** : The Secure TCP (TLS/SNI) protocol uses SNI headers for routing the request to the desired backend.
-
-​     c. If the endpoint is accessed internally, do the following.
-
-​          i. In the port field, type the port number for the endpoint. Port is where the application’s service is made visible to other services.
+    i. In the port field, type the port number for the endpoint. Port is where the application’s service is made visible to other services.
 
 ​          ii. In the Target Port field, type the target port. Target port is where the application needs to be listening for network requests for the service to work.
 
 ​          iii. Optionally, You can also use port range for an endpoint by selecting Port Range toggle. A Port Range on an endpoint will allow you to open multiple ports on a single DNS hostname.
+{{%notice note%}}
+A maximum 50 ports are allowed for an endpoint. Allowed format is comma separated Port Ranges. Each Port Range is either a single port or a range of port mentioning the from port and to port separated by a hyphen (-). Examples: 5000 or 443-445 or 3446-3449,3500,3510-3530
+{{%/notice%}}
 
-> Note: A maximum 50 ports are allowed for an endpoint. Allowed format is comma separated Port Ranges. Each Port Range is either a single port or a range of port mentioning the from port and to port separated by a hyphen (-). Examples: 5000 or 443-445 or 3446-3449,3500,3510-3530
+ 5. If you want to add a ROS topic to the package, click Add ROS topic and do the following. A ROS topic is intended for unidirectional, streaming communication.
 
-4. If you want to add a ROS topic to the package, click Add ROS topic and do the following. A ROS topic is intended for unidirectional, streaming communication.
+    a. In the name field, type the name of the ROS topic.
 
-​     a. In the name field, type the name of the ROS topic.
+    b. Select one of the following.  **Compressed**, **Scoped**,  **Targeted**:
 
-​     b. Select one of the following.  **Compressed**, **Scoped**,  **Targeted**:
+    c. To add  a tunable level of reliability for ROS topics for the transport layer even over the public internet, select one of the following QOS types. 
 
-​     c. To add  a tunable level of reliability for ROS topics for the transport layer even over the public internet, select one of the following QOS types.
+ 6. If you want to add a ROS service to the package, click **Add ROS** and do the following. 
 
-​     		i. **Maximum**: The highest possible QoS is Maximum by using end to end protocol delivery confirmations, message ordering guarantees, and retires in case of failure. It is typically intended for one-off critical control/command messages. e.g. : Start/Stop application
+    a. In the name field, type a name for the ROS service.
 
-​     		ii. **High/Medium:** These are intermediate levels offered between the two extremes that may be more suited in more intermediate cases. Each 	level trades off to balance reliability and performance differently.
-
-​     		iii. **Low**: The lowest possible QoS is Low and is used for rapidly produced data such as sensor/telemetry data where the application can tolerate small message loss in favor of better performance, throughput, and lower latency.
-
-
-5. If you want to add a ROS service to the package, click **Add ROS** and do the following. 
-
-   In the name field, type a name for the ROS service.
-
-   In the Timeout field, enter the timeout in seconds. A ROS service call is blocking in nature. It prevents the client thread from continuing to execute further instructions until it receives a reply from a ROS server. Occasionally, the service call waits much longer than expected, and in more adverse cases, the call never returns due to software or network failure. Hence, further execution of the client program is stalled.
-
-   rapyuta.io defines ROS service timeout as the number of seconds to wait for a response to the service request before timing out and erroring out. The application developer must add appropriate logic to handle these exceptions as required. The default timeout is 120 seconds.
-
-   
+    b. In the Timeout field, enter the timeout in seconds. 
 
 6. Optionally, to add configuration parameter to the executable, click Add Parameter. configuration parameters operate at the level of component and apply to executables in the component only.
 
@@ -190,7 +178,8 @@ Under Deployment, select the volume deployment that you created.
 
 4. Click **Confirm** Package Creation.
 
-Related Links:
+## Related Links:
 
 * [About Package](rapyuta.io/understanding-rio/core-concepts)
 * For more information on package components, [click here](rapyuta.io/deep-dives/development/package-software)
+* For more information on ROS components, [click here](rapyuta.io/deep-dives/development/package-software)
