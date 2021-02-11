@@ -25,12 +25,12 @@ guideLinks: []
 introLinks: {}
 ---
 
-ToDo :
 
-FAQs for Tooling and Debugging
+## How can I upload logs from device to cloud?
 
-Qn : How can I upload logs from device to cloud?
-Ans :
+Go to device's **Manage** tab and you can upload logs from a device. For detailed procedure, [click here](/3_how-tos/35_tooling_and_debugging/352_upload-files-from-device/)
 
-Qn : How can I play RosBag file from the platform?
-Ans : 
+## How can I play RosBag file from the platform?
+
+** Need info
+

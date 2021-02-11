@@ -83,9 +83,7 @@ To remove a user from a project, do the following.
 3. Under **Actions**, click **Remove** against the user that you want to remove. A confirmation page appears.
 4. Click **Confirm**. The user is removed from the project
 
+## Related Links
 
-
-
-
-?? TODO: Deep dive: **Need info on User > Access control -> 
+* [About Project](/1_understanding-rio/12_core-concepts/#projects)
 

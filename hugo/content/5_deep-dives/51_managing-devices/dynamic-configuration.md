@@ -24,29 +24,184 @@ guideLinks: []
 introLinks: {}
 ---
 
-## Device Configuration
+The behavior of a robot (device) is determined by a set of
+parameters, for instance the robot's velocity, controller gain threshold, or an image of a warehouse layout. 
+These parameters are usually a consequence of the software and hardware used in the robot and the environment.
 
-Device configuration variables are environment variables that allow you to correctly configure a device on rapyuta.io using the console. They are used when deploying packages on the device.
+As a robotic developer, you need to represent, store, and review parameters. Additionally, you might want to access
+parameters in your source code, modify a subset of parameters for a particular robot, or add new parameters and apply those to a
+group of robots. A common pattern found in the robotics developer community is to arrive at a list of base parameters that are required for the application to run. When moving from the developer testbed to real-world operations, the operators, developers, and vendors
+often wish to override the base parameters to satisfy various requirements.
 
-A list of predefined device configuration variables is available for a newly added device. They are:
+The *rapyuta.io* platform provides a mechanism that allows a developer to set, review, update and override configuration for any connected robot. 
+Configuration parameters in the ***rapyuta.io*** platform are represented by a *tree-like* hierarchical structure 
+called  ***configuration hierarchy***.  
 
-ros_distro specifies the ROS distribution found on the device. It is automatically detected when the device is provisioned. It is immutable as the device determines its value. It is a mandatory configuration variable when deploying ROS packages. It is usually assigned kinetic or melodic value depending on the version of ROS installed on the device.
-ros_workspace is the absolute path of the default catkin workspace on the device. rapyuta.io automatically sources ROS packages present in this workspace for package deployment.
-runtime specifies whether the device supports dockercompose for the package deployment. Otherwise, its value is set as preinstalled. It is immutable. You can provide this value while adding a device to rapyuta.io
-The Details page of each device contains the above pre-defined configuration variables.
+Every configuration hierarchy consists of the following four kinds of nodes:
 
-To create additional device configuration variables, such as ros_package_path, click Add Config Variable.
+- [RootNode](#rootnode)
+- [AttributeNode](#attributenode)
+- [ValueNode](#valuenode)
+- [FileNode](#filenode)
 
-### Device Configuration Variables
+ Consider the sample
+configuration hierarchy, ***example***, as shown in the following figure.
+The parameters of ***example*** are arranged in a specific order. The
+hierarchy allows you to override the default parameters(or base parameters)
+or extend existing parameters based on the country of operation.
 
-You can override the predefined value of a device configuration variable while creating a package deployment. For instance, you may change ros_workspace when deploying a package for a ROS-based device.
 
-You can deselect device configuration variables that you do not need during deployment. However, remember that ros_distro is mandatory when deploying a ROS package.
+To view an example of how you may leverage configuration hierarchies please refer to the illustrated section on [overriding behavior](resove-configuration-hierarchy/) 
+ 
+![example configuration](/images/core-concepts/configurations/example-config.png?classes=border,shadow&width=20pc)
 
-## Device Environmental Variables
+#### RootNode
+The RootNode is the root of the configuration hierarchy tree. There
+is only one RootNode per configuration hierarchy. Its name is
+same as the name you provide while creating the configuration
+hierarchy. The RootNode allows you to add an attribute, add/upload
+ configuration files, and apply the base label configuration parameters
+  to a device.
 
-Some environment variables are available on the device after its successful onboarding. These are also available to the deployments on the device. These are:
+ It might contain multiple file nodes and exactly one
+attribute node.
 
-* RIO_DEVICE_NAME_LAST_SEEN: Stores the name of the device that was present at the time of onboarding. Please note that changes made to the device’s name through rapyuta.io UI or APIs will not reflect back on this environment variable.
-* RIO_DEVICE_ID: Stores the unique identifier of the device.
-* RIO_PROJECT_ID: Stores the unique identifier of the project in which the device was created.
+In this case, the RootNode is consequently ***example***.
+![root node](/images/core-concepts/configurations/root-node.png?classes=border,shadow&width=20pc)
+
+#### AttributeNode
+Devices in rapyuta.io allow the user to set arbitrary labels (modeled as key value pairs) corresponding to attributes of an onboarded device such as vendor, warehouse, country of operation, software version etc.
+
+The developer might need to override certain configuration based on one particular attribute of the device (eg device *country*).
+To do this, the developer must create an  **AttributeNode** which effectively creates a new overriding *"branch"* in the *configuration hierarchy*. 
+Each attribute node should have at lease one value node. Furthermore, you can also create more AttributeNodes 
+from the corresponding value nodes and define the hierarchy of the configuration tree.
+
+For example,
+the ***country*** attribute splits the hierarchy subtree based on
+the value of its children, such as ***USA*** and ***Japan*** (represented as
+value nodes). rapyuta.io represents these distinctions as key-value pairs to
+allow developers arbitrary flexibility in how they define their hierarchies. 
+
+AttributeNodes can contain only value nodes, each corresponding to a
+branch that you wish to represent. In the case of ***example*** 
+configuration, attributes are ***country***, ***motor_controller***.
+![attribute node](/images/core-concepts/configurations/attribute-nodes.png?classes=border,shadow&width=20pc)
+
+#### ValueNode
+Each value node corresponds to one particular value that is of the type of the parent attribute node (eg device *country=**Japan***)  corresponding to a particular branch of the configuration hierarchy that will be used to override the more general configuration values.
+The parent attribute and the corresponding child  value nodes are of same color. It can contain
+multiple file nodes and only one attribute node. Furthermore, from the attribute node, 
+you can create multiple value nodes and define the hierarchy of the configuration tree.
+
+In ***example*** configuration, ***USA*** and ***Japan*** are value nodes of **country** attribute.
+![value node](/images/core-concepts/configurations/value-node.png?classes=border,shadow&width=20pc)
+
+#### FileNode
+A FileNode holds the actual configuration file containing parameters and data to be applied to the device. 
+*rapyuta.io* configuration parameters allow the user to use any arbitrary file format (eg:images,xml,json,binary) while providing *special overriding behavior* for the **YAML** format.
+
+FileNodes from a *sub-tree* (a more specific set of attributes and values vis a
+vis its parent) that **recursively override/extend** the parameters defined in
+any less specific FileNode with identical names. Subtrees may define
+entirely new FileNodes (with different names), which are used in
+resolution at that level.
+
+In ***example*** configuration, ***example/sample.yaml***, ***USA/sample.yaml***
+and ***Japan/sample.yaml*** are FileNodes such that the last two files may
+either override or extend the existing ***example/sample.yaml*** file.
+![file nodes](/images/core-concepts/configurations/parameters-files.png?classes=border,shadow&width=20pc)
+
+
+To view an example of how you may leverage configuration hierarchies please refer to the illustrated section on [overriding behavior](resove-configuration-hierarchy/) 
+
+## Resolving Configuration Hierarchy
+
+A common pattern in the robotics developer community is to
+arrive at a list of base parameters those are required for the
+application to run. When moving from the developer testbed to
+real-world operations, the operators, developers, and vendors
+often wish to override or add new parameter values to the 
+base parameters to satisfy various
+requirements.
+
+When you apply a configuration to a robot, rapyuta.io
+utilizes the device labels to traverse the configuration
+hierarchy. While the platform provides simple override rules for binary files, it provides a much cleverer approach for YAML type files commonly used in *roslaunch* configurations where it merges data from within the file as it traverses a hierarchy.
+
+> Let's look at a practical example. It is likely you only want to
+override a subset of parameters amongst numerous parameters defined
+for a robot based on a particular criterion, for example, the velocity of an
+AGV defaults to 5m/s, but the regulation in Japan requires you to
+limit its velocity to 3m/s. For an AGV to be deployed in Japan,
+you override its default velocity (5m/s) to 3m/s. Any other AGV
+deployed outside of Japan might still require the default velocity of 5m/s.
+
+> Another example of using the configuration parameter is the map images for the robots stationed at different warehouses. The map image for a robot "A" stationed at japan warehouse might be different than the map image of the same type of robot stationed at USA warehouse. ***rapyuta.io*** allows you to upload different map images as the configuration hierarchy to suit your need.
+
+## Overriding configuration parameters
+
+### Overriding Rules for FileNodes (Binary)
+
+If you have uploaded the base parameters (or default parameters) as a binary file, and uploaded a binary file  with *different* content but the same file name at a *different level* but more specific level in the configuration hierarchy, when applying the configuration at the attribute level, the base parameter file is **replaced** with the file with the more specific attribute level.
+
+In the following images, the checksum file for the base parameters file and the configuration file at the attribute level  **test.html** are different.
+![base binary parameter](/images/core-concepts/configurations/root-binary-file.png?classes=border,shadow&width=65pc)
+
+When applying the configuration to the devices, the base parameter file is replaced by the file you had uploaded at the attribute level. The following image displays the configuration file that is applied to the device.
+![base binary parameter](/images/core-concepts/configurations/updated-binary-file.png?classes=border,shadow&width=65pc)
+
+### Overriding Rules for FileNodes of type YAML
+
+In the case of YAML files, while the order of resolution and overriding remains identical to binary files, the result is a little different.
+The more specific FileNode content **does NOT replace** the content of the original file but **merges and replaces specific key value pairs within the YAML file**.  
+
+The base parameters (or parameters defaults) file is usually located at
+the root of the configuration hierarchy. In ***example*** configuration,
+***example/sample.yaml*** file is the base parameters file, and it is located
+under the ***example*** root node.
+
+![parameter defaults](/images/core-concepts/configurations/parameter-defaults.png?classes=border,shadow&width=50pc)
+
+The parameters are represented as **key: value** pairs like
+***max_velocity: 5***, which indicates that the maximum velocity of an
+AGV is 5m/s.
+
+You can override or extend base parameters by defining **sample.yaml**
+files at different levels of the configuration hierarchy.
+
+Suppose that the regulation in Japan requires you to limit the
+maximum velocity of an AGV from **5m/s** to **3m/s**. You can override the
+***max_velocity*** of the AGV by assigning a new value to it. The
+***sample.yaml*** file under the ***Japan*** value includes only the
+***max_velocity*** parameter, but with its default overridden.
+
+![override parameters](/images/core-concepts/configurations/override-max-vel.png?classes=border,shadow&width=65pc)
+
+The final parameters file is a result of merging the base parameters
+(***example/sample.yaml***) and the overridden parameters
+(***Japan/sample.yaml***).
+
+
+
+### Extending configuration parameters
+You can add new parameters to extend the list of base
+parameters. For instance, the ***USA/sample.yaml*** defines an additional parameter, ***example_param_usa: val***.
+
+The resultant file after merging the base parameters in ***example/sample.yaml***
+and newly added parameters in ***USA/sample.yaml*** will include
+***example_param_val*** in addition to those already present.
+
+![extend parameters](/images/core-concepts/configurations/extend-params.png?classes=border,shadow&width=80pc)
+
+
+{{% notice info %}}
+You may ***clone an existing configuration*** into another project.
+Cloning saves you from the redundant task of defining the
+same configurations from scratch again. However, cloning a configuration
+inside the same project is not supported.
+{{% /notice %}}
+
+{{% notice info %}}
+You may ***rename an already defined configuration***.
+{{% /notice %}}

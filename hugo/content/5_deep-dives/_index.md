@@ -24,3 +24,4 @@ popularLinks: []
 guideLinks: []
 introLinks: {}
 ---
+{{< children >}}
