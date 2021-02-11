@@ -238,9 +238,9 @@ div#navigation {
 div.progress {
     position: fixed;
     display: inline-block;
-    top: 185px;
-    right: 3rem;
-    width: 16%;
+    top: 96px;
+    right: 60px;
+    width: 330px;
     opacity: 1;
     background-color:rgb(255 255 255);
     border-top:1px solid #ECECEC;
@@ -282,7 +282,31 @@ span.links a {
     font-size: 12px;
     letter-spacing: 1px;
     width:100%;
+    display: flex;
+    flex-direction: row;
 }
+#top-bar #breadcrumbs {
+    line-height: 64px;
+    font-size: 14px;
+}
+#top-bar #top-github-link{
+    line-height: 64px;
+    width: 239px;
+    padding: 0 1rem;
+    font-size: 20px;
+}
+#top-bar #top-pdfbtn-div{
+    font-size: 35px;
+    /* float: right; */
+    line-height: 64px;
+}
+#top-bar #top-fullscreen-div{
+    font-size: 35px;
+    /* float: right; */
+    line-height: 64px;
+}
+
+
 .sticky-wrapper:not(.sticky-wrapper.is-sticky)  #top-bar{
     width: 100%!important;
 }
@@ -374,7 +398,7 @@ a:hover {
 
 #body-inner {
     background: #fff;
-    padding: 0.5rem 3rem 3rem 3rem;
+    padding: 0.5rem 4rem 3rem 2rem;
     margin-bottom: 0;
     width:80%;
 }
