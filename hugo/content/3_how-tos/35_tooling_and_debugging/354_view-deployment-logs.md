@@ -35,7 +35,7 @@ cloud runtime. It will publish the ROS topic *_/telemetry_* with **Maximum** **Q
 **ROS publisher exclusive deployment**
 
 
-1. On the left navigation bar, click **DEPLOYMENTS**.
+1. On the left navigation bar, click **Development>Deployments**.
 
 2. Select specific deployment whose logs you want to view or analyze.
 
@@ -163,7 +163,7 @@ The **Live Logs** tab allows you to do the following.
 
   
 
-  1. On the left navigation bar, click **BUILDS**.  
+  1. On the left navigation bar, click **Development>Builds**.  
 
   2. Select a build from the build list page. Click on **SHOW MORE** and go to **Build history** tab.  
 
@@ -190,7 +190,10 @@ The **Live Logs** tab allows you to do the following.
 
   ![build Logs](/images/core-concepts/logging/build-logs/build-logs.png?classes=border,shadow&width=60pc)
 
- // Routed Network logs
+## Routed Network Logs
 
-- Step 1
-- Step 1
+Viewing routed network logs is same as viewing any component logs.
+
+To view or analyse the corresponding routed network logs, do the following.
+
+ 1. click **Historical Logs** and under **Source** and check the routed network for which you want to view the logs. 

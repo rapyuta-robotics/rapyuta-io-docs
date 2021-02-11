@@ -49,7 +49,7 @@ You can add the storage package as a dependent deployment. To add storage to a d
 
 2. On the deployment page, click **Add Volume** and do the following.
 
-![add-volume](/images/dev-guide/core-concept/deployments/adding-volume.png?classes=border,shadow&width=40pc)
+![add-volume](/images/core-concepts/deployments/adding-volume.png?classes=border,shadow&width=40pc)
 
 3. Select the package depoyment from the **Deployment** drop-down menu.
 4. Select the package component where you want to attach the volume package from the **Applicable Component** drop-down menu.
