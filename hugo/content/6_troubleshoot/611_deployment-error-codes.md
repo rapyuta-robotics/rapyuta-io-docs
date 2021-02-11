@@ -1,7 +1,7 @@
 ---
 title: "Deployment Error Codes"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
-
+weight: 612
 versions:
   free-pro-team: '*'
   enterprise-server: '*'
