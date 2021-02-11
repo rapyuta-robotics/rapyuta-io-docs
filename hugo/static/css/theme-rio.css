@@ -291,9 +291,9 @@ span.links a {
 }
 #top-bar #top-github-link{
     line-height: 64px;
-    width: 239px;
+    width: 75px;
     padding: 0 1rem;
-    font-size: 20px;
+    font-size: 32px;
 }
 #top-bar #top-pdfbtn-div{
     font-size: 35px;
