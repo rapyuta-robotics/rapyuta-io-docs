@@ -46,7 +46,9 @@ Some of the metrics data measured in a network IO interface graph are:
 * **drop_out** is the total number of transmitted packets dropped by the network interface
 
 ## Disk usage
-Subscribing to disk usage metrics displays a graph that shows the information on disk usage metrics like available disk space, percentage of disk space used, etc. Read more to know the kind of disk usage metrics that are collected.
+Subscribing to disk usage metrics displays a graph that shows the information on disk usage metrics like available disk space, percentage of disk space used, etc.
+
+Some of the metrics data measured in a disk usage graph are:
 
 * **free** is the amount of disk space that is freely available. It is an integer value shown as byte.
 * **total** is the total amount of disk space. It is an integer value shown as byte.
@@ -58,6 +60,8 @@ used is the amount of disk space that is in use. It is an integer value shown as
 
 ## Disk IO
 You can gather metrics about disk traffic and timing by subscribing to the disk IO. Read more to know the kind of information collected by disk IO metric.
+
+Some of the metrics data measured in a disk IO interface graph are:
 
 * **reads** is a counter that increments when a read request completes. It is an integer value.
 * **writes** is a counter that increments when a write request completes. It is an integer value.
@@ -71,6 +75,8 @@ You can gather metrics about disk traffic and timing by subscribing to the disk 
 
 ## Memory usage
 You can collect and visualize device memory metrics by subscribing to the memory usage system metric. To know more about the data fields associated with memory usage, read here.
+
+Some of the metrics data measured in a memory usage graph are:
 
 * **available** is the amount of memory that is available. It is an integer value shown as byte.
 * **available_percent** is the percentage of memory that is available. It is a floating-point value shown as percentage
@@ -88,6 +94,8 @@ inactive is the amount of memory that hasn’t been used in some way. It is an i
 ## CPU load average
 
 You can determine the percentage of CPU used by a user, process, or system by subscribing to the CPU load average metric. Read the CPU load average reference to understand the several data measurements plotted in the graph.
+
+Some of the metrics data measured in a CPU load average graph are:
 
 * **usage_guest** is the percentage of time that the CPU is running a virtual CPU for a guest operating system
 * **usage_guest_nice** is the percentage of time that the CPU is running a virtual CPU for a guest operating system, which is low priority and can be interrupted by other processes.

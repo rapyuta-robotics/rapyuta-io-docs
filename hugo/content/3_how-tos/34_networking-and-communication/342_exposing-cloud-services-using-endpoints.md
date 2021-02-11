@@ -40,7 +40,7 @@ The supported protocols at their respective ports (cannot be modified) are:
 
 > The **Secure TCP (TLS/SNI)** protocol uses [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication) headers for routing the request to the desired backend.
 
-![external endpoint](/images/core-concepts/network-endpoints/external-endpoint.png?classes=border,shadow&width=40pc)
+![external endpoint](/images/core-concepts/packages/network-endpoints/external-endpoint.png?classes=border,shadow&width=40pc)
 
 
 
@@ -49,8 +49,6 @@ The supported protocols at their respective ports (cannot be modified) are:
 **rapyuta.io** generates a **random URL/route** that is exposed on the public internet for the exposed endpoints when the deployment is created. 
 
 You can view the Fully Qualified Domain Name (FQDN) of an endpoint on the details page of deployments.
-
-
 
 ![FQDN of external endpoint](/images/tutorials/hello-world/network-endpoint.png?classes=border,shadow&width=50pc)
 

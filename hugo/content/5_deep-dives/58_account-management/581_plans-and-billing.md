@@ -25,29 +25,7 @@ popularLinks: []
 guideLinks: []
 introLinks: {}
 ---
-// select a plan
-
-// adding credit card
-
-// adding more resources.
-
-// deactivating account
-
-
-
-// TODO: Link: FAQs - billing. 
-
-- Plans
-  - Billable resources
-  - price/per resource
-  - bundled quantity
-- Billing Cycle
-- Free Trial
-  - When does free tier end
-  - What happens at the end
-  - When is the user billed
-  - Usage alerts on Email
-    - what happens after you have used up 100% of your usage
+.
 
 ![Subscription plans](/images/pricing/billing/find-plan.png?classes=border,shadow&width=80pc)
 
@@ -93,3 +71,7 @@ Read an [example of pricing calculation](/pricing-support/pricing/pricing-calcul
 
 ## Enterprise Plan
 The enterprise plan offers enterprise clients unfettered access to the platform, enterprise-grade 24x7 on-call support, SLAs and top of the line consulting expertise. For users looking to take the leap and build connected robotics experiences at-scale, we offer a plan tailored for your needs, to learn more contact us.
+
+## Related Links
+
+* [FAQ on Account Management](/7_FAQ/76_account-management)

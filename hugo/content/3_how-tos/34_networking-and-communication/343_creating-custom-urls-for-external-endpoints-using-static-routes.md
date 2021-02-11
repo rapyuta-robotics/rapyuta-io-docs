@@ -27,7 +27,7 @@ introLinks: {}
 
 ### Create a Static Route
 
-1. On the left navigation bar, click **STATIC ROUTES**.
+1. On the left navigation bar, click **Networking>Static Route**.
 
 2. Click **ADD NEW STATIC ROUTE**.
 
@@ -42,9 +42,7 @@ introLinks: {}
 
 4. Click **CONTINUE**.
 
-
-
-Observe that the name of the static route will be a subdomain belonging to **\*.ep-r.io** 
+> Observe that the name of the static route will be a subdomain belonging to **\*.ep-r.io** 
 
 > FQDN is formatted as follows:   {**static-route-name**}-{*random-5 letter-organization-string*}.**ep-r.io** 
 >
