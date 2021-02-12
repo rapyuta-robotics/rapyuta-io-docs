@@ -38,7 +38,7 @@ Each project has:
 You may create multiple projects and use them to organize rapyuta.io resources.
 
 
-For more information about projects [here](/developer-guide/organise-resources/project/)
+For more information about projects, [click here]({{< ref "3_how-tos/31_account-management/311_managing-projects.md" >}})
 
 
 ### Secrets
@@ -52,8 +52,9 @@ private git repositories or use private docker images.
 
 
 There are two types of secrets available for you on rapyuta.io:
-1.  [Docker secret](/developer-guide/create-software-packages/secrets/docker-registry/)
-2.  [Source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/)
+
+1. [Docker secret]({{< ref "/3_how-tos/31_account-management/314_authorize-access-to-private-docker-registry-using-secrets" >}})
+2. [Source secret]({{< ref "/3_how-tos/31_account-management/313_authorize-access-to-private-git-repositories-using-secrets" >}})
 
 
 ## Device Management
@@ -74,7 +75,7 @@ to the device.
 
 
 
-For more information about devices [here](/developer-guide/manage-machines/).
+> For more information about devices, [click here](/5_deep-dives/51_managing-devices).
 
 
 ### Configuration
@@ -83,7 +84,7 @@ As a robotic developer, you need to represent, store, and review parameters. Add
 
 The rapyuta.io platform provides a mechanism that allows a developer to set, review, update and override configuration for any connected robot. Configuration parameters in the rapyuta.io platform are represented by a tree-like hierarchical structure called configuration hierarchy.
 
-> Learn more about Configurations [here](/developer-guide/manage-machines/).
+> For more information about configuration, [click here](/5_deep-dives/51_managing-devices/dynamic-configuration)
 
 
 ## Software Development
@@ -96,7 +97,7 @@ residing in your VCS into a container image.
 Builds can be referenced when creating packages and enables an 
 end-to-end "Code to Deployment" pipeline for your Robotics solution.
 
-> Learn about Builds [here](/developer-guide/create-software-packages/builds/).
+> For more information about builds, [ click here](/3_how-tos/33_software-development/331_create-builds).
 
 ### Package
 
@@ -110,7 +111,7 @@ it should be built, its compatibility and runtime requirements,
 network endpoints and ROS interfaces it exposes, and any configuration
 information it may require.
 
-> Learn about the internals of a package [here](/developer-guide/create-software-packages/package-internals/).
+> For more information about the internals of a package, [click here](/5_deep-dives/52_software-development/525_package-internals)
 
 ### Deployment
 
@@ -132,7 +133,8 @@ combine multiple different applications to help realize a potentially more
 complex robotics solution.
 
 
-For more information about deployments [here](/developer-guide/manage-software-cycle/deployments/).
+> For more information about deployments, [click here](
+/3_how-tos/33_software-development/334_deploy-packages)
 
 ## Communication and Storage
  
@@ -144,7 +146,7 @@ The rapyuta.io platform supports the following types of communications for the p
   * ROS communication
   * NON-ROS communication
 
- For more information, [click here](/rapyuta.io/deep-dives/networking-and-communication)
+> For more information, [click here](/5_deep-dives/53_networking-and-communication)
 
 ### Static Routes
 
@@ -162,7 +164,7 @@ Applications running on the cloud de-allocate any resources consumed when they s
 
 The Rapyuta IO Persistent Volume is a storage package. A storage package is a public package which is available to all users out of the box. You cannot delete or modify storage packages, and they are available to every user.
 
-For more information, [click here](/3_how-tos/33_software-development/335_adding-persistent-storage-to-a-deployment)
+> For more information, [click here](/3_how-tos/33_software-development/335_adding-persistent-storage-to-a-deployment)
 
 
 

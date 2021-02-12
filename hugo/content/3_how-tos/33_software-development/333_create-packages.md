@@ -180,6 +180,6 @@ Under Deployment, select the volume deployment that you created.
 
 ## Related Links:
 
-* [About Package](rapyuta.io/understanding-rio/core-concepts)
-* For more information on package components, [click here](rapyuta.io/deep-dives/development/package-software)
-* For more information on ROS components, [click here](rapyuta.io/deep-dives/development/package-software)
+* [About Package](/1_understanding-rio/12_core-concepts/#package)
+* For more information on package components, [click here](/5_deep-dives/52_software-development/525_package-internals)
+* For more information on ROS components, [click here](/5_deep-dives/52_software-development/526_package-ros-support)

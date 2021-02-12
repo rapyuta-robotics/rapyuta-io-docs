@@ -32,10 +32,10 @@ The rapyuta.io platform documentation help you to use the platform affectively b
 
 The documentation is divided into the following sub-sections
 
-- [How-tos](rapyuta.io/how-tos): Contains step-by-step information needed to accomplish defined tasks on the platform. 
-- [Tutorials](rapyuta.io/tutorials): Are recipes for building different applications and use-cases on the platform. Tutorials help you explore the capabilities of the platform by building running applications. They aim to guide you to do things yourself without explicit instructions.
-- [Deep-dives](rapyuta.io/deep-dives): Deep dives are discussions which go in depth about topics pertaining to the platform. 
-- [FAQs](rapyuta.io/FAQs) and [Troubleshooting](apyuta.io/troubleshooting)
+- [How-tos]({{< ref "3_how-tos" >}}): Contains step-by-step information needed to accomplish defined tasks on the platform. 
+- [Tutorials]({{< ref "4_tutorials" >}}): Are recipes for building different applications and use-cases on the platform. Tutorials help you explore the capabilities of the platform by building running applications. They aim to guide you to do things yourself without explicit instructions.
+- [Deep-dives]({{< ref "5_deep-dives" >}}): Deep dives are discussions which go in depth about topics pertaining to the platform. 
+- [FAQs]({{< ref "7_FAQ" >}}) and [Troubleshooting]({{< ref "6_troubleshoot" >}})
 
 <!-- Blog -->
 
@@ -46,7 +46,7 @@ The documentation is divided into the following sub-sections
 
 **FAQ, Troubleshooting**
 
-* FAQ on [Managing Devices](/7_FAQ/71_managing-devices)
+* FAQ on [Account Management]({{< ref "/7_FAQ/76_account-management.md" >}})
 
 ---
 
