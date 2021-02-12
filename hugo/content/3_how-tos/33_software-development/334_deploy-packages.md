@@ -47,7 +47,7 @@ you want to deploy the component on. Click **Refresh the list of online devices*
    > and device runtime (docker or preinstalled) required by the component in question.
 
 9. If the package has a component with `Is ROS` true, then you will need to select **Routed Network** from the drop-down list
-   1. ​	If there are no **Routed Network** successfully running, you would not be able to deploy the package. Please create a [Routed Network](/build-solutions/sample-walkthroughs/routed-network) first. 
+   1. ​	If there are no **Routed Network** successfully running, you would not be able to deploy the package. Please create a [Routed Network]({{< ref "/3_how-tos/34_networking-and-communication/341_creating-ros-routed-networks" >}}) first. 
    2. ​    If you have a cloud component in your package, you will be able to select only cloud routed networks.
 
 10. If you want to add a dependent deployment, click **Add dependency**, and select a deployment you want to add as a dependency from the drop-down list of deployment IDs.
@@ -77,9 +77,9 @@ The package is successfully deployed when the green colored bar moves from
 
 Furthermore, if dependent deployments are added then each dependency's **STATUS** must read **Running**.
 
-You may analyze the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/) generated while deploying a package.
+You may analyze the corresponding [deployment logs]({{< ref "/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs" >}}) generated while deploying a package.
 
 If a deployment fails, the **DEPLOYMENT PHASE** will read **Failed to start**. You may have to click **Deprovision Deployment**, delete the package, create the package all over again, and try deploying it.
 
 ## Related Links
-* [Deployment Phase and Status](rapyuta.io/deep-dives/development/deployment-phases)
+* [Deployment Error Codes](/6_troubleshoot/611_deployment-error-codes)

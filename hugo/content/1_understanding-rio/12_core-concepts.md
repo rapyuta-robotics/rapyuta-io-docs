@@ -136,7 +136,7 @@ complex robotics solution.
 > For more information about deployments, [click here](
 /3_how-tos/33_software-development/334_deploy-packages)
 
-## Communication and Storage
+## Networks and Storage
  
 ### Networks
 

@@ -23,11 +23,7 @@ popularLinks: []
 guideLinks: []
 introLinks: {}
 ---
-A device may **fail** due to several reasons. The below table
-
-lists all the possible error codes together with their
-
-description and recommended actions.
+A device may **fail** due to several reasons. The below table lists all the possible error codes together with their description and recommended actions.
 
 
 

@@ -51,7 +51,7 @@ hierarchy allows you to override the default parameters(or base parameters)
 or extend existing parameters based on the country of operation.
 
 
-To view an example of how you may leverage configuration hierarchies please refer to the illustrated section on [overriding behavior](resove-configuration-hierarchy/) 
+To view an example of how you may leverage configuration hierarchies please refer to the illustrated section on **Resove Configuration Hierarchy** 
  
 ![example configuration](/images/core-concepts/configurations/example-config.png?classes=border,shadow&width=20pc)
 
@@ -113,7 +113,7 @@ either override or extend the existing ***example/sample.yaml*** file.
 ![file nodes](/images/core-concepts/configurations/parameters-files.png?classes=border,shadow&width=20pc)
 
 
-To view an example of how you may leverage configuration hierarchies please refer to the illustrated section on [overriding behavior](resove-configuration-hierarchy/) 
+To view an example of how you may leverage configuration hierarchies please refer to the illustrated section on [overriding behavior](#overriding-configuration-parameters) 
 
 ## Resolving Configuration Hierarchy
 

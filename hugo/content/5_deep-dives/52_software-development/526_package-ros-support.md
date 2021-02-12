@@ -55,8 +55,8 @@ that are required to be delivered.
 * __Tunable timeouts for ROS services__ - Prevents user code that relies on ROS services from lock-ups (natively ROS services have an infinite timeout) in case of transient network failure. 
 * __Transparent tunable compression__ for topics/services/actions - potentially reduce payload size (up to 80% for sparse messages for e.g. PointCloud)
 * __Transparent 2048-bit encryption for all data__.
-* [Per-deployment](/developer-guide/manage-software-cycle/deployments/) __randomization of connection endpoints, credentials and encryption-keys__
-* Elegant [semantics](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#scoping-auto-prefix-or-namespace-by-self-identity) enabling simple __dynamic multi-robot communication topologies without complex launchfile and namespace hacks__.
+* Per-deployment __randomization of connection endpoints, credentials and encryption-keys__
+* Elegant semantics enabling simple __dynamic multi-robot communication topologies without complex launchfile and namespace hacks__.
 * Built-in features and optimizations to provide robust connectivity over the public internet transparently such as retries, connection-pooling, order reassembly mechanisms. 
 
 {{% notice note %}}
@@ -79,7 +79,7 @@ this is left to the developer.
 
 #### Inbound Interfaces
 {{% notice info %}}
-To learn about composing software using multiple packages please first refer to the [design patterns section](/developer-guide/manage-software-cycle/compose-software/design-patterns/)
+To learn about composing software using multiple packages please first refer to the [design patterns section]({{< ref "/5_deep-dives/52_software-development/525_package-internals.md">}})
 {{% /notice %}}
 While having provider semantics provides flexibility but can potentially lead to a case where a user may deploy a package that depends on a previously deployed one without sufficient knowledge of the internal workings of the parent package. Cross talk between topics/services/actions in such cases can cause unintended hard to debug errors and failure of application code. 
 
@@ -122,7 +122,7 @@ The user may optionally enable transparent compression. The platform relies on a
 ROS has several key pain points when working with multi-robot systems that often need error-prone setups involving specific launch sequences, roslaunch/XML files, and remappings. rapyuta.io ships with special support for multi-robot systems and enforces runtime identities to robots automatically wrap and unwrap for the right agent. 
 
 {{% notice info %}}
-Learn more about [dedicated ROS communication support](/developer-guide/manage-software-cycle/communication-topologies/ros-support/)
+Learn more about [dedicated ROS communication support]({{< ref "/5_deep-dives/53_networking-and-communication/531_ROS-network.md">}})
 {{% /notice %}}
 
 ## Ros Bag Job

@@ -98,7 +98,7 @@ A package deployment can have multiple static routes. However, a single static r
 
 ---
 
-#### Resources
+#### Related Links
 
->  Refer to [billing and usage](/pricing-support/pricing/billing-usage) to understand the limits applied on static routes for different subscription plans.
+>  Refer to [billing and usage]({{< ref "/5_deep-dives/58_account-management/582_billing-usage.md">}}) to understand the limits applied on static routes for different subscription plans.
 

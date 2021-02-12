@@ -21,13 +21,12 @@ The walkthrough gives an overview of how to:
 4. deploy a package on a device
 
 programmatically using
-[rapyuta.io Python SDK](/developer-guide/tooling-automation/python-sdk/) in your
+[rapyuta.io Python SDK]({{< ref "/3_how-tos/35_tooling_and_debugging/357_using-rapyuta-io-python-sdk" >}}) in your
 python application.
 
 
 ## Prerequisites
-1. Read the [developer guide](/developer-guide/)
-   of rapyuta.io
+1. Read the rapyuta.io platform documentation
 2. [Install rapyuta.io SDK](/developer-guide/tooling-automation/python-sdk/#installation)
    in your development environment.
 3. Learn how to obtain:

@@ -52,13 +52,12 @@ The walkthrough gives an overview of how to:
 
 
 programmatically using
-[rapyuta.io Python SDK](/developer-guide/tooling-automation/python-sdk/) in your
-python application.
+[rapyuta.io Python SDK]({{< ref "/3_how-tos/35_tooling_and_debugging/357_using-rapyuta-io-python-sdk">}}) in your python application.
 
 ## Prerequisites
-1. Read the [developer guide](/developer-guide/)
-   of rapyuta.io
-2. [Install rapyuta.io SDK](/developer-guide/tooling-automation/python-sdk/#installation)
+
+1. Go through the rapyuta.io documentation.
+2. [Install rapyuta.io SDK](/3_how-tos/35_tooling_and_debugging/357_using-rapyuta-io-python-sdk)
    in your development environment.
 3. Learn how to obtain:
    1. [authorization token](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#auth-token)

@@ -47,7 +47,7 @@ device with docker runtime and AMD64 architecture available.
 5. Select the **Runtime** as **Device**.
 6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
 Select the **Device** and it’s **IP Interface**. 
-7. Select the [Restart policy](/developer-guide/manage-software-cycle/deployments/#restart-policy).
+7. Select the Restart policy.
 ![goo](/images/tutorials/routed-networks/create-device-routed-network.png?classes=border,shadow&width=40pc)
 8. Click **CONTINUE**.
 
@@ -74,4 +74,4 @@ Follow this walkthrough to [bind routed networks](/developer-guide/manage-softwa
 
 ## Related Links
 
-* [About ROS Routed Network](hugo\content\rapyuta.io\5_deep-dives\Networking-and-communication\ROS-network.md)
+* [About ROS Routed Network]({{< ref "/5_deep-dives\53_Networking-and-communication\531_ROS-network">}})
