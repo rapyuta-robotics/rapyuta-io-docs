@@ -1,4 +1,8 @@
 /* Most of it copied from theme/learn/static/css/theme-red.css */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700&display=swap');
+
+
 :root{
     --MAIN-BG-color: #f6f6f6;
     --MAIN-TEXT-color: #222222; /* Color of text by default */
@@ -99,7 +103,9 @@ b, strong {
 	margin: 1em 0 .6em 0;
 	font-weight: normal;
 	color: white;
-	font-family: 'Merriweather', sans-serif;
+    /* font-family: 'Merriweather', sans-serif; */
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
 	/* text-shadow: 0 -1px 0 rgba(0,0,0,0.4); */
 	position: relative;
     color: #bd212c;
@@ -112,8 +118,11 @@ b, strong {
 	margin: 1.5em 0 .6em 0;
 	padding: 0 0 0 20px;
 	font-weight: normal;
-	color: white;
-	font-family: 'Merriweather', sans-serif;
+    color: white;
+    
+    /* font-family: 'Merriweather', sans-serif; */
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
 	position: relative;
 	font-size: 30px;
@@ -125,7 +134,10 @@ b, strong {
 	padding: 0 0 0 20px;
 	font-weight: normal;
 	color: white;
-	font-family: 'Merriweather', sans-serif;
+    /* font-family: 'Merriweather', sans-serif; */
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.2px;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
 	position: relative;
 	font-size: 24px;
@@ -137,7 +149,9 @@ b, strong {
 	padding: 0 0 0 20px;
 	font-weight: normal;
 	color: white;
-	font-family: 'Merriweather', sans-serif;
+    /* font-family: 'Merriweather', sans-serif; */
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.2px;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
 	position: relative;
 	font-size: 18px;
@@ -148,7 +162,8 @@ b, strong {
   font-size: 16px;
   line-height: 24px;
   margin-bottom: 1rem;
-  font-family: "Open Sans", sans-serif;
+  /* font-family: "Open Sans", sans-serif; */
+  font-family: 'Roboto Slab', serif;
   word-wrap: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
@@ -286,11 +301,11 @@ span.links a {
     flex-direction: row;
 }
 #top-bar #breadcrumbs {
-    line-height: 64px;
+    line-height: 3rem;
     font-size: 14px;
 }
 #top-bar #top-github-link{
-    line-height: 64px;
+    line-height: 3rem;
     width: 75px;
     padding: 0 1rem;
     font-size: 32px;
@@ -298,7 +313,8 @@ span.links a {
 #top-bar #top-pdfbtn-div{
     font-size: 35px;
     /* float: right; */
-    line-height: 64px;
+    width:90px;
+    line-height: 3rem;
 }
 #top-bar #top-fullscreen-div{
     font-size: 35px;
@@ -398,9 +414,12 @@ a:hover {
 
 #body-inner {
     background: #fff;
-    padding: 0.5rem 4rem 3rem 2rem;
+    padding: 0.5rem 4rem 2rem 2rem;
     margin-bottom: 0;
     width:80%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 #logo {
