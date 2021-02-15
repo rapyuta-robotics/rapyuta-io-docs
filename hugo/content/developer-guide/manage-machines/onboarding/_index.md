@@ -23,7 +23,7 @@ To register a new device on rapyuta.io, follow the below steps:
    ![Select ROS version](/images/getting-started/add-new-device/select-ROS-version.png?classes=border,shadow&width=40pc)
    3. If you have selected **Use docker compose as default runtime** option, provide the path to store the ROS bag files on the device in the **Rosbag mount path** field. By default, the path is `/opt/rapyuta/volumes/rosbag`.
    {{% notice note %}}
-After you register a device, you cannot change the mount path to store the ROS bag files. If you want to change the mount path after adding the device, you can re-onboard the device and change the mount path.
+After you onboard a device, you cannot change the mount path to store the ROS bag files. If you want to change the mount path after adding the device, you can re-onboard the device and change the mount path.
    {{% /notice %}}
 
 6. In the **Description** box, enter a brief summary of the device.

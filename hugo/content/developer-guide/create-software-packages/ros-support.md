@@ -140,7 +140,7 @@ Maximum of three jobs can be added to a component.
 ### Creating Ros Bag Jobs
 If you want to record the topics for a component, perform the following procedure.
 
-**Pre-requisite**: Ensure that you have selected the component runtime as cloud or device (device runtime must me docker) while creating a package and **Is ROS Component** is selected during [package creation](/developer-guide/create-software-packages/package-creation-tutorial/#creating-the-package).
+**Pre-requisite**: Ensure that you have selected the component runtime as cloud or device (device runtime must be docker) while creating a package and **Is ROS Component** is selected during [package creation](/developer-guide/create-software-packages/package-creation-tutorial/#creating-the-package).
 
 1. Under the **Components** tab on the **Create New Package** page, click **Add ROS Bag Job**.
 ![add-rosbags](/images/dev-guide/rosbag-jobs/add-rosbag.png?classes=border,shadow&width=20pc)
@@ -183,10 +183,7 @@ For example, you can configure 10 splits and each split can store up to 500 MB (
     <li>**Purge After**: If you want to delete the ROS bag file after it has been successfully uploaded to the rapyuta.io platform, click the toggle button.</li>
     </ul> 
 ![device-rosbags](/images/dev-guide/rosbag-jobs/advanced-rosbags-device.png?classes=border,shadow&width=35pc)
-{{% notice note %}}
 
-The **Upload Rate**, **Rate Units**, and **Purge After** fields are applicable for the components having the runtime as **Device** and **Is ROS Component** is selected.
-{{% /notice %}}
     e. To add the ROS bag job and start recording the defined topics, click **Add**.
 
 {{% notice info %}}
