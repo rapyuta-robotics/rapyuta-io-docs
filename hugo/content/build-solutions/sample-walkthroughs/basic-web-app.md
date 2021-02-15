@@ -56,9 +56,13 @@ follow the below instructions in sequence:
    5. Describe the package in a sentence or two like `Demo package for docker build recipe`.
 4. Click **NEXT**.
 5. In the **Component Name** box, enter a name for the component say `Flask_Application`.
-   {{% notice info %}}
-   The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character. It must not begin with a digit.
-   {{% /notice %}}
+
+{{% notice info %}}
+
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character. It must not begin with a digit.
+
+{{% /notice %}}
+   
 6. Select **Cloud** for **Component Runtime**.
 7. Ensure **Is ROS Component** is *not selected*.
 8. The value of **Replicas to run the component** is set to the default value of *1*

@@ -125,11 +125,11 @@ ROS has several key pain points when working with multi-robot systems that often
 Learn more about [dedicated ROS communication support](/developer-guide/manage-software-cycle/communication-topologies/ros-support/)
 {{% /notice %}}
 
-## Ros Bag Job
+## ROS Bag Job
 A ROS bag is a file format in ROS for storing ROS topic message data. The rapyuta.io platform allows you to record the ROS messages (ROS topics) for ROS enabled components deployed on the cloud. You can stop the recording and download the stored data for further analysis and troubleshooting. You must define the topics that you want to record while configuring the components in a package, or during deployment. If you have defined any ROS bag job during package creation or deployment, you can also add new ROS bag jobs for the same component after deployment.
 
 {{% notice note %}}
-Ros bag job is supported on the components that are deployed on either cloud or the device with docker runtime.</br>
+ROS bag job is supported on the components that are deployed on either cloud or the device with docker runtime.</br>
 
 {{% /notice %}}
 
@@ -140,7 +140,7 @@ Maximum of three jobs can be added to a component.
 ### Creating Ros Bag Jobs
 If you want to record the topics for a component, perform the following procedure.
 
-**Pre-requisite**: Ensure that you have selected the runtime as cloud or device with docker run time while creating a package and **Is ROS Component** is selected during [package creation](/developer-guide/create-software-packages/package-creation-tutorial/#creating-the-package).
+**Pre-requisite**: Ensure that you have selected the component runtime as cloud or device (device runtime must me docker) while creating a package and **Is ROS Component** is selected during [package creation](/developer-guide/create-software-packages/package-creation-tutorial/#creating-the-package).
 
 1. Under the **Components** tab on the **Create New Package** page, click **Add ROS Bag Job**.
 ![add-rosbags](/images/dev-guide/rosbag-jobs/add-rosbag.png?classes=border,shadow&width=20pc)

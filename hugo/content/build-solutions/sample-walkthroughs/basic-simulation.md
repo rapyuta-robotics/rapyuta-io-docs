@@ -107,9 +107,11 @@ You will create two packages in the tutorial.
 	from the drop-down list
 17. In the **Command to run in the docker container** box, enter the command: `roslaunch turtlebot3_gazebo turtlebot3_autorace.launch`
 18. Set **Resource Limit** to **Medium:2 cpu cores, 8 GiB memory**.
+
 {{% notice warning %}}
 For simulation, the resource limit should either be **Medium** or **Large**. Simulation has issues with **Small** resource limits.
 {{% /notice %}}
+
 19. Click **Add Topic** under **Inbound ROS Interfaces** to add the ROS topic a deployment of this package subscribes to for velocity commands. The name of the topic is `/cmd_vel`
 20. Click **CONFIRM PACKAGE CREATION**. 
 

@@ -48,9 +48,13 @@ To create ***led_trigger*** package, follow the steps:
 5. In the **Description** box, enter a summary of the package.
 6. Click **NEXT**.
 7. In the **Component Name** box, enter a name for the component say `led_trigger`
+
 {{% notice info %}}
+
 The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not start with a digit.
+
 {{% /notice %}}
+
 8. Select **Device** as **Component Runtime**.
 9.  Deselect **Is ROS Component** checkbox.
 10. Select **arm32v7** as **Architecture**.
