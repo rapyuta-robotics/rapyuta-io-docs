@@ -142,6 +142,19 @@ The command, ***sleep infinity***, will keep the deployment running and does not
 18. Add a ROS topic by clicking on **Add ROS topic**. The name of the topic is `/cmd_vel`, and its **QoS** is set to **Low**.
 19. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
+## Create a Cloud Routed Network
+A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, skip the following steps.
+
+Perform the following procedure to create a routed network.
+
+1. On the left navigation bar, click **NETWORKS**.
+2. Click **ADD NEW ROUTED NETWORK**.
+3. Enter `cloud_routed_network_1` as the name for the routed network.
+4. Select **ROS Distro**, as   **Kinetic**.
+5. Select the **Runtime** as **Cloud**.
+6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
+![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)
+7. Click **CONTINUE**.
 
 ## Deploy Packages
 You will deploy all the packages created in the previous step.
@@ -153,7 +166,8 @@ You will deploy all the packages created in the previous step.
 3. Click **Deploy Package**.
 4. The name of the deployment is `ROBOT SIMULATION`
 5. Enter the value for **VNC_PASSWORD**.
-6. Click **CREATE DEPLOYMENT** > **Confirm**.
+6. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+7. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the **Details** tab of the newly created deployment. The **ROBOT SIMULATION** is successfully running if the progress bar reaches **Succeeded**, and the status is **Running**.
 
@@ -164,7 +178,7 @@ You will be redirected to the **Details** tab of the newly created deployment. T
 3. Click **Deploy Package**.
 4. The name of the deployment is `KEYBOARD TELEOPERATION`
 5. Select **Teleop Device** to deploy the ***teleop*** component.
-6. Add **ROBOT SIMULATION** as a dependent deployment by clicking **Add dependency**.
+6. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
 7. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You can verify if **KEYBOARD TELEOPERATION** is running successfully by checking if the progress bar reaches **Succeeded** and status is **Running**.

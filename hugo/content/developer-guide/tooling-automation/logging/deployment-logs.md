@@ -30,7 +30,7 @@ The historical deployment logs is displayed, where you can view the log’s time
 its component name and executable name, and its information or message.
 ![Historical logs](/images/core-concepts/logging/deployment-logs/historical-logs/hist-logs.png?classes=border,shadow&width=50pc)
 
-You can use the toggle button to either show or hide the columns of log details related to timestamp, component, or the executables available in the deployment. Also you can use the timezone selector to switch to desired timezone to display timestamps.
+You can use the toggle button to either show or hide the log details related to timestamp, component, or the executables available in the deployment. Also you can use the timezone selector to switch to desired timezone to display timestamps.
 ![Filters for Historical logs](/images/core-concepts/logging/deployment-logs/historical-logs/filter-hist-logs.png?classes=border,shadow&width=50pc)
 
 {{% notice info %}}
@@ -49,6 +49,10 @@ But, ensure the time slice is neither in the past from the start time of a deplo
 logs up to ***seven days*** in the past if a deployment has been running till now.
 
 ![Time Interval](/images/core-concepts/logging/deployment-logs/historical-logs/time-range.png?classes=border,shadow&width=50pc)
+
+The rapyuta.io platform allows you to quickly find logs around a particular log line. To find logs, enable **TIMESTAMP** and hover over the log line's timestamp, and a dialog box appears. Select an appropriate duration (default duration is 5 minutes) in the dialog box and click **Yes**. You can select the duration as 1 minute, 5 minutes, 30 minutes, 1 hour, or 2 hours. 
+![Copy logs](/images/core-concepts/logging/deployment-logs/historical-logs/duration-selector.png?classes=border,shadow&width=50pc)
+
 
 {{% notice info %}}
 The historical logs are available based on the specified timezone. When you want to view the logs according to your local date and time, ensure that you select your local timezone from the **Timezone** drop-down menu.
