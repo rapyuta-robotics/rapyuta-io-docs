@@ -28,7 +28,7 @@ disableSearch = false
   notAlternative = true
 
 [params.algolia]
-  vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
+  vars = ["title", "type", "description", "keywords", "kind", "summary", "section","date", "publishdate", "expirydate", "permalink"]
   params = ["categories", "tags"]
 
 

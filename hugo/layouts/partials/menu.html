@@ -11,7 +11,7 @@
     {{end}}
   </div>
 
-    <div class="highlightable">
+    <div class="highlightable" style="display: flex;flex-direction: column;flex-grow: 1;">
     <ul class="topics">
 
         {{if eq .Site.Params.ordersectionsby "title"}}  
@@ -24,7 +24,7 @@
           {{end}}
         {{end}} 
     </ul>
-
+    <div class="spacer" style="flex-grow: 1;display:flex;" ></div>
     {{ $disableShortcutsTitle := .Site.Params.DisableShortcutsTitle}}
     {{with .Site.Menus.shortcuts}}
       <section id="shortcuts">

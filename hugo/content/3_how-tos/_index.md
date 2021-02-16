@@ -1,7 +1,7 @@
 ---
 title: How To Guides
 intro: Step by step guides to common tasks on the rapyuta.io platform
-weight: 3
+weight: 30
 versions:
   free-pro-team: '*'
   enterprise-server: '*'

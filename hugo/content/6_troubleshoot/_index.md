@@ -2,7 +2,7 @@
 title: "Troubleshooting"
 # shortTitle: "TODO: Change me"
 intro:  "Solutions to common errors and issues along with steps to resolve them."
-weight: 6
+# weight: 
 versions:
   free-pro-team: '*'
   enterprise-server: '*'
@@ -24,3 +24,4 @@ popularLinks: []
 guideLinks: []
 introLinks: {}
 ---
+{{< children >}}
