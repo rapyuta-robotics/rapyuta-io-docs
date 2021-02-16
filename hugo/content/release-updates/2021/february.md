@@ -43,7 +43,7 @@ The rapyuta.io platform allows you to record the ROS messages (ros topics) for R
 #### SDK
 **rapyuta.io Python SDK [0.20.0](/developer-guide/tooling-automation/python-sdk/#installation) released** 
 
-- Added support for ROS Bag APIs for device. 
+- Added SDK support for ROS Bag job on device. 
 
 
   
