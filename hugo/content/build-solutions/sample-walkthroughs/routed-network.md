@@ -70,8 +70,11 @@ Only network not bound to any running deployments can be deleted.
 2. Select the routed network which you want to delete. 
 3. Click on **Delete**.
 4. Confirm on the routed network deletion message.
+
 {{% notice warning %}}
+
 An attempt to deprovision a network that is currently being used will result in an error.
+
 {{% /notice %}}
 
 {{% notice info %}}
