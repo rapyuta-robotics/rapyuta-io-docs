@@ -58,5 +58,5 @@ You can view the Fully Qualified Domain Name (FQDN) of an endpoint on the detail
 
 rapyuta.io injects environment variables corresponding to linked network endpoints when there is a dependent deployment.
 
-> Refer to the section on [Link Injection](/developer-guide/manage-software-cycle/communication-topologies/std-comms/) for more details.
+> Refer to the section on [Link Injection]({{< ref "/5_deep-dives/53_networking-and-communication/532_standard-web-protocol">}}) for more details.
 

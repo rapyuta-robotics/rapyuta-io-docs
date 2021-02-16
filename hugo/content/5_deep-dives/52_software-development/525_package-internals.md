@@ -1,22 +1,36 @@
 ---
-title: "Package: Internals"
-description:
-type: developer-guide
-date: 2019-10-25T12:34:08+05:30
-# pre: "2. "
+title: "Package Internal"
+intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 weight: 525
+versions:
+  free-pro-team: '*'
+  enterprise-server: '*'
+
+layout: false
+permissions: 'rapyuta.io'
+
+showMiniToc: true
+miniTocMaxHeadingLevel: 4
+
+allowTitleToDifferFromFilename: false
+mapTopic: false
+hidden: false
+
+
+redirect_from: []
+gettingStartedLinks : []
+popularLinks: []
+guideLinks: []
+introLinks: {}
 ---
+  
 ### What is a package ?
+
 A package is a fundamental rapyuta.io resource that represents a declaration of your application. A package is the smallest unit of deployment in rapyuta.io. It can be deployed either on a device or the cloud or both.
 
 A package encapsulates information about what strategy is used to build it, its compatibility and runtime requirements, network endpoints and ROS interfaces it exposes, and any configuration information it may require.
 
 Each package consists of components, which are made up of individual executables. 
-
-{{% notice note %}}
- **Advanced users** of rapyuta.io should note a package internally supports multiple **plans**, each which in turn contains the necessary components.
-  This feature is intended to facilitate complex usecases that require the developer to maintain the user to represent a slightly different configuration of a software package. *For more details <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.*
-{{% /notice %}}
 
 ### Executables
 Executables within a component are always executed on the same physical/virtual compute node and share a ROS Master (in the case of ROS applications).
@@ -42,7 +56,7 @@ bash shell command for the docker container.
 
 
 {{% notice info %}}
-The maximum size of the docker image is 10GB for cloud deployment. If your docker image is private, then you will need to [create a docker secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-pull-secret) and provide it in credentials.
+The maximum size of the docker image is 10GB for cloud deployment. If your docker image is private, then you will need to [create a docker secret]({{< ref "/3_how-tos/31_account-management/314_authorize-access-to-private-docker-registry-using-secrets.md" >}}) and provide it in credentials.
 {{% /notice %}}
 
 
@@ -52,16 +66,16 @@ A simple bash shell command is an executable. If you choose the **Executable Typ
 the command will execute.
 
 ### Components
+
 A component is a set of executables. All executables are deployed in unison on
-the desired [*Component Runtime*](/developer-guide/create-software-packages/package-internals/#component-runtime).
-All executables of a component communicate via Inter-Process Communication (IPC). An executable listening on a port is accessible to its sibling executables via localhost.
+the desired [Component Runtime]({{< ref "/5_deep-dives/51_managing-devices/511_device-runtime.md" >}}). All executables of a component communicate via Inter-Process Communication (IPC. An executable listening on a port is accessible to its sibling executables via localhost.
 
 {{% notice info %}}
-The number of volumes attached to a component must be less than or equal to the sum of all the cpu cores of all executables of a component.
-{{% /notice %}}
 
-Mathematically,    
+The number of volumes attached to a component must be less than or equal to the sum of all the cpu cores of all executables of a component. Mathematically,    
 number of volumes attached to a component **<=** [floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions)(sum of all the cpu cores of all executables in the component)
+
+{{%/notice%}}
 
 Suppose a component has two executables, **execA** and **execB**. The executables may have the following cpu core values:
 
@@ -79,18 +93,15 @@ A component of a package may be deployed either on the **cloud** or on a **devic
 When deployed on the cloud, the component has cloud runtime. Whereas, the component deployed on a device has device runtime.
 
 ### Configuration Parameters
+
 {{% notice info %}}
 configuration parameters operate at the level of component and apply to executables in the component only
 {{% /notice %}}
 
-In line with the 12-Factor application philosophy, rapyuta.io allows the package author to pass configuration as environment variables that may be consumed by executables running within a component.
-
-These are mapped to environment variables made available to your code. They are modeled as key-value pairs (where both the key and the value are strings) accessible by the user’s code using standard environment variable look-up techniques provided by the programming language.
-
-The package author can choose to provide default values. These values may be overridden by the user while deploying the package.
+In line with the 12-Factor application philosophy, rapyuta.io allows the package author to pass configuration as environment variables that may be consumed by executables running within a component. These are mapped to environment variables made available to your code. They are modeled as key-value pairs (where both the key and the value are strings) accessible by the user’s code using standard environment variable look-up techniques provided by the programming language.   The package author can choose to provide default values. These values may be overridden by the user while deploying the package.
 
 {{% notice note %}}
-A **package** may choose to declare environment variables as exposed from within its constituent components allowing dependent deployments to receive these values during deployment binding phase. Refer to the section on [binding](/developer-guide/manage-software-cycle/compose-software/binding/) for more details
+A **package** may choose to declare environment variables as exposed from within its constituent components allowing dependent deployments to receive these values during deployment binding phase.
 {{% /notice %}}
 
 {{% notice note %}}
@@ -146,19 +157,15 @@ echo $SAMPLE_INTERFACE_POINT_PORT
 You can restrict access to a network endpoint by ensuring that **Exposed externally** option is not selected.
 
 The only protocol available is the **TCP** for which the value of the **Port** field is set to ***443*** by default. However, you can change the port's value.
-![internal endpoint](/images/core-concepts/network-endpoints/internal-endpoint.png?classes=border,shadow&width=40pc)
+![internal endpoint](/images/core-concepts/packages/network-endpoints/internal-endpoint.png?classes=border,shadow&width=40pc)
 
 You can also use port range for an endpoint by selecting **Port Range** toggle. A Port Range on an endpoint will allow you to open multiple ports on a single DNS hostname.
-{{% notice info %}}
-By default the Target Port is same as the Port.
-{{% /notice %}}
-{{% notice info %}}
-A maximum 50 ports are allowed for an endpoint.
-{{% /notice %}}
-{{% notice info %}}
-Allowed format is comma separated Port Ranges. Each Port Range is either a single port or a range of port mentioning the from port and to port separated by a hyphen (-). Examples: 5000 or 443-445 or 3446-3449,3500,3510-3530
-{{% /notice %}}
-![internal endpoint port range](/images/core-concepts/network-endpoints/internal-endpoint-port-range.png?classes=border,shadow&width=40pc)
+
+* By default the Target Port is same as the Port.
+
+* A maximum 50 ports are allowed for an endpoint. Allowed format is comma separated Port Ranges. Each Port Range is either a single port or a range of port mentioning the from port and to port separated by a hyphen (-). Examples: 5000 or 443-445 or 3446-3449,3500,3510-3530
+![internal endpoint port range](/images/core-concepts/packages/network-endpoints/internal-endpoint-port-range.png?classes=border,shadow&width=40pc)
+
 #### Exposing Endpoints Externally
 Select **Exposed externally** checkbox to expose a network endpoint publicly over the internet.
 
@@ -169,14 +176,14 @@ The supported protocols at their respective ports (cannot be modified) are:
 * Secure TCP (TLS/SNI) exposed on port ***443***
 
 The **Secure TCP (TLS/SNI)** protocol uses [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication) headers for routing the request to the desired backend.
-![external endpoint](/images/core-concepts/network-endpoints/external-endpoint.png?classes=border,shadow&width=40pc)
+![external endpoint](/images/core-concepts/packages/network-endpoints/external-endpoint.png?classes=border,shadow&width=40pc)
 
 rapyuta.io generates a random URL/route that is exposed on the public internet for the required endpoint when the deployment is created. You can view the Fully Qualified Domain Name (FQDN) of an endpoint on the details page of deployments.
 
 ![FQDN of external endpoint](/images/tutorials/hello-world/network-endpoint.png?classes=border,shadow&width=50pc)
 
 {{% notice info %}}
-rapyuta.io injects environment variables corresponding to linked network endpoints during deployment binding phase. Refer to the section on [Link Injection](/developer-guide/manage-software-cycle/communication-topologies/std-comms/) for more details.
+rapyuta.io injects environment variables corresponding to linked network endpoints during deployment binding phase. Refer to the section on [Link Injection](/5_deep-dives/53_networking-and-communication/532_standard-web-protocol) for more details.
 {{% /notice %}}
 
 #### Exposing Endpoints with Static URL
@@ -222,7 +229,7 @@ A package deployment can have multiple static routes. However, a single static r
 A static route is ***globally unique*** across the rapyuta.io platform.
 
 {{% notice note %}}
-Refer to [billing and usage](/pricing-support/pricing/billing-usage) to understand the limits applied on static routes for different subscription plans.
+Refer to [billing and usage]({{< ref "/5_deep-dives/58_account-management/582_billing-usage" >}}) to understand the limits applied on static routes for different subscription plans.
 {{% /notice %}}
 
 

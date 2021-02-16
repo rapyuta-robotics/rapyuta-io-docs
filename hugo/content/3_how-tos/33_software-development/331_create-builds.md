@@ -41,7 +41,7 @@ To create a build using katkin receipe, do the following.
 
     c. In the **Repository (URL)** field, enter the URL of the git repository from which you want to create a build. For example, `https://github.com/rapyuta/io_tutorials`.
 
-    d. Optionally, if the git repository is a private git, then click the **Private Git** radio button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret).
+    d. Optionally, if the git repository is a private git, then click the **Private Git** radio button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret]({{< ref "/3_how-tos/31_account-management/313_authorize-access-to-private-git-repositories-using-secrets.md">}}).
 
     e. Optionally, you can specify the **Context Directory** field by entering the path of the directory where you want to create the build.
 
@@ -68,7 +68,7 @@ To create a build using katkin receipe, do the following.
   ​    <li>Melodic</li>
   ​    </ul>
 
-    d. Optionally, to add ROS parameter to the build, in the **CATKIN BUILD PARAMETERS** area, click **Add Parameter**. For more information about the Catkin parameters, [click here.](/developer-guide/create-software-packages/builds/ros-support/)   [TODO: Deep Dive > Builds: Catkin Recipe]
+    d. Optionally, to add ROS parameter to the build, in the **CATKIN BUILD PARAMETERS** area, click **Add Parameter**.
 
     e. Click **Next**.
 
@@ -80,13 +80,13 @@ To create a build using katkin receipe, do the following.
 
     b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. For example, ```docker.io/your-username/repo-name.``` 
 
-    c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-secret).
+    c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret]({{< ref "/3_how-tos/31_account-management/314_authorize-access-to-private-docker-registry-using-secrets.md">}}).
 
     d. Click **Next**.
 
   ![goo](/images/core-concepts/builds/build-creation/catkin-push-secret.png?classes=border,shadow&width=30pc)
 
-  The build is created. To view the details of the build, [click here](/developer-guide/create-software-packages/builds/build-creation/#viewing-build-details).
+  The build is created.
 
   ## Creating Build by Docker recipe 
 
@@ -104,7 +104,7 @@ To create a build using katkin receipe, do the following.
 
     c. In the **Repository (URL)** field, enter the URL of the git repository from which you want to create a build. For example, `https://github.com/rapyuta/io_tutorials`.
 
-    d. Optionally, if the git repository is a private git, then click the **Private Git** toggle button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/developer-guide/create-software-packages/secrets/sourcecode-repository/#creating-source-secret).** check link
+    d. Optionally, if the git repository is a private git, then click the **Private Git** toggle button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret]({{< ref "/3_how-tos/31_account-management/313_authorize-access-to-private-git-repositories-using-secrets.md">}}).
 
     e. Optionally, you can specify the **Context Directory** field by entering the path of the directory where you want to create the build.
 
@@ -131,22 +131,16 @@ To create a build using katkin receipe, do the following.
 
   5. The **rapyuta.io** platform allows you to push and save the build image to an external docker registry or to pull an image from a private repository. To push or pull a docker image file, do the following.
 
-    a. Under the **Docker Secret** tab, click the **Docker Push Secret**  toggle button.
-    b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. ​For example, *docker.io/your-username/repo-name*. 
+  a. Under the **Docker Secret** tab, click the **Docker Push Secret**  toggle button.
+  b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. ​For example, docker.io/your-username/repo-name. 
 
-    c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-secret).
+  c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret]({{< ref "/3_how-tos/31_account-management/314_authorize-access-to-private-docker-registry-using-secrets.md">}}).
 
-    d. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** toggle button and select the secret for the repository. If you have not created any secret for the repository, [create a secret](/developer-guide/create-software-packages/secrets/docker-registry/#creating-a-docker-secret).
+  d. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** toggle button and select the secret for the repository. If you have not created any secret for the repository, [create a secret]({{< ref "/3_how-tos/31_account-management/314_authorize-access-to-private-docker-registry-using-secrets.md">}}).
 
-    {{%notice note%}}
-**Docker Pull Secret** field is only available if you are creating the build by docker recipe.
-{{%/notice%}}
-
-    e. Click **Next**.
-
+  e. Click **Next**.
   ![goo](/images/core-concepts/builds/build-creation/docker-push-secret.png?classes=border,shadow&width=30pc)
 
- To view the details of the build, [click here](/developer-guide/create-software-packages/builds/build-creation/#viewing-build-details).
 
   * You can see the progress of the build, by clicking the build created in the **Builds** page. 
 
@@ -171,7 +165,7 @@ To create a build using katkin receipe, do the following.
 |**Repository**| Provides the repository from which the build has been created.
 |**Action**| Allows you to [delete](/developer-guide/create-software-packages/builds/build-creation/#deleting-the-build), [trigger](/developer-guide/create-software-packages/builds/trigger-rollback/), or [clone](/developer-guide/create-software-packages/builds/build-cloning/)  a build. 
 
-1. To view the details of a particular build, click the build. The following image is displayed.
+2. To view the details of a particular build, click the build. The following image is displayed.
 
   ![goo](/images/core-concepts/builds/build-creation/build-detail-action.png?classes=border,shadow&width=25pc)
 
@@ -179,10 +173,10 @@ To create a build using katkin receipe, do the following.
   The **Build Details** page allows you to do the following.</br>
 
 
-  * Click [Delete](#deleting-the-build) to delete the build. 
+  * Click **Delete** to delete the build. 
   * Click [Trigger](/5_deep-dives/52_software-development/522_trigger-and-rollback-builds) to trigger a build. 
-  * Click [Clone](/5_deep-dives/52_software-development/521_cloning-builds) to clone a build within the same or to different projects.
-  * Click **Show More** to view the details of the build and view the [build log](/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs).
+  * Click [Clone]({{< ref "/5_deep-dives/52_software-development/521_cloning-builds" >}}) to clone a build within the same or to different projects.
+  * Click **Show More** to view the details of the build and view the [build log]({{< ref "/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs" >}}).
 
   After clicking **Show More**,  the following image is displayed.
 

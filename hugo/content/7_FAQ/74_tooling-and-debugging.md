@@ -26,11 +26,15 @@ introLinks: {}
 ---
 
 
-## How can I upload logs from device to cloud?
+#### Q. How can I upload logs from device to cloud?
 
-Go to device's **Manage** tab and you can upload logs from a device. For detailed procedure, [click here](/3_how-tos/35_tooling_and_debugging/352_upload-files-from-device/)
+> {{%expand "Answer" %}}
+Go to device's **Manage** tab and you can upload logs from a device. For detailed procedure, [click here]({{< ref "/3_how-tos/35_tooling_and_debugging/352_upload-files-from-device">}})
+{{%/expand%}}
 
-## How can I play RosBag file from the platform?
+#### Q. How can I play RosBag file from the platform?
 
-** Need info
+>{{%expand "Answer" %}}
+You can download from the ROS bag files from the rapyuta.io platform and save them into your local machine. From your local machine, you can play the files.
+{{%/expand %}}
 

@@ -31,8 +31,6 @@ rapyuta.io is a platform that enables robotics solution development by providing
 
 rapyuta.io is a platform-as-a-service providing managed cloud services that solve technical and production challenges of building, provisioning, running, and iterating on distributed robotic applications.
 
-
-
 It enables developers to develop robot enabled solutions that can be more complex, encompass a variety of robots, scale further and operate in multiple geographic locations.
 
 
@@ -43,7 +41,7 @@ It enables developers to develop robot enabled solutions that can be more comple
 
 
 
-Get started with a [quick walkthrough](/quick-walkthrough/). 
+Get started with a [quick walkthrough](/2_getting-started/23_turtlesim_on_cloud). 
 
 
 

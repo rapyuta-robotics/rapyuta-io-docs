@@ -45,10 +45,6 @@ Ubuntu(16.04 and 18.04) by default resolves the hostname to localhost. If you do
 Ensure you install **ros-kinetic-ros-base**, or **ros-melodic-ros-base**, or above it.
 {{% /notice %}}
 
-{{% notice info %}}
-Read about the device [onboarding process](/developer-guide/manage-machines/onboarding/), which consists of registering, setting up and viewing a device on rapyuta.io
-{{% /notice %}}
-
 ## Register a New Device
 To register a new device on rapyuta.io, follow the below steps:
 
@@ -126,7 +122,7 @@ will have monitoring package installed on them.
 
 
 
-In case you face issues on-boarding the device. Please refer to the [section on failure codes](/developer-guide/manage-machines/onboarding/setup-device/failure-codes/) to help you troubleshoot.
+In case you face issues on-boarding the device. Please refer to the [section on failure codes]({{< ref "/6_troubleshoot/610_device-onboarding-failure-codes.md" >}}) to help you troubleshoot.
 
 
 
@@ -140,5 +136,5 @@ device's name, which indicates that the device is online.
 
 
 ## Related Links
-* [About Devices](/1_understanding-rio/12_core-concepts?#devices)
+* [About Devices](/1_understanding-rio/12_core-concepts/#devices)
 * [About Docker Runtime](/5_deep-dives/51_managing-devices/511_device-runtime/#dockercompose-runtime-for-device)

@@ -1,12 +1,29 @@
 ---
-title: "Builds: Clone"
-description:
-type: developer-guide
-date: 2020-12-25T12:39:12+05:30
-# pre: "b. "
+title: "Cloning a Build"
+intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 weight: 521
-draft: true
+versions:
+  free-pro-team: '*'
+  enterprise-server: '*'
+
+layout: false
+permissions: 'rapyuta.io'
+
+showMiniToc: true
+miniTocMaxHeadingLevel: 4
+
+allowTitleToDifferFromFilename: false
+mapTopic: false
+hidden: false
+
+
+redirect_from: []
+gettingStartedLinks : []
+popularLinks: []
+guideLinks: []
+introLinks: {}
 ---
+  
 
 The rapyuta.io platform allows you to clone a build within the same or different project and reduces the time and effort required to create a build from scratch.
 

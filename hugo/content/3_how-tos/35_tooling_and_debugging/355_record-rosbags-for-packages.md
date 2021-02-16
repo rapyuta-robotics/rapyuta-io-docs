@@ -25,7 +25,7 @@ If you want to record the topics for any ROS component of a package, you can fol
 
 ### Adding Ros Bag Jobs
 
-> **Pre-requisite**: Ensure that you have selected the runtime as cloud while creating a package and **Is ROS Component** is selected during [package creation](/developer-guide/create-software-packages/package-creation-tutorial/#creating-the-package).
+> **Pre-requisite**: Ensure that you have selected the runtime as cloud while creating a package and **Is ROS Component** is selected during [package creation]({{< ref "/3_how-tos/33_software-development/333_create-packages.md" >}}).
 
 1. Under the **Components** tab on the **Create New Package** page, click **Add ROS Bag Job**.
 ![add-rosbags](/images/dev-guide/rosbag-jobs/add-rosbag.png?classes=border,shadow&width=20pc)

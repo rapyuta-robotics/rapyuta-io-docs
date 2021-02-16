@@ -45,7 +45,7 @@ To preserve data files saved on the file server, deploy a persistent volume and 
 ## Adding Storage to a Deployment
 You can add the storage package as a dependent deployment. To add storage to a deployment, do the following.
 
-1. Deploy the package where you want to add the storage package as a dependent deploymen. For more information, [click here](/3_how-tos/33_software-development/334_deploy-packages)adding-volume.png
+1. Deploy the package where you want to add the storage package as a dependent deploymen. For more information, [click here](/3_how-tos/33_software-development/334_deploy-packages).
 
 2. On the deployment page, click **Add Volume** and do the following.
 
@@ -58,5 +58,5 @@ You can add the storage package as a dependent deployment. To add storage to a d
 
 
 ## Related Links
-* [About Persistent Storage](rapyuta.io/1_understanding-rio/core-concepts/communication-and-storage)
-* [Deploying a Package](rapyuta.io/how-tos-software-development/deploy-packages)
+* [About Persistent Storage](/1_understanding-rio/12_core-concepts/#storage)
+* [Deploying a Package](/3_how-tos/33_software-development/334_deploy-packages)

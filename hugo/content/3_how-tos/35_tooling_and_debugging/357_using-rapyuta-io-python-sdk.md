@@ -118,18 +118,15 @@ If you are looking for more detailed information about any class in the SDK, fee
 free to consult the [full SDK reference](https://sdkdocs.apps.rapyuta.io/).
 
 
-
-
-## Related Links
-
 {{% notice info %}}
 
-Before walking through the examples, ensure you [obtain the auth token, project ID, device ID, package ID and plan ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/).
+Before walking through the examples, ensure you [obtain the auth token, project ID, device ID, package ID and plan ID.
 
 {{% /notice %}}
 
+## Related Links
 
-1. [Tutorial : Python SDK : Publisher Subsciber](/developer-guide/tooling-automation/python-sdk/sample-walkthroughs/basic-pubsub/)
+ [Tutorial : Python SDK : Publisher Subsciber]({{< ref "/4_tutorials/42_advanced/421_ros-pub-sub-with-sdk.md">}})
 
 <!-- 2. [Tutorial : Deployment Composition](/developer-guide/tooling-automation/python-sdk/sample-walkthroughs/deployment-composition/) -->
 

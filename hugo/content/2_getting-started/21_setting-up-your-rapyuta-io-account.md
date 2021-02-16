@@ -33,7 +33,7 @@ Perform the following procedure to set up your rapyuta.io account.
 
 1. On a web browser, type *rapyuta.io* and press **Enter**.
 2. Click sign-up and do the following.
-  1. From the **Plan** drop-down, select either **Community** or **Professional** as per your usage. For more information about plan details, [click here](/5_deep-dives/58_plans-and-billing/581_plans-and-billing/)  
+  1. From the **Plan** drop-down, select either **Community** or **Professional** as per your usage. For more information about plan details, [click here]({{< ref "/5_deep-dives/58_account-management/581_plans-and-billing.md">}})
   2. In the **Name**, **Email**, **Password** and **Confirm Password** fields, enter your details in the respective fields.
 3. Click **I am Not a Robot** and follow the instruction for your verification.
 4. Click **Create an Account**

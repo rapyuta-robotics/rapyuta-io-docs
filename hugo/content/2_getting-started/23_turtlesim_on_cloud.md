@@ -147,5 +147,8 @@ Explore Deployment
 
 - Explore notebooks. 
 
+## Tutorial Video
+[Running a Turtlesim on Cloud](https://youtu.be/vbb_O2m_c7M)
+{{< youtube id="vbb_O2m_c7M" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}
 
 
