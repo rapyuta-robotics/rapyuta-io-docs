@@ -31,6 +31,21 @@ are significant updates in this release that we hope you will like.
 
 - If a user makes two deployments on the device connected to same routed network and deprovision the first deployment, the second deployment gives DEP_E314 error. The issue is fixed.
 
+## February 17
+Welcome to the February 17, 2021 release of the rapyuta.io platform. There
+are significant updates in this release that we hope you will like.
+
+#### Features
+* **ROS Bag Job on Device**
+
+The rapyuta.io platform allows you to record the ROS messages (ros topics) for ROS enabled components deployed on the device with docker runtime. You can stop the recording and download the stored data for further analysis and troubleshooting.  For more information, [click here](/developer-guide/create-software-packages/ros-support/#ros-bag-job).
+
+#### SDK
+**rapyuta.io Python SDK [0.20.0](/developer-guide/tooling-automation/python-sdk/#installation) released** 
+
+- Added support for ROS Bag APIs for device. 
+
+
   
 
 
