@@ -210,3 +210,7 @@ The **listener-listenerExecutable** will be streaming */listener I heard hello_w
 while **talker-talkerExecutable** will be publishing *hello_world* logs.
 
 ![ROS Publisher logs](/images/tutorials/docker-pub-sub/talker-logs.png?classes=border,shadow&width=50pc)
+
+## Tutorial Video
+[Basic ROS publisher and subscriber](https://youtu.be/HKZCdqEUNOg)
+{{< youtube id="HKZCdqEUNOg" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}
