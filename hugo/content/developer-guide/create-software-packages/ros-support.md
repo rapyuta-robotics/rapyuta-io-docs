@@ -125,11 +125,11 @@ ROS has several key pain points when working with multi-robot systems that often
 Learn more about [dedicated ROS communication support](/developer-guide/manage-software-cycle/communication-topologies/ros-support/)
 {{% /notice %}}
 
-## Ros Bag Job
+## ROS Bag Job
 A ROS bag is a file format in ROS for storing ROS topic message data. The rapyuta.io platform allows you to record the ROS messages (ROS topics) for ROS enabled components deployed on the cloud. You can stop the recording and download the stored data for further analysis and troubleshooting. You must define the topics that you want to record while configuring the components in a package, or during deployment. If you have defined any ROS bag job during package creation or deployment, you can also add new ROS bag jobs for the same component after deployment.
 
 {{% notice note %}}
-Ros bag job is not supported on the components that are deployed on the device.</br>
+ROS bag job is supported on the components that are deployed on either cloud or the device with docker runtime.</br>
 
 {{% /notice %}}
 
@@ -140,7 +140,7 @@ Maximum of three jobs can be added to a component.
 ### Creating Ros Bag Jobs
 If you want to record the topics for a component, perform the following procedure.
 
-**Pre-requisite**: Ensure that you have selected the runtime as cloud while creating a package and **Is ROS Component** is selected during [package creation](/developer-guide/create-software-packages/package-creation-tutorial/#creating-the-package).
+**Pre-requisite**: Ensure that you have selected the component runtime as cloud or device (device runtime must be docker) while creating a package and **Is ROS Component** is selected during [package creation](/developer-guide/create-software-packages/package-creation-tutorial/#creating-the-package).
 
 1. Under the **Components** tab on the **Create New Package** page, click **Add ROS Bag Job**.
 ![add-rosbags](/images/dev-guide/rosbag-jobs/add-rosbag.png?classes=border,shadow&width=20pc)
@@ -176,6 +176,14 @@ Each split size must be more than 10 MB and less than 1024 MB or 1GB.
 Maximum 10 splits are allowed with the split size of more than 10 MB and less than 1 GB. However, the disk storage for the ROS bag file can not go beyond 5120 MB (5 GB).</br>
 For example, you can configure 10 splits and each split can store up to 500 MB (10X500 MB=5 GB)  of recorded data or you configure 5 splits and each split can store up to 1024 MB (5x1024 MB=5 GB)  of recorded data. After the message recording reaches the maximum allowed splits, the older splits are deleted to maintain the specified memory limit. 
 {{% /notice %}}
+    e. Additionally, if you are creating a ROS bag job for a component that will be deployed on a device, you can specify the following parameters.
+    <ul>
+    <li>**Upload Rate**: Specify the upload rate for the ROS bag file to be uploaded in the rapyuta.io platform. </li>
+    <li>**Rate Units**: Specify the unit for the upload rate from the drop-down menu. You can select **Bytes/s**, **KB/s**, or**MB/s**.  </li>
+    <li>**Purge After**: If you want to delete the ROS bag file after it has been successfully uploaded to the rapyuta.io platform, click the toggle button.</li>
+    </ul> 
+![device-rosbags](/images/dev-guide/rosbag-jobs/advanced-rosbags-device.png?classes=border,shadow&width=35pc)
+
     e. To add the ROS bag job and start recording the defined topics, click **Add**.
 
 {{% notice info %}}
