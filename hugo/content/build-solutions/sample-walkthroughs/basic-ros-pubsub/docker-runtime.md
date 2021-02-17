@@ -24,12 +24,14 @@ It also shows how to use dockercompose runtime on a device.
 	with an internet connection.
 	2. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is installed on the computer.
 	3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation) is installed on the device.
+
 {{% notice note %}}
 If the device has [ROS Melodic Morenia](http://wiki.ros.org/melodic)
 installed on it, replace ***Kinetic*** with ***Melodic*** in all places
 where a specific version of ROS is asked for. The tutorial should still
 work the same.
 {{% /notice %}}
+
 1. You should be familiar with the below tools:
 	1. [Git](https://git-scm.com/doc)
 	2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
