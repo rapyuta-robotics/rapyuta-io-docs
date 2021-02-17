@@ -1,3 +1,4 @@
+{{ partial "search.html" . }}
 <nav id="sidebar" class="{{if $.Site.Params.showVisitedLinks }}showVisitedLinks{{end}}">
 
 {{ $currentNode := . }}
@@ -7,7 +8,16 @@
       {{ partial "logo.html" . }}
     </div>
     {{if not .Site.Params.disableSearch}}
-        {{ partial "search.html" . }}
+        <div class="searchbox">
+          <a href="#">
+                      <i id="search-icon" class="fa fa-search icon-search"></i>
+                    
+                      <div id="search-box" style="height:2rem;" onclick="$('#search-modal').toggle();$('.animated-search-box').focus()">
+              <input readonly/>
+            </div>
+          </a>
+      </div>
+      
     {{end}}
   </div>
 
