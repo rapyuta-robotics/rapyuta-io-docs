@@ -184,7 +184,7 @@ For example, you can configure 10 splits and each split can store up to 500 MB (
     </ul> 
 ![device-rosbags](/images/dev-guide/rosbag-jobs/advanced-rosbags-device.png?classes=border,shadow&width=35pc)
 
-    e. To add the ROS bag job and start recording the defined topics, click **Add**.
+f. To add the ROS bag job and start recording the defined topics, click **Add**.
 
 {{% notice info %}}
 
