@@ -1,6 +1,7 @@
 ---
 title: "Getting Started"
 # shortTitle: ""
+type: list
 intro:  "A quick start for your rapyuta.io account. Setup a ROS turtlesim to run on cloud and control it using a simple webapp"
 weight: 20
 versions:

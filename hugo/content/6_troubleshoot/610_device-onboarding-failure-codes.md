@@ -1,27 +1,24 @@
 ---
-title: "Device Error Codes"
+title: Device Error Codes
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 weight: 611
 versions:
   free-pro-team: '*'
   enterprise-server: '*'
-
 layout: false
-permissions: 'rapyuta.io'
-
+permissions: rapyuta.io
 showMiniToc: true
 miniTocMaxHeadingLevel: 4
-
 allowTitleToDifferFromFilename: false
 mapTopic: false
 hidden: false
-
-
 redirect_from: []
-gettingStartedLinks : []
+gettingStartedLinks: []
 popularLinks: []
 guideLinks: []
 introLinks: {}
+tags:
+  - Troubleshoot
 ---
 A device may **fail** due to several reasons. The below table lists all the possible error codes together with their description and recommended actions.
 

@@ -6,6 +6,8 @@ date: 2019-10-24T13:46:19+05:30
 # pre: "2. "
 weight: 611
 draft: true
+tags:
+    - Tutorials
 ---
 
 ## Learning Objective

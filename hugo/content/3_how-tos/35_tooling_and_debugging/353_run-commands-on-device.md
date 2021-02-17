@@ -20,6 +20,8 @@ gettingStartedLinks: []
 popularLinks: []
 guideLinks: []
 introLinks: {}
+tags:
+  - How to
 ---
 //UI : Manage > Terminal
 

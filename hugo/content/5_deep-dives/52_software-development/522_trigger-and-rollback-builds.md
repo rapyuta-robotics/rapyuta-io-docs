@@ -5,6 +5,8 @@ type: developer-guide
 date: 2019-10-25T12:39:12+05:30
 # pre: "c. "
 weight: 522
+tags:
+    - Deep Dive
 ---
 As a developer you may want to trigger a new build or rollback to a previous build generation. 
 The rapyuta.io **BUILDS** allow you to do that.

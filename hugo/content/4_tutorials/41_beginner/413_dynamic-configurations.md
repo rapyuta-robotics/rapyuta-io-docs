@@ -5,6 +5,8 @@ type: build-solutions
 date: 2019-10-24T13:47:57+05:30
 # pre: "7. "
 weight: 413
+tags:
+    - Tutorials
 ---
 The *Publisher for Configured Devices* is a ROS package that will be deployed on a device, which is configured based on a set of parameters like *name*, *location*, *velocity*, etc.
 

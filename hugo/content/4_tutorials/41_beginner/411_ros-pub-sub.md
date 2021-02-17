@@ -1,10 +1,11 @@
 ---
-title: "Ros Publisher Subsciber"
-description:
+title: Ros Publisher Subsciber
+description: null
 type: build-solutions
-date: 2019-10-24T13:47:13+05:30
-# pre: "b. "
+date: 2019-10-24T08:17:13.000Z
 weight: 411
+tags:
+    - Tutorials
 ---
 A _ROS publisher_ is part of a ROS package. It is a public git
 repository, which is built into a running docker container on the

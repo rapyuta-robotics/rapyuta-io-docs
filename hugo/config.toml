@@ -15,6 +15,10 @@ disableSearch = false
     changefreq = "monthly"
     priority = 1
 
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
 [params]
     themeVariant = "rio"
     author = "Rapyuta Robotics"
@@ -28,7 +32,7 @@ disableSearch = false
   notAlternative = true
 
 [params.algolia]
-  vars = ["title", "type", "description", "keywords", "kind", "summary", "section","date", "publishdate", "expirydate", "permalink"]
+  vars = ["title", "type", "description","content", "url", "keywords", "kind", "summary", "section","date", "publishdate", "expirydate", "permalink"]
   params = ["categories", "tags"]
 
 

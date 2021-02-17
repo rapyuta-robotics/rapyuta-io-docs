@@ -22,6 +22,8 @@ gettingStartedLinks : []
 popularLinks: []
 guideLinks: []
 introLinks: {}
+tags:
+  - How to
 ---
 A package is a fundamental rapyuta.io resource that represents a declaration of your application. It is the smallest unit of deployment in rapyuta.io, and it can be deployed either on a device or the cloud or both.
 

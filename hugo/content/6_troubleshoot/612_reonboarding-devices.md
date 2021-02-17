@@ -22,6 +22,8 @@ gettingStartedLinks : []
 popularLinks: []
 guideLinks: []
 introLinks: {}
+tags:
+  - Troubleshoot
 ---
 
 Do the following to re-onboard the device.

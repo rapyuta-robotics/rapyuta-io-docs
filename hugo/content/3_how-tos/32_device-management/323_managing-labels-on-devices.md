@@ -23,6 +23,8 @@ gettingStartedLinks : []
 popularLinks: []
 guideLinks: []
 introLinks: {}
+tags:
+  - How to
 ---
 
 Labels are key-value pairs that help you associate configuration parameters with

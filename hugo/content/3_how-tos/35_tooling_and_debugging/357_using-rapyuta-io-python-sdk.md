@@ -18,6 +18,8 @@ gettingStartedLinks: []
 popularLinks: []
 guideLinks: []
 introLinks: {}
+tags:
+  - How to
 ---
 
 rapyuta.io Python SDK enables you to provision packages

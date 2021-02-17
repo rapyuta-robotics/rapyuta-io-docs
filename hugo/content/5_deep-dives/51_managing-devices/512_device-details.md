@@ -5,6 +5,8 @@ type: developer-guide
 date: 2019-10-24T11:47:55+05:30
 # pre: "b. "
 weight: 512
+tags:
+    - Deep Dive
 ---
 rapyuta.io assigns a unique identifier, ***UUID***, to the device.
 

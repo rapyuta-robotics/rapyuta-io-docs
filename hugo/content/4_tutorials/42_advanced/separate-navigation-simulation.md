@@ -5,6 +5,8 @@ type: build-solutions
 date: 2019-11-20T14:46:28+05:30
 # pre: "9. "
 weight: 651
+tags:
+    - Tutorials
 ---
 ## Learning Objective
 The walkthrough demonstrates a navigation application that controls

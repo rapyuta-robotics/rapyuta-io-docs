@@ -5,6 +5,8 @@ type: build-solutions
 date: 2019-10-24T13:47:13+05:30
 # pre: "b. "
 weight: 41
+tags:
+    - Tutorials
 ---
 A _ROS publisher_ is part of a ROS package. It is a public git
 repository, which is built into a running docker container on the

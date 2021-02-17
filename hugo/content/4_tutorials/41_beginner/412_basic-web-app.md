@@ -5,6 +5,8 @@ type: build-solutions
 date: 2019-10-24T13:46:19+05:30
 # pre: "1. "
 weight: 412
+tags:
+    - Tutorials
 ---
 An executable of a package can be a dockerfile. In that case, rapyuta.io
 applies [docker build recipe](/developer-guide/create-software-packages/builds/#docker-recipe) while deploying the package. The tutorial illustrates this recipe, where a dockerfile builds a docker image.

@@ -18,6 +18,8 @@ popularLinks: []
 guideLinks: []
 introLinks: {}
 slug: '[ros]-creating-routed-networks'
+tags:
+  - How to
 ---
 ## Creating Cloud Routed Network 
 Follow these steps to create a cloud routed network.
@@ -74,4 +76,4 @@ Follow this walkthrough to [bind routed networks](/developer-guide/manage-softwa
 
 ## Related Links
 
-* [About ROS Routed Network]({{< ref "/5_deep-dives\53_Networking-and-communication\531_ROS-network">}})
+* [About ROS Routed Network]({{< ref "/5_deep-dives/53_Networking-and-communication/531_ROS-network">}})

@@ -19,6 +19,11 @@ guideLinks: []
 introLinks: {}
 slug: managing-projects
 url: /how-to-guides/account-management/managing-projects
+tags:
+  - How to
+categories:
+  - Account Management
+  - Projects
 ---
 ## Creating a Project
 

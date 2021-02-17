@@ -25,7 +25,8 @@ gettingStartedLinks : []
 popularLinks: []
 guideLinks: []
 introLinks: {}
-
+tags:
+    - Deep Dive
 ---
 
 Logs are verbose text messages and are used for debugging and monitoring. Logs are generated when rapyuta.io builds the source code of a git repository, by a device and during the life cycle of deployment.

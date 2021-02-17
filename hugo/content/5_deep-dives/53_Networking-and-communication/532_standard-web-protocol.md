@@ -23,7 +23,8 @@ gettingStartedLinks : []
 popularLinks: []
 guideLinks: []
 introLinks: {}
-
+tags:
+    - Deep Dive
 ---
 
 rapyuta.io facilitates the communication for common protocols such as HTTP, WebSocket, TLS with the help of *Link Injection* between the dependent deployments

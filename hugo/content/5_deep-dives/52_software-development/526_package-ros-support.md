@@ -5,6 +5,8 @@ type: developer-guide
 date: 2019-10-25T12:34:38+05:30
 # pre: "3. "
 weight: 526
+tags:
+    - Deep Dive
 ---
 ## Implicit ROS Master
 You do not have to include the ROS Master as an executable of a component

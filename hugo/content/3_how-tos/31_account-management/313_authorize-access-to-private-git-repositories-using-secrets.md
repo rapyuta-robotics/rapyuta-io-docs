@@ -22,6 +22,12 @@ guideLinks: []
 introLinks: {}
 slug: setup-private-git-access
 url: /how-to-guides/account-management/setup-private-git-access
+tags:
+   - How to
+categories:
+   - Account Management
+   - Secrets
+   - Git
 ---
 
 You can create packages using the source code from a private git repository.

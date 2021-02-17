@@ -20,6 +20,8 @@ introLinks: {}
 # tags : ["deep-dives"]
 slug: setup-private-docker-registry
 url: /how-to-guides/account-management/setup-private-docker-registry
+tags:
+   - How to
 ---
 
 

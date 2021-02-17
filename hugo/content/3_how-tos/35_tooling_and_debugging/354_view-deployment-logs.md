@@ -18,6 +18,8 @@ gettingStartedLinks: []
 popularLinks: []
 guideLinks: []
 introLinks: {}
+tags:
+  - How to
 ---
 rapyuta.io provides searchable logs (**historical logs**) for
 components, executables, and associated cloud bridges of deployment both in the cloud or on a device.

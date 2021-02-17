@@ -23,6 +23,9 @@ gettingStartedLinks : []
 popularLinks: []
 guideLinks: []
 introLinks: {}
+tags:
+  - Troubleshoot
+  - FAQ
 ---
 
 #### Q. I have invited a user to an organization but I am not able to add the user to a project?

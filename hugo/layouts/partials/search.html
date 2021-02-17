@@ -1,0 +1,67 @@
+<div class="searchbox">
+    <a href="#">
+                <i id="search-icon" class="fa fa-search icon-search"></i>
+               
+                <div id="search-box" style="height:2rem;" onclick="$('#search-modal').toggle();$('.animated-search-box').focus()">
+        <input readonly/>
+      </div>
+    </a>
+</div>
+<style>
+{{ if eq $.URL "/search" }}
+    #body-inner {
+      width: 100%;
+    }
+    .d-block.mt-4.markdown-body {
+        display: none;
+    }
+{{ end}}
+    .content {
+      width: 100%;
+    }
+</style>
+
+{{ if not (eq $.URL "/search") }}
+   <div id="search-modal" class="modal-wrapper" style="display: none;" onclick="if(this == event.target) {$('#search-modal').toggle()};event.stopPropagation();">
+    <div class="notice-shortcuts flex-row">
+        <div class="left"><span>  SHIFT </span> + <span> SPACE</span> to search.</div> 
+        <div class="right"><span> ESC </span> to close.</div> 
+     </div>>
+       <div class="modal-content">
+           {{partial "algolia-search.html" .}}
+       </div>
+   </div> 
+
+   <script>
+   let lastKey = null;
+   let lastTime =new Date().getTime();
+
+   $(document).keyup(function(e) {
+     if(e.shiftKey)
+     {
+         let now = new Date().getTime();
+         if(now - lastTime < 100);
+         {
+            $('#search-modal').toggle();
+            $('.animated-search-box').focus()
+         }
+        lastTime = now;
+        // alert('test')
+     }
+     if (e.key === "Escape") { // escape key maps to keycode `27`
+            // <DO YOUR WORK HERE>
+                $('#search-modal').toggle();
+        }
+    if (e.keyCode == 39) {      
+        $(".move-focus:focus").next().focus();
+
+    }
+    if (e.keyCode == 37) {      
+        $(".move-focus:focus").prev().focus();
+
+    }
+    });
+   </script>
+{{ end }}
+
+

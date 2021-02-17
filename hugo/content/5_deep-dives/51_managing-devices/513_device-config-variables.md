@@ -5,6 +5,8 @@ type: developer-guide
 date: 2019-10-24T11:48:15+05:30
 # pre: "5. "
 weight: 513
+tags:
+    - Deep Dive
 ---
 Device configuration variables are environment variables that allow you to
 correctly configure a device on rapyuta.io using the

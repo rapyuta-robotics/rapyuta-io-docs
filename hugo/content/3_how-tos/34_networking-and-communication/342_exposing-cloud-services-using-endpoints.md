@@ -23,6 +23,8 @@ gettingStartedLinks : []
 popularLinks: []
 guideLinks: []
 introLinks: {}
+tags:
+  - How to
 ---
 ## Exposing Endpoints Externally
 

@@ -5,6 +5,8 @@ type: build-solutions
 date: 2019-10-24T13:47:25+05:30
 # pre: "4. "
 weight: 414
+tags:
+    - Tutorials
 ---
 The tutorial will teach you how to deploy a basic non-ROS package that will change
 the trigger of the on-board LED (ACT/LED0) on Raspberry PI 2 or 3.

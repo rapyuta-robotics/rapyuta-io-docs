@@ -18,6 +18,8 @@ gettingStartedLinks: []
 popularLinks: []
 guideLinks: []
 introLinks: {}
+tags:
+  - How to
 ---
 ## ROS Bag Jobs for Packages
 If you want to record the topics for any ROS component of a package, you can follow the steps below

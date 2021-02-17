@@ -22,6 +22,8 @@ gettingStartedLinks : []
 popularLinks: []
 guideLinks: []
 introLinks: {}
+tags:
+  - How to
 ---
 
 To deploy a package in rapyuta.io, follow the steps:

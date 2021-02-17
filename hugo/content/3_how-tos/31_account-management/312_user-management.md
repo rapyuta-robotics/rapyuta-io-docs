@@ -19,6 +19,12 @@ guideLinks: []
 introLinks: {}
 slug: managing-users
 url: /how-to-guides/account-management/managing-users
+tags:
+   - How to
+categories:
+   - Account Management
+   - Users
+   - Projects
 ---
 
 

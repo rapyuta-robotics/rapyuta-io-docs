@@ -5,6 +5,8 @@ type: developer-guide
 date: 2019-10-25T17:46:54+09:00
 # pre: "1. "
 weight: 524
+tags:
+    - Deep Dive
 ---
 ### Package Catalog
 The catalog serves as the portal in rapyuta.io to streamline the software lifecycle management allowing you to spawn deployments, create new packages, and maintain package versions and updates. Additionally, it features a built-in collection of storage, communication, and curated platform packages that you can put together to build your solution.

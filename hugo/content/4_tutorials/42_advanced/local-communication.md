@@ -5,6 +5,8 @@ type: build-solutions
 date: 2019-10-24T13:47:47+05:30
 # pre: "6. "
 weight: 640
+tags:
+    - Tutorials
 ---
 Complex robotic applications involving multi-device communication can be
 latent when the service is distributed across WAN. This tutorial demonstrates

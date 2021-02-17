@@ -18,6 +18,8 @@ popularLinks: []
 guideLinks: []
 introLinks: {}
 slug: fair-policy
+tags:
+    - Deep Dive
 ---
 
 This Fair Use Policy (this **Policy**) governs the use of rapyuta.io (the

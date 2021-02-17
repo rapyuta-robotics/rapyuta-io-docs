@@ -25,7 +25,8 @@ gettingStartedLinks : []
 popularLinks: []
 guideLinks: []
 introLinks: {}
-
+tags:
+    - Deep Dive
 ----
 Subscribing to system metrics will display a graphical visualization (like a graph with metrics data plotted along x-axis and time along the y-axis) of the metrics.
 

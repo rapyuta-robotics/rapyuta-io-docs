@@ -23,6 +23,9 @@ gettingStartedLinks : []
 popularLinks: []
 guideLinks: []
 introLinks: {}
+tags:
+  - Troubleshoot
+  - FAQ
 ---
 
 

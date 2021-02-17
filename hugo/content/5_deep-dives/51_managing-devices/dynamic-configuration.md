@@ -22,6 +22,8 @@ gettingStartedLinks : []
 popularLinks: []
 guideLinks: []
 introLinks: {}
+tags:
+    - Deep Dive
 ---
 
 The behavior of a robot (device) is determined by a set of

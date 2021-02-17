@@ -25,6 +25,8 @@ gettingStartedLinks : []
 popularLinks: []
 guideLinks: []
 introLinks: {}
+tags:
+    - Deep Dive
 ---
 
 Different developers build and manage software for devices differently. rapyuta.io supports two primary ways for application developers to manage software on a device. This enables developers the freedom to use the current software with minimal changes, if any, as well as choose to leverage an entirely new runtime for a new generation of software. rapyuta.io defines these ways as device runtimes.

@@ -20,6 +20,8 @@ guideLinks: []
 introLinks: {}
 slug: plans-billing
 url: /how-to-guides/account-management/plans-billing
+tags:
+   - How to
 
 ---
 **Todo: Shashank**
