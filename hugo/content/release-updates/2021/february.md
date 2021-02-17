@@ -40,6 +40,10 @@ are significant updates in this release that we hope you will like.
 
 The rapyuta.io platform allows you to record the ROS messages (ros topics) for ROS enabled components deployed on the device with docker runtime. You can stop the recording and download the stored data for further analysis and troubleshooting.  For more information, [click here](/developer-guide/create-software-packages/ros-support/#ros-bag-job).
 
+#### Bugfixes
+
+- While swithching a project, the selected project displays the wrong resources. The issue is fixed.
+
 #### SDK
 **rapyuta.io Python SDK [0.20.0](/developer-guide/tooling-automation/python-sdk/#installation) released** 
 
