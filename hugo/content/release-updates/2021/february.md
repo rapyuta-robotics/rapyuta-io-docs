@@ -38,7 +38,7 @@ are significant updates in this release that we hope you will like.
 #### Feature
 * **ROS Bag Job on Device**
 
-The rapyuta.io platform allows you to record the ROS messages (ros topics) for ROS enabled components deployed on the device with docker runtime. You can stop the recording and download the stored data for further analysis and troubleshooting.  For more information, [click here](/developer-guide/create-software-packages/ros-support/#ros-bag-job).
+    The rapyuta.io platform allows you to record the ROS messages (ros topics) for ROS enabled components deployed on the device with docker runtime. You can stop the recording and download the stored data for further analysis and troubleshooting.  For more information, [click here](/developer-guide/create-software-packages/ros-support/#ros-bag-job).
 
 #### Bugfixes
 
