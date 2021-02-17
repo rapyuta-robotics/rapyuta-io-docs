@@ -42,7 +42,7 @@ The rapyuta.io platform allows you to record the ROS messages (ros topics) for R
 
 #### Bugfixes
 
-- While swithching a project, the selected project displays the wrong resources. The issue is fixed.
+- While switching project, the selected project displays the wrong resources. The issue is fixed.
 
 #### SDK
 **rapyuta.io Python SDK [0.20.0](/developer-guide/tooling-automation/python-sdk/#installation) released** 
