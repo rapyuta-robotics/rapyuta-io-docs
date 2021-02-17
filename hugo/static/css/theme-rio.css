@@ -92,6 +92,11 @@ h6 {
     padding: 0px 9px;
 }
 
+#navigation strong {
+    background: transparent;
+    color: #c3212c;
+}
+
 h2, h3, h4, h5 {
     color: var(--MAIN-TITLES-TEXT-color) !important;
 }

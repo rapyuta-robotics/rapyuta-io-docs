@@ -127,11 +127,21 @@ span.primary-attribute > em {
 .results> a:hover {
  background: #ebf8ff!important;
 }
+
+.results> a:focus {
+  background: #ebf8ff!important;
+  outline-color: #8ab6d5;
+  outline-style: dashed;
+  outline-width: 1px;
+ }
 .results> a {
  padding: 0.5rem 1rem;
 }
-.results> a:nth-child(even) {
- background: #f7f7f7;
+.results> a:nth-child(1) {
+  /* background: #ebf8ff!important; */
+  outline-color: #8ab6d5;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 
@@ -143,6 +153,7 @@ span.primary-attribute > em {
 
 .group-hit > .results > a {
  color: gray;
+ margin-bottom: 4px;
 }
 
 
@@ -181,7 +192,7 @@ span.primary-attribute > em {
 
 
 
-.notice-shortcuts { width: 100%}
+.notice-shortcuts { width: 100%; color: white;}
 .notice-shortcuts .left{
   position: fixed;
   top: 4vh;

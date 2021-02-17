@@ -1,6 +1,6 @@
 ---
 
-title: "System Matrics"
+title: "System Metrics"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 
 weigth: 544
@@ -27,7 +27,9 @@ guideLinks: []
 introLinks: {}
 tags:
     - Deep Dive
-----
+---
+
+
 Subscribing to system metrics will display a graphical visualization (like a graph with metrics data plotted along x-axis and time along the y-axis) of the metrics.
 
 Read the metrics reference to know the data fields included in each system metric.

@@ -26,30 +26,38 @@
    <script>
    let lastKey = null;
    let lastTime =new Date().getTime();
-
+   let focusedItemCount = 0;
    $(document).keyup(function(e) {
      if(e.shiftKey && e.key === " ")
      {
          let now = new Date().getTime();
          if(now - lastTime < 100);
          {
-            $('#search-modal').toggle();
+            $('#search-modal').show();
             $('.animated-search-box').focus()
          }
         lastTime = now;
-        debugger
+        // debugger
         // alert('test')
      }
      if (e.key === "Escape") { // escape key maps to keycode `27`
             // <DO YOUR WORK HERE>
                 $('#search-modal').hide();
         }
-    if (e.keyCode == 39) {      
-        $(".move-focus").next().focus();
+    if (e.keyCode === 40) {     
+        focusedItemCount = focusedItemCount + 1 
+        console.log("DOWn")
+        console.log(focusedItemCount);
+
+        $(`.move-focus:focus`).next().focus();
 
     }
-    if (e.keyCode == 37) {      
-        $(".move-focus").prev().focus();
+    if (e.keyCode == 38) {      
+        focusedItemCount = focusedItemCount - 1
+        console.log("UP")
+        console.log(focusedItemCount);
+        $(`.move-focus:focus`).prev().focus();
+        // $(`.move-focus:nth-child(${focusedItemCount})`).focus();
 
     }
     });

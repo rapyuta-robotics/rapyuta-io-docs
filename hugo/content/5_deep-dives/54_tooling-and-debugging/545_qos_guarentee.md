@@ -27,7 +27,7 @@ guideLinks: []
 introLinks: {}
 tags:
     - Deep Dive
-----
+---
 
 The QoS guarantee level is an agreement between the sender of a message and the receiver of a message that defines the guarantee of delivery for a specific message. In rapyuta.io, the messages are generally metrics or logs of a device, which are sent to rapyuta.io servers.
 
