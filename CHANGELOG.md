@@ -1,9 +1,10 @@
 # CHANGELOG
 ## [Unreleased]
 
-## []
+## [3.4.0 - 2021-02-17]
 ### Added
 - ROS bag job on device
+- Updated SDK for ROS bag job on device
 
 ## [3.3.1 - 2021-02-10]
 ### Added
