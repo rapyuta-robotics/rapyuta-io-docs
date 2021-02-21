@@ -585,8 +585,28 @@ div.notices p {
     #sidebar {
         display: none;
     }
-    #toc, #navigation {
+    #toc{
         display: none!important;
+    }
+    
+    #navigation {
+        /* display: none!important; */
+        display: flex!important;
+        position: relative!important;
+    }
+
+    #body #navigation .nav {
+        position: relative;
+        padding: 8px;
+        line-height: 2rem;
+        text-overflow: ellipsis;
+        display: inline-block;
+        width: 50%;
+    }
+
+    #navigation strong {
+        padding: 0px;
+        margin: 0px;
     }
 
     #body {
