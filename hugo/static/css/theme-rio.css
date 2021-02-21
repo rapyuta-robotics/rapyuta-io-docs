@@ -330,7 +330,7 @@ div.progress {
     line-height: 3rem;
     font-size: 14px;
 }
-#top-bar #top-github-link{
+#top-bar #top-toggle-link{
     line-height: 3rem;
     width: 75px;
     padding: 0 1rem;
@@ -341,6 +341,7 @@ div.progress {
     /* float: right; */
     width: 45px;
     line-height: 3rem;
+    padding: 0 0.5rem;
 }
 #top-bar #top-fullscreen-div{
     font-size: 35px;
@@ -590,6 +591,8 @@ div.notices p {
     }
     #body .highlightable.padding {
         padding: 0px!important;
+        overflow-y: scroll!important;
+        overflow-x: hidden!important;
     }
 
     #chapter #body-inner {
@@ -601,20 +604,6 @@ div.notices p {
         padding: 0 12px;
     }
 
-
-
-    .modal-content {
-        width: 90%!important;
-        padding: 0.5rem!important;
-    }
-    .group-hit.flex-row.grow {
-        flex-direction: column;
-    }
-
-    .group.flex-col.flex-2 {
-        margin-bottom: 1rem;
-        width: 100%;
-    }
 }
 
 

@@ -214,3 +214,58 @@ span.primary-attribute > em {
     border: 1px dashed #ffffff6b;
     margin-right: 12px;
 }
+
+
+
+@media only screen and (max-width: 520px) {
+   /* Responsive Search */
+   .notice-shortcuts {display: none!important;}
+
+   .modal-content {
+       width: 90%!important;
+       padding: 0.5rem!important;
+       margin: 2vh auto!important;
+   }
+
+   
+  input.ais-SearchBox-input {
+    height: 3rem!important;
+    padding: 1rem!important;
+  }
+
+
+  .animated-search-box {
+      height: 2rem;
+  }
+
+  #search-icon {      
+    left: 1rem;
+    display: inline;
+    top: 12px;
+  }
+
+   #inputfield > input {
+       font-size: 14px;
+   }
+   .group-hit.flex-row.grow {
+       flex-direction: column;
+   }
+
+   .group.flex-col.flex-2 {
+       margin-bottom: 1rem;
+       width: 100%;
+   }
+
+
+   
+   .flex-row.grow.content.container {
+       margin: 0!important;
+       padding: 0;
+   }
+
+   #hits span.secondary-attribute {
+       margin-bottom: 0!important;
+       font-size: 8px;
+       line-height: 12px;
+   }
+}
