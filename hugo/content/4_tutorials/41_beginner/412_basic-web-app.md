@@ -101,7 +101,7 @@ the green colored bar moves to **Succeeded** and **Status:Running** indicating t
 
 ![Deployment details](/images/tutorials/hello-world/successful-deployment.png?classes=border,shadow&width=50pc)
 
-You can also analyze the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/) to check if everything is working as expected by clicking on **Historical Logs** or **Live Logs** tab.
+You can also analyze the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/) to check if everything is working as expected by clicking on **Historical Logs** or **Live Logs** tab.
 
 Once the package is successfully deployed, the **NETWORK ENDPOINTS**
 generates a URL address on the **Details** page. Copy this specific

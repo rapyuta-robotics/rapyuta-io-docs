@@ -322,5 +322,13 @@
   
       toggleRefinement(facet.name, facet.value);
     });
+
+
+    $("#search-box").click(__rr_algolia_toggle)
+    $("#search-btn-a").click(__rr_algolia_toggle)
+
   }); 
-  
+
+  __rr_algolia_toggle = () => {
+    $('#search-modal').toggle();$('.animated-search-box').focus()
+  }

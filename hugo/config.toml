@@ -59,8 +59,3 @@ disableSearch = false
     url = "https://www.rapyuta-robotics.com/"
     weight = 12
 
-
-[[menu.shortcuts]]
-    name = "<i class='fas fa-tags'></i> Tags"
-    url = "/tags"
-    weight = 30

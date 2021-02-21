@@ -336,10 +336,10 @@ div.progress {
     padding: 0 1rem;
     font-size: 32px;
 }
-#top-bar #top-pdfbtn-div{
-    font-size: 35px;
+#top-bar #top-btn-div{
+    font-size: 30px;
     /* float: right; */
-    width:90px;
+    width: 45px;
     line-height: 3rem;
 }
 #top-bar #top-fullscreen-div{
@@ -544,6 +544,7 @@ ul.topics > li > a::after {
 
 #body #breadcrumbs {
     width: 95%;
+    text-transform: none;
 }
 
 #body .pkg-import-btn {
@@ -558,35 +559,6 @@ ul.topics > li > a::after {
     position: fixed;
     top: 123px !important;
 }
-
-@media only screen and (min-width: 768px) {
-    .collapse #sidebar {
-        display: none;
-    }
-
-    .collapse #body {
-        margin-left: 0;
-    }
-
-    #top-bar {
-        position: relative;
-    }
-
-    .sidebar-collapse-btn {
-        position: absolute;
-        width: 16px;
-        padding: 0;
-        right: 10px;
-        bottom: 18px;
-        padding: 0;
-    }
-
-    #body .sidebar-collapse-btn > img {
-        margin: 0;
-    }
-}
-
-
 
 
 
@@ -628,6 +600,21 @@ div.notices p {
         width: 100%;
         padding: 0 12px;
     }
+
+
+
+    .modal-content {
+        width: 90%!important;
+        padding: 0.5rem!important;
+    }
+    .group-hit.flex-row.grow {
+        flex-direction: column;
+    }
+
+    .group.flex-col.flex-2 {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
 }
 
 
@@ -637,6 +624,32 @@ div.notices p {
     h3 {   font-size: 1.25rem!important; }
     h4 {   font-size: 1rem!important; }
     h5 {   font-size: 0.9rem!important; }
+
+    .collapse #sidebar {
+        display: none;
+    }
+
+    .collapse #body {
+        margin-left: 0;
+    }
+
+    #top-bar {
+        position: relative;
+    }
+
+    .sidebar-collapse-btn {
+        position: absolute;
+        width: 16px;
+        padding: 0;
+        right: 10px;
+        bottom: 18px;
+        padding: 0;
+    }
+
+    #body .sidebar-collapse-btn > img {
+        margin: 0;
+    }
+
 
     #sidebar {
         display: none;
@@ -660,6 +673,16 @@ div.notices p {
         width: 100%;
         padding: 0 2rem;
     }
+
+
+    .group-hit.flex-row.grow {
+        flex-direction: column;
+    }
+
+    .group.flex-col.flex-2 {
+        margin-bottom: 1rem;
+        width: 80%;
+    }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1440px)  {
@@ -682,6 +705,7 @@ div.notices p {
 
     #chapter #body-inner {
         max-width: 100%;
+        width: 100%;
     }
 
     #body-inner {

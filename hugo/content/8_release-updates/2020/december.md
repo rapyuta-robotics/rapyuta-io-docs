@@ -14,7 +14,7 @@ are significant updates in this release that we hope you will like.
 #### Features
 * **Historical logs new UI**
 
-    A new UI is available for the historical logs and paginated download option for the historical log lines. For more information, [click here](/developer-guide/tooling-automation/logging/deployment-logs).
+    A new UI is available for the historical logs and paginated download option for the historical log lines. For more information, [click here](/3_how-tos/35_tooling_and_debugging/debugging-logs/).
 
 * **Docker Multistage Builds**
 

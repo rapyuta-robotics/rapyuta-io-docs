@@ -14,7 +14,7 @@ are significant updates in this release that we hope you will like.
 #### Features
 * **Historical logs new functionalities**
 
-    The rapyuta.io platform allows you to view the historical logs in your local time zone and now you can also copy the displayed logs to a clipboard for further analysis. For more information, [click here](/developer-guide/tooling-automation/logging/deployment-logs).
+    The rapyuta.io platform allows you to view the historical logs in your local time zone and now you can also copy the displayed logs to a clipboard for further analysis. For more information, [click here](/3_how-tos/35_tooling_and_debugging/debugging-logs/).
 
 
 #### Bugfixes
