@@ -759,3 +759,11 @@ div.notices.warning p {
     border-top: 30px solid #f87a30!important;
     background: #f2eeee!important;
 }
+
+
+
+
+div#freshwidget-overlay {
+    background: black;
+    opacity: 0.8;
+}
