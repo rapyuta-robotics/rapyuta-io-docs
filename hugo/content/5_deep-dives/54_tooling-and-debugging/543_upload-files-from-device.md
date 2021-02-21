@@ -29,19 +29,7 @@ tags:
     - Deep Dive
 ---
 
-
-
-
-To DO: Move this to how to section of log upload
-
-By default, device logs are not collected until you explicitly subscribe to a
-ROS topic in case of ROS deployments.
-
-Before viewing device logs, it is necessary to have the ROS Master up and running.
-Add a _ROS Publisher_ package that has a _Talker_ component with device runtime.
-It publishes */telemetry* ROS topic with **High** **QoS**.
-
-#### Parameters for Uploading Log Files
+## Parameters for Uploading Log Files
 There are certain parameters to take care of while uploading a
 log file from a device to rapyuta.io
 
@@ -69,7 +57,7 @@ with a new log file with the same name.
 ![Upload Parameters](/images/core-concepts/logging/device-logs/upload-logs/upload-log-dialog-box.png?classes=border,shadow&width=40pc)
 
 
-#### Direct Links for Sharing Log Files
+## Direct Links for Sharing Log Files
 
 After successfully uploading the log file, a summary of the log details is shown.
 It includes information like the name of the log file, its size, creator and creation time

@@ -27,7 +27,7 @@ If you want to record the topics for any ROS component of a package, you can fol
 
 ### Adding Ros Bag Jobs
 
-> **Pre-requisite**: Ensure that you have selected the runtime as cloud while creating a package and **Is ROS Component** is selected during [package creation]({{< ref "/3_how-tos/33_software-development/333_create-packages.md" >}}).
+ **Pre-requisite**: Ensure that you have selected the runtime as cloud while creating a package and **Is ROS Component** is selected during [package creation]({{< ref "/3_how-tos/33_software-development/333_create-packages.md" >}}).
 
 1. Under the **Components** tab on the **Create New Package** page, click **Add ROS Bag Job**.
 ![add-rosbags](/images/dev-guide/rosbag-jobs/add-rosbag.png?classes=border,shadow&width=20pc)
@@ -43,32 +43,30 @@ If you have enabled the **All Topics?** toggle button, **Topic Name** and  **Inc
 7. You can also provide either **BZ2** or **LZ4** compression to the recorded topics based on your requirement and available disk sizes.
 BZ2 generally produces smaller bags than LZ4. For more information about ROS compression, [click here](http://wiki.ros.org/rosbag/Commandline#compress). 
 
-8. The advanced option allows you to record the topics with a more granular report. Optionally, to use the advanced option, click **Show Advanced Option** and do the following.</br>
-
+8. The advanced option allows you to record the topics with a more granular report. Optionally, to use the advanced option, click **Show Advanced Option** and do the following.
 ![add-rosbags](/images/dev-guide/rosbag-jobs/advanced-rosbagjob.png?classes=border,shadow&width=55pc)
-    a. In the **Node Name** field, type the node for which you want to record all the topics subscribed by the specific node.</li></br>
+
+    a. In the **Node Name** field, type the node for which you want to record all the topics subscribed by the specific node.
+
     b. In the **No. of Message** field, type the number of messages that you want to store for each topic.
-    c. **Max Splits** field defines the maximum number of splits of the ROS bag files that are saved. Older splits are deleted after the **Max Splits** count is reached. To split the ROS bag file, in the **Max Splits** field, type the number of split that you want to allow. </br>
-{{% notice info %}}
 
-Maximum 10 splits are allowed for each ROS bag job. After the message recording reaches the maximum allowed splits, the older split files are deleted to maintain the specified memory limit. 
+    c. **Max Splits** field defines the maximum number of splits of the ROS bag files that are saved Older splits are deleted after the **Max Splits** count is reached. To split the ROS bag file, in the **Max Splits** field, type the number of split that you want to allow.
+
+  {{% notice info %}}
+  Maximum 10 splits are allowed for each ROS bag job. After the message recording reaches the maximum allowed splits, the older split files are deleted to maintain the specified memory limit. 
+  {{% /notice %}}
+    d. Split Size is the file size after which the file is split. In the Split size field, type the memory size for each split of the recorded messages in MB.
+
+  {{% notice info %}}
+  Each split size must be more than 10 MB and less than 1024 MB or 1GB. Maximum 10 splits are allowed with the split size of more than 10 MB and less than 1 GB. However, the disk storage for the ROS bag file can not go beyond 5120 MB (5 GB).</br>
+  For example, you can configure 10 splits and each split can store up to 500 MB (10X500 MB=5 GB)  of recorded data or you configure 5 splits and each split can store up to 1024 MB (5x1024 MB=5 GB)  of recorded data. After the message recording reaches the maximum allowed splits, the older splits are deleted to maintain the specified memory limit. 
 {{% /notice %}}
-    d. Split Size is the file size after which the file is split. In the **Split Size** field, type the memory size for each split of the recorded messages in MB.</br>
-{{% notice info %}}
-Each split size must be more than 10 MB and less than 1024 MB or 1GB. 
-{{% /notice %}}
+    e. To add the ROS bag job and start recording the defined topics, click Add.
 
-{{% notice info %}}
+  {{% notice info %}}
 
-Maximum 10 splits are allowed with the split size of more than 10 MB and less than 1 GB. However, the disk storage for the ROS bag file can not go beyond 5120 MB (5 GB).</br>
-For example, you can configure 10 splits and each split can store up to 500 MB (10X500 MB=5 GB)  of recorded data or you configure 5 splits and each split can store up to 1024 MB (5x1024 MB=5 GB)  of recorded data. After the message recording reaches the maximum allowed splits, the older splits are deleted to maintain the specified memory limit. 
-{{% /notice %}}
-    e. To add the ROS bag job and start recording the defined topics, click **Add**.
-
-{{% notice info %}}
-
-You can also update the value of the ROS bag jobs during the time of deployment. The values added during the deployments overrides the values added during the package creation. 
-{{% /notice %}}
+  You can also update the value of the ROS bag jobs during the time of deployment. The values added during the deployments overrides the values added during the package creation. 
+  {{% /notice %}}
     
 
 

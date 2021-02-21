@@ -37,7 +37,7 @@ In this example, it is `flask_helloworld`.
 
 The build takes about two to five minutes to build the source code in the *io_tutorials*
 repository into a running docker container. You may analyse the corresponding
-[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
+[build logs](-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
 
 Please proceed to creation of package once the build is Complete.
 

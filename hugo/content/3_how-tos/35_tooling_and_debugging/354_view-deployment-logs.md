@@ -21,11 +21,11 @@ introLinks: {}
 tags:
   - How to
 ---
+
+## Deployment Logs
+
 rapyuta.io provides searchable logs (**historical logs**) for
 components, executables, and associated cloud bridges of deployment both in the cloud or on a device.
-
-
-
 Additionally, for components deployed on the cloud, rapyuta.io offers a
 to stream (**live logs**) and follow stdout/stderr.
 
@@ -47,7 +47,7 @@ cloud runtime. It will publish the ROS topic *_/telemetry_* with **Maximum** **Q
 
 
 
-## Stdout Logs
+### Stdout Logs
 
 To view or analyse the corresponding deployment logs, click **Historical Logs**.
 
@@ -116,7 +116,7 @@ a valid logs output is displayed in **stdout** window.
 
 
 
-## Indexed Logs
+### Indexed Logs
 
 To view the corresponding deployment logs in real-time, click **Live Logs** tab. They are streamed in a terminal-like window and can be useful to view and debug your application in the cloud as it generates new logs. The rapyuta.io platform allows you to view the live 
 
@@ -151,10 +151,69 @@ The **Live Logs** tab allows you to do the following.
 ![Live Logs tab](/images/core-concepts/logging/deployment-logs/live-logs.png?classes=border,shadow&width=50pc)
 
 
+## Device Logs
 
+By default, device logs are not collected until you explicitly subscribe to a
+ROS topic in case of ROS deployments.
 
+Before viewing device logs, it is necessary to have the ROS Master up and running.
+Add a _ROS Publisher_ package that has a _Talker_ component with device runtime.
+It publishes */telemetry* ROS topic with **High** **QoS**.
 
- ## Build Logs:
+1. On the left navigation bar, click **Devices**.
+2. Select a device whose device logs you want to view. In this example,
+   _ROS Publisher Subscriber Device_ is selected.
+3. Under **Logs** tab, to subscribe to a ROS topic, click **Subscribe** against
+   the topic. In this example, the topic `/telemetry` is subscribed.
+   Ensure the status of the subscribed topic(s) is **Subscribed** and is highlighted
+   in green.
+
+![To subscribe](/images/core-concepts/logging/device-logs/yet-to-subscribe.png?classes=border,shadow&width=60pc)
+
+Once you subscribe to a topic, the device logs are displayed in the
+_logging area_ (a terminal-like window).
+
+Initially, you will see the latest 500 logs in the logging area. As you scroll
+up to the top of the terminal window, the previous 500 logs are displayed. You may continue scrolling up till all the logs are exhausted.
+
+![Logging Area](/images/core-concepts/logging/device-logs/logging-terminal-window.png?classes=border,shadow&width=60pc)
+
+To get updated logs, scroll down to the bottom of the logging area, and then
+click **Get recent logs**.
+
+To switch between the topics, click the drop-down list (at the top-left corner
+of the logging area) and select one of the subscribed topics. A tick mark against the topic `/telemetry` indicates that you are currently viewing the logs belonging to `/telemetry`.
+
+You can search the logs for matching phrases using the **Search** bar. All
+occurrences of a match are highlighted.
+
+If you prefer to view the timestamp of every log displayed in the logging area,
+select **Show timestamps** checkbox.
+
+Topics such as `/rosout` and `/rosout_agg` are already available for a
+ROS-based device.
+
+### Batch Upload
+You can upload logs collected from a device (like dmesg,
+journalctl, rosbags etc.) to rapyuta.io. It lets you:
+
+* *Save* logs for future reference. The logs are saved to the
+  cloud storage.
+* *Process* and *analyze* logs for insights as per your requirements.
+
+The log data can be text, images, or videos. You can upload
+log files by clicking on the **Upload** button, which
+is found on the device's **Manage** tab.
+![Manage Tab](/images/core-concepts/logging/device-logs/upload-logs/manage-tab.png?classes=border,shadow&width=40pc)
+
+A list of statuses indicates the progress of an ongoing upload.
+They are:
+
+* **In Progress**: uploading a log file (to the cloud storage) is underway.
+* **Failed**: uploading a log file failed due to an error.
+* **Complete**: uploading a log file (to the storage) is succeeded.
+
+ ## Build Logs
 
 
   Build logs are generated when rapyuta.io converts the

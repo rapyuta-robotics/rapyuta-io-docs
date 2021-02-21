@@ -130,5 +130,5 @@ Before walking through the examples, ensure you [obtain the auth token, project 
 
  [Tutorial : Python SDK : Publisher Subsciber]({{< ref "/4_tutorials/42_advanced/421_ros-pub-sub-with-sdk">}})
 
-<!-- 2. [Tutorial : Deployment Composition](/developer-guide/tooling-automation/python-sdk/sample-walkthroughs/deployment-composition/) -->
+<!-- 2. [Tutorial : Deployment Composition](-guide/tooling-automation/python-sdk/sample-walkthroughs/deployment-composition/) -->
 
