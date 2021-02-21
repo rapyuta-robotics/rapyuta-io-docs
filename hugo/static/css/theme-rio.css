@@ -588,6 +588,10 @@ div.notices p {
     #toc{
         display: none!important;
     }
+
+    #header-wrapper .searchbox {
+        display: none!important;
+    }
     
     #navigation {
         /* display: none!important; */
