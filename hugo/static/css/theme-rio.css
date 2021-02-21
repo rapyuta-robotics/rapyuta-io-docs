@@ -9,7 +9,7 @@ body {
     line-height: 24px;
     /* color: #636363; */
     color: var(--MAIN-TEXT-color) !important;
-    background: var(--MAIN-BG-color);
+    background: #f5f0f0;
     display: flex;
     flex-direction: row;
     overflow-y: hidden;
@@ -221,7 +221,7 @@ pre {
     /* position: relative; */
     margin-left: 0px;
     background: white;
-    border-left: 32px solid #f5f0f0;
+    /* border-left: 32px solid #f5f0f0; */
     /* border-right: 32px solid #f5f0f0; */
     /* height: 100vh; */
     min-height: 100vh;
