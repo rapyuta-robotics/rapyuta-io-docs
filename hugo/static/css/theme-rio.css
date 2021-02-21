@@ -223,8 +223,8 @@ pre {
     background: white;
     border-left: 32px solid #f5f0f0;
     /* border-right: 32px solid #f5f0f0; */
-    height: 100vh;
-    min-height: 960px;
+    /* height: 100vh; */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -243,6 +243,12 @@ pre {
     flex-direction: column;
 }
 
+
+#top-bar-sticky-wrapper {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+}
 div#navigation {
     display: inline-block;
     position: relative;
@@ -290,6 +296,7 @@ div.progress {
     margin:0;
     padding:0;
     color: #464646;
+    font-size: 11px;
 }
 
 #TableOfContents > ul > li > ul > li > a {
@@ -488,7 +495,8 @@ pre .copy-to-clipboard:hover {
 }
 
 #body-inner ul li  {
-    list-style: katakana;
+    list-style: circle;
+
 }
 
 #body-inner ol li li{
