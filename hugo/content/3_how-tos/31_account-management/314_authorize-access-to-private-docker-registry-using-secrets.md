@@ -24,19 +24,11 @@ tags:
    - How to
 ---
 
-
-> Related Links: [About Secrets](/1_understanding-rio/12_core-concepts/#secrets)
-
-**rapyuta.io** uses your docker pull secret during **builds** as well as **package deployment** .
-
-When you want to use a **docker image** from your private (docker) registry,
-
-you grant rapyuta.io access to your private registry by creating a docker secret.
+**rapyuta.io** uses your docker pull secret during **builds** as well as **package deployment** . When you want to use a **docker image** from your private (docker) registry, you grant rapyuta.io access to your private registry by creating a docker secret.
 
 The two types of docker pull secrets that you can create are:
 
 * Docker Hub
-
 * Private Registry
 
 
@@ -44,8 +36,6 @@ The two types of docker pull secrets that you can create are:
 ## Creating a docker secret
 
 To create a docker secret for a private docker registry, do the following:
-
-
 
 1. On the left navigation bar, click **Accounts>Secrets**.
 
@@ -77,32 +67,15 @@ To create a docker secret for a private docker registry, do the following:
 
 ## Authorization Token
 
-When you create a docker pull secret for a private registry, rapyuta.io stores
+When you create a docker pull secret for a private registry, rapyuta.io stores your docker credentials (that is, username and password) in base64-encoded format. This encoded data is the *_authorisation token_* which gives access to rapyuta.io to pull private docker images while deploying a package.
 
-your docker credentials (that is, username and password) in base64-encoded
+To determine your docker credentials for a private registry, run the following instructions in sequence on the system you have logged in to docker:
 
-format. This encoded data is the *_authorisation token_* which gives access to
-
-rapyuta.io to pull private docker images while deploying a package.
-
-
-
-To determine your docker credentials for a private registry, run the following
-
-instructions in sequence on the system you have logged in to docker:
-
-
-
-1. Docker login process creates or updates **`config.json`** file. To display this
-
-​    file, run the  following command:
+1. Docker login process creates or updates **`config.json`** file. To display this file, run the  following command:
 
 ```bash
 cat ~/.docker/config.json
 ```
-
-
-
 ​    A sample **`config.json`** file will look like:
 
    ```json
@@ -117,8 +90,6 @@ cat ~/.docker/config.json
 
 > The value of **`auth`** entry is base64-encoded data called *_authorisation token_*.
 
-
-
    If you use a docker credentials store, you will instead see `credsStore` entry with the name of the store as value. For example, a sample `config.json` file with `credsStore` entry would look like:
 
    ```bash
@@ -130,13 +101,7 @@ cat ~/.docker/config.json
    }
    ```
 
-   Finding out the *_authorisation token_* from all possible  `credsStore`
-
-   entry’s value is beyond the scope of this tutorial. 
-
-   In the case for use `osxkeychain` value to figure ou
-
-   authorization token.
+   Finding out the *_authorisation token_* from all possible  `credsStore` entry’s value is beyond the scope of this tutorial. In this case, use `osxkeychain` value to figure out authorization token.
 
 2. To convert *_authorisation token_* to a readable format, execute the command:
 
@@ -158,12 +123,12 @@ cat ~/.docker/config.json
 
    right is your password.
 
-*Can we move the following content to troubleshooting?*
-
->  If you encounter the following deployment error,
+>  If you encounter the following deployment error, Ensure the docker username and password in a secret are correct.
 >
 >  ```bash
 >  DEP_E153 (Could not pull either the docker image or the built package artifact for the component on the cloud)
 >  ```
->  Ensure the docker username and password in a secret are correct.
->
+>  
+## Related Links
+
+* [About Secrets](/1_understanding-rio/12_core-concepts/#secrets)

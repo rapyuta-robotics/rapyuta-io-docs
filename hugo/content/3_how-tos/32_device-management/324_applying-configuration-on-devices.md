@@ -28,8 +28,9 @@ tags:
 ---
 # Creating Device Configuration
 
-- **rapyuta.io** allows you to create a dynamic configuration that holds the parameter files into a tree-like hierarchical structure called a **configuration hierarchy**. These configuration parameters are applied to the robots to achive the desired behavior for the robot. Perform the following procedure to create a dynamic configuration.
+- **rapyuta.io** allows you to create a dynamic configuration that holds the parameter files into a tree-like hierarchical structure called a **configuration hierarchy**. These configuration parameters are applied to the robots to achive the desired behavior for the robot. 
 
+To create a dynamic configuration, do the following.
 
 1. Click **CONFIGURATIONS > ADD NEW CONFIGURATION**.
   
@@ -49,15 +50,11 @@ tags:
   from the root node.
      {{% /notice %}}
 
-5. Click **Add file**. The **Create new file** window is displayed.
-
-  ​    In the **Create new file** window, do the following.<br/>
+5. Click **Add file**. The **Create new file** window is displayed. In the **Create new file** window, do the following.
 
 6. From the **File type** drop-down menu, select either YAML or Binary file.<br/>
 
-7. If you have selected the file type as YAML, in the File name field, type a name for the file and click **Confirm**. You can add the configuration in the File Contents area. 
-
-  To see an example, [click here](#creating-a-configuration-parameter-in-yaml-file-format). 
+7. If you have selected the file type as YAML, in the File name field, type a name for the file and click **Confirm**. You can add the configuration in the File Contents area. To see an example, [click here](#creating-a-configuration-parameter-in-yaml-file-format). 
 
   ![YAML file](/images/core-concepts/configurations/yaml-file.png?classes=border,shadow&width=30pc)
 
@@ -75,9 +72,7 @@ tags:
 
   #### Rules for writing YAML configuration parameters
 
-  There are a set of rules that you must adhere to when writing a configuration
-
-  parameters file. They are:
+  There are a set of rules that you must adhere to when writing a configuration parameters file. They are:
 
    * A space character always follows a colon (:) and a hyphen (-). For instance,
 
@@ -125,7 +120,7 @@ tags:
          - h
   
    
-If you add a new item to a default list parameter, it is appended to the list.
+* If you add a new item to a default list parameter, it is appended to the list.
 
    ```yaml
 \# base parameters file
@@ -143,7 +138,7 @@ list:
 
 ```
 
-If you modify a default parameter’s value, the new value overrides the old value.
+* If you modify a default parameter’s value, the new value overrides the old value.
 
    ```yaml
    \# base parameters file
@@ -154,10 +149,11 @@ If you modify a default parameter’s value, the new value overrides the old val
       a: e
 
    ```
+
 ## Creating a configuration parameter in YAML file format 
 
 
-  Rapyuta.io allows you to add the configuration parameters at every value node including the root node. When you hover and click the value node to add a configuration file, you get an option to choose to write the configuration parameter in YAML format or upload the configurations directly from your local machine.
+  rapyuta.io allows you to add the configuration parameters at every value node including the root node. When you hover and click the value node to add a configuration file, you get an option to choose to write the configuration parameter in YAML format or upload the configurations directly from your local machine.
 
   
 
@@ -165,11 +161,10 @@ If you modify a default parameter’s value, the new value overrides the old val
 
   
 
-  1. Log on to **rapyuta.io** console and on the left navigation bar, click **CONFIGURATIONS > ADD NEW CONFIGURATION**.
+  1. Log on to **rapyuta.io** console and on the left navigation bar, click **Configurations>Add New Configuration**.
 
   2. In the **Add new configuration** pop-up window, type a name for the configuration and click **Confirm**. For this example, type the name as **config_1**.
-
-  The new configuration name is added to the **Configuration Name** list. To configure the root node (configuration name), click **Config_1** from the list.
+    The new configuration name is added to the **Configuration Name** list. To configure the root node (configuration name), click **Config_1** from the list.
 
   3. Hover over **Config_1** and add an attribute as **country**.
 
@@ -205,11 +200,9 @@ If you modify a default parameter’s value, the new value overrides the old val
 
   
 
-  1. Log on to **rapyuta.io** console and on the left navigation bar, click **CONFIGURATIONS > ADD NEW CONFIGURATION**.
+  1. Log on to **rapyuta.io** console and on the left navigation bar, click **Configurations>Add New Configuration**.
 
-  2. In the **Add new configuration** pop-up window, type a name for the configuration and click **Confirm**. For this example, type the name as **config_2**.
-
-   The new configuration name is added to the **Configuration Name** list. To configure the root node (configuration name), click **Config_2** from the list.
+  2. In the **Add new configuration** pop-up window, type a name for the configuration and click **Confirm**. For this example, type the name as **config_2**. The new configuration name is added to the **Configuration Name** list. To configure the root node (configuration name), click **Config_2** from the list.
 
   3. Hover over **Config_2** and add an attribute as **country**.
 
@@ -257,7 +250,7 @@ Labels of a device help in associating it with a set of configuration parameters
 
 {{% notice note %}}
 
-Devices should be online
+Devices must be online
 
 {{% /notice%}}
 

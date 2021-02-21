@@ -138,5 +138,5 @@ device's name, which indicates that the device is online.
 
 
 ## Related Links
-* [About Devices](/1_understanding-rio/12_core-concepts/#devices)
+* [About Devices](/1_understanding-rio/12_core-concepts/#device-management)
 * [About Docker Runtime](/5_deep-dives/51_managing-devices/511_device-runtime/#dockercompose-runtime-for-device)

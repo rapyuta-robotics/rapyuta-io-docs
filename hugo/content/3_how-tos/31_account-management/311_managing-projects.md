@@ -28,7 +28,6 @@ categories:
 ## Creating a Project
 
 > Any user in **Activated** state can create a new project. 
-
 > Only the **creator** of the project can add or remove users from the project. To create a project, do the following.
 
 1. In the left navigation bar, click **Account>Project**. The project dash board is displayed.

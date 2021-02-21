@@ -53,8 +53,7 @@ rapyuta.io allows you to view the various data from your robots in a customisabl
 
 * **Metrics**
 
-  rapyuta.io allows you to collect critical system metrics such as CPU usage, memory consumption, etc. as well as directly subscribe to arbitrary ROS topic types. You can use this to collect measurements about parameters like temperature, distance or even application and business metrics such as orders completed or time to delivery.
-After collecting metrics of s device, the user can query and visualize this information on a dashboard.
+  rapyuta.io allows you to collect critical system metrics such as CPU usage, memory consumption, etc. as well as directly subscribe to arbitrary ROS topic types. You can use this to collect measurements about parameters like temperature, distance or even application and business metrics such as orders completed or time to delivery. After collecting metrics of a device, the user can query and visualize this information on a dashboard.
 
 * **Remote Data Aggregation and Root Cause Analysis**
 

@@ -27,7 +27,7 @@ tags:
 ---
   
   
-  ## Creating Build by Catkin recipe 
+## Creating Build by Catkin recipe 
 
 To create a build using katkin receipe, do the following. 
 
@@ -56,19 +56,18 @@ To create a build using katkin receipe, do the following.
 4. Under the **Build Info** tab, do the following.
 
     a. In the **Architecture** area, select the processor architecture for the build. The available options are:
-  ​    <ul>
-  ​    <li>arm32v7</li>
-  ​    <li>arm64v8</li>
-  ​    <li>amd64</li>
-  ​    </ul>
+
+    * arm32v7</li>
+    * arm64v8</li>
+    * amd64</li>
 
     b. Optionally, if the build has a simulation option, click the **Has Simulation** radio-button.
 
     c. In the **ROS Version** area, select the ROS version. The available options are:
-  ​    <ul>
-  ​    <li>Kinetic</li>
-  ​    <li>Melodic</li>
-  ​    </ul>
+
+    * Kinetic
+    * Melodic
+
 
     d. Optionally, to add ROS parameter to the build, in the **CATKIN BUILD PARAMETERS** area, click **Add Parameter**.
 
@@ -90,7 +89,7 @@ To create a build using katkin receipe, do the following.
 
   The build is created.
 
-  ## Creating Build by Docker recipe 
+## Creating Build by Docker recipe 
 
  To create a build using docker recipe, do the following.
 
@@ -131,16 +130,16 @@ To create a build using katkin receipe, do the following.
 
   ![goo](/images/core-concepts/builds/build-creation/docker-build-info.png?classes=border,shadow&width=30pc)
 
-  5. The **rapyuta.io** platform allows you to push and save the build image to an external docker registry or to pull an image from a private repository. To push or pull a docker image file, do the following.
+5. The **rapyuta.io** platform allows you to push and save the build image to an external docker registry or to pull an image from a private repository. To push or pull a docker image file, do the following.
 
-  a. Under the **Docker Secret** tab, click the **Docker Push Secret**  toggle button.
-  b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. ​For example, docker.io/your-username/repo-name. 
+    a. Under the **Docker Secret** tab, click the **Docker Push Secret**  toggle button.
+    b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. ​For example, docker.io/your-username/repo-name. 
 
-  c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret]({{< ref "/3_how-tos/31_account-management/314_authorize-access-to-private-docker-registry-using-secrets.md">}}).
+    c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret]({{< ref "/3_how-tos/31_account-management/314_authorize-access-to-private-docker-registry-using-secrets.md">}}).
 
-  d. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** toggle button and select the secret for the repository. If you have not created any secret for the repository, [create a secret]({{< ref "/3_how-tos/31_account-management/314_authorize-access-to-private-docker-registry-using-secrets.md">}}).
+    d. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** toggle button and select the secret for the repository. If you have not created any secret for the repository, [create a secret]({{< ref "/3_how-tos/31_account-management/314_authorize-access-to-private-docker-registry-using-secrets.md">}}).
 
-  e. Click **Next**.
+    e. Click **Next**.
   ![goo](/images/core-concepts/builds/build-creation/docker-push-secret.png?classes=border,shadow&width=30pc)
 
 
@@ -148,9 +147,9 @@ To create a build using katkin receipe, do the following.
 
   * Click on **SHOW MORE** to get more details about the build, it will take you to the **Details** tab of the build.
 
-  ## Viewing Build Details
+## Viewing Build Details
 
-  After you have created a build by either Catkin or Docker recipe, you can view the details of the available builds in your project. Perform the following steps to view the details of a build.
+After you have created a build by either Catkin or Docker recipe, you can view the details of the available builds in your project. Perform the following steps to view the details of a build.
 
 1. On the left navigation bar, click **Developemt>Builds**. All the available builds of the projects are displayed.
 
@@ -165,7 +164,7 @@ To create a build using katkin receipe, do the following.
 |**Status**| Provides the following status of the build. <ul><li>BuildInProgress: Displays when the build creation process is in progress.</li><li>Complete: Displays when the build creation process has been successfully completed.</li><li>BuildFailed: Displays if the build creation process has failed.</li></ul>
 |**Started**| Provides the time duration when the build creation process has started.
 |**Repository**| Provides the repository from which the build has been created.
-|**Action**| Allows you to [delete](/developer-guide/create-software-packages/builds/build-creation/#deleting-the-build), [trigger](/developer-guide/create-software-packages/builds/trigger-rollback/), or [clone](/developer-guide/create-software-packages/builds/build-cloning/)  a build. 
+|**Action**| Allows you to delete, trigger, or clone a build. 
 
 2. To view the details of a particular build, click the build. The following image is displayed.
 
@@ -176,19 +175,21 @@ To create a build using katkin receipe, do the following.
 
 
   * Click **Delete** to delete the build. 
-  * Click [Trigger](/5_deep-dives/52_software-development/522_trigger-and-rollback-builds) to trigger a build. 
-  * Click [Clone]({{< ref "/5_deep-dives/52_software-development/521_cloning-builds" >}}) to clone a build within the same or to different projects.
-  * Click **Show More** to view the details of the build and view the [build log]({{< ref "/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs" >}}).
+  * Click **Trigger** to trigger a build. 
+  * Click **Clone** to clone a build within the same or to different projects.
+  * Click **Show More** to view the details of the build and view the build logs.
 
   After clicking **Show More**,  the following image is displayed.
 
   ![goo](/images/core-concepts/builds/build-creation/build-details.png?classes=border,shadow&width=45pc)
 
-  ## Deleting the build
+## Deleting the build
 
-  Follow the below steps to delete the build :
+{{% notice info %}}
+Note that if the build **Status** is *_BuildInProgress_*, then user will not be able to **Delete** the build. Deletion of such builds will fail with the error message : **can't delete the build since its corresponding build request is still in progress**.
+{{% /notice %}}
 
->  Please note that if the build **Status** is *_BuildInProgress_*, then user will not be able to **Delete** the build. Deletion of such builds will fail with the error message : **can't delete the build since its corresponding build request is still in progress**.
+To delete a build, do the following.
 
 1. On the left navigation bar, click **Development>Builds**. It  displays all the builds available for a project.
 
@@ -204,7 +205,7 @@ The rapyuta.io platform allows you to clone a build within the same or different
 
 Perform the following procedure to clone a build.
 
-1. On the left navigation bar, click **BUILDS**. It displays all the builds available within a project.
+1. On the left navigation bar, click **Development>Builds**. It displays all the builds available within a project.
 2. Select the build that you want to clone and click **Clone Build**. 
 3. A dialog box appears and prompts you to select the project where you want to clone the build. Select the project from the drop-down and click **Clone Build**.
 ![build-clone](/images/core-concepts/builds/build-clone.png?classes=border,shadow&width=25pc)
@@ -220,11 +221,11 @@ If you want to clone a project within the same project, you must rename the buil
 {{% notice note %}}
 The dialog box to clone secret appears only for the builds that have a secret.
 {{% /notice %}}
-5. The build creation page appears and allows you to modify the build details. For more information about build creation, [click here](/developer-guide/create-software-packages/builds/build-creation).</br>
-6. After reviewing the field details of the build creation pages, click **Next**. The build is cloned to the selected project.
+5. The build creation page appears and allows you to modify the build details. 
+6. After reviewing the field details of the build creation pages, click **Next**. The build is clone to the selected project.
 
 ## Related Links
 
 * [About Build](/1_understanding-rio/12_core-concepts/#builds)
 * [Trigger and Rollback](/5_deep-dives/52_software-development/522_trigger-and-rollback-builds)
-*  [ROS Support](/5_deep-dives/52_software-development/523_ros-support-for-builds)
+* [ROS Support](/5_deep-dives/52_software-development/523_ros-support-for-builds)

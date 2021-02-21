@@ -1,5 +1,6 @@
 ---
 title: "ROS Routed Network"
+draft: true
 description:
 type: build-solutions
 date: 2019-10-24T13:46:19+05:30

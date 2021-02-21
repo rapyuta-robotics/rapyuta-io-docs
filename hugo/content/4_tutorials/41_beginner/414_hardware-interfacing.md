@@ -25,25 +25,17 @@ Raspberry PI 2 or 3 with docker compose runtime.
    [Docker image](https://docs.docker.com/v17.09/engine/userguide/storagedriver/imagesandcontainers/)
    concept.
 
-## Difficulty
-Beginner
-
 ## Estimated time
 15 minutes
 
 ## Preparing your device
-Learn how to [prepare your Raspberry PI](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3).
+Learn how to [prepare your Raspberry PI](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi) and [on-board the device](/3_how-tos/32_device-management/321_onboarding-a-device).
 
-## Setting up Raspberry PI
-To onboard the device on to rapyuta.io,
-[add the device](/developer-guide/manage-machines/onboarding/) to rapyuta.io,
-and ensure that you select the **Use docker compose as default runtime** checkbox
-while adding the device.
 
 ## Creating the package
 To create ***led_trigger*** package, follow the steps:
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Click **ADD NEW PACKAGE**.
 3. In the **Package Name** box, enter the name for the package as `led_trigger`
 4. In the **Package Version** box, type in the version of the package. By default, it is set to _1.0.0_
@@ -68,10 +60,9 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 
 
 ## Deploying the package
-To deploy a package from the rapyuta.io,
-follow the steps:
+To deploy a package from the rapyuta.io, follow the steps:
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Select the ***led_trigger*** package that you just created.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, enter a name for the deployment say `LED Trigger Deployment`

@@ -111,7 +111,7 @@ source devel/setup.bash
 
 ## Onboard Device
 
-1. On the left navigation bar, click **DEVICES**.
+1. On the left navigation bar, click **Devices>All Devices**.
 2. Click **ADD NEW DEVICE**.
 3. The name of the device is `Turtlebot3 Navigation Simulation Device`.
 4. Provide the absolute path of the catkin workspace in the **ROS Catkin Workspace** box. In this case, the workspace is `/home/rapyuta/catkin_ws`. The absolute path of your catkin workspace may be different, which can be determined by executing command ***pwd*** inside the root of the catkin workspace on the device's terminal. 
@@ -123,7 +123,7 @@ source devel/setup.bash
 ## Create build
 To create the build, follow below steps: 
 
-1. On the left navigation bar, click **BUILDS**
+1. On the left navigation bar, click **Development>Build**.
 2. Click on **ADD NEW BUILD**
 3. In the Build Name box, enter a name for the build say `io-simulation-navigation` 
 4. In the **Git repository** box, enter the url address : 
@@ -143,7 +143,7 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 
 #### Navigation Application Package
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Click **ADD NEW PACKAGE**.
 3. The name of the package: `Navigation Application`
 4. Make sure **Is a singleton package** is ***not selected***.
@@ -165,7 +165,7 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 
 #### Simulation Package
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Click **ADD NEW PACKAGE**.
 3. The name of the package: `Simulation`
 4. Make sure **Is a singleton package** is ***not selected***.
@@ -202,7 +202,7 @@ You will first deploy the Simulation package, and then the Navigation Applicatio
 
 #### Deploy Simulation Package
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Select **Simulation** package.
 3. Click **Deploy package**.
 4. The name of deployment: `SIMULATION`
@@ -215,7 +215,7 @@ if the progress bar reaches **Succeeded**, and the status is **Running**.
 
 #### Deploy Navigation Application Package
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Select **Navigation Application** package.
 3. Click **Deploy package**.
 4. The name of deployment: `NAVIGATION`
@@ -249,5 +249,9 @@ Gazebo.
   to use ***/clock*** topic
 * If your application requires time synchronization, you have to wait on
   the ***/clock*** topic as shown [here](https://github.com/rapyuta-robotics/io_simulation_tutorials/blob/e50ccd9b9d8a99af8d4ae15b361d1370443bd2aa/turtlebot_navigation/io_gazebo_turtlebot_demo_app/scripts/demo_app.py#L13).
+
+## Tutorial Video
+[Applying Dynamic Configuration](https://youtu.be/Lsrltw12ZuA)
+{{< youtube id="Lsrltw12ZuA" title="rapyuta.io tutorial: turtlebot3 navigation in Gazebo simulation" >}}
 
 

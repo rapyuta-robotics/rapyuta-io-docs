@@ -8,8 +8,8 @@ weight: 412
 tags:
     - Tutorials
 ---
-An executable of a package can be a dockerfile. In that case, rapyuta.io
-applies [docker build recipe](/developer-guide/create-software-packages/builds/#docker-recipe) while deploying the package. The tutorial illustrates this recipe, where a dockerfile builds a docker image.
+
+This tutorial guides you to create a web application and deploy it in the rapyuta.io platform with docker build recipe.
 
 ## Learning objectives
 The tutorial will show you how to use a dockerfile to build an executable
@@ -18,10 +18,7 @@ of a package.
 ## Prerequisites
 1. Ensure that the [Google Chrome browser](https://www.google.com/chrome/)
    is installed on a computer.
-2. You should be familiar with the [developer guide](/developer-guide/) of rapyuta.io
-
-## Difficulty
-Beginner
+2. You should be familiar with the concepts of rapyuta.io.
 
 ## Estimated time
 10 minutes
@@ -29,7 +26,7 @@ Beginner
 ## Creating the build
 To create the build, follow below steps : 
 
-1. On the left navigation bar, click **BUILDS**
+1. On the left navigation bar, click **Development>Builds**.
 2. Click on **ADD NEW BUILD**
 3. In the Build Name box, enter a name for the build say `web-app-build` 
 4. In the **Git repository** box, enter the url address : 
@@ -48,7 +45,7 @@ Please proceed to creation of package once the build is Complete.
 You will add and deploy ***simple-hello-world*** package. To create a new package,
 follow the below instructions in sequence:
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Click **ADD NEW PACKAGE**.
 3. You should provide information about the package such as the name of the package, its version, whether its a singleton or bindable package and a short description.
    1. In the **Package Name** box, type in a name for the package like `simple-hello-world`
@@ -92,7 +89,7 @@ active.
 To deploy the ***simple-hello-world*** package, walk through the below
 instructions in sequence:
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Select *simple-hello-world* package.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, enter the name of the deployment you are creating like `Simple Flask Application`.
@@ -114,3 +111,7 @@ paste in the web browser, and press *Enter*.
 ![Network endpoint](/images/tutorials/hello-world/network-endpoint.png?classes=border,shadow&width=50pc)
 
 You will view ***Hello from rapyuta.io*** message.
+
+## Tutorial Video
+[Basic web App](https://youtu.be/a0xj7BmIajY)
+{{< youtube id="a0xj7BmIajY" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}

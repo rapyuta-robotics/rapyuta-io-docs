@@ -38,8 +38,6 @@ work the same.
 	4. [ROS nodes](https://wiki.ros.org/Nodes)
 	5. [ROS services](https://wiki.ros.org/Services)
 
-## Difficulty
-Intermediate
 
 ## Estimated Time
 30 minutes
@@ -52,7 +50,7 @@ which replaces the map published by */map* topic.
 #### Creating the build
 To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
 
-1. On the left navigation bar, click **BUILDS**
+1. On the left navigation bar, click **Developmet>Builds**
 2. Click on **ADD NEW BUILD**
 3. In the Build Name box, enter a name for the build say `io-tutorials` 
 4. In the **Git repository** box, enter the url address : 
@@ -66,7 +64,7 @@ repository into a running docker container. You may analyse the corresponding
 Please proceed to creation of package once the build is Complete.
 
 #### Create dynamic_map_server package
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Click **ADD NEW PACKAGE**.
 3. You should provide information about the package, such as the name of the
 package, its version, whether it is a singleton package, and a short description.
@@ -93,8 +91,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 9. For **Executable Type**, click on **Builds**.
-10. In the **Choose Build** select the Build (`io-tutorials`) [created above](/build-solutions/sample-walkthroughs/dependency-composition/#creating-the-build)
-	from the drop-down list
+10. In the **Choose Build** drop-down menu, select the build as `io-tutorials`.
 11. In the **Command to run in the docker container** box, copy and paste the command:
 	```bash
 	roslaunch dynamic_map_server map_server.launch
@@ -119,7 +116,7 @@ Additionally, you may verify if the package is built successfully and is ready
 to be deployed by clicking to see if the **Deploy package** button is enabled.
 
 #### Prepare and add a device
-You will [prepare](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3) a Raspberry Pi 2 or 3
+You will [prepare](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi) a Raspberry Pi 2 or 3
 as the device for this tutorial.
 
 If you are using custom rapyuta.io image on the device, the catkin workspace is already created, and the *io_tutorials* repository is already present in the workspace. Moreover, the source code is built for you.
@@ -220,7 +217,7 @@ To create the package, follow the instructions:
 #### Deploy dynamic_map_server package
 To deploy *dynamic_map_server* package, follow the steps:
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Select *dynamic_map_server* package.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, provide a name for the specific deployment
@@ -256,7 +253,7 @@ checking if the green colored progress bar indicates that the **DEPLOYMENT PHASE
 
 Ensure that the dependent deployment **STATUS** is _Running_ as well.
 
-The corresponding [dependency graph](/developer-guide/manage-software-cycle/compose-software/dependency-graph/) will look as shown below:
+The corresponding dependency graph will look as shown below:
 ![Dependency graph](/images/tutorials/dms/dms-dgraph.png?classes=border,shadow&width=50pc)
 
 To know whether *map_listener* has received the map data, execute the below

@@ -31,8 +31,7 @@ Packages which have builds that are in **Complete** status are suitable for a de
 {{% /notice %}}
 
 You may also view details such as the git repository URL where the source code is hosted, 
-the latest commit SHA number, the commit message and the commit owner’s name by clicking **View details/logs** 
-in the **Build history** tab of the build.
+the latest commit SHA number, the commit message and the commit owner’s name by clicking **View details/logs** in the **Build history** tab of the build.
 
 ![View details or logs](/images/core-concepts/builds/trigger-rollback-view-deails.png?classes=border,shadow&width=50pc)
 
@@ -50,8 +49,7 @@ The **Current build generation** number (Gen) is shown below the build ID.
 The builds are automatically restarted on rapyuta.io platform internal failures.
 Click **Refresh** if you observe that the build logs are abruptly disconnected or stopped
 
-When a build fails, it is recommended to check the corresponding
-[build logs](/developer-guide/tooling-automation/logging/build-logs/) to debug. It can be due to multiple reasons like:
+When a build fails, it is recommended to check the corresponding [build logs]({{< ref "/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs" >}}) to debug. It can be due to multiple reasons like:
 
 1. Repository access issue
 2. Incorrect context directory path

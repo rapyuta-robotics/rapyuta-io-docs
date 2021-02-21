@@ -495,8 +495,7 @@ pre .copy-to-clipboard:hover {
 }
 
 #body-inner ul li  {
-    list-style: circle;
-
+    list-style: disc;
 }
 
 #body-inner ol li li{

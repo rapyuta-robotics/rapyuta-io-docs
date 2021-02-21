@@ -54,9 +54,10 @@ In this example, the value is **Japan**
 
 
 ## Modifying Labels
-**Modify existing labels** by changing their keys or/and values and clicking **Save**.
 
-**Delete a label** by clicking on the delete icon next to it. 
+* You can **Modify existing labels** by changing their keys or/and values and clicking **Save**.
+
+* You can **Delete a label** by clicking on the delete icon next to it. 
 
 
 

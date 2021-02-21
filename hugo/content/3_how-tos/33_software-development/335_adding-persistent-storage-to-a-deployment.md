@@ -31,7 +31,7 @@ Applications running on the cloud de-allocate any resources consumed when they s
 
 
 
-The Rapyuta IO Persistent Volume is a storage package. A storage package is a public package which is available to all users out of the box. You cannot delete or modify storage packages, and they are available to every user.
+The *Rapyuta IO Persistent Volume* is a storage package. A storage package is a public package which is available to all users out of the box. You cannot delete or modify storage packages, and they are available to every user.
 
 
 ## Creating Storage
@@ -47,7 +47,7 @@ To preserve data files saved on the file server, deploy a persistent volume and 
 ## Adding Storage to a Deployment
 You can add the storage package as a dependent deployment. To add storage to a deployment, do the following.
 
-1. Deploy the package where you want to add the storage package as a dependent deploymen. For more information, [click here](/3_how-tos/33_software-development/334_deploy-packages).
+1. Deploy the package where you want to add the storage package as a dependent deployment. For more information, [click here](/3_how-tos/33_software-development/334_deploy-packages).
 
 2. On the deployment page, click **Add Volume** and do the following.
 
