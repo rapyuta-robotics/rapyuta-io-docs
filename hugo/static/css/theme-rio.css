@@ -392,7 +392,7 @@ a:hover {
     flex-direction: column;
     background-color: var(--MENU-SECTIONS-BG-color);
     box-shadow: 7px 1px 12px 11px #0000000d;
-    z-index: 10001;
+    z-index: 1001;
     margin: 0 1rem 0 0;
     
 }
