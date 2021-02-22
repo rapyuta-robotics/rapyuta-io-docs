@@ -27,8 +27,6 @@ tags:
 ---
 A package is a fundamental rapyuta.io resource that represents a declaration of your application. It is the smallest unit of deployment in rapyuta.io, and it can be deployed either on a device or the cloud or both.
 
-To make this possible, a package must encapsulate any information about how it should be built, its compatibility and runtime requirements, network endpoints and ROS interfaces it exposes, and any configuration information it may require.
-
 Creating a software package consists of the following high-level procedures.
 
 **Step1**: [Define Package information](#defining-package-information)
@@ -65,7 +63,7 @@ To add the metadata of the package, do the following.
 
 A component is a set of executables. All executables are deployed in unison on the desired Component Runtime. All executables of a component communicate via Inter-Process Communication (IPC). An executable listening on a port is accessible to its sibling executables via localhost.
 
-Perform the following procedure to create  components
+Perform the following procedure to create  components.
 
 1. Click the **Components** tab.
 
@@ -78,7 +76,7 @@ Perform the following procedure to create  components
 
     c. If the component is to be deployed on a ROS enabled device, click the **IS ROS Component** check-box.
 
-    d. In the Replicas to run the component, type the number of replication of the component that you want to includee.</br>
+    d. In the **Replicas to run the component** field, type the number of replication of the component that you want to includee.</br>
 
 3. In the executables area, do the following.
 
@@ -93,7 +91,7 @@ Perform the following procedure to create  components
 
     For more information about the type of executables, [click here](/1_understanding-rio/12_core-concepts/#builds)
 
-    c. If you have selected the executable type as **Builds**, from the Choose **Build** drop-down menu, select the build. 
+    c. If you have selected the executable type as **Builds**, from the **Choose Build** drop-down menu, select the build. 
 
     d. If you have selected the executable type as **Docker**, in the Docker Image field, type the docker image that you want to use. For more information about creating the build recipe as docker, click here.
 
@@ -104,7 +102,7 @@ Perform the following procedure to create  components
     g. From the Resource limit drop-down menu, select the CPU and memory requirement for the executable.
 
 
-4.  Optionally, to add an end-point, click **Add Endpoint** and do the following.
+4.  Optionally, to add an end-point, click **Add Endpoint** and do the following. For more information on end point configuration, [click here](/5_deep-dives/53_Networking-and-communication/532_standard-web-protocol)
 
     a. In the **Endpoint Name** field, type a name for the endpoint.
 
@@ -154,7 +152,7 @@ A maximum 50 ports are allowed for an endpoint. Allowed format is comma separate
 
 ## Step3: Configuring additional information
 
-Rapyuta.io allows you to configure the following additional information for the package.
+rapyuta.io allows you to configure the following additional information for the package.
 
 **Volumes**: Applications running on the cloud de-allocate any resources consumed when they stop, scale down, or fail. This implies that the working storage associated with them is ephemeral. To get around this problem rapyuta.io provides a mechanism to consume persistent block storage for your applications running in the cloud. This storage can be associated with at most one running deployment at any given point of time. A user is typically required to manage the lifecycle of the application code independently from the associated storage.
 
@@ -170,11 +168,9 @@ To prevent against such unintentional cross-communication between deployments of
 
 Perform the following procedure to add additional information to the package.
 
-1. Click Additional **Information** tab. 
+1. Click **Additional Information** tab. 
 
-2. To add a volume to the package, click the refresh icon next to the Volume field and do the following. Before adding a volume package, ensure that you have created a volume package.
-
-Under Deployment, select the volume deployment that you created.
+2. To add a volume to the package, click the refresh icon next to the Volume field and do the following. Before adding a volume package, ensure that you have created a volume package. Under Deployment, select the volume deployment that you created.
 
 3. To add a dependent deployment, click the refresh icon next to the **Dependent Deployment** field and select the dependent deployment.
 

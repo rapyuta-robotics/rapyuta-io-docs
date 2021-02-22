@@ -72,7 +72,7 @@ To change or reset your password, do the following.
 
 1. Click the user menu and click **Change Password**. A dialog box appears to change the pasword.
 2. In the **Change Password** dialog box, type your old pass word, type a new password and confirm the password in the respective fields.
-3. To confirm yourself as a human, click the **Captcha** and follow the instructions.*Verify this content*
+3. To confirm yourself as a human, click the **Captcha** and follow the instructions.
 
 
 
