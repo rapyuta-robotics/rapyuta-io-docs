@@ -221,8 +221,7 @@ If you want to clone a project within the same project, you must rename the buil
 {{% notice note %}}
 The dialog box to clone secret appears only for the builds that have a secret.
 {{% /notice %}}
-5. The build creation page appears and allows you to modify the build details.
--
+5. The build creation page appears and allows you to modify the build details. 
 6. After reviewing the field details of the build creation pages, click **Next**. The build is clone to the selected project.
 
 ## Related Links

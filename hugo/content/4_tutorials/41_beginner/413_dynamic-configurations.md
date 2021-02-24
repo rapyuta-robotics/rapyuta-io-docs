@@ -150,8 +150,8 @@ To create the *Publisher for Configured Devices* package, follow the steps:
 11. Ensure the **ROS Version** is **Kinetic**.
 12. In the **Executable Name** box, enter a name for the executable say `talker_executable`.
 13. Select **Default** for **Executable Type**.
-14. Enter the following command in the **Command to run in the docker container** box.
-   `roslaunch param_talker talker.launch`
+14. Enter `roslaunch param_talker talker.launch` in the **Command to run in the docker container** box.
+
 15. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 ![publisher for configured devices](/images/tutorials/talker-supervisor/pub-configured-devices.png?classes=border,shadow&width=40pc)
 

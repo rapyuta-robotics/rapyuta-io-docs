@@ -1,5 +1,5 @@
 ---
-title: "Detail Page"
+title: "Details Page"
 description:
 type: developer-guide
 date: 2019-10-24T11:47:55+05:30
