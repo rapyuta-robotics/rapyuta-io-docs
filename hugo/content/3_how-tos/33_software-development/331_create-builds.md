@@ -175,9 +175,9 @@ After you have created a build by either Catkin or Docker recipe, you can view t
 
 
   * Click **Delete** to delete the build. 
-  * Click [Trigger](/5_deep-dives/52_software-development/522_trigger-and-rollback-builds) to trigger a build. 
-  * Click [Clone]({{< ref "/5_deep-dives/52_software-development/521_cloning-builds" >}}) to clone a build within the same or to different projects.
-  * Click **Show More** to view the details of the build and view the [build log]({{< ref "/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs" >}}).
+  * Click **Trigger** to trigger a build. 
+  * Click **Clone** to clone a build within the same or to different projects.
+  * Click **Show More** to view the details of the build and view the build logs.
 
   After clicking **Show More**,  the following image is displayed.
 
