@@ -47,14 +47,14 @@ The tutorial consists of the below steps:
 #### Defining configuration
 You will define the configuration ***robots*** as follows:
 
-1. On the left navigation bar, click **CONFIGURATIONS**.
+1. On the left navigation bar, click **Development>Configurations**.
 2. Click **ADD NEW CONFIGURATION**.
-3. Provide a name, say, ***robots*** for the configuration in the **Configuration Name** box.
+3. Provide a name, for example, ***robots*** for the configuration in the **Configuration Name** box.
 4. Click **CONFIRM**.
 5. Add a new file, ***name.yaml***, below the root node ***robots***.
 6. Define parameters in the ***name.yaml***.
 {{% notice info %}}
-Refer to the quick starting guide on [how to define parameters](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configs/#creating-configuration-parameters).
+For more information about configuration parameter, [click here](/4_tutorials/41_beginner/413_dynamic-configurations)
 {{% /notice %}}
 ![robots configuration](/images/tutorials/talker-supervisor/robots-configuration.png?classes=border,shadow&width=40pc)
 
@@ -68,7 +68,7 @@ Similarly, define parameters in all of the ***name.yaml*** files occurring below
 ![drone-1 parameter file](/images/tutorials/talker-supervisor/drone1-name-file.png?classes=border,shadow&width=40pc)
 
 #### Preparing device
-The tutorial will use Raspberry PI as the device. Learn [how to prepare the device](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3).
+The tutorial will use Raspberry PI as the device. Learn [how to prepare the device](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi).
 
 If you are using the custom rapyuta.io image on the device, you need to execute the following command to update the ***io_tutorials*** repository at the root of your catkin workspace.
 
@@ -83,7 +83,7 @@ catkin build param_talker
 ```
 
 #### Adding device to rapyuta.io
-When [onboarding the device to rapyuta.io](/developer-guide/manage-machines/onboarding/) the environment variable **RIO_CONFIGS_DIR** is set locally on the device. It is the location of the directory where all of the configurations that will be applied to the device are stored.
+When onboarding the device to rapyuta.io, the environment variable **RIO_CONFIGS_DIR** is set locally on the device. It is the location of the directory where all of the configurations that will be applied to the device are stored.
 {{% notice info %}}
 The value of **RIO_CONFIGS_DIR** is set to **/opt/rapyuta/configs**
 {{% /notice %}}
@@ -94,7 +94,7 @@ The value of **RIO_CONFIGS_DIR** is set to **/opt/rapyuta/configs**
 {{% /notice %}}
 
 #### Applying configuration to device
-You should [define labels for the device](/developer-guide/manage-software-cycle/dynamic-configurations/device-labels/) so you can apply configuration parameters to it. You will define the following labels in this tutorial:
+You should [define labels for the device](/3_how-tos/32_device-management/323_managing-labels-on-devices) so you can apply configuration parameters to it. You will define the following labels in this tutorial:
 
 * robot_type: drone
 * robot_name: drone-1
@@ -131,7 +131,7 @@ The robots configuration is stored in **RIO_CONFIGS_DIR** and its parameters fil
 You can use **RIO_CONFIGS_DIR** in ROS launch files for loading configurations.
 ![configuration environment variable in ROS launch file](/images/tutorials/talker-supervisor/launch-file-content.png?classes=border,shadow&width=50pc)
 
-You can remotely access **RIO_CONFIGS_DIR** by [SSH-ing into the device via rapyuta.io](/developer-guide/tooling-automation/#remote-web-terminal-webssh)
+You can remotely access **RIO_CONFIGS_DIR** by [SSH-ing into the device via rapyuta.io](/3_how-tos/35_tooling_and_debugging/351_remote-ssh-into-device)
 ![SSH access](/images/tutorials/talker-supervisor/SSH-into-device.png?classes=border,shadow&width=40pc)
 
 #### Creating the package
@@ -151,9 +151,7 @@ To create the *Publisher for Configured Devices* package, follow the steps:
 12. In the **Executable Name** box, enter a name for the executable say `talker_executable`.
 13. Select **Default** for **Executable Type**.
 14. Enter the following command in the **Command to run in the docker container** box.
-```
-roslaunch param_talker talker.launch
-```
+   `roslaunch param_talker talker.launch`
 15. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 ![publisher for configured devices](/images/tutorials/talker-supervisor/pub-configured-devices.png?classes=border,shadow&width=40pc)
 
@@ -188,3 +186,7 @@ The output contains values of the *first_name* and *last_name* parameters for th
 {{% notice note %}}
 Your output may be different based on the device labels you define.
 {{% /notice %}}
+
+## Tutorial Video
+[Applying Dynamic Configuration](https://youtu.be/WaDjGwyDN58)
+{{< youtube id="WaDjGwyDN58" title="rapyuta.io tutorial: applying configuration parameters" >}}

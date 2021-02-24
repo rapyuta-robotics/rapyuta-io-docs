@@ -34,7 +34,7 @@ categories:
 
 {{%notice note%}}
  Only the  **Admin** of an organization can invite users to the rapyuta.io console.
-{{% /notice %}}
+{{%/notice %}}
 
 
 

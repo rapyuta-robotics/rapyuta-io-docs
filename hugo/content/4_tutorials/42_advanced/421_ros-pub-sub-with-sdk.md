@@ -29,14 +29,12 @@ python application.
 
 ## Prerequisites
 1. Read the rapyuta.io platform documentation
-2. [Install rapyuta.io SDK](/developer-guide/tooling-automation/python-sdk/#installation)
-   in your development environment.
-3. Learn how to obtain:
-   1. [authorization token](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#auth-token)
-   2. [project ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#project-id)
-   3. [package ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#package-id)
-   4. [plan ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#plan-id)
-   5. [device ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#device-id)
+2. Install rapyuta.io SDK in your development environment and obtain the following. For more information, [click here]({{< ref "/3_how-tos/35_tooling_and_debugging/357_using-rapyuta-io-python-sdk" >}})
+   1. authorization token
+   2. project ID
+   3. package ID
+   4. plan ID
+   5. device ID
 
 
 ## Estimated time
@@ -68,20 +66,18 @@ python application.
  
 To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
 
-1. On the left navigation bar, click **BUILDS**
+1. On the left navigation bar, click **Development>Builds**.
 2. Click on **ADD NEW BUILD**
 3. In the Build Name box, enter a name for the build say `io-tutorials`
 4. In the Git repository box, enter the url address : `https://github.com/rapyuta/io_tutorials` 
 and select **Build Recipe** as Catkin.
 5. Go to the next step and click on next, the build will be created.
 
-The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding
-[build logs](/developer-guide/tooling-automation/logging/build-logs/), which helps in debugging failed builds.
-Please proceed to creation of package once the build is Complete.
+The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding build logs, which helps in debugging failed builds. After you create the build, create the *Talker* and *Listener* package.
 
 ### Create Talker Package
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Click **ADD PACKAGE**.
 3. In the **Package Name** box, type in a name for the package like `Talker`.
 4. In the **Package Verison** box, enter the version of the package
@@ -109,7 +105,7 @@ Please proceed to creation of package once the build is Complete.
 
 ### Create Listener Package
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Click **ADD PACKAGE**.
 3. In the **Package Name** box, type in a name for the package
    like `Listener`.

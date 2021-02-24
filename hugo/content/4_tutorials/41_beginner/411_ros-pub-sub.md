@@ -1,5 +1,5 @@
 ---
-title: Ros Publisher Subsciber
+title: ROS Publisher Subsciber
 description: null
 type: build-solutions
 date: 2019-10-24T08:17:13.000Z
@@ -40,13 +40,9 @@ work the same.
 ## Estimated time
 15 minutes
 
-## Learning objectives
-The walkthrough gives an overview of how to:
-
-1. configure and provision a package
-2. create a routed network
-3. deploy a package on the cloud
-4. deploy a package on a device
+## On-boarding a device
+* If you are using a Raspberry PI device, you must prepare the device before onboarding. For more information, [click here](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi)
+* If you are using your computer as a device(Linux machine), [click here](/3_how-tos/32_device-management/321_onboarding-a-device).
 
 ### Creating the **io-tutorial** build
  
@@ -61,59 +57,79 @@ and select **Build Recipe** as Catkin.
 
 The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding build logs, which helps in debugging failed builds. Please proceed to creation of package once the build is Complete.
 
-### Create Talker Package
+## Creating the Package
+
+To create the _Docker publisher subscriber_ package using the
+[console](https://console.rapyuta.io), follow the steps:
 
 1. On the left navigation bar, click **Development>Catalog**.
-2. Click **ADD PACKAGE**.
-3. In the **Package Name** box, type in a name for the package like `Talker`.
-4. In the **Package Verison** box, enter the version of the package
-   you are creating. The default value is *1.0.0*
-5. Ensure that **Is bindable package** is ***selected***, and **Is singleton package** is ***de- selected***.
-6. In the **Description** box, explain what the package is about,
-   for instance, the description of this package is `ROS Publisher`.
+2. Click **ADD NEW PACKAGE**.
+3. In the **Package Name** box, type in a name for the package say `Docker publisher subscriber`
+4. In the **Package Version** box, enter the version of the package you are creating.
+   The default value is _1.0.0_
+5. Ensure that **Is a bindable package** is selected.
+6. In the **Description** box, provide a summary of the package.
 7. Click **NEXT**.
-8.  In the **Component Name** box, enter a name for the component say `TALKER`.
-9. Select **Cloud** for **Component Runtime**.
-10. Ensure **Is ROS Component** is selected.
-11. Select **Kinetic** for **ROS Version**.
-12. The default value of **Replicas to run the component** is set to 1
-13. In the **Executable Name** box, enter a name for an executable,
-    say `talker_executable`.
-14. Click **Builds** for **Executable Type**.
-15. Select **io-tutorials** builds from the dropdown
-16. In the **Command to run in the docker container** box, enter the command:
-    `roslaunch talker talker.launch`
-17. The ***talker_executable*** publishes a ROS topic `/telemetry`.
-    To add a ROS topic, click **Add ROS topic**. In the **Name** box,
-    type in the ROS topic. Select **Maximum** as the value for **QoS**.
-18. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-### Create Listener Package
+The package has two components: the **talker** running on the cloud and the
+**listener** running on the device.
 
-1. On the left navigation bar, click **Development>Catalog**.
-2. Click **ADD PACKAGE**.
-3. In the **Package Name** box, type in a name for the package
-   like `Listener`.
-4. In the **Package Version** box, enter the version of the package
-   you are creating. The default value is *1.0.0*
-5. Make sure **Is singleton package** is ***not selected***.
-6. Ensure **Is bindable package** is ***selected***.
-7. In the **Description** box, explain what the package is about,
-   for instance, the description of this package is `ROS Subscriber`.
-8. Click **NEXT**.
-9.  In the **Component Name** box, enter a name for the component say `LISTENER`.
-10. Select **Device** for **Component Runtime**.
-11. Ensure **Is ROS Component** is selected.
-12. Select **Kinetic** for **ROS Version**.
-13. Set **Restart Policy** to **Never**.
-14. In the **Executable Name** box, enter a name for an
-    executable say `listener_executable`.
-15. Set **Executable Type** to **Default**.
-16. In the **Command to run in the docker container** box, enter
-    the command: `roslaunch listener listener.launch`
-17. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+1. Talker component (aka _ROS publisher_)
+	1. In the **Component Name** box, enter a name for the component, say `talker`      
+{{% notice info %}}
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character. It must not begin with a digit.
+{{% /notice %}}
+	2. For **Component Runtime**, click **Cloud**.
+	3. Ensure **Is ROS Component** is selected.
+	4. Ensure the **ROS Version** is **Kinetic**.
+	5. Set the value of **Replicas to run the component** to the number 1 (default value).
+	6. In the **Executable Name** box, enter a name for the executable say
+	   `talkerExecutable`  
+{{% notice info %}}
+The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
+{{% /notice %}}
+	7. For **Executable Type**, click on **Builds**.
+	8. In the **Choose Build** select the first Build (`io-tutorials`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/#io-tutorial-build)
+	from the drop-down list.	
+	9. In the **Command to run in the docker container** box, enter the command:
+		```bash
+		roslaunch talker talker.launch
+		```
 
+		Ensure you always execute the command *roslaunch* to explicitly start the
+		[ROS Master](https://wiki.ros.org/Master) instead of running the *rosrun*
+		command, because the ROS Master will fail to start on _rosrun_, and
+		eventually, the deployment will fail as well.
+		![talkerExecutable](/images/tutorials/docker-pub-sub/docker-pubsub-talker-exec.png?classes=border,shadow&width=50pc)
+	10. The _talkerExecutable_ publishes a ROS topic, `/telemetry`    
+	   To add a ROS topic, click **Add ROS topic**. In the **Name** box, enter the name of the ROS topic. Select **Maximum** for **QoS**.
+2. Listener component (aka _ROS subscriber_)
+	1. In the **Component Name** box, type in a name for the component, say `listener`      
+{{% notice info %}}
+The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
+{{% /notice %}}
+	2. For **Component Runtime**, click **Device**.
+	3. Ensure **Is ROS Component** is selected.
+	4. Ensure the **ROS Version** is **Kinetic**.
+	5. Select **arm32v7** as **Architecture**.
+	6. In the **Executable Name** box, type in a name for the executable say
+	   `listenerExecutable`   
+{{% notice info %}}
+The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
+{{% /notice %}}
+	7. For **Executable Type**, click on **Builds**.
+	8. In the **Choose Build** select the second Build (`io-tutorials-arm32v7`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/#io-tutorials-arm32v7-build)
+	from the drop-down list.
+	9. In the **Command to run in the docker container** box, enter the command:
+		```bash
+		roslaunch listener listener.launch
+		```
 
+		Ensure you always execute the command *roslaunch* to explicitly start the
+		[ROS Master](https://wiki.ros.org/Master) instead of running the *rosrun*
+		command, because the ROS Master will fail to start on _rosrun_, and
+		eventually, the deployment will fail as well.
+	10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ## Create a Cloud Routed Network
 A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
@@ -130,7 +146,6 @@ Perform the following procedure to create a routed network.
 7. Click **CONTINUE** and wait for the routed network to be successfully running.
 
 
-
 ## Deploying the package
 To deploy a package using the [console](https://console.rapyuta.io),
 follow the steps:
@@ -144,7 +159,8 @@ follow the steps:
    deploy the component on. Click **Refresh the list of online devices** to retrieve an updated list of online devices.
 6. Select the device from the **Select device for deploying the component**
    dropdown list.
-7. Click **CREATE DEPLOYMENT** > **Confirm**.
+7. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** page where a green colored bar
 moves from **In progress** to **Succeeded** with **Status:Running** indicating that the **DEPLOYMENT PHASE** has **Succeeded**, and the **STATUS** is **Running**.

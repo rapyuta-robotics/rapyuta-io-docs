@@ -1,5 +1,5 @@
 ---
-title: "Local Communication"
+title: "Local Communication Using Device Routed Network"
 description:
 type: build-solutions
 date: 2019-10-24T13:47:47+05:30
@@ -13,7 +13,7 @@ latent when the service is distributed across WAN. This tutorial demonstrates
 how to have multi-device communication within the same LAN.
 
 ## Learning objectives
-This tutorial will show you how to deploy a broker package locally for inter
+This tutorial will show you how to deploy a device routed network locally for inter
 device communication using [rapyuta.io console](https://console.rapyuta.io).
 
 ## Prerequisites
@@ -33,31 +33,32 @@ work the same.
 	1. ROS [topics](http://wiki.ros.org/Topics)
 	2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
 
-
 ## Estimated time
 20 minutes
 
 ## Tutorial walkthrough
 
-In this tutorial, you will add three devices namely _Broker Device_,
+In this tutorial, you will add three devices namely _device_rn,
 _Publisher Device_ and _Subscriber Device_. You will also create and deploy
 _ROS Publisher_ and _ROS Subscriber_ packages.
 
-#### Add Broker Device
-The _Broker Device_ must be of **amd64** CPU architecture.
+#### Add a Device 
+Ensure that the device must be of **amd64** CPU architecture.
 
 1. Click **DEVICES** > **ADD NEW DEVICE**.
-2. In the **Device Name** box, enter the name of the device say `Broker Device`
-3. Select **Use docker compose as default runtime** option.
-4. Ensure the **ROS Version** is **Kinetic**.
-5. In the **Description** box, provide a summary of the device
-   say `I am a communication broker`
-6. Click **CONTINUE**.
-7. Click **COPY** to copy the generated **Token**
+2. In the **Device Name** box, enter the name of the device say `device_rn`
+3. Use **docker compose as the default runtime** option.
+4. Ensure the ROS Version is Kinetic.
+4. In the **Description** box, provide a summary of the device say
+   `I am a Device Routed Network`
+5. Click **CONTINUE**.
+6. Click **COPY** to copy the generated **Token**. 
 
-Paste and execute the token (otherwise called the device setup link) in the device's terminal to set up the rapyuta.io client on the device.
+Paste and execute the token in the device's terminal to set up the
+rapyuta.io client on the device.
 
-If the device is set up successfully, you should see the following output at the device's terminal:
+If the device is set up successfully, you should see the following output
+at the device's terminal:
 ```bash
 Initialising the Rapyuta Platform
 
@@ -65,12 +66,8 @@ Initialising the Rapyuta Platform
 Successfully Installed!
 ```
 
-Ensure that there's a <span style="color:green">**green**</span> dot next to the ***Broker Device***,
-which indicates that it is online on rapyuta.io.
-
-{{% notice note %}}
-In production-like scenarios, ensure the [broker device is assigned a static IP address](/developer-guide/manage-software-cycle/communication-topologies/local-communication-broker/).
-{{% /notice %}}
+Ensure that there's a <span style="color:green">**green**</span> dot next to
+the ***Publisher Device***, which indicates that it is online on rapyuta.io.
 
 #### Prepare Publisher Device
 The _Publisher Device_ is:
@@ -87,7 +84,7 @@ Moreover, the [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tuto
 {{% /notice %}}
 
 {{% notice info%}}
-Learn how to [prepare Raspberry PI](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3)
+Learn how to [prepare Raspberry PI](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi)
 {{% /notice %}}
 
 If you are using custom rapyuta.io image on the device, the catkin workspace is
@@ -324,6 +321,8 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
    and set **QoS** to **Maximum**.
 10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
+
+
 ## Create ROS Subscriber package
 
 1. Click **CATALOG** > **ADD NEW PACKAGE**.
@@ -355,29 +354,24 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 	eventually, the deployment will fail as well.
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-## Deploy local communication broker
+## Create a Device Routed Network
+Follow these steps to create a device routed network. Make sure you have a rapyuta.io registered
+device with docker runtime.
 
-1. Click **CATALOG**.
-2. Under **Communication packages**, select **Rapyuta IO Local Communication Broker** package.
-3. Click **Deploy package**.
-4. In the **Name of Deployment** box, enter a name for the broker deployment say `Communication Broker Deployment`
-5. Since **brokerComponent** has **Device runtime** select the device you want to deploy on by clicking **Refresh the list of online devices**. It retrieves
-an updated list of online devices.
-{{% notice note %}}
-As the component will be deployed on a device, its restart policy is already set to **Always**, however, you may override this value at the time of creating a deployment of the package.
-{{% /notice %}}
-6. Select **Broker Device** from **Select device for deploying the component** drop-down list.
-7. Select the network interface parameter value as per your device on
-   which you are deploying by clicking **NETWORK_INTERFACE** drop-down list.
-8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You will be redirected to the newly created deployment's **Details** tab.
-The package is successfully deployed when the green colored bar moves
-from **In progress** to **Succeeded** indicating that the **DEPLOYMENT PHASE**
-has **Succeeded**, and the **STATUS** is **Running**.
+1. On the left navigation bar, click **NETWORKS**.
+2. Click **ADD NEW ROUTED NETWORK**.
+3. Enter  `device_routed_network_1` as the name for the routed network.
+4. Select **ROS Distro** as Kinetic.
+5. Select the **Runtime** as **Device**.
+6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
+Select the **Device** as  `Routed_Network_Device` and it’s **IP Interface**. 
+7. Select the [Restart policy](/developer-guide/manage-software-cycle/deployments/#restart-policy).
+![goo](/images/tutorials/routed-networks/create-device-routed-network.png?classes=border,shadow&width=40pc)
+8. Click **CONTINUE**.
 
-You may analyse the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/)
-so you may debug if the deployment fails.
+The routed network is getting deployed and is identical to the deployment of any other package and has identical corresponding phases and errors.
+Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
 
 ## Deploy ROS Publisher package
 
@@ -389,11 +383,8 @@ updated list of online devices.
 4. Select **Publisher Device** from **Select device for deploying the component** drop-down list.
 5. Under **Device Config Variables**, ensure that the **ros_workspace** and
    **ros_distro** are selected.
-6. Click **Add dependency** to add a dependent deployment.
-7. Select **Communication Broker Deployment** from the drop-down list of
-   deployments. Ensure that the **Communication Broker Deployment** is
-   valid and is already running.
-   ![Dependent deployment](/images/tutorials/local-comm-broker/ros-pub-dependent-deploy.png?classes=border,shadow&width=50pc)
+6. Click **Add** next to the **Routed Network** field.
+7. From the **Network** drop-down menu, select `device_routed_network_1` as the device routed network.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the **Details** tab of the newly created deployment. The package is successfully deployed when the green coloured bar moves from
@@ -402,7 +393,6 @@ and the **STATUS** is **Running**.
 
 ![ROS Publisher Deployment](/images/tutorials/local-comm-broker/ros-pub-deployment.png?classes=border,shadow&width=50pc)
 
-Ensure that the dependent deployment **STATUS** is **Running** as well.
 
 You may analyse the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/) so you may debug
 if the deployment fails.
@@ -419,10 +409,7 @@ The corresponding [dependency graph](/developer-guide/manage-software-cycle/comp
 updated list of online devices.
 4. Select **Subscriber Device** from the **Select device for deploying the component** drop-down list.
 5. Ensure that **ros_workspace** and **ros_distro** are selected.
-6. Click **Add dependency** to add a dependent deployment.
-7. Select **Communication Broker Deployment** from the drop-down list of
-   deployments. Ensure that the **Communication Broker Deployment** is valid
-   and is already running.
+6. From the **Network** drop-down menu, select `device_routed_network_1` as the device routed network.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** tab.
@@ -431,7 +418,6 @@ The package is successfully deployed when the green colored bar moves from
 
 ![ROS Subscriber Deployment](/images/tutorials/local-comm-broker/ros-sub-deployment.png?classes=border,shadow&width=50pc)
 
-Ensure that the dependent deployment **STATUS** is **Running** as well.
 
 You may analyse the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/) so you may debug
 if the deployment fails.
@@ -443,9 +429,9 @@ If all of the above three deployments are successfully running, the
 logs of **ROS Subscriber Deployment** will print ***hello_world***.
 
 
-Since the communication broker is deployed on the **Broker Device** locally,
+Since the device routed network is deployed on the **device_rn** locally,
 and the bindable attribute is not selected (value is set to false) for both
 the **ROS Publisher** package and the **ROS Subscriber** package, the ROS topic
 (***/telemetry***) and in general, the data is transferred within the same
 local network. Thus, the application's latency is comparatively reduced
-provided the **Broker Device** is in the same network as the **Publisher Device**, and **Subscriber Device**.
+provided the **device_rn** is in the same network as the **Publisher Device**, and **Subscriber Device**.

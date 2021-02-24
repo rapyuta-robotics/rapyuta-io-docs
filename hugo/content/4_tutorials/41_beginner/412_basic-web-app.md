@@ -8,8 +8,8 @@ weight: 412
 tags:
     - Tutorials
 ---
-An executable of a package can be a dockerfile. In that case, rapyuta.io
-applies [docker build recipe](/3_how-tos/33_software-development/331_create-builds/) while deploying the package. The tutorial illustrates this recipe, where a dockerfile builds a docker image.
+
+This tutorial guides you to create a web application and deploy it in the rapyuta.io platform with docker build recipe.
 
 ## Learning objectives
 The tutorial will show you how to use a dockerfile to build an executable
@@ -18,7 +18,7 @@ of a package.
 ## Prerequisites
 1. Ensure that the [Google Chrome browser](https://www.google.com/chrome/)
    is installed on a computer.
-2. You should be familiar with the [developer guide](/developer-guide/) of rapyuta.io
+2. You should be familiar with the concepts of rapyuta.io.
 
 ## Estimated time
 10 minutes
