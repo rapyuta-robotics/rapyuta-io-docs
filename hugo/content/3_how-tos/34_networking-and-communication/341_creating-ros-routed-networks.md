@@ -25,13 +25,13 @@ tags:
 Follow these steps to create a cloud routed network.
 
 1. On the left navigation bar, click **Networking>Routed Networks**.
-2. Click **ADD NEW ROUTED NETWORK**. The **Create Routed Network** page appears. 
+2. Click **ADD NEW NETWORK** and select the network type as **Routed Network**. The **Create New Routed Network** page appears. 
 3. Enter a name for routed network.
 4. Select **ROS Distro**, as either **Kinetic** or **Melodic** based on ROS version of package components it will be binding to.
 5. Select the **Runtime** as **Cloud**.
 ![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=40pc)
 6. From the Resource limit field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can select one of the following resource limit based on your requirement.
-  * **Smal**l: 1cpu core, 4 GiB memory
+  * **Small**: 1cpu core, 4 GiB memory
   * **Medium**: 2cpu core, 8 GiB memory
   * **Large**: 4cpu core, 16 GiB memory
 6. Click **CONTINUE**.
@@ -43,7 +43,7 @@ device with docker runtime and AMD64 architecture available.
 
 
 1. On the left navigation bar, click **Networking>Routed Network**.
-2. Click **ADD NEW ROUTED NETWORK**. The **Create Routed Network** page appears.
+2. Click **ADD NEW NETWORK**. The **Create New Routed Network** page appears.
 3. Enter a name for routed network.
 4. Select **ROS Distro**, as either Kinetic or Melodic based on ROS version of package components it will be binding to.
 5. Select the **Runtime** as **Device**.
@@ -57,6 +57,21 @@ Deploying a routed network is identical to deploying any other package and has i
 Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
 ![goo](/images/tutorials/routed-networks/routed-network-details.png?classes=border,shadow&width=40pc)
 
+## Creating Native Network
+
+Follow these steps to create a native network.
+
+1. On the left navigation bar, click **Networking>Routed Network**.
+2. Click **ADD NEW NETWORK** and select the network type as **Native Network**. The **Create new native network** dialog-box appears.
+3. Enter a name for the native network. 
+4. Select **ROS Distro** as either **Kinetic** or **Melodic** based on ROS version of package components it will be binding to.
+5. From the Resource limit field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can select one of the following resource limit based on your requirement.
+  * **X-Small**: 0.1cpu core, 1 GiB memory
+  * **Small**: 1cpu core, 4 GiB memory
+  * **Medium**: 2cpu core, 8 GiB memory
+  * **Large**: 4cpu core, 16 GiB memory
+
+6. Click **CONTINUE**.
 ## Deleting Routed Network
 
 Only network not bound to any running deployments can be deleted.
@@ -69,9 +84,6 @@ Only network not bound to any running deployments can be deleted.
 An attempt to deprovision a network that is currently being used will result in an error.
 {{% /notice %}}
 
-{{% notice info %}}
-Follow this walkthrough to [bind routed networks](/developer-guide/manage-software-cycle/deployments/#deploying-a-package) to ROS package deployments. 
-{{% /notice %}}
 
 
 ## Related Links

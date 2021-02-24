@@ -164,7 +164,7 @@ After you have created a build by either Catkin or Docker recipe, you can view t
 |**Status**| Provides the following status of the build. <ul><li>BuildInProgress: Displays when the build creation process is in progress.</li><li>Complete: Displays when the build creation process has been successfully completed.</li><li>BuildFailed: Displays if the build creation process has failed.</li></ul>
 |**Started**| Provides the time duration when the build creation process has started.
 |**Repository**| Provides the repository from which the build has been created.
-|**Action**| Allows you to [delete](/developer-guide/create-software-packages/builds/build-creation/#deleting-the-build), [trigger](/developer-guide/create-software-packages/builds/trigger-rollback/), or [clone](/developer-guide/create-software-packages/builds/build-cloning/)  a build. 
+|**Action**| Allows you to delete, trigger, or clone a build. 
 
 2. To view the details of a particular build, click the build. The following image is displayed.
 
@@ -221,8 +221,8 @@ If you want to clone a project within the same project, you must rename the buil
 {{% notice note %}}
 The dialog box to clone secret appears only for the builds that have a secret.
 {{% /notice %}}
-5. The build creation page appears and allows you to modify the build details. For more information about build creation, [click here](/developer-guide/create-software-packages/builds/build-creation).
-
+5. The build creation page appears and allows you to modify the build details.
+-
 6. After reviewing the field details of the build creation pages, click **Next**. The build is clone to the selected project.
 
 ## Related Links

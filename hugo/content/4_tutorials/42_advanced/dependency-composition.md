@@ -38,8 +38,6 @@ work the same.
 	4. [ROS nodes](https://wiki.ros.org/Nodes)
 	5. [ROS services](https://wiki.ros.org/Services)
 
-## Difficulty
-Intermediate
 
 ## Estimated Time
 30 minutes
@@ -52,7 +50,7 @@ which replaces the map published by */map* topic.
 #### Creating the build
 To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
 
-1. On the left navigation bar, click **BUILDS**
+1. On the left navigation bar, click **Developmet>Builds**
 2. Click on **ADD NEW BUILD**
 3. In the Build Name box, enter a name for the build say `io-tutorials` 
 4. In the **Git repository** box, enter the url address : 
@@ -66,7 +64,7 @@ repository into a running docker container. You may analyse the corresponding
 Please proceed to creation of package once the build is Complete.
 
 #### Create dynamic_map_server package
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Click **ADD NEW PACKAGE**.
 3. You should provide information about the package, such as the name of the
 package, its version, whether it is a singleton package, and a short description.

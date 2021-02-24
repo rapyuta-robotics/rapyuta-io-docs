@@ -8,8 +8,7 @@ weight: 415
 tags:
     - Tutorials
 ---
-A _ROS publisher_ is part of a ROS package. It is a public git repository, which is built into a running docker container on the fly when the package
-is being deployed. A _ROS subscriber_ is also a part of the same ROS package. It is downloaded on a device and is launched when the package is deployed.
+A _ROS publisher_ is part of a ROS package. It is a public git repository, which is built into a running docker container on the fly when the package is being deployed. A _ROS subscriber_ is also a part of the same ROS package. It is downloaded on a device and is launched when the package is deployed.
 
 ## Learning objectives
 The tutorial will show you how to deploy a basic ROS package with a _ROS publisher_ running on the cloud and a _ROS subscriber_ running on a device such as Raspberry PI.
@@ -32,9 +31,6 @@ work the same.
 	2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
 	3. [ROS topics](https://wiki.ros.org/Topics)
 	4. [ROS services](https://wiki.ros.org/Services)
-
-## Difficulty
-Beginner
 
 ## Estimated time
 15 minutes
@@ -106,7 +102,7 @@ the **Use docker compose as default runtime** checkbox while adding the device.
 ## Creating the build
 To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
 
-1. On the left navigation bar, click **BUILDS**
+1. On the left navigation bar, click **Development>Builds**
 2. Click on **ADD NEW BUILD**
 3. In the Build Name box, enter a name for the build say `io-tutorials` 
 4. In the **Git repository** box, enter the url address : 
@@ -122,7 +118,7 @@ Please proceed to creation of package once the build is Complete.
 To create a package using the [console](https://console.rapyuta.io), follow
 the steps:
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Click **ADD NEW PACKAGE**.
 3. In the **Package Name** box, type in a name for the package say `ROS publisher subscriber`.
 4. In the **Package Version** box, enter the version of the package you are creating.
@@ -194,7 +190,7 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 To deploy a package using the [console](https://console.rapyuta.io),
 follow the steps:
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **DEvelopment>Catalog**.
 2. Select the **ROS publisher subscriber** package.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, enter a name for the deployment you are

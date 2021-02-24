@@ -45,7 +45,3 @@ While avoiding a round trip of information to the cloud minimizes latency and al
 {{% notice tip %}}
 On reboot devices configured using DHCP may boot up with a new IP address. This will cause the network configuration of a routed network deployed on it to become invalid. This can be avoided by assigning a static IP  to the device you intend to deploy a routed network to esp in production systems.
 {{% /notice %}}
-
-{{% notice info %}}
-Follow this walkthrough to create and use a [routed network](/build-solutions/sample-walkthroughs/routed-network). 
-{{% /notice %}}

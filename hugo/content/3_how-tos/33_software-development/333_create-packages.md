@@ -132,7 +132,7 @@ Perform the following procedure to create  components.
 A maximum 50 ports are allowed for an endpoint. Allowed format is comma separated Port Ranges. Each Port Range is either a single port or a range of port mentioning the from port and to port separated by a hyphen (-). Examples: 5000 or 443-445 or 3446-3449,3500,3510-3530
 {{%/notice%}}
 
- 5. If you want to add a ROS topic to the package, click Add ROS topic and do the following. A ROS topic is intended for unidirectional, streaming communication.
+ 5. If you want to add a ROS topic to the package, click **Add ROS topic** and do the following. A ROS topic is intended for unidirectional, streaming communication. For more information, [click here](/5_deep-dives/52_software-development/526_package-ros-support)
 
     a. In the name field, type the name of the ROS topic.
 

@@ -24,14 +24,11 @@ installed on it, replace ***Kinetic*** with ***Melodic*** in all places
 where a specific version of ROS is asked for. The tutorial should still
 work the same.
 {{% /notice %}}
-2. You should be familiar with the [configurations](/developer-guide/manage-software-cycle/dynamic-configurations/) concept.
-3. Read the quick starting guide on [how to apply configurations to devices](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configs/).
+2. You should be familiar with the [configurations]() concept.
+3. Read the quick starting guide on [how to apply configurations to devices]().
 4. You should be familiar with the following tools:
    1. [Git](https://git-scm.com/doc)
    2. [UNIX/Linux command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
-
-## Difficulty
-Beginner
 
 ## Estimated time
 15 minutes
@@ -140,7 +137,7 @@ You can remotely access **RIO_CONFIGS_DIR** by [SSH-ing into the device via rapy
 #### Creating the package
 To create the *Publisher for Configured Devices* package, follow the steps:
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Click **ADD NEW PACKAGE**.
 3. Provide a name for the package say `Publisher for Configured Devices` in the **Package Name** box.
 4. Make sure **Is singleton package** is ***not selected***.
@@ -157,13 +154,13 @@ To create the *Publisher for Configured Devices* package, follow the steps:
 ```
 roslaunch param_talker talker.launch
 ```
-14. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+15. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 ![publisher for configured devices](/images/tutorials/talker-supervisor/pub-configured-devices.png?classes=border,shadow&width=40pc)
 
 ## Deploying the package
 To deploy the *Publisher for Configured Devices* package, follow the steps:
 
-1. On the left navigation bar, click **CATALOG**.
+1. On the left navigation bar, click **Development>Catalog**.
 2. Select the **Publisher for Configured Devices** package.
 3. Click **Deploy package**.
 4. Provide a name for the deployment you are creating say `Configurations Publisher` in the **Name of deployment** box.

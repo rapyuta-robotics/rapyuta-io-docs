@@ -30,7 +30,7 @@ tags:
 
 #### Q. I have invited a user to an organization but I am not able to add the user to a project?
 > {{%expand "Answer" %}}
-  The user is not activayed yet in the rapyuta.io platform. Ask the user to check his e-mail inbox and click on the verification link to comlete the registration process. After the user completes the registration process, you can add the user to the project. For more information, [click here](/3_how-tos/31_account-management/312_user-management/#adding-users-to-a-project)
+  The user is not activayed yet in the rapyuta.io platform. Ask the user to check his e-mail inbox and click on the verification link to comlete the registration process. After the user completes the registration process, you can add the user to the project. For more information, [click here](/3_how-tos/31_account-management/312_user-management/)
 ​{{% /expand%}}
 #### Q. How can I remove a user from the organization.
 > {{%expand "Answer" %}}

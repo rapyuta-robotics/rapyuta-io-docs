@@ -39,9 +39,6 @@ python application.
    5. [device ID](/developer-guide/tooling-automation/python-sdk/sdk-tokens-parameters/#device-id)
 
 
-## Difficulty
-Intermediate
-
 ## Estimated time
 25 minutes
 

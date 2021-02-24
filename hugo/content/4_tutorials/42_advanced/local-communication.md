@@ -33,8 +33,6 @@ work the same.
 	1. ROS [topics](http://wiki.ros.org/Topics)
 	2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
 
-## Difficulty
-Intermediate
 
 ## Estimated time
 20 minutes

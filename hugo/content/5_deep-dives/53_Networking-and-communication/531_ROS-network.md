@@ -78,3 +78,13 @@ Routed networks can be deployed to a device with the following parameters:
 * **Restart policy**: Kindly refer to the restart policy.
 On reboot, devices configured using DHCP may boot up with a new IP address and the network configuration of a deployed routed network becomes invalid. This can be avoided by assigning a static IP to the device you intend to deploy a routed network to esp in production systems.
 
+## Native Network
+
+Native Network allows you to communicate with different packages or nodes those are deployed in the cloud within the same local area network. This eliminates the need of creating a separate routed network for the local communication and significantly decreases  the latency and provides a better performance for local communication between ROS nodes. 
+
+  Native network also works effectively with more than one ROS master by using the [FKIE multimaster](https://github.com/fkie/multimaster_fkie) tool and maintains the communication in peer to peer manner. You can create more than one native network for redundancy.
+
+  {{% notice note %}}
+  Native Network doesn’t support scoped or targeted topic (service or action) directly. The topics are whitelisted in the form of */topics and you can remap these topics for communication. For more information on remapping, [click here](http://wiki.ros.org/roslaunch/XML/remap).
+
+  {{% /notice%}}
