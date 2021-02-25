@@ -209,7 +209,7 @@ You will be redirected to the newly created deployment's **Details** page. The _
 
 ![ROS  Publisher Subscriber Deployment](/images/tutorials/ros-pub-sub/ros-pub-sub-deployment.png?classes=border,shadow&width=50pc)
 
-You may also analyse the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/)
+You may also analyse the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs//)
 to check if everything is working OK by clicking on **Logs** tab.
 
 The **listener-listenerExecutable** will be streaming ***/listener I heard hello_world*** logs.

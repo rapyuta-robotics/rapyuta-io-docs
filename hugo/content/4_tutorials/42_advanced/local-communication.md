@@ -394,7 +394,7 @@ and the **STATUS** is **Running**.
 ![ROS Publisher Deployment](/images/tutorials/local-comm-broker/ros-pub-deployment.png?classes=border,shadow&width=50pc)
 
 
-You may analyse the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/) so you may debug
+You may analyse the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs//) so you may debug
 if the deployment fails.
 
 The corresponding [dependency graph](/developer-guide/manage-software-cycle/compose-software/dependency-graph/) of **ROS Publisher Deployment** looks like:
@@ -419,7 +419,7 @@ The package is successfully deployed when the green colored bar moves from
 ![ROS Subscriber Deployment](/images/tutorials/local-comm-broker/ros-sub-deployment.png?classes=border,shadow&width=50pc)
 
 
-You may analyse the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/) so you may debug
+You may analyse the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs//) so you may debug
 if the deployment fails.
 
 The corresponding [dependency graph](/developer-guide/manage-software-cycle/compose-software/dependency-graph/) of **ROS Subscriber Deployment** looks like:
