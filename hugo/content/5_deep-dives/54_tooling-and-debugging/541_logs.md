@@ -34,8 +34,7 @@ Logs are verbose text messages and are used for debugging and monitoring. Logs a
 
 rapyuta.io collects and indexes log data. There are three types of logs produced:
 
-1. [Build Logs]({{< ref "/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs" >}})
-
+* [Build Logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/)
 * Deployment Logs
 * Device Logs
 

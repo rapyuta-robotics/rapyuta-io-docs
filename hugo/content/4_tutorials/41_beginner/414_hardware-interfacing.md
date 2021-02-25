@@ -76,7 +76,7 @@ The _LED Trigger Deployment_ is successfully running only when the green
 colored bar moves to **Succeeded** and **Status:Running** point indicating that the **DEPLOYMENT PHASE** is **Succeeded**, and the **STATUS** is **Running**.
 
 You may also analyze the corresponding
-[deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs//)
+[deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/)
 to check if everything is working good.
 
 To verify that everything is working correctly, you should observe the trigger
