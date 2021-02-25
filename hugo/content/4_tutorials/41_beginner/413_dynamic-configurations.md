@@ -13,7 +13,7 @@ The *Publisher for Configured Devices* is a ROS package that will be deployed on
 ## Learning objective
 The tutorial will show you how to apply configuration parameters to a device before deploying a rapyuta.io package on it.
 
-## Prerequisites
+### Prerequisites
 1. Device requirements
    1. You should have access to a device (computer or Raspberry PI 2 or 3) with an internet connection.
    2. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is installed on the computer.
@@ -24,13 +24,13 @@ installed on it, replace ***Kinetic*** with ***Melodic*** in all places
 where a specific version of ROS is asked for. The tutorial should still
 work the same.
 {{% /notice %}}
-2. You should be familiar with the [configurations]() concept.
-3. Read the quick starting guide on [how to apply configurations to devices]().
+2. You should be familiar with the [configurations](/5_deep-dives/51_managing-devices/dynamic-configuration) concept.
+3. Read the quick starting guide on [how to apply configurations to devices](/3_how-tos/32_device-management/324_applying-configuration-on-devices).
 4. You should be familiar with the following tools:
    1. [Git](https://git-scm.com/doc)
    2. [UNIX/Linux command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
 
-## Estimated time
+### Estimated time
 15 minutes
 
 ## Tutorial walkthrough
@@ -44,7 +44,7 @@ The tutorial consists of the below steps:
 6. Deploy the package on the device
 7. Verify deployment logs
 
-#### Defining configuration
+## Defining configuration
 You will define the configuration ***robots*** as follows:
 
 1. On the left navigation bar, click **Development>Configurations**.
@@ -54,20 +54,20 @@ You will define the configuration ***robots*** as follows:
 5. Add a new file, ***name.yaml***, below the root node ***robots***.
 6. Define parameters in the ***name.yaml***.
 {{% notice info %}}
-For more information about configuration parameter, [click here](/4_tutorials/41_beginner/413_dynamic-configurations)
+For more information about configuration parameter, [click here](/5_deep-dives/51_managing-devices/dynamic-configuration)
 {{% /notice %}}
 ![robots configuration](/images/tutorials/talker-supervisor/robots-configuration.png?classes=border,shadow&width=40pc)
 
-Similarly, define parameters in all of the ***name.yaml*** files occurring below the various value nodes and the root node. For example,
+   Similarly, define parameters in all of the ***name.yaml*** files occurring below the various value nodes and the root node. For example,
 
-* **robots** root node
+   * **robots** root node
 ![robots parameter file](/images/tutorials/talker-supervisor/robots-name-file.png?classes=border,shadow&width=40pc)
-* **drone** value node
+   * **drone** value node
 ![drone parameter file](/images/tutorials/talker-supervisor/drone-name-file.png?classes=border,shadow&width=40pc)
-* **drone-1** value node
+   * **drone-1** value node
 ![drone-1 parameter file](/images/tutorials/talker-supervisor/drone1-name-file.png?classes=border,shadow&width=40pc)
 
-#### Preparing device
+## Preparing device
 The tutorial will use Raspberry PI as the device. Learn [how to prepare the device](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi).
 
 If you are using the custom rapyuta.io image on the device, you need to execute the following command to update the ***io_tutorials*** repository at the root of your catkin workspace.
@@ -82,7 +82,7 @@ To build the package, run the below command at the root of your catkin workspace
 catkin build param_talker
 ```
 
-#### Adding device to rapyuta.io
+## Adding device to rapyuta.io
 When onboarding the device to rapyuta.io, the environment variable **RIO_CONFIGS_DIR** is set locally on the device. It is the location of the directory where all of the configurations that will be applied to the device are stored.
 {{% notice info %}}
 The value of **RIO_CONFIGS_DIR** is set to **/opt/rapyuta/configs**
@@ -93,7 +93,7 @@ The value of **RIO_CONFIGS_DIR** is set to **/opt/rapyuta/configs**
 **RIO_CONFIGS_DIR** is available to all the executables of a running deployment.
 {{% /notice %}}
 
-#### Applying configuration to device
+## Applying configuration to device
 You should [define labels for the device](/3_how-tos/32_device-management/323_managing-labels-on-devices) so you can apply configuration parameters to it. You will define the following labels in this tutorial:
 
 * robot_type: drone
@@ -103,7 +103,7 @@ You should [define labels for the device](/3_how-tos/32_device-management/323_ma
 
 To apply an existing configuration to the device:
 
-1. On the left navigation bar, click **DEVICES**.
+1. On the left navigation bar, click **Devices>All Devices**.
 2. Select the device you would want to apply the configuration to.
 3. Click **Apply Configuration Parameters**.
    ![apply configuration parameters](/images/tutorials/talker-supervisor/apply-config-params.png?classes=border,shadow&width=60pc)
@@ -131,10 +131,11 @@ The robots configuration is stored in **RIO_CONFIGS_DIR** and its parameters fil
 You can use **RIO_CONFIGS_DIR** in ROS launch files for loading configurations.
 ![configuration environment variable in ROS launch file](/images/tutorials/talker-supervisor/launch-file-content.png?classes=border,shadow&width=50pc)
 
-You can remotely access **RIO_CONFIGS_DIR** by [SSH-ing into the device via rapyuta.io](/3_how-tos/35_tooling_and_debugging/351_remote-ssh-into-device)
+You can remotely access **RIO_CONFIGS_DIR** by [SSH-ing into the device via rapyuta.io]({{< ref "/3_how-tos/35_tooling_and_debugging/351_remote-ssh-into-device" >}})
+
 ![SSH access](/images/tutorials/talker-supervisor/SSH-into-device.png?classes=border,shadow&width=40pc)
 
-#### Creating the package
+## Creating the package
 To create the *Publisher for Configured Devices* package, follow the steps:
 
 1. On the left navigation bar, click **Development>Catalog**.

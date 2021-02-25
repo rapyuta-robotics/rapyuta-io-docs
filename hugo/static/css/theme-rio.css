@@ -488,7 +488,7 @@ pre .copy-to-clipboard:hover {
 }
 
 #body-inner ul li  {
-    list-style: katakana;
+    list-style: disc;
 }
 
 #body-inner ol li li{

@@ -93,7 +93,7 @@ Perform the following procedure to create  components.
 
     c. If you have selected the executable type as **Builds**, from the **Choose Build** drop-down menu, select the build. 
 
-    d. If you have selected the executable type as **Docker**, in the Docker Image field, type the docker image that you want to use. For more information about creating the build recipe as docker, click here.
+    d. If you have selected the executable type as **Docker**, in the Docker Image field, type the docker image that you want to use. For more information about creating the build recipe as docker, [click here](/3_how-tos/33_software-development/331_create-builds/#creating-build-by-docker-recipe).
 
     e. Optionally, if the docker image is a private image, click the **Private Image** check-box and select the credential from the **Credentials** drop-down menu.
 
