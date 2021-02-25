@@ -89,8 +89,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 	7. For **Executable Type**, click on **Builds**.
-	8. In the **Choose Build** select the first Build (`io-tutorials`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/#io-tutorial-build)
-	from the drop-down list.	
+	8. In the **Choose Build** select the first Build `io-tutorials` from the drop-down list.	
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
 		roslaunch talker talker.launch
@@ -118,8 +117,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 	7. For **Executable Type**, click on **Builds**.
-	8. In the **Choose Build** select the second Build (`io-tutorials-arm32v7`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/#io-tutorials-arm32v7-build)
-	from the drop-down list.
+	8. In the **Choose Build** select the second Build `io-tutorials-arm32v7` from the drop-down list.
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
 		roslaunch listener listener.launch

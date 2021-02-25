@@ -24,7 +24,7 @@ They are:
 * X-large: 8 cpu cores, 32 GiB memory
 
 #### Documentation
-Read about [how to create direct links for sharing device logs](/developer-guide/tooling-automation/logging/device-logs/#direct-links-for-sharing-log-files).
+Read about [how to create direct links for sharing device logs](/3_how-tos/35_tooling_and_debugging/file-management-devices/#direct-links-for-sharing-log-files).
 
 ## April 22
 Welcome to the April 22, 2020 release of the rapyuta.io platform. There
@@ -37,10 +37,10 @@ Explore the rapyuta.io platform by signing up for one of the new subscription pl
 ![New Subscription Plans](/images/pricing/billing/find-plan.png?classes=border,shadow&width=50pc)
 
 #### Documentation
-Read about the [new pricing plans](/pricing-support/pricing/find-plans/):
+Read about the [new pricing plans](/5_deep-dives/58_account-management/581_plans-and-billing/):
 
-* [Community Plan](/pricing-support/pricing/find-plans/#community-plan)
-* [Professional Plan](/pricing-support/pricing/find-plans/#professional-plan)
-* [Enterprise Plan](/pricing-support/pricing/find-plans/#enterprise-plan)
+* [Community Plan](/5_deep-dives/58_account-management/581_plans-and-billing/#community-plan)
+* [Professional Plan](/5_deep-dives/58_account-management/581_plans-and-billing/#professional-plan)
+* [Enterprise Plan](/5_deep-dives/58_account-management/581_plans-and-billing/#enterprise-plan)
 
 and [sign up](https://console.rapyuta.io) to get started with the rapyuta.io platform.

@@ -61,7 +61,7 @@ There are significant updates in this version that we hope you will like.
   [cloning and renaming](/developer-guide/manage-software-cycle/dynamic-configurations/) existing configurations.
 * Check out the improved
   [error messages for device failed state](/developer-guide/manage-machines/onboarding/setup-device/failure-codes/).
-* [Download/Upgrade](/developer-guide/tooling-automation/python-sdk/#installation) to the new rapyuta.io Python SDK **0.6.0**
+* [Download/Upgrade](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) to the new rapyuta.io Python SDK **0.6.0**
 
 ## September 25
 Welcome to the September 25, 2019 release of rapyuta.io platform (v0.30.0).
@@ -83,5 +83,5 @@ Display data that is available when the device is offline.
 
 #### Documentation
 * Read about [how to restart deployments on devices by choosing from a set of three restart policies](/developer-guide/manage-software-cycle/deployments/#restart-policy).
-* [Download/Upgrade](/developer-guide/tooling-automation/python-sdk/#installation) to the
+* [Download/Upgrade](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) to the
   new rapyuta.io Python SDK **0.7.0**

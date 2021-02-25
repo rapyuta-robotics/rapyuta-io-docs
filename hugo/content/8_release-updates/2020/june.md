@@ -12,7 +12,7 @@ are significant updates in this release that we hope you will like.
 #### Features
 * **Routed Networks**
 
-    New [rapyuta.io resource](/developer-guide/manage-software-cycle/communication-topologies/ros-routed-networks) 
+    New [rapyuta.io resource](/3_how-tos/34_networking-and-communication/ros-creating-routed-networks/) 
     to enable ROS communication between different ROS package deployments. The existing method of 
     using dependent deployments for ROS communication is being deprecated but existing packages will keep supporting it.
     Please clone or import an existing package to use it with routed networks. 
@@ -31,11 +31,11 @@ are significant updates in this release that we hope you will like.
     Deployments list view now supports filters based on deployment phase.
 
 #### SDK
-**rapyuta.io Python SDK [0.14.0](/developer-guide/tooling-automation/python-sdk/#installation) released** 
+**rapyuta.io Python SDK [0.14.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released** 
 
    Added methods to create and use routed networks
 
-Read about how to [set ROS services and ROS actions as targeted](/developer-guide/manage-software-cycle/communication-topologies/ros-support/).
+Read about how to [set ROS services and ROS actions as targeted](/5_deep-dives/52_software-development/526_package-ros-support/).
 
 
 ## June 25
@@ -45,8 +45,8 @@ are significant updates in this release that we hope you will like.
 #### Features
 * **New environment variables**
 
-	Environment variables that store some [device details](/developer-guide/manage-machines/device-environment-variables).
-	Also, an environment variable that stores [ROS Environment Alias](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#ros-environment-aliases-runtime-identity-assignment).
+	Environment variables that store some [device details](/5_deep-dives/51_managing-devices/512_device-details/).
+	Also, an environment variable that stores [ROS Environment Alias](/5_deep-dives/51_managing-devices/514_device-env-variables/).
 	
 #### Improvements
 * **Improved ROS communication**

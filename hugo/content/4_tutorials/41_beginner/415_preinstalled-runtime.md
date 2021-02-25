@@ -1,10 +1,8 @@
 ---
 title: "Preinstalled Runtime"
-draft: true
 description:
 type: build-solutions
 date: 2019-10-24T13:47:04+05:30
-draft: true
 weight: 415
 tags:
     - Tutorials
@@ -26,7 +24,7 @@ installed on it, replace ***Kinetic*** with ***Melodic*** at all places
 where a specific version of ROS is asked for. The tutorial should still
 work the same.
 {{% /notice %}}
-2. You should read the [developer guide](/developer-guide/) of rapyuta.io
+2. You should be familiar with the rapyuta.io platform concept
 3. You should be familiar with the below tools:
 	1. [Git](https://git-scm.com/doc)
 	2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
@@ -38,7 +36,7 @@ work the same.
 
 ## Preparing your device
 The tutorial will use Raspberry PI as the device.
-Learn [how to prepare your Raspberry PI](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3)
+Learn [how to prepare your Raspberry PI](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi)
 
 If you are using the custom rapyuta.io image on the device, the catkin workspace is already created for you, and the *io_tutorials* repository
 is already present in the workspace. Moreover, the source code is
@@ -111,7 +109,7 @@ To create the build, follow below steps. Skip the following steps if you have al
 5. Go to the next step and click on next, the build will be created.
 
 The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding
-[build logs](/developer-guide/tooling-automation/logging/build-logs/), which helps in debugging failed builds.
+[build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/), which helps in debugging failed builds.
 Please proceed to creation of package once the build is Complete.
 
 

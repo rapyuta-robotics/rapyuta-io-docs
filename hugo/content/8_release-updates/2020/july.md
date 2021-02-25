@@ -19,9 +19,9 @@ Ubuntu(16.04 and 18.04) by default resolves the hostname to localhost. If you do
 Welcome to the July 29, 2020 release of the rapyuta.io platform.
 
 #### Updates
-- Ability to add port ranges for internally exposed endpoints: [Port ranges](/developer-guide/create-software-packages/package-internals/#exposing-endpoints-externally)
+- Ability to add port ranges for internally exposed endpoints: [Port ranges](/34_networking-and-communication/342_exposing-cloud-services-using-endpoints/)
 
 #### SDK
-- **rapyuta.io Python SDK [0.15.0](/developer-guide/tooling-automation/python-sdk/#installation) released** 
+- **rapyuta.io Python SDK [0.15.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released** 
 - Added network interface in routed network sdk method
 - Other fixes and improvements

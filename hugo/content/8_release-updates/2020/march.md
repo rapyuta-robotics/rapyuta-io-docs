@@ -27,8 +27,8 @@ Search for dynamic configuration parameters using the new search feature.
 
 #### Documentation
 
-* Read about the new [wireless system metric](/developer-guide/tooling-automation/metrics/system_metrics/#wireless) that is now available for subscription.
-* Read the improved [how-to guide on device metrics visualization](/developer-guide/tooling-automation/metrics/visualise-metrics/).
+* Read about the new [wireless system metric](/5_deep-dives/54_tooling-and-debugging/544_system-metrics/) that is now available for subscription.
+* Read the improved [how-to guide on device metrics visualization](/5_deep-dives/54_tooling-and-debugging/544_system-metrics/).
 
 ## March 27
 Welcome to the March 27, 2020 release of rapyuta.io Python **SDK 0.13.0**

@@ -17,7 +17,7 @@ The restart policy for **Rapyuta IO Communication Broker** package is ***Always*
 * **Static routes**    
 To get a deterministic URL/route for your application while exposing the network endpoint externally, you must bind it to a static route. When you add a static route, an externally exposed endpoint is essentially guaranteed to be available at the URL of that particular static route. It makes externally exposed endpoints (and hence the deployments exposing them) resilient to failure or re-deployment, facilitates maintenance and upgrades to the backend/deployment while retaining the same unique globally available URL.
 * **rapyuta.io Python SDK 0.11.0 released**    
-Python SDK [0.11.0](/developer-guide/tooling-automation/python-sdk/#installation) defines a method that adds restart policy for a device component.
+Python SDK [0.11.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) defines a method that adds restart policy for a device component.
 To use newer SDK, install it by using:
 
 ```bash
@@ -35,8 +35,8 @@ pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.11.0-py2-
 
 #### Documentation
 
-* Read about overriding [restart policies](/developer-guide/manage-software-cycle/deployments/#restart-policy).
-* Read about [static routes](/developer-guide/create-software-packages/package-internals/#exposing-endpoints-with-static-url) feature and its effect on [subscription plans](/pricing-support/pricing/find-plans/).
+* Read about overriding [restart policies](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
+* Read about [static routes](/3_how-tos/34_networking-and-communication/343_creating-custom-urls-for-external-endpoints-using-static-routes/) feature and its effect on [subscription plans](/5_deep-dives/58_account-management/understanding-usage/).
 
 ## February 12
 
@@ -76,4 +76,4 @@ pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.12.0-py2-
 * Fixed the shorter timeout value when remotely accessing cloud deployments and devices on rapyuta.io; it is increased to 15 minutes.
 
 #### Documentation
-Read more about the new panel that displays error logs when subscribing/unsubscribing metrics of a device [here](/developer-guide/tooling-automation/metrics/ros-support/#type-introspection-and-changing-data-types).
+Read more about the new panel that displays error logs when subscribing/unsubscribing metrics of a device [here](/3_how-tos/35_tooling_and_debugging/debugging-logs/).

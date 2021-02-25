@@ -23,6 +23,6 @@ are significant updates in this release that we hope you will like.
 
 #### SDK
 
-**rapyuta.io Python SDK [0.19.0](/developer-guide/tooling-automation/python-sdk/#installation) released**
+**rapyuta.io Python SDK [0.19.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**
 
 - We have added Python3.9 support to the rapyuta.io python SDK. Note that this is still in alpha stage.

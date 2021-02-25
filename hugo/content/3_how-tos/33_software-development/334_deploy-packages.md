@@ -25,6 +25,7 @@ introLinks: {}
 tags:
   - How to
 ---
+## Deploying a Package
 
 To deploy a package in rapyuta.io, follow the steps:
 
@@ -82,6 +83,68 @@ Furthermore, if dependent deployments are added then each dependency's **STATUS*
 You may analyze the corresponding [deployment logs]({{< ref "/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs" >}}) generated while deploying a package.
 
 If a deployment fails, the **DEPLOYMENT PHASE** will read **Failed to start**. You may have to click **Deprovision Deployment**, delete the package, create the package all over again, and try deploying it.
+
+## Update/Re-Deploy In-Place
+
+This feature allows users to re-deploy a running  a deployment without stopping and while retaining its ID, dependencies, configuration and endpoints. 
+During the development phase this enables developers to switch between [newer or older build](/developer-guide/create-software-packages/builds/trigger-rollback/) 
+version in a package without having to recreate a new package resource.
+It is also useful in scenarios when a developer fixes and pushes a new image of software to docker repository with an identical tag 
+and wants to pull in the version with all the changes and fixes into the running deployment. 
+
+This is particularly useful in the case of a dependent deployment, as you do not need to deprovision all the deployments when a single deployment needs an update thus saving time.
+
+{{% notice info %}}
+The "in-place" Update/Redeploy feature is currently supported only on containers leveraging a [containerized device runtime](/developer-guide/manage-machines/device-runtime/#containerized-docker-runtime) 
+and in the cloud. This feature is unavailable for Device components powered by the [pre-installed](/developer-guide/manage-machines/device-runtime/#preinstalled). 
+{{% /notice %}}
+
+To update/re-deploy a deployment, follow the steps:
+
+1. On the left navigation bar, click **DEPLOYMENTS**.
+2. Select the deployment that you want to update, and click Update Deployment.
+The **Update Deployment** page appears.
+3. The **Update Deployment** page lists all the components added to the package. Click the **Update** field next to the component that you want to update.
+You can select at least one or more than one component to update.
+4. Click **Update**.
+
+It takes a few minutes and the deployment is updated. You can view the details of updated deployment in the **Details** tab.
+
+
+**Update Deployment** can be done when [DEPLOYMENT PHASE](#phases) is either **Succeeded** or **Failed To Update**, 
+on any other Deployment Phase the **Update Deployment** button will be disabled. 
+In case of **Failed To Update**, you can check the **Historical Logs** but the **Live Logs** and **Shell Access** tabs will be disabled. 
+
+{{% notice info %}}
+In case your deployment goes to **Failed To Update**, it will show appropriate error code like 
+[DEP_E151] (/developer-guide/manage-software-cycle/deployments/#error-codes) 
+which means **device is either offline or not reachable**.
+If you are not sure about the Error, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
+{{% /notice %}}	
+
+
+You can see the **Deployment Generation** in the **Details** tab of the deployment. The generation increments by 1 for each update deployment. 
+Suppose the current deployment generation is _i_ and if the user does Update Deployment then the new deployment generation will be _(i+1)_.
+
+
+![Update deployment](/images/dev-guide/deployments/update-deployment.png?classes=border,shadow&width=55pc)
+
+
+
+![Update deployment component](/images/dev-guide/deployments/update-deployment-component.png?classes=border,shadow&width=35pc)
+
+
+You can click the **History** tab to view the update deployment history. It shows information like Time, Generation, 
+User who updated the deployment and Deployment Status. For successful update, it shows a _green success icon_ in **Deployment Status**. 
+While in case of update deployment failure (due to network issue or device being offline), it shows a _red failure icon_ in **Deployment Status**.  
+
+
+
+![Update deployment history](/images/dev-guide/deployments/update-deployment-history.png?classes=border,shadow&width=60pc)
+
+{{% notice info %}}
+When **Update Deployment** is triggered, all the _replicas_ are deleted gracefully and the rapyuta.io platform automatically re-creates new replicas for the _component_.
+{{% /notice %}}	
 
 ## Related Links
 * [Deployment Error Codes](/6_troubleshoot/611_deployment-error-codes)

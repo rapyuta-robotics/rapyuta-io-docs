@@ -19,7 +19,7 @@ Please reach out to us on support@rapyuta-robotics.com if you have any questions
 
 ## May 6
 
-We have relased a fix for the [quick walkthrough](/quick-walkthrough/) that was broken due to a change in upstream. Following the steps in the walkthrough should help with getting it up and running. If you want to understand more about the workaround, please refer to this [page](/build-solutions/quirks/rosbridge-compatibility).
+We have relased a fix for the [quick walkthrough](/2_getting-started/23_turtlesim_on_cloud/) that was broken due to a change in upstream. Following the steps in the walkthrough should help with getting it up and running. 
 
 ## May 13
 Welcome to the May 13, 2020 release of the rapyuta.io platform. There
@@ -35,5 +35,5 @@ Ability to set ROS services and ROS actions as targeted while creating packages.
 * Fixed the hyperlink of included packages in package details page.
 
 #### Documentation
-Read about how to [set ROS services and ROS actions as targeted](/developer-guide/manage-software-cycle/communication-topologies/ros-support/).
+Read about how to [set ROS services and ROS actions as targeted](/5_deep-dives/52_software-development/526_package-ros-support/).
 

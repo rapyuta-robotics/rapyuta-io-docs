@@ -8,7 +8,7 @@ weight: 898
 ## January 30
 Welcome to the January 30, 2019 release of rapyuta.io platform.
 
-This release features newer version of [Python SDK (v0.3.2)](/developer-guide/tooling-automation/python-sdk/#installation).
+This release features newer version of [Python SDK (v0.3.2)](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation).
 It adds support for filtering devices by architecture.
 
 ## January 23

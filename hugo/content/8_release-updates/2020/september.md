@@ -13,11 +13,11 @@ are significant updates in this release that we hope you will like.
 #### Features
 * **Binary Params**
 
-	New [rapyuta.io dynamic configuration](/developer-guide/manage-software-cycle/dynamic-configurations/consume-dynamic-configuration/create-configuration-parameters/#creating-a-configuration-parameter-in-binary-file-format) allows you to upload binary files as a configuration file in addition to adding YAML configuration file.
+	New [rapyuta.io dynamic configuration](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-binary-file-format) allows you to upload binary files as a configuration file in addition to adding YAML configuration file.
 
 * **Update Deployment**
 
-	**rapyuta.io** allows you to update a deployment of packages which have builds or docker images without the need of stopping the deployment. It will help the users who want to try out newer builds or restart the deployment faster in the package. For more information, [click here](/developer-guide/manage-software-cycle/deployments/#update-re-deploy-in-place)
+	**rapyuta.io** allows you to update a deployment of packages which have builds or docker images without the need of stopping the deployment. It will help the users who want to try out newer builds or restart the deployment faster in the package. For more information, [click here](/3_how-tos/33_software-development/334_deploy-packages/#updatere-deploy-in-place)
 
 #### Improvements
 	
@@ -26,7 +26,7 @@ are significant updates in this release that we hope you will like.
 - Minor bug fixes and improvements to rapyuta.io APIs.
 
 #### SDK
-**rapyuta.io Python SDK [0.17.0](/developer-guide/tooling-automation/python-sdk/#installation) released** 
+**rapyuta.io Python SDK [0.17.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released** 
 
 - Added "delete package functionality". 
 - Added support for uploading and downloading binary configurations files.

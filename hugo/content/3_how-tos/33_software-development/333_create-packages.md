@@ -102,7 +102,7 @@ Perform the following procedure to create  components.
     g. From the Resource limit drop-down menu, select the CPU and memory requirement for the executable.
 
 
-4.  Optionally, to add an end-point, click **Add Endpoint** and do the following. For more information on end point configuration, [click here](/5_deep-dives/53_Networking-and-communication/532_standard-web-protocol)
+4.  Optionally, to add an end-point, click **Add Endpoint** and do the following. For more information on end point configuration, [click here](/5_deep-dives/53_networking-and-communication/532_standard-web-protocol/)
 
     a. In the **Endpoint Name** field, type a name for the endpoint.
 
