@@ -177,7 +177,7 @@ catkin build map_listener
 If you experience the error ***catkin:command not found***, then the *python-catkin-tools* package is missing on the device, which is required for executing *catkin build* command. Install the package by running the command `sudo apt-get install python-catkin-tools` at the device terminal.
 {{% /notice %}}
 
-And then, you will [add the device](/developer-guide/manage-machines/onboarding/) to rapyuta.io.
+And then, you will [add the device](/3_how-tos/32_device-management/321_onboarding-a-device/) to rapyuta.io.
 {{% notice note %}}
 While adding the device, ensure that **Use docker compose as default runtime** checkbox is ***not selected***.
 {{% /notice %}}

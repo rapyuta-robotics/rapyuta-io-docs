@@ -52,27 +52,24 @@ BZ2 generally produces smaller bags than LZ4. For more information about ROS com
 
     c. **Max Splits** field defines the maximum number of splits of the ROS bag files that are saved Older splits are deleted after the **Max Splits** count is reached. To split the ROS bag file, in the **Max Splits** field, type the number of split that you want to allow.
 
+    d. Split Size is the file size after which the file is split. In the **Split size** field type the memory size for each split of the recorded messages in MB.
+
+    e. Click **Add**. The ROS bag job is added to the package.
+
   {{% notice info %}}
   Maximum 10 splits are allowed for each ROS bag job. After the message recording reaches the maximum allowed splits, the older split files are deleted to maintain the specified memory limit. 
   {{% /notice %}}
-    d. Split Size is the file size after which the file is split. In the Split size field, type the memory size for each split of the recorded messages in MB.
+
 
   {{% notice info %}}
   Each split size must be more than 10 MB and less than 1024 MB or 1GB. Maximum 10 splits are allowed with the split size of more than 10 MB and less than 1 GB. However, the disk storage for the ROS bag file can not go beyond 5120 MB (5 GB).</br>
   For example, you can configure 10 splits and each split can store up to 500 MB (10X500 MB=5 GB)  of recorded data or you configure 5 splits and each split can store up to 1024 MB (5x1024 MB=5 GB)  of recorded data. After the message recording reaches the maximum allowed splits, the older splits are deleted to maintain the specified memory limit. 
-{{% /notice %}}
-    e. To add the ROS bag job and start recording the defined topics, click Add.
+  {{% /notice %}}
 
   {{% notice info %}}
-
   You can also update the value of the ROS bag jobs during the time of deployment. The values added during the deployments overrides the values added during the package creation. 
   {{% /notice %}}
     
-
-
-
-
- 
 ## Viewing ROS Bag Job
 
 The rapyuta.io platform lists all the available ROS bag jobs under each component. To view the details of a ROS bag job, click the ROS bag job and then click the **Job Details** tab. You can view the ROS bag details, for example, the topics that are being recorded by the job or the message compression detail as displayed in the following image.
@@ -103,8 +100,3 @@ After a running ROS bag job is uploaded to the platform, you can perform the fol
 ![bag-topics](/images/dev-guide/rosbag-jobs/topic-bags.png?classes=border,shadow&width=30pc)
 * To download the available ROS bag file, click the download icon.
 * To delete the uploaded ROS bag file, click the delete icon.
-
-
-
-## Related Link
-[Adding Rosbag jobs on running deployments]()

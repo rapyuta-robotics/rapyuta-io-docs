@@ -192,7 +192,7 @@ are also installed on these custom images.
 {{% /notice %}}
 
 {{% notice info %}}
-Learn how to [prepare Raspberry PI](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3)
+Learn how to [prepare Raspberry PI](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi)
 {{% /notice %}}
 
 If you are using custom rapyuta.io image on the device, the catkin workspace is
@@ -366,7 +366,7 @@ device with docker runtime.
 5. Select the **Runtime** as **Device**.
 6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
 Select the **Device** as  `Routed_Network_Device` and it’s **IP Interface**. 
-7. Select the [Restart policy](/developer-guide/manage-software-cycle/deployments/#restart-policy).
+7. Select the [Restart policy](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
 ![goo](/images/tutorials/routed-networks/create-device-routed-network.png?classes=border,shadow&width=40pc)
 8. Click **CONTINUE**.
 
@@ -419,14 +419,10 @@ The package is successfully deployed when the green colored bar moves from
 ![ROS Subscriber Deployment](/images/tutorials/local-comm-broker/ros-sub-deployment.png?classes=border,shadow&width=50pc)
 
 
-<<<<<<< HEAD
-You may analyse the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/) so you may debug
-=======
 You may analyse the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs//) so you may debug
->>>>>>> d04a0a6ad5d2b2d88767bffd7c51dd903a39e56a
 if the deployment fails.
 
-The corresponding [dependency graph](/developer-guide/manage-software-cycle/compose-software/dependency-graph/) of **ROS Subscriber Deployment** looks like:
+The corresponding dependency graph of **ROS Subscriber Deployment** looks like:
 ![Dependency graph](/images/tutorials/local-comm-broker/dgraph-sub-broker.png?classes=border,shadow&width=50pc)
 
 If all of the above three deployments are successfully running, the

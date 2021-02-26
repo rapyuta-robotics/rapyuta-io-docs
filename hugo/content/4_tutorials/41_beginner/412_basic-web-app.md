@@ -20,8 +20,12 @@ of a package.
    is installed on a computer.
 2. You should be familiar with the concepts of rapyuta.io.
 
-## Estimated time
+### Estimated time
 10 minutes
+
+## Tutorial Video
+[Basic web App](https://youtu.be/a0xj7BmIajY)
+{{< youtube id="a0xj7BmIajY" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}
 
 ## Creating the build
 To create the build, follow below steps : 
@@ -111,6 +115,3 @@ paste in the web browser, and press *Enter*.
 
 You will view ***Hello from rapyuta.io*** message.
 
-## Tutorial Video
-[Basic web App](https://youtu.be/a0xj7BmIajY)
-{{< youtube id="a0xj7BmIajY" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}

@@ -1,5 +1,5 @@
 ---
-title: "Build Receipe"
+title: "Build Recipe"
 description:
 type: developer-guide
 date: 2019-10-25T12:34:38+05:30
@@ -93,7 +93,8 @@ Here golang:1.11-0 stretch is aliased once as builder and COPY command works fro
 
 **Nonworking Dockerfile**
 
-```FROM golang:1.11.0-stretch as builder
+```
+FROM golang:1.11.0-stretch as builder
 
 COPY . /build
 WORKDIR /build

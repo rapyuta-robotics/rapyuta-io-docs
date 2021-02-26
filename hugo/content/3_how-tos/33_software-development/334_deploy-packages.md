@@ -87,7 +87,7 @@ If a deployment fails, the **DEPLOYMENT PHASE** will read **Failed to start**. Y
 ## Update/Re-Deploy In-Place
 
 This feature allows users to re-deploy a running  a deployment without stopping and while retaining its ID, dependencies, configuration and endpoints. 
-During the development phase this enables developers to switch between [newer or older build](/developer-guide/create-software-packages/builds/trigger-rollback/) 
+During the development phase this enables developers to switch between newer or older build 
 version in a package without having to recreate a new package resource.
 It is also useful in scenarios when a developer fixes and pushes a new image of software to docker repository with an identical tag 
 and wants to pull in the version with all the changes and fixes into the running deployment. 
@@ -95,13 +95,13 @@ and wants to pull in the version with all the changes and fixes into the running
 This is particularly useful in the case of a dependent deployment, as you do not need to deprovision all the deployments when a single deployment needs an update thus saving time.
 
 {{% notice info %}}
-The "in-place" Update/Redeploy feature is currently supported only on containers leveraging a [containerized device runtime](/developer-guide/manage-machines/device-runtime/#containerized-docker-runtime) 
-and in the cloud. This feature is unavailable for Device components powered by the [pre-installed](/developer-guide/manage-machines/device-runtime/#preinstalled). 
+The "in-place" Update/Redeploy feature is currently supported only on containers leveraging a [containerized device runtime](/5_deep-dives/51_managing-devices/511_device-runtime/#containerized-docker-runtime) 
+and in the cloud. This feature is unavailable for Device components powered by the [pre-installed](/5_deep-dives/51_managing-devices/511_device-runtime/#preinstalled). 
 {{% /notice %}}
 
 To update/re-deploy a deployment, follow the steps:
 
-1. On the left navigation bar, click **DEPLOYMENTS**.
+1. On the left navigation bar, click **Developments>Deployments**.
 2. Select the deployment that you want to update, and click Update Deployment.
 The **Update Deployment** page appears.
 3. The **Update Deployment** page lists all the components added to the package. Click the **Update** field next to the component that you want to update.
@@ -111,13 +111,13 @@ You can select at least one or more than one component to update.
 It takes a few minutes and the deployment is updated. You can view the details of updated deployment in the **Details** tab.
 
 
-**Update Deployment** can be done when [DEPLOYMENT PHASE](#phases) is either **Succeeded** or **Failed To Update**, 
+**Update Deployment** can be done when [DEPLOYMENT PHASE](/5_deep-dives/52_software-development/528_deployment-phase/#phases) is either **Succeeded** or **Failed To Update**, 
 on any other Deployment Phase the **Update Deployment** button will be disabled. 
 In case of **Failed To Update**, you can check the **Historical Logs** but the **Live Logs** and **Shell Access** tabs will be disabled. 
 
 {{% notice info %}}
 In case your deployment goes to **Failed To Update**, it will show appropriate error code like 
-[DEP_E151] (/developer-guide/manage-software-cycle/deployments/#error-codes) 
+[DEP_E151] (/6_troubleshoot/611_deployment-error-codes/) 
 which means **device is either offline or not reachable**.
 If you are not sure about the Error, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
 {{% /notice %}}	

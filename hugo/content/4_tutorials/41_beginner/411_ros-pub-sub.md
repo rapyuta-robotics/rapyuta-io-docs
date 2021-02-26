@@ -37,14 +37,22 @@ work the same.
 	3. [ROS topics](https://wiki.ros.org/Topics)
 	4. [ROS services](https://wiki.ros.org/Services)
 
-## Estimated time
+### Estimated time
 15 minutes
+
+## Tutorial Video
+[Basic ROS publisher and subscriber](https://youtu.be/HKZCdqEUNOg)
+{{< youtube id="HKZCdqEUNOg" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}
 
 ## On-boarding a device
 * If you are using a Raspberry PI device, you must prepare the device before onboarding. For more information, [click here](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi)
 * If you are using your computer as a device(Linux machine), [click here](/3_how-tos/32_device-management/321_onboarding-a-device).
 
-### Creating the **io-tutorial** build
+{{% notice note%}}
+While oboarding the device, ensure that you have selected **Use docker compose as default runtime** check box. 
+{{%/notice%}}
+
+## Creating the **io-tutorial** build
  
 To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
 
@@ -175,6 +183,3 @@ while **talker-talkerExecutable** will be publishing *hello_world* logs.
 
 ![ROS Publisher logs](/images/tutorials/docker-pub-sub/talker-logs.png?classes=border,shadow&width=50pc)
 
-## Tutorial Video
-[Basic ROS publisher and subscriber](https://youtu.be/HKZCdqEUNOg)
-{{< youtube id="HKZCdqEUNOg" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}

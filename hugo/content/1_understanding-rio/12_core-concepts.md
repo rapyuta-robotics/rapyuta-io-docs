@@ -96,7 +96,7 @@ residing in your VCS into a container image.
 
 Builds can be referenced when creating packages and enables an end-to-end "Code to Deployment" pipeline for your Robotics solution. The rapyuta.io platform converts the image by using catkin or docker recipes.
 
-* For more information about build recipes, [click here](/5_deep-dives/52_software-development/527_build-receipe/).
+* For more information about build recipes, [click here](/5_deep-dives/52_software-development/527_build-recipe/).
 
 * For more information about build creation, [click here](/3_how-tos/33_software-development/331_create-builds).
 
