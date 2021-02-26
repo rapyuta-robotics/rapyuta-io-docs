@@ -121,8 +121,6 @@ You can **delete any existing credit card** except the primary card because it i
 
 {{% notice note %}}
 
-If you want to unsubscribe, or cancel the current plan, or upgrade to another plan,
-
-please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
+If you want to unsubscribe, or cancel the current plan, or upgrade to another plan, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
 
 {{% /notice %}}

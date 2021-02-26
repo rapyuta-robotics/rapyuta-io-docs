@@ -29,17 +29,15 @@ tags:
     - Deep Dive
 ---
 
-
-
-A ROS bag is a file format in ROS for storing ROS message data. The rapyuta.io platform allows you to record the ROS messages (ROS topics) for ROS enabled components deployed on the cloud.
+A ROS bag is a file format in ROS for storing ROS message data. The rapyuta.io platform allows you to record the ROS messages (ROS topics) for ROS enabled components deployed on the cloud or device (with docker runtime).
 
 After you deploy a package, you can view the ROS bag jobs in the **ROS Bag Jobs** tab on the deployment details page.
 
 
-If you have added a ROS bag job for a component either during package creation or deployment, You can add new ROS bag jobs for the same components in the **ROS Bag Jobs** tab after you have deployed the package. To add new jobs, click **Add new ROS Bag job**. To know more about the field description, [click here]({{< ref "/3_how-tos/35_tooling_and_debugging/355_record-rosbags-for-packages.md">}}).
+If you have added a ROS bag job for a component either during package creation or deployment, You can add new ROS bag jobs for the same components in the **ROS Bag Jobs** tab after you have deployed the package. To add new jobs, click **Add new ROS Bag job**. For more information, [click here](/3_how-tos/35_tooling_and_debugging/working-with-rosbags/).
 
 {{% notice note %}}
-If you have not added any ROS bag job for a cloud component during deployment or package creation, you cannot add a ROS bag job later in the **ROS Bag Jobs** tab.
+If you have not added any ROS bag job for a component during deployment or package creation, you cannot add a ROS bag job later in the **ROS Bag Jobs** tab.
 
 {{% /notice %}}
 
