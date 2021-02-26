@@ -736,6 +736,12 @@ div.notices p {
         right: 1rem;
         width: 280px;
     }
+
+    #TableOfContents > ul > li > ul > li {
+        font-size: 11px;
+        line-height: 24px;
+        text-indent: -9px;
+    }
 }
 
 
