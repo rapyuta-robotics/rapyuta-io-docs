@@ -31,8 +31,6 @@ The two types of docker pull secrets that you can create are:
 * Docker Hub
 * Private Registry
 
-
-
 ## Creating a docker secret
 
 To create a docker secret for a private docker registry, do the following:
@@ -63,7 +61,7 @@ To create a docker secret for a private docker registry, do the following:
    c. In the **Username** box, type in your docker username.
    d. In the **Email** box, enter the valid email address associated with your docker registry.
 
-4. Click **SUBMIT**.
+4. Click **SUBMIT**. The docker secret for rapyuta.io platform is created.
 
 ## Authorization Token
 

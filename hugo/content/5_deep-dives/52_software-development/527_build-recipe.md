@@ -75,25 +75,23 @@ deployed. You may select the appropriate target architecture while creating the 
 
 Multistage builds are useful to anyone who has struggled to optimize Dockerfiles while keeping them easy to read and maintain. The rapyuta.io platform supports [multistage build](https://docs.docker.com/develop/develop-images/multistage-build/). For security reasons we do not allow aliases of images to be used in another `FROM`.
 
-**Working Dockerfile**
-
-    ```
-    FROM golang:1.11.0-stretch as builder 
-    COPY . /build WORKDIR /build 
-    RUN CGO_ENABLED=0 GOOS=linux go build -o test 
-    FROM scratch 
-    COPY --from=builder /build/* /root/
-    CMD ["/root/test"] 
-    
-    ```
+#### Working Dockerfile
+```python
+FROM golang:1.11.0-stretch as builder 
+COPY . /build WORKDIR /build 
+RUN CGO_ENABLED=0 GOOS=linux go build -o test 
+FROM scratch 
+COPY --from=builder /build/* /root/
+CMD ["/root/test"] 
+```
 
 
 Here golang:1.11-0 stretch is aliased once as builder and COPY command works from it. 
 
 
-**Nonworking Dockerfile**
+#### Nonworking Dockerfile
 
-```
+```python
 FROM golang:1.11.0-stretch as builder
 
 COPY . /build

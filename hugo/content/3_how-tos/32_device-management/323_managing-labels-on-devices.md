@@ -48,7 +48,7 @@ To add a new label to a device, do the following
 4. Enter the value of the label to the right of **:**     
 In this example, the value is **Japan**
 
-5. Click **Add label**
+5. Click **Add label**. The labels are added to the device.
 
 ![apply configuration parameters](/images/getting-started/apply-config-paramas/add-device-label.png?classes=border,shadow&width=70pc)
 

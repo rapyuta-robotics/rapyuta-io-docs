@@ -197,7 +197,7 @@ To delete a build, do the following.
 
 3. Click **Delete**.
 
-4. Confirm on the build deletion message.
+4. Confirm on the build deletion message. The build is deleted from the rapyuta.io platform.
 
 ## Cloning a Build
 
@@ -222,7 +222,7 @@ If you want to clone a project within the same project, you must rename the buil
 The dialog box to clone secret appears only for the builds that have a secret.
 {{% /notice %}}
 5. The build creation page appears and allows you to modify the build details. 
-6. After reviewing the field details of the build creation pages, click **Next**. The build is clone to the selected project.
+6. After reviewing the field details of the build creation pages, click **Next**. The build is cloned to the selected project.
 
 ## Related Links
 

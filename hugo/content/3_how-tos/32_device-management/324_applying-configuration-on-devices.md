@@ -62,7 +62,7 @@ To create a dynamic configuration, do the following.
 
   ![Binary file](/images/core-concepts/configurations/binary-file.png?classes=border,shadow&width=30pc)
 
-9. Click **Confirm**.
+9. Click **Confirm**. The device configuration is created.
 
   
 
@@ -194,11 +194,7 @@ list:
   
   A binary file can be of any format, for example, .png, .json, .txt, .jpg etc. **rapyuta.io** allows you to upload the configuration file as a binary file. You can upload the configuration file if the configuration file cannot be written in YAML format, for example a map image.
 
-  
-
   In the following example, a configuration hirarchy is created with the binary configuration files.
-
-  
 
   1. Log on to **rapyuta.io** console and on the left navigation bar, click **Configurations>Add New Configuration**.
 
@@ -246,7 +242,7 @@ Labels of a device help in associating it with a set of configuration parameters
 
     a. Select the device from **All Devices>Devices** panel on the left navigation bar.
 
-    b. Click on **Apply Configuration Parameters**.
+    b. Click on **Apply Configuration Parameters**. The configuration is applied to the device.
 
 {{% notice note %}}
 

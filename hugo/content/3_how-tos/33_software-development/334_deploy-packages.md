@@ -65,15 +65,9 @@ you want to deploy the component on. Click **Refresh the list of online devices*
 
 ![Deploy demo package](/images/dev-guide/manage-software-lifecycle/deployment-routed-network.png?classes=border,shadow&width=40pc)
 
-
-
 You will be redirected to the **Details** page of the newly created deployment.
 
-
-
-The package is successfully deployed when the green colored bar moves from
-
-**In progress** to **Provisioning** to **Succeeded** indicating that the **DEPLOYMENT PHASE** has **succeeded** and the deployment **STATUS** is **Running**.
+The package is successfully deployed when the green colored bar moves from **In progress** to **Provisioning** to **Succeeded** indicating that the **DEPLOYMENT PHASE** has **succeeded** and the deployment **STATUS** is **Running**.
 
 
 ![Deployment example](/images/getting-started/deploy-pkg/demo-deployment.png?classes=border,shadow&width=50pc)

@@ -42,14 +42,12 @@ tags:
    > - and must begin and end with an alphanumeric character, 
    > - and must not be certain reserved keywords, 
 
-4. Click **CONTINUE**.
+4. Click **CONTINUE**. The static route is created.
 
 > Observe that the name of the static route will be a subdomain belonging to **\*.ep-r.io** 
 
 > FQDN is formatted as follows:   {**static-route-name**}-{*random-5 letter-organization-string*}.**ep-r.io** 
->
 > organization string is unique for your organization and doesn't change. 
->
 > For example static route with **Name** **```my-example-server```** will have a FQDN of   **``` my-example-server-azbyc.ep-r.io ```**
 
 
@@ -92,11 +90,7 @@ In this example, the static route **my-example-server** is bound to the network 
 
 On deploying the package after binding a static route, the network endpoint URL address becomes deterministic and is a constant. It implies that even if the deployment is stopped and provisioned again with the same static route, the network endpoint URL address remains the same.
 
-
-
 A package deployment can have multiple static routes. However, a single static route is used for a single deployment.
-
-
 
 ---
 

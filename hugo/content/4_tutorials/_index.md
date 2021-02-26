@@ -2,7 +2,7 @@
 title: "Tutorials"
 # shortTitle: ""
 intro:  "Tutorials describing common robotics applications which can be built using rapyuta.io"
-weight: 40
+weight: 50
 versions:
   free-pro-team: '*'
   enterprise-server: '*'

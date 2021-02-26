@@ -42,7 +42,7 @@ To preserve data files saved on the file server, deploy a persistent volume and 
 3. The Name of deployment is Volume Storage
 4. Ensure the disk type parameter of the volumeComponent is SSD. It provisions an SSD for block storage.
 5. Ensure the capacity parameter of the volumeComponent is 32GiB. It refers to the size of block storage.
-6. Click **CREATE DEPLOYMENT > Confirm**.
+6. Click **CREATE DEPLOYMENT > Confirm**. The storage package is deployed.
 
 ## Adding Storage to a Deployment
 You can add the storage package as a dependent deployment. To add storage to a deployment, do the following.
@@ -56,7 +56,7 @@ You can add the storage package as a dependent deployment. To add storage to a d
 3. Select the package depoyment from the **Deployment** drop-down menu.
 4. Select the package component where you want to attach the volume package from the **Applicable Component** drop-down menu.
 5. Add the path where you want to add the volume package in the **Mount Path** field.
-6. To create deployment, click **Create Deployment>Confirm**.
+6. To create deployment, click **Create Deployment>Confirm**. The storage deployment is added to the deployment.
 
 
 ## Related Links

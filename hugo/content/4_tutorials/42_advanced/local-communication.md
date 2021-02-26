@@ -397,7 +397,7 @@ and the **STATUS** is **Running**.
 You may analyse the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/) so you may debug
 if the deployment fails.
 
-The corresponding [dependency graph](/developer-guide/manage-software-cycle/compose-software/dependency-graph/) of **ROS Publisher Deployment** looks like:
+The corresponding dependency graph of **ROS Publisher Deployment** looks like:
 ![Dependency graph](/images/tutorials/local-comm-broker/dgraph-pub-broker.png?classes=border,shadow&width=50pc)
 
 ## Deploy ROS Subscriber package

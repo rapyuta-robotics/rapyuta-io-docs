@@ -95,7 +95,7 @@ If you experience an error ***catkin:command not found***, then the *python-catk
 {{% /notice %}}
 
 ## Setting up your device
-To onboard the device on to rapyuta.io,[add the device](/developer-guide/manage-machines/onboarding/) to the console. Ensure that you do not select
+To onboard a device, [click here](/3_how-tos/32_device-management/321_onboarding-a-device/). Ensure that you do not select
 the **Use docker compose as default runtime** checkbox while adding the device.
 
 ## Creating the build

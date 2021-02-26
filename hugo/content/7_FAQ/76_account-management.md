@@ -9,7 +9,6 @@ versions:
 
 layout: false
 permissions: 'rapyuta.io'
-
 showMiniToc: true
 miniTocMaxHeadingLevel: 4
 
