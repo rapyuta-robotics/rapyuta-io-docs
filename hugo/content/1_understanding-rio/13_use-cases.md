@@ -44,6 +44,9 @@ Logs are an essential part of troubleshooting application and infrastructur perf
 
   Imagine being able to debug your robots as if they were right in front of you.  That’s exactly what remote SSH allows you to do. This powerful tool enables you to remotely troubleshoot your robots.
 
+*  **Remote Debugging**
+  The device manager lets you access a device remotely over a Wide Area Network (WAN) connection. You may open an interactive shell to the device through a web browser WebSSH, and send individual shell commands to be executed on the device.
+
 
 ### Real Time Remote Monitoring and Alerts
 

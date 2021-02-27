@@ -80,12 +80,6 @@ minimum utilization of resources.
 Application communication is handled in diffrent channels. [Learn more](/5_deep-dives/53_networking-and-communication/) with a dedicated set of [features for ROS users](/5_deep-dives/53_networking-and-communication/534_ros-communication/)
 {{% /notice %}}
 
-### Remote Debugging
-The device manager lets you access a device remotely over a
-Wide Area Network (WAN) connection. You may open an
-interactive shell to the device through a web browser
-WebSSH, and send individual shell commands to be executed
-on the device.
 
 ### Remote Configuration
 Dynamic configurations allow you to  control a device or a

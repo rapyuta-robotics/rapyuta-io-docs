@@ -36,11 +36,11 @@ Perform the following procedure to set up your rapyuta.io account.
    > If you can't see an invitaion email in your inbox, check your spam folder. 
 6. The rapyuta.io platform opens and the **Term and Conditions of Use** message is displayed. Click **I have read and agree to the terms of this Agreement** to acknowledge the message and click **Continue**.
 7. In the **ENTER ORGANIZATION DETAILS** dialog-box, enter the following details in the respective fields. 
-   1. **Organization Name** - Type the name of your organization.
-   2. **URL** - Optionally, enter the URL of your organization.
-   3. **Country** - Select your country of residence from the drop-down menu.
-   4. **Province/State** - Type your state name.
-   5. **Postal code** - Type the postal code of your locality.
+   1. **Organization Name** 
+   2. **URL** 
+   3. **Country** 
+   4. **Province/State** 
+   5. **Postal code** 
 8. The plan detail page is displayed. Click the plan of your choice and follow the instructions to activate the plan. For more onformation about plan details, [click here](/5_deep-dives/58_account-management/581_plans-and-billing/).
 
 After you succsfully active your plan, Your account is now ready to be used.
