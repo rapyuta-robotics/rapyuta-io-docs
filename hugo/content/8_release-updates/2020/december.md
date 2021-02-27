@@ -18,7 +18,7 @@ are significant updates in this release that we hope you will like.
 
 * **Docker Multistage Builds**
 
-    Multistage builds are useful to anyone who has struggled to optimize Dockerfiles while keeping them easy to read and maintain. For more information, [click here](/developer-guide/create-software-packages/builds/#docker-mulitstage-build-support).
+    Multistage builds are useful to anyone who has struggled to optimize Dockerfiles while keeping them easy to read and maintain. For more information, [click here](/5_deep-dives/52_software-development/527_build-recipe/#docker-mulitstage-build-support).
 
 #### Improvements
 	
@@ -38,7 +38,7 @@ are significant updates in this release that we hope you will like.
 #### Features
 * **Pagination on Manage tab**
 
-    The rapyuta.io platform displays the uploaded device log files in a paginated view and allows you to customize the view. For more information, [click here](/developer-guide/tooling-automation/logging/device-logs/#viewing-uploaded-log-files).
+    The rapyuta.io platform displays the uploaded device log files in a paginated view and allows you to customize the view. For more information, [click here](/3_how-tos/35_tooling_and_debugging/file-management-devices/).
 
 
 #### Improvements
@@ -47,11 +47,11 @@ are significant updates in this release that we hope you will like.
 
 #### Notable Fixes
 
-- When you try to cancel the upload of a [device upload-log](/developer-guide/tooling-automation/logging/device-logs/#batch-upload) file on the *rapyuta.io* platform, the cancellation fails with *FAILED CANCELLING LOG UPLOAD* error message. Fixed the bug that caused this error.
+- When you try to cancel the upload of a [device upload-log](/3_how-tos/35_tooling_and_debugging/debugging-logs/#batch-upload) file on the *rapyuta.io* platform, the cancellation fails with *FAILED CANCELLING LOG UPLOAD* error message. Fixed the bug that caused this error.
 
 #### SDK
 
-**rapyuta.io Python SDK [0.18.0](/developer-guide/tooling-automation/python-sdk/#installation) released**
+**rapyuta.io Python SDK [0.18.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**
 
 - Added support for build docker push secrets and repositories.
 - Added support for creation of shared URLs for device logs.
@@ -68,16 +68,16 @@ are significant updates in this release that we hope you will like.
 
 * **Cloning a Build**
 
-The rapyuta.io platform allows you to clone a build within the same or different project and reduces the time and effort required to create a build from scratch. For more information, [click here](/developer-guide/create-software-packages/builds/build-cloning).
+The rapyuta.io platform allows you to clone a build within the same or different project and reduces the time and effort required to create a build from scratch. For more information, [click here](/3_how-tos/33_software-development/331_create-builds/#cloning-a-build).
 
 #### Improvements
 	
-- Added new device error code, DEV_E110. For more information regarding the error description and troubleshooting, [click here](/developer-guide/manage-machines/onboarding/setup-device/failure-codes/).
+- Added new device error code, DEV_E110. For more information regarding the error description and troubleshooting, [click here](/6_troubleshoot/610_device-onboarding-failure-codes/).
 
 
 #### SDK
 
-**rapyuta.io Python SDK [0.18.1](/developer-guide/tooling-automation/python-sdk/#installation) released**
+**rapyuta.io Python SDK [0.18.1](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**
 
 - Fixed retry_limit parameter in ProvisionClient.
 - Fixed the attribute error that was occuring while provisioning the same package with different deployment name and same configuration parameter.

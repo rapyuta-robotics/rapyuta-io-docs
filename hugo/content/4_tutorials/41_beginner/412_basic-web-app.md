@@ -20,8 +20,12 @@ of a package.
    is installed on a computer.
 2. You should be familiar with the concepts of rapyuta.io.
 
-## Estimated time
+### Estimated time
 10 minutes
+
+## Tutorial Video
+[Basic web App](https://youtu.be/a0xj7BmIajY)
+{{< youtube id="a0xj7BmIajY" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}
 
 ## Creating the build
 To create the build, follow below steps : 
@@ -37,7 +41,7 @@ In this example, it is `flask_helloworld`.
 
 The build takes about two to five minutes to build the source code in the *io_tutorials*
 repository into a running docker container. You may analyse the corresponding
-[build logs](-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
+[build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/), which help debug failing builds.
 
 Please proceed to creation of package once the build is Complete.
 
@@ -66,8 +70,7 @@ follow the below instructions in sequence:
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}
 10. For **Executable Type**, click on **Builds**.
-11. In the **Choose Build** select the Build(`web-app-build`) [created above](/build-solutions/sample-walkthroughs/basic-web-app/#creating-the-build)
-	from the drop-down list.
+11. In the **Choose Build** select the Build `web-app-build` from the drop-down list.
 ![Executable details](/images/tutorials/hello-world/exec-details.png?classes=border,shadow&width=50pc)
 14. You must expose a network endpoint for viewing the output of the tutorial:
     1.  Click **Add Endpoint**.
@@ -112,6 +115,3 @@ paste in the web browser, and press *Enter*.
 
 You will view ***Hello from rapyuta.io*** message.
 
-## Tutorial Video
-[Basic web App](https://youtu.be/a0xj7BmIajY)
-{{< youtube id="a0xj7BmIajY" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}

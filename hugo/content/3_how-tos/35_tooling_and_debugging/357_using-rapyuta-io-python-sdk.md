@@ -35,11 +35,13 @@ It is recommended you install the latest Python SDK
 using **pip**(most popular tool for installing python packages).
 
 ```bash
-pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.18.1-py2-none-any.whl
+pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.20.0-py2.py3-none-any.whl
 
 ```
 
-If you are using an old version of the Python SDK, please upgrade to the latest [0.18.1](https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.18.1-py2-none-any.whl) version.
+If you are using an old version of the Python SDK, please upgrade to the latest
+[0.20.0](https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.20.0-py2.py3-none-any.whl)
+version.
 
 
 
@@ -48,7 +50,9 @@ If you are using an old version of the Python SDK, please upgrade to the latest 
 The rapyuta.io Python SDK is compatible with python
 applications supporting Python2.7
 
-
+{{% notice info %}}
+We have added Python3.9 support to the rapyuta.io python SDK. Note that this is still in alpha stage.
+{{% /notice %}}
 
 ### Auth Token
 

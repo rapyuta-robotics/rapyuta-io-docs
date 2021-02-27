@@ -36,19 +36,14 @@ categories:
  Only the  **Admin** of an organization can invite users to the rapyuta.io console.
 {{%/notice %}}
 
-
-
 To invite or add users to the rapyuta.io platform, do the following:
-
 
 1. On the left navigation bar, click **Account>Organization**. The panel displays a list of users.
 
 2. On **Users** tab, enter a valid email address of the user you want to invite to rapyuta.io.
 
 3. Click **ADD USER**.
-
 <img src="/images/getting-started/organization/add-usr-org.png?classes=border,shadow&width=50pc" alt="Add user to organization" style="zoom:100%;" ></img>
-
 
 The newly invited user is added to the existing list of **USERS**.
 
@@ -73,8 +68,7 @@ To change or reset your password, do the following.
 1. Click the user menu and click **Change Password**. A dialog box appears to change the pasword.
 2. In the **Change Password** dialog box, type your old pass word, type a new password and confirm the password in the respective fields.
 3. To confirm yourself as a human, click the **Captcha** and follow the instructions.
-
-
+   Your password is changed.
 
 
 ## Removing Users from Projects
@@ -87,7 +81,7 @@ To remove a user from a project, do the following.
 2. Click the project from where you want to remove a user.
    <img src="/images/getting-started/organization/project/select-proj.png?classes=border,shadow&width=50pc" alt="Select project" style="zoom:80%;" />
 3. Under **Actions**, click **Remove** against the user that you want to remove. A confirmation page appears.
-4. Click **Confirm**. The user is removed from the project
+4. Click **Confirm**. The user is removed from the project.
 
 ## Related Links
 

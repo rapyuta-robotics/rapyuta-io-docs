@@ -60,6 +60,11 @@ in a Gazebo simulation. These files are:
   * launches both ***sim.launch*** and ***app.launch***.
   * ensures ***common.launch*** is called only once.
 
+
+## Tutorial Video
+[Navigation in Gazebo simulation](https://youtu.be/Lsrltw12ZuA)
+{{< youtube id="Lsrltw12ZuA" title="rapyuta.io tutorial: turtlebot3 navigation in Gazebo simulation" >}}
+
 ## Prepare Device
 On the device's command line terminal, execute the following commands
 in sequence to set up a catkin workspace, install ROS dependencies
@@ -134,7 +139,7 @@ To create the build, follow below steps:
 
 The build takes about two to five minutes to build the source code in the ***io_simulation_tutorials***
 repository into a running docker container. You may analyse the corresponding
-[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
+[build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/), which help debug failing builds.
 
 Please proceed to creation of package once the build is Complete.
 
@@ -250,8 +255,6 @@ Gazebo.
 * If your application requires time synchronization, you have to wait on
   the ***/clock*** topic as shown [here](https://github.com/rapyuta-robotics/io_simulation_tutorials/blob/e50ccd9b9d8a99af8d4ae15b361d1370443bd2aa/turtlebot_navigation/io_gazebo_turtlebot_demo_app/scripts/demo_app.py#L13).
 
-## Tutorial Video
-[Applying Dynamic Configuration](https://youtu.be/Lsrltw12ZuA)
-{{< youtube id="Lsrltw12ZuA" title="rapyuta.io tutorial: turtlebot3 navigation in Gazebo simulation" >}}
+
 
 

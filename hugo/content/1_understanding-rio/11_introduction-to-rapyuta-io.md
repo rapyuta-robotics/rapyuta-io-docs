@@ -30,7 +30,7 @@ introLinks: {}
 
 rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 
-rapyuta.io is a platform-as-a-service providing managed cloud services that solve technical and production challenges of building, provisioning, running, and iterating on distributed robotic applications.
+It also provides platform-as-a-service to manage cloud services that solve technical and production challenges of building, provisioning, running, and iterating on distributed robotic applications.
 
 It enables developers to develop robot enabled solutions that can be more complex, encompass a variety of robots, scale further and operate in multiple geographic locations.
 

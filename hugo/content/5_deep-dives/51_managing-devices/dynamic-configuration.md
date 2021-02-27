@@ -41,10 +41,10 @@ called  ***configuration hierarchy***.
 
 Every configuration hierarchy consists of the following four kinds of nodes:
 
-- [RootNode](#rootnode)
-- [AttributeNode](#attributenode)
-- [ValueNode](#valuenode)
-- [FileNode](#filenode)
+- [RootNode](/5_deep-dives/51_managing-devices/dynamic-configuration/#rootnode)
+- [AttributeNode](/5_deep-dives/51_managing-devices/dynamic-configuration/#attributenode)
+- [ValueNode](/5_deep-dives/51_managing-devices/dynamic-configuration/#valuenode)
+- [FileNode](/5_deep-dives/51_managing-devices/dynamic-configuration/#filenode)
 
  Consider the sample
 configuration hierarchy, ***example***, as shown in the following figure.

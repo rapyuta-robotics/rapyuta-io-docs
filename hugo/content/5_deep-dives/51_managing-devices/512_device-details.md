@@ -25,7 +25,7 @@ rapyuta.io
 * Failed (<span style="color:red">***red***</span>) indicates that a failure occurred while managing the device.
 
 {{% notice info %}}
-You may read the [list of error codes](/developer-guide/manage-machines/onboarding/setup-device/failure-codes/) for more details about specific failure cases.
+You may read the [list of error codes](/6_troubleshoot/610_device-onboarding-failure-codes/) for more details about specific failure cases.
 {{% /notice %}}
 
 On the **Details** page of the device, you may modify its description or

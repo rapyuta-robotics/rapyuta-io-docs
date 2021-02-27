@@ -30,8 +30,6 @@ tags:
 
 Select **Exposed externally** checkbox to expose a network endpoint publicly over the internet.
 
-
-
 The supported protocols at their respective ports (cannot be modified) are:
 
 * **HTTP**/**Websocket** exposed on port **80**
@@ -43,7 +41,6 @@ The supported protocols at their respective ports (cannot be modified) are:
 > The **Secure TCP (TLS/SNI)** protocol uses [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication) headers for routing the request to the desired backend.
 
 ![external endpoint](/images/core-concepts/packages/network-endpoints/external-endpoint.png?classes=border,shadow&width=40pc)
-
 
 
 ## Accessing Exposed Endpoints over the public internet

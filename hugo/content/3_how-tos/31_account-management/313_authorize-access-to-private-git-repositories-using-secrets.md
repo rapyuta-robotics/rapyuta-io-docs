@@ -33,7 +33,7 @@ categories:
 You can create packages using the source code from a private git repository. A source secret allows rapyuta.io to access a private git repository or a git repository with self-assigned or untrusted SSL certificate.
 
 > * The rapyuta.io platform uses git version 2.16.6.
-> * While cloning a git repository, ensure that you provide the appropriate protocol (HTTP/HTTPS). The HTTP to HTTPS redirection does not work while cloning the repositories.
+> * While cloning a git repository, ensure that you provide the appropriate protocol (HTTP/HTTPS).The HTTP to HTTPS redirection does not work while cloning the repositories.
 
 
 ## Creating source secret
@@ -66,4 +66,4 @@ To create a source secret for the private git repository, do the following:
 7. If you select **SSH Authentication** from the **Authentication Type** drop-down list, type your SSH key of your git repository in the **SSH Key** fields.
 ​    ![SSH authentication](/images/core-concepts/source-secret/sshauth.png?classes=border,shadow&width=40pc) 
 
-7. Click **Submit**.
+7. Click **Submit**. The secret source is created.

@@ -27,42 +27,27 @@ tags:
   - How to
 ---
 
-### Create a Static Route
+## Create a Static Route
 
 1. On the left navigation bar, click **Networking>Static Route**.
 
 2. Click **ADD NEW STATIC ROUTE**.
 
 3. Enter a **name** for **Static Route URL**.
+{{%notice info%}}
+The name of a static route has lowercase alphanumeric characters, or a hyphen, and must begin and end with an alphanumeric character, and must not be certain keywords, and it must be at least 4 characters and less than 64 characters long.
+{{%/notice%}}
 
-   > **Name** of a static route 
-   >
-   > - has lowercase alphanumeric characters, or a hyphen, 
-   > - and it must be at least 4 characters and less than 64 characters long.
-   > - and must begin and end with an alphanumeric character, 
-   > - and must not be certain reserved keywords, 
-
-4. Click **CONTINUE**.
-
-> Observe that the name of the static route will be a subdomain belonging to **\*.ep-r.io** 
-
-> FQDN is formatted as follows:   {**static-route-name**}-{*random-5 letter-organization-string*}.**ep-r.io** 
->
-> organization string is unique for your organization and doesn't change. 
->
-> For example static route with **Name** **```my-example-server```** will have a FQDN of   **``` my-example-server-azbyc.ep-r.io ```**
-
-
-
+4. Click **CONTINUE**. The static route is created.
+{{%notice info%}}
+Observe that the name of the static route will be a subdomain belonging to ***.ep-r.io*** (essentially the provided name will be suffixed with ***.ep-r.io*** to form the FQDN). For instance, if the name of the static route is ***my-example-server***, the static route URL will be ***my-example-server.ep-r.io***
+{{%/notice%}}
 ![Create static route](/images/dev-guide/create-software-pkgs/pkg-internals/static-routes/create-sr.png?classes=border,shadow&width=40pc)
 
 
-
-> **NOTE** : Once created, you cannot edit the name of a static route. You can however delete and recreate a new static route with a different name easily
-
-
-
----
+{{%notice note%}}
+Once created, you cannot edit the name of a static route. You can however delete and recreate a new static route with a different name easily.
+{{%/notice%}}
 
 ### Binding Static Route to Deployment Endpoints
 
@@ -92,11 +77,7 @@ In this example, the static route **my-example-server** is bound to the network 
 
 On deploying the package after binding a static route, the network endpoint URL address becomes deterministic and is a constant. It implies that even if the deployment is stopped and provisioned again with the same static route, the network endpoint URL address remains the same.
 
-
-
 A package deployment can have multiple static routes. However, a single static route is used for a single deployment.
-
-
 
 ---
 

@@ -54,7 +54,7 @@ device with docker runtime and AMD64 architecture available.
 5. Select the **Runtime** as **Device**.
 6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
 Select the **Device** and it’s **IP Interface**. 
-7. Select the [Restart policy](/developer-guide/manage-software-cycle/deployments/#restart-policy).
+7. Select the [Restart policy](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
 ![goo](/images/tutorials/routed-networks/create-device-routed-network.png?classes=border,shadow&width=40pc)
 8. Click **CONTINUE**.
 

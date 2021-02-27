@@ -26,7 +26,8 @@ introLinks: {}
 tags:
   - How to
 ---
-#### Exposing Endpoints Internally
+
+### Exposing Endpoints Internally
 
 You can restrict access to a network endpoint by ensuring that **Exposed externally** option is not selected.
 
@@ -39,12 +40,7 @@ You can also use port range for an endpoint by selecting **Port Range** toggle. 
 
 {{% notice note %}}
 
-By default the Target Port is same as the Port.
-
-{{%/notice%}}
-{{% notice note %}}
-
-A maximum 50 ports are allowed for an endpoint.
+By default the Target Port is same as the Port. A maximum 50 ports are allowed for an endpoint.
 
 {{%/notice%}}
 

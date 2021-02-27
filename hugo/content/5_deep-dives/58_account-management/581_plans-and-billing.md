@@ -39,7 +39,7 @@ If you want to cancel the current plan or shift to another plan, please <a href=
 rapyuta.io offers a community plan with a basic set of bundled complementary resource quotas that allow users to explore the platform for 3 months, no payments required. The community plan is recommended for academia, research, startups to help build a proof of concept of their application.
 
 Additional [consumable units]({{< ref "/5_deep-dives/58_account-management/582_billing-usage.md">}}) (upto the predefined limits for the plan) or optional resources such as persistent storage can be availed on a pay-as-you-go basis. This requires the user to add a valid
-[payment method]({{< ref "/5_deep-dives/58_account-management/583_pricing-calculation.md">}}) on the platform.
+[payment method](/5_deep-dives/58_account-management/understanding-usage/#payment-method) on the platform.
 
 #### Expiry of Cloud Deployment Resource Quota
 On the **expiry of credits** for cloud deployment hours in the Community Plan, the platform will **stop all running  cloud deployments**. All other functionality of the platform remains unaffected.

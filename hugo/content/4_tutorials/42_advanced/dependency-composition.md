@@ -59,7 +59,7 @@ To create the build, follow below steps. Skip the following steps if you have al
 
 The build takes about two to five minutes to build the source code in the *io_tutorials*
 repository into a running docker container. You may analyse the corresponding
-[build logs](/developer-guide/tooling-automation/logging/build-logs/), which help debug failing builds.
+[build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/), which help debug failing builds.
 
 Please proceed to creation of package once the build is Complete.
 
@@ -177,7 +177,7 @@ catkin build map_listener
 If you experience the error ***catkin:command not found***, then the *python-catkin-tools* package is missing on the device, which is required for executing *catkin build* command. Install the package by running the command `sudo apt-get install python-catkin-tools` at the device terminal.
 {{% /notice %}}
 
-And then, you will [add the device](/developer-guide/manage-machines/onboarding/) to rapyuta.io.
+And then, you will [add the device](/3_how-tos/32_device-management/321_onboarding-a-device/) to rapyuta.io.
 {{% notice note %}}
 While adding the device, ensure that **Use docker compose as default runtime** checkbox is ***not selected***.
 {{% /notice %}}

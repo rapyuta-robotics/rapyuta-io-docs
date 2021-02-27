@@ -34,7 +34,7 @@ Follow these steps to create a cloud routed network.
   * **Small**: 1cpu core, 4 GiB memory
   * **Medium**: 2cpu core, 8 GiB memory
   * **Large**: 4cpu core, 16 GiB memory
-6. Click **CONTINUE**.
+6. Click **CONTINUE**. The cloud routed network is created.
 
 
 ## Creating Device Routed Network 
@@ -51,7 +51,7 @@ device with docker runtime and AMD64 architecture available.
 Select the **Device** and it’s **IP Interface**. 
 7. Select the Restart policy.
 ![goo](/images/tutorials/routed-networks/create-device-routed-network.png?classes=border,shadow&width=40pc)
-8. Click **CONTINUE**.
+8. Click **CONTINUE**. The device routed network is created.
 
 Deploying a routed network is identical to deploying any other package and has identical corresponding phases and errors.
 Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
@@ -71,7 +71,8 @@ Follow these steps to create a native network.
   * **Medium**: 2cpu core, 8 GiB memory
   * **Large**: 4cpu core, 16 GiB memory
 
-6. Click **CONTINUE**.
+6. Click **CONTINUE**. The native network is created.
+
 ## Deleting Routed Network
 
 Only network not bound to any running deployments can be deleted.
@@ -79,7 +80,7 @@ Only network not bound to any running deployments can be deleted.
 1. On the left navigation bar, click **Networking>Routed Network**. A list of routed networks are displayed.
 2. Select the routed network which you want to delete. 
 3. Click on **Delete**.
-4. Confirm on the routed network deletion message.
+4. Confirm on the routed network deletion message. After confirmation, the routed network is deleted.
 {{% notice warning %}}
 An attempt to deprovision a network that is currently being used will result in an error.
 {{% /notice %}}

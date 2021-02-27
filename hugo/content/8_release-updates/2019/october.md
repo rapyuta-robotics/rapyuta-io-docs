@@ -34,7 +34,7 @@ There are significant updates in this version that we hope you will like.
 
 * Read about
   [how to upload device logs to the cloud storage](/developer-guide/tooling-automation/logging/device-logs/#batch-upload) in rapyuta.io
-* [Download/upgrade](/developer-guide/tooling-automation/python-sdk/#installation) to
+* [Download/upgrade](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) to
   the new rapyuta.io SDK 0.8.0
 
 ## October 23

@@ -27,9 +27,7 @@ guideLinks: []
 introLinks: {}
 tags:
     - Deep Dive
-
-----
-
+---
 Routed network is a rapyuta.io resource to enable ROS communication between different ROS package deployments. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. 
 Data flow occurs only when another package chooses to subscribe to a topic, call a service or call an action. 
 

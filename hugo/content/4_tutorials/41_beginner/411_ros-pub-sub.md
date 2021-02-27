@@ -37,14 +37,22 @@ work the same.
 	3. [ROS topics](https://wiki.ros.org/Topics)
 	4. [ROS services](https://wiki.ros.org/Services)
 
-## Estimated time
+### Estimated time
 15 minutes
+
+## Tutorial Video
+[Basic ROS publisher and subscriber](https://youtu.be/HKZCdqEUNOg)
+{{< youtube id="HKZCdqEUNOg" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}
 
 ## On-boarding a device
 * If you are using a Raspberry PI device, you must prepare the device before onboarding. For more information, [click here](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi)
 * If you are using your computer as a device(Linux machine), [click here](/3_how-tos/32_device-management/321_onboarding-a-device).
 
-### Creating the **io-tutorial** build
+{{% notice note%}}
+While oboarding the device, ensure that you have selected **Use docker compose as default runtime** check box. 
+{{%/notice%}}
+
+## Creating the **io-tutorial** build
  
 To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
 
@@ -89,8 +97,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 	7. For **Executable Type**, click on **Builds**.
-	8. In the **Choose Build** select the first Build (`io-tutorials`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/#io-tutorial-build)
-	from the drop-down list.	
+	8. In the **Choose Build** select the first Build `io-tutorials` from the drop-down list.	
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
 		roslaunch talker talker.launch
@@ -118,8 +125,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
 	7. For **Executable Type**, click on **Builds**.
-	8. In the **Choose Build** select the second Build (`io-tutorials-arm32v7`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/#io-tutorials-arm32v7-build)
-	from the drop-down list.
+	8. In the **Choose Build** select the second Build `io-tutorials-arm32v7` from the drop-down list.
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
 		roslaunch listener listener.launch
@@ -177,6 +183,3 @@ while **talker-talkerExecutable** will be publishing *hello_world* logs.
 
 ![ROS Publisher logs](/images/tutorials/docker-pub-sub/talker-logs.png?classes=border,shadow&width=50pc)
 
-## Tutorial Video
-[Basic ROS publisher and subscriber](https://youtu.be/HKZCdqEUNOg)
-{{< youtube id="HKZCdqEUNOg" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}

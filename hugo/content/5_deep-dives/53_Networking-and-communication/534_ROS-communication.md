@@ -28,40 +28,43 @@ introLinks: {}
 tags:
     - Deep Dive
 
-----
+---
 
 The rapyuta.io platform relies on a sub-component called the *cloud bridge*
 for implicitly establishing a communication channel between two or more
 ROS environments. It is an application-level bridge that offers many
 compelling features to ROS developers including
-[augmented ROS over the public internet](/developer-guide/create-software-packages/ros-support/#augmented-ros) and dedicated features for dynamic
+[augmented ROS over the public internet](/5_deep-dives/52_software-development/526_package-ros-support/#augmented-ros) and dedicated features for dynamic
 multi-robot ROS communication.
 
 ## Multi-Robot ROS Communication
-    The rapyuta.io platform offers an elegant solution for multiple robots communication as a primary feature. In the rapyuta paradigm, the component of each package is treated as an isolated ROS environment. While declaring the package you are only required to provide the topics/services/actions required to be exposed by that particular component. The platform is then responsible for connecting, managing and securing the ROS environments together. We introduce a set of new features aimed at making it a lot easier to use multiple robots.
+
+  The rapyuta.io platform offers an elegant solution for multiple robots communication as a primary feature. In the rapyuta paradigm, the component of each package is treated as an isolated ROS environment. While declaring the package you are only required to provide the topics/services/actions required to be exposed by that particular component. The platform is then responsible for connecting, managing and securing the ROS environments together. We introduce a set of new features aimed at making it a lot easier to use multiple robots.
 
 ### Illustrating a Multi-Robot Scenario
-    To illustrate a scenario involving multiple robots we turn to an example involving the world's favorite sport - soccer. Similar topologies are often relevant in real-world applications of robots such as warehouses where a ***coordinator*** controls multiple AMR/AGVs 
-    Imagine a game of robot soccer where players are robots, and their coach is a controller unit. 
 
-    The players follow a simple convention
+  To illustrate a scenario involving multiple robots we turn to an example involving the world's favorite sport - soccer. Similar topologies are often relevant in real-world applications of robots such as warehouses where a ***coordinator*** controls multiple AMR/AGVs 
+  
+  Imagine a game of robot soccer where players are robots, and their coach is a controller unit. 
 
-    * A player moves to a position when it receives a message on the */move* topic
-    * A player publishes its pose and location through */odom*.
+  The players follow a simple convention
 
-    Now if the coach (controller) needs to use this information from all players(robots) in the field.To deal with multiple players(robots) it is necessary to create a convention that allows him to specifically access information about one specific player(robot) and issue commands to one specific player(robot). 
+  * A player moves to a position when it receives a message on the */move* topic
+  * A player publishes its pose and location through */odom*.
 
-    In the ROS community, the common approach used in multi-robot communication scenarios is to __prefix or namespace__ the interfaces (topics/services/actions) __by a unique identity__ typically the name of the robot. 
+  Now if the coach (controller) needs to use this information from all players(robots) in the field.To deal with multiple players(robots) it is necessary to create a convention that allows him to specifically access information about one specific player(robot) and issue commands to one specific player(robot). 
 
-    Following this convention, if the coach(controller)
+  In the ROS community, the common approach used in multi-robot communication scenarios is to __prefix or namespace__ the interfaces (topics/services/actions) __by a unique identity__ typically the name of the robot. 
 
-    *  wants to move _robot A_ in a specific direction, it must explicitly publish */robotA/move* that is subscribed by _robot A_ (or */robotB/move* and */robotC/move* to robot B and robot C respectively)
-    * wants to seek odom from _robot A_, it must explicitly subscribe to */robotA/odom* that is published by _robot A_  (or */robotB/odom* and */robotC/odom* from robot B and robot C respectively)
+  Following this convention, if the coach(controller)
 
-    This isvachieved using carefully crafted launchfiles using remaps (e.g. /move to /robot_A/move), conditionals (e.g. unless ns!="" or if robot_name=="robot_A"), arguments(e.g. robot_name:=robot_A) and namespaces(e.g. &lt;node ns=robot_A&gt;). This mandates the delicate arrangement of files is frozen while building the software and consistently distributed to all involved agents. As the needs/software change and the number of variables and robots increase, this approach becomes increasingly error-prone.
+  *  wants to move _robot A_ in a specific direction, it must explicitly publish */robotA/move* that is subscribed by _robot A_ (or */robotB/move* and */robotC/move* to robot B and robot C respectively)
+   * wants to seek odom from _robot A_, it must explicitly subscribe to */robotA/odom* that is published by _robot A_  (or */robotB/odom* and */robotC/odom* from robot B and robot C respectively)
+
+  This isvachieved using carefully crafted launchfiles using remaps (e.g. /move to /robot_A/move), conditionals (e.g. unless ns!="" or if robot_name=="robot_A"), arguments(e.g. robot_name:=robot_A) and namespaces(e.g. &lt;node ns=robot_A&gt;). This mandates the delicate arrangement of files is frozen while building the software and consistently distributed to all involved agents. As the needs/software change and the number of variables and robots increase, this approach becomes increasingly error-prone.
 
 
-![Robot soccer block diagram](images/multi-robot-communication/robotSoccer-blk-diagram.png?classes=border,shadow&width=50pc)
+![Robot soccer block diagram](/images/multi-robot-communication/robotSoccer-blk-diagram.png?classes=border,shadow&width=50pc)
 
 ### Dynamic Multi-Robot Communication Semantics
 Avoid complex hardcoded logic in launchfiles that lives with the source code
@@ -70,7 +73,7 @@ Additionally, it is more flexible/dynamic to assign and use deploy-time identiti
 than hard-coded robot names. 
 
 The process of assigning an identity to a robot and the mechanisms to
-consume/discover identities of all alive robots is described in the [ROS environment aliases](#ros-environment-aliases-runtime-identity-assignment) topic.
+consume/discover identities of all alive robots is described in the ROS environment aliases topic.
 
 The mechanisms and features offered by the platform to deal with automatic prefix addition and removal is described in the
 [scoping](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#scoping-auto-prefix-namespace-by-self-identity) and
@@ -93,8 +96,7 @@ The platform detects duplicates aliases explicitly for the case of
 components and deployment and its immediate parent. 
 
 {{% notice info %}}
-This alias is available to Deployment [Executables](/developer-guide/create-software-packages/package-internals/#executables)
-(both cloud and device) through **RIO_ROS_ENV_ALIAS** environment variable.
+This alias is available to Deployment Executables (both cloud and device) through **RIO_ROS_ENV_ALIAS** environment variable.
 {{% /notice %}}
 
 {{% notice note %}}
@@ -182,7 +184,8 @@ A targeted topic is a mapping from /robot-alias/topic to /topic.
 ![Targeted topic as shown](/images/multi-robot-communication/target-as-shown.png?classes=border,shadow&width=50pc)
 
 #### Targeting and Inbound ROS Interfaces
-When a package allows for [inbound ROS interfaces](/developer-guide/create-software-packages/ros-support/#inbound-interfaces), you must provide hints to leverage the automatic
+
+When a package allows for inbound ROS interfaces, you must provide hints to leverage the automatic
 targeting feature. The platform introspects the package to determine if it must enforce the unique identity constraints required for multi-robot communication.
 
 As the platform follows a provider only semantic, determining this is

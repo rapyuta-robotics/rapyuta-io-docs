@@ -44,6 +44,10 @@ The tutorial consists of the below steps:
 6. Deploy the package on the device
 7. Verify deployment logs
 
+## Tutorial Video
+[Applying Dynamic Configuration](https://youtu.be/WaDjGwyDN58)
+{{< youtube id="WaDjGwyDN58" title="rapyuta.io tutorial: applying configuration parameters" >}}
+
 ## Defining configuration
 You will define the configuration ***robots*** as follows:
 
@@ -188,6 +192,3 @@ The output contains values of the *first_name* and *last_name* parameters for th
 Your output may be different based on the device labels you define.
 {{% /notice %}}
 
-## Tutorial Video
-[Applying Dynamic Configuration](https://youtu.be/WaDjGwyDN58)
-{{< youtube id="WaDjGwyDN58" title="rapyuta.io tutorial: applying configuration parameters" >}}
