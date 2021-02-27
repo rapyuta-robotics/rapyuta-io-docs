@@ -29,11 +29,11 @@ A package is a fundamental rapyuta.io resource that represents a declaration of 
 
 Creating a software package consists of the following high-level procedures.
 
-**Step1**: [Define Package information](/3_how-tos/33_software-development/333_create-packages/#step-1-defining-package-information)
+**Step1**: [Define Package information](?#step-1-defining-package-information)
 
-**Step2**: [Create Components](/3_how-tos/33_software-development/333_create-packages/#step-2-creating-components)
+**Step2**: [Create Components](?#step-2-creating-components)
 
-**Step3**:[Configure additional information](/3_how-tos/33_software-development/333_create-packages/#step3-configuring-additional-information)
+**Step3**:[Configure additional information](?#step3-configuring-additional-information)
 
 ## Step 1: Defining Package information
 
