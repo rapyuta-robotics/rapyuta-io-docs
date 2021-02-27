@@ -2,7 +2,7 @@
 title: "Release Updates"
 # shortTitle: "TODO: Change me"
 intro:  "Discussion about design and technical aspects of the rapyuta.io platform. Detailed information about features, use-cases and best practices"
-weight: 8
+weight: 80
 versions:
   free-pro-team: '*'
   enterprise-server: '*'
