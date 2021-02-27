@@ -66,7 +66,7 @@ cd catkin_ws/src
 ```bash
 git clone https://github.com/rapyuta/io_tutorials
 ```
-```
+```bash
 source /opt/ros/kinetic/setup.bash
 ```
 ```bash

@@ -26,7 +26,8 @@ introLinks: {}
 tags:
   - How to
 ---
-#### Exposing Endpoints Internally
+
+### Exposing Endpoints Internally
 
 You can restrict access to a network endpoint by ensuring that **Exposed externally** option is not selected.
 

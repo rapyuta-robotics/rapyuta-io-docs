@@ -29,7 +29,7 @@ tags:
   
 ## Creating Build by Catkin recipe 
 
-To create a build using katkin receipe, do the following. 
+To create a build using Catkin receipe, do the following. 
 
 1. On the left navigation bar, click **Development>Builds**.
 
@@ -43,7 +43,7 @@ To create a build using katkin receipe, do the following.
 
     c. In the **Repository (URL)** field, enter the URL of the git repository from which you want to create a build. For example, `https://github.com/rapyuta/io_tutorials`.
 
-    d. Optionally, if the git repository is a private git, then click the **Private Git** radio button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret]({{< ref "/3_how-tos/31_account-management/313_authorize-access-to-private-git-repositories-using-secrets.md">}}).
+    d. Optionally, if the git repository is a private git, then click the **Private Git** radio button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/how-to-guides/account-management/setup-private-git-access/#creating-source-secret).
 
     e. Optionally, you can specify the **Context Directory** field by entering the path of the directory where you want to create the build.
 
@@ -57,9 +57,11 @@ To create a build using katkin receipe, do the following.
 
     a. In the **Architecture** area, select the processor architecture for the build. The available options are:
 
-    * arm32v7</li>
-    * arm64v8</li>
-    * amd64</li>
+    * arm32v7
+
+    * arm64v8
+
+    * amd64
 
     b. Optionally, if the build has a simulation option, click the **Has Simulation** radio-button.
 
@@ -81,13 +83,13 @@ To create a build using katkin receipe, do the following.
 
     b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. For example, ```docker.io/your-username/repo-name.``` 
 
-    c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret]({{< ref "/3_how-tos/31_account-management/314_authorize-access-to-private-docker-registry-using-secrets.md">}}).
+    c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
 
-    d. Click **Next**.
+    d. Click **Next**. The build is created.
 
   ![goo](/images/core-concepts/builds/build-creation/catkin-push-secret.png?classes=border,shadow&width=30pc)
 
-  The build is created.
+  
 
 ## Creating Build by Docker recipe 
 
@@ -105,7 +107,7 @@ To create a build using katkin receipe, do the following.
 
     c. In the **Repository (URL)** field, enter the URL of the git repository from which you want to create a build. For example, `https://github.com/rapyuta/io_tutorials`.
 
-    d. Optionally, if the git repository is a private git, then click the **Private Git** toggle button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret]({{< ref "/3_how-tos/31_account-management/313_authorize-access-to-private-git-repositories-using-secrets.md">}}).
+    d. Optionally, if the git repository is a private git, then click the **Private Git** toggle button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/how-to-guides/account-management/setup-private-git-access/#creating-source-secret).
 
     e. Optionally, you can specify the **Context Directory** field by entering the path of the directory where you want to create the build.
 
@@ -135,9 +137,9 @@ To create a build using katkin receipe, do the following.
     a. Under the **Docker Secret** tab, click the **Docker Push Secret**  toggle button.
     b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. ​For example, docker.io/your-username/repo-name. 
 
-    c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret]({{< ref "/3_how-tos/31_account-management/314_authorize-access-to-private-docker-registry-using-secrets.md">}}).
+    c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
 
-    d. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** toggle button and select the secret for the repository. If you have not created any secret for the repository, [create a secret]({{< ref "/3_how-tos/31_account-management/314_authorize-access-to-private-docker-registry-using-secrets.md">}}).
+    d. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** toggle button and select the secret for the repository. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
 
     e. Click **Next**.
   ![goo](/images/core-concepts/builds/build-creation/docker-push-secret.png?classes=border,shadow&width=30pc)
@@ -221,7 +223,9 @@ If you want to clone a project within the same project, you must rename the buil
 {{% notice note %}}
 The dialog box to clone secret appears only for the builds that have a secret.
 {{% /notice %}}
+
 5. The build creation page appears and allows you to modify the build details. 
+
 6. After reviewing the field details of the build creation pages, click **Next**. The build is cloned to the selected project.
 
 ## Related Links

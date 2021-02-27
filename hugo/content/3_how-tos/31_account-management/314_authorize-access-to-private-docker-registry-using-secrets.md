@@ -41,27 +41,31 @@ To create a docker secret for a private docker registry, do the following:
 
 3. Under **SELECT SECRET TYPE**, click **Docker secret**.
 
-3. In the **Name** box, enter a name for the docker secret.     
+4. In the **Name** box, enter a name for the docker secret. 
 
->   Name should be **less than 253 characters**, **contain a-z 0-9 and hypen**, 
->   and **must begin and end with a-z**.
+{{%notice info%}}
+ Name should be **less than 253 characters**, **contain a-z 0-9 and hypen**,  and **must begin and end with a-z**.
+{{%/notice%}}
  
-1. You can select the executable type as aone of the following.
+5. You can select the executable type as aone of the following.
    * Dockerhub
    * Private Registry
 
-2. If your executable type is [**Docker Hub**](https://hub.docker.com/), do the following.
+6. If your executable type is [**Docker Hub**](https://hub.docker.com/), do the following.
 
    a. Type your user name, password, and Email ID in the respective fields.
 
-3. If your executable type is a private registry, do the following.
+7. If your executable type is a private registry, do the following in the respective fields.
 
-   a. **Private registry**. Provide the private (docker) registry URL in the
-   b. **Registry Url** box. It is mandatory to provide the registry URL.
-   c. In the **Username** box, type in your docker username.
-   d. In the **Email** box, enter the valid email address associated with your docker registry.
+   a. **Private registry**: Provide the private (docker) registry URL.
 
-4. Click **SUBMIT**. The docker secret for rapyuta.io platform is created.
+   b. **Registry Url** box: It is mandatory to provide the registry URL.
+
+   c. In the **Username** box: Type in your docker username.
+
+   d. In the **Email** box: Enter the valid email address associated with your docker registry.
+
+8. Click **SUBMIT**. The docker secret for rapyuta.io platform is created.
 
 ## Authorization Token
 
@@ -86,9 +90,7 @@ cat ~/.docker/config.json
     }
    ```
 
-> The value of **`auth`** entry is base64-encoded data called *_authorisation token_*.
-
-   If you use a docker credentials store, you will instead see `credsStore` entry with the name of the store as value. For example, a sample `config.json` file with `credsStore` entry would look like:
+The value of **`auth`** entry is base64-encoded data called *_authorisation token_*.If you use a docker credentials store, you will instead see `credsStore` entry with the name of the store as value. For example, a sample `config.json` file with `credsStore` entry would look like:
 
    ```bash
    {
@@ -99,7 +101,7 @@ cat ~/.docker/config.json
    }
    ```
 
-   Finding out the *_authorisation token_* from all possible  `credsStore` entry’s value is beyond the scope of this tutorial. In this case, use `osxkeychain` value to figure out authorization token.
+   You can find out the authorisation token from the respective  `credsStore` entry’s value. In this case, use `osxkeychain` value to figure out authorization token.
 
 2. To convert *_authorisation token_* to a readable format, execute the command:
 
@@ -117,16 +119,14 @@ cat ~/.docker/config.json
 
    ```
 
-   The part to the left of **:** is your docker username, while the one on the
+   The part to the left of **:** is your docker username, while the one on the right is your password.
 
-   right is your password.
+ If you encounter the following deployment error, Ensure the docker username and password in a secret are correct.
 
->  If you encounter the following deployment error, Ensure the docker username and password in a secret are correct.
->
->  ```bash
->  DEP_E153 (Could not pull either the docker image or the built package artifact for the component on the cloud)
->  ```
->  
+  ```bash
+  DEP_E153 (Could not pull either the docker image or the built package artifact for the component on the cloud)
+  ```
+
 ## Related Links
 
 * [About Secrets](/1_understanding-rio/12_core-concepts/#secrets)

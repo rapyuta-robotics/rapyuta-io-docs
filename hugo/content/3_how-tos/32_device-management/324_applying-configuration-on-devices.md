@@ -26,9 +26,10 @@ introLinks: {}
 tags:
   - How to
 ---
-# Creating Device Configuration
 
-- **rapyuta.io** allows you to create a dynamic configuration that holds the parameter files into a tree-like hierarchical structure called a **configuration hierarchy**. These configuration parameters are applied to the robots to achive the desired behavior for the robot. 
+## Creating Device Configuration
+
+ **rapyuta.io** allows you to create a dynamic configuration that holds the parameter files into a tree-like hierarchical structure called a **configuration hierarchy**. These configuration parameters are applied to the robots to achive the desired behavior for the robot. 
 
 To create a dynamic configuration, do the following.
 
@@ -54,23 +55,21 @@ To create a dynamic configuration, do the following.
 
 6. From the **File type** drop-down menu, select either YAML or Binary file.<br/>
 
-7. If you have selected the file type as YAML, in the File name field, type a name for the file and click **Confirm**. You can add the configuration in the File Contents area. To see an example, [click here](#creating-a-configuration-parameter-in-yaml-file-format). 
+7. If you have selected the file type as YAML, in the File name field, type a name for the file and click **Confirm**. You can add the configuration in the File Contents area. To see an example, [click here](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-yaml-file-format). 
 
   ![YAML file](/images/core-concepts/configurations/yaml-file.png?classes=border,shadow&width=30pc)
 
-8. If you have selected the file type as Binary, in the File type field, you can upload or drag a binary configuration file from the local machine. To see an example, [click here](#creating-a-configuration-parameter-in-binary-file-format).
+8. If you have selected the file type as Binary, in the File type field, you can upload or drag a binary configuration file from the local machine. To see an example, [click here](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-binary-file-format).
 
   ![Binary file](/images/core-concepts/configurations/binary-file.png?classes=border,shadow&width=30pc)
 
 9. Click **Confirm**. The device configuration is created.
 
-  
-
-  The configuration parameter hierarchy is created. You can apply the configurations to a device now. For more information, see [Applying Dynamic Configurations](/3_how-tos/32_device-management/324_applying-configuration-on-devices)
+  The configuration parameter hierarchy is created. You can apply the configurations to a device now. For more information, see [Applying Dynamic Configurations](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#applying-configuration-to-devices)
 
   
 
-  #### Rules for writing YAML configuration parameters
+  ### Rules for writing YAML configuration parameters
 
   There are a set of rules that you must adhere to when writing a configuration parameters file. They are:
 
@@ -123,20 +122,20 @@ To create a dynamic configuration, do the following.
 * If you add a new item to a default list parameter, it is appended to the list.
 
    ```yaml
-\# base parameters file
-list:
+  \# base parameters file
+  list:
     - a
     - b
-\# extending parameters file
-list:
+  \# extending parameters file
+  list:
     - c
-\# merged resultant file
-list:
+  \# merged resultant file
+  list:
     - a
     - b
     - c
 
-```
+  ```
 
 * If you modify a default parameter’s value, the new value overrides the old value.
 
@@ -173,7 +172,7 @@ list:
   5. In the **File Contents** area , type the RGV robot parameter values, as displayed in the following figure and click **Save**.
 
   {{% notice info %}}
-  Ensure you read the [rules for writing/editing configuration parameters files](#rules-for-writing-yaml-configuration-parameters).
+  Ensure you read the [rules for writing/editing configuration parameters files](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#rules-for-writing-yaml-configuration-parameters).
   {{% /notice %}}
 
   ​    ![base parameters](/images/core-concepts/configurations/parameter-defaults.png?classes=border,shadow&width=40pc)
@@ -254,6 +253,6 @@ Devices must be online
 
 ## Related Links
 
-* For more information, [click here](/5_deep-dives/51_managing-devices/dynamic-configuration)
+* For more information about dynamic configuration, [click here](/5_deep-dives/51_managing-devices/dynamic-configuration)
 
 * [Tutorials](/4_tutorials/41_beginner/413_dynamic-configurations) 

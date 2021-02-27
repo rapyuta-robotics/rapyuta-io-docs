@@ -41,13 +41,12 @@ To deploy a package in rapyuta.io, follow the steps:
 
 7. If a component of the package has **device** runtime, you must select the device
 
-you want to deploy the component on. Click **Refresh the list of online devices** to retrieve an updated list of online devices.
+    you want to deploy the component on. Click **Refresh the list of online devices** to retrieve an updated list of online devices.
 
 8. Select the device from the **Select device for deploying the component** drop-down list.
-
-   > The list of devices is a set of online devices, which are pre-filtered to match the architecture (amd64, arm32v7, arm64v8) 
-   >
-   > and device runtime (docker or preinstalled) required by the component in question.
+{{%notice info%}}
+   The list of devices is a set of online devices, which are pre-filtered to match the architecture (amd64, arm32v7, arm64v8) and device runtime (docker or preinstalled) required by the component in question.
+{{%/notice%}}
 
 9. If the package has a component with `Is ROS` true, then you will need to select **Routed Network** from the drop-down list
    1. ​	If there are no **Routed Network** successfully running, you would not be able to deploy the package. Please create a [Routed Network]({{< ref "/3_how-tos/34_networking-and-communication/341_creating-ros-routed-networks" >}}) first. 

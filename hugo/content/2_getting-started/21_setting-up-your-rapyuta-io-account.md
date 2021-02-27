@@ -34,26 +34,26 @@ Perform the following procedure to set up your rapyuta.io account.
 4. Click **Create an Account**
 5. A verification email is sent to your email address. Click the **Verify Email**  to complete your registration process.
    > If you can't see an invitaion email in your inbox, check your spam folder. 
-6. The rapyuta.io platform opens. In the platform,  select a plan of your choices. 
-7. After you have selected the plan, enter the following details of your organization. 
-   1. Organization Name
-   2. URL which you can leave blank
-   3. Country - For billing 
-   4. State - For billing
-   5. Pincode - For billing
-8. You are presented with the T&C. Agree to complete the process
+6. The rapyuta.io platform opens and the **Term and Conditions of Use** message is displayed. Click **I have read and agree to the terms of this Agreement** to acknowledge the message and click **Continue**.
+7. In the **ENTER ORGANIZATION DETAILS** dialog-box, enter the following details in the respective fields. 
+   1. **Organization Name** - Type the name of your organization.
+   2. **URL** - Optionally, enter the URL of your organization.
+   3. **Country** - Select your country of residence from the drop-down menu.
+   4. **Province/State** - Type your state name.
+   5. **Postal code** - Type the postal code of your locality.
+8. The plan detail page is displayed. Click the plan of your choice and follow the instructions to activate the plan. For more onformation about plan details, [click here](/5_deep-dives/58_account-management/581_plans-and-billing/).
 
-You account is now ready to be used.
+After you succsfully active your plan, Your account is now ready to be used.
 
 
 ### Creating your First Project
 
 All resources on rapyuta.io reside within projects. 
-To begin using the platform, create your project by complete the following steps
+To begin using the platform, create your project by complete the following steps.
 
 
 1. In the left navigation bar, click **Account>Project**. The project dash board is displayed.
-2. In the project dash board, click **Create New Project**. **Create new project** dialog box appears.
+2. In the project dash board, click **Create New Project**. The **Create new project** dialog box appears.
 3. In the **Project Name** field, type a name for the project and click **Continue**.
   The project is created and you can see the project in the project dash board.
 

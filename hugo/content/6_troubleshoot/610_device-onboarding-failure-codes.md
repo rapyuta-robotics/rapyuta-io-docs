@@ -46,8 +46,8 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
             <td>Downloading internal artifact failed</td>
             <td>
                 <ul>
-                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
-                    <li><a href="#check-for-disk-space" class="highlight">Ensure that there is adequate disk space on device.</a></li>
+                    <li><a href="/6_troubleshoot/610_device-onboarding-failure-codes/#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
+                    <li><a href="/6_troubleshoot/610_device-onboarding-failure-codes/#check-for-disk-space" class="highlight">Ensure that there is adequate disk space on device.</a></li>
                 </ul>
             </td>
         </tr>
@@ -56,8 +56,8 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
             <td>Pulling internal docker image failed</td>
             <td>
                 <ul>
-                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
-                    <li><a href="#check-for-disk-space" class="highlight">Ensure that there is adequate disk space on device.</a></li>
+                    <li><a href="/6_troubleshoot/610_device-onboarding-failure-codes/#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
+                    <li><a href="/6_troubleshoot/610_device-onboarding-failure-codes/#check-for-disk-space" class="highlight">Ensure that there is adequate disk space on device.</a></li>
                     <li>Ensure that the docker version on device is:
                         <ul>
                             <li><strong><em>docker-ce==17.12.1~ce-0~ubuntu</em></strong> for Ubuntu 16.04</li>
@@ -71,8 +71,8 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
             <td>Installing pip package failed</td>
             <td>
                 <ul>
-                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
-                    <li><a href="#check-for-disk-space" class="highlight">Ensure that there is adequate disk space on device.</a></li>
+                    <li><a href="/6_troubleshoot/610_device-onboarding-failure-codes/#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
+                    <li><a href="/6_troubleshoot/610_device-onboarding-failure-codes/#check-for-disk-space" class="highlight">Ensure that there is adequate disk space on device.</a></li>
                     <li>Ensure that the version of Python on device is <strong><em>Python&gt;=2.7.8,&lt;3</em></strong><br>
                     If not, uninstall it and <a href="/6_troubleshoot/612_reonboarding-devices/" class="highlight">re-onboard the device</a> again.</li>
                     <li>Try installing the package manually by executing<br>
@@ -87,8 +87,8 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
             <td>Installing docker failed</td>
             <td>
                 <ul>
-                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
-                    <li><a href="#check-for-disk-space" class="highlight">Ensure that there is adequate disk space on device.</a></li>
+                    <li><a href="/6_troubleshoot/610_device-onboarding-failure-codes/#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
+                    <li><a href="/6_troubleshoot/610_device-onboarding-failure-codes/#check-for-disk-space" class="highlight">Ensure that there is adequate disk space on device.</a></li>
                     <li>Ensure that the docker version on device is:
                         <ul>
                             <li><strong><em>docker-ce==17.12.1~ce-0~ubuntu</em></strong> for Ubuntu 16.04</li>
@@ -102,8 +102,8 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
             <td>Installing system package failed</td>
             <td>
                 <ul>
-                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
-                    <li><a href="#check-for-disk-space" class="highlight">Ensure that there is adequate disk space on device.</a></li>
+                    <li><a href="/6_troubleshoot/610_device-onboarding-failure-codes/#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
+                    <li><a href="/6_troubleshoot/610_device-onboarding-failure-codes/#check-for-disk-space" class="highlight">Ensure that there is adequate disk space on device.</a></li>
                     <li>Try installing the package manually by executing<br>
                     <code>apt-get install &lt;system-package&gt;</code> and see if it fails. If it doesn’t fail, the issue may be transient.<br>
                     Now, <a href="/6_troubleshoot/612_reonboarding-devices/" class="highlight">re-onboard the device</a> on successful installation of system package.</li>
@@ -115,8 +115,8 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
             <td>Managing files on device failed</td>
             <td>
                 <ul>
-                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
-                    <li><a href="#check-for-disk-space" class="highlight">Ensure that there is adequate disk space on device.</a></li>
+                    <li><a href="/6_troubleshoot/610_device-onboarding-failure-codes/#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
+                    <li><a href="/6_troubleshoot/610_device-onboarding-failure-codes/#check-for-disk-space" class="highlight">Ensure that there is adequate disk space on device.</a></li>
                 </ul>
             </td>
         </tr>
@@ -140,7 +140,7 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
             <td>Initialization failed due to network error</td>
             <td>
                 <ul>
-                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
+                    <li><a href="/6_troubleshoot/610_device-onboarding-failure-codes/#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
                 </ul>
             </td>
         </tr>
@@ -149,7 +149,7 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
             <td>Initialization failed due to docker login error</td>
             <td>
                 <ul>
-                    <li><a href="#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
+                    <li><a href="/6_troubleshoot/610_device-onboarding-failure-codes/#check-for-active-internet-connection" class="highlight">Ensure that device has an active internet connection.</a></li>
                     <li>Ensure that the package <strong><em>golang-docker-credential-helpers</em></strong> is not installed. If present remove it manually <br>
                      by executing <code>apt-get remove golang-docker-credential-helpers</code>. Now, <a href="/6_troubleshoot/612_reonboarding-devices/" class="highlight">re-onboard the device</a> again.</li>
                 </ul>

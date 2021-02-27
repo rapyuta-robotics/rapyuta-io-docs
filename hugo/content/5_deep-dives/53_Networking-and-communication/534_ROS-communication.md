@@ -28,7 +28,7 @@ introLinks: {}
 tags:
     - Deep Dive
 
-----
+---
 
 The rapyuta.io platform relies on a sub-component called the *cloud bridge*
 for implicitly establishing a communication channel between two or more

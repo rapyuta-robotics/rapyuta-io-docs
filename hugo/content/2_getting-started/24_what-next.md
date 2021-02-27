@@ -23,7 +23,7 @@ tags:
 
 ## Introduction to rapyuta.io documentation
 
-The rapyuta.io platform documentation help you to use the platform affectively by providing  conceptual, procedurial, and turial information.
+The rapyuta.io platform documentation help you to use the platform effectively by providing  conceptual, procedurial, and turial information.
 
 The documentation is divided into the following sub-sections
 
