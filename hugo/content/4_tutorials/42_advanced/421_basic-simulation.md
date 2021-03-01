@@ -1,5 +1,5 @@
 ---
-title: "Basic Simulation With Teleoperation"
+title: "Simulation With Teleoperation"
 description:
 type: build-solutions
 date: 2019-10-24T13:47:13+05:30
@@ -29,7 +29,7 @@ You will run turtlebot3 simulation on the cloud, and then run
 keyboard teleoperation from the device.
 
 ## Tutorial Video
-[Basic Simulation with Teleoperation](https://youtu.be/KxnpHFLVack)
+[Simulation with Teleoperation](https://youtu.be/KxnpHFLVack)
 {{< youtube id="KxnpHFLVack" title="rapyuta.io tutorial: turtlebot3 simulation with teleoperation" >}}
 
 ## Add a Device
