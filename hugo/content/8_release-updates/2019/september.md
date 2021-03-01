@@ -82,6 +82,6 @@ Display data that is available when the device is offline.
   are many entries.
 
 #### Documentation
-* Read about [how to restart deployments on devices by choosing from a set of three restart policies](5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
+* Read about [how to restart deployments on devices by choosing from a set of three restart policies](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
 * [Download/Upgrade](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) to the
   new rapyuta.io Python SDK **0.7.0**
