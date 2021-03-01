@@ -53,6 +53,13 @@ It enables developers to develop robot enabled solutions that can be more comple
   * No infrastructure modifications or overheads needed.
 {{%/expand%}}
 
+> {{%expand "Powerful cloud computation and storage"%}}
+
+  * Access powerful computation and wide range of storage options to overcome onboard limitations of the device.
+  * Describe complex applications with multiple executables and components that can span across cloud, edge and devices.
+{{%/expand%}}
+
+
 > {{%expand "Software Lifecycle Management"%}}
 
   * Build, deploy and manage your applications on cloud and devices with a unified set of tools.
