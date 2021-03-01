@@ -69,7 +69,7 @@ follow the below instructions in sequence:
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}
-10. For **Executable Type**, click on **Builds**.
+10. For **Executable Type**, click on **Development>Builds**.
 11. In the **Choose Build** select the Build `web-app-build` from the drop-down list.
 ![Executable details](/images/tutorials/hello-world/exec-details.png?classes=border,shadow&width=50pc)
 14. You must expose a network endpoint for viewing the output of the tutorial:

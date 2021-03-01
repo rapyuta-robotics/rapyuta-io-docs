@@ -129,7 +129,7 @@ To create a build using Catkin receipe, do the following.
   ![goo](/images/core-concepts/builds/build-creation/docker-push-secret.png?classes=border,shadow&width=30pc)
 
 
-  * You can see the progress of the build, by clicking the build created in the **Builds** page. 
+  * You can see the progress of the build, by clicking the build created in the **Development>Builds** page. 
 
   * Click on **SHOW MORE** to get more details about the build, it will take you to the **Details** tab of the build.
 

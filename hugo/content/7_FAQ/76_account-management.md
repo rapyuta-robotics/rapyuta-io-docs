@@ -57,26 +57,15 @@ A card verification charge of $1 will be levied, which will be reverted within 2
 
 {{% /expand%}}
  
-
-
 #### Q. Can I add multiple credit cards?
 > {{%expand "Answer" %}}
 As an admin of an organization, you can add multiple credit cards to your organization’s billing account. But, only one credit card can be made the primary or default card, which is used to charge the subscription fee and an additional amount for using rapyuta.io resources.
 
 {{% /expand%}}
 
-
-
-
 #### Q. How can I remove my credit card?
 > {{%expand "Answer" %}}
 As an admin of an organization, you can delete any existing credit card except the primary or default credit card because it is used for monetary transactions. If you want to delete the primary credit card, ensure you make another card a primary card before deleting the previous one.
-{{% /expand%}}
-
-
-#### Q. What happens when I add the credit card?
-> {{%expand "Answer" %}}
-A card verification charge of $1 will be levied, which will be reverted within 24 hours. A subscription fee on a prorated basis will be charged on the credit card monthly as per the subscribed plan.
 {{% /expand%}}
 
 #### Q. What is the billing cycle?

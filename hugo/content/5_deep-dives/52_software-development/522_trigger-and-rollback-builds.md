@@ -12,9 +12,9 @@ tags:
 ## Trigger and Rollback
 
 As a developer you may want to trigger a new build or rollback to a previous build generation. 
-The rapyuta.io **BUILDS** allow you to do that.
+The rapyuta.io **Development>Builds** allow you to do that.
 
-In the **BUILDS** page select the particular build from the build list and click on **SHOW MORE**, 
+In the **Development>Builds** page select the particular build from the build list and click on **SHOW MORE**, 
 this will open the **Details** tab of the selected build. 
 It displays information on the build, current build generation number, git repository etc. 
 

@@ -72,7 +72,7 @@ To determine the auth token:
 
 To determine the unique identifier of the device on-boarded on to **rapyuta.io**:
 
-1. Click **DEVICES** on the left navigation bar.
+1. Click **Devices>All Devices** on the left navigation bar.
 2. Select the device whose identifier you want to obtain.
 3. Copy the device's ID as shown in the figure.
 

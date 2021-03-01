@@ -160,7 +160,7 @@ Before viewing device logs, it is necessary to have the ROS Master up and runnin
 Add a _ROS Publisher_ package that has a _Talker_ component with device runtime.
 It publishes */telemetry* ROS topic with **High** **QoS**.
 
-1. On the left navigation bar, click **Devices**.
+1. On the left navigation bar, click **Devices>All Devices**.
 2. Select a device whose device logs you want to view. In this example,
    _ROS Publisher Subscriber Device_ is selected.
 3. Under **Logs** tab, to subscribe to a ROS topic, click **Subscribe** against

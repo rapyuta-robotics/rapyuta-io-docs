@@ -45,7 +45,7 @@ _ROS Publisher_ and _ROS Subscriber_ packages.
 #### Add a Device 
 Ensure that the device must be of **amd64** CPU architecture.
 
-1. Click **DEVICES** > **ADD NEW DEVICE**.
+1. Click **Devices>All Devices** > **ADD NEW DEVICE**.
 2. In the **Device Name** box, enter the name of the device say `device_rn`
 3. Use **docker compose as the default runtime** option.
 4. Ensure the ROS Version is Kinetic.
@@ -148,7 +148,7 @@ If you experience the error ***catkin:command not found***, then the *python-cat
 
 ## Add Publisher Device
 
-1. Click **DEVICES** > **ADD NEW DEVICE**.
+1. Click **Devices>All Devices** > **ADD NEW DEVICE**.
 2. In the **Device Name** box, enter the name of the device say `Publisher Device`
 3. In the **ROS Catkin Workspace** box, enter the absolute path of the catkin
    workspace found on the device.
@@ -263,7 +263,7 @@ If you experience the error ***catkin:command not found***, then the *python-cat
 
 ## Add Subscriber Device
 
-1. Click **DEVICES** > **ADD NEW DEVICE**.
+1. Click **Devices>All Devices** > **ADD NEW DEVICE**.
 2. In the **Device Name** box, enter the name of the device say `Subscriber Device`
 3. In the **ROS Catkin Workspace** box, enter the absolute path of the
    catkin workspace found on the device.    
@@ -292,7 +292,7 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 
 ## Create ROS Publisher package
 
-1. Click **CATALOG** > **ADD NEW PACKAGE**.
+1. Click **Development>Catalog** > **ADD NEW PACKAGE**.
 2. You should provide information about the package such as the name of the
    package, its version, whether it is a singleton package, and a
    description.
@@ -325,7 +325,7 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 
 ## Create ROS Subscriber package
 
-1. Click **CATALOG** > **ADD NEW PACKAGE**.
+1. Click **Development>Catalog** > **ADD NEW PACKAGE**.
 2. You should provide information about the package such as the name of the
    package, its version, whether it is a singleton package, and a
    short description.
@@ -375,7 +375,7 @@ Once the routed network deployment succeeds, other ROS package deployments can b
 
 ## Deploy ROS Publisher package
 
-1. Click **CATALOG** > select **ROS Publisher** package > click **Deploy package**.
+1. Click **Development>Catalog** > select **ROS Publisher** package > click **Deploy package**.
 2. In the **Name of deployment** box, enter a name for the deployment
    say `ROS Publisher Deployment`
 3. Since **Publisher** has **Device runtime**, select the device you want to deploy on by clicking **Refresh the list of online devices**. It retrieves an
@@ -402,7 +402,7 @@ The corresponding dependency graph of **ROS Publisher Deployment** looks like:
 
 ## Deploy ROS Subscriber package
 
-1. Click **CATALOG** > select **ROS Subscriber** package > click **Deploy package**.
+1. Click **Development>Catalog** > select **ROS Subscriber** package > click **Deploy package**.
 2. In the **Name of deployment** box, enter a name for the deployment say
    `ROS Subscriber Deployment`
 3. Since **Subscriber** has **Device runtime**, select the device you want to deploy on by clicking **Refresh the list of online devices**. This retrieves an

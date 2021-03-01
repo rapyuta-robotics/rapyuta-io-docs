@@ -17,7 +17,7 @@ Welcome to the August 26, 2020 release of the rapyuta.io platform. There
 are significant updates in this release that we hope you will like.
 
 #### Features
-* **Builds**
+* **Development>Builds**
 
 	New [rapyuta.io resource](/5_deep-dives/52_software-development/527_build-recipe/) which converts your source code into a container image.
 	Builds can be referenced when creating packages and makes it possible for the developer to automate the flow from git to operations 

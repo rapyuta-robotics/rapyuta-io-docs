@@ -70,7 +70,7 @@ To register a new device on rapyuta.io, follow the below steps:
 7. Click **CONTINUE**. The device is added in the rapyuta.io console
 8.  To copy the generated token (a unique device setup link), click **COPY**.    
    You must copy the token before it expires in *ten* minutes. To generate
-   the token again, click **Token** on the **Devices** page.
+   the token again, click **Token** on the **Devices>All Devices** page.
    ![Device Token](/images/getting-started/add-new-device/device-token.png?classes=border,shadow&width=40pc)
 
 
