@@ -3,7 +3,7 @@
 title: "QOS Guarentee"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 
-weigth: 544
+weight: 546
 
 versions:
   free-pro-team: '*'

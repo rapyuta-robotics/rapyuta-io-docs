@@ -59,7 +59,7 @@ To create the build, follow below steps. Skip the following steps if you have al
 
 The build takes about two to five minutes to build the source code in the *io_tutorials*
 repository into a running docker container. You may analyse the corresponding
-[build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/), which help debug failing builds.
+[build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs), which help debug failing builds.
 
 Please proceed to creation of package once the build is Complete.
 
@@ -90,7 +90,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}} 
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-9. For **Executable Type**, click on **Builds**.
+9. For **Executable Type**, click on **Development>Builds**.
 10. In the **Choose Build** drop-down menu, select the build as `io-tutorials`.
 11. In the **Command to run in the docker container** box, copy and paste the command:
 	```bash
@@ -186,7 +186,7 @@ While adding the device, ensure that **Use docker compose as default runtime** c
 You will create *map_listener* package, which will be deployed on the device.
 To create the package, follow the instructions:
 
-1. Click **CATALOG** > **ADD NEW PACKAGE**.
+1. Click **Development>Catalog** > **ADD NEW PACKAGE**.
 2. You should provide information about the package such as the name of the
    package, its version number, whether it's a singleton package and a description.
 	1. In the **Package Name** box, enter a name for the package say `map_listener`
@@ -233,7 +233,7 @@ colored progress bar moves to **Succeeded** and **Status:Running**, indicating t
 #### Deploy map_listener package
 To deploy *map_listener* package, follow the steps:
 
-1. Click **CATALOG** > select *map_listener* package > click **Deploy package**.
+1. Click **Development>Catalog** > select *map_listener* package > click **Deploy package**.
 2. In the **Name of deployment** box, provide a name for the specific deployment
    say `Map Listener Deployment`
 3. Since *map_listener_executable* has device runtime, you must select the device you want to deploy the component on. Click **Refresh the list of online devices** to retrieve an updated list of online devices.

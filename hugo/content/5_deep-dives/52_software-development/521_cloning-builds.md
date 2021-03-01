@@ -32,7 +32,7 @@ The rapyuta.io platform allows you to clone a build within the same or different
 
 Perform the following procedure to clone a build.
 
-1. On the left navigation bar, click **BUILDS**. It displays all the builds available within a project.
+1. On the left navigation bar, click **Development>Builds**. It displays all the builds available within a project.
 2. Select the build that you want to clone and click **Clone Build**. 
 3. A dialog box appears and prompts you to select the project where you want to clone the build. Select the project from the drop-down and click **Clone Build**.
 ![build-clone](/images/core-concepts/builds/build-clone.png?classes=border,shadow&width=25pc)

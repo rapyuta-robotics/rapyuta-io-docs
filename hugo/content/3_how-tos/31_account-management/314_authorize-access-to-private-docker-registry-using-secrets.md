@@ -24,7 +24,7 @@ tags:
    - How to
 ---
 
-**rapyuta.io** uses your docker pull secret during **builds** as well as **package deployment** . When you want to use a **docker image** from your private (docker) registry, you grant rapyuta.io access to your private registry by creating a docker secret.
+**rapyuta.io** uses your docker pull secret during **Development>Builds** as well as **package deployment** . When you want to use a **docker image** from your private (docker) registry, you grant rapyuta.io access to your private registry by creating a docker secret.
 
 The two types of docker pull secrets that you can create are:
 

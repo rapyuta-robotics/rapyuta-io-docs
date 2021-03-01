@@ -1,7 +1,7 @@
 ---
 title: Device Management
 intro: 'Discussion about design and technical aspects of the rapyuta.io platform. Detailed information about features, use-cases and best practices'
-weigth: 52
+weight: 51
 versions:
     free-pro-team: '*'
     enterprise-server: '*'

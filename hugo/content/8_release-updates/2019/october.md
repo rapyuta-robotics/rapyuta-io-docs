@@ -33,7 +33,7 @@ There are significant updates in this version that we hope you will like.
 #### Documentation
 
 * Read about
-  [how to upload device logs to the cloud storage](/developer-guide/tooling-automation/logging/device-logs/#batch-upload) in rapyuta.io
+  [how to upload device logs to the cloud storage](/3_how-tos/35_tooling_and_debugging/file-management-devices/) in rapyuta.io
 * [Download/upgrade](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) to
   the new rapyuta.io SDK 0.8.0
 
@@ -53,5 +53,5 @@ There are significant updates in this version that we hope you will like.
 
 #### Documentation
 
-* Learn [how to simulate a robot in rapyuta.io](/build-solutions/sample-walkthroughs/turtlebot-simulation/).
-* Read more on [simulation using rapyuta.io](/developer-guide/simulation/).
+* Learn [how to simulate a robot in rapyuta.io](/4_tutorials/42_advanced/separate-navigation-simulation/).
+* Read more on [simulation using rapyuta.io](/5_deep-dives/54_tooling-and-debugging/547_simulation/).

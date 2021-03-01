@@ -25,8 +25,8 @@ that we hope you will like.
 
 #### Documentation
 
-* Try out the revised [object-store deployment walkthrough](/developer-guide/create-software-packages/persistent-storage/obj-store-deployment-tutorial).
-* Try out the revised [sample walkthroughs](/developer-guide/tooling-automation/python-sdk/sample-walkthroughs/) for getting started with rapyuta.io Python SDK.
+* Try out the procedure to [add a persistent storage](/3_how-tos/33_software-development/335_adding-persistent-storage-to-a-deployment/).
+* Try out the revised [sample walkthroughs](/4_tutorials/42_advanced/421_ros-pub-sub-with-sdk/) for getting started with rapyuta.io Python SDK.
 
 ## January 16
 

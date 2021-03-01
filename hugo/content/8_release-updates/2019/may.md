@@ -45,4 +45,4 @@ that we hope you will like.
 
 #### Documentation
 * Added [API Documentation](https://gadocs.apps.rapyuta.io/).
-* Add [Basic Web Application](/build-solutions/sample-walkthroughs/basic-web-app/) tutorial to illustrate dockerfile build strategy.
+* Add [Basic Web Application](/4_tutorials/41_beginner/412_basic-web-app/) tutorial to illustrate dockerfile build strategy.

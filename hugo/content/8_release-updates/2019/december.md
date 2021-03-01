@@ -24,8 +24,8 @@ There are significant updates in this version that we hope you will like.
 
 #### Documentation
 
-* Read about the [different stages of the device initialization process](/developer-guide/manage-machines/onboarding/setup-device/).
-* Added a new device failed error code: [DEV_E108](/developer-guide/manage-machines/onboarding/setup-device/failure-codes)
+* Read about the [different stages of the device initialization process](/5_deep-dives/51_managing-devices/512_device-details/).
+* Added a new device failed error code: [DEV_E108](/6_troubleshoot/610_device-onboarding-failure-codes/)
 
 ## December 11
 Welcome to the December 11, 2019 release of rapyuta.io platform (v0.36.0).

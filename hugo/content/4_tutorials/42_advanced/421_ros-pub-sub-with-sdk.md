@@ -4,7 +4,7 @@ description:
 type: build-solutions
 date: 2019-10-24T13:47:13+05:30
 # pre: "b. "
-weight: 41
+weight: 641
 tags:
     - Tutorials
 ---
@@ -94,7 +94,7 @@ The build takes about two to five minutes to build the source code in the *io_tu
 13. The default value of **Replicas to run the component** is set to 1
 14. In the **Executable Name** box, enter a name for an executable,
     say `talker_executable`.
-15. Click **Builds** for **Executable Type**.
+15. Click **Development>Builds** for **Executable Type**.
 16. Select **io-tutorials** builds from the dropdown
 17. In the **Command to run in the docker container** box, enter the command:
     `roslaunch talker talker.launch`

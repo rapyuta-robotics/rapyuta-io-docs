@@ -3,7 +3,7 @@ title: Preparing a Raspberry PI Device
 description: null
 type: build-solutions
 date: 2019-10-24T08:17:13.000Z
-weight: 417
+weight: 410
 tags:
     - Tutorials
 ---

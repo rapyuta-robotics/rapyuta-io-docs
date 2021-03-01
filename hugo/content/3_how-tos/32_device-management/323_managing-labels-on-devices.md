@@ -30,7 +30,7 @@ tags:
 Labels are key-value pairs that help you associate configuration parameters with
 a group of devices or a particular device.
 
-You can **tag** your **devices** with as many labels as you need. 
+You can **tag** your **Devices>All Devices** with as many labels as you need. 
 {{%notice note%}}
 Ensure that the keys of all the labels of a device are **unique**.
 {{%/notice%}}

@@ -19,7 +19,7 @@ The rapyuta.io platform also allows you to push a docker image to a private regi
 If you are creating a build with *Docker* recipe and the Dockerfile contains a reference to a private image, then you must specify a docker Secret. The platform will use the docker secret to fetch the private image while building the Dockerfile. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-git-access/).
 {{% /notice %}}
 
-In the **Builds** section to add a new build, add the Build name and provide 
+In the **Development>Builds** section to add a new build, add the Build name and provide 
 the URL address of git repository. Suppose you want to add the address of a git repositorysay https://github.com/rapyuta-robotics/io_tutorials,
 where ***io_tutorials*** is the project folder that contains the source
 code on the master branch and is hosted on GitHub.
@@ -29,7 +29,7 @@ If you want to add source code located on a different branch, say
 will look like:
 https://github.com/rapyuta-robotics/io_tutorials#io_turtlesim_qos
 
-You may analyse [build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/) for
+You may analyse [build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs) for
 debugging build failures. If you have pushed a new commit, you can
 [trigger new builds or roll back previous builds](/5_deep-dives/52_software-development/522_trigger-and-rollback-builds/).
 

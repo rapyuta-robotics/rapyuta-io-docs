@@ -3,7 +3,7 @@ title: "Preinstalled Runtime"
 description:
 type: build-solutions
 date: 2019-10-24T13:47:04+05:30
-weight: 415
+weight: 412
 tags:
     - Tutorials
 ---
@@ -33,6 +33,10 @@ work the same.
 
 ## Estimated time
 15 minutes
+
+## Tutorial Video
+[ROS publisher and subscriber with Pre-installed Runtime](https://youtu.be/HKZCdqEUNOg)
+{{< youtube id="HKZCdqEUNOg" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}
 
 ## Preparing your device
 The tutorial will use Raspberry PI as the device.
@@ -109,7 +113,7 @@ To create the build, follow below steps. Skip the following steps if you have al
 5. Go to the next step and click on next, the build will be created.
 
 The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding
-[build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/), which helps in debugging failed builds.
+[build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs), which helps in debugging failed builds.
 Please proceed to creation of package once the build is Complete.
 
 
@@ -142,7 +146,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-	6. For **Executable Type**, click on **Builds**.
+	6. For **Executable Type**, click on **Development>Builds**.
 	7. In the **Choose Build** select the Build `io-tutorials` from the drop-down list.	
 	8. In the **Command to run in the docker container** box, enter the command:
 	   	```bash

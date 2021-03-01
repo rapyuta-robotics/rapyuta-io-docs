@@ -52,10 +52,9 @@ To add the metadata of the package, do the following.
 
     c. Click  one of the following.
 
-    * **IS Singleton package**: Select this option if a package is not dependent on another package.
+    **IS Singleton package**: Select this option if a package is not dependent on another package.
 
-
-    * **Is a bindable package**: Select this option if a package depends on another package or deployment of another package, the package bindings link the package to its dependencies.
+    **Is a bindable package**: Select this option if a package depends on another package or deployment of another package, the package bindings link the package to its dependencies.
 
 3. In the **Description** field, type a brief description about the package and click **Next**.
 
@@ -83,15 +82,11 @@ Perform the following procedure to create  components.
     a. In the **Executable Name** field, type a name of the executable. 
 ![package executable](/images/core-concepts/builds/build-creation/package-executables.png?classes=border,shadow&width=25pc)
 
-    b. From the **executable Type** drop-down menu, select either one of the following executable type. </br>
+    b. From the **executable Type** drop-down menu, select the executable type as **Build**, **Docker**, or **Default**.
 
-    * **Build**
-    * **Docker**
-    * **Default**
+      For more information about the type of executables, [click here](/1_understanding-rio/12_core-concepts/#builds)
 
-    For more information about the type of executables, [click here](/1_understanding-rio/12_core-concepts/#builds)
-
-    c. If you have selected the executable type as **Builds**, from the **Choose Build** drop-down menu, select the build. 
+    c. If you have selected the executable type as **Development>Builds**, from the **Choose Build** drop-down menu, select the build. 
 
     d. If you have selected the executable type as **Docker**, in the Docker Image field, type the docker image that you want to use. For more information about creating the build recipe as docker, [click here](/3_how-tos/33_software-development/331_create-builds/#creating-build-by-docker-recipe).
 
@@ -108,26 +103,25 @@ Perform the following procedure to create  components.
 
     b. If the endpoint is exposed publicly, click the Exposed externally radio button and do the following.
 
-      i. From the protocol section, select one of the following available protocols. 
+    c. From the protocol section, select one of the following available protocols. 
 
-      * HTTP/Websocket exposed on port 80</li>
+      **HTTP/Websocket exposed on port 80**
 
-      * HTTP/Websocket exposed on port 443</li>
+      **HTTP/Websocket exposed on port 443**
 
-      * Secure TCP (TLS/SNI) exposed on port 443</li>
+      **Secure TCP (TLS/SNI) exposed on port 443**
 
-      ii. In the Target Port field, type the target port. Port is where the application’s service is made visible to other services.
+    d. In the Target Port field, type the target port. Port is where the application’s service is made visible to other services.
 {{%notice info%}}
  The Secure TCP (TLS/SNI) protocol uses SNI headers for routing the request to the desired backend.
 {{%/notice%}}
   
-    c. If the endpoint is accessed internally, do the following.
+    e. If the endpoint is accessed internally, do the following.
 
-    i. In the port field, type the port number for the endpoint. Port is where the application’s service is made visible to other services.
-
-​          ii. In the Target Port field, type the target port. Target port is where the application needs to be listening for network requests for the service to work.
-
-​          iii. Optionally, You can also use port range for an endpoint by selecting Port Range toggle. A Port Range on an endpoint will allow you to open multiple ports on a single DNS hostname.
+    f. In the port field, type the port number for the endpoint. Port is where the application’s service is made visible to other services.
+    g. In the Target Port field, type the target port. Target port is where the application needs to be listening for network requests for the service to work.
+    
+    h. Optionally, You can also use port range for an endpoint by selecting Port Range toggle. A Port Range on an endpoint will allow you to open multiple ports on a single DNS hostname.
 {{%notice note%}}
 A maximum 50 ports are allowed for an endpoint. Allowed format is comma separated Port Ranges. Each Port Range is either a single port or a range of port mentioning the from port and to port separated by a hyphen (-). Examples: 5000 or 443-445 or 3446-3449,3500,3510-3530
 {{%/notice%}}

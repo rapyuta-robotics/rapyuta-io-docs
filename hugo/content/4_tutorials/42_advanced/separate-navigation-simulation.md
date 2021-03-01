@@ -4,7 +4,7 @@ description:
 type: build-solutions
 date: 2019-11-20T14:46:28+05:30
 # pre: "9. "
-weight: 651
+weight: 420
 tags:
     - Tutorials
 ---
@@ -139,7 +139,7 @@ To create the build, follow below steps:
 
 The build takes about two to five minutes to build the source code in the ***io_simulation_tutorials***
 repository into a running docker container. You may analyse the corresponding
-[build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/), which help debug failing builds.
+[build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs), which help debug failing builds.
 
 Please proceed to creation of package once the build is Complete.
 
@@ -185,8 +185,7 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 13. The number of **Replicas to run the component** is **1**
 14. The name of the executable: `simulation_executable`
 15. For **Executable Type**, click on **Builds**.
-16. In the **Choose Build** select the Build (`io-simulation-navigation`) [created above](/build-solutions/sample-walkthroughs/separate-navigation-simulation/#create-build)
-	from the drop-down list
+16. From the **Choose Build** drop-doen menu, select the Build `io-simulation-navigation`.
 17. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup sim.launch gui:=true`
 18. Set **Resource Limit** to **Medium:2 cpu cores, 8 GiB memory**
 {{% notice warning %}}

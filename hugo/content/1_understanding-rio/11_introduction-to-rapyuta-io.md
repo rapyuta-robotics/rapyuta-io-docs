@@ -37,7 +37,36 @@ It enables developers to develop robot enabled solutions that can be more comple
 
 ### Overview Map
 
-![Overview Map](/images/chapters/understand-rio/rr_io_overview_chart.png?class=shadow,border&width=60pc)
+> {{%expand "Secure onboarding and management of robots" %}}
+
+  * Easily onboard robots to rapyuta.io with one-click onboarding process.
+  * Access your robot’s state from anywhere with real time remote monitoring of system.
+  * Configure device parameters remotely to meet the changing demands and environments.
+  * Remotely analyze with live logs, historical logs and ROS bags.
+  * Debug and troubleshoot with secure remote SSH.
+{{%/expand%}}
+
+> {{%expand "Simplified communication between robots and cloud"%}}
+
+  *  Get out-of-the box encrypted machine-to-machine and machine-to-cloud communication.
+  * Communication between remote sites over HTTPS or TLS.
+  * No infrastructure modifications or overheads needed.
+{{%/expand%}}
+
+> {{%expand "Powerful cloud computation and storage"%}}
+
+  * Access powerful computation and wide range of storage options to overcome onboard limitations of the device.
+  * Describe complex applications with multiple executables and components that can span across cloud, edge and devices.
+{{%/expand%}}
+
+
+> {{%expand "Software Lifecycle Management"%}}
+
+  * Build, deploy and manage your applications on cloud and devices with a unified set of tools.
+  * Analyze state of your deployments with introspection information about  statuses, phases and failure codes.
+{{%/expand%}}
+
+To view the different layers of the rapyuta.io platform, [click here](/images/chapters/understand-rio/rapyuta-layers.jpg?class=shadow,border&width=60pc)
 
 
 Get started with a [quick walkthrough](/2_getting-started/23_turtlesim_on_cloud). 

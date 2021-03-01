@@ -1,7 +1,7 @@
 ---
 title: Software Development
 intro: 'Discussion about design and technical aspects of the rapyuta.io platform. Detailed information about features, use-cases and best practices'
-weigth: 53
+weight: 52
 
 versions:
     free-pro-team: '*'

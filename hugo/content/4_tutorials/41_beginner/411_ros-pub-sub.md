@@ -41,8 +41,8 @@ work the same.
 15 minutes
 
 ## Tutorial Video
-[Basic ROS publisher and subscriber](https://youtu.be/HKZCdqEUNOg)
-{{< youtube id="HKZCdqEUNOg" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}
+[Basic ROS publisher and subscriber](https://youtu.be/LDlcpnb7l3k)
+{{< youtube id="LDlcpnb7l3k" title="rapyuta.io tutorial: basic ROS publisher and subscriber with docker runtime" >}}
 
 ## On-boarding a device
 * If you are using a Raspberry PI device, you must prepare the device before onboarding. For more information, [click here](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi)
@@ -96,7 +96,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-	7. For **Executable Type**, click on **Builds**.
+	7. For **Executable Type**, click on **Development>Builds**.
 	8. In the **Choose Build** select the first Build `io-tutorials` from the drop-down list.	
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
@@ -124,7 +124,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-	7. For **Executable Type**, click on **Builds**.
+	7. For **Executable Type**, click on **Development>Builds**.
 	8. In the **Choose Build** select the second Build `io-tutorials-arm32v7` from the drop-down list.
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
