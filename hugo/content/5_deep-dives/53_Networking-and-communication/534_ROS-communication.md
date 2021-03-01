@@ -75,9 +75,7 @@ than hard-coded robot names.
 The process of assigning an identity to a robot and the mechanisms to
 consume/discover identities of all alive robots is described in the ROS environment aliases topic.
 
-The mechanisms and features offered by the platform to deal with automatic prefix addition and removal is described in the
-[scoping](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#scoping-auto-prefix-namespace-by-self-identity) and
-[targeting](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#targeting-auto-prefix-namespace-unwrapping-for-peers) topics.
+The mechanisms and features offered by the platform to deal with automatic prefix addition and removal is described in th scoping and targeting topics.
 
 #### ROS Environment Aliases: runtime identity assignment 
 When __deploying a component__ to a robot in a multi-robot scenario,

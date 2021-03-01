@@ -58,9 +58,9 @@ There are significant updates in this version that we hope you will like.
 #### Documentation
 
 * Read about
-  [cloning and renaming](/developer-guide/manage-software-cycle/dynamic-configurations/) existing configurations.
+  [cloning and renaming](/5_deep-dives/51_managing-devices/dynamic-configuration/) existing configurations.
 * Check out the improved
-  [error messages for device failed state](/developer-guide/manage-machines/onboarding/setup-device/failure-codes/).
+  [error messages for device failed state](/6_troubleshoot/610_device-onboarding-failure-codes/).
 * [Download/Upgrade](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) to the new rapyuta.io Python SDK **0.6.0**
 
 ## September 25
@@ -82,6 +82,6 @@ Display data that is available when the device is offline.
   are many entries.
 
 #### Documentation
-* Read about [how to restart deployments on devices by choosing from a set of three restart policies](/developer-guide/manage-software-cycle/deployments/#restart-policy).
+* Read about [how to restart deployments on devices by choosing from a set of three restart policies](5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
 * [Download/Upgrade](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) to the
   new rapyuta.io Python SDK **0.7.0**

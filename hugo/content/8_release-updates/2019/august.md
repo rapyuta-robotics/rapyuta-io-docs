@@ -21,8 +21,7 @@ we hope you will like.
   packages on them.
 
 #### Documentation
-rapyuta.io [supports devices](/developer-guide/manage-machines/supported-devices/) running Ubuntu 18.04 and/or
-ROS Melodic.
+rapyuta.io [supports devices](/3_how-tos/32_device-management/321_onboarding-a-device/#pre-requisites) running Ubuntu 18.04 and/or ROS Melodic.
 
 ## August 21
 Welcome to the August 21, 2019 release of rapyuta.io platform.
@@ -44,4 +43,4 @@ like.
 
 #### Documentation
 Read more details on rapyuta.io's 
-[community plan](/pricing-support/pricing/find-plans/#community-plan).
+[community plan](/5_deep-dives/58_account-management/581_plans-and-billing/#community-plan).

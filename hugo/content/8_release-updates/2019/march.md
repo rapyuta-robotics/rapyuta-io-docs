@@ -33,8 +33,8 @@ number of significant updates in this version that we hope you will like.
 
 #### Documentation
 
-* Describe the newly introduced [Pricing plans](/pricing-support/pricing/)
+* Describe the newly introduced [Pricing plans](/5_deep-dives/58_account-management/)
   for rapyuta.io.
 * Explain
-  [Multi-robot communication support](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#multi-robot-support) provided by rapyuta.io's Cloud Bridge.
-* Update [Python SDK documentation](/developer-guide/tooling-automation/python-sdk/).
+  [Multi-robot communication support](/5_deep-dives/53_networking-and-communication/534_ros-communication/) provided by rapyuta.io's Cloud Bridge.
+* Update [Python SDK documentation](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/).

@@ -26,9 +26,9 @@ rapyuta.io will make exposed network endpoint information to child deployments b
 
 #### Documentation
 
-* Try the new developer tutorial on [how to deploy a package on a device using dynamic configurations](/build-solutions/sample-walkthroughs/dynamic-configurations/).
-* Read about [dependency injection of network endpoints](/developer-guide/manage-software-cycle/communication-topologies/std-comms/#link-injection).
-* Read about the [QoS guarantee levels](/developer-guide/tooling-automation/metrics/ros-support/#qos-guarantee) provided by rapyuta.io platform.
+* Try the new developer tutorial on [how to deploy a package on a device using dynamic configurations](/4_tutorials/41_beginner/413_dynamic-configurations/).
+* Read about [dependency injection of network endpoints](/5_deep-dives/53_networking-and-communication/532_standard-web-protocol/#link-injection).
+* Read about the [QoS  levels](/5_deep-dives/52_software-development/526_package-ros-support/#qos-for-topics) provided by rapyuta.io platform.
 
 ## July 31
 Welcome to the July 31, 2019 release of rapyuta.io platform.
@@ -44,6 +44,5 @@ we hope you will like.
 * Fixed security issues.
 
 #### Documentation
-Added a [detailed note](/developer-guide/manage-software-cycle/communication-topologies/ros-support/#ros-over-the-public-internet)
-on the error message: ***incoming connection failed: unable to receive
+Added a detailed note on the error message: ***incoming connection failed: unable to receive
 data from sender, check sender's logs for details*** as seen in ROS service logs.

@@ -41,9 +41,9 @@ we hope you will like.
 Added captcha validation for changing rapyuta.io password, verifing email address and selecting forgot password option.
 
 #### Documentation
-Read about the [dynamic configurations](/developer-guide/manage-software-cycle/dynamic-configurations/)
+Read about the [dynamic configurations](/5_deep-dives/51_managing-devices/dynamic-configuration/)
 feature, and learn
-[how to create and apply a configuration for your devices](/developer-guide/manage-software-cycle/dynamic-configurations/apply-dynamic-configs/).
+[how to create and apply a configuration for your devices](/3_how-tos/32_device-management/324_applying-configuration-on-devices/).
 
 ## June 26
 Welcome to the June 26, 2019 release of rapyuta.io platform.
@@ -66,8 +66,6 @@ will like.
 Fixed a couple of rapyuta.io user interface issues.
 
 #### Documentation
-* Read about the
-  [community discussion forum](/pricing-support/support/#discussion-forum)
-* Read about the newly available [device system metrics](/developer-guide/tooling-automation/metrics/)
+* Read about the newly available [system metrics](/5_deep-dives/54_tooling-and-debugging/544_system-metrics/)
 * Ensure you are aware of the new
-  [multiple credit card support](/pricing-support/pricing/billing-usage/) provided by rapyuta.io
+  [multiple credit card support](/5_deep-dives/58_account-management/understanding-usage/#payment-method) provided by rapyuta.io

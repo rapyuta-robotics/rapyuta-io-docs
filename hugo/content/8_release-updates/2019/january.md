@@ -29,6 +29,6 @@ number of significant updates in this version that we hope you will like.
 * Fix for improper device configuration variables being selected when deploying any package with device component.
 
 #### Documentation
-* A [list of error codes](/developer-guide/manage-machines/onboarding/setup-device/failure-codes/) when a device is in failed state.
-* Revamped [ROS Publisher Subscriber](/build-solutions/sample-walkthroughs/basic-ros-pubsub/preinstalled-runtime/),
-[Docker Publisher Subscriber](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/)
+* A [list of error codes](/6_troubleshoot/610_device-onboarding-failure-codes/) when a device is in failed state.
+* Revamped [ROS Publisher Subscriber](/4_tutorials/41_beginner/415_preinstalled-runtime/),
+[Docker Publisher Subscriber](/4_tutorials/41_beginner/411_ros-pub-sub/)
