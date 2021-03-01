@@ -29,11 +29,11 @@ tags:
 
 #### Q. I have invited a user to an organization but I am not able to add the user to a project?
 > {{%expand "Answer" %}}
-  The user is not activayed yet in the rapyuta.io platform. Ask the user to check his e-mail inbox and click on the verification link to comlete the registration process. After the user completes the registration process, you can add the user to the project. For more information, [click here](/how-to-guides/account-management/managing-users/)
+  The user is not activated yet in the rapyuta.io platform. Ask the user to check his e-mail inbox and click on the verification link to comlete the registration process. After the user completes the registration process, you can add the user to the project. For more information, [click here](/how-to-guides/account-management/managing-users/)
 ​{{% /expand%}}
 #### Q. How can I remove a user from the organization.
 > {{%expand "Answer" %}}
-  Only the admin of the organization can remove a user from the organization. To remove a user from the organization, go to **Account>Organization** page, and click **Remove** agist the user whom you want to remove.
+  Only the admin of the organization can remove a user from the organization. To remove a user from the organization, go to **Account>Organization** page, and click **Remove** against the user whom you want to remove.
 ​{{% /expand%}}
 
 
@@ -49,7 +49,10 @@ At the end of the free trial period of the Community Plan, the platform will sto
 #### Q. How do I know my credit card information is safe?
 > {{%expand "Answer" %}}
 We do not store any of the credit card information with us. We use well-known enterprise-class services like Stripe and Zuora that securely deal with any sensitive information.
-What happens when I add the credit card?
+{{%/expand%}}
+
+#### Q. What happens when I add the credit card?
+> {{%expand "Answer"%}}
 A card verification charge of $1 will be levied, which will be reverted within 24 hours. A subscription fee on a prorated basis will be charged on the credit card monthly as per the subscribed plan.
 
 {{% /expand%}}

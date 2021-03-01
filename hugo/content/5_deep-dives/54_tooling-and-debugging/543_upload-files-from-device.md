@@ -3,7 +3,7 @@
 title: "Upload Files from Device"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 
-weigth: 543
+weight: 543
 
 versions:
   free-pro-team: '*'

@@ -55,22 +55,11 @@ To create a build using Catkin receipe, do the following.
 
 4. Under the **Build Info** tab, do the following.
 
-    a. In the **Architecture** area, select the processor architecture for the build. The available options are:
-
-    * arm32v7
-
-    * arm64v8
-
-    * amd64
+    a. In the **Architecture** area, select the processor architecture for the build. The available options are:  **arm32v7**, **arm32v7**, or **amd64**.
 
     b. Optionally, if the build has a simulation option, click the **Has Simulation** radio-button.
 
-    c. In the **ROS Version** area, select the ROS version. The available options are:
-
-    * Kinetic
-    * Melodic
-
-
+    c. In the **ROS Version** area, select either **Kinetic** or **Melodic**.
     d. Optionally, to add ROS parameter to the build, in the **CATKIN BUILD PARAMETERS** area, click **Add Parameter**.
 
     e. Click **Next**.
@@ -117,13 +106,8 @@ To create a build using Catkin receipe, do the following.
 
 4. Under the **Build Info** tab, do the following.
 
-    a. In the **Architecture** area, select the processor architecture for the build. The available options are:
-
-    * arm32v7</li>
-    * arm64v8</li>
-    * amd64</li>
-
-
+    a. In the **Architecture** area, select the processor architecture for the build. The available options are:  **arm32v7**, **arm32v7**, or **amd64**.
+   
     b. In the **Dockerfile path** field, type the path of the docker file that contains the source code.
 
     c. Optionally, if the build has ROS component, then click the **Has ROS Components** radio-button, select the ROS version as either **Kinetic** or **Melodic**, and if the build has a simulation option, click the **Has Simulation** radio-button.

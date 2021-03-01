@@ -193,25 +193,7 @@ select **Show timestamps** checkbox.
 Topics such as `/rosout` and `/rosout_agg` are already available for a
 ROS-based device.
 
-### Batch Upload
-You can upload logs collected from a device (like dmesg,
-journalctl, rosbags etc.) to rapyuta.io. It lets you:
 
-* *Save* logs for future reference. The logs are saved to the
-  cloud storage.
-* *Process* and *analyze* logs for insights as per your requirements.
-
-The log data can be text, images, or videos. You can upload
-log files by clicking on the **Upload** button, which
-is found on the device's **Manage** tab.
-![Manage Tab](/images/core-concepts/logging/device-logs/upload-logs/manage-tab.png?classes=border,shadow&width=40pc)
-
-A list of statuses indicates the progress of an ongoing upload.
-They are:
-
-* **In Progress**: uploading a log file (to the cloud storage) is underway.
-* **Failed**: uploading a log file failed due to an error.
-* **Complete**: uploading a log file (to the storage) is succeeded.
 
  ## Build Logs
 

@@ -157,7 +157,6 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
         </tr>
     </tbody>
 </table>
-|
 
 ### Check for active internet connection
 

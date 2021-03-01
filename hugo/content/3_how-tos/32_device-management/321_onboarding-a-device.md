@@ -27,7 +27,7 @@ tags:
   - How to
 ---
 
-## Pre-requisites
+### Pre-requisites
 
 The following is the list of requirements for registering devices
 on rapyuta.io
@@ -47,7 +47,7 @@ Ubuntu(16.04 and 18.04) by default resolves the hostname to localhost. If you do
 Ensure you install **ros-kinetic-ros-base**, or **ros-melodic-ros-base**, or above it.
 {{% /notice %}}
 
-## Register a New Device
+### Register a New Device
 To register a new device on rapyuta.io, follow the below steps:
 
 1. On the left navigation bar, click **Devices>All Devices**.
@@ -76,7 +76,7 @@ To register a new device on rapyuta.io, follow the below steps:
 
 **What to do next:** Adding a device to the rapyuta.io platform deos not mean that the device is connected. To connect your device to the platform, you must set up the device.
 
-## Setting Up Your Device
+### Setting Up Your Device
 
 Copy, paste and run the device's token in the command terminal
 of the device. The token sets up the rapyuta.io device client on
