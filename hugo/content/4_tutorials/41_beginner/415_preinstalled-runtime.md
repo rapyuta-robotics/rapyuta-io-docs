@@ -34,6 +34,10 @@ work the same.
 ## Estimated time
 15 minutes
 
+## Tutorial Video
+[ROS publisher and subscriber with Pre-installed Runtime](https://youtu.be/HKZCdqEUNOg)
+{{< youtube id="HKZCdqEUNOg" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}
+
 ## Preparing your device
 The tutorial will use Raspberry PI as the device.
 Learn [how to prepare your Raspberry PI](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi)

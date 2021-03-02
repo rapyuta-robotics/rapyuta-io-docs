@@ -49,7 +49,7 @@ It enables developers to develop robot enabled solutions that can be more comple
 > {{%expand "Simplified communication between robots and cloud"%}}
 
   *  Get out-of-the box encrypted machine-to-machine and machine-to-cloud communication.
-  * Communication between remote sites over HTTPS or LTS
+  * Communication between remote sites over HTTPS or TLS.
   * No infrastructure modifications or overheads needed.
 {{%/expand%}}
 

@@ -41,8 +41,8 @@ work the same.
 15 minutes
 
 ## Tutorial Video
-[Basic ROS publisher and subscriber](https://youtu.be/HKZCdqEUNOg)
-{{< youtube id="HKZCdqEUNOg" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}
+[Basic ROS publisher and subscriber](https://youtu.be/LDlcpnb7l3k)
+{{< youtube id="LDlcpnb7l3k" title="rapyuta.io tutorial: basic ROS publisher and subscriber with docker runtime" >}}
 
 ## On-boarding a device
 * If you are using a Raspberry PI device, you must prepare the device before onboarding. For more information, [click here](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi)
