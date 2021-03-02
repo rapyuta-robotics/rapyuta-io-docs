@@ -1,11 +1,10 @@
 ---
-title: ROS Publisher Subsciber
-description: null
+title: "Docker Runtime"
+description:
 type: build-solutions
-date: 2019-10-24T08:17:13.000Z
-weight: 411
-tags:
-    - Tutorials
+date: 2019-10-24T13:47:13+05:30
+pre: "b. "
+weight: 625
 ---
 A _ROS publisher_ is part of a ROS package. It is a public git
 repository, which is built into a running docker container on the
@@ -37,47 +36,66 @@ work the same.
 	3. [ROS topics](https://wiki.ros.org/Topics)
 	4. [ROS services](https://wiki.ros.org/Services)
 
-### Estimated time
+## Difficulty
+Beginner
+
+## Estimated time
 15 minutes
 
-## Tutorial Video
-[Basic ROS publisher and subscriber](https://youtu.be/LDlcpnb7l3k)
-{{< youtube id="LDlcpnb7l3k" title="rapyuta.io tutorial: basic ROS publisher and subscriber with docker runtime" >}}
+## Preparing your device
+The tutorial will use Raspberry PI as the device.
+Learn [how to prepare your Raspberry PI](/developer-guide/manage-machines/special-device-tutorials/#preparing-raspberry-pi-3)
 
-## On-boarding a device
-* If you are using a Raspberry PI device, you must prepare the device before onboarding. For more information, [click here](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi)
-* If you are using your computer as a device(Linux machine), [click here](/3_how-tos/32_device-management/321_onboarding-a-device).
+## Setting up your device
+To integrate the device into rapyuta.io using the [console](https://console.rapyuta.io):
 
-{{% notice note%}}
-While oboarding the device, ensure that you have selected **Use docker compose as default runtime** check box. 
-{{%/notice%}}
+1. [Add the device](/developer-guide/manage-machines/onboarding/) to the console.
+Ensure that you select the **Use docker compose as default runtime** checkbox
+while adding the device.
 
-## Creating the **io-tutorial** build
- 
+
+## Creating the build
+You will create two builds in the tutorial.
+
+### io-tutorial build
 To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
 
-1. On the left navigation bar, click **Development>Builds**.
+1. On the left navigation bar, click **BUILDS**
 2. Click on **ADD NEW BUILD**
-3. In the **Build Name** box, enter a name for the build say `io-tutorials`
+3. In the Build Name box, enter a name for the build say `io-tutorials`
 4. In the Git repository box, enter the url address : `https://github.com/rapyuta/io_tutorials` 
 and select **Build Recipe** as Catkin.
 5. Go to the next step and click on next, the build will be created.
 
-The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding build logs, which helps in debugging failed builds. Please proceed to creation of package once the build is Complete.
+### io-tutorials-arm32v7 build
+To create the build, follow below steps :
 
-## Creating the Package
+1. Again click on **ADD NEW BUILD** to create another build 
+2. In the Build Name box, enter a name for the build say `io-tutorials-arm32v7`
+3. In the Git repository box, enter the url address : `https://github.com/rapyuta/io_tutorials` 
+and select Build Recipe as Catkin.
+4. Go to next step, select arm32v7 as **Architecture** and ensure that the **ROS Version** is Kinetic.
+5. Click on next, the build will be created.
 
+
+The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding
+[build logs](/developer-guide/tooling-automation/logging/build-logs/), which helps in debugging failed builds.
+Please proceed to creation of package once the builds is Complete.
+
+
+## Creating the package
 To create the _Docker publisher subscriber_ package using the
 [console](https://console.rapyuta.io), follow the steps:
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **CATALOG**.
 2. Click **ADD NEW PACKAGE**.
 3. In the **Package Name** box, type in a name for the package say `Docker publisher subscriber`
 4. In the **Package Version** box, enter the version of the package you are creating.
    The default value is _1.0.0_
-5. Ensure that **Is a bindable package** is selected.
-6. In the **Description** box, provide a summary of the package.
-7. Click **NEXT**.
+5. Ensure **Is a singleton package** is not selected.
+6. Make sure **Is a bindable package** is selected.
+5. In the **Description** box, provide a summary of the package.
+6. Click **NEXT**.
 
 The package has two components: the **talker** running on the cloud and the
 **listener** running on the device.
@@ -96,8 +114,9 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-	7. For **Executable Type**, click on **Development>Builds**.
-	8. In the **Choose Build** select the first Build `io-tutorials` from the drop-down list.	
+	7. For **Executable Type**, click on **Builds**.
+	8. In the **Choose Build** select the first Build (`io-tutorials`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/#io-tutorial-build)
+	from the drop-down list.	
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
 		roslaunch talker talker.launch
@@ -124,8 +143,9 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-	7. For **Executable Type**, click on **Development>Builds**.
-	8. In the **Choose Build** select the second Build `io-tutorials-arm32v7` from the drop-down list.
+	7. For **Executable Type**, click on **Builds**.
+	8. In the **Choose Build** select the second Build (`io-tutorials-arm32v7`) [created above](/build-solutions/sample-walkthroughs/basic-ros-pubsub/docker-runtime/#io-tutorials-arm32v7-build)
+	from the drop-down list.
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
 		roslaunch listener listener.launch
@@ -142,21 +162,20 @@ A routed network allows you to establish ROS communication between different ROS
 
 Perform the following procedure to create a routed network.
 
-1. On the left navigation bar, click **Networking>Networks**.
-2. Click **ADD  NETWORK>Routed Network** .
-3. In the **Create new routed network** dialog-box, enter `cloud_routed_network_1` as the name for the routed network.
+1. On the left navigation bar, click **NETWORKS**.
+2. Click **ADD NEW ROUTED NETWORK**.
+3. Enter `cloud_routed_network_1` as the name for the routed network.
 4. Select **ROS Distro**, as   **Kinetic**.
 5. Select the **Runtime** as **Cloud**.
 6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
 ![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)
 7. Click **CONTINUE** and wait for the routed network to be successfully running.
 
-
 ## Deploying the package
 To deploy a package using the [console](https://console.rapyuta.io),
 follow the steps:
 
-1. On the left navigation bar, click **Development>Catalog**..
+1. On the left navigation bar, click **CATALOG**.
 2. Select the _Docker publisher subscriber_ package.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, enter a name for the deployment you are
@@ -171,7 +190,8 @@ follow the steps:
 You will be redirected to the newly created deployment's **Details** page where a green colored bar
 moves from **In progress** to **Succeeded** with **Status:Running** indicating that the **DEPLOYMENT PHASE** has **Succeeded**, and the **STATUS** is **Running**.
 
-You may also analyse the corresponding deployment logs to check if everything is working OK.
+You may also analyse the corresponding [deployment logs](/developer-guide/tooling-automation/logging/deployment-logs/)
+to check if everything is working OK.
 
 ![Docker Publisher Subscriber Deployment](/images/tutorials/docker-pub-sub/docker-pubsub-deployment.png?classes=border,shadow&width=50pc)
 
@@ -182,4 +202,3 @@ The **listener-listenerExecutable** will be streaming */listener I heard hello_w
 while **talker-talkerExecutable** will be publishing *hello_world* logs.
 
 ![ROS Publisher logs](/images/tutorials/docker-pub-sub/talker-logs.png?classes=border,shadow&width=50pc)
-
