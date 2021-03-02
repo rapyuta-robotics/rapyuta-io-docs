@@ -29,7 +29,7 @@ If you want to add source code located on a different branch, say
 will look like:
 https://github.com/rapyuta-robotics/io_tutorials#io_turtlesim_qos
 
-You may analyse [build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/) for
+You may analyse [build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs) for
 debugging build failures. If you have pushed a new commit, you can
 [trigger new builds or roll back previous builds](/5_deep-dives/52_software-development/522_trigger-and-rollback-builds/).
 

@@ -139,7 +139,7 @@ To create the build, follow below steps:
 
 The build takes about two to five minutes to build the source code in the ***io_simulation_tutorials***
 repository into a running docker container. You may analyse the corresponding
-[build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/), which help debug failing builds.
+[build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs), which help debug failing builds.
 
 Please proceed to creation of package once the build is Complete.
 
