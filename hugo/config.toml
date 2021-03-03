@@ -5,20 +5,39 @@ defaultContentLanguage = "en"
 enableRobotsTXT = true
 
 title = "rapyuta.io Documentation"
-theme = "learn"
+theme = "hugo-theme-learn"
 disableSearch = false
 
+[markup.goldmark.renderer]
+  unsafe= true
+  
 [sitemap]
     changefreq = "monthly"
     priority = 1
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
 
 [params]
     themeVariant = "rio"
     author = "Rapyuta Robotics"
     description = "Making robots more accessible to enterprise-level customers"
+    editURL = "https://bitbucket.org/rapyutians/rapyuta-io-docs/src/4522d2772bce35e459b176fe87e82bc1e8a72f8e/hugo/content/"
+
+[outputFormats.Algolia]
+  baseName = "algolia"
+  isPlainText = true
+  mediaType = "application/json"
+  notAlternative = true
+
+[params.algolia]
+  vars = ["title", "type", "description","content", "url", "keywords", "kind", "summary", "section","date", "publishdate", "expirydate", "permalink"]
+  params = ["categories", "tags"]
+
 
 [outputs]
-    home = ["HTML", "RSS", "JSON"]
+    home = ["HTML", "RSS", "JSON", "Algolia"]
 
 [[menu.shortcuts]]
     name = "<i class='fas fa-atlas'></i> API Documentation"
@@ -40,5 +59,3 @@ disableSearch = false
     url = "https://www.rapyuta-robotics.com/"
     weight = 12
 
-[blackfriday]
-    hrefTargetBlank = true

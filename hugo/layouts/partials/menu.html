@@ -1,3 +1,4 @@
+{{ partial "search.html" . }}
 <nav id="sidebar" class="{{if $.Site.Params.showVisitedLinks }}showVisitedLinks{{end}}">
 
 {{ $currentNode := . }}
@@ -7,11 +8,20 @@
       {{ partial "logo.html" . }}
     </div>
     {{if not .Site.Params.disableSearch}}
-        {{ partial "search.html" . }}
+        <div class="searchbox">
+          <a href="#">
+                      <i id="search-icon" class="fa fa-search icon-search"></i>
+                    
+                      <div id="search-box" style="height:2rem;" onclick="__rr_algolia_toggle()">
+              <input readonly/>
+            </div>
+          </a>
+      </div>
+      
     {{end}}
   </div>
 
-    <div class="highlightable">
+    <div class="highlightable" style="display: flex;flex-direction: column;flex-grow: 1;">
     <ul class="topics">
 
         {{if eq .Site.Params.ordersectionsby "title"}}  
@@ -24,7 +34,7 @@
           {{end}}
         {{end}} 
     </ul>
-
+    <div class="spacer" style="flex-grow: 1;display:flex;" ></div>
     {{ $disableShortcutsTitle := .Site.Params.DisableShortcutsTitle}}
     {{with .Site.Menus.shortcuts}}
       <section id="shortcuts">

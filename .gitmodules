@@ -1,3 +1,4 @@
 [submodule "hugo/themes/learn"]
-	path = hugo/themes/learn
+	path = hugo/themes/hugo-theme-learn
 	url = https://bitbucket.org/rapyutians/hugo-theme-learn
+	branch = rio-theme 
