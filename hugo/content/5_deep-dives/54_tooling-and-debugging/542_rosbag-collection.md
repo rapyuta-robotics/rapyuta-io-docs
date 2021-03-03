@@ -46,5 +46,5 @@ If the deployed component is a non-ROS component, or you have not added any ROS 
 {{% /notice %}}
 
 {{%notice note%}}
-The port for the ROS Bag recorder (the component responsible for collecting ROS bags in a device) has been changed from 9001 to 9010 and uses 8008. Avoid using these ports in your applications.
+ROS Bag recorder(component responsible for collecting ROS bags in device) uses ports 9010 and 8008. Avoid using these ports in your applications.
 {{%/notice%}}
