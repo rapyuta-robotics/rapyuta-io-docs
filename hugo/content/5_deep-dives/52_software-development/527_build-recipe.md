@@ -20,7 +20,7 @@ If you are creating a build with *Docker* recipe and the Dockerfile contains a r
 {{% /notice %}}
 
 In the **Development>Builds** section to add a new build, add the Build name and provide 
-the URL address of git repository. Suppose you want to add the address of a git repositorysay https://github.com/rapyuta-robotics/io_tutorials,
+the URL address of git repository. Suppose you want to add the address of a git repository say https://github.com/rapyuta-robotics/io_tutorials
 where ***io_tutorials*** is the project folder that contains the source
 code on the master branch and is hosted on GitHub.
 
