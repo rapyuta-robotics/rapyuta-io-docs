@@ -26,6 +26,8 @@ are significant updates in this release that we hope you will like.
 
     The port for the ROS Bag recorder (the component responsible for collecting ROS bags in a device) has been changed from 9001 to 9010 and uses 8008. Avoid using these ports in your applications.
 
+* Minor improvements related to historical logs and parameters UI
+
 
 #### SDK
 
