@@ -42,5 +42,9 @@ If you have not added any ROS bag job for a component during deployment or packa
 {{% /notice %}}
 
 {{% notice info %}}
-If the deployed component is a non-ROS component, or you have not added any ROS bag job during package creation or deployment, or the selected runtime is device, the **ROS Bag Jobs** tab is not available.
+If the deployed component is a non-ROS component, or you have not added any ROS bag job during package creation or deployment, the **ROS Bag Jobs** tab is not available.
 {{% /notice %}}
+
+{{%notice note%}}
+The port for the ROS Bag recorder (the component responsible for collecting ROS bags in a device) has been changed from 9001 to 9010 and uses 8008. Avoid using these ports in your applications.
+{{%.notice%}}
