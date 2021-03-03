@@ -25,7 +25,7 @@ Turtlesim is a tool made for teaching ROS and ROS packages.
 This tutorial will show you how to set up and run a variation of the ROS Turtlesim on the cloud using rapyuta.io. 
 
 In order to attain a deeper understanding of rapyuta.io, it is highly recommended that the developer refer to the following sections in the documentation
-- [How To Gudies](/how-to-guides/) for step-by-step instructions on completing tasks on rapyuta.io
+- [How To Guides](/how-to-guides/) for step-by-step instructions on completing tasks on rapyuta.io
 - [Deep Dives](/5_deep-dives/) for in-depth documentation 
 - [Tutorials](/4_tutorials/) for more nuanced examples
 
