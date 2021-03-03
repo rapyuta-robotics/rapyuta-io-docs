@@ -4,7 +4,7 @@ RUN apt-get update \
     && apt-get -y autoclean \
     && rm -rf /var/lib/apt/lists/*
 
-ENV HUGO_DOWNLOAD_PATH=https://github.com/gohugoio/hugo/releases/download/v0.52/hugo_0.52_Linux-64bit.deb 
+ENV HUGO_DOWNLOAD_PATH=https://github.com/gohugoio/hugo/releases/download/v0.80.0/hugo_0.80.0_Linux-64bit.deb
 
 RUN curl -L ${HUGO_DOWNLOAD_PATH} -o /tmp/hugo.deb && \ 
     dpkg -i /tmp/hugo.deb && \

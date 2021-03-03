@@ -1,6 +1,10 @@
 # CHANGELOG
 ## [Unreleased]
 
+## [4.0.0 - 2021-03-03]
+### Changed
+- complete revamp of user docs
+
 ## [3.4.0 - 2021-02-17]
 ### Added
 - ROS bag job on device
