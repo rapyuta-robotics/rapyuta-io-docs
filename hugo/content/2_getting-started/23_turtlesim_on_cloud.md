@@ -24,14 +24,14 @@ tags:
 Turtlesim is a tool made for teaching ROS and ROS packages.
 This tutorial will show you how to set up and run a variation of the ROS Turtlesim on the cloud using rapyuta.io. 
 
-In order to attain a deeper understanding of rapyuta.io it is highly recommended that developer refer to the following sections in the documentation
-- How To Gudies for step-by-step instructions on completing tasks on rapyuta.io
-- Deep Dives for in-depth documentation 
-- Tutorials for more nuanced examples
+In order to attain a deeper understanding of rapyuta.io, it is highly recommended that developer refer to the following sections in the documentation
+- [How To Gudies](/how-to-guides/) for step-by-step instructions on completing tasks on rapyuta.io
+- [Deep Dives](/5_deep-dives/) for in-depth documentation 
+- [Tutorials](/4_tutorials/) for more nuanced examples
 
 
 ## Learning objectives
-The tutorial will show you how to deploy a basic Turtle Sim ROS package on the cloud.
+The tutorial will show you how to deploy a basic Turtlesim ROS package on the cloud.
 The steps mentioned here would help you
  - Create a routed network for ROS Communication
  - Understand packages and how they can be added to your account. 
@@ -63,19 +63,18 @@ Beginner
 
 ## Step 1: Create a Routed Network
 
-rapyuta.io  offers seamless communication between different ROS nodes running on the cloud or on a device. 
-This auto-magic communication reduces the need to manage shared ROS masters and lets you, the ros developer, focus on building your robotics solution. 
+rapyuta.io  offers seamless communication between different ROS nodes running on the cloud or on a device. This automaic communication reduces the need to manage shared ROS masters and allows you to focus on building your robotics solution. 
 
 Lets begin by creating a **melodic-cloud-rnet** routed network. 
 
-1. Go to **Sidebar** > **Networking** > **Routed Networks**
-2. Click **Add Routed Network** on the top bar.
-3. Fill out the form with the following details
-   - Name : ```melodic-cloud-rnet```
-   - ROS Distro:  ```Melodic```
-   - Runtime : ```Cloud```
-   - Resource Limit: ```Small: 1cpu core, 4Gib memory```
-4. Click **Continue** to proceed. 
+1. On the left navigation menu, click **Networking** > **Routed Networks**.
+2. Click **Add Routed Network**.
+3. In the In the **Create new routed network** dialog-box, enter the following details in the respective fields.
+   - **Name** : Type ```melodic-cloud-rnet``` as the name of the routed network.
+   - **ROS Distro**: From the drop-down menu, select the ROS distro as ```Melodic```.
+   - **Runtime**: Select the runtime as ```Cloud```.
+   - **Resource Limit**: Select the resource limit as ```Small: 1cpu core, 4Gib memory```.
+4. Click **Continue**. 
 
 Your new network would now be provisioned in a few minutes.
 
@@ -91,7 +90,8 @@ ROS Routed networks are a key component in this seamless communication scheme.
 {{%/expand%}}
 
 ## Step 2: Import Packages
-Software can be distributed on rapyuta.io's cloud platform using Packages. 
+
+Software are distributed on rapyuta.io's cloud platform using Packages. 
 
 We will begin with importing the TurtleSim packages into your account. 
 
@@ -99,13 +99,13 @@ We will begin with importing the TurtleSim packages into your account.
 {{< importpackage manifest="https://raw.githubusercontent.com/rapyuta-robotics/io_tutorials/feature/turtlesim-v2/io_turtlesim/manifests/turtle-world.json" >}}
 
 
-If you are interested in creating your own pacakges, refer to the [how to guide](/3_how-tos/33_software-development/333_create-packages/) and [deep dives](/5_deep-dives/52_software-development/525_package-internals/) on Packages.
+If you want to create your own pacakges, refer to the [how to guide](/3_how-tos/33_software-development/333_create-packages/) and [deep dives](/5_deep-dives/52_software-development/525_package-internals/) on Packages.
 
 
 > {{%expand "💡 Understand : Packages" %}}
 Packages are a way of defining components which need to be deployed together. 
 
-The two packages imported above help us simulate a simple flat 2D world where multiple turtles can be spawned and moved. 
+The two packages imported above help to simulate a simple flat 2D world where multiple turtles can be spawned and moved. 
 
 **Turtle-World** provides the simulated world with simple rectangular walls. It also provides services to add and move one or more turtles. 
 By default a single turtle is added to the world on staartup. 
@@ -119,8 +119,8 @@ It has a simple ros node, no GUI environment and communicates with **Turtle-Worl
 
 First examine **Turtle-World** in detail. 
 
-You can go to **Turtle-World**` > **Turtle-World** > Click **Turtle-World**
-On the detail page you should try and find the following definitions. 
+<!---You can go to **Turtle-World**` > **Turtle-World** > Click **Turtle-World**
+On the detail page you should try and find the following definitions.-->
 
 - **Turtle-World** has a component which runs on the cloud.
   > In package specification terminology, this is refered to as a component with a cloud runtime. 
@@ -153,16 +153,12 @@ On the detail page you should try and find the following definitions.
 Deployments are instances of running packages. Begin by deploying the **Turtle-World** package.
 
 
-1. Go to **Sidebar** > **Development** >  **Catalog**
-2. Click on the package **Turtle-World**
-3. On the top deatil bar, press **Deploy package**
-4. Fill out the form with the following details
-   - Name of deployment: ```turtlesim-cloud```
-   - Optional: Click ```Add ROS bag Job``` to add a new rosbag recording job to the deployment.  
-     - Name:  ```rosbag-all```
-     - Toggle  ```All Topics```  switch on the right
-   - Routed Network: Press Add and select ```melodic-cloud-rnet``` from the network dropdown
-5. Click **Create Deployment** to proceed. 
+1. On the left navigation menu, click **Development** >  **Catalog**
+2. Click the package **Turtle-World**, and click **Deploy package**.
+3. In the **Name of deployment** field, type ```turtlesim-cloud```.
+4. Optionally, to add a new ROS bag job to the deployment, click ```Add ROS bag Job```. In the **Name** field, type ```rosbag-all``` and select ```All Topics``` to record.
+5. From the  **Routed Network** drop-down menu, select ```melodic-cloud-rnet```.
+6. Click **Create Deployment** to proceed. 
 
 
 Deployment should now start running in the cloud. This usually takes a few minutes. You would be taken to the detail page of the deployment where the progress of the provisioning can be seen. 
@@ -238,10 +234,10 @@ To do this, import and deploy the **Turtle Melodic** package over the same route
 1. Import ```Turtle Melodic``` pacakge into your account
 {{< importpackage manifest="https://raw.githubusercontent.com/rapyuta-robotics/io_tutorials/feature/turtlesim-v2/io_turtlesim/manifests/turtle-melodic.json" >}}
 2. Once the package is imported, you would be automatically taken to the package detail page
-3. On the deatil bar, press **Deploy package**
-4. Fill out the form with the following details
+3. On the deatil page, press **Deploy package**.
+4. Enter the following details in the respective fields.
    - Name of deployment: ```turtle-1```
-   - Routed Network: Press Add and select ```melodic-cloud-rnet``` from the network dropdown
+   - Routed Network: Press Add and select ```melodic-cloud-rnet``` from the network drop-down menu.
 5. Click **Create Deployment** to proceed. 
 
 The second turtle should now show up in the Web-UI. 

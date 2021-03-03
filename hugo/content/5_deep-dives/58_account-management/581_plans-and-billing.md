@@ -41,7 +41,7 @@ rapyuta.io offers a community plan with a basic set of bundled complementary res
 Additional [consumable units]({{< ref "/5_deep-dives/58_account-management/582_billing-usage.md">}}) (upto the predefined limits for the plan) or optional resources such as persistent storage can be availed on a pay-as-you-go basis. This requires the user to add a valid
 [payment method](/5_deep-dives/58_account-management/understanding-usage/#payment-method) on the platform.
 
-#### Expiry of Cloud Deployment Resource Quota
+### Expiry of Cloud Deployment Resource Quota
 On the **expiry of credits** for cloud deployment hours in the Community Plan, the platform will **stop all running  cloud deployments**. All other functionality of the platform remains unaffected.
 
 To continue using cloud deployments you **must** add a valid payment method on the **Billing** panel.
@@ -52,13 +52,13 @@ An email notification is sent when usage hits **60%**, and next at **90%**. A fi
 Cloud deployment is any deployment with at least a single cloud component.
 {{% /notice %}}
 
-#### Trial Period Expiration
+### Trial Period Expiration
 At the **end of the stipulated trial period** of the Community Plan, the platform will **stop all running deployments** and **delete all devices** on-boarded by the user.
 
 Since the deletion of resources is ***irreversible***, the deployments and devices cannot be restored. Consequently, you will lose any information, like logs, associated with those resources.
 
 
-To activate the full functionality of the platform again, you **must** add a valid payment method on the **Billing**.
+To activate the full functionality of the platform again, you **must** add a valid [payment method](/5_deep-dives/58_account-management/understanding-usage/#payment-method).
 
 The first reminder to add a payment method is sent ***7 days*** prior to the expiration date, the second one ***2 days*** prior to the expiration date, the third one ***1 day*** prior to the expiration date and the final one ***3 hours*** before expiry.
 
