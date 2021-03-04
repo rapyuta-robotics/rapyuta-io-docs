@@ -82,6 +82,9 @@ Native Network allows you to communicate with different packages or nodes that a
 
   The native network also works effectively with more than one ROS master by using the [FKIE multimaster](https://github.com/fkie/multimaster_fkie) tool and maintains the communication in peer to peer manner. You can create more than one native network for redundancy.
 
+  {{%notice note%}}
+  Native Nework is a beta feature and currently supported on cloud runtime.
+  {{%/notice%}}
   {{% notice note %}}
   Native Network doesn’t support scoped or targeted topic (service or action) directly. The topics are whitelisted in the form of ***/topics** and you can remap these topics for communication. For more information on remapping, [click here](http://wiki.ros.org/roslaunch/XML/remap).
 
