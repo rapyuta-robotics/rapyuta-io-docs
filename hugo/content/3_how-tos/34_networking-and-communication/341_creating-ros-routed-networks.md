@@ -1,5 +1,5 @@
 ---
-title: '[ROS] Creating Routed Networks'
+title: '[ROS] Creating Networks'
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 weight: 341
 versions:
@@ -26,11 +26,11 @@ Follow these steps to create a cloud routed network.
 
 1. On the left navigation bar, click **Networking>Networks**.
 2. Click **ADD NEW NETWORK** and select the network type as **Routed Network**. The **Create New Routed Network** page appears. 
-3. Enter a name for routed network.
+3. Enter a name for the routed network.
 4. Select **ROS Distro**, as either **Kinetic** or **Melodic** based on ROS version of package components it will be binding to.
 5. Select the **Runtime** as **Cloud**.
 ![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=40pc)
-6. From the Resource limit field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can select one of the following resource limit based on your requirement.
+6. From the Resource limit field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can select one of the following resource limits based on your requirement.
   * **Small**: 1cpu core, 4 GiB memory
   * **Medium**: 2cpu core, 8 GiB memory
   * **Large**: 4cpu core, 16 GiB memory
@@ -45,9 +45,9 @@ Follow these steps to create a device routed network. Make sure you have a rapyu
 3. Enter a name for routed network.
 4. Select **ROS Distro**, as either Kinetic or Melodic based on ROS version of package components it will be binding to.
 5. Select the **Runtime** as **Device**.
-6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
-Select the **Device** and it’s **IP Interface**. 
-7. Select the Restart policy.
+6. You will see a list of the online device with docker runtime and AMD64 architecture in the drop-down list. 
+Select the **Device** and its **IP Interface**. 
+7. Select the [Restart policy](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy). Available options are **Never**, **Always**, or **On Faiure**.
 ![goo](/images/tutorials/routed-networks/create-device-routed-network.png?classes=border,shadow&width=40pc)
 8. Click **CONTINUE**. The device routed network is created.
 
@@ -65,7 +65,7 @@ Follow these steps to create a native network.
 3. Enter a name for the native network. 
 4. Select **ROS Distro** as either **Kinetic** or **Melodic** based on ROS version of package components it will be binding to.
 5. By default, the **Runtime** is **Cloud**.
-5. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can select one of the following resource limit based on your requirement.
+5. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can select one of the following resource limits based on your requirement.
   * **X-Small**: 0.1cpu core, 1 GiB memory
   * **Small**: 1cpu core, 4 GiB memory
   * **Medium**: 2cpu core, 8 GiB memory
@@ -77,10 +77,9 @@ Follow these steps to create a native network.
 
 Only network not bound to any running deployments can be deleted.
 
-1. On the left navigation bar, click **Networking>Routed Network**. A list of routed networks are displayed.
-2. Select the routed network which you want to delete. 
-3. Click on **Delete**.
-4. Confirm on the routed network deletion message. After confirmation, the routed network is deleted.
+1. On the left navigation bar, click **Networking>Networks**. A list of available networks is displayed.
+2. Click **Delete** against the network that you want to delete.
+4. Confirm the routed network deletion message. After confirmation, the routed network is deleted.
 {{% notice warning %}}
 An attempt to deprovision a network that is currently being used will result in an error.
 {{% /notice %}}
@@ -89,4 +88,4 @@ An attempt to deprovision a network that is currently being used will result in 
 
 ## Related Links
 
-* [About ROS Routed Network]({{< ref "/5_deep-dives/53_Networking-and-communication/531_ROS-network">}})
+* [About ROS Networks]({{< ref "/5_deep-dives/53_Networking-and-communication/531_ROS-network">}})
