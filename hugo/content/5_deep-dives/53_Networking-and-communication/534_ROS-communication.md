@@ -35,7 +35,7 @@ for implicitly establishing a communication channel between two or more
 ROS environments. It is an application-level bridge that offers many
 compelling features to ROS developers including
 [augmented ROS over the public internet](/5_deep-dives/52_software-development/526_package-ros-support/#augmented-ros) and dedicated features for dynamic
-multi-robot ROS communication.
+multi-robot ROS communication/
 
 ## Multi-Robot ROS Communication
 
