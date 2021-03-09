@@ -3,7 +3,7 @@
 title: "Standard Web Protocol"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 
-weigth: 532
+weight: 532
 
 versions:
   free-pro-team: '*'
@@ -35,7 +35,7 @@ Link injection is the mechanism rapyuta.io relies on for composition features co
 
 ### Link Injection
 
-For instance if you have a deployment *P* running on rapyuta.io that exposes a network endpoint defined as **SAMPLE_ENDPOINT** with the URL address: *https://inst-awesomesauce-url.apps.rapyuta.io:443* 
+For instance, if you have a deployment *P* running on rapyuta.io that exposes a network endpoint defined as **SAMPLE_ENDPOINT** with the URL address: *https://inst-awesomesauce-url.apps.rapyuta.io:443* 
 the rapyuta.io platform can use the above URL to determine the corresponding **HOST** and **PORT** values as follows:
 
 * **HOST**: *inst-awesomesauce-url.apps.rapyuta.io*
@@ -43,7 +43,7 @@ the rapyuta.io platform can use the above URL to determine the corresponding **H
 
 rapyuta.io can now make this information available to any other resource it manages like deployments.
 
-Consider another deployment, for instance, *C* such that user deploying *C* selects *P* as a ***dependent deployment***. Now for the purpose of linking deployments a parent-child relationship is established between deployments *P* (the parent) and *C* (the child). 
+Consider another deployment, for instance, *C* such that the user deploying *C* selects *P* as a ***dependent deployment***. To link deployments a parent-child, the relationship is established between deployments *P* (the parent) and *C* (the child). 
 
 rapyuta.io will make exposed endpoint information available to *C* (the child) by constructing and injecting environment variables corresponding to each endpoint exposed by *P* (the parent) using the following rule.
 

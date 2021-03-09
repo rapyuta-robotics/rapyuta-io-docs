@@ -3,7 +3,7 @@
 title: "ROS Routed Network"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 
-weigth: 531
+weight: 531
 
 versions:
   free-pro-team: '*'
@@ -28,11 +28,11 @@ introLinks: {}
 tags:
     - Deep Dive
 ---
-Routed network is a rapyuta.io resource to enable ROS communication between different ROS package deployments. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. 
+The routed network is a rapyuta.io resource to enable ROS communication between different ROS package deployments. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. 
 Data flow occurs only when another package chooses to subscribe to a topic, call a service or call an action. 
 
-#### Illustarted Example
-For the purpose of this illustration lets assume the following network and packages.
+#### Illustrated Example
+For this illustration let's assume the following network and packages.
 
 * You have a routed network __networkN__
 * You have __PackageA__ publishing _“topicA”_
@@ -48,12 +48,12 @@ The result is as follows
 * ROS nodes in  _DeploymentA_ can now call _“serviceB”_
 * ROS nodes in  _DeploymentB_ can now subscribe to _“topicA”_
 
-A routed network can be deployed to a cloud or to a device.
+A routed network can be deployed to a cloud or a device.
 
 
 ## Cloud Routed Network
 
-When a user deploys a routed network to the cloud it is considered a cloud routed network. Any compute resources (cpu/memory) consumed by this routed network deployment count against your cloud deployment hours quota.
+When a user deploys a routed network to the cloud it is considered a cloud routed network. Any compute resources (CPU/memory) consumed by this routed network deployment count against your cloud deployment hours quota.
 
 Package deployments in the cloud __OR__ device can bind to a cloud routed network.
 

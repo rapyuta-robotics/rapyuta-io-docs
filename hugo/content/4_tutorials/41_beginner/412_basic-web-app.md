@@ -9,10 +9,10 @@ tags:
     - Tutorials
 ---
 
-This tutorial guides you to create a web application and deploy it in the rapyuta.io platform with docker build recipe.
+This tutorial guides you to create a web application and deploy it in the rapyuta.io platform with the docker build recipe.
 
 ## Learning objectives
-The tutorial will show you how to use a dockerfile to build an executable
+The tutorial will show you how to use a docker file to build an executable
 of a package.
 
 ## Prerequisites
@@ -28,14 +28,14 @@ of a package.
 {{< youtube id="a0xj7BmIajY" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}
 
 ## Creating the build
-To create the build, follow below steps : 
+To create the build, follow the below steps : 
 
 1. On the left navigation bar, click **Development>Builds**.
 2. Click on **ADD NEW BUILD**
-3. In the Build Name box, enter a name for the build say `web-app-build` 
-4. In the **Git repository** box, enter the url address : 
+3. In the Build Name box, enter a name for the build , for example, `web-app-build` 
+4. In the **Git repository** box, enter the URL address : 
 `https://github.com/rapyuta/io_tutorials` and select **Build Recipe** as **Docker**.
-5. In the **Context directory box**, enter the name of the parent directory that contains the dockerfile. 
+5. In the **Context directory box**, enter the name of the parent directory that contains the docker file. 
 In this example, it is `flask_helloworld`.
 6. Go to the next step and click on next, the build will be created.
 
@@ -43,7 +43,7 @@ The build takes about two to five minutes to build the source code in the *io_tu
 repository into a running docker container. You may analyse the corresponding
 [build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs), which help debug failing builds.
 
-Please proceed to creation of package once the build is Complete.
+Please proceed to the creation of the package once the build is complete.
 
 ## Creating the package
 You will add and deploy ***simple-hello-world*** package. To create a new package,
@@ -51,21 +51,21 @@ follow the below instructions in sequence:
 
 1. On the left navigation bar, click **Development>Catalog**.
 2. Click **ADD NEW PACKAGE**.
-3. You should provide information about the package such as the name of the package, its version, whether its a singleton or bindable package and a short description.
+3. You should provide information about the package such as the name of the package, its version, whether it's a singleton or bindable package, and a short description.
    1. In the **Package Name** box, type in a name for the package like `simple-hello-world`
    2. In the **Package Version** box, type in the version of the package. By default, the version is set to *1.0.0*
    3. Ensure **Is a singleton package** is *not selected*.
    4. Make sure **Is a bindable package** is *selected*.
    5. Describe the package in a sentence or two like `Demo package for docker build recipe`.
 4. Click **NEXT**.
-5. In the **Component Name** box, enter a name for the component say `Flask_Application`.
+5. In the **Component Name** box, enter a name for the component, for example, `Flask_Application`.
    {{% notice info %}}
    The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character. It must not begin with a digit.
    {{% /notice %}}
 6. Select **Cloud** for **Component Runtime**.
 7. Ensure **Is ROS Component** is *not selected*.
 8. The value of **Replicas to run the component** is set to the default value of *1*
-9.  In the **Executable Name** box, type in a name for the executable, say `flask_runner`.
+9.  In the **Executable Name** box, type in a name for the executable, , for example, `flask_runner`.
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}
@@ -100,11 +100,11 @@ instructions in sequence:
 
 You will be redirected to the **Details** page of the newly created deployment.
 The **Simple Flask Application** deployment is successfully running only when
-the green colored bar moves to **Succeeded** and **Status:Running** indicating that the **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
+the green colored bar moves to **Succeeded** and **Status: Running** indicating that the **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
 
 ![Deployment details](/images/tutorials/hello-world/successful-deployment.png?classes=border,shadow&width=50pc)
 
-You can also analyze the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/) to check if everything is working as expected by clicking on **Historical Logs** or **Live Logs** tab.
+You can also analyze the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/) to check if everything is working as expected by clicking on the **Historical Logs** or **Live Logs** tab.
 
 Once the package is successfully deployed, the **NETWORK ENDPOINTS**
 generates a URL address on the **Details** page. Copy this specific

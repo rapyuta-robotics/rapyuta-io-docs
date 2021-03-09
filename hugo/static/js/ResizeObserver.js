@@ -544,7 +544,7 @@
             // Following conditions are required to handle Internet Explorer which
             // doesn't include paddings and borders to computed CSS dimensions.
             //
-            // We can say that if CSS dimensions + paddings are equal to the "client"
+            // We can , for example, that if CSS dimensions + paddings are equal to the "client"
             // properties then it's either IE, and thus we don't need to subtract
             // anything, or an element merely doesn't have paddings/borders styles.
             if (Math.round(width + horizPad) !== clientWidth) {

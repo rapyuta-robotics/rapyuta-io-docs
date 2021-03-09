@@ -48,19 +48,19 @@ When the device is successfully registered, you will see a green dot next to the
 ## Create builds
 You will create two builds in the tutorial.
 ### Simulation build
-To create the build, follow below steps:
+To create the build, follow the below steps:
 
 1. On the left navigation bar, click **Development>Builds**
 2. Click on **ADD NEW BUILD**
-3. In the Build Name box, enter a name for the build say `io-simulation-teleoperation` 
-4. In the **Git repository** box, enter the url address : 
+3. In the Build Name box, enter a name for the build, for example, `io-simulation-teleoperation` 
+4. In the **Git repository** box, enter the URL address : 
 `https://github.com/rapyuta-robotics/io_simulation_tutorials` and select **Build Recipe** as Catkin.
 5. In the context directory, enter `turtlebot_teleoperation`
 6. Click on next, select **ROS Version** as **Melodic** and select the **Has Simulation** option.  
 7. Click on **Add Parameter** under **CATKIN BUILD PARAMETERS**,
     1. add the following **ROS Packages**:`turtlebot3_gazebo turtlebot3_description`
     2. add the following packages to **Blacklist**:
-    `turtlebot3 turtlebot3_bringup turtlebot3_example turtlebot3_navigation turtlebot3_slam`	
+    `turtlebot3 turtlebot3_bringup turtlebot3_example turtlebot3_navigation turtlebot3_slam`    
 8. Click on next, the build will be created.
 
 The build takes about two to five minutes to build the source code in the ***io_simulation_tutorials***
@@ -69,24 +69,24 @@ repository into a running docker container. You may analyse the corresponding
 
 
 ### Teleoperation build
-To create the build, follow below steps : 
+To create the build, follow the below steps : 
 
 1. On the left navigation bar, click **Development>Builds**
 2. Click on **ADD NEW BUILD**
-3. In the Build Name box, enter a name for the build say `turtlebot-teleoperation` 
-4. In the **Git repository** box, enter the url address : 
+3. In the Build Name box, enter a name for the build, for example, `turtlebot-teleoperation` 
+4. In the **Git repository** box, enter the URL address : 
 `https://github.com/ROBOTIS-GIT/turtlebot3#melodic-devel` and select **Build Recipe** as Catkin.
 5. Click on next, select **Architecture** as amd64 and select **ROS Version** as **Melodic**.  
 6. Click on **Add Parameter** under **CATKIN BUILD PARAMETERS**,
     1. add the following **ROS Packages**:`turtlebot3_teleop`
-    2. add the following packages to **Blacklist**:`turtlebot3 turtlebot3_bringup turtlebot3_example turtlebot3_navigation turtlebot3_slam turtlebot3_description`	
+    2. add the following packages to **Blacklist**:`turtlebot3 turtlebot3_bringup turtlebot3_example turtlebot3_navigation turtlebot3_slam turtlebot3_description`  
 7. Click on next, the build will be created.
 
 The build takes about two to five minutes to build the source code in the ***turtlebot3***
 repository into a running docker container. You may analyse the corresponding
 [build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs), which help debug failing builds.
 
-Please proceed to creation of package once the builds are Complete.
+Please proceed to the creation of the package once the builds are complete.
 
 ## Create Packages
 You will create two packages in the tutorial.
@@ -109,7 +109,7 @@ You will create two packages in the tutorial.
 15. For **Executable Type**, click on **Development>Builds**.
 16. From the **Choose Build** drop-down menu, select`io-simulation-teleoperation`.
 17. In the **Command to run in the docker container** box, enter the command: `roslaunch turtlebot3_gazebo turtlebot3_autorace.launch`
-18. Set **Resource Limit** to **Medium:2 cpu cores, 8 GiB memory**.
+18. Set **Resource Limit** to **Medium:2 CPU cores, 8 GiB memory**.
 
 {{% notice warning %}}
 For simulation, the resource limit should either be **Medium** or **Large**. Simulation has issues with **Small** resource limits.
@@ -145,7 +145,7 @@ The command, ***sleep infinity***, will keep the deployment running and does not
 19. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ## Create a Cloud Routed Network
-A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, skip the following steps.
+A routed network allows you to establish ROS communication between different ROS package deployments. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, skip the following steps.
 
 Perform the following procedure to create a routed network.
 
@@ -189,13 +189,13 @@ You can verify if **KEYBOARD TELEOPERATION** is running successfully by checking
 
 1. On the **Details** tab of **ROBOT SIMULATION** deployment, copy the value of the network endpoint ***vnc***.
 2. Paste the copied URL address in the address bar of the web browser and press Enter.
-3. Enter the value of ***VNC_PASSWORD***, which you provided while deploying the package, when prompted. You will view the 3D world and the **Teleop Device** (robot) inside it.
+3. Enter the value of ***VNC_PASSWORD***, which you provided while deploying the package when prompted. You will view the 3D world and the **Teleop Device** (robot) inside it.
 4. Go to the **Shell Access** tab of **KEYBOARD TELEOPERATION** deployment, and click on **SSH**.
 5. Enter the following commands in sequence:
    1. `bash`
    2. `. /opt/catkin_ws/devel/setup.bash`
    3. `TURTLEBOT3_MODEL=burger roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch`
-6. Try controlling the robot using the keyboard commands shown in ther terminal output. To see how the robot moves, switch to the Gazebo simulation browser tab.
+6. Try controlling the robot using the keyboard commands shown in the terminal output. To see how the robot moves, switch to the Gazebo simulation browser tab.
 7. To reset simulation, **Ctrl+C** and then run `rosservice call /gazebo/reset_simulation`
 
 <video controls style="max-width: 1500px" width="100%" class="border shadow" src="/images/tutorials/turtlebot-simulation/simulation.webm"></video>

@@ -24,10 +24,9 @@ tags:
 
 ### Batch Upload
 You can upload logs collected from a device (like dmesg,
-journalctl, rosbags etc.) to rapyuta.io. It lets you:
+journalctl, rosbags, etc.) to rapyuta.io. It lets you:
 
-* *Save* logs for future reference. The logs are saved to the
-  cloud storage.
+* *Save* logs for future reference. The logs are saved to cloud storage.
 * *Process* and *analyze* logs for insights as per your requirements.
 
 The log data can be text, images, or videos. You can upload

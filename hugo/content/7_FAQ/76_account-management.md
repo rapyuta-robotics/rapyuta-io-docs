@@ -29,9 +29,9 @@ tags:
 
 #### Q. I have invited a user to an organization but I am not able to add the user to a project?
 > {{%expand "Answer" %}}
-  The user is not activated yet in the rapyuta.io platform. Ask the user to check his e-mail inbox and click on the verification link to comlete the registration process. After the user completes the registration process, you can add the user to the project. For more information, [click here](/how-to-guides/account-management/managing-users/)
+  The user is not activated yet in the rapyuta.io platform. Ask the user to check his e-mail inbox and click on the verification link to complete the registration process. After the user completes the registration process, you can add the user to the project. For more information, [click here](/how-to-guides/account-management/managing-users/)
 ​{{% /expand%}}
-#### Q. How can I remove a user from the organization.
+#### Q. How can I remove a user from the organization?
 > {{%expand "Answer" %}}
   Only the admin of the organization can remove a user from the organization. To remove a user from the organization, go to **Account>Organization** page, and click **Remove** against the user whom you want to remove.
 ​{{% /expand%}}
@@ -42,7 +42,7 @@ tags:
 
 #### Q. What happens when my Community plan free trial period ends??
 > {{%expand "Answer" %}}
-At the end of the free trial period of the Community Plan, the platform will stop all running deployments and delete all devices onboarded by the user. Since the deletion of resources is irreversible, the deployments and devices cannot be restored. Consequently, the user will lose any information, like logs, associated with those resources.To reactivate the full functionality of the platform, the user must add a valid payment method by visiting the Billing section. To avoid the scenario of losing device and deployment information it is recommended that the user adds payment information before the trial period ends.
+At the end of the free trial period of the Community Plan, the platform will stop all running deployments and delete all devices onboarded by the user. Since the deletion of resources is irreversible, the deployments and devices cannot be restored. Consequently, the user will lose any information, like logs, associated with those resources. To reactivate the full functionality of the platform, the user must add a valid payment method by visiting the Billing section. To avoid the scenario of losing device and deployment information it is recommended that the user adds payment information before the trial period ends.
 
 {{% /expand%}}
  
@@ -70,7 +70,7 @@ As an admin of an organization, you can delete any existing credit card except t
 
 #### Q. What is the billing cycle?
 > {{%expand "Answer" %}}
-The billing cycle starts with the first day of every month and ends on the last day. In the case that you have signed up for a plan in-between a month, your billing cycle starts on that particular day and ends on the last day of that month. Correspondingly you will be charged on a prorated basis (for example if you signed up on 15th June 2020, you will be charged for the period beginning on 15th and ending on the 30th - i.e 15 days as calculated on a prorated basis). From the following month, the standard monthly billing cycles continue to apply.
+The billing cycle starts on the first day of every month and ends on the last day. In the case that you have signed up for a plan in-between a month, your billing cycle starts on that particular day and ends on the last day of that month. Correspondingly you will be charged on a prorated basis (for example if you signed up on 15th June 2020, you will be charged for the period beginning on 15th and ending on the 30th - i.e 15 days as calculated on a prorated basis). From the following month, the standard monthly billing cycles continue to apply.
 {{% /expand%}}
 
 #### Q. How do I switch between the plans?

@@ -11,7 +11,7 @@ tags:
 This pricing example is based on the **Professional Plan**
 subscription.
 
-Let’s assume your ROS software application has two modules say
+Let’s assume your ROS software application has two modules, for example,
 *A* and *B*. You intend to deploy three instances of
 A in the cloud, an instance of B on your device, and attach
 a *persistent storage volume of 32GiB size* to your application.
@@ -23,21 +23,18 @@ ROS *package*. The application modules are implemented as
 one *executable* (a runnable entity).
 The instances of a component are called *replicas*.
 
-You will create a ROS package with two components say *compA* and
+You will create a ROS package with two components, for example, *compA* and
 *compB* using rapyuta.io.
 
-* Let's assume *compA* will have two executables that actually
-  get deployed when *compA* is deployed in the cloud.
+* Let's assume *compA* will have two executables that get deployed when *compA* is deployed in the cloud.
   So, *compA* is charged based on cloud deployment hours.
-  The compute and memory values for one of the executables
-  are (1 cpu core, 4GiB memory) while the other executable has (2 cpu core, 8GiB memory).
+  The compute and memory values for one of the executables are (1 CPU core, 4GiB memory) while the other executable has (2 CPU core, 8GiB memory).
   You will create 3 replicas of *compA*.
 * Suppose *compB* will have a single executable that gets
   deployed when *compB* is deployed on a device.
 * You will deploy a persistent storage volume of 32GiB size,
   which will be used by a deployment of the ROS package.
-  So, this persistent volume deployment is charged for
-  volume deployment hours.
+  So, this persistent volume deployment is charged for volume deployment hours.
 
 You will then deploy the ROS package and have it run for 10 hours
 a day.
@@ -65,7 +62,7 @@ Add-ons price for 5 devices per month: $100 * 5 = **$500**
 Total charges: $272.4 + $500 = **$772.4**
 
 ### Add-ons Pricing Calculation
-The add-ons (devices, users and static-routes) are charged differently
+The add-ons (devices, users, and static-routes) are charged differently
 from the deployment hours.
 
 For example, let's assume you have subscribed to one of the plans on

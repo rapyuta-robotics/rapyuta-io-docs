@@ -39,8 +39,8 @@ suspend or terminate your use of the rapyuta.io
 
 | Acceptable Use Limits |                                                              |
 | --------------------- | ------------------------------------------------------------ |
-| **Logs**              | TODO: ? 1gb per what?  A maximum of 1GB of logs. The logs are retained for no more than *_seven_* days. |
-| **Outbound data**     | An authorized organization will be able to download nearly 10GB data per month. |
+| **Logs**              | TODO: ? 1GB per what?  A maximum of 1GB of logs. The logs are retained for no more than *_seven_* days. |
+| **Outbound data**     | An authorized organization will be able to download nearly 10GB of data per month. |
 | **Metrics**           | 500MB of metrics data per device. The data is retained for no more than *_seven_* days. |
 | **Development>Builds**            | Run builds for no longer than an hour.                       |
 
@@ -60,7 +60,7 @@ You agree to not, or not to allow third parties, use the **rapyuta.io** or its S
 
 * To intentionally distribute viruses, worms, Trojan horses, corrupted files, hoaxes, or other items of a destructive or deceptive nature on or using **rapyuta.io**;
 
-* To disable or interfere with or circumvent the use of the **rapyuta.io**, its Services, or the equipment used to provide **rapyuta.io**, by customers, or other authorised users;
+* To disable or interfere with or circumvent the use of the **rapyuta.io**, its Services, or the equipment used to provide **rapyuta.io**, by customers, or other authorized users;
 
 * To generate, distribute, publish or facilitate unsolicited mass email, or other solicitations (“**spam**”);
 

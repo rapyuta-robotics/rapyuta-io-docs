@@ -28,30 +28,30 @@ introLinks: {}
 tags:
     - Deep Dive
 ---
-> A robotics simulator is a simulator used to create application for a physical robot without depending on the actual machine, thus saving cost and time. In some case, these applications can be transferred onto the physical robot (or rebuilt) without modifications. — [Wikipedia](https://en.wikipedia.org/wiki/Robotics_simulator)
+> A robotics simulator is a simulator used to create an application for a physical robot without depending on the actual machine, thus saving cost and time. In some cases, these applications can be transferred onto the physical robot (or rebuilt) without modifications. — [Wikipedia](https://en.wikipedia.org/wiki/Robotics_simulator)
 
-During application development a robotics simulator can greatly help by cutting down the cost and time associated with managing real robots. This effect is more pronounced during initial phases of development where more code and configuration iterations happen with higher rate of trial-and-error phases.
+During application development, a robotics simulator can greatly help by cutting down the cost and time associated with managing real robots. This effect is more pronounced during the initial phases of development where more code and configuration iterations happen with a higher rate of trial-and-error phases.
 
-[Gazebo](http://gazebosim.org) is popular open-source 3D robotics simulator that has been around for more than a decade, and is used by robotics developers around the world. It has an active [community](http://answers.gazebosim.org/questions) and plethora of [documentation](http://gazebosim.org/tutorials) that helps new users get on-board easily. Gazebo team maintains quite a few 3D [models](https://bitbucket.org/osrf/gazebo_models/) that are readily available for use in projects. The team also maintains [ROS packages](http://wiki.ros.org/gazebo_ros_pkgs) for applications that want to interact with Gazebo through ROS interfaces (topics, services, and actions).
+[Gazebo](http://gazebosim.org) is a popular open-source 3D robotics simulator that has been around for more than a decade and is used by robotics developers around the world. It has an active [community](http://answers.gazebosim.org/questions) and plethora of [documentation](http://gazebosim.org/tutorials) that helps new users get on-board easily. Gazebo team maintains quite a few 3D [models](https://bitbucket.org/osrf/gazebo_models/) that are readily available for use in projects. The team also maintains [ROS packages](http://wiki.ros.org/gazebo_ros_pkgs) for applications that want to interact with Gazebo through ROS interfaces (topics, services, and actions).
 
-rapyuta.io lets users run their simulation application with Gazebo simulator on the cloud. It provides a web interface to watch and interact with Gazebo GUI client running on the cloud. ROS interfaces provided by its ROS packages complements rapyuta.io’s [ROS communication support](/5_deep-dives/53_networking-and-communication/534_ros-communication/), and enhances the ways users architect their simulation and robotics applications. For instance, robotics application **running on a device** can interact with Gazebo **running on cloud** through ROS interfaces (e.g. to get model state, set physics properties). This requires, however, that launch files for simulation are not tightly coupled with the rest of the application so they can be run independently.
+rapyuta.io lets users run their simulation application with Gazebo simulator on the cloud. It provides a web interface to watch and interact with Gazebo GUI client running on the cloud. ROS interfaces provided by its ROS packages complement rapyuta.io’s [ROS communication support](/5_deep-dives/53_networking-and-communication/534_ros-communication/) and enhances the ways users architect their simulation and robotics applications. For instance, robotics application **running on a device** can interact with Gazebo **running on cloud** through ROS interfaces (e.g. to get model state, set physics properties). This requires, however, that launch files for simulation are not tightly coupled with the rest of the application so they can be run independently.
 
 {{% notice info %}}
-The following sample-walkthrough demonstrates how to create such a setup keeping in mind that it should still run on local machine besides rapyuta.io: [Separating Simulation and Application](/4_tutorials/42_advanced/separate-navigation-simulation/).
+The following sample-walkthrough demonstrates how to create such a setup keeping in mind that it should still run on a local machine besides rapyuta.io: [Separating Simulation and Application](/4_tutorials/42_advanced/separate-navigation-simulation/).
 {{% /notice %}}
 
 {{% notice note %}}
-As of now rapyuta.io supports **Gazebo version 9**, and only for executables with Catkin recipe. Users are expected to use gazebo9 ROS packages for their corresponding ROS distros. For instance, `ros-melodic-gazebo-ros-pkgs` on ROS melodic, and `ros-kinetic-gazebo9-ros-pkgs` on ROS kinetic.
+As of now, rapyuta.io supports **Gazebo version 9**, and only for executables with Catkin recipe. Users are expected to use gazebo9 ROS packages for their corresponding ROS distros. For instance, `ros-melodic-gazebo-ros-pkgs` on ROS melodic, and `ros-kinetic-gazebo9-ros-pkgs` on ROS kinetic.
 {{% /notice %}}
 
 
 ### Using robot_description and other parameters for both Simulation and Application
 
-One limitation while running the above setup is that the ROS parameter server is not shared. This means, for instance, *robot_description* loaded by robotics application on device (for use by [robot_state_publisher](http://wiki.ros.org/robot_state_publisher)) will not be available to Gazebo simulation running on cloud (to spawn URDF model). Since such parameters that need to be shared are not modified after being set, both simulation launch files and application launch files can set them for their respective ROS masters. [Controller](http://wiki.ros.org/ros_control#Controllers) parameters are another example besides *robot_description*.
+One limitation while running the above setup is that the ROS parameter server is not shared. This means, for instance, *robot_description* loaded by robotics application on a device (for use by [robot_state_publisher](http://wiki.ros.org/robot_state_publisher)) will not be available to Gazebo simulation running on the cloud (to spawn URDF model). Since such parameters that need to be shared are not modified after being set, both simulation launch files and application launch files can set them for their respective ROS masters. [Controller](http://wiki.ros.org/ros_control#Controllers) parameters are another example besides *robot_description*.
 
 
 ### Accounting for network delays while communicating over the internet
-When communicating over the public internet through ROS interfaces, communication can incur significant delays. The delays may or may not affect simulation and robotics applications, depending on how much tolerant application is towards these delays. The following ways can be used to account for such delays:
+When communicating over the public internet through ROS interfaces, communication can incur significant delays. The delays may or may not affect simulation and robotics applications, depending on how tolerant application is towards these delays. The following ways can be used to account for such delays:
 
 - Have low [QoS](/5_deep-dives/52_software-development/526_package-ros-support/#qos-for-topics) for high-frequency topics like [/clock](http://gazebosim.org/tutorials/?tut=ros_comm#GazeboPublishedTopics). It is the default value when enabling simulation for an executable.
 

@@ -29,7 +29,7 @@ tags:
   
 ## Creating Build by Catkin recipe 
 
-To create a build using Catkin receipe, do the following. 
+To create a build using the Catkin recipe, do the following. 
 
 1. On the left navigation bar, click **Development>Builds**.
 
@@ -66,7 +66,7 @@ To create a build using Catkin receipe, do the following.
 
   ![goo](/images/core-concepts/builds/build-creation/catkin-build-info.png?classes=border,shadow&width=30pc)
 
-5. The **rapyuta.io** platform allows you to push and save the build image to an external docker registry.To push and save the build image to the private registry, do the following.
+5. The **rapyuta.io** platform allows you to push and save the build image to an external docker registry. To push and save the build image to the private registry, do the following.
 
     a. Under the **Docker Secret** tab, click the **Docker Push Secret**  toggle button.
 
@@ -82,7 +82,7 @@ To create a build using Catkin receipe, do the following.
 
 ## Creating Build by Docker recipe 
 
- To create a build using docker recipe, do the following.
+ To create a build using the docker recipe, do the following.
 
 1. On the left navigation bar, click **Development>Builds**
 
@@ -147,7 +147,7 @@ After you have created a build by either Catkin or Docker recipe, you can view t
 |Field|Description|
 |-----|-----------|
 |**Name/ID**| Provides the name of the build.
-|**Status**| Provides the following status of the build. <ul><li>BuildInProgress: Displays when the build creation process is in progress.</li><li>Complete: Displays when the build creation process has been successfully completed.</li><li>BuildFailed: Displays if the build creation process has failed.</li></ul>
+|**Status**| Provides the following status of the build. <ul><li>BuildInProgress: Displays when the build creation process is in progress.</li><li>Complete: Displays when the build creation process has been completed.</li><li>BuildFailed: Displays if the build creation process has failed.</li></ul>
 |**Started**| Provides the time duration when the build creation process has started.
 |**Repository**| Provides the repository from which the build has been created.
 |**Action**| Allows you to delete, trigger, or clone a build. 
@@ -172,18 +172,18 @@ After you have created a build by either Catkin or Docker recipe, you can view t
 ## Deleting the build
 
 {{% notice info %}}
-Note that if the build **Status** is *_BuildInProgress_*, then user will not be able to **Delete** the build. Deletion of such builds will fail with the error message : **can't delete the build since its corresponding build request is still in progress**.
+Note that if the build **Status** is *_BuildInProgress_*, then the user will not be able to **Delete** the build. Deletion of such builds will fail with the error message: **can't delete the build since its corresponding build request is still in progress**.
 {{% /notice %}}
 
 To delete a build, do the following.
 
-1. On the left navigation bar, click **Development>Builds**. It  displays all the builds available for a project.
+1. On the left navigation bar, click **Development>Builds**. It displays all the builds available for a project.
 
 2. Select the build that you want to delete. 
 
 3. Click **Delete**.
 
-4. Confirm on the build deletion message. The build is deleted from the rapyuta.io platform.
+4. Confirm the build deletion message. The build is deleted from the rapyuta.io platform.
 
 ## Cloning a Build
 

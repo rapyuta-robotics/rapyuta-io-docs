@@ -33,22 +33,22 @@ If you want to record the topics for any ROS component of a package, you can fol
 ![add-rosbags](/images/dev-guide/rosbag-jobs/add-rosbag.png?classes=border,shadow&width=20pc)
 2. In the **Name** field, type a name for the ROS bag job.
 3. In the **Topic Names** field, type the name of the topic that you want to record.
-4. Optionally, if you want to record all the topics available in the component, click the **All Topics?** toggle button.
+4. Optionally, if you want to record all the topics available in the component, click the **All Topics?** toggle-button.
 ![add-rosbags](/images/dev-guide/rosbag-jobs/rosbag-config.png?classes=border,shadow&width=35pc)
 5. Optionally, if you want to record a series of topics that should match a regular expression value or regex, type the regex in the **Include Regex** field. 
 6. Optionally, if you want to exclude the recording of a series of topics that should match a regular expression value or regex, type the regex in the **Exclude Regex** field. 
 {{% notice info %}}
-If you have enabled the **All Topics?** toggle button, **Topic Name** and  **Include Regex** fields are disabled.
+If you have enabled the **All Topics?** toggle-button, **Topic Name** and  **Include Regex** fields are disabled.
 {{% /notice %}}
 7. You can also provide either **BZ2** or **LZ4** compression to the recorded topics based on your requirement and available disk sizes.
-BZ2 generally produces smaller bags than LZ4. For more information about ROS compression, [click here](http://wiki.ros.org/rosbag/Commandline#compress). 
+BZ2 generally produces smaller bags than LZ4. For more information about ROS compression, [click here](http://wiki.ros.org/rosbag/command-line#compress). 
 
 8. The advanced option allows you to record the topics with a more granular report. Optionally, to use the advanced option, click **Show Advanced Option** and do the following.</br>
 
 ![add-rosbags](/images/dev-guide/rosbag-jobs/advanced-rosbagjob.png?classes=border,shadow&width=55pc)
       a. In the **Node Name** field, type the node for which you want to record all the topics subscribed by the specific node.S</br>
       b. In the **No. of Message** field, type the number of messages that you want to store for each topic.</br>
-      c. **Max Splits** field defines the maximum number of splits of the ROS bag files that are saved. Older splits are deleted after the **Max Splits** count is reached. To split the ROS bag file, in the **Max Splits** field, type the number of split that you want to allow. </br>
+      c. **Max Splits** field defines the maximum number of splits of the ROS bag files that are saved. Older splits are deleted after the **Max Splits** count is reached. To split the ROS bag file, in the **Max Splits** field, type the number of splits that you want to allow. </br>
 {{% notice info %}}
 
 Maximum 10 splits are allowed for each ROS bag job. After the message recording reaches the maximum allowed splits, the older split files are deleted to maintain the specified memory limit. 
@@ -69,7 +69,7 @@ For example, you can configure 10 splits and each split can store up to 500 MB (
     <ul>
     <li>**Upload Rate**: Specify the upload rate for the ROS bag file to be uploaded in the rapyuta.io platform. </li>
     <li>**Rate Units**: Specify the unit for the upload rate from the drop-down menu. You can select **Bytes/s**, **KB/s**, or**MB/s**.  </li>
-    <li>**Purge After**: If you want to delete the ROS bag file after it has been successfully uploaded to the rapyuta.io platform, click the toggle button.</li>
+    <li>**Purge After**: If you want to delete the ROS bag file after it has been successfully uploaded to the rapyuta.io platform, click the toggle-button.</li>
     </ul> 
 ![device-rosbags](/images/dev-guide/rosbag-jobs/advanced-rosbags-device.png?classes=border,shadow&width=35pc)
 
@@ -77,7 +77,7 @@ f. To add the ROS bag job and start recording the defined topics, click **Add**.
 
 {{% notice info %}}
 
-You can also update the value of the ROS bag jobs during the time of deployment. The values added during the deployments overrides the values added during the package creation. 
+You can also update the value of the ROS bag jobs during the time of deployment. The values added during the deployments override the values added during the package creation. 
 {{% /notice %}}
     
 ## Viewing ROS Bag Job
