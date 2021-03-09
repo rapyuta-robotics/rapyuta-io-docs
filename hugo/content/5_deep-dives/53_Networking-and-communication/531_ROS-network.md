@@ -28,34 +28,164 @@ introLinks: {}
 tags:
     - Deep Dive
 ---
-ROS network (Routed or Native network) is a rapyuta.io resource to enable ROS communication between different ROS package deployments. Binding a network resource to your deployment will enable other deployments on the same network to consume ROS topics/services/actions as defined in the package. 
+ROS network (Routed or Native network) is a rapyuta.io resource to enable ROS communication between different ROS environment. Binding a network resource to your deployment will enable other deployments on the same network to consume ROS topics/services/actions as defined in the package. 
 Data flow occurs only when another package chooses to subscribe to a topic, call a service or call an action. 
 
-#### Illustrated Example
-For the purpose of this illustration, let's assume the following network and packages.
-
-* You have a routed network __networkN__
-* You have __PackageA__ publishing _“topicA”_
-* You have __PackageB__ publishing _“serviceB”_
-
-We deploy the packages described above in the following configuration.
-
-* Deploy __PackageA__ binding to the network __networkN__ as _DeploymentA_
-* Deploy __PackageB__ binding to the network __networkN__ as _DeploymentB_
-
-The result is as follows 
-
-* ROS nodes in  _DeploymentA_ can now call _“serviceB”_
-* ROS nodes in  _DeploymentB_ can now subscribe to _“topicA”_
-
-A routed network can be deployed to a cloud or a device. But a native network can be deployed only on the cloud.
 
 
-## Cloud Routed Network
+
+## Routed Network
+ 
+A Routed network is a rapyuta.io resource to enable ROS communication between different ROS environments. Binding a routed network resource to your deployment will enable other deployments on the same network to consume ROS topics/services/actions as defined in the package. Data flow occurs only when another package chooses to subscribe to a topic, call a service or call an action
+
+### Multi-Robot Communication Using Routed Network
+
+Avoid complex hardcoded logic in launchfiles that lives with the source code
+or binary and automatically add/remove prefixes to ROS interfaces(topics/services/actions).
+Additionally, it is more flexible/dynamic to assign and use deploy-time identities
+than hard-coded robot names. 
+
+The process of assigning an identity to a robot and the mechanisms to
+consume/discover identities of all alive robots is described in the ROS environment aliases topic.
+
+The mechanisms and features offered by the platform to deal with automatic prefix addition and removal is described in th scoping and targeting topics.
+
+#### ROS Environment Aliases: runtime identity assignment 
+When __deploying a component__ to a robot in a multi-robot scenario,
+the platform expects the user to input a unique alias per component
+, thereby, assigning a stable identity to that deployment for the
+period of its lifetime.
+
+This __alias__ defined at deploy-time __uniquely identifies__ the robot
+in the __scope of an ensemble__ of connected peers.
+
+All __components in the same package__ (each potentially deployed in a
+physically different device/location) or __linked dependent deployments__
+are considered a __part of an ensemble__.
+
+The platform detects duplicates aliases explicitly for the case of
+components and deployment and its immediate parent. 
+
+{{% notice info %}}
+This alias is available to Deployment Executables (both cloud and device) through **RIO_ROS_ENV_ALIAS** environment variable.
+{{% /notice %}}
+
+{{% notice note %}}
+In the case of siblings (two deployments depending on the same parent), the component with
+a duplicate alias is considered a conflict and may enter an error
+state. The user must be careful and ensure the uniqueness of identities
+present in this case.
+{{% /notice %}}
+
+#### Discovering peers in an ensemble
+rapyuta.io automatically exposes a latched ROS topic
+__/rapyuta_io_peers__ of type *std_msgs/String*, which contains the
+list of all connected peers aliases, the first
+entity is always the alias of the local bridge.
+
+For example, **My_alias,peer_1,peer_2**
+
+The end-user can potentially use this in their ROS applications for
+discovering connected robots.
+
+{{% notice note %}}
+There may be more than one bridge locally depending on how you
+deployed the packages and components so you may receive multiple
+messages. In each case, the first element is always the alias of the
+bridge that published this message.
+{{% /notice %}}
+
+#### Scoping: auto prefix or namespace by self identity
+In this configuration, a user may declare a topic/service/action
+as ***scoped*** by selecting the **Scoped** option. 
+
+This indicates that when a component is deployed its local ROS interfaces
+(topic/service/action) get __automatically prefixed/namespaced bits own dynamic identity__
+(its own ROS environment alias) __as seen by all other robots/peers__ in
+the ensemble in their respective ROS graph.
+
+For example, suppose robotA publishes */odom* topic in its local
+ROS environment. While routing */odom* to either of the robot
+peers (for instance a controller) the topic is prefixed with that
+specific robot’s name, in this case, */robotA/odom*.
+
+![Scoped topic](/images/multi-robot-communication/scoped-topic.png?classes=border,shadow&width=50pc)
+
+You can express ***scoped*** as:
+A scoped topic is a mapping from a /topic to /robot-peer-name/topic.
+{{% notice info %}}
+**/odom -------> /robotP/odom**
+{{% /notice %}}
+
+![Scoped topic as shown](/images/multi-robot-communication/scoped-as-shown.png?classes=border,shadow&width=50pc)
+
+{{% notice note %}}
+If in the ROSmsg logs you experience the error: ***incoming connection failed: unable to receive data from sender, check sender's logs for details***, please ignore it. The error message is generated by ROS internally as a side effect of the sniffing done by the cloud bridge so as to determine metadata related to ROS message type for the service. It has no other effects on your code and/or the code's functionality, and you can safely ignore it.
+{{% /notice %}}
+
+#### Targeting: auto prefix or namespace unwrapping for peers
+In this configuration, a user may declare a topic/service/action as ***targeted***
+by selecting the **Targeted** option. 
+
+This indicates that when a component is deployed its local
+ROS interfaces (topic/service/action)
+__containing a prefix/namespace corresponding to another individual peer's dynamic identitiy__
+(peers ROS environment alias)
+gets __routed to the corresponding peer__ and
+__automatically unwraps the prefix/namespace__ in its ROS graph.
+
+For example, suppose robots in a particular scenario subscribe to the
+topic */cmd_vel* to move and a central controller needs to ask a
+specific robot, say robotA, to move, then it needs to be able to target
+only robotA and send messages to its */cmd_vel* subscription.
+
+The controller in the above scenario publishes */robotA/cmd_vel* topic.
+While routing */robotA/cmd_vel* the bridge strips the prefix ***robotA***
+and publish the messages on the topic ***/cmd_vel*** in robotA’s local ROS
+environment.
+
+![Targeted topic](/images/multi-robot-communication/targeted-topic.png?classes=border,shadow&width=50pc)
+
+You can express ***targeted*** as:
+A targeted topic is a mapping from /robot-alias/topic to /topic.
+{{% notice info %}}
+**/robotP/cmd_vel -----------> /cmd_vel**
+{{% /notice %}}
+
+![Targeted topic as shown](/images/multi-robot-communication/target-as-shown.png?classes=border,shadow&width=50pc)
+
+#### Targeting and Inbound ROS Interfaces
+
+When a package allows for inbound ROS interfaces, you must provide hints to leverage the automatic
+targeting feature. The platform introspects the package to determine if it must enforce the unique identity constraints required for multi-robot communication.
+
+As the platform follows a provider only semantic, determining this is
+straightforward for ***scoped*** as it is based on the identity of the deployment
+itself. It gets complicated for targeting as this depends on the identity of
+other peers. When a package is the first to be deployed (or root in any particular subtree of dependants) it becomes necessary to provide a hint to indicate that
+the interfaces will participate in communication topologies that require the
+presence of a stable unique identity.
+
+To provide this hint while creating the package, in the *Additional Information*
+section, when one adds inbound ROS topics/services/actions one can select the
+***can be targeted***. This metadata is used by the platform to
+bridge communications and enforce alias constraints.
+
+![Can be targeted](/images/multi-robot-communication/can-be-targeted.png?classes=border,shadow&width=50pc)
+
+![Inbound targeted](/images/multi-robot-communication/inbound-targeted.png?classes=border,shadow&width=50pc)
+
+![Substitute](/images/multi-robot-communication/substitute.png?classes=border,shadow&width=50pc)
+
+
+
+### Cloud Routed Network
 
 When a user deploys a routed network to the cloud it is considered a cloud routed network. Any compute resources (CPU/memory) consumed by this routed network deployment count against your cloud deployment hours quota.
 
 Package deployments in the cloud __OR__ device can bind to a cloud routed network.
+
+#### Resource Limit
 
 When creating a cloud routed network, the **Resource limit** field defines the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can choose the resource limit of a routed network based on the following requirements.
 
@@ -65,7 +195,7 @@ When creating a cloud routed network, the **Resource limit** field defines the m
 * QOS of ROS message
 * number of publishers/subscribers that will be active under a particular routed network
 
-## Device Routed Network
+### Device Routed Network
 
 In certain cases where communication is latency-sensitive or has high throughput, the user can choose to deploy a routed network to a device. While avoiding a round trip of information to the cloud minimizes latency and allows for better throughput **ONLY** deployments on devices on the same local area network can bind to it.
 
@@ -78,16 +208,33 @@ On reboot, devices configured using DHCP may boot up with a new IP address and t
 
 ## Native Network
 
-Native Network allows you to communicate with different packages or nodes that are deployed in the cloud within the same local area network. This eliminates the need of creating a separate routed network for the local communication and significantly decreases the latency and provides better performance for local communication between ROS nodes. 
+Native network allows you to communicate between different ROS environments that are deployed in the cloud or devices (within the same local area networks). This eliminates the need of creating a separate routed network for the local communication and significantly decreases the latency and provides better performance for local communication between ROS nodes
 
-  The native network also works effectively with more than one ROS master by using the [FKIE multimaster](https://github.com/fkie/multimaster_fkie) tool and maintains the communication in peer to peer manner. You can create more than one native network for redundancy.
+In case of native network, all the connected ROS environments can discover each oher and the communication happen in peer-to-peer manner. Each ROS environment has its own ROS master and the rapyuta.io platform uses a component using FKIE multimaster for peer-to-peer manner.
 
-  {{%notice note%}}
-  Native Network is a beta feature and is currently supported on cloud runtime.
-  {{%/notice%}}
+### Multi-Robot Communication Using Native Network 
+
+
   {{% notice note %}}
   Native Network doesn’t support scoped or targeted topic (service or action) directly. The topics are whitelisted in the form of **/*/topics** and you can remap these topics for communication. For more information on remapping, [click here](http://wiki.ros.org/roslaunch/XML/remap).
 
   {{% /notice%}}
 
+### Cloud Native Network
 
+Cloud native Network allows you to communicate between different ROS environments that are deployed in the cloud within the same local area network.
+
+When creating a cloud routed network, the **Resource limit** field defines the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can choose the resource limit of a routed network based on the following requirements.
+
+* size of ROS messages
+* frequency of ROS messages
+* number of topics/services/actions
+* QOS of ROS message
+* number of publishers/subscribers that will be active under a particular routed network
+
+
+### Device Native Network
+
+{{%notice note%}}
+Native Network is a beta feature and is currently supported on cloud runtime only.
+  {{%/notice%}}
