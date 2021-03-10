@@ -28,7 +28,7 @@ introLinks: {}
 tags:
     - Deep Dive
 ---
-A Routed network is a rapyuta.io resource to enable ROS communication between different ROS environments. Binding a routed network resource to your deployment will enable other deployments on the same network to consume ROS topics/services/actions as defined in the package. Data flow occurs only when another package chooses to subscribe to a topic, call a service or call an action
+A Routed network is a rapyuta.io resource to enable ROS communication between different ROS environments. Binding a routed network resource to your deployment will enable other deployments on the same network to consume ROS topics/services/actions as defined in the package. Data flow occurs only when another package chooses to subscribe to a topic, call a service or call an action.
 
 The rapyuta.io platform relies on a sub-component called the cloud bridge for implicitly establishing a communication channel between two or more ROS environments. It is an application-level bridge that offers many compelling features to ROS developers including augmented ROS over the public internet and dedicated features for dynamic multi-robot ROS communication.
 

@@ -30,16 +30,16 @@ tags:
 ---
 {{%notice note%}}
 Native Network is a beta feature.
-  {{%/notice%}}
+{{%/notice%}}
 
-A native network allows you to communicate between different ROS environments that are deployed in the cloud or devices (within the same local area networks). This eliminates the need of creating a separate routed network for the local communication and significantly decreases the latency and provides better performance for local communication between ROS nodes
+A native network allows you to communicate between different ROS environments that are deployed in the cloud or devices (within the same local area networks) within the same local area network. This eliminates the need of creating a separate routed network for the local communication and significantly decreases the latency as the communication doesn't involve a cloud bridge for individual ROS environments for communication and the platform uses a sub-component based on [FKIE multimaster](https://github.com/fkie/multimaster_fkie) for this.
 
-In case of native network, all the connected ROS environments can discover each other and the communication happen in peer-to-peer manner. Each ROS environment has its own ROS master and the rapyuta.io platform uses a component using [FKIE multimaster]() for peer-to-peer manner.
+In case of native network, all the connected ROS environments can discover each other and the communication happens in a peer-to-peer manner. Each ROS environment has its own ROS master and the rapyuta.io platform uses a sub-component using [FKIE multimaster](https://github.com/fkie/multimaster_fkie) to achieve it.
 
 
 ### Cloud Native Network
 
-Cloud native network allows you to communicate between different ROS environments that are deployed in the cloud within the same local area network.
+When you deploy a native network to the cloud, it is considered as a cloud native network.
 
 When creating a cloud routed network, the **Resource limit** field defines the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can choose the resource limit of a routed network based on the following requirements.
 
@@ -56,7 +56,7 @@ For the use case, let's take an example of 3 ROS packages:
 
 * package_A, package_B, and package_C are deployed in 3 devices respectively in a warehouse sharing the same local area network.
 
-We want to establish a communication between these 3  ROS packages. We can achieve the communication by using a routed network. However, using a routed network involves cloudbridges for each ROS environment that adds latency when service/action/topics are being called in the same local area network. To simplify this communication, you can use a native network that serves the best medium for communication.
+We want to establish communication between these 3  ROS packages. We can establish the communication by using a routed network. However, using a routed network involves cloudbridges for each ROS environment that adds latency when service/action/topics are being called in the same local area network. To simplify this communication, you can use a native network that serves as the best medium for communication.
 
 * Deploy package_A binding to the native network, native_network_1, as deployment_A.
 * Deploy package_B binding to the native network, native_network_1, as deployment_B.
@@ -78,11 +78,11 @@ Currently supported on cloud runtime only.
 
   * Communication is happening in a peer-peer manner, that means that diff ROS masters or environments are connected via platform using a sub-component based on [FKIE multi master nodes](https://github.com/fkie/multimaster_fkie) for discovery and sync.
 
-  * Platform only whitelists the topics/service mentioned in the package component, and the platform don't interpret or listen to the data flowing between them unlike in routed networks.
+  * Platform only whitelists the topics/service mentioned in the package component, and the platform doesn't interpret or listen to the data flowing between them unlike in routed networks.
 
   * Native Network doesn’t support scoped or targeted topics (service or action) directly. The topics are whitelisted in the form of **/*/topics** and you can remap these topics for communication. For more information on remapping, [click here](http://wiki.ros.org/roslaunch/XML/remap). You should also add namespaces to the whitelisted topics/services/actions as the platform doesn't automatically append the scoped or targetted topics like in routed networks.
 
-  * Subscription information is only shared between ROS masters connected to Native networks only if a topic/service is whitelisted in package component
+  * Subscription information is only shared between ROS masters connected to Native networks only if a topic/service is whitelisted in a package component.
 
 
 {{%notice note%}}
