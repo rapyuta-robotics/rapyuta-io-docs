@@ -47,7 +47,11 @@ When creating a cloud routed network, the **Resource limit** field defines the m
 * frequency of ROS messages
 * number of topics/services/actions
 * QOS of ROS message
-* number of publishers/subscribers that will be active under a particular routed network
+* number of publishers/subscribers that will be active under a particular routed network.
+
+{{%notice note%}}
+You can create more than one cloud native networks for redundancy.
+{{%/notice%}}
 
 
 #### Use Cases
@@ -65,6 +69,15 @@ We want to establish communication between these 3  ROS packages. We can establi
 The result is as follows
 
 * We have established a communication between the packages in the same local area network by using a native network.
+
+#### Pros 
+
+* Communication through a native network doesn't require a cloud bridge component there by eliminating the latency in each hop-on of messages as in case of a routed network. This results a low-latency communication.
+
+
+#### Cons
+
+* The cloud native network is only applicable only for local communication.** Need to check this
 
 
 ### Device Native Network
