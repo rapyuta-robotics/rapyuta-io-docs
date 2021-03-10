@@ -103,7 +103,7 @@ When you subscribe to a topic from a different ROS environment, this subscriber 
 ### Device Native Network
 
 {{%notice note%}}
-Currently supported for cloud runtime only. You can use a routed network instead of a device native network as of now. 
+Currently supported for cloud runtime only. You can use a routed network instead of a [device native network](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/#device-routed-network) as of now. 
   {{%/notice%}}
 
 

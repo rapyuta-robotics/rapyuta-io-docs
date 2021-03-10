@@ -90,7 +90,10 @@ Routed networks can be deployed to a device with the following parameters:
 * **Device**: Any online device with docker runtime and AMD64 architecture
 * **Device IP Interface**: network interface (i.e., an IP address) that will be used by other deployments for communication to this routed network.
 * **Restart policy**: Kindly refer to the [restart policy](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
+
+{{%notice info%}}
 On reboot, devices configured using DHCP may boot up with a new IP address and the network configuration of a deployed routed network becomes invalid. This can be avoided by assigning a static IP to the device you intend to deploy a routed network to esp in production systems.
+{{%/notice%}}
 
 #### Use Case
 
