@@ -28,15 +28,23 @@ introLinks: {}
 tags:
     - Deep Dive
 ---
-A Routed network is a rapyuta.io resource to enable ROS communication between different ROS environments. Binding a routed network resource to your deployment will enable other deployments on the same network to consume ROS topics/services/actions as defined in the package. Data flow occurs only when another package chooses to subscribe to a topic, call a service or call an action.
+A routed network allows you to communicate between different ROS environments in the following.
 
-The rapyuta.io platform relies on a sub-component called the cloud bridge for implicitly establishing a communication channel between two or more ROS environments. It is an application-level bridge that offers many compelling features to ROS developers including augmented ROS over the public internet and dedicated features for dynamic multi-robot ROS communication.
+* ROS environments that are deployed in the cloud.
+* ROS environments that are deployed in the device (can be in same or different networks)
+* A combination of both
+
+{{%notice info%}}
+To reduce the latency, it's advised to use native network within the same local area network. For more information, [click here](/5_deep-dives/53_networking-and-communication/535_ros-network-native/).
+{{%/notice%}}
+
+In case of routed network, the rapyuta.io platform relies on a sub-component called the cloud bridge for implicitly establishing a communication channel between two or more ROS environments. It is an application-level bridge that offers many compelling features to ROS developers including augmented ROS over the public internet and dedicated features for dynamic multi-robot ROS communication. 
 
 ### Cloud Routed Network
 
 When a user deploys a routed network to the cloud it is considered a cloud routed network. Any compute resources (CPU/memory) consumed by this routed network deployment count against your cloud deployment hours quota.
 
-Package deployments in the cloud __OR__ device can bind to a cloud routed network.
+Package deployments in the cloud __OR__ device can connect to a cloud routed network.
 
 #### Resource Limit for Cloud Routed Network
 
@@ -48,13 +56,13 @@ When creating a cloud routed network, the **Resource limit** field defines the m
 * QOS of ROS message
 * number of publishers/subscribers that will be active under a particular routed network
 
-#### Use Cases
+#### Use Case
 
 For the use case, let's take an example of 3 ROS packages: 
 
 * package_A and package_B are deployed in two different devices at different warehouses and package_C is deployed in the cloud. 
 
-We want to establish a communication between 3 different ROS packages publishing and subscribing to each other. To overcome the heterogeneous infrastructure of networks between different packages, we can create a cloud routed network, for example, cloud_network_1, and bind it to the deployments of each package as described in the following.
+We want to establish a communication between 3 different ROS packages publishing and subscribing to each other. To overcome the heterogeneous infrastructure of networks between different packages, we can create a cloud routed network, for example, cloud_network_1, and use it at the time of deployments of each package as described in the following.
 
 * Deploy package_A binding to the cloud routed network, cloud_network_1, as deployment_A.
 * Deploy package_B binding to the cloud routed network, cloud_network_1, as deployment_B.
@@ -67,7 +75,7 @@ The result is as follows
 #### Pros 
 
 * Communication between different ROS environment in heterogenious network is possible as each ROS environment has its own cloud bridge that connects to the cloud routed network for communication.
-* Ease of establishing a communication by creating and deploying a cloud routed network.
+* Augmented ROS communication over the public internet and dedicated features for dynamic multi-robot ROS communication.
 
 #### Cons
 
@@ -84,13 +92,13 @@ Routed networks can be deployed to a device with the following parameters:
 * **Restart policy**: Kindly refer to the [restart policy](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
 On reboot, devices configured using DHCP may boot up with a new IP address and the network configuration of a deployed routed network becomes invalid. This can be avoided by assigning a static IP to the device you intend to deploy a routed network to esp in production systems.
 
-#### Use Cases
+#### Use Case
 
 For the use case, let's take an example of 3 ROS packages:  
 
 * package_A, package_B, and package_C are deployed in 3 devices respectively in a warehouse sharing the same local area network.
 
-We want to establish a communication between these 3  ROS packages. We can achieve the communication by using a cloud routed network. However, using a cloud routed network might cause a latency in the  communication even if the devices are sharing the same local area network. To avoid this,  you can use device routed network and bind the packages to it.   
+We want to establish a communication between these 3  ROS packages.  You can use a device routed network and use it at the time of deployments of each package as described in the following.  
 
 * Deploy package_A binding to the device routed network, device_network_1, as deployment_A.
 * Deploy package_B binding to the device routed network, device_network_1, as deployment_B.
@@ -99,6 +107,8 @@ We want to establish a communication between these 3  ROS packages. We can achie
 The result is as follows
 
 * We have established a communication between the packages in the same routed network.
+
+Info: We can achieve the communication by using a cloud routed network. However, using a cloud routed network might cause a latency in the  communication even if the devices are sharing the same local area network.
 
 #### Pros 
 
@@ -110,6 +120,8 @@ The result is as follows
 
 
 ### Multi-Robot Communication
+
+Read scenarios hyperlink to http://localhost:1313/5_deep-dives/53_networking-and-communication/534_ros-communication/#illustrating-a-multi-robot-scenario
 
 Avoid complex hardcoded logic in launchfiles that lives with the source code
 or binary and automatically add/remove prefixes to ROS interfaces(topics/services/actions).

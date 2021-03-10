@@ -30,17 +30,26 @@ tags:
 
 ---
 
-ROS network is a rapyuta.io resource to enable ROS communication between different ROS package deployments. Binding a network resource to your deployment will enable other deployments on the same network to consume ROS topics/services/actions as defined in the package. Data flow occurs only when another package chooses to subscribe to a topic, call a service or call an action.
+The rapyuta.io platform relies on a resource called ROS network for establishing a communication channel between two or more ROS environments.
+
+Using a network resource to your deployment will enable other deployments on the same network to consume ROS topics/services/actions as defined in the package component. Data flow occurs only when another package chooses to subscribe to a topic, call a service or call an action.
 
 
 ## ROS Network Types
 
-* [Routed Network]()
-* [Native network]()
+* [Routed Network](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/): A routed network allows you to communicate between different ROS environments in the following.
+
+  * ROS environments that are deployed in the cloud.
+  * ROS environments that are deployed in the device (can be in same or different networks)
+  * A combination of both
+  * 
+* [Native network](/5_deep-dives/53_networking-and-communication/535_ros-network-native/): A native network allows you to communicate between different ROS environments that are deployed either in the cloud or devices when they are in same network.  
+
+
 
 #### Illustrated Example
 
-For the purpose of this illustration, let’s assume the following network and packages.
+For this illustration, let’s assume the following network and packages.
 
 * You have a routed network networkN
 * You have PackageA publishing “topicA”
@@ -55,6 +64,7 @@ The result is as follows
 
 * ROS nodes in DeploymentA can now call “serviceB”
 * ROS nodes in DeploymentB can now subscribe to “topicA”
+
 
 ## Multi-Robot ROS Communication
 
