@@ -95,15 +95,14 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
     2. For **Component Runtime**, click **Cloud**.
     3. Ensure **Is ROS Component** is selected.
     4. Ensure the **ROS Version** is **Kinetic**.
-    5. S
-    6. In the **Executable Name** box, type in a name for the executable, for example,
+    5. In the **Executable Name** box, type in a name for the executable, for example,
        `listenerExecutable`   
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-    7. For **Executable Type**, click on **Builds**.
-    8. In the **Choose Build** select the second Build `io-tutorials-arm32v7` from the drop-down list.
-    9. In the **Command to run in the docker container** box, enter the command:
+    6. For **Executable Type**, click on **Builds**.
+    7. In the **Choose Build** select the second Build `io-tutorials-arm32v7` from the drop-down list.
+    8. In the **Command to run in the docker container** box, enter the command:
         ```bash
         roslaunch listener listener.launch
         ```
@@ -112,7 +111,7 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
         [ROS Master](https://wiki.ros.org/Master) instead of running the *rosrun*
         command, because the ROS Master will fail to start on _rosrun_, and
         eventually, the deployment will fail as well.
-    10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+    9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ## Create a Native Network
 A native network allows you to establish ROS communication between different ROS environments within the same local area network. Binding a native network resource to your deployment will enable other deployments on the same native network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
@@ -125,7 +124,7 @@ Perform the following procedure to create a routed network.
 4. Select **ROS Distro**, as   **Kinetic**.
 5. Select the **Runtime** as **Cloud**.
 6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
-![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)
+
 7. Click **CONTINUE** and wait for the routed network to be successfully running.
 
 
@@ -139,7 +138,7 @@ follow the steps:
 4. In the **Name of deployment** box, enter a name for the deployment you are
    creating say `Docker Publisher Subscriber Deployment`.
 5. Click on **Native NETWORK** > **Add**, select the routed network, `cloud_native_network_1`, from the drop-down list.
-8. Click **CREATE DEPLOYMENT** > **Confirm**.
+6. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** page where a green colored bar
 moves from **In progress** to **Succeeded** with **Status:Running** indicating that the **DEPLOYMENT PHASE** has **Succeeded**, and the **STATUS** is **Running**.

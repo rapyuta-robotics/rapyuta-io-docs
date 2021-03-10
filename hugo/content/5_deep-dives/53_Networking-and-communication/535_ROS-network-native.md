@@ -99,11 +99,11 @@ Currently supported for cloud runtime only. You can use a routed network instead
 
 ### Multi-Robot Communication 
 
-  * Communication is happening in a peer-peer manner, which means different ROS masters or environments are connected via platform using a sub-component based on [FKIE multi master nodes](https://github.com/fkie/multimaster_fkie) (master-discovery and master-sync). These two nodes are responsible for establishing the communication between ROS masters that are in the same network.
+* Communication is happening in a peer-peer manner, which means different ROS masters or environments are connected via platform using a sub-component based on [FKIE multi master nodes](https://github.com/fkie/multimaster_fkie) (master-discovery and master-sync). These two nodes are responsible for establishing the communication between ROS masters that are in the same network.
 
-  * Platform only whitelists the topics/service mentioned in the package component, and the platform doesn't interpret or listen to the data flowing between them unlike in case of a routed network thus reducing the latency. It only shares publisher/service information on the network.
+* Platform only whitelists the topics/service mentioned in the package component, and the platform doesn't interpret or listen to the data flowing between them unlike in case of a routed network thus reducing the latency. It only shares publisher/service information on the network.
 
-  * Scoped or targeted topics (service or action) are the functionalities of a routed network. In the case of a native network, topics are whitelisted in the form of **/*/topics** and you can use remap or add namespaces to these topics for communication. For more information on remapping, [click here](http://wiki.ros.org/roslaunch/XML/remap). 
+* Scoped or targeted topics (service or action) are the functionalities of a routed network. In the case of a native network, topics are whitelisted in the form of **/*/topics** and you can use remap or add namespaces to these topics for communication. For more information on remapping, [click here](http://wiki.ros.org/roslaunch/XML/remap). 
 
 
 {{%notice note%}}

@@ -42,7 +42,6 @@ Using a network resource to your deployment will enable other deployments on the
   * ROS environments that are deployed in the cloud.
   * ROS environments that are deployed in the device (can be in same or different networks)
   * A combination of both
-  * 
 * [Native network](/5_deep-dives/53_networking-and-communication/535_ros-network-native/): A native network allows you to communicate between different ROS environments that are deployed either in the cloud or devices when they are in same network.  
 
 
