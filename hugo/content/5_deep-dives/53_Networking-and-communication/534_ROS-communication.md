@@ -30,14 +30,35 @@ tags:
 
 ---
 
-The rapyuta.io platform uses either a routed or native network
-for establishing a communication channel between two or more
-ROS environments. 
+ROS network is a rapyuta.io resource to enable ROS communication between different ROS package deployments. Binding a network resource to your deployment will enable other deployments on the same network to consume ROS topics/services/actions as defined in the package. Data flow occurs only when another package chooses to subscribe to a topic, call a service or call an action.
 
+
+## ROS Network Types
+
+* [Routed Network]()
+* [Native network]()
+
+#### Illustrated Example
+
+For the purpose of this illustration, let’s assume the following network and packages.
+
+* You have a routed network networkN
+* You have PackageA publishing “topicA”
+* You have PackageB publishing “serviceB”
+
+We deploy the packages described above in the following configuration.
+
+* Deploy PackageA binding to the network networkN as DeploymentA
+* Deploy PackageB binding to the network networkN as DeploymentB
+
+The result is as follows
+
+* ROS nodes in DeploymentA can now call “serviceB”
+* ROS nodes in DeploymentB can now subscribe to “topicA”
 
 ## Multi-Robot ROS Communication
 
-  The rapyuta.io platform offers an elegant solution for multiple robots communication as a primary feature. In the rapyuta paradigm, the component of each package is treated as an isolated ROS environment. While declaring the package you are only required to provide the topics/services/actions to be exposed by that particular component. The platform is then responsible for connecting, managing and securing the ROS environments together. We introduce a set of new features aimed at making it a lot easier to use multiple robots.
+  The rapyuta.io platform offers an elegant solution for multiple robots communication as a primary feature. In the rapyuta paradigm, the component of each package is treated as an isolated ROS environment. While declaring the package, you are only required to provide the topics/services/actions to be exposed by that particular component. The platform is then responsible for connecting, managing, and securing the ROS environments together. We introduce a set of new features aimed at making it a lot easier to use multiple robots.
 
 ### Illustrating a Multi-Robot Scenario
 
@@ -50,7 +71,7 @@ ROS environments.
   * A player moves to a position when it receives a message on the */move* topic
   * A player publishes its pose and location through */odom*.
 
-  Now if the coach (controller) needs to use this information from all players(robots) in the field.To deal with multiple players(robots) it is necessary to create a convention that allows him to specifically access information about one specific player(robot) and issue commands to one specific player(robot). 
+  Now if the coach (controller) needs to use this information from all players(robots) in the field. To deal with multiple players(robots), it is necessary to create a convention that allows him to specifically access information about one specific player(robot) and issue commands to one specific player(robot). 
 
   In the ROS community, the common approach used in multi-robot communication scenarios is to __prefix or namespace__ the interfaces (topics/services/actions) __by a unique identity__ typically the name of the robot. 
 
@@ -63,15 +84,4 @@ ROS environments.
 
 
 ![Robot soccer block diagram](/images/multi-robot-communication/robotSoccer-blk-diagram.png?classes=border,shadow&width=50pc)
-
-## ROS Network Types
-
-To address the problem of multi robot communication, the rapyuta.io platform uses the following network types.
-
-* Routed Network
-* Native network
-
-### Use case of Routed Network
-
-For this example, 
 

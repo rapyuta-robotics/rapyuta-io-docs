@@ -1,6 +1,6 @@
 ---
 
-title: "ROS Networks"
+title: "ROS Routed Networks"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 
 weight: 531
@@ -28,17 +28,88 @@ introLinks: {}
 tags:
     - Deep Dive
 ---
-ROS network (Routed or Native network) is a rapyuta.io resource to enable ROS communication between different ROS environment. Binding a network resource to your deployment will enable other deployments on the same network to consume ROS topics/services/actions as defined in the package. 
-Data flow occurs only when another package chooses to subscribe to a topic, call a service or call an action. 
-
-
-
-
-## Routed Network
- 
 A Routed network is a rapyuta.io resource to enable ROS communication between different ROS environments. Binding a routed network resource to your deployment will enable other deployments on the same network to consume ROS topics/services/actions as defined in the package. Data flow occurs only when another package chooses to subscribe to a topic, call a service or call an action
 
-### Multi-Robot Communication Using Routed Network
+The rapyuta.io platform relies on a sub-component called the cloud bridge for implicitly establishing a communication channel between two or more ROS environments. It is an application-level bridge that offers many compelling features to ROS developers including augmented ROS over the public internet and dedicated features for dynamic multi-robot ROS communication.
+
+### Cloud Routed Network
+
+When a user deploys a routed network to the cloud it is considered a cloud routed network. Any compute resources (CPU/memory) consumed by this routed network deployment count against your cloud deployment hours quota.
+
+Package deployments in the cloud __OR__ device can bind to a cloud routed network.
+
+#### Resource Limit for Cloud Routed Network
+
+When creating a cloud routed network, the **Resource limit** field defines the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can choose the resource limit of a routed network based on the following requirements.
+
+* size of ROS messages
+* frequency of ROS messages
+* number of topics/services/actions
+* QOS of ROS message
+* number of publishers/subscribers that will be active under a particular routed network
+
+#### Use Cases
+
+For the use case, let's take an example of 3 ROS packages: 
+
+* package_A and package_B are deployed in two different devices at different warehouses and package_C is deployed in the cloud. 
+
+We want to establish a communication between 3 different ROS packages publishing and subscribing to each other. To overcome the heterogeneous infrastructure of networks between different packages, we can create a cloud routed network, for example, cloud_network_1, and bind it to the deployments of each package as described in the following.
+
+* Deploy package_A binding to the cloud routed network, cloud_network_1, as deployment_A.
+* Deploy package_B binding to the cloud routed network, cloud_network_1, as deployment_B.
+* Deploy package_C binding to the cloud routed network, cloud_network_1, as deployment_C.
+
+The result is as follows
+
+* We have established a communication between the packages deployed at different locations with a heterogeneous network.
+
+#### Pros 
+
+* Communication between different ROS environment in heterogenious network is possible as each ROS environment has its own cloud bridge that connects to the cloud routed network for communication.
+* Ease of establishing a communication by creating and deploying a cloud routed network.
+
+#### Cons
+
+* The cloud routed network doesn't serve well in latency-sensitive communications. 
+
+### Device Routed Network
+
+In certain cases where communication is latency-sensitive or has high throughput, the user can choose to deploy a routed network to a device. While avoiding a round trip of information to the cloud minimizes latency and allows for better throughput **ONLY** deployments on devices on the same local area network can bind to it.
+
+Routed networks can be deployed to a device with the following parameters:
+
+* **Device**: Any online device with docker runtime and AMD64 architecture
+* **Device IP Interface**: network interface (i.e., an IP address) that will be used by other deployments for communication to this routed network.
+* **Restart policy**: Kindly refer to the [restart policy](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
+On reboot, devices configured using DHCP may boot up with a new IP address and the network configuration of a deployed routed network becomes invalid. This can be avoided by assigning a static IP to the device you intend to deploy a routed network to esp in production systems.
+
+#### Use Cases
+
+For the use case, let's take an example of 3 ROS packages:  
+
+* package_A, package_B, and package_C are deployed in 3 devices respectively in a warehouse sharing the same local area network.
+
+We want to establish a communication between these 3  ROS packages. We can achieve the communication by using a cloud routed network. However, using a cloud routed network might cause a latency in the  communication even if the devices are sharing the same local area network. To avoid this,  you can use device routed network and bind the packages to it.   
+
+* Deploy package_A binding to the device routed network, device_network_1, as deployment_A.
+* Deploy package_B binding to the device routed network, device_network_1, as deployment_B.
+* Deploy package_C binding to the device routed network, device_network_1, as deployment_C.
+
+The result is as follows
+
+* We have established a communication between the packages in the same routed network.
+
+#### Pros 
+
+* Creates a low-latency communication as there is no need of a roundtrip of communication through cloud.
+
+#### Cons
+
+* Communication through a device routed network is only possible for the ROS environments sharing the same local area network and the packages deployed in the devices.
+
+
+### Multi-Robot Communication
 
 Avoid complex hardcoded logic in launchfiles that lives with the source code
 or binary and automatically add/remove prefixes to ROS interfaces(topics/services/actions).
@@ -48,7 +119,7 @@ than hard-coded robot names.
 The process of assigning an identity to a robot and the mechanisms to
 consume/discover identities of all alive robots is described in the ROS environment aliases topic.
 
-The mechanisms and features offered by the platform to deal with automatic prefix addition and removal is described in th scoping and targeting topics.
+The mechanisms and features offered by the platform to deal with automatic prefix addition and removal is described in the scoping and targeting topics.
 
 #### ROS Environment Aliases: runtime identity assignment 
 When __deploying a component__ to a robot in a multi-robot scenario,
@@ -120,7 +191,7 @@ A scoped topic is a mapping from a /topic to /robot-peer-name/topic.
 ![Scoped topic as shown](/images/multi-robot-communication/scoped-as-shown.png?classes=border,shadow&width=50pc)
 
 {{% notice note %}}
-If in the ROSmsg logs you experience the error: ***incoming connection failed: unable to receive data from sender, check sender's logs for details***, please ignore it. The error message is generated by ROS internally as a side effect of the sniffing done by the cloud bridge so as to determine metadata related to ROS message type for the service. It has no other effects on your code and/or the code's functionality, and you can safely ignore it.
+If in the ROS message logs you experience the error: ***incoming connection failed: unable to receive data from sender, check sender's logs for details***, please ignore it. The error message is generated by ROS internally as a side effect of the sniffing done by the cloud bridge to determine metadata related to ROS message type for the service. It has no other effects on your code and/or the code's functionality, and you can safely ignore it.
 {{% /notice %}}
 
 #### Targeting: auto prefix or namespace unwrapping for peers
@@ -177,64 +248,3 @@ bridge communications and enforce alias constraints.
 
 ![Substitute](/images/multi-robot-communication/substitute.png?classes=border,shadow&width=50pc)
 
-
-
-### Cloud Routed Network
-
-When a user deploys a routed network to the cloud it is considered a cloud routed network. Any compute resources (CPU/memory) consumed by this routed network deployment count against your cloud deployment hours quota.
-
-Package deployments in the cloud __OR__ device can bind to a cloud routed network.
-
-#### Resource Limit
-
-When creating a cloud routed network, the **Resource limit** field defines the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can choose the resource limit of a routed network based on the following requirements.
-
-* size of ROS messages
-* frequency of ROS messages
-* number of topics/services/actions
-* QOS of ROS message
-* number of publishers/subscribers that will be active under a particular routed network
-
-### Device Routed Network
-
-In certain cases where communication is latency-sensitive or has high throughput, the user can choose to deploy a routed network to a device. While avoiding a round trip of information to the cloud minimizes latency and allows for better throughput **ONLY** deployments on devices on the same local area network can bind to it.
-
-Routed networks can be deployed to a device with the following parameters:
-
-* **Device**: Any online device with docker runtime and AMD64 architecture
-* **Device IP Interface**: network interface (i.e., an IP address) that will be used by other deployments for communication to this routed network.
-* **Restart policy**: Kindly refer to the [restart policy](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
-On reboot, devices configured using DHCP may boot up with a new IP address and the network configuration of a deployed routed network becomes invalid. This can be avoided by assigning a static IP to the device you intend to deploy a routed network to esp in production systems.
-
-## Native Network
-
-Native network allows you to communicate between different ROS environments that are deployed in the cloud or devices (within the same local area networks). This eliminates the need of creating a separate routed network for the local communication and significantly decreases the latency and provides better performance for local communication between ROS nodes
-
-In case of native network, all the connected ROS environments can discover each oher and the communication happen in peer-to-peer manner. Each ROS environment has its own ROS master and the rapyuta.io platform uses a component using FKIE multimaster for peer-to-peer manner.
-
-### Multi-Robot Communication Using Native Network 
-
-
-  {{% notice note %}}
-  Native Network doesn’t support scoped or targeted topic (service or action) directly. The topics are whitelisted in the form of **/*/topics** and you can remap these topics for communication. For more information on remapping, [click here](http://wiki.ros.org/roslaunch/XML/remap).
-
-  {{% /notice%}}
-
-### Cloud Native Network
-
-Cloud native Network allows you to communicate between different ROS environments that are deployed in the cloud within the same local area network.
-
-When creating a cloud routed network, the **Resource limit** field defines the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can choose the resource limit of a routed network based on the following requirements.
-
-* size of ROS messages
-* frequency of ROS messages
-* number of topics/services/actions
-* QOS of ROS message
-* number of publishers/subscribers that will be active under a particular routed network
-
-
-### Device Native Network
-
-{{%notice note%}}
-Native Network is a beta feature and is currently supported on cloud runtime only.
-  {{%/notice%}}

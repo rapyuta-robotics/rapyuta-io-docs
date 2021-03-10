@@ -1,5 +1,5 @@
 ---
-title: ROS Publisher Subsciber (Cloud Routed Network)
+title: ROS Publisher Subsciber (Native Network)
 description: null
 type: build-solutions
 date: 2019-10-24T08:17:13.000Z
@@ -10,28 +10,18 @@ tags:
 A _ROS publisher_ is part of a ROS package. It is a public git
 repository, which is built into a running docker container on the
 fly when the package is being deployed. A _ROS subscriber_ is also
-a part of the same ROS package. It is downloaded on a device and
-is launched when the package is deployed.
+a part of the same ROS package. 
 
 ## Learning objectives
-The tutorial will show you how to deploy a basic ROS package
-with a _ROS publisher_ running on the cloud and a
-_ROS subscriber_ running on a device such as Raspberry PI.
-It also shows how to use dockercompose runtime on a device.
+The tutorial will show you how to deploy and establish a communication in a basic ROS package
+with a _ROS publisher_ and
+_ROS subscriber_ components running on the cloud by using a native network.
+
 
 ## Prerequisites
-1. Device requirements
-	1. You should have access to a device (computer or Raspberry PI 2 or 3)
-	with an internet connection.
-	2. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is installed on the computer.
-	3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation) is installed on the device.
-{{% notice note %}}
-If the device has [ROS Melodic Morenia](http://wiki.ros.org/melodic)
-installed on it, replace ***Kinetic*** with ***Melodic*** in all places
-where a specific version of ROS is asked for. The tutorial should still
-work the same.
-{{% /notice %}}
-1. You should be familiar with the below tools:
+
+1. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is installed on the computer.
+2. You should be familiar with the below tools:
 	1. [Git](https://git-scm.com/doc)
 	2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
 	3. [ROS topics](https://wiki.ros.org/Topics)
@@ -39,18 +29,6 @@ work the same.
 
 ### Estimated time
 15 minutes
-
-## Tutorial Video
-[Basic ROS publisher and subscriber](https://youtu.be/LDlcpnb7l3k)
-{{< youtube id="LDlcpnb7l3k" title="rapyuta.io tutorial: basic ROS publisher and subscriber with docker runtime" >}}
-
-## On-boarding a device
-* If you are using a Raspberry PI device, you must prepare the device before onboarding. For more information, [click here](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi)
-* If you are using your computer as a device(Linux machine), [click here](/3_how-tos/32_device-management/321_onboarding-a-device).
-
-{{% notice note%}}
-While oboarding the device, ensure that you have selected **Use docker compose as default runtime** check box. 
-{{%/notice%}}
 
 ## Creating the **io-tutorial** build
  
@@ -79,8 +57,7 @@ To create the _Docker publisher subscriber_ package using the
 6. In the **Description** box, provide a summary of the package.
 7. Click **NEXT**.
 
-The package has two components: the **talker** running on the cloud and the
-**listener** running on the device.
+The package has two components: the **talker** and **listener** running on the cloud.
 
 1. Talker component (aka _ROS publisher_)
 	1. In the **Component Name** box, enter a name for the component, say `talker`      
@@ -96,7 +73,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-	7. For **Executable Type**, click on **Development>Builds**.
+	7. For **Executable Type**, click on **Builds**.
 	8. In the **Choose Build** select the first Build `io-tutorials` from the drop-down list.	
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
@@ -115,16 +92,16 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyp
 {{% notice info %}}
 The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-	2. For **Component Runtime**, click **Device**.
+	2. For **Component Runtime**, click **Cloud**.
 	3. Ensure **Is ROS Component** is selected.
 	4. Ensure the **ROS Version** is **Kinetic**.
-	5. Select **arm32v7** as **Architecture**.
-	6. In the **Executable Name** box, type in a name for the executable say
+	5. S
+	6. In the **Executable Name** box, type in a name for the executable, for example,
 	   `listenerExecutable`   
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-	7. For **Executable Type**, click on **Development>Builds**.
+	7. For **Executable Type**, click on **Builds**.
 	8. In the **Choose Build** select the second Build `io-tutorials-arm32v7` from the drop-down list.
 	9. In the **Command to run in the docker container** box, enter the command:
 		```bash
@@ -137,14 +114,14 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 		eventually, the deployment will fail as well.
 	10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-## Create a Cloud Routed Network
-A routed network allows you to establish ROS communication between different ROS package deployment. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
+## Create a Native Network
+A native network allows you to establish ROS communication between different ROS environments within the same local area network. Binding a native network resource to your deployment will enable other deployments on the same native network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
 
 Perform the following procedure to create a routed network.
 
 1. On the left navigation bar, click **Networking>Networks**.
-2. Click **ADD  NETWORK>Routed Network** .
-3. In the **Create new routed network** dialog-box, enter `cloud_routed_network_1` as the name for the routed network.
+2. Click **ADD  NETWORK** and select the network type as **Native Network**.
+3. In the **Create new native network** dialog-box, enter `cloud_native_network_1` as the name for the native network.
 4. Select **ROS Distro**, as   **Kinetic**.
 5. Select the **Runtime** as **Cloud**.
 6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
@@ -156,16 +133,12 @@ Perform the following procedure to create a routed network.
 To deploy a package using the [console](https://console.rapyuta.io),
 follow the steps:
 
-1. On the left navigation bar, click **Development>Catalog**..
+1. On the left navigation bar, click **Development>Catalog**.
 2. Select the _Docker publisher subscriber_ package.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, enter a name for the deployment you are
-   creating say `Docker Publisher Subscriber Deployment`
-5. Since _listener_ has device runtime, you must select the device you want to
-   deploy the component on. Click **Refresh the list of online devices** to retrieve an updated list of online devices.
-6. Select the device from the **Select device for deploying the component**
-   dropdown list.
-7. Click on **ROUTED NETWORK** > **Add**, select the routed network you created from the dropdown list.
+   creating say `Docker Publisher Subscriber Deployment`.
+5. Click on **Native NETWORK** > **Add**, select the routed network, `cloud_native_network_1`, from the drop-down list.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** page where a green colored bar

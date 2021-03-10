@@ -73,13 +73,13 @@ Follow these steps to create a native network.
 
 6. Click **CONTINUE**. The native network is created.
 
-## Deleting Routed Network
+## Deleting a Network
 
 Only network not bound to any running deployments can be deleted.
 
 1. On the left navigation bar, click **Networking>Networks**. A list of available networks is displayed.
 2. Click **Delete** against the network that you want to delete.
-4. Confirm the routed network deletion message. After confirmation, the routed network is deleted.
+4. Confirm the network deletion message. After confirmation, the network is deleted.
 {{% notice warning %}}
 An attempt to deprovision a network that is currently being used will result in an error.
 {{% /notice %}}
@@ -88,4 +88,4 @@ An attempt to deprovision a network that is currently being used will result in 
 
 ## Related Links
 
-* [About ROS Networks]({{< ref "/5_deep-dives/53_Networking-and-communication/531_ROS-network">}})
+* [About ROS Networks]()
