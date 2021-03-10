@@ -239,4 +239,12 @@ Viewing routed network logs is same as viewing any component logs.
 
 To view or analyse the corresponding routed network logs, do the following.
 
- 1. click **Historical Logs** and under **Source** and check the routed network for which you want to view the logs. 
+ 1. click **Historical Logs** and under **Source** and check the routed network for which you want to view the logs.
+
+## Native Network Logs
+
+Viewing native network logs is same as viewing any component logs.
+
+To view or analyse the corresponding native network logs, do the following.
+
+ 1. click **Historical Logs** and under **Source** and check the native network for which you want to view the logs.

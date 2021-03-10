@@ -37,12 +37,18 @@ Using a network resource to your deployment will enable other deployments on the
 
 ## ROS Network Types
 
-* [Routed Network](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/): A routed network allows you to communicate between different ROS environments in the following.
+
+* [Native network](/5_deep-dives/53_networking-and-communication/535_ros-network-native/): 
+A native network allows you to communicate between different ROS environments as described in the following scenarios.
+
+  * ROS environments that are deployed in the cloud.
+  * ROS environments that are deployed in the device within the same local area network.
+
+* [Routed Network](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/): A routed network allows you to communicate between different ROS environments as decribed in the following scenarios.
 
   * ROS environments that are deployed in the cloud.
   * ROS environments that are deployed in the device (can be in same or different networks)
   * A combination of both
-* [Native network](/5_deep-dives/53_networking-and-communication/535_ros-network-native/): A native network allows you to communicate between different ROS environments that are deployed either in the cloud or devices when they are in same network.  
 
 
 

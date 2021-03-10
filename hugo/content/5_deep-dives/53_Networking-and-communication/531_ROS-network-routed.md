@@ -3,7 +3,7 @@
 title: "ROS Routed Networks"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 
-weight: 531
+weight: 532
 
 versions:
   free-pro-team: '*'
@@ -28,14 +28,14 @@ introLinks: {}
 tags:
     - Deep Dive
 ---
-A routed network allows you to communicate between different ROS environments in the following.
+A routed network allows you to communicate between different ROS environments as described in the following scenarios.
 
 * ROS environments that are deployed in the cloud.
 * ROS environments that are deployed in the device (can be in same or different networks)
 * A combination of both
 
 {{%notice info%}}
-To reduce the latency, it's advised to use native network within the same local area network. For more information, [click here](/5_deep-dives/53_networking-and-communication/535_ros-network-native/).
+In latency sensitive applications, when all the ROS environments are in  (For example, in case of simulation), it is advised to use native network. For more information, [click here](/5_deep-dives/53_networking-and-communication/535_ros-network-native/).
 {{%/notice%}}
 
 In case of routed network, the rapyuta.io platform relies on a sub-component called the cloud bridge for implicitly establishing a communication channel between two or more ROS environments. It is an application-level bridge that offers many compelling features to ROS developers including augmented ROS over the public internet and dedicated features for dynamic multi-robot ROS communication. 
@@ -46,9 +46,9 @@ When a user deploys a routed network to the cloud it is considered a cloud route
 
 Package deployments in the cloud __OR__ device can connect to a cloud routed network.
 
-#### Resource Limit for Cloud Routed Network
+#### Resource Limit
 
-When creating a cloud routed network, the **Resource limit** field defines the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. You can choose the resource limit of a routed network based on the following requirements.
+When creating a cloud routed network, the **Resource limit** field defines the memory allocation and computational capability of the routed network. These resources are reserved in the platform for effective ROS communication. You can choose the resource limit of a routed network based on the following requirements.
 
 * size of ROS messages
 * frequency of ROS messages
@@ -107,17 +107,14 @@ We want to establish a communication between these 3  ROS packages.  You can use
 The result is as follows
 
 * We have established a communication between the packages in the same routed network.
-
-Info: We can achieve the communication by using a cloud routed network. However, using a cloud routed network might cause a latency in the  communication even if the devices are sharing the same local area network.
+{{%notice info%}}
+We can achieve the communication by using a cloud routed network. However, using a cloud routed network might cause a latency in the  communication even if the devices are sharing the same local area network.
+{{%/notice%}}
 
 #### Pros 
-
 * Creates a low-latency communication as there is no need of a roundtrip of communication through cloud.
-
 #### Cons
-
 * Communication through a device routed network is only possible for the ROS environments sharing the same local area network and the packages deployed in the devices.
-
 
 ### Multi-Robot Communication
 

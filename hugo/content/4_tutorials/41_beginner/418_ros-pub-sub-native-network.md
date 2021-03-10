@@ -1,5 +1,5 @@
 ---
-title: ROS Publisher Subscriber (Native Network)
+title: ROS Publisher Subscriber (Native)
 description: null
 type: build-solutions
 date: 2019-10-24T08:17:13.000Z
@@ -45,12 +45,12 @@ The build takes about two to five minutes to build the source code in the *io_tu
 
 ## Creating the Package
 
-To create the _Docker publisher subscriber_ package using the
+To create the _native publisher subscriber_ package using the
 [console](https://console.rapyuta.io), follow the steps:
 
 1. On the left navigation bar, click **Development>Catalog**.
 2. Click **ADD NEW PACKAGE**.
-3. In the **Package Name** box, type in a name for the package say `Docker publisher subscriber`
+3. In the **Package Name** box, type in a name for the package say `Native publisher subscriber`
 4. In the **Package Version** box, enter the version of the package you are creating.
    The default value is _1.0.0_
 5. Ensure that **Is a bindable package** is selected.
@@ -101,7 +101,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
     6. For **Executable Type**, click on **Builds**.
-    7. In the **Choose Build** select the second Build `io-tutorials-arm32v7` from the drop-down list.
+    7. In the **Choose Build** select the second Build `io-tutorials` from the drop-down list.
     8. In the **Command to run in the docker container** box, enter the command:
         ```bash
         roslaunch listener listener.launch
@@ -114,18 +114,18 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
     9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ## Create a Native Network
-A native network allows you to establish ROS communication between different ROS environments within the same local area network. Binding a native network resource to your deployment will enable other deployments on the same native network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
+If you have already created a native network, you can skip this procedure. For more information about native network, [click here](/5_deep-dives/53_networking-and-communication/535_ros-network-native/)
 
-Perform the following procedure to create a routed network.
+Perform the following procedure to create a native network.
 
 1. On the left navigation bar, click **Networking>Networks**.
 2. Click **ADD  NETWORK** and select the network type as **Native Network**.
-3. In the **Create new native network** dialog-box, enter `cloud_native_network_1` as the name for the native network.
+3. In the **Create new native network** dialog-box, enter `cloud_native_network1` as the name for the native network.
 4. Select **ROS Distro**, as   **Kinetic**.
 5. Select the **Runtime** as **Cloud**.
 6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
 
-7. Click **CONTINUE** and wait for the routed network to be successfully running.
+7. Click **CONTINUE** and wait for the native network to be successfully running.
 
 
 ## Deploying the package
@@ -133,11 +133,11 @@ To deploy a package using the [console](https://console.rapyuta.io),
 follow the steps:
 
 1. On the left navigation bar, click **Development>Catalog**.
-2. Select the _Docker publisher subscriber_ package.
+2. Select the ` native publisher subcriber` package.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, enter a name for the deployment you are
-   creating say `Docker Publisher Subscriber Deployment`.
-5. Click on **Native NETWORK** > **Add**, select the routed network, `cloud_native_network_1`, from the drop-down list.
+   creating say `Native Publisher Subscriber Deployment`.
+5. Click on **Native NETWORK** > **Add**, select the native network, `cloud_native_network1`, from the drop-down list.
 6. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** page where a green colored bar
@@ -145,7 +145,7 @@ moves from **In progress** to **Succeeded** with **Status:Running** indicating t
 
 You may also analyze the corresponding deployment logs to check if everything is working OK.
 
-![Docker Publisher Subscriber Deployment](/images/tutorials/docker-pub-sub/docker-pubsub-deployment.png?classes=border,shadow&width=50pc)
+![Docker Publisher Subscriber Deployment](/images/tutorials/docker-pub-sub/native-pubsub-deployment.png?classes=border,shadow&width=50pc)
 
 The **listener-listenerExecutable** will be streaming */listener I heard hello_world* logs.
 
