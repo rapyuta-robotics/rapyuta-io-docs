@@ -88,4 +88,6 @@ An attempt to deprovision a network that is currently being used will result in 
 
 ## Related Links
 
-* [About ROS Networks]()
+* [About ROS Routed Networks](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/)
+
+* [About ROS Native Networks](/5_deep-dives/53_networking-and-communication/535_ros-network-native/)
