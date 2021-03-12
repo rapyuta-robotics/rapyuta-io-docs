@@ -65,13 +65,13 @@ Follow these steps to create a native network.
 3. Enter a name for the native network. 
 4. Select **ROS Distro** as either **Kinetic** or **Melodic** based on ROS version of package components it will be binding to.
 5. By default, the **Runtime** is **Cloud**.
-5. From the **Resource limit** field, select the memory allocation and computational ability of the native network. These resources are reserved in the platform for effective ROS communication. You can select one of the following resource limits based on your requirement.
+6. From the **Resource limit** field, select the memory allocation and computational ability of the native network. These resources are reserved in the platform for effective ROS communication. You can select one of the following resource limits based on your requirement.
   * **X-Small**: 0.5cpu core, 2 GiB memory
   * **Small**: 1cpu core, 4 GiB memory
   * **Medium**: 2cpu core, 8 GiB memory
   * **Large**: 4cpu core, 16 GiB memory
 
-6. Click **CONTINUE**. The native network is created.
+7. Click **CONTINUE**. The native network is created.
 
 ## Deleting a Network
 
