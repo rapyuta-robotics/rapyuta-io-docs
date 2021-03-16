@@ -84,7 +84,7 @@ We can establish this communication by using a cloud routed network. However, us
 
 #### Pros 
 
-* Communication through a native network is happening peer-to-peer manner that means the subscriber directly makes ROSTCP connection with the publisher thereby eliminating the latency in each hop-on of messages as in the case of a routed network via cloud bridge. This results in low-latency communication.
+* Communication through a native network is happening in a peer-to-peer manner that means the subscriber directly makes TCPROS connection with the publisher thereby eliminating the latency in each hop-on of messages as in the case of a routed network via cloud bridge. This results in low-latency communication.
 
 * You can see the list of publishers whitelisted in your package components in your *rostopic list* command.
 
