@@ -21,7 +21,7 @@ It displays information on the build, current build trigger and tag names, git r
 Suppose the current build generation number is _i_. If you update the
 source code in the git repository, you may want to trigger a new build to reflect the new code changes. 
 As a result, a new build generation number _(i+1)_ is generated. To trigger a new build, 
-select the particular build and click **Trigger build** for that build. You are prompted to ent
+select the particular build and click **Trigger build** for that build.
 
 You may always **Trigger** a new build irrespective of the status of the previous
 build. That is you can trigger a new build from either a **Complete** build or an
