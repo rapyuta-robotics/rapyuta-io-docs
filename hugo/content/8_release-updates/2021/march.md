@@ -53,7 +53,7 @@ are significant updates in this release that we hope you will like.
 
 * **Device Log Improvement** 
 
-    You can view the device logs either in a tabular or in a tile form. You can also specify the log lines (10, 20, 30, or 40 log lines per page) to be downloaded. For more information, [click here](/3_how-tos/35_tooling_and_debugging/file-management-devices/).
+    You can view the device logs either in a tabular or in a card form. You can also specify the log lines (10, 20, 30, or 40 log lines per page) to be downloaded. For more information, [click here](/3_how-tos/35_tooling_and_debugging/file-management-devices/).
 
 
 #### SDK
