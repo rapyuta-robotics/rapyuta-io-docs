@@ -29,7 +29,7 @@ tags:
   
 ## Creating Build by Catkin recipe 
 
-To create a build using Catkin receipe, do the following. 
+To create a build using Catkin recipe, do the following. 
 
 1. On the left navigation bar, click **Development>Builds**.
 
@@ -60,6 +60,7 @@ To create a build using Catkin receipe, do the following.
     b. Optionally, if the build has a simulation option, click the **Has Simulation** radio-button.
 
     c. In the **ROS Version** area, select either **Kinetic** or **Melodic**.
+    
     d. Optionally, to add ROS parameter to the build, in the **CATKIN BUILD PARAMETERS** area, click **Add Parameter**.
 
     e. Click **Next**.
@@ -110,9 +111,11 @@ To create a build using Catkin receipe, do the following.
    
     b. In the **Dockerfile path** field, type the path of the docker file that contains the source code.
 
-    c. Optionally, if the build has ROS component, then click the **Has ROS Components** radio-button, select the ROS version as either **Kinetic** or **Melodic**, and if the build has a simulation option, click the **Has Simulation** radio-button.
+    c. In the **Trigger Name** field, type a trigger name for the build. The trigger name can be used as a reference to track the build.
 
-    d. Click **Next**.
+    d. Optionally, if the build has ROS component, then click the **Has ROS Components** radio-button, select the ROS version as either **Kinetic** or **Melodic**, and if the build has a simulation option, click the **Has Simulation** radio-button.
+
+    e. Click **Next**.
 
   ![goo](/images/core-concepts/builds/build-creation/docker-build-info.png?classes=border,shadow&width=30pc)
 
@@ -123,9 +126,11 @@ To create a build using Catkin receipe, do the following.
 
     c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
 
-    d. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** toggle button and select the secret for the repository. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
+    d. If you want to push the build image, in the **Tag Name** field, type a tag name for the build. The tag name is appended after the trigger name and is used just as a reference to the build.
 
-    e. Click **Next**.
+    e. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** toggle button and select the secret for the repository. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
+
+    f. Click **Next**.
   ![goo](/images/core-concepts/builds/build-creation/docker-push-secret.png?classes=border,shadow&width=30pc)
 
 

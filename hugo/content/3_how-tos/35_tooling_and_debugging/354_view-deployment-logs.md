@@ -220,11 +220,7 @@ ROS-based device.
 
   4. Click on **View logs**, to see the build logs.
 
-  5. Build logs are displayed in the logging area (terminal-like window). You may
-
-     scroll up to view the starting logs of the log stream.
-
-  
+  5. Build logs are displayed in the logging area (terminal-like window). To follow the displayed logs, click **Follow** toggle button.
 
   Once all of the build logs are generated, the status indicator greys out and
   you'll see a **Logs streaming ended** status (top left corner of the terminal

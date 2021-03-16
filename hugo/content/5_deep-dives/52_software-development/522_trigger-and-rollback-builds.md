@@ -16,12 +16,12 @@ The rapyuta.io **Development>Builds** allow you to do that.
 
 In the **Development>Builds** page select the particular build from the build list and click on **SHOW MORE**, 
 this will open the **Details** tab of the selected build. 
-It displays information on the build, current build generation number, git repository etc. 
+It displays information on the build, current build trigger and tag names, git repository etc. 
 
 Suppose the current build generation number is _i_. If you update the
 source code in the git repository, you may want to trigger a new build to reflect the new code changes. 
 As a result, a new build generation number _(i+1)_ is generated. To trigger a new build, 
-select the particular build and click **Trigger build** for that build.
+select the particular build and click **Trigger build** for that build. You are prompted to ent
 
 You may always **Trigger** a new build irrespective of the status of the previous
 build. That is you can trigger a new build from either a **Complete** build or an
@@ -50,7 +50,7 @@ The **Current build generation** number (Gen) is shown below the build ID.
 
 
 The builds are automatically restarted on rapyuta.io platform internal failures.
-Click **Refresh** if you observe that the build logs are abruptly disconnected or stopped
+Click **Refresh** if you observe that the build logs are abruptly disconnected or stopped.
 
 When a build fails, it is recommended to check the corresponding [build logs]({{< ref "/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs" >}}) to debug. It can be due to multiple reasons like:
 
