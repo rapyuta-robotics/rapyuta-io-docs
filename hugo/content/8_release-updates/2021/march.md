@@ -34,3 +34,29 @@ are significant updates in this release that we hope you will like.
 **rapyuta.io Python SDK [0.20.2](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
 
 
+## March 17
+Welcome to the March 17, 2021 release of the rapyuta.io platform. There
+are significant updates in this release that we hope you will like.
+
+
+#### Feature
+* **Native Network**
+
+    A native network allows you to communicate between different ROS environments when they are delployed either in the cloud or deployed in the devices within the same local area network. For more information, [click here](/5_deep-dives/53_networking-and-communication/535_ros-network-native/).
+
+
+#### Improvements
+* **Build Page Improvement**
+
+    * The rapyuta.io platform allows you to follow the build logs by selecting the toggle button. For more information, [click here](/3_how-tos/35_tooling_and_debugging/debugging-logs/#device-logs).
+    * While creating a build or triggering the same, you can add a **Trigger Name** and **Tag Name** for keeping the track of a build . For more information, [click here](/3_how-tos/33_software-development/331_create-builds/#creating-build-by-docker-recipe).
+
+* **Device Log Improvement** 
+
+    You can view the device logs either in a tabular or in a tile form. You can also specify the log lines (10, 20, 30, or 40 log lines per page) to be downloaded. For more information, [click here](/3_how-tos/35_tooling_and_debugging/file-management-devices/).
+
+
+#### SDK
+
+**rapyuta.io Python SDK [0.21.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
+
