@@ -82,12 +82,16 @@ margin-bottom: 2rem;
   position: absolute;
   left: 1rem;
   display: inline;
-  top: 26px;
+  top: 35px;
 }
 
 .searchbox i#search-icon {
-  top: 9px;
+  top: 14px;
   left: 9px;
+}
+
+.searchbox input {
+  height: 100%;
 }
 
 
