@@ -46,10 +46,10 @@ are significant updates in this release that we hope you will like.
 
 
 #### Improvements
-* **Build Page Improvement**
+* **Build Log Improvement**
 
     * The rapyuta.io platform allows you to follow the build logs by selecting the toggle button. For more information, [click here](/3_how-tos/35_tooling_and_debugging/debugging-logs/#device-logs).
-    * While creating a build or triggering the same, you can add a **Trigger Name** and **Tag Name** for keeping the track of a build . For more information, [click here](/3_how-tos/33_software-development/331_create-builds/#creating-build-by-docker-recipe).
+
 
 * **Device Log Improvement** 
 
