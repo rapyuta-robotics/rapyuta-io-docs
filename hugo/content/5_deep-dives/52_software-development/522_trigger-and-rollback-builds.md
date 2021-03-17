@@ -16,7 +16,7 @@ The rapyuta.io **Development>Builds** allow you to do that.
 
 In the **Development>Builds** page select the particular build from the build list and click on **SHOW MORE**, 
 this will open the **Details** tab of the selected build. 
-It displays information on the build, current build trigger and tag names, git repository etc. 
+It displays information on the build, current build generation number, git repository etc. 
 
 Suppose the current build generation number is _i_. If you update the
 source code in the git repository, you may want to trigger a new build to reflect the new code changes. 
