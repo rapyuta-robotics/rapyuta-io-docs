@@ -29,7 +29,7 @@ tags:
   
 ## Creating Build by Catkin recipe 
 
-To create a build using Catkin receipe, do the following. 
+To create a build using Catkin recipe, do the following. 
 
 1. On the left navigation bar, click **Development>Builds**.
 
@@ -60,6 +60,7 @@ To create a build using Catkin receipe, do the following.
     b. Optionally, if the build has a simulation option, click the **Has Simulation** radio-button.
 
     c. In the **ROS Version** area, select either **Kinetic** or **Melodic**.
+    
     d. Optionally, to add ROS parameter to the build, in the **CATKIN BUILD PARAMETERS** area, click **Add Parameter**.
 
     e. Click **Next**.
@@ -108,7 +109,7 @@ To create a build using Catkin receipe, do the following.
 
     a. In the **Architecture** area, select the processor architecture for the build. The available options are:  **arm32v7**, **arm32v7**, or **amd64**.
    
-    b. In the **Dockerfile path** field, type the path of the docker file that contains the source code.
+    b. In the **Dockerfile path** field, type the path of the docker file that contains the source code. The docker file path is relative to the **Context Directory** field.
 
     c. Optionally, if the build has ROS component, then click the **Has ROS Components** radio-button, select the ROS version as either **Kinetic** or **Melodic**, and if the build has a simulation option, click the **Has Simulation** radio-button.
 
@@ -122,6 +123,7 @@ To create a build using Catkin receipe, do the following.
     b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. ​For example, docker.io/your-username/repo-name. 
 
     c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
+
 
     d. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** toggle button and select the secret for the repository. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
 
