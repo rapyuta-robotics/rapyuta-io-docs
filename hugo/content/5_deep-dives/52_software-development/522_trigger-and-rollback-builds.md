@@ -50,7 +50,7 @@ The **Current build generation** number (Gen) is shown below the build ID.
 
 
 The builds are automatically restarted on rapyuta.io platform internal failures.
-Click **Refresh** if you observe that the build logs are abruptly disconnected or stopped
+Click **Refresh** if you observe that the build logs are abruptly disconnected or stopped.
 
 When a build fails, it is recommended to check the corresponding [build logs]({{< ref "/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs" >}}) to debug. It can be due to multiple reasons like:
 
