@@ -200,13 +200,13 @@ span.primary-attribute > em {
 .notice-shortcuts .left{
   position: fixed;
   top: 4vh;
-  left: calc(10%);
+  left: 10%;
 }
 
 .notice-shortcuts .right{
   position: fixed;
   top: 4vh;
-  right: calc(10%);
+  right: 10%;
 }
 
 .notice-shortcuts span {
