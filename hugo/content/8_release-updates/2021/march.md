@@ -58,5 +58,5 @@ are significant updates in this release that we hope you will like.
 
 #### SDK
 
-**rapyuta.io Python SDK [0.21.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
+* **rapyuta.io Python SDK [0.21.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
 
