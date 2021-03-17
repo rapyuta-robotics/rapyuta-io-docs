@@ -49,7 +49,7 @@ To deploy a package in rapyuta.io, follow the steps:
 {{%/notice%}}
 
 9. If the package has a component with `Is ROS` true, then you will need to select **Routed Network** from the drop-down list
-   1. ​	If there are no **Routed Network** successfully running, you would not be able to deploy the package. Please create a [Routed Network]({{< ref "/3_how-tos/34_networking-and-communication/341_creating-ros-routed-networks" >}}) first. 
+   1. ​	If there are no **Routed Network** successfully running, you would not be able to deploy the package. Please create a [Routed Network](/3_how-tos/34_networking-and-communication/ros-creating-routed-networks/) first. 
    2. ​    If you have a cloud component in your package, you will be able to select only cloud routed networks.
 
 10. If you want to add a dependent deployment, click **Add dependency**, and select a deployment you want to add as a dependency from the drop-down list of deployment IDs.
