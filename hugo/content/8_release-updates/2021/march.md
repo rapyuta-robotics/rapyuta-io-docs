@@ -46,12 +46,12 @@ are significant updates in this release that we hope you will like.
 
 
 #### Improvements
-* **Build Log Improvement**
+* **Build Logs Improvement**
 
-    * The rapyuta.io platform allows you to follow the build logs by selecting the toggle button. For more information, [click here](/3_how-tos/35_tooling_and_debugging/debugging-logs/#device-logs).
+    The rapyuta.io platform allows you to follow the build logs by selecting the toggle button. For more information, [click here](/3_how-tos/35_tooling_and_debugging/debugging-logs/#device-logs).
 
 
-* **Device Log Improvement** 
+* **Device Logs Improvement** 
 
     You can view the device logs either in a tabular or in a card form. You can also specify the log lines (10, 20, 30, or 40 log lines per page) to be downloaded. For more information, [click here](/3_how-tos/35_tooling_and_debugging/file-management-devices/).
 
