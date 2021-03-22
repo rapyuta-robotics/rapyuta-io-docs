@@ -11,7 +11,7 @@ tags:
 
 ## Trigger and Rollback
 
-As a developer you may want to trigger a new build or rollback to a previous build generation. 
+As a developer, you may want to trigger a new build or rollback to a previous build generation. 
 The rapyuta.io **Development>Builds** allow you to do that.
 
 In the **Development>Builds** page select the particular build from the build list and click on **SHOW MORE**, 
@@ -27,6 +27,11 @@ You may always **Trigger** a new build irrespective of the status of the previou
 build. That is you can trigger a new build from either a **Complete** build or an
 **Error** build.
 
+When you trigger a new build, a pop-up message appears and prompts whether you want to use the default trigger/tag name or use different names for the build. If you select **Yes**, the build is triggered with the default trigger/tag name. If you select **No**, the **Trigger Build** dialog-box appears and you can add a different trigger and tag name for the build.
+
+  ![goo](/images/core-concepts/builds/build-creation/trigger-build.png?classes=border,shadow&width=30pc)
+
+
 {{% notice note %}}
 
 Packages which have builds that are in **Complete** status are suitable for a deployment. The **InProgress** and **Failed** builds are unfit for deployment.
@@ -34,15 +39,14 @@ Packages which have builds that are in **Complete** status are suitable for a de
 {{% /notice %}}
 
 You may also view details such as the git repository URL where the source code is hosted, 
-the latest commit SHA number, the commit message and the commit owner’s name by clicking **View details/logs** in the **Build history** tab of the build.
+the latest commit SHA number, the commit message, the commit owner’s name, trigger/tag name of the build by clicking **View details/logs** in the **Build history** tab of the build.
 
 ![View details or logs](/images/core-concepts/builds/trigger-rollback-view-deails.png?classes=border,shadow&width=50pc)
 
 You may also **Rollback** to a previous build generation number if there
 is any, irrespective of the previous build status. Rollbacking to a
 previous build does not restart the build process. Instead, on using the build 
-in next deployment it would run the corresponding docker image that was generated 
-for that build generation.
+in next deployment it would run the corresponding docker image that was generated for that build generation.
 
 The **Current build generation** number (Gen) is shown below the build ID.
 
