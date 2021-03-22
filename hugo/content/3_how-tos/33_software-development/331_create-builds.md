@@ -125,7 +125,7 @@ To create a build using Catkin recipe, do the following.
 
     c. Optionally, in the **Trigger Name** field, type a name for the trigger. The trigger name can be used to identify the build requests. 
 
-    d. If you have enabled the **Docker Pull Secret** toggle button, you can also add a tag name to the build. The tag name is an optional field and can be used as a docker tag in the external docker registry. The trigger name and the tag name can be either the same or different. If you want to have a different tag name, de-select the **Same as Trigger Name** field and type a tag name in the **Tag Name** field.
+    d. If you have enabled the **Docker Push Secret** toggle button, you can also add a tag name to the build. The tag name is an optional field and can be used as a docker tag in the external docker registry. The trigger name and the tag name can be either the same or different. If you want to have a different tag name, de-select the **Same as Trigger Name** field and type a tag name in the **Tag Name** field.
  {{%notice note%}}
   **Tag Name** field is only available if the **Docker Push Secret** toggle button is enabled.
   {{%/notice%}}
@@ -139,7 +139,7 @@ To create a build using Catkin recipe, do the following.
   * Click on **SHOW MORE** to get more details about the build, it will take you to the **Details** tab of the build. If you want to view the build history, click the **Build History** tab. 
 
 {{%notice info%}}
-The **Build History** tab displays the trigger name and tag name if added during the build creation. If you haven't added any trigger name to the build, it displays a default trigger name.
+The **Build History** tab displays the trigger/tag name if added during the build creation. If you haven't added any trigger name to the build, it displays a default trigger name.
 {{%/notice%}}
 
 ## Viewing Build Details

@@ -39,7 +39,7 @@ Packages which have builds that are in **Complete** status are suitable for a de
 {{% /notice %}}
 
 You may also view details such as the git repository URL where the source code is hosted, 
-the latest commit SHA number, the commit message, the commit owner’s name, trigger/tag name of the build by clicking **View details/logs** in the **Build history** tab of the build.
+the latest commit SHA number, the commit message, the commit owner’s name, and the docker image  by clicking **View details/logs** in the **Build history** tab of the build.
 
 ![View details or logs](/images/core-concepts/builds/trigger-rollback-view-deails.png?classes=border,shadow&width=50pc)
 
