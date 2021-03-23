@@ -70,7 +70,7 @@ Welcome to the March 24, 2021 release of the rapyuta.io platform. There are sign
 
 * **Build Page Improvement**
 
-    You can add a trigger/tag name while creating or triggering a build using the docker recipe. The trigger/tag name can be used to identify the build requests. For more information, [click here](/33_software-development/331_create-builds/#creating-build-by-docker-recipe).
+    You can add a trigger/tag name while creating or triggering a build using the docker recipe. The trigger/tag name can be used to identify the build requests. For more information, [click here](/3_how-tos/33_software-development/331_create-builds/#creating-build-by-docker-recipe).
 
 
 
