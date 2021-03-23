@@ -67,7 +67,7 @@ To create a build using Catkin recipe, do the following.
 
   ![goo](/images/core-concepts/builds/build-creation/catkin-build-info.png?classes=border,shadow&width=30pc)
 
-5. The **rapyuta.io** platform allows you to push and save the build image to an external docker registry.To push and save the build image to the private registry, do the following.
+5. The **rapyuta.io** platform allows you to push and save the build image to an external docker registry. To push and save the build image to the private registry, do the following.
 
     a. Under the **Docker Secret** tab, click the **Docker Push Secret**  toggle button.
 
@@ -119,21 +119,28 @@ To create a build using Catkin recipe, do the following.
 
 5. The **rapyuta.io** platform allows you to push and save the build image to an external docker registry or to pull an image from a private repository. To push or pull a docker image file, do the following.
 
-    a. Under the **Docker Secret** tab, click the **Docker Push Secret**  toggle button.
-    b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. ​For example, docker.io/your-username/repo-name. 
+    a. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** toggle button and select the secret for the repository. You can enable this option if the docker file requires a base image from the private registry. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
 
-    c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
+    b. Optionally, if you want to push the build image to a private registry, click the **Docker Push Secret**  toggle button and select the secret for the repository. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
 
+    c. Optionally, in the **Trigger Name** field, type a name for the trigger. The trigger name can be used to identify the build requests. 
 
-    d. Optionally, to pull a secured docker image to the docker file, click the **Docker Pull secret** toggle button and select the secret for the repository. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
-
+    d. If you have enabled the **Docker Push Secret** toggle button, you can also add a tag name to the build. The tag name is an optional field and can be used as a docker tag in the external docker registry. The trigger name and the tag name can be either the same or different. If you want to have a different tag name, de-select the **Same as Trigger Name** field and type a tag name in the **Tag Name** field.
+ {{%notice note%}}
+  **Tag Name** field is only available if the **Docker Push Secret** toggle button is enabled.
+  {{%/notice%}}
     e. Click **Next**.
-  ![goo](/images/core-concepts/builds/build-creation/docker-push-secret.png?classes=border,shadow&width=30pc)
+
+![goo](/images/core-concepts/builds/build-creation/docker-push-secret.png?classes=border,shadow&width=30pc)
 
 
   * You can see the progress of the build, by clicking the build created in the **Development>Builds** page. 
 
-  * Click on **SHOW MORE** to get more details about the build, it will take you to the **Details** tab of the build.
+  * Click on **SHOW MORE** to get more details about the build, it will take you to the **Details** tab of the build. If you want to view the build history, click the **Build History** tab. 
+
+{{%notice info%}}
+The **Build History** tab displays the trigger/tag name if added during the build creation. If you haven't added any trigger name to the build, it displays a default trigger name.
+{{%/notice%}}
 
 ## Viewing Build Details
 
@@ -149,7 +156,7 @@ After you have created a build by either Catkin or Docker recipe, you can view t
 |Field|Description|
 |-----|-----------|
 |**Name/ID**| Provides the name of the build.
-|**Status**| Provides the following status of the build. <ul><li>BuildInProgress: Displays when the build creation process is in progress.</li><li>Complete: Displays when the build creation process has been successfully completed.</li><li>BuildFailed: Displays if the build creation process has failed.</li></ul>
+|**Status**| Provides the following status of the build. <ul><li>BuildInProgress: Displays when the build creation process is in progress.</li><li>Complete: Displays when the build creation process has been completed.</li><li>BuildFailed: Displays if the build creation process has failed.</li></ul>
 |**Started**| Provides the time duration when the build creation process has started.
 |**Repository**| Provides the repository from which the build has been created.
 |**Action**| Allows you to delete, trigger, or clone a build. 
@@ -174,12 +181,12 @@ After you have created a build by either Catkin or Docker recipe, you can view t
 ## Deleting the build
 
 {{% notice info %}}
-Note that if the build **Status** is *_BuildInProgress_*, then user will not be able to **Delete** the build. Deletion of such builds will fail with the error message : **can't delete the build since its corresponding build request is still in progress**.
+Note that if the build **Status** is *_BuildInProgress_*, then user will not be able to **Delete** the build. Deletion of such builds will fail with the error message: **can't delete the build since its corresponding build request is still in progress**.
 {{% /notice %}}
 
 To delete a build, do the following.
 
-1. On the left navigation bar, click **Development>Builds**. It  displays all the builds available for a project.
+1. On the left navigation bar, click **Development>Builds**. It displays all the builds available for a project.
 
 2. Select the build that you want to delete. 
 
