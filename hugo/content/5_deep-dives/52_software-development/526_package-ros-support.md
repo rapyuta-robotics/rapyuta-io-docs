@@ -124,7 +124,7 @@ The user may optionally enable transparent compression. The platform relies on a
 ROS has several key pain points when working with multi-robot systems that often need error-prone setups involving specific launch sequences, roslaunch/XML files, and remappings. rapyuta.io ships with special support for multi-robot systems and enforces runtime identities to robots automatically wrap and unwrap for the right agent. 
 
 {{% notice info %}}
-Learn more about [dedicated ROS communication support]({{< ref "/5_deep-dives/53_networking-and-communication/531_ROS-network.md">}})
+Learn more about [dedicated ROS communication support]()
 {{% /notice %}}
 
 ## ROS Bag Job

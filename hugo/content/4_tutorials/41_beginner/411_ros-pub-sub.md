@@ -1,5 +1,5 @@
 ---
-title: ROS Publisher Subsciber
+title: ROS Publisher Subsciber (Routed)
 description: null
 type: build-solutions
 date: 2019-10-24T08:17:13.000Z
@@ -16,8 +16,13 @@ is launched when the package is deployed.
 ## Learning objectives
 The tutorial will show you how to deploy a basic ROS package
 with a _ROS publisher_ running on the cloud and a
+<<<<<<< HEAD
 _ROS subscriber_ running on a device such as Raspberry PI.
 It also shows how to use docker-compose runtime on a device.
+=======
+_ROS subscriber_ running on a device such as Raspberry PI by using a cloud routed network.
+It also shows how to use dockercompose runtime on a device.
+>>>>>>> dbe59990e60dad39e40d3a1b446226fbc0c298b7
 
 ## Prerequisites
 1. Device requirements
@@ -137,7 +142,11 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
     10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ## Create a Cloud Routed Network
+<<<<<<< HEAD
 A routed network allows you to establish ROS communication between different ROS package deployments. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
+=======
+If you have already created a routed network, you can skip this procedure. For more information about routed network, [click here](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/)
+>>>>>>> dbe59990e60dad39e40d3a1b446226fbc0c298b7
 
 Perform the following procedure to create a routed network.
 
