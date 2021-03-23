@@ -72,6 +72,10 @@ Welcome to the March 24, 2021 release of the rapyuta.io platform. There are sign
 
     You can add a trigger/tag name while creating or triggering a build. The trigger/tag name can be used to identify the build requests. For more information, [click here](/3_how-tos/33_software-development/331_create-builds/).
 
+#### SDK
+
+* **rapyuta.io Python SDK [0.22.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
+
 
 
 
