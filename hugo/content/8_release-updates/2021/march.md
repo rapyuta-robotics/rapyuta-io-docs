@@ -76,6 +76,9 @@ Welcome to the March 24, 2021 release of the rapyuta.io platform. There are sign
 
 * **rapyuta.io Python SDK [0.22.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
 
+    * Added SDK support for trigger/tag name for builds
+    * Added SDK support for setting CPU memory limits for routed networks
+
 
 
 
