@@ -66,7 +66,7 @@ Welcome to the March 17, 2021 release of the rapyuta.io platform. There are sign
 
 Welcome to the March 24, 2021 release of the rapyuta.io platform. There are significant updates in this release that we hope you will like.
 
-#### Feature
+#### Improvement
 
 * **Build Page Improvement**
 
