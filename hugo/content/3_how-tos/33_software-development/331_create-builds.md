@@ -75,7 +75,14 @@ To create a build using Catkin recipe, do the following.
 
     c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
 
-    d. Click **Next**. The build is created.
+    d. Optionally, in the **Trigger Name** field, type a name for the trigger. The trigger name can be used to identify the build requests. 
+
+    e. If you have enabled the **Docker Push Secret** toggle button, you can also add a tag name to the build. The tag name is an optional field and can be used as a docker tag in the external docker registry. The trigger name and the tag name can be either the same or different. If you want to have a different tag name, de-select the **Same as Trigger Name** field and type a tag name in the **Tag Name** field.
+ {{%notice note%}}
+  **Tag Name** field is only available if the **Docker Push Secret** toggle button is enabled.
+  {{%/notice%}}
+
+    f. Click **Next**. The build is created.
 
   ![goo](/images/core-concepts/builds/build-creation/catkin-push-secret.png?classes=border,shadow&width=30pc)
 
