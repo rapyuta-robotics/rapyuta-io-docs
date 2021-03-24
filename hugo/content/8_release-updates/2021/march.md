@@ -88,6 +88,3 @@ Welcome to the March 24, 2021 release of the rapyuta.io platform. There are sign
 * Added SDK support for trigger and tag name for builds
 * Added SDK support for setting CPU and memory limits for routed networks
 
-
-
-
