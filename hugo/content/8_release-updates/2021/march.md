@@ -31,7 +31,9 @@ are significant updates in this release that we hope you will like.
 
 #### SDK
 
-* **rapyuta.io Python SDK [0.20.2](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
+**rapyuta.io Python SDK [0.20.2](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
+
+* Improved SDK documentation
 
 
 ## March 17
@@ -60,7 +62,9 @@ Welcome to the March 17, 2021 release of the rapyuta.io platform. There are sign
 
 #### SDK
 
-* **rapyuta.io Python SDK [0.21.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
+**rapyuta.io Python SDK [0.21.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
+
+* Added SDK support for native networks
 
 ## March 24
 
@@ -72,9 +76,14 @@ Welcome to the March 24, 2021 release of the rapyuta.io platform. There are sign
 
     You can add a trigger/tag name while creating or triggering a build. The trigger/tag name can be used to identify the build requests. For more information, [click here](/3_how-tos/33_software-development/331_create-builds/).
 
+
+#### Bugfixes
+
+- Security fixes related to the verification of SSL certificates for encrypted connections are done on the rapyuta agent that runs on the devices. Re-onboard your devices to receive the security fixes 
+
 #### SDK
 
-* **rapyuta.io Python SDK [0.22.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
+**rapyuta.io Python SDK [0.22.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
 
 * Added SDK support for trigger/tag name for builds
 * Added SDK support for setting CPU memory limits for routed networks
