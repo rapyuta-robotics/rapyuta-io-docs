@@ -77,16 +77,16 @@ Welcome to the March 24, 2021 release of the rapyuta.io platform. There are sign
     You can add a trigger/tag name while creating or triggering a build. The trigger/tag name can be used to identify the build requests. For more information, [click here](/3_how-tos/33_software-development/331_create-builds/).
 
 
-#### Bugfixes
+#### Security Updates
 
-- Security fixes related to the verification of SSL certificates for encrypted connections are done on the rapyuta agent that runs on the devices. Re-onboard your devices to receive the security fixes 
+- Security updates related to the verification of SSL certificates for encrypted connections are done on the rapyuta agent that runs on the devices. [Re-onboard](/6_troubleshoot/612_reonboarding-devices/) your devices if already onboarded to the rapyuta.io platform to receive the updates. The newly onboarded devices automatically receive the updates.
 
 #### SDK
 
 **rapyuta.io Python SDK [0.22.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
 
-* Added SDK support for trigger/tag name for builds
-* Added SDK support for setting CPU memory limits for routed networks
+* Added SDK support for trigger and tag name for builds
+* Added SDK support for setting CPU and memory limits for routed networks
 
 
 
