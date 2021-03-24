@@ -89,8 +89,7 @@ The build takes about two to five minutes to build the source code in the *io_tu
 11. Ensure **Is ROS Component** is selected.
 12. Select **Kinetic** for **ROS Version**.
 13. The default value of **Replicas to run the component** is set to 1
-14. In the **Executable Name** box, enter a name for an executable,
-    , for example, `talker_executable`.
+14. In the **Executable Name** box, enter a name for an executable, for example, `talker_executable`.
 15. Click **Development>Builds** for **Executable Type**.
 16. Select **io-tutorials** builds from the dropdown
 17. In the **Command to run in the docker container** box, enter the command:

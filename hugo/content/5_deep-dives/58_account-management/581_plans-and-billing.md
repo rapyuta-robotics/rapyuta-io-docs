@@ -38,7 +38,7 @@ If you want to cancel the current plan or shift to another plan, please <a href=
 ## Community Plan
 rapyuta.io offers a community plan with a basic set of bundled complementary resource quotas that allow users to explore the platform for 3 months, with no payments required. The community plan is recommended for academia, research, startups to help build a proof of concept of their application.
 
-Additional [consumable units]({{< ref "/5_deep-dives/58_account-management/582_billing-usage.md">}}) (upto the predefined limits for the plan) or optional resources such as persistent storage can be availed on a pay-as-you-go basis. This requires the user to add a valid
+Additional [consumable units]({{< ref "/5_deep-dives/58_account-management/582_billing-usage.md">}}) (up to the predefined limits for the plan) or optional resources such as persistent storage can be availed on a pay-as-you-go basis. This requires the user to add a valid
 [payment method](/5_deep-dives/58_account-management/understanding-usage/#payment-method) on the platform.
 
 ### Expiry of Cloud Deployment Resource Quota
@@ -53,7 +53,7 @@ Cloud deployment is any deployment with at least a single cloud component.
 {{% /notice %}}
 
 ### Trial Period Expiration
-At the **end of the stipulated trial period** of the Community Plan, the platform will **stop all running deployments** and **delete all devices** on-boarded by the user.
+At the **end of the stipulated trial period** of the Community Plan, the platform will **stop all running deployments** and **delete all devices** onboarded by the user.
 
 Since the deletion of resources is ***irreversible***, the deployments and devices cannot be restored. Consequently, you will lose any information, like logs, associated with those resources.
 

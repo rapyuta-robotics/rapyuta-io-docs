@@ -12,7 +12,7 @@ tags:
 ## Trigger and Rollback
 
 As a developer, you may want to trigger a new build or rollback to a previous build generation. 
-The rapyuta.io **Development>Builds** allow you to do that.
+The rapyuta.io **Development>Builds** allows you to do that.
 
 In the **Development>Builds** page select the particular build from the build list and click on **SHOW MORE**, 
 this will open the **Details** tab of the selected build. 
@@ -39,11 +39,7 @@ Packages which have builds that are in **Complete** status are suitable for depl
 {{% /notice %}}
 
 You may also view details such as the git repository URL where the source code is hosted, 
-<<<<<<< HEAD
-the latest commit SHA number, the commit message, and the commit owner’s name by clicking **View details/logs** in the **Build history** tab of the build.
-=======
 the latest commit SHA number, the commit message, the commit owner’s name, and the docker image  by clicking **View details/logs** in the **Build history** tab of the build.
->>>>>>> dbe59990e60dad39e40d3a1b446226fbc0c298b7
 
 ![View details or logs](/images/core-concepts/builds/trigger-rollback-view-deails.png?classes=border,shadow&width=50pc)
 

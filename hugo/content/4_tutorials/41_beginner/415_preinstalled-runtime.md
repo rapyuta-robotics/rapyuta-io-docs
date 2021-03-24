@@ -35,8 +35,8 @@ work the same.
 15 minutes
 
 ## Tutorial Video
-[ROS publisher and subscriber with Pre-installed Runtime](https://youtu.be/HKZCdqEUNOg)
-{{< youtube id="HKZCdqEUNOg" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}
+[ROS publisher and subscriber with Pre-installed Runtime](https://youtu.be/yRzOlaWbGhI)
+{{< youtube id="yRzOlaWbGhI" title="rapyuta.io tutorial: basic ROS publisher and subscriber with preinstalled runtime" >}}
 
 ## Preparing your device
 The tutorial will use Raspberry PI as the device.
@@ -210,7 +210,7 @@ You will be redirected to the newly created deployment's **Details** page. The _
 
 ![ROS  Publisher Subscriber Deployment](/images/tutorials/ros-pub-sub/ros-pub-sub-deployment.png?classes=border,shadow&width=50pc)
 
-You may also analyse the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/)
+You may also analyze the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/)
 to check if everything is working OK by clicking on **Logs** tab.
 
 The **listener-listenerExecutable** will be streaming ***/listener I heard hello_world*** logs.

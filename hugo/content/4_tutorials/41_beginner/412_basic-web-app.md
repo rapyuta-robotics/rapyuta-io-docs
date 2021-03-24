@@ -24,8 +24,8 @@ of a package.
 10 minutes
 
 ## Tutorial Video
-[Basic web App](https://youtu.be/a0xj7BmIajY)
-{{< youtube id="a0xj7BmIajY" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}
+[Basic web App](https://youtu.be/NEUvSbQ3J-g)
+{{< youtube id="NEUvSbQ3J-g" title="rapyuta.io tutorial: basic ROS publisher and subscriber" >}}
 
 ## Creating the build
 To create the build, follow the below steps : 
@@ -40,7 +40,7 @@ In this example, it is `flask_helloworld`.
 6. Go to the next step and click on next, the build will be created.
 
 The build takes about two to five minutes to build the source code in the *io_tutorials*
-repository into a running docker container. You may analyse the corresponding
+repository into a running docker container. You may analyze the corresponding
 [build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs), which help debug failing builds.
 
 Please proceed to the creation of the package once the build is complete.
@@ -65,7 +65,7 @@ follow the below instructions in sequence:
 6. Select **Cloud** for **Component Runtime**.
 7. Ensure **Is ROS Component** is *not selected*.
 8. The value of **Replicas to run the component** is set to the default value of *1*
-9.  In the **Executable Name** box, type in a name for the executable, , for example, `flask_runner`.
+9.  In the **Executable Name** box, type in a name for the executable, for example, `flask_runner`.
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character. It must not begin with a digit.
 {{% /notice %}}

@@ -71,7 +71,7 @@ payloads like configuration commands, metrics, and logs, and minimum utilization
   to secure each device together with a unique token.
 
 {{% notice note %}}
-Application communication is handled in diffrent channels. [Learn more](/5_deep-dives/53_networking-and-communication/) with a dedicated set of [features for ROS users](/5_deep-dives/53_networking-and-communication/534_ros-communication/)
+Application communication is handled in different channels. [Learn more](/5_deep-dives/53_networking-and-communication/) with a dedicated set of [features for ROS users](/5_deep-dives/53_networking-and-communication/534_ros-communication/)
 {{% /notice %}}
 
 

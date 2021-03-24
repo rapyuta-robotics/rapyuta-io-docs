@@ -358,7 +358,7 @@ device with docker runtime.
 4. Select **ROS Distro** as Kinetic.
 5. Select the **Runtime** as **Device**.
 6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
-Select the **Device** as  `Routed_Network_Device` and it’s **IP Interface**. 
+Select the **Device** as  `Routed_Network_Device` and its **IP Interface**. 
 7. Select the [Restart policy](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
 ![goo](/images/tutorials/routed-networks/create-device-routed-network.png?classes=border,shadow&width=40pc)
 8. Click **CONTINUE**.
@@ -387,7 +387,7 @@ and the **STATUS** is **Running**.
 ![ROS Publisher Deployment](/images/tutorials/local-comm-broker/ros-pub-deployment.png?classes=border,shadow&width=50pc)
 
 
-You may analyse the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/) so you may debug
+You may analyze the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/) so you may debug
 if the deployment fails.
 
 The corresponding dependency graph of **ROS Publisher Deployment** looks like:
@@ -412,7 +412,7 @@ The package is successfully deployed when the green colored bar moves from
 ![ROS Subscriber Deployment](/images/tutorials/local-comm-broker/ros-sub-deployment.png?classes=border,shadow&width=50pc)
 
 
-You may analyse the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs//) so you may debug
+You may analyze the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs//) so you may debug
 if the deployment fails.
 
 The corresponding dependency graph of **ROS Subscriber Deployment** looks like:

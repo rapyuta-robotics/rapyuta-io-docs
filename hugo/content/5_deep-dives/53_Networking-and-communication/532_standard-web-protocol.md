@@ -51,7 +51,7 @@ rapyuta.io will make exposed endpoint information available to *C* (the child) b
 * **\<ENDPOINT_NAME\>_HOST**
 * **\<ENDPOINT_NAME\>_PORT**
 
-Drawing from the aforementioned example this would correspond to following evnironment variables and their corresponding values: 
+Drawing from the aforementioned example this would correspond to following environment variables and their corresponding values: 
 
 * **SAMPLE_ENDPOINT** : *https://inst-awesomesauce-url.apps.rapyuta.io:443* 
 * **SAMPLE_ENDPOINT_HOST** : *inst-awesomesauce-url.apps.rapyuta.io*

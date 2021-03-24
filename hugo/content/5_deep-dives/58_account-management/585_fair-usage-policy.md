@@ -39,7 +39,7 @@ suspend or terminate your use of the rapyuta.io
 
 | Acceptable Use Limits |                                                              |
 | --------------------- | ------------------------------------------------------------ |
-| **Logs**              | TODO: ? 1GB per what?  A maximum of 1GB of logs. The logs are retained for no more than *_seven_* days. |
+| **Logs**              | A maximum of 1GB of logs. The logs are retained for no more than *_seven_* days. |
 | **Outbound data**     | An authorized organization will be able to download nearly 10GB of data per month. |
 | **Metrics**           | 500MB of metrics data per device. The data is retained for no more than *_seven_* days. |
 | **Development>Builds**            | Run builds for no longer than an hour.                       |

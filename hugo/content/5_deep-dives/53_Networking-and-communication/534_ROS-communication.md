@@ -44,7 +44,7 @@ A native network allows you to communicate between different ROS environments as
   * ROS environments that are deployed in the cloud.
   * ROS environments that are deployed in the device within the same local area network.
 
-* [Routed Network](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/): A routed network allows you to communicate between different ROS environments as decribed in the following scenarios.
+* [Routed Network](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/): A routed network allows you to communicate between different ROS environments as described in the following scenarios.
 
   * ROS environments that are deployed in the cloud.
   * ROS environments that are deployed in the device (can be in same or different networks)

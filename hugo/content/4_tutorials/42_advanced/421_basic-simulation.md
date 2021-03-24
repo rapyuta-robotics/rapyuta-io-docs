@@ -64,7 +64,7 @@ To create the build, follow the below steps:
 8. Click on next, the build will be created.
 
 The build takes about two to five minutes to build the source code in the ***io_simulation_tutorials***
-repository into a running docker container. You may analyse the corresponding
+repository into a running docker container. You may analyze the corresponding
 [build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs), which help debug failing builds.
 
 
@@ -83,7 +83,7 @@ To create the build, follow the below steps :
 7. Click on next, the build will be created.
 
 The build takes about two to five minutes to build the source code in the ***turtlebot3***
-repository into a running docker container. You may analyse the corresponding
+repository into a running docker container. You may analyze the corresponding
 [build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs), which help debug failing builds.
 
 Please proceed to the creation of the package once the builds are complete.
@@ -107,7 +107,7 @@ You will create two packages in the tutorial.
 13. The number of replicas to run the component is `1`
 14. The name of the executable is `turtlebot3_autotrace_launcher`
 15. For **Executable Type**, click on **Development>Builds**.
-16. From the **Choose Build** drop-down menu, select`io-simulation-teleoperation`.
+16. From the **Choose Build** drop-down menu, select `io-simulation-teleoperation`.
 17. In the **Command to run in the docker container** box, enter the command: `roslaunch turtlebot3_gazebo turtlebot3_autorace.launch`
 18. Set **Resource Limit** to **Medium:2 CPU cores, 8 GiB memory**.
 

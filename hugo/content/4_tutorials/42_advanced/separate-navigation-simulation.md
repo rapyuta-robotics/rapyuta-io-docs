@@ -138,7 +138,7 @@ To create the build, follow the below steps:
 7. Click on next, the build will be created.
 
 The build takes about two to five minutes to build the source code in the ***io_simulation_tutorials***
-repository into a running docker container. You may analyse the corresponding
+repository into a running docker container. You may analyze the corresponding
 [build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs), which help debug failing builds.
 
 Please proceed to the creation of the package once the build is complete.
@@ -243,8 +243,7 @@ checking if the progress bar reaches **Succeeded** and status is
 
 ## Advanced Tips
 If you want to run your application separately from the Gazebo simulation on
-rapyuta.io, it will need time synchronization. Since the set
-up runs two ROS Masters, one in the cloud with Gazebo and the other on a
+rapyuta.io, it will need time synchronization. Since the setup runs two ROS Masters, one in the cloud with Gazebo and the other on a
 computer with navigation nodes. The clock for these two applications will need
 to be in sync. The clock synchronization is by ***/clock*** ROS topic, which is published by
 Gazebo.

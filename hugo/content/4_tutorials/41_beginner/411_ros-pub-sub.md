@@ -16,13 +16,8 @@ is launched when the package is deployed.
 ## Learning objectives
 The tutorial will show you how to deploy a basic ROS package
 with a _ROS publisher_ running on the cloud and a
-<<<<<<< HEAD
-_ROS subscriber_ running on a device such as Raspberry PI.
-It also shows how to use docker-compose runtime on a device.
-=======
 _ROS subscriber_ running on a device such as Raspberry PI by using a cloud routed network.
 It also shows how to use dockercompose runtime on a device.
->>>>>>> dbe59990e60dad39e40d3a1b446226fbc0c298b7
 
 ## Prerequisites
 1. Device requirements
@@ -46,8 +41,8 @@ work the same.
 15 minutes
 
 ## Tutorial Video
-[Basic ROS publisher and subscriber](https://youtu.be/LDlcpnb7l3k)
-{{< youtube id="LDlcpnb7l3k" title="rapyuta.io tutorial: basic ROS publisher and subscriber with docker runtime" >}}
+[Basic ROS publisher and subscriber](https://youtu.be/MZYXSaubiiE)
+{{< youtube id="MZYXSaubiiE" title="rapyuta.io tutorial: basic ROS publisher and subscriber with docker runtime" >}}
 
 ## On-boarding a device
 * If you are using a Raspberry PI device, you must prepare the device before onboarding. For more information, [click here](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi)
@@ -142,11 +137,7 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
     10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ## Create a Cloud Routed Network
-<<<<<<< HEAD
-A routed network allows you to establish ROS communication between different ROS package deployments. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
-=======
 If you have already created a routed network, you can skip this procedure. For more information about routed network, [click here](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/)
->>>>>>> dbe59990e60dad39e40d3a1b446226fbc0c298b7
 
 Perform the following procedure to create a routed network.
 
