@@ -79,7 +79,7 @@ Welcome to the March 24, 2021 release of the rapyuta.io platform. There are sign
 
 #### Security Updates
 
-- Security updates related to the verification of SSL certificates for encrypted connections are done on the rapyuta agent that runs on the devices. [Re-onboard](/6_troubleshoot/612_reonboarding-devices/) your devices if already onboarded to the rapyuta.io platform to receive the updates. The newly onboarded devices automatically receive the updates.
+- Security updates related to the verification of SSL certificates for encrypted connections are done on the rapyuta agent that runs on the devices. [Re-onboard](/6_troubleshoot/612_reonboarding-devices/) your existing devices to receive the updates. The newly onboarded devices will already have the updates.
 
 #### SDK
 
