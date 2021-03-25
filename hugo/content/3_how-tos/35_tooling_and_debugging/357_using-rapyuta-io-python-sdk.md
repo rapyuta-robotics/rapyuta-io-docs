@@ -35,12 +35,12 @@ It is recommended you install the latest Python SDK
 using **pip**(the most popular tool for installing python packages).
 
 ```bash
-pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.20.2-py2.py3-none-any.whl
+pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.22.0-py2.py3-none-any.whl
 
 ```
 
 If you are using an old version of the Python SDK, please upgrade to the latest
-[0.20.2](https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.20.2-py2.py3-none-any.whl)
+[0.22.0](https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.22.0-py2.py3-none-any.whl)
 version.
 
 

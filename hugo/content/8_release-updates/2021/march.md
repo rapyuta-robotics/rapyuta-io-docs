@@ -33,4 +33,58 @@ are significant updates in this release that we hope you will like.
 
 **rapyuta.io Python SDK [0.20.2](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
 
+* Improved SDK documentation
+
+
+## March 17
+
+Welcome to the March 17, 2021 release of the rapyuta.io platform. There are significant updates in this release that we hope you will like.
+
+#### Feature
+
+* **Native Network**
+
+    A native network allows you to communicate between different ROS environments when they are deployed either in the cloud or deployed in the devices within the same local area network. For more information, [click here](/5_deep-dives/53_networking-and-communication/535_ros-network-native/).
+
+#### Improvements
+
+* **Build Logs Improvement**
+
+
+    The rapyuta.io platform allows you to follow the build logs by selecting the toggle button. For more information, [click here](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs).
+
+
+* **Device Logs Improvement** 
+
+
+    You can view the device logs either in a tabular or in a card form. You can also specify the log lines (10, 20, 30, or 40 log lines per page) to be downloaded. For more information, [click here](/3_how-tos/35_tooling_and_debugging/file-management-devices/).
+
+
+#### SDK
+
+**rapyuta.io Python SDK [0.21.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
+
+* Added SDK support for native networks
+
+## March 24
+
+Welcome to the March 24, 2021 release of the rapyuta.io platform. There are significant updates in this release that we hope you will like.
+
+#### Improvement
+
+* **Build Page Improvement**
+
+    You can add a trigger/tag name while creating or triggering a build. The trigger/tag name can be used to identify the build requests. For more information, [click here](/3_how-tos/33_software-development/331_create-builds/).
+
+
+#### Security Updates
+
+- Security updates related to the verification of SSL certificates for encrypted connections are done on the rapyuta agent that runs on the devices. [Re-onboard](/6_troubleshoot/612_reonboarding-devices/) your existing devices to receive the updates. The new onboarded devices will already have the updates.
+
+#### SDK
+
+**rapyuta.io Python SDK [0.22.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
+
+* Added SDK support for trigger and tag name for builds
+* Added SDK support for setting CPU and memory limits for routed networks
 
