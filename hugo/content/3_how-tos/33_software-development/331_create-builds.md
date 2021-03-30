@@ -75,7 +75,7 @@ To create a build using Catkin recipe, do the following.
 
     a. Under the **Docker Secret** tab, click the **Docker Push Secret**  toggle button.
 
-    b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. For example, ```docker.io/your-username/repo-name.``` 
+    b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. For example, ```docker.io/your-username/repo-name``` 
 
     c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
 
@@ -192,11 +192,7 @@ After you have created a build by either Catkin or Docker recipe, you can view t
 ## Deleting the build
 
 {{% notice info %}}
-<<<<<<< HEAD
 Note that if the build **Status** is *_BuildInProgress_*, then the user will not be able to **Delete** the build. Deletion of such builds will fail with the error message: **can't delete the build since its corresponding build request is still in progress**.
-=======
-Note that if the build **Status** is *_BuildInProgress_*, then user will not be able to **Delete** the build. Deletion of such builds will fail with the error message: **can't delete the build since its corresponding build request is still in progress**.
->>>>>>> dbe59990e60dad39e40d3a1b446226fbc0c298b7
 {{% /notice %}}
 
 To delete a build, do the following.
