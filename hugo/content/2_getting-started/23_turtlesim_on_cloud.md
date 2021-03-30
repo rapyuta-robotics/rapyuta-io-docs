@@ -67,8 +67,8 @@ rapyuta.io  offers seamless communication between different ROS nodes running on
 
 Let's begin by creating a **melodic-cloud-rnet** routed network. 
 
-1. On the left navigation menu, click **Networking** > **Routed Networks**.
-2. Click **Add Routed Network**.
+1. On the left navigation menu, click **Networking** > **Networks**.
+2. Click **Add Network** and select **Routed Networks**.
 3. In the **Create new routed network** dialog-box, enter the following details in the respective fields.
    - **Name** : Type ```melodic-cloud-rnet``` as the name of the routed network.
    - **ROS Distro**: From the drop-down menu, select the ROS distro as ```Melodic```.
