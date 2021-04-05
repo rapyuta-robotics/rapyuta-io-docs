@@ -27,7 +27,7 @@ tags:
 ---
   
   
-## Creating Build by Catkin recipe 
+## Creating Build by Catkin Recipe 
 
 To create a build using Catkin recipe, do the following. 
 
@@ -43,11 +43,16 @@ To create a build using Catkin recipe, do the following.
 
     c. In the **Repository (URL)** field, enter the URL of the git repository from which you want to create a build. For example, `https://github.com/rapyuta/io_tutorials`.
 
-    d. Optionally, if the git repository is a private git, then click the **Private Git** radio button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/how-to-guides/account-management/setup-private-git-access/#creating-source-secret).
+    d. In the **Branch** field, enter the branch name of the repository from which you want to create the build. 
+    {{%notice info%}}
+    If you don't specify any branch name in the **Branch** field, then the default branch name of the repository is considered.
+    {{%/notice%}}
 
-    e. Optionally, you can specify the **Context Directory** field by entering the path of the directory where you want to create the build.
+    e. Optionally, if the git repository is a private git, then click the **Private Git** radio button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/how-to-guides/account-management/setup-private-git-access/#creating-source-secret).
 
-    f. Click **Next**. 
+    f. Optionally, you can specify the **Context Directory** field by entering the path of the directory where you want to create the build.
+
+    g. Click **Next**. 
 
   ![goo](/images/core-concepts/builds/build-creation/catkin-recipe.png?classes=border,shadow&width=30pc)
 
@@ -61,7 +66,7 @@ To create a build using Catkin recipe, do the following.
 
     c. In the **ROS Version** area, select either **Kinetic** or **Melodic**.
     
-    d. Optionally, to add ROS parameter to the build, in the **CATKIN BUILD PARAMETERS** area, click **Add Parameter**.
+    d. Optionally, to add ROS parameter to the build, in the **CATKIN BUILD PARAMETERS** area, click **Add Parameter**. For details about Catkin build parameters, [Click here](/5_deep-dives/52_software-development/523_ros-support-for-builds).
 
     e. Click **Next**.
 
@@ -88,7 +93,7 @@ To create a build using Catkin recipe, do the following.
 
   
 
-## Creating Build by Docker recipe 
+## Creating Build by Docker Recipe 
 
  To create a build using docker recipe, do the following.
 
@@ -104,11 +109,16 @@ To create a build using Catkin recipe, do the following.
 
     c. In the **Repository (URL)** field, enter the URL of the git repository from which you want to create a build. For example, `https://github.com/rapyuta/io_tutorials`.
 
-    d. Optionally, if the git repository is a private git, then click the **Private Git** toggle button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/how-to-guides/account-management/setup-private-git-access/#creating-source-secret).
+    d. In the **Branch** field, enter the branch name of the repository from which you want to create the build. 
+    {{%notice info%}}
+    If you don't specify any branch name in the **Branch** field, then the default branch name of the repository is considered.
+    {{%/notice%}}
 
-    e. Optionally, you can specify the **Context Directory** field by entering the path of the directory where you want to create the build.
+    e. Optionally, if the git repository is a private git, then click the **Private Git** toggle button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/how-to-guides/account-management/setup-private-git-access/#creating-source-secret).
 
-    f. Click **Next**. 
+    f. Optionally, you can specify the **Context Directory** field by entering the path of the directory where you want to create the build.
+
+    g. Click **Next**. 
 
   ![goo](/images/core-concepts/builds/build-creation/docker-recipe.png?classes=border,shadow&width=30pc)
 
@@ -179,13 +189,50 @@ After you have created a build by either Catkin or Docker recipe, you can view t
   * Click **Delete** to delete the build. 
   * Click **Trigger** to trigger a build. 
   * Click **Clone** to clone a build within the same or to different projects.
-  * Click **Show More** to view the details of the build and view the build logs.
+  * Click **More** to view the details of the build and view the build logs.
+  * Click **Edit** to update the details of the build.
 
-  After clicking **Show More**,  the following image is displayed.
+
+  After clicking **More**,  the following image is displayed.
 
   ![goo](/images/core-concepts/builds/build-creation/build-details.png?classes=border,shadow&width=45pc)
 
-## Deleting the build
+## Updating the Build
+
+The rapyuta.io platform also allows you to edit and update your build. Perform the following procedure to edit or update your build.
+
+1. On the left navigation bar, click **Development>Builds**. It displays all the builds available for a project.
+
+2. Click the build that you want to edit. The **Build Details** page appears. 
+
+3. In the **Build Details** page, click **Edit**. The **Edit Build Details** page appears.
+   In the **Edit Build Details** page, you can edit the following fields of the build.    For the following field descriptions, see the procedures to create builds by using Catkin or Docker recipe.
+   * **Repository**
+   * **Branch**
+   {{%notice info%}}
+   If you provide a branch name in the **Repository** field and provide another branch name in the **Branch** field, the **Branch** field name takes the precedence .
+   {{%/notice%}}
+   * **Private Git?**
+   * **Context Directory**
+   * **Dockerfile Path**
+   * **Has ROS Components?**: For docker recipe
+   * **Has Simulation?**
+   * **ROS Version**
+   * **Docker Push/Pull Secret**
+  {{%notice info%}}
+   **Dockerfile Path**, **Has ROS Components?**, **Has Simulation?**, **Docker Push/Pull Secret**, and **ROS Version** fields are editable for docker build recipe.
+  {{%/notice%}}
+   * **Catkin Parameters**: This field is editable for Catkin build recipe only.
+
+
+4. Click **Next**. The build is getting updated, and you can see the progress by clicking the build created in the **Development>Builds** page.
+
+{{%notice note%}}
+After you edit and update the build, you must [trigger](/5_deep-dives/52_software-development/522_trigger-and-rollback-builds) the build for the updates to be applied. 
+
+{{%/notice%}}
+
+## Deleting the Build
 
 {{% notice info %}}
 Note that if the build **Status** is *_BuildInProgress_*, then user will not be able to **Delete** the build. Deletion of such builds will fail with the error message: **can't delete the build since its corresponding build request is still in progress**.
