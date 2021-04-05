@@ -44,9 +44,9 @@ To create a build using Catkin recipe, do the following.
     c. In the **Repository (URL)** field, enter the URL of the git repository from which you want to create a build. For example, `https://github.com/rapyuta/io_tutorials`.
 
     d. In the **Branch** field, enter the branch name of the repository from which you want to create the build. 
-    {{%notice info%}}
-    If you don't specify any branch name in the **Branch** field, then the default branch name of the repository is considered.
-    {{%/notice%}}
+  {{%notice info%}}
+  If you don't specify any branch name in the **Branch** field, then the default branch name of the repository is considered.
+  {{%/notice%}}
 
     e. Optionally, if the git repository is a private git, then click the **Private Git** radio button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/how-to-guides/account-management/setup-private-git-access/#creating-source-secret).
 
@@ -110,9 +110,9 @@ To create a build using Catkin recipe, do the following.
     c. In the **Repository (URL)** field, enter the URL of the git repository from which you want to create a build. For example, `https://github.com/rapyuta/io_tutorials`.
 
     d. In the **Branch** field, enter the branch name of the repository from which you want to create the build. 
-    {{%notice info%}}
-    If you don't specify any branch name in the **Branch** field, then the default branch name of the repository is considered.
-    {{%/notice%}}
+  {{%notice info%}}
+  If you don't specify any branch name in the **Branch** field, then the default branch name of the repository is considered.
+  {{%/notice%}}
 
     e. Optionally, if the git repository is a private git, then click the **Private Git** toggle button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/how-to-guides/account-management/setup-private-git-access/#creating-source-secret).
 
@@ -181,7 +181,6 @@ After you have created a build by either Catkin or Docker recipe, you can view t
 2. To view the details of a particular build, click the build. The following image is displayed.
 
   ![goo](/images/core-concepts/builds/build-creation/build-detail-action.png?classes=border,shadow&width=25pc)
-
   
   The **Build Details** page allows you to do the following.</br>
 
@@ -206,7 +205,7 @@ The rapyuta.io platform also allows you to edit and update your build. Perform t
 2. Click the build that you want to edit. The **Build Details** page appears. 
 
 3. In the **Build Details** page, click **Edit**. The **Edit Build Details** page appears.
-   In the **Edit Build Details** page, you can edit the following fields of the build.    For the following field descriptions, see the procedures to create builds by using Catkin or Docker recipe.
+   In the **Edit Build Details** page, you can edit the following fields of the build.    For the following field descriptions, see the procedures to create builds by using [Catkin](/3_how-tos/33_software-development/331_create-builds/#creating-build-by-catkin-recipe) or [Docker](/3_how-tos/33_software-development/331_create-builds/#creating-build-by-docker-recipe) recipe.
    * **Repository**
    * **Branch**
    {{%notice info%}}
