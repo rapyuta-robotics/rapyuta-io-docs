@@ -29,7 +29,7 @@ tags:
   
 ## Creating Build by Catkin Recipe 
 
-To create a build using Catkin recipe, do the following. 
+To create a build using the Catkin recipe, do the following. 
 
 1. On the left navigation bar, click **Development>Builds**.
 
@@ -45,7 +45,7 @@ To create a build using Catkin recipe, do the following.
 
     d. In the **Branch** field, enter the branch name of the repository for the build. 
   {{%notice info%}}
-  In the **Branch** field, you can also provide any Git reference as a valid input. For example, **Commit ID**, **Tag name**, or **Branch name**. If you don't specify any branch name in the **Branch** field, then the default branch name of the repository is considered.
+  In the **Branch** field, you can also provide any Git reference as valid input. For example, **Commit ID**, **Tag name**, or **Branch name**. If you don't specify any branch name in the **Branch** field, then the default branch name of the repository is considered.
   {{%/notice%}}
 
     e. Optionally, if the git repository is a private git, then click the **Private Git** radio button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/how-to-guides/account-management/setup-private-git-access/#creating-source-secret).
@@ -62,7 +62,7 @@ To create a build using Catkin recipe, do the following.
 
     a. In the **Architecture** area, select the processor architecture for the build. The available options are:  **arm32v7**, **arm32v7**, or **amd64**.
 
-    b. Optionally, if the build has a simulation option, click the **Has Simulation** radio-button.
+    b. Optionally, if the build has a simulation option, click the **Has Simulation** radio button.
 
     c. In the **ROS Version** area, select either **Kinetic** or **Melodic**.
     
@@ -111,7 +111,7 @@ To create a build using Catkin recipe, do the following.
 
     d. In the **Branch** field, enter the branch name of the repository for the build. 
   {{%notice info%}}
-  In the **Branch** field, you can also provide any Git reference as a valid input. For example, **Commit ID**, **Tag name**, or **Branch name**. If you don't specify any branch name in the **Branch** field, then the default branch name of the repository is considered.
+  In the **Branch** field, you can also provide any Git reference as valid input. For example, **Commit ID**, **Tag name**, or **Branch name**. If you don't specify any branch name in the **Branch** field, then the default branch name of the repository is considered.
   {{%/notice%}}
 
     e. Optionally, if the git repository is a private git, then click the **Private Git** toggle button and select the credential from the **Credential** drop-down menu. If you have not created any secret for the repository, [create a source secret](/how-to-guides/account-management/setup-private-git-access/#creating-source-secret).
@@ -128,7 +128,7 @@ To create a build using Catkin recipe, do the following.
    
     b. In the **Dockerfile path** field, type the path of the docker file that contains the source code. The docker file path is relative to the **Context Directory** field.
 
-    c. Optionally, if the build has ROS component, then click the **Has ROS Components** radio-button, select the ROS version as either **Kinetic** or **Melodic**, and if the build has a simulation option, click the **Has Simulation** radio-button.
+    c. Optionally, if the build has ROS component, then click the **Has ROS Components** radio button, select the ROS version as either **Kinetic** or **Melodic**, and if the build has a simulation option, click the **Has Simulation** radio button.
 
     d. Click **Next**.
 
@@ -209,15 +209,17 @@ The rapyuta.io platform also allows you to edit and update your build. Perform t
    * **Repository**
    * **Branch**
    {{%notice info%}}
-   If you provide a branch name in the **Repository** field and provide another branch name in the **Branch** field, the **Branch** field name takes the precedence .
+   If you provide a branch name in the **Repository** field and provide another branch name in the **Branch** field, the **Branch** field name takes precedence.
    {{%/notice%}}
+   * **Private Git?** and **Credentials** for a private repository
    * **Context Directory**
    * **Dockerfile Path**
-   * **Docker Push Secret**
    * **Catkin Parameters**: This field is editable for Catkin build recipe only.
+   * **Docker Pull Secret**: This field is editable for Docker build recipe only.
+   * **Image Repository**: This field is editable for Docker build recipe only.
 
 
-4. Click **Next**. The build is getting updated, and you can view the updated details by clicking the build in the **Development>Builds** page.
+4. Click **Next**. The build is getting updated, and you can view the updated details by clicking the build on the **Development>Builds** page.
 
 {{%notice note%}}
 After you edit and update the build, you must [trigger](/5_deep-dives/52_software-development/522_trigger-and-rollback-builds) the build for the updates to be applied. 
