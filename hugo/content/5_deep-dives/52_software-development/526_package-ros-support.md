@@ -57,7 +57,7 @@ that are required to be delivered.
 * __Tunable timeouts for ROS services__ - Prevents user code that relies on ROS services from lock-ups (natively ROS services have an infinite timeout) in case of transient network failure. 
 * __Transparent tunable compression__ for topics/services/actions - potentially reduce payload size (up to 80% for sparse messages for e.g. PointCloud)
 * __Transparent 2048-bit encryption for all data__.
-* Pre-deployment __randomization of connection endpoints, credentials and encryption-keys__
+* Per-deployment __randomization of connection endpoints, credentials and encryption-keys__
 * Elegant semantics enabling simple __dynamic multi-robot communication topologies without complex launch file and namespace hacks__.
 * Built-in features and optimizations to provide robust connectivity over the public internet transparently such as retries, connection-pooling, order reassembly mechanisms. 
 
