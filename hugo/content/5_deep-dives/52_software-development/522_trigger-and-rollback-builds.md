@@ -12,11 +12,11 @@ tags:
 ## Trigger and Rollback
 
 As a developer, you may want to trigger a new build or rollback to a previous build generation. 
-The rapyuta.io **Development>Builds** allow you to do that.
+The rapyuta.io **Development>Builds** allows you to do that.
 
 In the **Development>Builds** page select the particular build from the build list and click on **SHOW MORE**, 
 this will open the **Details** tab of the selected build. 
-It displays information on the build, current build generation number, git repository etc. 
+It displays information on the build, current build generation number, git repository, etc. 
 
 Suppose the current build generation number is _i_. If you update the
 source code in the git repository, you may want to trigger a new build to reflect the new code changes. 
@@ -34,7 +34,7 @@ When you trigger a new build, a pop-up message appears and prompts whether you w
 
 {{% notice note %}}
 
-Packages which have builds that are in **Complete** status are suitable for a deployment. The **InProgress** and **Failed** builds are unfit for deployment.
+Packages which have builds that are in **Complete** status are suitable for deployment. The **InProgress** and **Failed** builds are unfit for deployment.
 
 {{% /notice %}}
 
@@ -61,4 +61,4 @@ When a build fails, it is recommended to check the corresponding [build logs]({{
 1. Repository access issue
 2. Incorrect context directory path
 3. Incorrect catkin parameters
-4. Incorrect dockerfile path
+4. Incorrect docker file path

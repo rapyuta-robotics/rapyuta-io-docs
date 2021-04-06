@@ -38,9 +38,9 @@ Ensure that the keys of all the labels of a device are **unique**.
 ## Adding Labels
 To add a new label to a device, do the following 
 
-1. In the left navigation bar, click **Devices>All Devices**. A list of added devices are displayed.
+1. In the left navigation bar, click **Devices>All Devices**. A list of added devices is displayed.
 
-2. On the **Details** tab, find for the **LABELS** section.
+2. On the **Details** tab, find the **LABELS** section.
 
 3. Enter the **key** of the label to the left of the **:**     
  In this example, the key is **country**

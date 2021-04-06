@@ -29,15 +29,15 @@ tags:
 ---
 
 
-#### Q. Does platform support ROS2?
+#### Q. Does the platform support ROS2?
 
 >{{%expand "Answer" %}}
-  As of now the rapyuta.io platform doesn't support ROS2. 
+  As of now, the rapyuta.io platform doesn't support ROS2. 
   {{%/expand%}}
 
 #### Q. How can I remove a deployment?
 >{{%expand "Answer"%}}
-  Click the **Deployment** page, select the deployment that you want to remove and click **De-provision**. After you de-provision a deployment, the deployment is removed from the rapyuta.io platform. Note that after you de-provision a deployment, you'll loose all the data of the deployment.
+  Click the **Deployment** page, select the deployment that you want to remove, and click **De-provision**. After you de-provision a deployment, the deployment is removed from the rapyuta.io platform. Note that after you de-provision a deployment, you'll lose all the data of the deployment.
   {{%/expand%}}
 
 

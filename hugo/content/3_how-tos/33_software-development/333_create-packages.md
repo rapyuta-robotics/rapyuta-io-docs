@@ -50,7 +50,7 @@ To add the metadata of the package, do the following.
 
     b. Type the package version in the package version field.
 
-    c. Click  one of the following.
+    c. Click one of the following.
 
     **IS Singleton package**: Select this option if a package is not dependent on another package.
 
@@ -62,7 +62,7 @@ To add the metadata of the package, do the following.
 
 A component is a set of executables. All executables are deployed in unison on the desired Component Runtime. All executables of a component communicate via Inter-Process Communication (IPC). An executable listening on a port is accessible to its sibling executables via localhost.
 
-Perform the following procedure to create  components.
+Perform the following procedure to create components.
 
 1. Click the **Components** tab.
 
@@ -73,9 +73,9 @@ Perform the following procedure to create  components.
 
     b. In the **Component Runtime** field, select the component runtime either as **Device** or **Cloud**. For more information about device run-time, [click here](/5_deep-dives/51_managing-devices/511_device-runtime)
 
-    c. If the component is to be deployed on a ROS enabled device, click the **IS ROS Component** check-box.
+    c. If the component is to be deployed on a ROS-enabled device, click the **IS ROS Component** check-box.
 
-    d. In the **Replicas to run the component** field, type the number of replication of the component that you want to includee.</br>
+    d. In the **Replicas to run the component** field, type the number of replication of the component that you want to include.</br>
 
 3. In the executables area, do the following.
 
@@ -90,14 +90,14 @@ Perform the following procedure to create  components.
 
     d. If you have selected the executable type as **Docker**, in the Docker Image field, type the docker image that you want to use. For more information about creating the build recipe as docker, [click here](/3_how-tos/33_software-development/331_create-builds/#creating-build-by-docker-recipe).
 
-    e. Optionally, if the docker image is a private image, click the **Private Image** check-box and select the credential from the **Credentials** drop-down menu.
+    e. Optionally, if the docker image is private, click the **Private Image** check-box and select the credential from the **Credentials** drop-down menu.
 
     f. In the **Command to Run** field, in the docker container box, enter the command to run the executables.
 
     g. From the Resource limit drop-down menu, select the CPU and memory requirement for the executable.
 
 
-4.  Optionally, to add an end-point, click **Add Endpoint** and do the following. For more information on end point configuration, [click here](/5_deep-dives/53_networking-and-communication/532_standard-web-protocol/)
+4.  Optionally, to add an end-point, click **Add Endpoint** and do the following. For more information on endpoint configuration, [click here](/5_deep-dives/53_networking-and-communication/532_standard-web-protocol/)
 
     a. In the **Endpoint Name** field, type a name for the endpoint.
 
@@ -119,11 +119,11 @@ Perform the following procedure to create  components.
     e. If the endpoint is accessed internally, do the following.
 
     f. In the port field, type the port number for the endpoint. Port is where the application’s service is made visible to other services.
-    g. In the Target Port field, type the target port. Target port is where the application needs to be listening for network requests for the service to work.
+    g. In the Target Port field, type the target port. The target port is where the application needs to be listening for network requests for the service to work.
     
     h. Optionally, You can also use port range for an endpoint by selecting Port Range toggle. A Port Range on an endpoint will allow you to open multiple ports on a single DNS hostname.
 {{%notice note%}}
-A maximum 50 ports are allowed for an endpoint. Allowed format is comma separated Port Ranges. Each Port Range is either a single port or a range of port mentioning the from port and to port separated by a hyphen (-). Examples: 5000 or 443-445 or 3446-3449,3500,3510-3530
+A maximum of 50 ports is allowed for an endpoint. The allowed format is comma-separated Port Ranges. Each Port Range is either a single port or a range of port mentioning the from port and to port separated by a hyphen (-). Examples: 5000 or 443-445 or 3446-3449,3500,3510-3530
 {{%/notice%}}
 
  5. If you want to add a ROS topic to the package, click **Add ROS topic** and do the following. A ROS topic is intended for unidirectional, streaming communication. For more information, [click here](/5_deep-dives/52_software-development/526_package-ros-support)
@@ -140,7 +140,7 @@ A maximum 50 ports are allowed for an endpoint. Allowed format is comma separate
 
     b. In the Timeout field, enter the timeout in seconds. 
 
-6. Optionally, to add configuration parameter to the executable, click Add Parameter. configuration parameters operate at the level of component and apply to executables in the component only.
+6. Optionally, to add configuration parameter to the executable, click Add Parameter. configuration parameters operate at the level of the component and apply to executables in the component only.
 
 7. Click **Next**.
 
@@ -150,13 +150,13 @@ rapyuta.io allows you to configure the following additional information for the 
 
 **Volumes**: Applications running on the cloud de-allocate any resources consumed when they stop, scale down, or fail. This implies that the working storage associated with them is ephemeral. To get around this problem rapyuta.io provides a mechanism to consume persistent block storage for your applications running in the cloud. This storage can be associated with at most one running deployment at any given point of time. A user is typically required to manage the lifecycle of the application code independently from the associated storage.
 
-The Rapyuta IO Persistent Volume is a storage package. A storage package is a public package which is available to all users out of the box. You cannot delete or modify storage packages, and they are available to every user.
+The Rapyuta IO Persistent Volume is a storage package. A storage package is a public package that is available to all users out of the box. You cannot delete or modify storage packages, and they are available to every user.
 
 **Dependent Deployment**: If your package has a dependency on a deployment, you must define the dependent deployment. 
 
 **Inbound ROS interface**: While having provider semantics provides flexibility but can potentially lead to a case where a user may deploy a package that depends on a previously deployed one without sufficient knowledge of the internal workings of the parent package. Cross talk between topics/services/actions in such cases can cause unintended hard to debug errors and failure of application code.
 
-To prevent against such unintentional cross-communication between deployments of two packages, rapyuta.io requires a package to declare a whitelist of ROS inbound topics/services/interfaces it can receive from a child dependant on it.
+To prevent such unintentional cross-communication between deployments of two packages, rapyuta.io requires a package to declare a whitelist of ROS inbound topics/services/interfaces it can receive from a child dependant on it.
 
 
 

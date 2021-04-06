@@ -39,17 +39,17 @@ cloud runtime. It will publish the ROS topic *_/telemetry_* with **Maximum** **Q
 
 1. On the left navigation bar, click **Development>Deployments**.
 
-2. Select specific deployment whose logs you want to view or analyze.
+2. Select a specific deployment whose logs you want to view or analyze.
 
    In this example, select **ROS publisher exclusive deployment**.
 
-3. On the deployment's **DETAILS** tab, ensure the green progress bar is at **Succeeded** and **Status:Running** point.
+3. On the deployment's **DETAILS** tab, ensure the green progress bar is at **Succeeded** and **Status: Running** point.
 
 
 
 ### Stdout Logs
 
-To view or analyse the corresponding deployment logs, click **Historical Logs**.
+To view or analyze the corresponding deployment logs, click **Historical Logs**.
 
 ![Deployment detials page](/images/core-concepts/logging/deployment-logs/historical-logs/deployment-hist-logs.png?classes=border,shadow&width=50pc)
 
@@ -63,7 +63,7 @@ its component name and executable name, and its information or message.
 
 
 
-You can use the toggle button to filter the logs based on the timestamp, component, or the executables available in the deployment.
+You can use the toggle button to filter the logs based on the timestamp, component, or executables available in the deployment.
 
 ![Filters for Historical logs](/images/core-concepts/logging/deployment-logs/historical-logs/filter-hist-logs.png?classes=border,shadow&width=50pc)
 
@@ -97,7 +97,7 @@ You can also download historical logs of a deployment as a **.log** file by clic
 
 
 
-The **Download Historical logs** page appears. Clicking on the button with download icon, the **Paginated Download Logs** modal should appear. If the logs are less than 100,000 lines, they are directly downloaded, and the modal is not shown.
+The **Download Historical logs** page appears. Clicking on the button with the download icon, the **Paginated Download Logs** modal should appear. If the logs are less than 100,000 lines, they are directly downloaded, and the modal is not shown.
 
 ![Download button](/images/core-concepts/logging/deployment-logs/historical-logs/download-lines-button.png?classes=border,shadow&width=30pc)  
 
@@ -132,7 +132,7 @@ The **Live Logs** tab allows you to do the following.
 
 
 
-* View the realtime logs of the deployed components and the associated cloud bridges.
+* View the real-time logs of the deployed components and the associated cloud bridges.
 
 
 
@@ -163,8 +163,7 @@ It publishes */telemetry* ROS topic with **High** **QoS**.
 1. On the left navigation bar, click **Devices>All Devices**.
 2. Select a device whose device logs you want to view. In this example,
    _ROS Publisher Subscriber Device_ is selected.
-3. Under **Logs** tab, to subscribe to a ROS topic, click **Subscribe** against
-   the topic. In this example, the topic `/telemetry` is subscribed.
+3. Under **Logs** tab, to subscribe to a ROS topic, click **Subscribe** against the topic. In this example, the topic `/telemetry` is subscribed.
    Ensure the status of the subscribed topic(s) is **Subscribed** and is highlighted
    in green.
 
@@ -214,7 +213,7 @@ ROS-based device.
 
   ![build Logs](/images/core-concepts/logging/build-logs/build-history-view-logs.png?classes=border,shadow&width=60pc)     
 
-  3. To view details of the git repository such as repository’s name, commit number, commit message and the git hosting platform, 
+  3. To view details of the git repository such as repository’s name, commit number, commit message, and the git hosting platform, 
 
      click **View details/logs**.
 
@@ -222,18 +221,16 @@ ROS-based device.
 
   5. Build logs are displayed in the logging area (terminal-like window). To follow the displayed logs, click **Follow** toggle button.
 
-  Once all of the build logs are generated, the status indicator greys out and
-  you'll see a **Logs streaming ended** status (top left corner of the terminal
-  window). If you see an error and the logs are not being generated,
+  Once all of the build logs are generated, the status indicator greys out and you'll see a **Logs streaming ended** status (top left corner of the terminal window). If you see an error and the logs are not being generated,
   click **Refresh**.
 
   ![build Logs](/images/core-concepts/logging/build-logs/build-logs.png?classes=border,shadow&width=60pc)
 
 ## Routed Network Logs
 
-Viewing routed network logs is same as viewing any component logs.
+Viewing routed network logs is the same as viewing any component logs.
 
-To view or analyse the corresponding routed network logs, do the following.
+To view or analyze the corresponding routed network logs, do the following.
 
  1. click **Historical Logs** and under **Source** and check the routed network for which you want to view the logs.
 
@@ -241,6 +238,6 @@ To view or analyse the corresponding routed network logs, do the following.
 
 Viewing native network logs is same as viewing any component logs.
 
-To view or analyse the corresponding native network logs, do the following.
+To view or analyze the corresponding native network logs, do the following.
 
  1. click **Historical Logs** and under **Source** and check the native network for which you want to view the logs.

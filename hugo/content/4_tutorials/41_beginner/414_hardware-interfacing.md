@@ -13,14 +13,13 @@ the trigger of the on-board LED (ACT/LED0) on Raspberry PI 2 or 3.
 
 ## Learning objectives
 The goal is to learn how to deploy a basic non-ROS package on a
-Raspberry PI 2 or 3 with docker compose runtime.
+Raspberry PI 2 or 3 with docker-compose runtime.
 
 ## Prerequisites
 1. Device requirements
-	* You should have access to a computer with an internet connection.
-	* Ensure that the [Google Chrome](https://www.google.com/chrome/) browser
-	  is installed on the computer.
-	* Raspberry PI 2 or 3
+   * You should have access to a computer with an internet connection.
+   * Ensure that the [Google Chrome](https://www.google.com/chrome/) browser is installed on the computer.
+   * Raspberry PI 2 or 3
 2. You should be familiar with
    [Docker image](https://docs.docker.com/v17.09/engine/userguide/storagedriver/imagesandcontainers/)
    concept.
@@ -41,14 +40,14 @@ To create ***led_trigger*** package, follow the steps:
 4. In the **Package Version** box, type in the version of the package. By default, it is set to _1.0.0_
 5. In the **Description** box, enter a summary of the package.
 6. Click **NEXT**.
-7. In the **Component Name** box, enter a name for the component say `led_trigger`
+7. In the **Component Name** box, enter a name for the component, for example, `led_trigger`
 {{% notice info %}}
 The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
 8. Select **Device** as **Component Runtime**.
 9.  Deselect **Is ROS Component** checkbox.
 10. Select **arm32v7** as **Architecture**.
-11. In the **Executable Name** box, type in a name for the executable say `led_trigger_executable`
+11. In the **Executable Name** box, type in a name for the executable , for example, `led_trigger_executable`
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
@@ -65,7 +64,7 @@ To deploy a package from the rapyuta.io, follow the steps:
 1. On the left navigation bar, click **Development>Catalog**.
 2. Select the ***led_trigger*** package that you just created.
 3. Click **Deploy package**.
-4. In the **Name of deployment** box, enter a name for the deployment say `LED Trigger Deployment`
+4. In the **Name of deployment** box, enter a name for the deployment, for example, `LED Trigger Deployment`
 5. Since *led_trigger* has device runtime, you must select the device you want to deploy the component on. Click **Refresh the list of online devices** to retrieve an updated list of online devices.
 6. Select the device from the **Select device for deploying the component**
    drop-down list.
@@ -73,11 +72,11 @@ To deploy a package from the rapyuta.io, follow the steps:
 
 You will be redirected to the newly created deployment's **Details** page.
 The _LED Trigger Deployment_ is successfully running only when the green
-colored bar moves to **Succeeded** and **Status:Running** point indicating that the **DEPLOYMENT PHASE** is **Succeeded**, and the **STATUS** is **Running**.
+colored bar moves to **Succeeded** and **Status: Running** point indicating that the **DEPLOYMENT PHASE** is **Succeeded**, and the **STATUS** is **Running**.
 
 You may also analyze the corresponding
 [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/)
-to check if everything is working good.
+to check if everything is working well.
 
 To verify that everything is working correctly, you should observe the trigger
 of the on-board LED(ACT/LED0) on Raspberry PI 2 or 3 switches to a heartbeat.

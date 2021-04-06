@@ -3,7 +3,7 @@
 title: "Metrics Visualization"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 
-weigth: 544
+weight: 544
 
 versions:
   free-pro-team: '*'
@@ -29,7 +29,7 @@ tags:
     - Deep Dive
 ---
 
-To view the metric data in forms of graph, do the following:
+To view the metric data in the forms of a graph, do the following:
 
 1. Click **Devices>All Devices** > select the device which is publishing ***/random*** topic > click **Metrics**.
 2. To visualize the data being published by a ROS topic, you will have to first subscribe to the ROS topic by clicking **Subscribe**. In this example, subscribe to the ***/random*** ROS topic.
@@ -43,9 +43,9 @@ To view the metric data in forms of graph, do the following:
 ![Select topic](/images/chapters/developer-guide/tooling-automation/metrics/select-random.png?classes=border,shadow&width=50pc)
 6. Select the topic's field like **data** in this example.
 ![Select Data](/images/chapters/developer-guide/tooling-automation/metrics/select-data.png?classes=border,shadow&width=50pc)
-7. You may plot multiple functions such as mean, sum, median in the same graph. Click on **1Function** button to open the list of fuctions available. Select the functions you want to visualize on the graph like *mean* in this example, and then click **Apply**.
+7. You may plot multiple functions such as mean, sum, the median in the same graph. Click on **1Function** button to open the list of functions available. Select the functions you want to visualize on the graph like *mean* in this example, and then click **Apply**.
 ![Plot Function](/images/chapters/developer-guide/tooling-automation/metrics/select-function.png?classes=border,shadow&width=50pc)
-8. You may change the type of the graph by selecting one of the available graph forms like ***line***, ***stacked***, ***step-plot*** or ***bar***. In this example, a **Bar** graph is selected. To confirm the current settings, click the red colored checkmark at the top-right corner.
+8. You may change the type of the graph by selecting one of the available graph forms like ***line***, ***stacked***, ***step-plot***, or ***bar***. In this example, a **Bar** graph is selected. To confirm the current settings, click the red-colored checkmark at the top-right corner.
 ![Bar graph](/images/chapters/developer-guide/tooling-automation/metrics/bar-graph.png?classes=border,shadow&width=50pc)
 9. To edit the ***title*** of the graph, click the pencil icon at the top right corner of the cell as indicated by 1 in the below image.
 10. To modify the ***current graph settings***, click the wheel icon at the top right corner of the cell as indicated by 2 in the below image.

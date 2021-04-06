@@ -23,13 +23,13 @@ tags:
 
 ## Introduction to rapyuta.io documentation
 
-The rapyuta.io platform documentation help you to use the platform effectively by providing  conceptual, procedurial, and turial information.
+The rapyuta.io platform documentation helps you to use the platform effectively by providing conceptual, procedural, and tutorial information.
 
 The documentation is divided into the following sub-sections
 
 - [How To Guides]({{< ref "3_how-tos" >}}): Contain step-by-step information needed to accomplish defined tasks on the platform. 
 - [Tutorials]({{< ref "4_tutorials" >}}): Are recipes for building different applications and use-cases on the platform. Tutorials help you explore the capabilities of the platform by building running applications. They aim to guide you to do things yourself without explicit instructions.
-- [Deep-dives]({{< ref "5_deep-dives" >}}): contain in depth information about topics pertaining to the platform. 
+- [Deep-dives]({{< ref "5_deep-dives" >}}): contain in-depth information about topics of the platform. 
 - [FAQs]({{< ref "7_FAQ" >}}) and [Troubleshooting]({{< ref "6_troubleshoot" >}})
 
 <!-- Blog -->
