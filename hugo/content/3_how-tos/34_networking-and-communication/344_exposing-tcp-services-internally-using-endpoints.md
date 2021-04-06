@@ -29,7 +29,7 @@ tags:
 
 ### Exposing Endpoints Internally
 
-You can restrict access to a network endpoint by ensuring that **Exposed externally** option is not selected.
+You can restrict access to a network endpoint by ensuring that the **Exposed externally** option is not selected.
 
 The only protocol available is the **TCP** for which the value of the **Port** field is set to **443** by default. However, you can change the port's value.
 
@@ -40,14 +40,14 @@ You can also use port range for an endpoint by selecting **Port Range** toggle. 
 
 {{% notice note %}}
 
-By default the Target Port is same as the Port. A maximum 50 ports are allowed for an endpoint.
+By default, the Target Port is the same as the Port. A maximum of 50 ports is allowed for an endpoint.
 
 {{%/notice%}}
 
-Allowed format is for Port Range
+The allowed format is for Port Range
 
 - Single Port. *Example:* 5000 
 - Range of Port mentioning **FROM port** and **TO port** separated by a **hyphen** (-). *Example:* 443-445
-- Comma separated combination of the above two formats. *Example:* 3446-3449,3500,3510-3530
+- Comma-separated combination of the above two formats. *Example:* 3446-3449,3500,3510-3530
 
 ![internal endpoint port range](/images/core-concepts/packages/network-endpoints/internal-endpoint-port-range.png?classes=border,shadow&width=40pc)

@@ -29,7 +29,11 @@ tags:
   
 ## Creating Build by Catkin Recipe 
 
+<<<<<<< HEAD
+To create a build using the Catkin recipe, do the following. 
+=======
 To create a build using Catkin recipe, do the following. 
+>>>>>>> dbe59990e60dad39e40d3a1b446226fbc0c298b7
 
 1. On the left navigation bar, click **Development>Builds**.
 
@@ -76,7 +80,7 @@ To create a build using Catkin recipe, do the following.
 
     a. Under the **Docker Secret** tab, click the **Docker Push Secret**  toggle button.
 
-    b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. For example, ```docker.io/your-username/repo-name.``` 
+    b. In the **Image Repository** field, enter the URL of the private repository where you want to push and save the image for later usage. For example, ```docker.io/your-username/repo-name``` 
 
     c. From the **Push secret** drop-down menu, select the secret for the repository. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-docker-registry/#creating-a-docker-secret).
 
@@ -95,7 +99,7 @@ To create a build using Catkin recipe, do the following.
 
 ## Creating Build by Docker Recipe 
 
- To create a build using docker recipe, do the following.
+ To create a build using the docker recipe, do the following.
 
 1. On the left navigation bar, click **Development>Builds**
 
@@ -234,7 +238,7 @@ After you edit and update the build, you must [trigger](/5_deep-dives/52_softwar
 ## Deleting the Build
 
 {{% notice info %}}
-Note that if the build **Status** is *_BuildInProgress_*, then user will not be able to **Delete** the build. Deletion of such builds will fail with the error message: **can't delete the build since its corresponding build request is still in progress**.
+Note that if the build **Status** is *_BuildInProgress_*, then the user will not be able to **Delete** the build. Deletion of such builds will fail with the error message: **can't delete the build since its corresponding build request is still in progress**.
 {{% /notice %}}
 
 To delete a build, do the following.
@@ -245,7 +249,7 @@ To delete a build, do the following.
 
 3. Click **Delete**.
 
-4. Confirm on the build deletion message. The build is deleted from the rapyuta.io platform.
+4. Confirm the build deletion message. The build is deleted from the rapyuta.io platform.
 
 ## Cloning a Build
 

@@ -1,6 +1,6 @@
 ---
 
-title: "Exposing Services over Internet"
+title: "Exposing Services over the Internet"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 weight: 342
 versions:

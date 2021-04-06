@@ -126,22 +126,22 @@ source devel/setup.bash
 8. Execute the token at the device's terminal to set up rapyuta.io's device agent on the device.
 
 ## Create build
-To create the build, follow below steps: 
+To create the build, follow the below steps: 
 
 1. On the left navigation bar, click **Development>Build**.
 2. Click on **ADD NEW BUILD**
-3. In the Build Name box, enter a name for the build say `io-simulation-navigation` 
-4. In the **Git repository** box, enter the url address : 
+3. In the Build Name box, enter a name for the build, for example, `io-simulation-navigation` 
+4. In the **Git repository** box, enter the URL address : 
 `https://github.com/rapyuta-robotics/io_simulation_tutorials` and select **Build Recipe** as Catkin.
 5. In the context directory, enter `turtlebot_navigation`
 6. Click on next, select **ROS Version** as **Melodic** and select the **Has Simulation** option.  
 7. Click on next, the build will be created.
 
 The build takes about two to five minutes to build the source code in the ***io_simulation_tutorials***
-repository into a running docker container. You may analyse the corresponding
+repository into a running docker container. You may analyze the corresponding
 [build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs), which help debug failing builds.
 
-Please proceed to creation of package once the build is Complete.
+Please proceed to the creation of the package once the build is complete.
 
 ## Create Packages
 You will create and add two packages, namely, Navigation Application and Turtlebot3 Simulation.
@@ -185,9 +185,9 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 13. The number of **Replicas to run the component** is **1**
 14. The name of the executable: `simulation_executable`
 15. For **Executable Type**, click on **Builds**.
-16. From the **Choose Build** drop-doen menu, select the Build `io-simulation-navigation`.
+16. From the **Choose Build** drop-down menu, select the Build `io-simulation-navigation`.
 17. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup sim.launch gui:=true`
-18. Set **Resource Limit** to **Medium:2 cpu cores, 8 GiB memory**
+18. Set **Resource Limit** to **Medium:2 CPU cores, 8 GiB memory**
 {{% notice warning %}}
 For simulation, the resource limit should either be **Medium** or **Large**. Simulation has issues with **Small** resource limits.
 {{% /notice %}}
@@ -242,9 +242,8 @@ checking if the progress bar reaches **Succeeded** and status is
 <video controls style="max-width: 1500px" width="100%" class="border shadow" src="/images/tutorials/separate-navigation-simulation/expected-outcome.webm"></video>
 
 ## Advanced Tips
-If you want to run your application separate from the Gazebo simulation on
-rapyuta.io, it will need time synchronization. Since the set
-up runs two ROS Masters, one in the cloud with Gazebo and the other on a
+If you want to run your application separately from the Gazebo simulation on
+rapyuta.io, it will need time synchronization. Since the setup runs two ROS Masters, one in the cloud with Gazebo and the other on a
 computer with navigation nodes. The clock for these two applications will need
 to be in sync. The clock synchronization is by ***/clock*** ROS topic, which is published by
 Gazebo.

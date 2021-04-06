@@ -17,10 +17,7 @@ A list of predefined device configuration variables is available for a
 newly added device. They are:
 
 * **ros_distro** specifies the ROS distribution found on the device.
-  It is automatically detected when the device is provisioned. It is
-  immutable as the device determines its value. It is a mandatory
-  configuration variable when deploying ROS packages. It is usually
-  assigned ***kinetic*** or ***melodic*** value depending on the version of ROS installed on the device.
+  It is automatically detected when the device is provisioned. It is immutable as the device determines its value. It is a mandatory configuration variable when deploying ROS packages. It is usually assigned ***kinetic*** or ***melodic*** value depending on the version of ROS installed on the device.
 * **ros_workspace** is the absolute path of the default catkin workspace on the
 device. rapyuta.io automatically sources ROS packages present in this workspace
 for package deployment.

@@ -65,19 +65,19 @@ changes to **Activated**.
 
 To change or reset your password, do the following.
 
-1. Click the user menu and click **Change Password**. A dialog box appears to change the pasword.
-2. In the **Change Password** dialog box, type your old pass word, type a new password and confirm the password in the respective fields.
+1. Click the user menu and click **Change Password**. A dialog box appears to change the password.
+2. In the **Change Password** dialog box, type your old password, type a new password and confirm the password in the respective fields.
 3. To confirm yourself as a human, click the **Captcha** and follow the instructions.
    Your password is changed.
 
 
 ## Removing Users from Projects
 
-Only the creator of a project can remove a user from the project. However, the project’s creator cannot remove themself.
+Only the creator of a project can remove a user from the project. However, the project’s creator cannot remove itself.
 
 To remove a user from a project, do the following.
 
-1. On the left navigation bar, click **Account>Projects**. The list of existing projects are displayed.
+1. On the left navigation bar, click **Account>Projects**. The list of existing projects is displayed.
 2. Click the project from where you want to remove a user.
    <img src="/images/getting-started/organization/project/select-proj.png?classes=border,shadow&width=50pc" alt="Select project" style="zoom:80%;" />
 3. Under **Actions**, click **Remove** against the user that you want to remove. A confirmation page appears.

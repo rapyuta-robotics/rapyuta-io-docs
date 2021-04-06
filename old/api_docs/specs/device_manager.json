@@ -2414,7 +2414,7 @@
                   "properties":{
                     "message":{
                       "type":"string",
-                      "description":"will be a simple message saying \"tunnel closed\""
+                      "description":"will be a simple message , for example,ing \"tunnel closed\""
                     }
                   }
                 }
