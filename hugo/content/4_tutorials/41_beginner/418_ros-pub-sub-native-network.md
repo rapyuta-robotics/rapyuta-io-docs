@@ -133,7 +133,7 @@ To deploy a package using the [console](https://console.rapyuta.io),
 follow the steps:
 
 1. On the left navigation bar, click **Development>Catalog**.
-2. Select the ` native publisher subcriber` package.
+2. Select the ` native publisher subscriber` package.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, enter a name for the deployment you are
    creating say `Native Publisher Subscriber Deployment`.

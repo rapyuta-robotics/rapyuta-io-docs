@@ -30,10 +30,10 @@ categories:
    - Git
 ---
 
-You can create packages using the source code from a private git repository. A source secret allows rapyuta.io to access a private git repository or a git repository with self-assigned or untrusted SSL certificate.
+You can create packages using the source code from a private git repository. A source secret allows rapyuta.io to access a private git repository or a git repository with a self-assigned or untrusted SSL certificate.
 
 > * The rapyuta.io platform uses git version 2.16.6.
-> * While cloning a git repository, ensure that you provide the appropriate protocol (HTTP/HTTPS).The HTTP to HTTPS redirection does not work while cloning the repositories.
+> * While cloning a git repository, ensure that you provide the appropriate protocol (HTTP/HTTPS). The HTTP to HTTPS redirection does not work while cloning the repositories.
 
 
 ## Creating source secret
@@ -50,9 +50,9 @@ To create a source secret for the private git repository, do the following:
 
    For instance, you may name the source secret as *_source-secret-name_*. Ensure that the name should be no greater than 253 characters. It must consist of lower case alphanumeric characters or hyphen -, and it must begin and end with an alphanumeric character.
 
-5. From the **Authentication** drop-down menu, select eithe one of the following.
+5. From the **Authentication** drop-down menu, select either one of the following.
 
-   * **Basic authentication**: Select this option if you want to authenticate a user with either a git access token or  username and password.
+   * **Basic authentication**: Select this option if you want to authenticate a user with either a git access token or username and password.
 
    * **SSH authentication**: Select this option if you want to authenticate a user with a private SSH key of a git repository.
    
@@ -63,7 +63,7 @@ To create a source secret for the private git repository, do the following:
    * **Token**: If you have selected this option, type the corresponding git access token in the **Token** field.
       ![Basic auth via password](/images/core-concepts/source-secret/basicauth-password.png?classes=border,shadow&width=40pc)
 
-7. If you select **SSH Authentication** from the **Authentication Type** drop-down list, type your SSH key of your git repository in the **SSH Key** fields.
+7. If you select **SSH Authentication** from the **Authentication Type** drop-down list, type the SSH key of your git repository in the **SSH Key** fields.
 ​    ![SSH authentication](/images/core-concepts/source-secret/sshauth.png?classes=border,shadow&width=40pc) 
 
 7. Click **Submit**. The secret source is created.

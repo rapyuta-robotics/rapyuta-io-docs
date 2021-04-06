@@ -4,7 +4,7 @@ title: "Traditional Network"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 draft: true
 
-weigth: 533
+weight: 533
 
 versions:
   free-pro-team: '*'
@@ -32,7 +32,7 @@ tags:
 
 ## Device Routed Network
 
-In certain cases where communication is latency sensitive or has high throughput the user can choose to deploy a routed network to a device. 
+In certain cases where communication is latency-sensitive or has high throughput, the user can choose to deploy a routed network to a device. 
 While avoiding a round trip of information to the cloud minimizes latency and allows for better throughput __ONLY__ deployments on devices on the same local area network can bind to it. 
 
 

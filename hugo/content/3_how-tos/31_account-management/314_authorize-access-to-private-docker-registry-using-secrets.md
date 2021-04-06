@@ -44,10 +44,10 @@ To create a docker secret for a private docker registry, do the following:
 4. In the **Name** box, enter a name for the docker secret. 
 
 {{%notice info%}}
- Name should be **less than 253 characters**, **contain a-z 0-9 and hypen**,  and **must begin and end with a-z**.
+ The name should be **less than 253 characters**, **contain a-z 0-9 and hyphen**,  and **must begin and end with a-z**.
 {{%/notice%}}
  
-5. You can select the executable type as aone of the following.
+5. You can select the executable type as one of the following.
    * Dockerhub
    * Private Registry
 
@@ -65,11 +65,11 @@ To create a docker secret for a private docker registry, do the following:
 
    d. In the **Email** box: Enter the valid email address associated with your docker registry.
 
-8. Click **SUBMIT**. The docker secret for rapyuta.io platform is created.
+8. Click **SUBMIT**. The docker secret for the rapyuta.io platform is created.
 
 ## Authorization Token
 
-When you create a docker pull secret for a private registry, rapyuta.io stores your docker credentials (that is, username and password) in base64-encoded format. This encoded data is the *_authorisation token_* which gives access to rapyuta.io to pull private docker images while deploying a package.
+When you create a docker pull secret for a private registry, rapyuta.io stores your docker credentials (that is, username and password) in base64-encoded format. This encoded data is the *_ authorization token_* which gives access to rapyuta.io to pull private docker images while deploying a package.
 
 To determine your docker credentials for a private registry, run the following instructions in sequence on the system you have logged in to docker:
 
@@ -90,7 +90,7 @@ cat ~/.docker/config.json
     }
    ```
 
-The value of **`auth`** entry is base64-encoded data called *_authorisation token_*.If you use a docker credentials store, you will instead see `credsStore` entry with the name of the store as value. For example, a sample `config.json` file with `credsStore` entry would look like:
+The value of **`auth`** entry is base64-encoded data called *_ authorization token_*. If you use a docker credentials store, you will instead see `credsStore` entry with the name of the store as value. For example, a sample `config.json` file with `credsStore` entry would look like:
 
    ```bash
    {
@@ -101,9 +101,9 @@ The value of **`auth`** entry is base64-encoded data called *_authorisation toke
    }
    ```
 
-   You can find out the authorisation token from the respective  `credsStore` entry’s value. In this case, use `osxkeychain` value to figure out authorization token.
+   You can find out the authorization token from the respective  `credsStore` entry’s value. In this case, use `osxkeychain` value to figure out the authorization token.
 
-2. To convert *_authorisation token_* to a readable format, execute the command:
+2. To convert *_ authorization token_* to a readable format, execute the command:
 
    ```bash
 

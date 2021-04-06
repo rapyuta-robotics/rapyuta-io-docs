@@ -86,7 +86,7 @@ To build the package, run the below command at the root of your catkin workspace
 catkin build param_talker
 ```
 
-## Adding device to rapyuta.io
+## Adding a device to rapyuta.io
 When onboarding the device to rapyuta.io, the environment variable **RIO_CONFIGS_DIR** is set locally on the device. It is the location of the directory where all of the configurations that will be applied to the device are stored.
 {{% notice info %}}
 The value of **RIO_CONFIGS_DIR** is set to **/opt/rapyuta/configs**
@@ -97,7 +97,7 @@ The value of **RIO_CONFIGS_DIR** is set to **/opt/rapyuta/configs**
 **RIO_CONFIGS_DIR** is available to all the executables of a running deployment.
 {{% /notice %}}
 
-## Applying configuration to device
+## Applying configuration to a device
 You should [define labels for the device](/3_how-tos/32_device-management/323_managing-labels-on-devices) so you can apply configuration parameters to it. You will define the following labels in this tutorial:
 
 * robot_type: drone
@@ -121,7 +121,7 @@ name:
     last_name: RDrone
 ```
 {{% notice note %}}
-Had you given a device label say *robot_type: drone*, rapyuta.io would traverse the configuration tree, select the **drone/name.yaml** file and apply the configuration parameters found in the file. Similarly, if no device label is defined, **name.yaml** file will be selected for the application of configuration parameters defined in the file.
+Had you given a device label, for example, *robot_type: drone*, rapyuta.io would traverse the configuration tree, select the **drone/name.yaml** file and apply the configuration parameters found in the file. Similarly, if no device label is defined, **name.yaml** file will be selected for the application of configuration parameters defined in the file.
 {{% /notice %}}
 {{% notice info %}}
 You may apply more than one configuration to a single device.
@@ -144,16 +144,16 @@ To create the *Publisher for Configured Devices* package, follow the steps:
 
 1. On the left navigation bar, click **Development>Catalog**.
 2. Click **ADD NEW PACKAGE**.
-3. Provide a name for the package say `Publisher for Configured Devices` in the **Package Name** box.
+3. Provide a name for the package, for example, `Publisher for Configured Devices` in the **Package Name** box.
 4. Make sure **Is singleton package** is ***not selected***.
 5. Ensure **Is a bindable package** is ***indeed selected***.
-6. In the **Description** box, provide a summary of the package, say, `Demo package to illustrate configuration parameters concept`
+6. In the **Description** box, provide a summary of the package, for example, `Demo package to illustrate configuration parameters concept`
 7. Click **NEXT**.
-8. In the **Component Name** box, enter a name for the component say `parameter_talker`.
+8. In the **Component Name** box, enter a name for the component, for example, `parameter_talker`.
 9. Select **Device** for **Component Runtime**.
 10. Ensure **Is ROS Component** is selected.
 11. Ensure the **ROS Version** is **Kinetic**.
-12. In the **Executable Name** box, enter a name for the executable say `talker_executable`.
+12. In the **Executable Name** box, enter a name for the executable, for example, `talker_executable`.
 13. Select **Default** for **Executable Type**.
 14. Enter `roslaunch param_talker talker.launch` in the **Command to run in the docker container** box.
 
@@ -166,13 +166,13 @@ To deploy the *Publisher for Configured Devices* package, follow the steps:
 1. On the left navigation bar, click **Development>Catalog**.
 2. Select the **Publisher for Configured Devices** package.
 3. Click **Deploy package**.
-4. Provide a name for the deployment you are creating say `Configurations Publisher` in the **Name of deployment** box.
+4. Provide a name for the deployment you are creating, for example, `Configurations Publisher` in the **Name of deployment** box.
 5. Since *parameter_talker* has device runtime, you must select the device you want to deploy the component on. Click **Refresh the list of online devices** to retrieve an updated list of online devices.
 6. Select the device from the **Select device for deploying the component** drop-down list.
 7. For the **parameter_talker** component, ensure that **ros_workspace** and **ros_distro** are selected.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You will be redirected to the newly created deployment's **Details** page. The **Configurations Publisher** is successfully running when the green colored bar moves to **Succeeded** and **Status:Running** point indicating that the **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
+You will be redirected to the newly created deployment's **Details** page. The **Configurations Publisher** is successfully running when the green colored bar moves to **Succeeded** and **Status: Running** point indicating that the **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
 
 ![Configurations Publisher](/images/tutorials/talker-supervisor/talker-supervisor-deployment.png?classes=border,shadow&width=40pc)
 

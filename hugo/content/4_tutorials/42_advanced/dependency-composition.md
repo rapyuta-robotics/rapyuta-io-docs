@@ -9,7 +9,7 @@ tags:
     - Tutorials
 ---
 A deployment may depend on other deployments. It can access all
-topics, services, actions, endpoints and configuration parameters exposed by
+topics, services, actions, endpoints, and configuration parameters exposed by
 other deployments at runtime.
 
 ## Learning Objectives
@@ -19,11 +19,11 @@ The tutorial will show you how to create a dependent deployment using
 ## Prerequisites
 
 1. Device requirements
-	1. You should have access to a device (computer or Raspberry PI 2 or 3)
-	with an internet connection.
-	2. Install the [Google Chrome](https://www.google.com/chrome) browser is
-	on the device.
-	3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation) is installed on the device.
+  1. You should have access to a device (computer or Raspberry PI 2 or 3)
+  with an internet connection.
+  2. Install the [Google Chrome](https://www.google.com/chrome) browser is
+  on the device.
+  3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation) is installed on the device.
 {{% notice note %}}
 If the device has [ROS Melodic Morenia](http://wiki.ros.org/melodic)
 installed on it, replace ***Kinetic*** with ***Melodic*** in all places
@@ -32,11 +32,11 @@ work the same.
 {{% /notice %}}
 1. You should be familiar with the [map_server](https://wiki.ros.org/map_server) ROS package.
 2. You should be familiar with the below tools:
-	1. [Git](https://git-scm.com/doc)
-	2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
-	3. [ROS topics](https://wiki.ros.org/Topics)
-	4. [ROS nodes](https://wiki.ros.org/Nodes)
-	5. [ROS services](https://wiki.ros.org/Services)
+  1. [Git](https://git-scm.com/doc)
+  2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
+  3. [ROS topics](https://wiki.ros.org/Topics)
+  4. [ROS nodes](https://wiki.ros.org/Nodes)
+  5. [ROS services](https://wiki.ros.org/Services)
 
 
 ## Estimated Time
@@ -48,36 +48,35 @@ navigation map to other deployments that depend on it. Besides exposing the ROS 
 which replaces the map published by */map* topic.
 
 #### Creating the build
-To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
+To create the build, follow the below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
 
 1. On the left navigation bar, click **Developmet>Builds**
 2. Click on **ADD NEW BUILD**
-3. In the Build Name box, enter a name for the build say `io-tutorials` 
-4. In the **Git repository** box, enter the url address : 
+3. In the Build Name box, enter a name for the build, for example, `io-tutorials` 
+4. In the **Git repository** box, enter the URL address : 
 `https://github.com/rapyuta/io_tutorials` and select **Build Recipe** as Catkin.
 5. Go to the next step and click on next, the build will be created.
 
 The build takes about two to five minutes to build the source code in the *io_tutorials*
-repository into a running docker container. You may analyse the corresponding
+repository into a running docker container. You may analyze the corresponding
 [build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs), which help debug failing builds.
 
-Please proceed to creation of package once the build is Complete.
+Please proceed to the creation of the package once the build is complete.
 
 #### Create dynamic_map_server package
 1. On the left navigation bar, click **Development>Catalog**.
 2. Click **ADD NEW PACKAGE**.
 3. You should provide information about the package, such as the name of the
 package, its version, whether it is a singleton package, and a short description.
-   1. In the **Package Name** box, type in the name of the package say
-	   `dynamic_map_server`
-   2. In the **Package Version** box, type in the version of the package. By
-	   default, the version is set to _1.0.0_
+   1. In the **Package Name** box, type in the name of the package, for example,
+     `dynamic_map_server`
+   2. In the **Package Version** box, type in the version of the package. By default, the version is set to _1.0.0_
    3. Ensure **Is a singleton package** option is ***not selected***.
    4. Make sure **Is a bindable package** option ***is selected***.
-   5. In the **Description** box, provide a brief summary of the package, for
-	   example, `A modified ROS map_server`
+   5. In the **Description** box, provide a summary of the package, for
+     example, `A modified ROS map_server`
    6. Click **NEXT**
-4. In the **Component Name** box, enter a name for the component say
+4. In the **Component Name** box, enter a name for the component, for example,
    `DynamicMapServer`
 {{% notice info %}}     
 The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and underscore _ character, and must not begin with a digit.
@@ -85,7 +84,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 5. Select **Cloud** for **Component Runtime**.
 6. Ensure **Is ROS Component** is selected.
 7. Set the value of **Replicas to run the component** to number 1 (default value).
-8. In the **Executable Name** box, type in a name for the executable say
+8. In the **Executable Name** box, type in a name for the executable, for example,
    `dmsexecutable`  
 {{% notice info %}} 
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and underscore _ character, and must not begin with a digit.
@@ -93,23 +92,22 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 9. For **Executable Type**, click on **Development>Builds**.
 10. In the **Choose Build** drop-down menu, select the build as `io-tutorials`.
 11. In the **Command to run in the docker container** box, copy and paste the command:
-	```bash
-	roslaunch dynamic_map_server map_server.launch
-	```
-	
-	Ensure you always execute the *roslaunch* command for explicitly starting the
-	[ROS Master](http://wiki.ros.org/Master) instead of running the *rosrun*
-	command, because the ROS Master will fail to start on _rosrun_, and
-	eventually, the deployment will fail as well.
+  ```bash
+  roslaunch dynamic_map_server map_server.launch
+  ```
+  
+  Ensure you always execute the *roslaunch* command for explicitly starting the
+  [ROS Master](http://wiki.ros.org/Master) instead of running the *rosrun*
+  command, because the ROS Master will fail to start on _rosrun_, and eventually, the deployment will fail as well.
 
-	![Executable details](/images/tutorials/dms/dms-exec-details.png?classes=border,shadow&width=50pc)
+  ![Executable details](/images/tutorials/dms/dms-exec-details.png?classes=border,shadow&width=50pc)
 12. To add a ROS topic, click **Add ROS topic**. In the **Name** box,
     enter `/map_metadata` and set **QoS** to **Low**.
     Similarly, add another ROS topic `/map` and set **QoS** to **Low**.
-		![Add ROS topic](/images/tutorials/dms/dms-add-ros-topics.png?classes=border,shadow&width=50pc)
+    ![Add ROS topic](/images/tutorials/dms/dms-add-ros-topics.png?classes=border,shadow&width=50pc)
 13. To add a ROS service, click **Add ROS service**. In the **Name** box, enter
     `/set_map`
-		![Add ROS service](/images/tutorials/dms/dms-add-ros-service.png?classes=border,shadow&width=50pc)
+    ![Add ROS service](/images/tutorials/dms/dms-add-ros-service.png?classes=border,shadow&width=50pc)
 14. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 Additionally, you may verify if the package is built successfully and is ready
@@ -119,14 +117,14 @@ to be deployed by clicking to see if the **Deploy package** button is enabled.
 You will [prepare](/4_tutorials/41_beginner/417_preparing-a-raspberry-pi) a Raspberry Pi 2 or 3
 as the device for this tutorial.
 
-If you are using custom rapyuta.io image on the device, the catkin workspace is already created, and the *io_tutorials* repository is already present in the workspace. Moreover, the source code is built for you.
+If you are using a custom rapyuta.io image on the device, the catkin workspace is already created, and the *io_tutorials* repository is already present in the workspace. Moreover, the source code is built for you.
 
 {{% notice note %}}
 In this tutorial, the catkin workspace is `~/catkin_ws/`, but you may choose to name your catkin workspace as you like and ensure that you replace all occurrences to `~/catkin_ws/` with your workspace name.
 {{% /notice %}}
 
 If you are using either a computer with ROS installed on it or any device other
-than Raspberry PI, or a Raspberry PI without custom rapyuta.io image, you will
+than Raspberry PI, or a Raspberry PI without a custom rapyuta.io image, you will
 create a catkin workspace and get the *io_tutorials* repository into the workspace.
 
 Hence, to create a catkin workspace on the device, you have to execute the following
@@ -187,31 +185,30 @@ You will create *map_listener* package, which will be deployed on the device.
 To create the package, follow the instructions:
 
 1. Click **Development>Catalog** > **ADD NEW PACKAGE**.
-2. You should provide information about the package such as the name of the
-   package, its version number, whether it's a singleton package and a description.
-	1. In the **Package Name** box, enter a name for the package say `map_listener`
-	2. In the **Package Version** box, enter the version of the package. By default,
-		the version is set to _1.0.0_
-	3. Ensure **Is singleton package** option is ***not selected***.
-	4. Make sure **Is a bindable package** option ***is selected***.
-	4. In the **Description** box, provide a summary of the package say
-	   `Runs a map_listener node on device`
-	5. Click **NEXT**.
-3. In the **Component Name** box, provide a name for the component say `MapListener`
+2. You should provide information about the package such as the name of the package, its version number, whether it's a singleton package, and a description.
+  1. In the **Package Name** box, enter a name for the package, for example, `map_listener`
+  2. In the **Package Version** box, enter the version of the package. By default,
+    the version is set to _1.0.0_
+  3. Ensure **Is singleton package** option is ***not selected***.
+  4. Make sure **Is a bindable package** option ***is selected***.
+  4. In the **Description** box, provide a summary of the package, for example,
+     `Runs a map_listener node on device`
+  5. Click **NEXT**.
+3. In the **Component Name** box, provide a name for the component, for example, `MapListener`
 4. For **Component Runtime**, click **Device**.
 5. Ensure **Is ROS Component** is selected.
 6. Ensure the **ROS Version** is **Kinetic**.
-7. In the **Executable Name** box, enter a name for the executable say
+7. In the **Executable Name** box, enter a name for the executable , for example,
    `map_listener_executable`
 8. For **Executable Type**, click **Default**.
 9. In the **Command to run on the device** box, copy and paste the command:
-	```bash
-	roslaunch map_listener listener.launch
-	```
+  ```bash
+  roslaunch map_listener listener.launch
+  ```
 
-	Ensure you always execute the *roslaunch* command to explicitly start the [ROS Master](http://wiki.ros.org/Master) instead of running the *rosrun* command, because the ROS Master will fail to start on *rosrun* command, and
-	eventually, the deployment will fail as well.
-	![map_listener_executable](/images/tutorials/dms/maplistener_exec_details.png?classes=border,shadow&width=50pc)
+  Ensure you always execute the *roslaunch* command to explicitly start the [ROS Master](http://wiki.ros.org/Master) instead of running the *rosrun* command, because the ROS Master will fail to start on *rosrun* command, and
+  eventually, the deployment will fail as well.
+  ![map_listener_executable](/images/tutorials/dms/maplistener_exec_details.png?classes=border,shadow&width=50pc)
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 #### Deploy dynamic_map_server package
@@ -221,7 +218,7 @@ To deploy *dynamic_map_server* package, follow the steps:
 2. Select *dynamic_map_server* package.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, provide a name for the specific deployment
-   you are creating say `Dynamic Map Server Deployment`
+   you are creating, for example, `Dynamic Map Server Deployment`
 5. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** page.
@@ -235,7 +232,7 @@ To deploy *map_listener* package, follow the steps:
 
 1. Click **Development>Catalog** > select *map_listener* package > click **Deploy package**.
 2. In the **Name of deployment** box, provide a name for the specific deployment
-   say `Map Listener Deployment`
+   , for example, `Map Listener Deployment`
 3. Since *map_listener_executable* has device runtime, you must select the device you want to deploy the component on. Click **Refresh the list of online devices** to retrieve an updated list of online devices.
 4. Select the device from the **Select device for deploying the component** drop-down list.
 5. Ensure that the **ros_workspace** and **ros_distro** are selected.

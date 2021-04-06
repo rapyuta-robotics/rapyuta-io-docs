@@ -26,7 +26,7 @@ tags:
     - Deep Dive
 ---
   
-### What is a package ?
+### What is a package?
 
 A package is a fundamental rapyuta.io resource that represents a declaration of your application. A package is the smallest unit of deployment in rapyuta.io. It can be deployed either on a device or the cloud or both.
 
@@ -64,7 +64,7 @@ The maximum size of the docker image is 10GB for cloud deployment. If your docke
 
 
 * **Bash command**    
-A simple bash shell command is an executable. If you choose the **Executable Type** as **Default**, the bash shell command becomes an executable. In this case, the executable can run only on **Preinstalled device** runtime. rapyuta.io assumes that all dependencies that are required to run the command are already present on the device where
+A simple bash shell command is an executable. If you choose the **Executable Type** as **Default**, the bash shell command becomes executable. In this case, the executable can run only on **Preinstalled device** runtime. rapyuta.io assumes that all dependencies that are required to run the command are already present on the device where
 the command will execute.
 
 ### Components
@@ -74,8 +74,8 @@ the desired [Component Runtime]({{< ref "/5_deep-dives/51_managing-devices/511_d
 
 {{% notice info %}}
 
-The number of volumes attached to a component must be less than or equal to the sum of all the cpu cores of all executables of a component. Mathematically,    
-number of volumes attached to a component **<=** [floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions)(sum of all the cpu cores of all executables in the component)
+The number of volumes attached to a component must be less than or equal to the sum of all the CPU cores of all executables of a component. Mathematically,    
+number of volumes attached to a component **<=** [floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions)(sum of all the CPU cores of all executables in the component)
 
 {{%/notice%}}
 
@@ -86,7 +86,7 @@ Suppose a component has two executables, **execA** and **execB**. The executable
 3. **execA**: 0.5 cpu core, **execB**: 0.5 cpu core, number of volumes attached is 1
 
 {{% notice note %}}
-Components are further nested into **plans**. A rapyuta.io "package" may contain multiple plans, and each plan represents a different configuration of a package. At this point, when you add a new package in the rapyuta.io, there is always a single plan associated with the package. A plan is uniquely identified by its plan ID
+Components are further nested into **plans**. A rapyuta.io "package" may contain multiple plans, and each plan represents a different configuration of a package. At this point, when you add a new package to the rapyuta.io, there is always a single plan associated with the package. A plan is uniquely identified by its plan ID
 {{% /notice %}}
 
 ### Component Runtime
@@ -103,7 +103,7 @@ configuration parameters operate at the level of component and apply to executab
 In line with the 12-Factor application philosophy, rapyuta.io allows the package author to pass configuration as environment variables that may be consumed by executables running within a component. These are mapped to environment variables made available to your code. They are modeled as key-value pairs (where both the key and the value are strings) accessible by the user’s code using standard environment variable look-up techniques provided by the programming language.   The package author can choose to provide default values. These values may be overridden by the user while deploying the package.
 
 {{% notice note %}}
-A **package** may choose to declare environment variables as exposed from within its constituent components allowing dependent deployments to receive these values during deployment binding phase.
+A **package** may choose to declare environment variables as exposed from within its constituent components allowing dependent deployments to receive these values during the deployment binding phase.
 {{% /notice %}}
 
 {{% notice note %}}
@@ -163,9 +163,9 @@ The only protocol available is the **TCP** for which the value of the **Port** f
 
 You can also use port range for an endpoint by selecting **Port Range** toggle. A Port Range on an endpoint will allow you to open multiple ports on a single DNS hostname.
 
-* By default the Target Port is same as the Port.
+* By default the Target Port is the same as the Port.
 
-* A maximum 50 ports are allowed for an endpoint. Allowed format is comma separated Port Ranges. Each Port Range is either a single port or a range of port mentioning the from port and to port separated by a hyphen (-). Examples: 5000 or 443-445 or 3446-3449,3500,3510-3530
+* A maximum of 50 ports are allowed for an endpoint. The allowed format is a comma-separated Port Ranges. Each Port Range is either a single port or a range of port mentioning the from port and to port separated by a hyphen (-). Examples: 5000 or 443-445 or 3446-3449,3500,3510-3530
 ![internal endpoint port range](/images/core-concepts/packages/network-endpoints/internal-endpoint-port-range.png?classes=border,shadow&width=40pc)
 
 #### Exposing Endpoints Externally

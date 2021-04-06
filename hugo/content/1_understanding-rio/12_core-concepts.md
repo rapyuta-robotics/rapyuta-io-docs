@@ -28,7 +28,7 @@ introLinks: {}
 
 ### Projects
  
-Any rapyuta.io resource that you create, or allocate and use must belong to a project. You can think of a project as the organizational unit for what you are building. A project is made up of the settings, configuration, and other metadata that describe your applications. Resources within a single project can work together easily, for example, by communicating through an internal network. The resources that each project contains remain separate across project boundaries; you can only interconnect them through an external connection.
+Any rapyuta.io resource that you create, allocate, or use must belong to a project. You can think of a project as the organizational unit for what you are building. A project is made up of the settings, configuration, and other metadata that describe your applications. Resources within a single project can work together easily, for example, by communicating through an internal network. The resources that each project contains remain separate across project boundaries; you can only interconnect them through an external connection.
 
 Each project has:
 * Auto-generated unique project ID
@@ -70,7 +70,7 @@ is successfully on-boarded to rapyuta.io this entity is responsible
 for providing the necessary mechanics and communication channels
 to manage and interact with the device. The platform leverages
 these mechanics to provide features that can be used to communicate
-to the device, configure it, monitor its health and deploy packages
+to the device, configure it, monitor its health, and deploy packages
 to the device.
 
 
@@ -82,7 +82,7 @@ to the device.
 
 As a robotic developer, you need to represent, store, and review parameters. Additionally, you might want to access parameters in your source code, modify a subset of parameters for a particular robot, or add new parameters and apply those to a group of robots. 
 
-The rapyuta.io platform provides a mechanism that allows a developer to set, review, update and override configuration for any connected robot. Configuration parameters in the rapyuta.io platform are represented by a tree-like hierarchical structure called configuration hierarchy.
+The rapyuta.io platform provides a mechanism that allows a developer to set, review, update and override the configuration for any connected robot. Configuration parameters in the rapyuta.io platform are represented by a tree-like hierarchical structure called configuration hierarchy.
 
 > For more information about configuration, [click here](/5_deep-dives/51_managing-devices/dynamic-configuration)
 
@@ -91,10 +91,10 @@ The rapyuta.io platform provides a mechanism that allows a developer to set, rev
 
 ### Builds
 
-Builds on rapyuta.io are a fundamental resource which convert your source code
+Builds on rapyuta.io are a fundamental resource that converts your source code
 residing in your VCS into a container image.
 
-Builds can be referenced when creating packages and enables an end-to-end "Code to Deployment" pipeline for your Robotics solution. The rapyuta.io platform converts the image by using catkin or docker recipes.
+Builds can be referenced when creating packages and enable an end-to-end "Code to Deployment" pipeline for your Robotics solution. The rapyuta.io platform converts the image by using catkin or docker recipes.
 
 * For more information about build recipes, [click here](/5_deep-dives/52_software-development/527_build-recipe/).
 
@@ -110,7 +110,7 @@ or both.
 To make this possible a package must encapsulate any information about how
 it should be built, its compatibility and runtime requirements,
 network endpoints and ROS interfaces it exposes, and any configuration
-information it may require.
+the information it may require.
 
 > For more information about the internals of a package, [click here](/5_deep-dives/52_software-development/525_package-internals)
 
@@ -118,12 +118,12 @@ information it may require.
 
 A deployment is a **rapyuta.io resource** that represents a unique
 instantiation of a rapyuta.io package. It holds information
-about the package deployed, the configuration used, and interfaces
+about the package deployed, the configuration used, and the interfaces
 exposed. It possesses a unique identifier and provides a mechanism
 to introspect its phase and state that are needed to ascertain
 the state of a system.
 
-Tooling such as logs, debug terminals and other automation leverage
+Tooling such as logs, debug terminals, and other automation leverage
 this uniquely identifiable resource to allow the operator to manage,
 debug and observe a particular running instance of their application.
 
@@ -139,9 +139,9 @@ complex robotics solution.
  
 ### Networks
 
-rapyuta.io implements various features for automatically linking different deployments, and hence, aid software composition. It implements a set of features for common protocols such as HTTP, WebSocket, TLS and a dedicated commmunication plane for ROS.
+rapyuta.io implements various features for automatically linking different deployments, and hence, aid software composition. It implements a set of features for common protocols such as HTTP, WebSocket, TLS, and a dedicated communication plane for ROS.
 
-The rapyuta.io platform supports the following types of communications for the packages deployed on device or on the rapyuta.io platform.
+The rapyuta.io platform supports the following types of communications for the packages deployed on a device or the rapyuta.io platform.
   * ROS communication
   * NON-ROS communication
 
@@ -155,13 +155,13 @@ rapyuta.io enables you to create a static route URL and give it a globally uniqu
 
 Static routes are used frequently to get a deterministic URL/route for your application while exposing the network endpoint externally
 
-> **💡 Pro tip :** A static route is **globally unique** across the rapyuta.io platform.
+> **💡 Pro tip:** A static route is **globally unique** across the rapyuta.io platform.
 
 ### Storage
 
-Applications running on the cloud de-allocate any resources consumed when they stop, scale down, or fail. This implies that the working storage associated with them is ephemeral. To get around this problem rapyuta.io provides a mechanism to consume persistent block storage for your applications running in the cloud. This storage can be associated with at most one running deployment at any given point of time. A user is typically required to manage the lifecycle of the application code independently from the associated storage.
+Applications running on the cloud de-allocate any resources consumed when they stop, scale down, or fail. This implies that the working storage associated with them is ephemeral. To get around this problem rapyuta.io provides a mechanism to consume persistent block storage for your applications running in the cloud. This storage can be associated with at most one running deployment at any given point in time. A user is typically required to manage the lifecycle of the application code independently from the associated storage.
 
-The *Rapyuta IO Persistent Volume* is a storage package. A storage package is a public package which is available to all users out of the box. You cannot delete or modify storage packages, and they are available to every user.
+The *Rapyuta IO Persistent Volume* is a storage package. A storage package is a public package that is available to all users out of the box. You cannot delete or modify storage packages, and they are available to every user.
 
 > For more information, [click here](/3_how-tos/33_software-development/335_adding-persistent-storage-to-a-deployment)
 

@@ -40,14 +40,14 @@ only allowed to upload a single log file at a time.
 Sometimes constrained resources can limit a device's ability to
 execute tasks while uploading logs. For instance, a significant amount
 of network bandwidth is consumed while uploading
-enormous log data, which can affect the execution of other high priority
+enormous log data, which can affect the execution of other high-priority
 tasks on the device. In this case, rapyuta.io lets you tune network
 bandwidth based on the device and its environment limitations. It lets
 you upload log files without interfering with task execution. You can
 choose the upload rate value in ***Mega bytes***, or ***Giga bytes***.
 
 Select the **purge** option to remove a log file from a device
-after successfully uploading it to the cloud storage.
+after successfully uploading it to cloud storage.
 
 Select the **override** option to replace an existing log file
 with a new log file with the same name.
@@ -60,7 +60,7 @@ with a new log file with the same name.
 ## Direct Links for Sharing Log Files
 
 After successfully uploading the log file, a summary of the log details is shown.
-It includes information like the name of the log file, its size, creator and creation time
+It includes information like the name of the log file, its size, creator, and creation time
 among other details. It lets you download the log file, and also share it publicly outside
 rapyuta.io platform by creating ***direct links***.
 
@@ -88,5 +88,5 @@ You may also:
 *   ***view*** a list of all the log files that you uploaded for a device.
 *   ***delete*** a log file from the cloud storage.
 *   ***filter*** list of log files based on upload status.
-*   ***sort*** list of log files based on filename, file size and time of creation.
+*   ***sort*** list of log files based on filename, file size, and time of creation.
 *   ***Cancel upload*** of an ongoing process of uploading a log file.

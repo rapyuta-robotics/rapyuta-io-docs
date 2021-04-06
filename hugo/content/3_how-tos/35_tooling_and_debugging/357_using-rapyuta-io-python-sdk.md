@@ -32,7 +32,7 @@ services in your python applications.
 ## Installation
 
 It is recommended you install the latest Python SDK
-using **pip**(most popular tool for installing python packages).
+using **pip**(the most popular tool for installing python packages).
 
 ```bash
 pip install https://storage.googleapis.com/rio-sdk-python/rapyuta_io-0.22.1-py2.py3-none-any.whl
@@ -51,14 +51,14 @@ The rapyuta.io Python SDK is compatible with python
 applications supporting Python2.7
 
 {{% notice info %}}
-We have added Python3.9 support to the rapyuta.io python SDK. Note that this is still in alpha stage.
+We have added Python3.9 support to the rapyuta.io python SDK. Note that this is still in the alpha stage.
 {{% /notice %}}
 
 ### Auth Token
 
 To determine the auth token:
 
-1. Click on your username to the top right corner of rapyuta.io dashboard.
+1. Click on your username to the top right corner of the rapyuta.io dashboard.
 2. Click **Get Auth Token**.
 3. Enter the password.
 4. Click **COPY**.
@@ -126,7 +126,7 @@ free to consult the [full SDK reference](https://sdkdocs.apps.rapyuta.io/).
 
 {{% notice info %}}
 
-Before walking through the examples, ensure you [obtain the auth token, project ID, device ID, package ID and plan ID.
+Before walking through the examples, ensure you [obtain the auth token, project ID, device ID, package ID, and plan ID.
 
 {{% /notice %}}
 
