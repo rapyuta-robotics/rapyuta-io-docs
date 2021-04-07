@@ -262,7 +262,6 @@ div#navigation {
 
 #body .nav {
     position: absolute;
-    top: 0;
     bottom: 0;
     min-width: 4rem;
     width: auto;
@@ -279,9 +278,9 @@ div#navigation {
 }
 
 div.progress {
-    position: fixed;
+    position: absolute;
     display: inline-block;
-    top: 96px;
+    top: 70px;
     right: 60px;
     width: 330px;
     opacity: 1;
@@ -296,14 +295,14 @@ div.progress {
     margin:0;
     padding:0;
     color: #464646;
-    font-size: 11px;
+    font-size: 13px;
 }
 
 
 #TableOfContents > ul > li > ul > li > a {
     font-weight: unset;
     color: #464646;
-    font-size: 11px;
+    font-size: 13px;
     text-indent: 1rem;
     margin-left: 1rem;
 }
@@ -576,6 +575,13 @@ div.notices p {
     background: #e2eaf2!important;
 }
 
+.error-code-table-wrapper {
+    width: 100%;
+    height: auto;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
 
 
 
@@ -779,7 +785,7 @@ div.notices p {
 
 
 #body-inner h1 {
-    text-transform: capitalize;
+    text-transform: none;
 }
 
 
