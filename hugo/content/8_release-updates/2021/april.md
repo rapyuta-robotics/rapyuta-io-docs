@@ -18,7 +18,7 @@ are significant updates in this release that we hope you will like.
     The rapyuta.io platform allows you to edit and update an existing build. Note that for the updates to be reflected in the build, you must trigger the build. For more information, [click here](/3_how-tos/33_software-development/331_create-builds/#updating-the-build).
  
 #### Bugfixes
-* After you finish creating a build in the **Create new build** page, the **Show Build** button is supposed to take you to the **Details** page of the build, but instead, it was taking you to the **Development>Builds** page. This issue is fixed.
+* After you finish creating a build on the **Create new build** page, the **Show Build** button is supposed to take you to the **Details** page of the build but instead, it was taking you to the **Development>Builds** page. This issue is fixed.
  
  
 #### SDK
