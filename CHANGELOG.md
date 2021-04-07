@@ -1,10 +1,14 @@
 # CHANGELOG
-## [Unreleased]
-- Fixed issues with TOC listing coming above the content area in scaled displays. Fixed issue with page navigation links not being shown in landscape view of mobile.
-- Fixed font size for the TOC items.
-- Fixed alignment of search icons.
-- Fixed scroll issue with device error codes page.
-- Fixed issue with search bar not showing up on the landing page on mobile devices.
+
+## [4.3.0 - 2021-04-07]
+### Added
+- Support for build update 
+### Fixed
+- issues with TOC listing coming above the content area in scaled displays. Fixed issue with page navigation links not being shown in landscape view of mobile.
+- font size for the TOC items.
+-  alignment of search icons.
+-  scroll issue with device error codes page.
+- issue with search bar not showing up on the landing page on mobile devices.
 ## [4.0.0 - 2021-03-03]
 ### Changed
 - complete revamp of user docs
