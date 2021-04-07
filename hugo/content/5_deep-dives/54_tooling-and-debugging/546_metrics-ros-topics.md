@@ -88,7 +88,7 @@ as shown below:
 }
 ```
 
-After flattening the above nested ROS message, it will look like:
+After flattening the above nested ROS message, it will look like this:
 
 ```bash
 {
@@ -114,7 +114,7 @@ not supported and will be silently ignored.
 ## Type Introspection and Changing Data Types
 When you subscribe to a ROS topic-based metric with a certain rosmsg
 type, rapyuta.io introspects the data being published to the topic
-so to generate metric types. The generated metric types are implicitly
+to generate metric types. The generated metric types are implicitly
 bound to the name of the ROS topic just like a given ROS topic is
 implicitly bound to a specific rosmsg type.
 

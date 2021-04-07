@@ -46,7 +46,7 @@ Replace *1.2.3.0/24* in the below command with your local IP address.
 nmap -sn 1.2.3.0/24
 ```
 To ensure that everything is OK, SSH into the device. Both the default username
-and password for the custom image is ***`rapyuta`***. You are required to change the
+and password for the custom image are ***`rapyuta`***. You are required to change the
 password as soon as you sign in.
 
 ```bash
@@ -58,7 +58,7 @@ ssh rapyuta@1.2.3.0
 ##### Prerequisites
 
 1. Raspberry PI 2 or 3
-2. Micro SD card of at least 16 GB and of class 10
+2. Micro SD card of at least 16 GB and class 10
 3. Internet connection over ethernet
 
 ##### Procedure

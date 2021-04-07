@@ -82,12 +82,16 @@ margin-bottom: 2rem;
   position: absolute;
   left: 1rem;
   display: inline;
-  top: 26px;
+  top: 35px;
 }
 
 .searchbox i#search-icon {
-  top: 9px;
+  top: 14px;
   left: 9px;
+}
+
+.searchbox input {
+  height: 100%;
 }
 
 
@@ -196,13 +200,13 @@ span.primary-attribute > em {
 .notice-shortcuts .left{
   position: fixed;
   top: 4vh;
-  left: calc(10%);
+  left: 10%;
 }
 
 .notice-shortcuts .right{
   position: fixed;
   top: 4vh;
-  right: calc(10%);
+  right: 10%;
 }
 
 .notice-shortcuts span {

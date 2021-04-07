@@ -30,12 +30,12 @@ tags:
 ---
 
 
-Subscribing to system metrics will display a graphical visualization (like a graph with metrics data plotted along x-axis and time along the y-axis) of the metrics.
+Subscribing to system metrics will display a graphical visualization (like a graph with metrics data plotted along the x-axis and time along the y-axis) of the metrics.
 
 Read the metrics reference to know the data fields included in each system metric.
 
 ## Network IO Interface
-You can monitor and analyze real-time network performance metrics. For instance, you can collect upload and download rate per second for all interfaces for the last hour. The following metrics reference includes the kind of data measured in a network IO graph.
+You can monitor and analyze real-time network performance metrics. For instance, you can collect upload and download rates per second for all interfaces for the last hour. The following metrics reference includes the kind of data measured in a network IO graph.
 
 Some of the metrics data measured in a network IO interface graph are:
 
@@ -53,10 +53,10 @@ Subscribing to disk usage metrics displays a graph that shows the information on
 
 Some of the metrics data measured in a disk usage graph are:
 
-* **free** is the amount of disk space that is freely available. It is an integer value shown as byte.
-* **total** is the total amount of disk space. It is an integer value shown as byte.
-used is the amount of disk space that is in use. It is an integer value shown as byte.
-* **used_percent** is the percentage of disk space used. It is a floating-point value shown as percentage.
+* **free** is the amount of disk space that is freely available. It is an integer value shown as a byte.
+* **total** is the total amount of disk space. It is an integer value shown as a byte.
+used is the amount of disk space that is in use. It is an integer value shown as a byte.
+* **used_percent** is the percentage of disk space used. It is a floating-point value shown as a percentage.
 * **inodes_free** is the number of free inodes. It is an integer value shown as files.
 * **inodes_used** is the number of used inodes. It is an integer value shown as files.
 * **inodes_total** is the total number of inodes. It is an integer value shown as files.
@@ -68,30 +68,30 @@ Some of the metrics data measured in a disk IO interface graph are:
 
 * **reads** is a counter that increments when a read request completes. It is an integer value.
 * **writes** is a counter that increments when a write request completes. It is an integer value.
-* **read_bytes** is the count of the number of bytes read from the device. It is an integer value shown as byte.
-* **write_bytes** is the count of the number of bytes written to the device. It is an integer value shown as byte.
+* **read_bytes** is the count of the number of bytes read from the device. It is an integer value shown as a byte.
+* **write_bytes** is the count of the number of bytes written to the device. It is an integer value shown as a byte.
 * **read_time** is the count of the number of milliseconds that read requests have waited on the device. It is an integer value shown as milliseconds.
 * **write_time** is the count of the number of milliseconds that write requests have waited on the device. It is an integer value shown as milliseconds.
 * **io_time** is the count of the number of milliseconds during which the device has had IO requests queued. It is an integer value shown as milliseconds.
 * **weighted_io_time** is the count of the number of milliseconds that IO requests have waited on the device.
-* **iops_in_progress** is the count of the number of IO requests that have been issued to the device but have not yet completed. It does not include IO requests that are in the queue but not yet issued to the device.
+* **iops_in_progress** is the count of the number of IO requests that have been issued to the device but have not yet been completed. It does not include IO requests that are in the queue but not yet issued to the device.
 
 ## Memory usage
 You can collect and visualize device memory metrics by subscribing to the memory usage system metric. To know more about the data fields associated with memory usage, read here.
 
 Some of the metrics data measured in a memory usage graph are:
 
-* **available** is the amount of memory that is available. It is an integer value shown as byte.
-* **available_percent** is the percentage of memory that is available. It is a floating-point value shown as percentage
-* **buffered** is the amount of physical RAM used as cache memory. It is an integer value shown as byte
-* **cached** is the amount of physical RAM used as cache memory. It is an integer value shown as byte
+* **available** is the amount of memory that is available. It is an integer value shown as a byte.
+* **available_percent** is the percentage of memory that is available. It is a floating-point value shown as a percentage
+* **buffered** is the amount of physical RAM used as cache memory. It is an integer value shown as a byte
+* **cached** is the amount of physical RAM used as cache memory. It is an integer value shown as a byte
 * **free** is the amount of free RAM. It is an integer value shown as byte
-inactive is the amount of memory that hasn’t been used in some way. It is an integer value shown as byte
-* **slab**   is the amount of memory used by the kernel to cache data structures for its use. It is an integer value shown as byte
-* **total** is the total amount of physical RAM. It is an integer value shown as byte.
-* **used** is the amount of RAM in use. It is an integer value shown as byte.
-* **used_percent** is the percentage of memory currently in use. It is a floating-point value shown as percentage
-* **active** is the amount of memory that has been used in some way. It is an integer value shown as byte.
+inactive is the amount of memory that hasn’t been used in some way. It is an integer value shown as a byte
+* **slab**   is the amount of memory used by the kernel to cache data structures for its use. It is an integer value shown as a byte
+* **total** is the total amount of physical RAM. It is an integer value shown as a byte.
+* **used** is the amount of RAM in use. It is an integer value shown as a byte.
+* **used_percent** is the percentage of memory currently in use. It is a floating-point value shown as a percentage
+* **active** is the amount of memory that has been used in some way. It is an integer value shown as a byte.
 * **wired** is the memory where the kernel and other low-level components like device drivers and virtual memory objects are stored.
 
 ## CPU load average
@@ -101,7 +101,7 @@ You can determine the percentage of CPU used by a user, process, or system by su
 Some of the metrics data measured in a CPU load average graph are:
 
 * **usage_guest** is the percentage of time that the CPU is running a virtual CPU for a guest operating system
-* **usage_guest_nice** is the percentage of time that the CPU is running a virtual CPU for a guest operating system, which is low priority and can be interrupted by other processes.
+* **usage_guest_nice** is the percentage of time that the CPU is running a virtual CPU for a guest operating system, which is a low priority and can be interrupted by other processes.
 * **usage_idle** is the percentage of time that the CPU is idle
 usage_iowait is the percentage of time that the CPU is waiting for IO operations to complete
 * **usage_irq** is the percentage of time that the CPU is servicing interrupts

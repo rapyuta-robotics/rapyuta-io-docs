@@ -212,7 +212,7 @@ by selecting the **Targeted** option.
 
 This indicates that when a component is deployed its local
 ROS interfaces (topic/service/action)
-__containing a prefix/namespace corresponding to another individual peer's dynamic identitiy__
+__containing a prefix/namespace corresponding to another individual peer's dynamic identity__
 (peers ROS environment alias)
 gets __routed to the corresponding peer__ and
 __automatically unwraps the prefix/namespace__ in its ROS graph.

@@ -27,11 +27,11 @@ tags:
   - How to
 ---
 
-Applications running on the cloud de-allocate any resources consumed when they stop, scale down, or fail. This implies that the working storage associated with them is ephemeral. To get around this problem rapyuta.io provides a mechanism to consume persistent block storage for your applications running in the cloud. This storage can be associated with at most one running deployment at any given point of time. A user is typically required to manage the lifecycle of the application code independently from the associated storage.
+Applications running on the cloud de-allocate any resources consumed when they stop, scale down, or fail. This implies that the working storage associated with them is ephemeral. To get around this problem rapyuta.io provides a mechanism to consume persistent block storage for your applications running in the cloud. This storage can be associated with at most one running deployment at any given point in time. A user is typically required to manage the lifecycle of the application code independently from the associated storage.
 
 
 
-The *Rapyuta IO Persistent Volume* is a storage package. A storage package is a public package which is available to all users out of the box. You cannot delete or modify storage packages, and they are available to every user.
+The *Rapyuta IO Persistent Volume* is a storage package. A storage package is a public package that is available to all users out of the box. You cannot delete or modify storage packages, and they are available to every user.
 
 
 ## Creating Storage
@@ -53,10 +53,10 @@ You can add the storage package as a dependent deployment. To add storage to a d
 
 ![add-volume](/images/core-concepts/deployments/adding-volume.png?classes=border,shadow&width=40pc)
 
-3. Select the package depoyment from the **Deployment** drop-down menu.
+3. Select the package deployment from the **Deployment** drop-down menu.
 4. Select the package component where you want to attach the volume package from the **Applicable Component** drop-down menu.
 5. Add the path where you want to add the volume package in the **Mount Path** field.
-6. To create deployment, click **Create Deployment>Confirm**. The storage deployment is added to the deployment.
+6. To create a deployment, click **Create Deployment>Confirm**. The storage deployment is added to the deployment.
 
 
 ## Related Links

@@ -75,7 +75,7 @@ Follow these steps to create a native network.
 
 ## Deleting a Network
 
-Only network not bound to any running deployments can be deleted.
+Only networks not bound to any running deployments can be deleted.
 
 1. On the left navigation bar, click **Networking>Networks**. A list of available networks is displayed.
 2. Click **Delete** against the network that you want to delete.

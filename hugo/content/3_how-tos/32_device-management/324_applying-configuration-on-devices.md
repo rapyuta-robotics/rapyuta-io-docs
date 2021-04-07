@@ -29,7 +29,7 @@ tags:
 
 ## Creating Device Configuration
 
- **rapyuta.io** allows you to create a dynamic configuration that holds the parameter files into a tree-like hierarchical structure called a **configuration hierarchy**. These configuration parameters are applied to the robots to achive the desired behavior for the robot. 
+ **rapyuta.io** allows you to create a dynamic configuration that holds the parameter files into a tree-like hierarchical structure called a **configuration hierarchy**. These configuration parameters are applied to the robots to achieve the desired behavior for the robot. 
 
 To create a dynamic configuration, do the following.
 
@@ -156,20 +156,20 @@ To create a dynamic configuration, do the following.
 
   
 
-  In the following procedure, the configuraion parameter for a RGV robot is written in YAML format.
+  In the following procedure, the configuration parameter for a RGV robot is written in YAML format.
 
   
 
   1. Log on to **rapyuta.io** console and on the left navigation bar, click **Configurations>Add New Configuration**.
 
-  2. In the **Add new configuration** pop-up window, type a name for the configuration and click **Confirm**. For this example, type the name as **config_1**.
+  2. In the **Add new configuration** pop-up window, type a name for the configuration and click **Confirm**. For this example, type the name **config_1**.
     The new configuration name is added to the **Configuration Name** list. To configure the root node (configuration name), click **Config_1** from the list.
 
   3. Hover over **Config_1** and add an attribute as **country**.
 
-  4. Hover over **Config_1** and click **Add file**. By default, the file type is selected as YAML.Type the file name as  **RGV_config** and click **Confirm**.   
+  4. Hover over **Config_1** and click **Add file**. By default, the file type is selected as YAML. Type the file name as  **RGV_config** and click **Confirm**.   
 
-  5. In the **File Contents** area , type the RGV robot parameter values, as displayed in the following figure and click **Save**.
+  5. In the **File Contents** area, type the RGV robot parameter values, as displayed in the following figure, and click **Save**.
 
   {{% notice info %}}
   Ensure you read the [rules for writing/editing configuration parameters files](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#rules-for-writing-yaml-configuration-parameters).
@@ -191,9 +191,9 @@ To create a dynamic configuration, do the following.
 
   ## Creating a configuration parameter in Binary file format 
   
-  A binary file can be of any format, for example, .png, .json, .txt, .jpg etc. **rapyuta.io** allows you to upload the configuration file as a binary file. You can upload the configuration file if the configuration file cannot be written in YAML format, for example a map image.
+  A binary file can be of any format, for example, .png, .json, .txt, .jpg, etc. **rapyuta.io** allows you to upload the configuration file as a binary file. You can upload the configuration file if the configuration file cannot be written in YAML format, for example, a map image.
 
-  In the following example, a configuration hirarchy is created with the binary configuration files.
+  In the following example, a configuration hierarchy is created with the binary configuration files.
 
   1. Log on to **rapyuta.io** console and on the left navigation bar, click **Configurations>Add New Configuration**.
 
@@ -203,11 +203,11 @@ To create a dynamic configuration, do the following.
 
   4. Hover over **Config_2** and click **Add file**. 
 
-  5. Upload a base map image as the binary file from your local machine and click **Confirm**. If no configuration binary file is added at the file node, the configuration of base map image is applied to the device.
+  5. Upload a base map image as the binary file from your local machine and click **Confirm**. If no configuration binary file is added at the file node, the configuration of the base map image is applied to the device.
 
   6. Hover over the root node again to view options to add a new attribute node.
 
-  7. Click Add attribute. Give it a name, say, country. Click CONFIRM.
+  7. Click Add attribute. Give it a name, for example, country. Click **CONFIRM**.
 
   8. Hover over the country attribute to view options to add new value nodes.
 
@@ -217,7 +217,7 @@ To create a dynamic configuration, do the following.
 
   ![sample image file](/images/getting-started/apply-config-paramas/binary-file.png?classes=border,shadow&width=20pc)
 
-  10. For the attribute value **USA**, add the binary configuration file from your local machine and click Confirm.(For this example the map image is warehouse_map ). Similarly you can upload a binary parameter file for the attribute value japan.
+  10. For the attribute value **USA**, add the binary configuration file from your local machine and click Confirm. (For this example the map image is warehouse_map ). Similarly, you can upload a binary parameter file for the attribute value japan.
 
   The binary configuration parameter values are saved. The configuration will be applied to the devices after you apply the configuration.
 

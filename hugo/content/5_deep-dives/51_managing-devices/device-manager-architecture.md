@@ -33,7 +33,7 @@ To make this feasible rapyuta.io implements device management capabilities into 
 The following sections explain how to connect, interact, and use robots and devices on the platform.
 
 ## Architecture
-The following image illustrates the architecture of device
+The following image illustrates the architecture of the device
 manager system.
 ![Architecture](/images/core-concepts/device-management/architecture.png?classes=border,shadow&width=60pc)
 
@@ -60,24 +60,18 @@ rapyuta.io provides low throughput channels: control and
 telemetry channels. These channels are activated when the device is
 powered-on; connected to the internet, and registered with rapyuta.io
 The channels are optimized for reliability, security for small
-payloads like configuration commands, metrics and logs, and for
-minimum utilization of resources. 
+payloads like configuration commands, metrics, and logs, and minimum utilization of resources. 
 
 * **Control channel**    
-  This channel provides a persistent connection between the device
-  manager service and device manager agent. The service communicates
+  This channel provides a persistent connection between the device manager service and the device manager agent. The service communicates
   with the agent by using the publish-subscribe pattern.
-  The device manager service sends control commands to and receives
-  event messages from device manager agent. The channel secures each
-  device with a unique rotating AES key-based encryption.
+  The device manager service sends control commands to and receives event messages from the device manager agent. The channel secures each device with a unique rotating AES key-based encryption.
 * **Telemetry channel**     
-  The registered device generates metrics and logs data. The device
-  manager agent sends this data to the device manager service
-  through the telemetry channel. The channel uses TLS encryption
+  The registered device generates metrics and logs data. The device manager agent sends this data to the device manager service through the telemetry channel. The channel uses TLS encryption
   to secure each device together with a unique token.
 
 {{% notice note %}}
-Application communication is handled in diffrent channels. [Learn more](/5_deep-dives/53_networking-and-communication/) with a dedicated set of [features for ROS users](/5_deep-dives/53_networking-and-communication/534_ros-communication/)
+Application communication is handled in different channels. [Learn more](/5_deep-dives/53_networking-and-communication/) with a dedicated set of [features for ROS users](/5_deep-dives/53_networking-and-communication/534_ros-communication/)
 {{% /notice %}}
 
 
@@ -98,11 +92,7 @@ The device manager ensures that the data
 various components are encrypted.
 
 * **End to end encryption**    
-  On successful registration of a device with the device
-  manager, all further communication between the server and
-  the agent is encrypted using public-key cryptography.
+  On successful registration of a device with the device manager, all further communication between the server and the agent is encrypted using public-key cryptography.
 * **Identity validation**    
-  All devices that are registered with the device manager
-  will possess unique credentials that are visible only to
-  you. These credentials are used to identify devices across
+  All devices that are registered with the device manager will possess unique credentials that are visible only to you. These credentials are used to identify devices across
   communication channels.

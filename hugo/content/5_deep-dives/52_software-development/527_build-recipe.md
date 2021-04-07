@@ -19,17 +19,16 @@ The rapyuta.io platform also allows you to push a docker image to a private regi
 If you are creating a build with *Docker* recipe and the Dockerfile contains a reference to a private image, then you must specify a docker Secret. The platform will use the docker secret to fetch the private image while building the Dockerfile. If you have not created any secret for the repository, [create a secret](/how-to-guides/account-management/setup-private-git-access/).
 {{% /notice %}}
 
-In the **Development>Builds** section to add a new build, add the Build name and provide 
-the URL address of git repository. Suppose you want to add the address of a git repository say https://github.com/rapyuta-robotics/io_tutorials
+In the **Development>Builds** section to add a new build, add the Build name and provide the URL address of the git repository. Suppose you want to add the address of a git repository, for example, https://github.com/rapyuta-robotics/io_tutorials
 where ***io_tutorials*** is the project folder that contains the source
 code on the master branch and is hosted on GitHub.
 
-If you want to add source code located on a different branch, say
+If you want to add source code located on a different branch, for example,
 ***io_turtlesim_qos*** of the same project, your git repository URL
 will look like:
 https://github.com/rapyuta-robotics/io_tutorials#io_turtlesim_qos
 
-You may analyse [build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs) for
+You may analyze [build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs) for
 debugging build failures. If you have pushed a new commit, you can
 [trigger new builds or roll back previous builds](/5_deep-dives/52_software-development/522_trigger-and-rollback-builds/).
 
@@ -71,7 +70,7 @@ CPU architecture of the device is compatible with that of the image being
 deployed. You may select the appropriate target architecture while creating the build.
 
 
-#### Docker Mulitstage Build support
+#### Docker Multistage Build support
 
 Multistage builds are useful to anyone who has struggled to optimize Dockerfiles while keeping them easy to read and maintain. The rapyuta.io platform supports [multistage build](https://docs.docker.com/develop/develop-images/multistage-build/). For security reasons we do not allow aliases of images to be used in another `FROM`.
 

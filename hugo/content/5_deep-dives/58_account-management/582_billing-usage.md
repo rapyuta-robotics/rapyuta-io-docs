@@ -57,7 +57,7 @@ In the case of volume deployment hours, rapyuta.io provides SSD disks as persist
 
 You can augment the number of allocated consumable resources in a subscription plan to suit your needs by purchasing the required
 
-prepaid add-ons. The add-on units augment the allowed resource limits against your subscription and are charged on a monthly basis.
+prepaid add-ons. The add-on units augment the allowed resource limits against your subscription and are charged every month.
 
 
 
@@ -79,13 +79,13 @@ prepaid add-ons. The add-on units augment the allowed resource limits against yo
 
 ## Billing
 
-On subscribing to one of the plans, you (the admin of organization)
+On subscribing to one of the plans, you (the admin of the organization)
 
 can access the **Billing** panel.
 
 **Billing** aggregates information on the charges incurred on
 
-consumable units, and displays it in tabular and graphical forms.
+consumable units, and displays them in tabular and graphical forms.
 
 
 
@@ -105,7 +105,7 @@ The subscription fee is recurring and prepaid. The credit card will be charged m
 
 * The pie chart provides you insights into the relative component of any
 
-  **additional usage charges** and **standard subscription charges**. Additional usage indicates the count of additional devices, users, cloud deployment hours and volume deployment hours.
+  **additional usage charges** and **standard subscription charges**. Additional usage indicates the count of additional devices, users, cloud deployment hours, and volume deployment hours.
 
 
 
