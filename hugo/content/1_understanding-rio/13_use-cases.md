@@ -96,7 +96,7 @@ rapyuta.io allows you to view the various data from your robots in a customizabl
 
 * **Software Management of Your Robots**
 
-  Robotics developers face many challenges with the continuous changing of requirements and updates of the software on the robots. To avoid the hassle of on-site software changes and updates, rapyuta.io allows you to remotely update and rollback the software that is running on your robots. This also serves as a powerful CI/CD tool for you to remotely improve operational efficiencies and client requirements.
+  Robotics developers face many challenges with the continuous changing of requirements and updates of the software on the robots. To avoid the hassle of on-site software changes and updates, rapyuta.io allows you to remotely update and roll back the software that is running on your robots. This also serves as a powerful CI/CD tool for you to remotely improve operational efficiencies and client requirements.
 
 ##  Remote Management and after-sale support
 

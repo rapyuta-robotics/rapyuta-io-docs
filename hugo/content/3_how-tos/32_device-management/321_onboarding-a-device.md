@@ -105,7 +105,7 @@ root@ubuntu:/home/ubuntu#
 ```
 
 The process of installing a device consists of different stages towards
-successful completion of onboarding the device onto rapyuta.io.
+the successful completion of onboarding the device onto rapyuta.io.
 These stages are described below:
 
 * Checking and installing required python or apt packages.
@@ -120,7 +120,7 @@ These stages are described below:
 Not all devices go through all of the stages in the device initialization
 process. For example, while devices with docker-compose option set will
 have ROS base image installed on them, those with preinstalled runtime
-will have monitoring package installed on them.
+will have a monitoring package installed on them.
 
 
 

@@ -41,7 +41,7 @@ Follow these steps to create a cloud routed network.
 Follow these steps to create a device routed network. Make sure you have a rapyuta.io registered device with docker runtime and AMD64 architecture available.
 
 1. On the left navigation bar, click **Networking>Networks**.
-2. Click **ADD NEW NETWORK** and select the network type as **Routed Network**. The **Create new routed network** dialog-box appears.
+2. Click **ADD NEW NETWORK** and select the network type as **Routed Network**. The **Create new routed network** dialog box appears.
 3. Enter a name for routed network.
 4. Select **ROS Distro**, as either Kinetic or Melodic based on ROS version of package components it will be binding to.
 5. Select the **Runtime** as **Device**.
@@ -60,7 +60,7 @@ Once the routed network deployment succeeds, other ROS package deployments can b
 Follow these steps to create a native network.
 
 1. On the left navigation bar, click **Networking>Networks**.
-2. Click **ADD NEW NETWORK** and select the network type as **Native Network**. The **Create new native network** dialog-box appears.
+2. Click **ADD NEW NETWORK** and select the network type as **Native Network**. The **Create new native network** dialog box appears.
 ![native_network](/images/tutorials/routed-networks/create-native-network.png?classes=border,shadow&width=40pc)
 3. Enter a name for the native network. 
 4. Select **ROS Distro** as either **Kinetic** or **Melodic** based on ROS version of package components it will be binding to.

@@ -40,7 +40,7 @@ To invite or add users to the rapyuta.io platform, do the following:
 
 1. On the left navigation bar, click **Account>Organization**. The panel displays a list of users.
 
-2. On **Users** tab, enter a valid email address of the user you want to invite to rapyuta.io.
+2. On the **Users** tab, enter a valid email address of the user you want to invite to rapyuta.io.
 
 3. Click **ADD USER**.
 <img src="/images/getting-started/organization/add-usr-org.png?classes=border,shadow&width=50pc" alt="Add user to organization" style="zoom:100%;" ></img>

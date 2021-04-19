@@ -39,9 +39,9 @@ To preserve data files saved on the file server, deploy a persistent volume and 
 
 1. Select the public package, **Rapyuta IO Persistent Volume** from Storage packages.
 2. Click **Deploy package**.
-3. The Name of deployment is Volume Storage
-4. Ensure the disk type parameter of the volumeComponent is SSD. It provisions an SSD for block storage.
-5. Ensure the capacity parameter of the volumeComponent is 32GiB. It refers to the size of block storage.
+3. In the **Name of deployment** field, type a name for the volume deployment.
+4. Ensure the **diskType** parameter of the volumeComponent is SSD. It provisions an SSD for block storage.
+5. From the **Capacity** drop-down menu, select the required memory for the volume. It refers to the size of block storage.
 6. Click **CREATE DEPLOYMENT > Confirm**. The storage package is deployed.
 
 ## Adding Storage to a Deployment

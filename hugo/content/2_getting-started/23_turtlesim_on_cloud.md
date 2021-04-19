@@ -69,7 +69,7 @@ Let's begin by creating a **melodic-cloud-rnet** routed network.
 
 1. On the left navigation menu, click **Networking** > **Networks**.
 2. Click **Add Network** and select **Routed Networks**.
-3. In the **Create new routed network** dialog-box, enter the following details in the respective fields.
+3. In the **Create new routed network** dialog box, enter the following details in the respective fields.
    - **Name** : Type ```melodic-cloud-rnet``` as the name of the routed network.
    - **ROS Distro**: From the drop-down menu, select the ROS distro as ```Melodic```.
    - **Runtime**: Select the runtime as ```Cloud```.
@@ -216,7 +216,7 @@ Ros bag jobs upload the recorded bags to Cloud storage and these bags are availa
 
 To access ROS bags recorded on our deployment
 1. Go to **Development** > **Deployment** 
-2. Click on the deployment you created above : **turtlesim-cloud**
+2. Click on the deployment you created above: **turtlesim-cloud**
 3. Click on **ROS Bag jobs**
 4. Click on **Stop** to stop a running job
 5. In a few minutes, ROS bag job will go from **Stopping** to **Stopped**
@@ -231,7 +231,7 @@ We will now add another turtle into the sim world.
 
 To do this, import and deploy the **Turtle Melodic** package over the same routed network as **Turtle-World**
 
-1. Import ```Turtle Melodic``` pacakge into your account
+1. Import ```Turtle Melodic``` package into your account
 {{< importpackage manifest="https://raw.githubusercontent.com/rapyuta-robotics/io_tutorials/feature/turtlesim-v2/io_turtlesim/manifests/turtle-melodic.json" >}}
 2. Once the package is imported, you would be automatically taken to the package detail page
 3. On the detail page, press **Deploy package**.

@@ -204,7 +204,7 @@ The rapyuta.io platform also allows you to edit and update your build. Perform t
 
 2. Click the build that you want to edit. The **Build Details** page appears. 
 
-3. In the **Build Details** page, click **Edit**. The **Edit Build Details** page appears.
+3. On the **Build Details** page, click **Edit**. The **Edit Build Details** page appears.
    In the **Edit Build Details** page, you can edit the following fields of the build.    For the following field descriptions, see the procedures to create builds by using [Catkin](/3_how-tos/33_software-development/331_create-builds/#creating-build-by-catkin-recipe) or [Docker](/3_how-tos/33_software-development/331_create-builds/#creating-build-by-docker-recipe) recipe.
    * **Repository**
    * **Branch**
@@ -214,7 +214,7 @@ The rapyuta.io platform also allows you to edit and update your build. Perform t
    * **Private Git?** and **Credentials** for a private repository
    * **Context Directory**
    * **Dockerfile Path**
-   * **Catkin Parameters**: This field is editable for Catkin build recipe only.
+   * **Catkin Parameters**: This field is editable for the Catkin build recipe only.
    * **Docker Pull Secret**: This field is editable for Docker build recipe only.
    * **Image Repository**: This field is editable for Docker build recipe only.
 

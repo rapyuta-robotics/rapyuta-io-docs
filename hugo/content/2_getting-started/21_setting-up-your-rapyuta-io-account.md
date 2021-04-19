@@ -35,7 +35,7 @@ Perform the following procedure to set up your rapyuta.io account.
 5. A verification email is sent to your email address. Click the **Verify Email**  to complete your registration process.
    > If you can't see an invitation email in your inbox, check your spam folder. 
 6. The rapyuta.io platform opens, and the **Term and Conditions of Use** message is displayed. Click **I have read and agree to the terms of this Agreement** to acknowledge the message and click **Continue**.
-7. In the **ENTER ORGANIZATION DETAILS** dialog-box, enter the following details in the respective fields. 
+7. In the **ENTER ORGANIZATION DETAILS** dialog box, enter the following details in the respective fields. 
    1. **Organization Name** 
    2. **URL** 
    3. **Country** 
