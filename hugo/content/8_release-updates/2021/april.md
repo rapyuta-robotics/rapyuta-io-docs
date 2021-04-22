@@ -33,7 +33,7 @@ are significant updates in this release that we hope you will like.
 
 #### Bugfixes
 
-* When you clone a package that has the **Run command from bash shell** checkbox selected for a build, the **Run command from bash shell** checkbox gets de-selected in the cloned package. This issue is fixed.
+* When you clone a package that has the **Run command from bash shell** checkbox selected, the **Run command from bash shell** checkbox gets de-selected in the cloned package. This issue is fixed.
 
 * Following fixes are done to the install script while [onboarding a device](/3_how-tos/32_device-management/321_onboarding-a-device/) to the rapyuta.io console.
     * Virtualenv creation failure due to user's pip configuration at **$HOME/.pip/pip.conf**
