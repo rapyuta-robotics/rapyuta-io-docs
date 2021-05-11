@@ -39,9 +39,7 @@ ROS package.
 
 ## Batch Logging Configuration
 
-You can configure batch logging feature on a device that allows you to push the logs to the rapyuta.io platform in a specific JSON format. The historical logs are pushed to the platform in batches instead of small streams resulting no loss of the log data due to unstable network issues.  
-
-While configuring batch logging, you must enable it and configure the following fields.
+You can configure the batch logging feature on a device that allows you to create a backup of device deployment logs in a single file in JSON format. The size and rotation logic of the backup file is governed by the following configurations.  
 
 * **Backup Directory**: Specify the backup directory in the device to store the log files. 
 * **Rotation size**: Specify the log file size in MB after which the file is rotated. 
