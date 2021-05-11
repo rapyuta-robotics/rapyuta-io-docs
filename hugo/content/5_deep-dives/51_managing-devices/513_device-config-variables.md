@@ -36,3 +36,19 @@ while creating a package deployment. For instance, you may change ***ros_workspa
 You can deselect device configuration variables that you do not need during
 deployment. However, remember that ***ros_distro*** is mandatory when deploying a
 ROS package.
+
+## Batch Logging Configuration
+
+You can configure batch logging feature on a device that allows you to push the logs to the rapyuta.io platform in a specific JSON format. The historical logs are pushed to the platform in batches instead of small streams resulting no loss of the log data due to unstable network issues.  
+
+While configuring batch logging, you must enable it and configure the following fields.
+
+* **Backup Directory**: Specify the backup directory in the device to store the log files. 
+* **Rotation size**: Specify the log file size in MB after which the file is rotated. 
+* **Rotation interval** : Specify the time interval after which the log files are rotated. The available time intervals are **1hr**, **12hr**, **24hr**, **48hr**, and **72hr**.
+* **Rotated Archive Limit**: Specify the total numbers of rotations to be stored in platform. The available rotated archive limits are **5**, **10**, **15**, **20**, **25**, **30**.
+
+![sample file of Japan](/images/core-concepts/configurations/batch-logging-config.png?classes=border,shadow&width=65pc)
+{{%notice info%}}
+A rotation is completed after the specified rotation size or interval is reached.
+{{%/notice%}}
