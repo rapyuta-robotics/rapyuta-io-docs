@@ -39,7 +39,7 @@ ROS package.
 
 ## Batch Logging Configuration
 
-You can configure the batch logging feature on a device that allows you to create a backup of device deployment logs in a single file in JSON format. The size and rotation logic of the backup file is governed by the following configurations.  
+ The size and rotation logic of the backup file is governed by the following configurations.  
 
 * **Backup Directory**: Specify the backup directory in the device to store the log files. 
 * **Rotation size**: Specify the log file size in MB after which the file is rotated. 

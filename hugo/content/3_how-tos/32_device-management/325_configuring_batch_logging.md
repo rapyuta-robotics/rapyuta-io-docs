@@ -29,6 +29,8 @@ tags:
 
 ## Configuring Batch Logging on a Device
 
+You can configure the batch logging feature on a device that allows you to create a backup of device deployment logs in a single file in JSON format.
+
 Perform the following procedure to configure batch logging on a device.
 
 **Pre-requisite**: Ensure that you have onboarded a device to the rapyuta.io console and the device is online.
