@@ -37,7 +37,7 @@ Perform the following procedure to configure batch logging on a device.
 2. In the device **Details** page, click the **Enable batch logging** toggle button.
 ![sample file of Japan](/images/core-concepts/configurations/batch-logging.png?classes=border,shadow&width=45pc)
 The **Batch Logging Configuration** dialog box is displayed.
-3. In the **Batch Logging Configuration** dialog box, configure the following fields. For more details about fields, [click here](5_deep-dives/51_managing-devices/513_device-config-variables/#batch-logging-configuration)
+3. In the **Batch Logging Configuration** dialog box, configure the following fields. For more details about fields, [click here](/5_deep-dives/51_managing-devices/513_device-config-variables/#batch-logging-configuration)
 * **Backup Directory**
 * **Rotation size** 
 * **Rotation interval**
@@ -52,7 +52,7 @@ Perform the following procedure to update a batch logging configuration.
 1. In the device **Details** page, under **BATCH LOGGING CONFIG VARIABLES** section, click **Update**.
 ![sample file of Japan](/images/core-concepts/configurations/batch-logging-update.png?classes=border,shadow&width=45pc)
 The **Batch Logging Configuration** dialog-box is displayed. 
-2.  In the **Batch Logging Configuration** dialog-box, you can edit and update the following fields. For more details about fields, [click here](5_deep-dives/51_managing-devices/513_device-config-variables/#batch-logging-configuration)
+2.  In the **Batch Logging Configuration** dialog-box, you can edit and update the following fields. For more details about fields, [click here](/5_deep-dives/51_managing-devices/513_device-config-variables/#batch-logging-configuration)
 * **Backup Directory** 
 * **Rotation size**
 * **Rotation interval**  
