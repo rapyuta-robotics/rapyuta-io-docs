@@ -113,7 +113,7 @@ Currently supported for cloud runtime only. You can use a [routed network](/3_ho
 * Native network doesn’t share the parameters between different ROS environments.
 * Platform only whitelists the topics/service mentioned in the package component, and the platform doesn't interpret or listen to the data flowing between them unlike in case of a routed network thus reducing the latency. It only shares publisher/service information on the network.
 * Scoped or targeted topics (service or action) are the functionalities of a routed network. In the case of a native network, topics are whitelisted in the form of **/*/topics** and you can use remap or add namespaces to these topics for communication. For more information on remapping, [click here](http://wiki.ros.org/roslaunch/XML/remap).
-* While deploying a package, you can mention [ROS Environment Alias](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/#ros-environment-aliases-runtime-identity-assignment) in case of native network as well. Users can use $RIO_ROS_ENV_ALIAS environment variable set by rapyuta.io add ROS_NAMESPACE in your ROS environment, which will help you in doing namespacing.
+* While deploying a package, you can mention [ROS Environment Alias](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/#ros-environment-aliases-runtime-identity-assignment) and [ROS Namespace](http://wiki.ros.org/ROS/EnvironmentVariables#ROS_NAMESPACE) in case of native network as well. You can click the ROS **Namespace** check box and the platform automatically sets the value of ROS_NAMESPACE environment variable same as the ROS environment alias to help you in doing namespacing.
 
 
 {{%notice warning%}}
