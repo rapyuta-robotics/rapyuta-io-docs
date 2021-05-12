@@ -15,7 +15,7 @@ are significant updates in this release that we hope you will like.
  
 * **Batch Logging on a Device**
 
-    The rapyuta.io platform allows you to configure batch logging feature on a device to create a backup of device deployment logs in a single file in json format. For more information, [click here](/3_how-tos/32_device-management/325_configuring_batch_logging/).
+    The rapyuta.io platform allows you to configure batch logging feature on a device to create a backup of device deployment logs in a single file in JSON format. For more information, [click here](/3_how-tos/32_device-management/325_configuring_batch_logging/).
 
 * **Adding ROS Namespace Automatically**
     
@@ -23,7 +23,7 @@ are significant updates in this release that we hope you will like.
 
 * **Added support for 4, 8, and 16 GB of Volumes**
 
-    The rapyuta.io platform now allows you to select different capacity of the volume while deploying the volume package. For more information, [click here](/3_how-tos/33_software-development/335_adding-persistent-storage-to-a-deployment/#creating-storage).
+    The rapyuta.io platform now allows you to select different capacities of the volume while deploying the volume package. For more information, [click here](/3_how-tos/33_software-development/335_adding-persistent-storage-to-a-deployment/#creating-storage).
 
 #### Improvement
 
@@ -34,7 +34,7 @@ are significant updates in this release that we hope you will like.
 
 * **Build Timeout**
 
-    Previously, thre was no timeout after you trigger a build. Now the build timeout is set to 60 minutes. 
+    Previously, there was no timeout after you trigger a build. Now the build timeout is set to 60 minutes. 
 
 #### Bugfixes
 
@@ -42,7 +42,7 @@ are significant updates in this release that we hope you will like.
 
 * When you try to update a deployment in a device with an external private image, the deployment was failing. This issue is fixed.
 
-* When you deprovision a device deployment, the ROS master doen not get deprovisioned automatically. This issue is fixed.
+* When you deprovision a device deployment, the ROS master does not get deprovisioned automatically. This issue is fixed.
 
 * When you copy the private URL in the [log details](/5_deep-dives/54_tooling-and-debugging/543_upload-files-from-device/#direct-links-for-sharing-log-files) dialogbox and open in a new tab, it was resulting an error. This issue is fixed. 
  
