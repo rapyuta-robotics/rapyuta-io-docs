@@ -1,4 +1,12 @@
 # CHANGELOG
+## [unreleased]
+
+## [4.4.0 - 2021-04-22]
+### Added
+- SDK support for ROS bag jobs query and arguments
+### Fixed
+- Install scripts for various errors
+- Minor issue to the clone functionality for a package
 
 ## [4.3.0 - 2021-04-07]
 ### Added
