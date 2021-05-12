@@ -49,6 +49,7 @@ The **Batch Logging Configuration** dialog box is displayed.
 ## Updating Batch Logging on a Device
 
 Perform the following procedure to update a batch logging configuration.
+
 **Pre-requisite**: Ensure that the device is online.
 
 1. In the device **Details** page, under **BATCH LOGGING CONFIG VARIABLES** section, click **Update**.
