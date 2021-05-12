@@ -1,6 +1,18 @@
 # CHANGELOG
 ## [unreleased]
 
+## [4.5.0 - 2021-05-12]
+### Added
+- batch logging on device
+- ROS namespace automatically
+- support for different capacities of volumes
+- New SDK released (0.25) 
+
+### Fixed
+- Bug where docker image was given for device deployment with no image tag was pulling all the tags is fixed.
+- Update Deployment for device with external private image was failing
+-  ROS Master on Device used to not get deprovisioned after removing all the deployments
+
 ## [4.4.0 - 2021-04-22]
 ### Added
 - SDK support for ROS bag jobs query and arguments
