@@ -11,7 +11,7 @@ weight: 902
 Welcome to the May 12, 2021 release of the rapyuta.io platform. There
 are significant updates in this release that we hope you will like.
  
-#### Feature
+#### Features
  
 * **Batch Logging on a Device**
 
@@ -25,7 +25,7 @@ are significant updates in this release that we hope you will like.
 
     The rapyuta.io platform now allows you to select different capacities of the volume while deploying the volume package. For more information, [click here](/3_how-tos/33_software-development/335_adding-persistent-storage-to-a-deployment/#creating-storage).
 
-#### Improvement
+#### Improvements
 
 * **Cloud Bridge Logs positioning**
 
