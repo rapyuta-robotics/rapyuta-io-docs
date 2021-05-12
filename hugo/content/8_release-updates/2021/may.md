@@ -19,7 +19,11 @@ are significant updates in this release that we hope you will like.
 
 * **Adding ROS Namespace Automatically**
     
-    
+    When you click the **ROS Namespace** check box while deploying a package, the rapyuta.io platform automatically sets the value of ROS_NAMESPACE environment variable same as the ROS environment alias. For more information, [click here]().
+
+* **Added support for 4, 8, and 16 GB of Volumes**
+
+    The rapyuta.io platform allows you to select the capacity of the volume 
 
 #### Bugfixes
 * 
