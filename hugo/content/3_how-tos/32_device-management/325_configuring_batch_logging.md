@@ -44,7 +44,7 @@ The **Batch Logging Configuration** dialog box is displayed.
 * **Rotation size** 
 * **Rotation interval**
 * **Rotated Archive Limit**
-4. Click **OK**. The batch logging on a device is completed.
+4. Click **OK**. The batch logging configuration on a device is completed.
 
 ## Updating Batch Logging on a Device
 
@@ -59,4 +59,4 @@ The **Batch Logging Configuration** dialog-box is displayed.
 * **Rotation size**
 * **Rotation interval**  
 * **Rotated Archive Limit**
-3. Click **OK**. the batch logging configuration is updated.
+3. Click **OK**. The batch logging configuration is updated.
