@@ -50,7 +50,12 @@ are significant updates in this release that we hope you will like.
 #### SDK
  
 **rapyuta.io Python SDK [0.25.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
- 
+
+* Added support for additional cloud volume disk capacity sizes in SDK.
+
+* Added check to restrict component alias name set up without user knowledge.
+
+* Added support for setting ROS namespace for native network deployments. 
 
 
  
