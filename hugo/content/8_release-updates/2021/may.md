@@ -73,7 +73,7 @@ The device's details page allows you to view the ROS bag jobs running on the dev
 
 * Authentication to view API documentation is removed and the API documents are public now.
 
-* Rename device can also update device name related environment variables.
+* Fixed the bug that was not allowing the device name related environment variables to update while renaming the device.
 
 #### SDK
  
