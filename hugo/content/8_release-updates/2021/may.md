@@ -66,9 +66,8 @@ are significant updates in this release that we hope you will like.
 
 * **Viewing ROS Bag Jobs on the Device Details Page**
 
-The device's details page allows you to view the 
+The device's details page allows you to view the ROS bag jobs running on the device. For more information, [click here](/3_how-tos/35_tooling_and_debugging/working-with-rosbags/)
 
-You can view the 
 
 #### Bugfixes
 
@@ -80,7 +79,7 @@ You can view the
  
 **[rapyuta.io Python SDK](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
 
-* Added refresh() method to resource classes such as Deployment that have partial set of fields when using list or get_all methods. Such objects can be refreshed with the full set of fields by calling the refresh() method.
+* Added *refresh()* method to resource classes such as deployment that has partial set of fields when using list or *get_all* methods. Such objects can be refreshed with the full set of fields by calling the *refresh()* method.
 
 * Added implementation of delete static routes in core API client.
 * Added searching, filtering, sorting and pagination facilities in device list logs.
