@@ -85,7 +85,7 @@ You can also update the value of the ROS bag jobs during the time of deployment.
 The rapyuta.io platform lists all the available ROS bag jobs under each component. To view the details of a ROS bag job, click the ROS bag job and then click the **Job Details** tab. You can view the ROS bag details, for example, the topics that are being recorded by the job or the message compression detail as displayed in the following image.
 ![rosbag-job-details](/images/dev-guide/rosbag-jobs/rosbag-job-details.png?classes=border,shadow&width=30pc)
 
-You can also view all the ROS bag jobs running on the device on the device's details page. The **ROS Bags Jobs** tab displays all the ROS bag jobs running on the device. Note that the ROS bag jobs can only be viewed, you cannot stop a running job from the tab. However, you can download the ROS bag job after the ROS bag job has been stopped.
+You can also view all the ROS bag jobs running on the device on the device's details page. The **ROS Bags Jobs** tab displays all the ROS bag jobs running on the device. 
 ![rosbag-job-details](/images/dev-guide/rosbag-jobs/rosbag-job-device-details.png?classes=border,shadow&width=60pc)
 
 
