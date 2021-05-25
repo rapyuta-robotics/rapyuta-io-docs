@@ -73,7 +73,7 @@ The device's details page allows you to view the ROS bag jobs running on the dev
 
 * Authentication to view API documentation is removed and the API documents are public now.
 
-* Renaming a device cannot update device name related environment variables. This issue is fixed.
+* Rename device can also update device name related environment variables.
 
 #### SDK
  
@@ -81,8 +81,8 @@ The device's details page allows you to view the ROS bag jobs running on the dev
 
 * Added *refresh()* method to resource classes such as deployment that has partial set of fields when using list or *get_all* methods. Such objects can be refreshed with the full set of fields by calling the *refresh()* method.
 
-* Added implementation of delete static routes in core API client.
-* Added searching, filtering, sorting and pagination facilities in device list logs.
+* Added support for deletion of static routes in core API client.
+* Added support for searching, filtering, sorting, and pagination of device list logs.
  
 
 
