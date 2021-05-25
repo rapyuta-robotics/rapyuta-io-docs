@@ -57,6 +57,29 @@ are significant updates in this release that we hope you will like.
 
 * Added support for setting ROS namespace for native network deployments. 
 
+## May 26
+
+Welcome to the May 26, 2021 release of the rapyuta.io platform. There
+are significant updates in this release that we hope you will like.
+
+#### Features
+
+* **Viewing ROS bag jobs on the device tab**
+
+
+#### Improvements
+
+* **Auto refreshing of uploaded log files**
+
+#### SDK
+ 
+**rapyuta.io Python SDK [0.26.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
+
+* Added refresh() method to resource classes such as Deployment that have partial set of fields when using list or get_all methods. Such objects can be refreshed with the full set of fields by calling the refresh() method.
+
+* .
+ 
+
 
  
  
