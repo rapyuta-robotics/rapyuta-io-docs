@@ -9,6 +9,7 @@
 ### Fixed
 - Fixed the bug to allow the device name related environment variables to update while renaming the device
 - Authentication to view API documentation is removed 
+
 ## [4.5.0 - 2021-05-12]
 ### Added
 - batch logging on device
