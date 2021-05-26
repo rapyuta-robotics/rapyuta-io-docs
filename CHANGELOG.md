@@ -1,7 +1,14 @@
 # CHANGELOG
 ## [unreleased]
+
+## [4.6.0 - 2021-05-26]
 ### Added
 - Viewing ROS bag jobs on device's details page
+- new SDK support added.
+
+### Fixed
+- Fixed the bug to allow the device name related environment variables to update while renaming the device
+- Authentication to view API documentation is removed 
 
 ## [4.5.0 - 2021-05-12]
 ### Added

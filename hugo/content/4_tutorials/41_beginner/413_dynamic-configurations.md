@@ -17,13 +17,8 @@ The tutorial will show you how to apply configuration parameters to a device bef
 1. Device requirements
    1. You should have access to a device (computer or Raspberry PI 2 or 3) with an internet connection.
    2. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is installed on the computer.
-   3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation) is installed on the device.
-{{% notice note %}}
-If the device has [ROS Melodic Morenia](http://wiki.ros.org/melodic)
-installed on it, replace ***Kinetic*** with ***Melodic*** in all places
-where a specific version of ROS is asked for. The tutorial should still
-work the same.
-{{% /notice %}}
+   3. Ensure that the [ROS Melodic Morenia](http://wiki.ros.org/melodic) is installed on the device.
+
 2. You should be familiar with the [configurations](/5_deep-dives/51_managing-devices/dynamic-configuration) concept.
 3. Read the quick starting guide on [how to apply configurations to devices](/3_how-tos/32_device-management/324_applying-configuration-on-devices).
 4. You should be familiar with the following tools:
@@ -152,7 +147,7 @@ To create the *Publisher for Configured Devices* package, follow the steps:
 8. In the **Component Name** box, enter a name for the component, for example, `parameter_talker`.
 9. Select **Device** for **Component Runtime**.
 10. Ensure **Is ROS Component** is selected.
-11. Ensure the **ROS Version** is **Kinetic**.
+11. Ensure the **ROS Version** is **Melodic**.
 12. In the **Executable Name** box, enter a name for the executable, for example, `talker_executable`.
 13. Select **Default** for **Executable Type**.
 14. Enter `roslaunch param_talker talker.launch` in the **Command to run in the docker container** box.
