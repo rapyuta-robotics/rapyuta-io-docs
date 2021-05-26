@@ -30,7 +30,7 @@ To prepare the UP board device, follow the instructions in sequence:
 1. Download [rapyuta.io reference Board Support Package (BSP) image](https://storage.googleapis.com/io-reference-bsp-images/up/ubuntu/2018-08-23-rapyuta-robotics-xenial-ros-up-board-amd64.iso) (amd64 CPU architecture).
 {{% notice info %}}  
 The custom rapyuta.io image comes with [Ubuntu Xenial](http://releases.ubuntu.com/xenial/)
-OS and [ROS kinetic](http://wiki.ros.org/kinetic) software installed on it.
+OS and [ROS Melodic Morenia](http://wiki.ros.org/melodic) software installed on it.
 Moreover, the [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tutorials)
 are also installed on the custom image.
 {{% /notice %}}
@@ -69,7 +69,7 @@ image](https://storage.googleapis.com/io-reference-bsp-images/raspberrypi/ubuntu
 or [rapyuta.io reference BSP image](https://storage.googleapis.com/io-reference-bsp-images/raspberrypi/ubuntu/2018-07-18-rapyuta-robotics-xenial-ros-raspberry-pi-arm64.img.xz) (arm64v8 CPU architecture) for only Raspberry PI 3.
 {{% notice info %}}  
 The custom rapyuta.io images come with [Ubuntu Xenial](http://releases.ubuntu.com/xenial/)
-OS and [ROS kinetic](http://wiki.ros.org/kinetic) software installed on them.
+OS and [ROS Melodic Morenia](http://wiki.ros.org/melodic) software installed on them.
 Moreover, [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tutorials)
 are also installed on these custom images.
 {{% /notice %}}

@@ -62,6 +62,10 @@ are significant updates in this release that we hope you will like.
 Welcome to the May 26, 2021 release of the rapyuta.io platform. There
 are significant updates in this release that we hope you will like.
 
+{{%notice note%}}
+As Kinetic has reached the EOL, it is suggested to select **Melodic** as the ROS version while creating a build.
+{{%/notice%}}
+
 #### Features
 
 * **Viewing ROS Bag Jobs on the Device Details Page**

@@ -17,13 +17,8 @@ The tutorial will show you how to deploy a basic ROS package with a _ROS publish
     1. You should have access to a device (computer or Raspberry PI 2 or 3)
     with an internet connection.
     2. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is installed on the computer.
-    3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation) is installed on the device.
-{{% notice note %}}
-If the device has [ROS Melodic Morenia](http://wiki.ros.org/melodic)
-installed on it, replace ***Kinetic*** with ***Melodic*** at all places
-where a specific version of ROS is asked for. The tutorial should still
-work the same.
-{{% /notice %}}
+    3. Ensure that the [ROS Melodic Morenia](http://wiki.ros.org/melodic) is installed on the device.
+
 2. You should be familiar with the rapyuta.io platform concept
 3. You should be familiar with the below tools:
     1. [Git](https://git-scm.com/doc)
@@ -71,7 +66,7 @@ cd catkin_ws/src
 git clone https://github.com/rapyuta/io_tutorials
 ```
 ```bash
-source /opt/ros/kinetic/setup.bash
+source /opt/ros/Melodic/setup.bash
 ```
 ```bash
 cd ..
@@ -167,7 +162,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% /notice %}}
     2. For **Component Runtime**, click **Device**.
     3. Ensure **Is ROS Component** is selected.
-    4. Ensure the **ROS Version** is **Kinetic**.
+    4. Ensure the **ROS Version** is **Melodic**.
     5. In the **Executable Name** box, type in a name for the executable , for example, `listenerExecutable`  
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.

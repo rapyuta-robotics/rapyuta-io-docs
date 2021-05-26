@@ -65,6 +65,10 @@ To create a build using the Catkin recipe, do the following.
     b. Optionally, if the build has a simulation option, click the **Has Simulation** radio button.
 
     c. In the **ROS Version** area, select either **Kinetic** or **Melodic**.
+
+{{%notice note%}}
+As Kinetic has reached the EOL, it is suggested to select **Melodic** as the ROS version while creating a build.
+{{%/notice%}}
     
     d. Optionally, to add ROS parameter to the build, in the **CATKIN BUILD PARAMETERS** area, click **Add Parameter**. For details about Catkin build parameters, [Click here](/5_deep-dives/52_software-development/523_ros-support-for-builds).
 
@@ -129,6 +133,10 @@ To create a build using the Catkin recipe, do the following.
     b. In the **Dockerfile path** field, type the path of the docker file that contains the source code. The docker file path is relative to the **Context Directory** field.
 
     c. Optionally, if the build has ROS component, then click the **Has ROS Components** radio button, select the ROS version as either **Kinetic** or **Melodic**, and if the build has a simulation option, click the **Has Simulation** radio button.
+
+{{%notice note%}}
+As Kinetic has reached the EOL, it is suggested to select **Melodic** as the ROS version while creating a build.
+{{%/notice%}}
 
     d. Click **Next**.
 

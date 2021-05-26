@@ -23,13 +23,7 @@ The tutorial will show you how to create a dependent deployment using
   with an internet connection.
   2. Install the [Google Chrome](https://www.google.com/chrome) browser is
   on the device.
-  3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation) is installed on the device.
-{{% notice note %}}
-If the device has [ROS Melodic Morenia](http://wiki.ros.org/melodic)
-installed on it, replace ***Kinetic*** with ***Melodic*** in all places
-where a specific version of ROS is asked for. The tutorial should still
-work the same.
-{{% /notice %}}
+  3. Ensure that the [ROS Melodic Morenia](http://wiki.ros.org/melodic) is installed on the device.
 1. You should be familiar with the [map_server](https://wiki.ros.org/map_server) ROS package.
 2. You should be familiar with the below tools:
   1. [Git](https://git-scm.com/doc)
@@ -146,7 +140,7 @@ git clone https://github.com/rapyuta/io_tutorials
 ```
 
 ```bash
-source /opt/ros/kinetic/setup.bash
+source /opt/ros/Melodic/setup.bash
 ```
 
 ```bash
@@ -197,7 +191,7 @@ To create the package, follow the instructions:
 3. In the **Component Name** box, provide a name for the component, for example, `MapListener`
 4. For **Component Runtime**, click **Device**.
 5. Ensure **Is ROS Component** is selected.
-6. Ensure the **ROS Version** is **Kinetic**.
+6. Ensure the **ROS Version** is **Melodic**.
 7. In the **Executable Name** box, enter a name for the executable , for example,
    `map_listener_executable`
 8. For **Executable Type**, click **Default**.

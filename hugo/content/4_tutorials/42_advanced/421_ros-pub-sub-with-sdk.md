@@ -87,7 +87,7 @@ The build takes about two to five minutes to build the source code in the *io_tu
 9.  In the **Component Name** box, enter a name for the component, for example, `TALKER`.
 10. Select **Cloud** for **Component Runtime**.
 11. Ensure **Is ROS Component** is selected.
-12. Select **Kinetic** for **ROS Version**.
+12. Select **Melodic** for **ROS Version**.
 13. The default value of **Replicas to run the component** is set to 1
 14. In the **Executable Name** box, enter a name for an executable, for example, `talker_executable`.
 15. Click **Development>Builds** for **Executable Type**.
@@ -114,7 +114,7 @@ The build takes about two to five minutes to build the source code in the *io_tu
 9.  In the **Component Name** box, enter a name for the component, for example, `LISTENER`.
 10. Select **Device** for **Component Runtime**.
 11. Ensure **Is ROS Component** is selected.
-12. Select **Kinetic** for **ROS Version**.
+12. Select **Melodic** for **ROS Version**.
 13. Set **Restart Policy** to **Never**.
 14. In the **Executable Name** box, enter a name for an
     executable , for example, `listener_executable`.
@@ -129,7 +129,7 @@ A routed network allows you to establish ROS communication between different ROS
 
 Use the following code to create a routed network
 ```python
-routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.KINETIC, True)
+routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.Melodic, True)
 routed_network.poll_routed_network_till_ready()
 ```
 
@@ -144,7 +144,7 @@ from rapyuta_io.clients.package import ROSDistro
 client = Client(AUTH_TOKEN, PROJECT_ID)
 
 # Create a Routed Network
-routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.KINETIC, True)
+routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.Melodic, True)
 routed_network.poll_routed_network_till_ready()
 ```
 
