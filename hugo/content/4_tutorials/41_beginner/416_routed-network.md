@@ -50,10 +50,10 @@ device with docker runtime and AMD64 architecture available.
 1. On the left navigation bar, click **NETWORKS**.
 2. Click **ADD NEW ROUTED NETWORK**.
 3. Enter a name for routed network.
-4. Select **ROS Distro**, as Melodic.
+4. Select **ROS Distro** as Melodic.
 5. Select the **Runtime** as **Device**.
 6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
-Select the **Device** and it’s **IP Interface**. 
+Select the **Device** and its **IP Interface**. 
 7. Select the [Restart policy](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
 ![goo](/images/tutorials/routed-networks/create-device-routed-network.png?classes=border,shadow&width=40pc)
 8. Click **CONTINUE**.

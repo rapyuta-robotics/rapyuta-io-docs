@@ -66,7 +66,7 @@ cd catkin_ws/src
 git clone https://github.com/rapyuta/io_tutorials
 ```
 ```bash
-source /opt/ros/Melodic/setup.bash
+source /opt/ros/melodic/setup.bash
 ```
 ```bash
 cd ..

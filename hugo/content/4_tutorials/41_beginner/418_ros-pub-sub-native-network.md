@@ -121,7 +121,7 @@ Perform the following procedure to create a native network.
 1. On the left navigation bar, click **Networking>Networks**.
 2. Click **ADD  NETWORK** and select the network type as **Native Network**.
 3. In the **Create new native network** dialog-box, enter `cloud_native_network1` as the name for the native network.
-4. Select **ROS Distro**, as   **Melodic**.
+4. Select **ROS Distro** as **Melodic**.
 5. Select the **Runtime** as **Cloud**.
 6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
 

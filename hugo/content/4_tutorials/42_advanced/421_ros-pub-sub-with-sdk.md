@@ -129,7 +129,7 @@ A routed network allows you to establish ROS communication between different ROS
 
 Use the following code to create a routed network
 ```python
-routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.Melodic, True)
+routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.MELODIC, True)
 routed_network.poll_routed_network_till_ready()
 ```
 
@@ -144,7 +144,7 @@ from rapyuta_io.clients.package import ROSDistro
 client = Client(AUTH_TOKEN, PROJECT_ID)
 
 # Create a Routed Network
-routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.Melodic, True)
+routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.MELODIC, True)
 routed_network.poll_routed_network_till_ready()
 ```
 
