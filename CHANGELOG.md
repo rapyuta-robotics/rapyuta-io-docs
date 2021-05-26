@@ -1,5 +1,7 @@
 # CHANGELOG
 ## [unreleased]
+### Added
+- Viewing ROS bag job on device's details page
 
 ## [4.5.0 - 2021-05-12]
 ### Added
