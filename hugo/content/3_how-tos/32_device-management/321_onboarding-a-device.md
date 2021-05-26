@@ -43,9 +43,9 @@ on rapyuta.io
 
 Ubuntu(16.04 and 18.04) by default resolves the hostname to localhost. If you do change this behavior on the host OS, roscore **will** not be able to start. A simple way to check if roscore can be started is to do `nslookup $(hostname)` if it returns a DNS record you are probably good to go.
 
-{{% notice note%}}
-Ensure you install **ros-kinetic-ros-base**, or **ros-melodic-ros-base**, or above it.
-{{% /notice %}}
+{{%notice note%}}
+As Kinetic has reached the EOL, it is suggested to select **Melodic** as the ROS version.
+{{%/notice%}}
 
 ### Register a New Device
 To register a new device on rapyuta.io, follow the below steps:
