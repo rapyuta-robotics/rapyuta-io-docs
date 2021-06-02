@@ -24,13 +24,8 @@ It also shows how to use dockercompose runtime on a device.
     1. You should have access to a device (computer or Raspberry PI 2 or 3)
     with an internet connection.
     2. Ensure that the [Google Chrome](https://www.google.com/chrome) browser is installed on the computer.
-    3. Ensure that the [ROS Kinetic Kame](https://wiki.ros.org/kinetic/Installation) is installed on the device.
-{{% notice note %}}
-If the device has [ROS Melodic Morenia](http://wiki.ros.org/melodic)
-installed on it, replace ***Kinetic*** with ***Melodic*** in all places
-where a specific version of ROS is asked for. The tutorial should still
-work the same.
-{{% /notice %}}
+    3. Ensure that the [ROS Melodic Morenia](http://wiki.ros.org/melodic) is installed on the device.
+
 1. You should be familiar with the below tools:
     1. [Git](https://git-scm.com/doc)
     2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
@@ -89,7 +84,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% /notice %}}
     2. For **Component Runtime**, click **Cloud**.
     3. Ensure **Is ROS Component** is selected.
-    4. Ensure the **ROS Version** is **Kinetic**.
+    4. Ensure the **ROS Version** is **Melodic**.
     5. Set the value of **Replicas to run the component** to the number 1 (default value).
     6. In the **Executable Name** box, enter a name for the executable , for example,
        `talkerExecutable`  
@@ -117,7 +112,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% /notice %}}
     2. For **Component Runtime**, click **Device**.
     3. Ensure **Is ROS Component** is selected.
-    4. Ensure the **ROS Version** is **Kinetic**.
+    4. Ensure the **ROS Version** is **Melodic**.
     5. Select **arm32v7** as **Architecture**.
     6. In the **Executable Name** box, type in a name for the executable , for example,
        `listenerExecutable`   
@@ -144,7 +139,7 @@ Perform the following procedure to create a routed network.
 1. On the left navigation bar, click **Networking>Networks**.
 2. Click **ADD  NETWORK>Routed Network**.
 3. In the **Create new routed network** dialog-box, enter `cloud_routed_network_1` as the name for the routed network.
-4. Select **ROS Distro**, as   **Kinetic**.
+4. Select **ROS Distro**, as   **Melodic**.
 5. Select the **Runtime** as **Cloud**.
 6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
 ![goo](/images/tutorials/routed-networks/create-cloud-routed-network.png?classes=border,shadow&width=35pc)

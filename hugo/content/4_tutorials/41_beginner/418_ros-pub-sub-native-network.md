@@ -66,7 +66,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% /notice %}}
     2. For **Component Runtime**, click **Cloud**.
     3. Ensure **Is ROS Component** is selected.
-    4. Ensure the **ROS Version** is **Kinetic**.
+    4. Ensure the **ROS Version** is **Melodic**.
     5. Set the value of **Replicas to run the component** to the number 1 (default value).
     6. In the **Executable Name** box, enter a name for the executable say
        `talkerExecutable`  
@@ -94,7 +94,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% /notice %}}
     2. For **Component Runtime**, click **Cloud**.
     3. Ensure **Is ROS Component** is selected.
-    4. Ensure the **ROS Version** is **Kinetic**.
+    4. Ensure the **ROS Version** is **Melodic**.
     5. In the **Executable Name** box, type in a name for the executable, for example,
        `listenerExecutable`   
 {{% notice info %}}
@@ -121,7 +121,7 @@ Perform the following procedure to create a native network.
 1. On the left navigation bar, click **Networking>Networks**.
 2. Click **ADD  NETWORK** and select the network type as **Native Network**.
 3. In the **Create new native network** dialog-box, enter `cloud_native_network1` as the name for the native network.
-4. Select **ROS Distro**, as   **Kinetic**.
+4. Select **ROS Distro** as **Melodic**.
 5. Select the **Runtime** as **Cloud**.
 6. From the **Resource limit** field, select the memory allocation and computational ability of the routed network. These resources are reserved in the platform for effective ROS communication. For this tutorial, you can select **Small: 1cpu core, 4 GiB memory** as the resource limit.
 

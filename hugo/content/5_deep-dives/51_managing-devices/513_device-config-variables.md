@@ -36,3 +36,17 @@ while creating a package deployment. For instance, you may change ***ros_workspa
 You can deselect device configuration variables that you do not need during
 deployment. However, remember that ***ros_distro*** is mandatory when deploying a
 ROS package.
+
+## Batch Logging Configuration
+
+ The size and rotation logic of the backup file is governed by the following configurations.  
+
+* **Backup Directory**: Specify the backup directory in the device to store the log files. 
+* **Rotation size**: Specify the log file size in MB after which the file is rotated. 
+* **Rotation interval** : Specify the time interval after which the log files are rotated. The available time intervals are **1hr**, **12hr**, **24hr**, **48hr**, and **72hr**.
+* **Rotated Archive Limit**: Specify the total number of rotations to be stored in platform. The available rotated archive limits are **5**, **10**, **15**, **20**, **25**, **30**.
+
+![sample file of Japan](/images/core-concepts/configurations/batch-logging-config.png?classes=border,shadow&width=65pc)
+{{%notice info%}}
+A rotation is completed after the specified rotation size or interval is reached.
+{{%/notice%}}

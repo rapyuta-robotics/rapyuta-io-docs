@@ -21,13 +21,7 @@ This tutorial will show you how to deploy a device routed network locally for in
       with an internet connection.
    2. Install the latest [Google Chrome](https://www.google.com/chrome/)
       browser on the device.
-   3. Ensure the [ROS Kinetic Kame](http://wiki.ros.org/kinetic/Installation) (ROS kinetic) is installed on the device.
-{{% notice note %}}
-If the device has [ROS Melodic Morenia](http://wiki.ros.org/melodic)
-installed on it, replace ***Kinetic*** with ***Melodic*** in all places
-where a specific version of ROS is asked for. The tutorial should still
-work the same.
-{{% /notice %}}
+   3. Ensure the [ROS Melodic Morenia](http://wiki.ros.org/melodic) is installed on the device.
 1. You should be familiar with the following tools:
    1. ROS [topics](http://wiki.ros.org/Topics)
    2. UNIX/LINUX [command terminal](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
@@ -47,7 +41,7 @@ Ensure that the device must be of **amd64** CPU architecture.
 1. Click **Devices>All Devices** > **ADD NEW DEVICE**.
 2. In the **Device Name** box, enter the name of the device, for example, `device_rn`
 3. Use **docker compose as the default runtime** option.
-4. Ensure the ROS Version is Kinetic.
+4. Ensure the ROS Version is Melodic.
 4. In the **Description** box, provide a summary of the device, for example,
    `I am a Device Routed Network`
 5. Click **CONTINUE**.
@@ -73,12 +67,12 @@ The _Publisher Device_ is:
 
 * Raspberry PI 2 or 3
 * can have either **arm64v8** or **arm32v7** CPU architecture
-* must have ROS Kinetic installed on it
+* must have ROS Melodic installed on it
 * must have rapyuta.io tutorials installed on it
 
 {{% notice info %}}
 The custom rapyuta.io image comes with [Ubuntu Xenial](http://releases.ubuntu.com/xenial/) OS and
-[ROS kinetic](http://wiki.ros.org/kinetic) software installed on them.
+[ROS Melodic Morenia](http://wiki.ros.org/melodic)software installed on them.
 Moreover, the [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tutorials) are also installed on these custom images.
 {{% /notice %}}
 
@@ -97,7 +91,7 @@ that you replace all occurrences to `~/catkin_ws/` with your
 workspace name.
 {{% /notice %}}
 
-If you are using either a computer with ROS Kinetic installed on it, or
+If you are using either a computer with ROS Melodic installed on it, or
 a Raspberry PI without custom rapyuta.io image, you will create a catkin
 workspace and get the ***io_tutorials*** repository into the workspace.
 
@@ -116,7 +110,7 @@ cd catkin_ws/src
 git clone https://github.com/rapyuta/io_tutorials
 ```
 ```bash
-source /opt/ros/kinetic/setup.bash
+source /opt/ros/melodic/setup.bash
 ```
 ```bash
 cd ..
@@ -177,12 +171,12 @@ The _Subscriber Device_ is a:
 
 * Raspberry PI 2 or 3
 * can have either **arm64v8** or **arm32v7** CPU architecture
-* must have ROS Kinetic installed on it
+* must have ROS Melodic installed on it
 * must have rapyuta.io tutorials installed on it
 
 {{% notice info %}}
 The custom rapyuta.io image comes with [Ubuntu Xenial](http://releases.ubuntu.com/xenial/)
-OS and [ROS Kinetic](http://wiki.ros.org/kinetic) software installed on them.
+OS and [ROS Melodic Morenia](http://wiki.ros.org/melodic) software installed on them.
 Moreover, the [rapyuta.io tutorials](https://github.com/rapyuta-robotics/io_tutorials)
 are also installed on these custom images.
 {{% /notice %}}
@@ -226,7 +220,7 @@ git clone https://github.com/rapyuta/io_tutorials
 ```
 
 ```bash
-source /opt/ros/kinetic/setup.bash
+source /opt/ros/melodic/setup.bash
 ```
 
 ```bash
@@ -301,7 +295,7 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 3. In the **Component Name** box, enter a name for the component, for example, `Publisher`
 4. Select **Device** as the **Component Runtime**.
 5. Ensure **Is ROS Component** is selected.
-6. Ensure the **ROS Version** is **Kinetic**.
+6. Ensure the **ROS Version** is **Melodic**.
 7. In the **Executable Name** box, type in a name for the executable, for example, `talker`
 8. For **Executable type**, select **Default** because the source code is already installed on the _Publisher Device_.
 9. In the **Command to run in the docker container** box, copy and paste the command:
@@ -334,7 +328,7 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 3. In the **Component Name** box, enter a name for the component, for example, `Subscriber`
 4. Select **Device** as the **Component Runtime**.
 5. Ensure **Is ROS Component** is selected.
-6. Ensure the **ROS Version** is **Kinetic**.
+6. Ensure the **ROS Version** is **Melodic**.
 7. In the **Executable Name** box, type in a name for the executable, for example, `listener`
 8. For **Executable type**, select **Default** because the source code is already installed on the _Subcriber Device_.
 9. In the **Command to run in the docker container** box, copy and paste the command:
@@ -355,7 +349,7 @@ device with docker runtime.
 1. On the left navigation bar, click **NETWORKS**.
 2. Click **ADD NEW ROUTED NETWORK**.
 3. Enter  `device_routed_network_1` as the name for the routed network.
-4. Select **ROS Distro** as Kinetic.
+4. Select **ROS Distro** as Melodic.
 5. Select the **Runtime** as **Device**.
 6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
 Select the **Device** as  `Routed_Network_Device` and its **IP Interface**. 
