@@ -28,33 +28,13 @@ The below table lists the phases of deployment as they appear in the lifecycle:
 ![Deployment](/images/core-concepts/deployments/deployment-phase.png?classes=border,shadow&width=60pc)
 
 ## Status
-rapyuta.io enables you to monitor the current status of each executable of a
-component that is deployed. The status of deployment
-depends on the combined status of all components participating in the deployment.
+rapyuta.io allows you to view the current status of all the available deployments in a list form. If any deployment encounters any errors or failures, you can also view the details with the error codes just by hovering over the respective statuses. 
 
-The following table lists the statuses you may see during the **Provisioning**
-deployment phase:
+The following image displays the list view of deployments available on the platform.
+
+![Deployment list view](/images/core-concepts/deployments/deployment-list-view.png?classes=border,shadow&width=50pc)
 
 
-| Status | Description |
-| ------ | ----------- |
-| Pending | docker image is being pulled, or docker container is being created |
-| Error | error occurs while pulling a docker image or creating a docker container |
-
-The following table lists the statuses you may see during the **Succeeded**
-deployment phase:
-
-| Status | Description |
-| ------ | ----------- |
-| Running | executables of components are running |
-| Pending | restarting executable due to runtime error in the application or rapyuta.io software |
-| Error | runtime error occurred |
-| Unknown | rapyuta.io is unaware of the current status |
-
-If the status of an executable reads **Pending** or **Error**, you
-are provided the cause of the status as **Reason**.
-
-![Reason field](/images/core-concepts/deployments/reason-field.png?classes=border,shadow&width=50pc)
 
 ## Restart Policy
 
