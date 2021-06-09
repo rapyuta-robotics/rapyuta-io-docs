@@ -37,7 +37,7 @@ You can deselect device configuration variables that you do not need during
 deployment. However, remember that ***ros_distro*** is mandatory when deploying a
 ROS package.
 
-For docker runtime, the rapyuta.io platform maintains 1 GB of disk usage for the ROS master logs. If the disk usage exceeds the default limit of 1GB, the platform purges the older logs to maintain the default limit. If you want to customize the disk size for the ROS master logs, you can add a configuration variable ***rosmaster_log_retention_size_mb*** with the desired disk size.
+For docker runtime, the rapyuta.io platform maintains 1 GB of disk usage for the ROS master logs. If the disk usage exceeds the default limit of 1 GB, the platform purges the older logs to maintain the default limit. If you want to customize the disk size for the ROS master logs, you can add a configuration variable ***rosmaster_log_retention_size_mb*** with the desired disk size.
 
 {{%notice note%}}
 If you customize the disk size for ROS master logs, the new size is considered after next device reboot.
