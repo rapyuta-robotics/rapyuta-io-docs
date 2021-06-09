@@ -7,8 +7,8 @@ weight: 903
 ---
  
  
-## June 08
-Welcome to the June 08, 2021 release of the rapyuta.io platform. There
+## June 09
+Welcome to the June 09, 2021 release of the rapyuta.io platform. There
 are some significant updates in this release that we hope you will like.
  
 
