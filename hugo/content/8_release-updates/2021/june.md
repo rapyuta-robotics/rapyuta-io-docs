@@ -19,7 +19,7 @@ are some significant updates in this release that we hope you will like.
     The rapyuta.io platform maintains 1 GB of disk usage for the ROS master logs. If the disk usage exceeds the default limit of 1GB, the platform purges the older logs to maintain the default limit. For more information, [click here](/5_deep-dives/51_managing-devices/513_device-config-variables/).
 
 
-#### Bugfixe
+#### Bugfix
 
 * The download link to download a log file under the **Manage** tab is fixed now.
 
