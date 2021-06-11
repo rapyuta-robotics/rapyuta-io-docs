@@ -23,5 +23,10 @@ For ROS components/applications, the following capabilities are supported in the
 | RQT | software framework of ROS that implements the various GUI tools in the form of plugins. Link to http://wiki.ros.org/rqt |
 | RVIZ | Tool for visualizing sensor data and state information from ROS in 3D.
 Link: http://wiki.ros.org/rviz |
-| 
+
+You can run a debug environment to any cloud runtime component of a running deployment, this can be very useful to develop or debug applications running on cloud.  
+
+{{%notice note%}}
+
+{{%/notice%}}
 
