@@ -33,7 +33,7 @@ tags:
 You can create a debug environment for any cloud runtime component in a deployment. Do the following to create a debug environment
 
 {{%notice note%}}
-Debug environment works best if your cloud runtime component is at least above 1 core i.e small.
+Debug environment works best if your cloud runtime component is atleast above 1 core i.e small.
 {{%/notice%}}
 
 1. In the deployment details page, click the **Debug Environment** drop-down menu, select the component and then select the executable for which you want to create a debug environment.
@@ -42,22 +42,26 @@ Debug environment works best if your cloud runtime component is at least above 1
 2. In the **Create New Debug Environment** page, do the following.
   a. In the **Name** field, type a name for the debug environment.
 {{%notice note%}}
-The same debug environment with different names throws an error in the same project.
+Same debug environment with different names throws an error  in the same project.
 {{%/notice%}}
 
-  d. Click the capabilities that you want to use to debug the executable.
+  b. Click the capabilities that you want to use to debug the executable.
 
     * **IDE**: 
     * **Shell**
     * **Rviz**
     * **RQT**
 
-  e. Click **Connect**. It takes few minutes and the debug environment is created.
+  c. Click **Connect**. It takes few minutes and the debug environment is created.
 
   {{%notice note%}}
   After the debug environment is created, copy the **Access Key**. You will need the access key as the password to access any capability of this debug environment.
 
   {{% /notice%}}
+
+
+1. In the rapyuta.io console, go to **Development > Debug Environment** and click **Add Debug Environment**.
+The **Create New Debug Environment** page is displayed.
 
 
 ### Debugging using Capabilities
@@ -67,39 +71,39 @@ After you have created a debug environment, click the environment to debug your 
 #### IDE
 To debug using IDE capability, do the following.
 
-1. After your debug environment is created, navigate to the debug environment by clicking the **Debug environment** drop-down.
+1. After your debug environment is creatred, navigate to the debug environment by clicking the **Debug environment** drop-down.
 
 2. Click **IDE** as the capability.
 
 ![debug-capability](/images/core-concepts/deployments/debug-environment.png?classes=border,shadow&width=25pc)
 
-2. Enter the access Key as the password when prompted. An online VS code editor is displayed. The browser-based editor allows you to do the following.
+2. Enter the access Key as the password when prompted. An online VS code editor is displayed. The browser based editor allows you to do the following.
 
 ![IDE](/images/core-concepts/deployments/ide.png?classes=border,shadow&width=50pc)
   * To edit the source code, navigate to the directory and click the file to edit your executable.
-  * To open a terminal from the IDE, click the hamburger menu in the VS code editor and click **Terminal > New Terminal**.
-  * After you make the required changes, to restart your executable using catkin build recipe, type `restart-deployment-executable` in the terminal. It takes few minutes to restart and the updated changes are reflected in the deployment. For other types of docker images click here
+  * To open a terminal from the IDE, click the hamberger menu in the VS code editor and click **Terminal > New Terminal**.
+  * After you make the required changes, to restart your executable usiing catkin build recipe, type `restart-deployment-executable` in the terminal. It takes few minutes to restart and the updated changes are reflected in the deployment. For other types of docker images click here
   
 #### Shell
 To debug using the Shell capability, do the following.
 
-1. After your debug environment is created, navigate to the debug environment by clicking the **Debug environment** drop-down.
+1. After your debug environment is creatred, navigate to the debug environment by clicking the **Debug environment** drop-down.
 
 2. Click **Shell** as the capability.
 
-3. Enter the access Key as the password when prompted. A GUI-based Shell is displayed and allows you to do the following. 
+3. Enter the access Key as the password when prompted. A GUI based Shell is displayed and allows you to do the following. 
 
 ![shell](/images/core-concepts/deployments/shell.png?classes=border,shadow&width=50pc)
   * You can run commnad to open RQT or RVIZ UI.  
 
 #### RQT
-To visualize your ROS components in a deployment using the RQT tool, do the following.
+To visualise your ROS components in a deployment using the RQT tool, do the following.
 
-1. After your debug environment is created, navigate to the debug environment by clicking the **Debug environment** drop-down.
+1. After your debug environment is creatred, navigate to the debug environment by clicking the **Debug environment** drop-down.
 
 2. Click **RQT** as the capability.
 
-3. Enter the access Key as the password when prompted. A RQT tool is displayed. You can visualize the graphical representation of your ROS nodes in your deployment. For more information about RQT, [click here](http://wiki.ros.org/rqt)
+3. Enter the access Key as the password when prompted. A RQT tool is displayed. You can visualise the graphical representation of your ROS nodes in your deployment. For more information about RQT, [click here](http://wiki.ros.org/rqt)
 
 ![rqt](/images/core-concepts/deployments/rqt.png?classes=border,shadow&width=50pc)
  
@@ -107,7 +111,7 @@ To visualize your ROS components in a deployment using the RQT tool, do the foll
 #### RVIZ
 To view the 3D model of your robot using the RVIZ capability, do the following.
 
-1. After your debug environment is created, navigate to the debug environment by clicking the **Debug environment** drop-down.
+1. After your debug environment is creatred, navigate to the debug environment by clicking the **Debug environment** drop-down.
 
 2. Click **RVIZ** as the capability.
 
@@ -123,7 +127,7 @@ If you want to add/remove more capabilities to a debug environment, do the follo
 
 1. Navigate to the debug environment in the deployments details page and click **Update**.
 
-2. Select the capability that you want to add to the debug environment or de-select the capability to remove it from the debug environment. 
+2. Select the capability that you want to add to the debug environment or de-select the capability to remove from the debug environment. 
 
 3. Click **Update**. The debug environment is updated.
 

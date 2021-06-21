@@ -11,9 +11,6 @@ tags:
 ## Learning objectives
 The tutorial will show you how to create and use a debug environment in the rapyuta.io platform.
 
-## Prerequisites
-
-
 ## Estimated time
 25 minutes
 
@@ -27,7 +24,7 @@ To create the build, follow the below steps. Skip the following steps if you hav
 4. In the Git repository box, enter the URL address: `https://github.com/rapyuta/io_tutorials` and select **Build Recipe** as Catkin.
 5. Go to the next step and click on next, the build will be created.
 
-The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding build logs, which helps in debugging failed builds. After you create the build, create the *Talker* and *Listener* package.
+The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding build logs, which helps in debugging failed builds. After you create the build, create the *Talker* package.
 
 ### Create Talker Package
 
@@ -64,7 +61,7 @@ device with docker runtime and AMD64 architecture available.
 
 1. On the left navigation bar, click **NETWORKS**.
 2. Click **ADD NEW ROUTED NETWORK**.
-3. Enter a name for routed network.
+3. Enter a name for routed network. For this tutorial, type `routed_network_1` as the routed network.
 4. Select **ROS Distro** as Melodic.
 5. Select the **Runtime** as **Cloud**.
 6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
@@ -76,24 +73,17 @@ Once the routed network deployment succeeds, other ROS package deployments can b
 
 
 ## Deploying the package
-To deploy the ***simple-hello-world*** package, walk through the below
-instructions in sequence:
-
-1. On the left navigation bar, click **Development>Catalog**.
-2. Select *simple-hello-world* package.
-3. Click **Deploy package**.
-4. In the **Name of deployment** box, enter the name of the deployment you are creating like `Simple Flask Application`.
+1. Click **Development>Catalog** > select **ROS Publisher** package > click **Deploy package**.
+2. In the **Name of deployment** box, enter a name for the deployment
+   , for example, `ROS Publisher Deployment`
+3. Click **Add** next to the **Routed Network** field.
+4. From the **Network** drop-down menu, select `routed_network_1` as the routed network.
 5. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-You will be redirected to the **Details** page of the newly created deployment.
-The **Simple Flask Application** deployment is successfully running only when
-the green colored bar moves to **Succeeded** and **Status: Running** indicating that the **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
+You will be redirected to the **Details** tab of the newly created deployment. The package is successfully deployed when the green colored bar moves from
+**In progress** to **Succeeded** indicating that the **DEPLOYMENT PHASE** has **Succeeded**
+and the **STATUS** is **Running**.
 
-![Deployment details](/images/tutorials/hello-world/successful-deployment.png?classes=border,shadow&width=50pc)
-
-You can also analyze the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/) to check if everything is working as expected by clicking on the **Historical Logs** or **Live Logs** tab.
-
-You will view ***Hello from rapyuta.io*** message.
 
 ## Creating a Debug Environment
 
@@ -101,19 +91,20 @@ You will view ***Hello from rapyuta.io*** message.
   The **Create New Debug Environment** page is displayed.
 
 2. In the **Create New Debug Environment** page, do the following.
-  a. In the **Name** field, type `debugenv-1`as the name for the debug environment.
+
+3. In the **Name** field, type `debugenv-1`as the name for the debug environment.
 {{%notice note%}}
 The same debug environment with different names throws an error in the same project.
 {{%/notice%}}
 
-  d. Click the following capabilities.
+4. Click the following capabilities.
 
-    * **IDE**: 
+    * **IDE** 
     * **Shell**
     * **Rviz**
     * **RQT**
 
-  e. Click **Connect**. It takes few minutes and the debug environment is created.
+5. Click **Connect**. It takes few minutes and the debug environment is created.
 
   {{%notice note%}}
   After the debug environment is created, copy the **Access Key**. You will need the access key as the password to access any capability of this debug environment.
@@ -125,7 +116,6 @@ The same debug environment with different names throws an error in the same proj
 
 After you have created a debug environment, click the environment to debug your application. You can use one or more of the following capabilities to debug your executable. 
 
-#### IDE
 To modify the code using IDE capability, do the following.
 
 1. After your debug environment is created, navigate to the debug environment by clicking the **Debug environment** drop-down.
