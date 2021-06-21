@@ -12,13 +12,6 @@ tags:
 The tutorial will show you how to create and use a debug environment in the rapyuta.io platform.
 
 ## Prerequisites
-1. Read the rapyuta.io platform documentation
-2. Install rapyuta.io SDK in your development environment and obtain the following. For more information, [click here]({{< ref "/3_how-tos/35_tooling_and_debugging/357_using-rapyuta-io-python-sdk" >}})
-   1. authorization token
-   2. project ID
-   3. package ID
-   4. plan ID
-   5. device ID
 
 
 ## Estimated time
@@ -62,135 +55,93 @@ The build takes about two to five minutes to build the source code in the *io_tu
     type in the ROS topic. Select **Maximum** as the value for **QoS**.
 19. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-### Create Listener Package
-
-1. On the left navigation bar, click **Development>Catalog**.
-2. Click **ADD PACKAGE**.
-3. In the **Package Name** box, type in a name for the package
-   like `Listener`.
-4. In the **Package Version** box, enter the version of the package you are creating. The default value is *1.0.0*
-5. Make sure **Is singleton package** is ***not selected***.
-6. Ensure **Is bindable package** is ***selected***.
-7. In the **Description** box, explain what the package is about,
-   for instance, the description of this package is `ROS Subscriber`.
-8. Click **NEXT**.
-9.  In the **Component Name** box, enter a name for the component, for example, `LISTENER`.
-10. Select **Device** for **Component Runtime**.
-11. Ensure **Is ROS Component** is selected.
-12. Select **Melodic** for **ROS Version**.
-13. Set **Restart Policy** to **Never**.
-14. In the **Executable Name** box, enter a name for an
-    executable , for example, `listener_executable`.
-15. Set **Executable Type** to **Default**.
-16. In the **Command to run in the docker container** box, enter
-    the command: `roslaunch listener listener.launch`
-17. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
-
 
 ### Create Cloud Routed Network
-A routed network allows you to establish ROS communication between different ROS package deployments. Binding a routed network resource to your deployment will enable other deployments on the same routed network to consume ROS topics/services/actions as defined in the package. If you have already created a routed network, you can skip this procedure.
 
-Use the following code to create a routed network
-```python
-routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.MELODIC, True)
-routed_network.poll_routed_network_till_ready()
-```
+Follow these steps to create a device routed network. Make sure you have a rapyuta.io registered
+device with docker runtime and AMD64 architecture available.
 
-### Code Walkthrough
-Firstly, you need to authenticate to access rapyuta.io services from within
-your python application.
-```python
-# Authentication
-from rapyuta_io import Client
-from rapyuta_io.clients.package import ROSDistro
 
-client = Client(AUTH_TOKEN, PROJECT_ID)
+1. On the left navigation bar, click **NETWORKS**.
+2. Click **ADD NEW ROUTED NETWORK**.
+3. Enter a name for routed network.
+4. Select **ROS Distro** as Melodic.
+5. Select the **Runtime** as **Cloud**.
+6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
+7. Click **CONTINUE**.
 
-# Create a Routed Network
-routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.MELODIC, True)
-routed_network.poll_routed_network_till_ready()
-```
+Deploying a routed network is identical to deploying any other package and has identical corresponding phases and errors.
+Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
+![goo](/images/tutorials/routed-networks/routed-network-details.png?classes=border,shadow&width=40pc)
 
-Retrieve the ***Talker*** package by its package ID, and then deploy
-it on the cloud. The resulting deployment is called ***ROS PUBLISHER***.
 
-```python
-# Deploy Talker package on cloud
-talker = client.get_package(TALKER_ID)
-talker_configuration = talker.get_provision_configuration(TALKER_PLAN_ID)
-talker_configuration.add_routed_network(routed_network)
-talker_cloud_deployment = talker.provision(deployment_name="ROS PUBLISHER", provision_configuration=talker_configuration)
-talker_cloud_deployment.poll_deployment_till_ready()
-```
+## Deploying the package
+To deploy the ***simple-hello-world*** package, walk through the below
+instructions in sequence:
 
-Similarly, deploy ***Listener*** package on the cloud.
-Since the resulting ***ROS SUBSCRIBER*** deployment depends on ***ROS PUBLISHER***
-deployment, add the latter as a dependent deployment of the former.
+1. On the left navigation bar, click **Development>Catalog**.
+2. Select *simple-hello-world* package.
+3. Click **Deploy package**.
+4. In the **Name of deployment** box, enter the name of the deployment you are creating like `Simple Flask Application`.
+5. Click **CREATE DEPLOYMENT** > **Confirm**.
 
-```python
-# Deploy Listener package on device
-listener = client.get_package(LISTENER_ID)
-listener_configuration = listener.get_provision_configuration(LISTENER_PLAN_ID)
-device = client.get_device(DEVICE_ID)
-listener_configuration.add_device("LISTENER", device)
-listener_configuration.add_routed_network(routed_network)
-listener_device_deployment = listener.provision(deployment_name="ROS SUBSCRIBER", provision_configuration=listener_configuration)
-listener_device_deployment.poll_deployment_till_ready()
-```
+You will be redirected to the **Details** page of the newly created deployment.
+The **Simple Flask Application** deployment is successfully running only when
+the green colored bar moves to **Succeeded** and **Status: Running** indicating that the **DEPLOYMENT PHASE** is **Succeeded** and the **STATUS** is **Running**.
 
-Put the above code snippets together in a file, ***talker-listener.py***,
-save the program and close the file.
+![Deployment details](/images/tutorials/hello-world/successful-deployment.png?classes=border,shadow&width=50pc)
 
-```python
-# talker-listener.py
+You can also analyze the corresponding [deployment logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/) to check if everything is working as expected by clicking on the **Historical Logs** or **Live Logs** tab.
 
-from rapyuta_io import Client
+You will view ***Hello from rapyuta.io*** message.
 
-# Authentication
-client = Client(AUTH_TOKEN, PROJECT_ID)
+## Creating a Debug Environment
 
-# Create a Routed Network
-routed_network = client.create_cloud_routed_network("CLOUD_ROUTED_NETWORK", ROSDistro.MELODIC, True)
-routed_network.poll_routed_network_till_ready()
+1. In the deployment details page, click the **Debug Environment** drop-down menu, select the component and then select the executable for which you want to create a debug environment.
+  The **Create New Debug Environment** page is displayed.
 
-# Deploy Talker on cloud
-talker = client.get_package(TALKER_ID)
-talker_configuration = talker.get_provision_configuration(TALKER_PLAN_ID)
-talker_configuration.add_routed_network(routed_network)
-talker_cloud_deployment = talker.provision(deployment_name="ROS PUBLISHER", provision_configuration=talker_configuration)
-talker_cloud_deployment.poll_deployment_till_ready()
+2. In the **Create New Debug Environment** page, do the following.
+  a. In the **Name** field, type `debugenv-1`as the name for the debug environment.
+{{%notice note%}}
+The same debug environment with different names throws an error in the same project.
+{{%/notice%}}
 
-# Deploy Listener on device
-listener = client.get_package(LISTENER_ID)
-listener_configuration = listener.get_provision_configuration(LISTENER_PLAN_ID)
-device = client.get_device(DEVICE_ID)
-listener_configuration.add_device("LISTENER", device)
-listener_configuration.add_routed_network(routed_network)
-listener_device_deployment = listener.provision(deployment_name="ROS SUBSCRIBER", provision_configuration=listener_configuration)
-listener_device_deployment.poll_deployment_till_ready()
+  d. Click the following capabilities.
 
-# Get status of ROS SUBSCRIBER deployment
-print subscriber_deployment.get_status()
-```
+    * **IDE**: 
+    * **Shell**
+    * **Rviz**
+    * **RQT**
 
-At the terminal prompt, run the program using the command:
-```bash
-$ python talker-listener.py
-```
+  e. Click **Connect**. It takes few minutes and the debug environment is created.
 
-The output is an object of the class
-[***DeploymentStatus***](https://sdkdocs.apps.rapyuta.io/#rapyuta_io.clients.deployment.DeploymentStatus),
-which contains values such as:
+  {{%notice note%}}
+  After the debug environment is created, copy the **Access Key**. You will need the access key as the password to access any capability of this debug environment.
 
-* deployment ID
-* deployment name
-* deployment status
-* deployment phase
-* package ID and other details.
+  {{% /notice%}}
 
-The final deployment is running successfully if the value of the *deployment
-status* is ***Running***.
 
-To verify if the program has executed correctly, click on the **Historical Logs**
-tab of **ROS SUBSCRIBER** deployment to view the output as shown:
-![logs of ROS SUBCRIBER](/images/python-sdk-images/basic-pubsub/talker-listener-log.png?classes=border,shadow&width=50pc)
+### Debugging Capability using IDE
+
+After you have created a debug environment, click the environment to debug your application. You can use one or more of the following capabilities to debug your executable. 
+
+#### IDE
+To modify the code using IDE capability, do the following.
+
+1. After your debug environment is created, navigate to the debug environment by clicking the **Debug environment** drop-down.
+
+2. Click **IDE** as the capability.
+
+![debug-capability](/images/core-concepts/deployments/debug-environment.png?classes=border,shadow&width=25pc)
+
+2. Enter the access Key as the password when prompted. An online VS code editor is displayed. The browser-based editor allows you to do the following.
+
+![IDE](/images/core-concepts/deployments/ide.png?classes=border,shadow&width=50pc)
+
+3. Edit the source code, navigate to the directory and click the file to edit your executable. For this tutorial, change the source code to `welcome to rapyuta.io`.
+
+4. Open a terminal from the IDE, click the hamburger menu in the VS code editor and click **Terminal > New Terminal**.
+
+5. After you make the required changes, to restart your executable using catkin build recipe, type `restart-deployment-executable` in the terminal. It takes few minutes to restart and the updated changes are reflected in the deployment.
+
+![IDE](/images/core-concepts/deployments/debug-ide.png?classes=border,shadow&width=50pc)  

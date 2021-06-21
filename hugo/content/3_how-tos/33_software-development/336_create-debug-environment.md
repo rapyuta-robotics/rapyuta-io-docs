@@ -60,10 +60,6 @@ The same debug environment with different names throws an error in the same proj
   {{% /notice%}}
 
 
-1. In the rapyuta.io console, go to **Development > Debug Environment** and click **Add Debug Environment**.
-The **Create New Debug Environment** page is displayed.
-
-
 ### Debugging using Capabilities
 
 After you have created a debug environment, click the environment to debug your application. You can use one or more of the following capabilities to debug your executable. 
