@@ -122,5 +122,14 @@ The update functionality of a debug environment allows you to add or remove debu
 
 3. Click **Update**. The debug environment is updated.
 
+## Deleting a Cloud Debug Environment
+
+To delete a cloud debug environment, do the following.
+{{%notice note%}}
+Before you start deleting or deprovisioning a deployment, ensure that you have deleted the debug environment connected with the deployment.
+{{%/notice%}}
+
+1. Navigate to the debug environment in the deployments details page and click **Delete**.
+2. A confirmation page is displayed. 
 ## Related Links
 * [About Debug Environment](/5_deep-dives/52_software-development/529_debug-environment/)
