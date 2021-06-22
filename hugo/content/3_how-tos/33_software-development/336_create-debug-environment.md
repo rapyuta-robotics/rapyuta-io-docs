@@ -136,6 +136,7 @@ Before you start deleting or deprovisioning a deployment, ensure that you have d
 {{%/notice%}}
 
 1. Navigate to the debug environment in the deployments details page and click **Delete**.
-2. A confirmation page is displayed. 
+2. A confirmation page is displayed. Click **Confirm**. The debug environment is deleted.
+
 ## Related Links
 * [About Debug Environment](/5_deep-dives/52_software-development/529_debug-environment/)
