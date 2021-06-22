@@ -51,12 +51,16 @@ Same debug environment with different names throws an error  in the same project
     * **Rviz**
     * **RQT**
 
-5. Click **Connect**. It takes few minutes and the debug environment is created.
+5. Click **Connect**. It takes a few minutes to complete the connection process and if the connection status is in **Complete** state, the debug environment is created successfully. For more information about connection status, [click here](/5_deep-dives/52_software-development/529_debug-environment/#connection-status-of-a-debug-environment).
 
   {{%notice note%}}
   After the debug environment is created, copy the **Access Key** to a clipboard. You will need the access key as the password to access any capability of this debug environment.
 
   {{% /notice%}}
+
+  {{%notice info%}}
+  In case your cloud component contains multiple replicas, debug environment will always be connected to the first running replica.
+  {{%/notice%}}
 
 ### Debugging using Capabilities
 
@@ -83,8 +87,10 @@ To debug using the Shell capability, do the following.
 
 2. Click **Shell** as the capability.
 
-3. Enter the access key as the password when prompted. A GUI based Shell is displayed and allows you to run custom commands or open tools like RQT and RVIZ. 
-
+3. Enter the access key as the password when prompted. A GUI based Shell is displayed and allows you to run custom commands or open tools like RQT and RVIZ.
+{{%notice info%}}
+The shell interface also allows you to copy any text inside the shell. Click the clipboard icon to copy the text as displayed in the following image.
+{{%/notice%}}
 ![shell](/images/core-concepts/deployments/shell.png?classes=border,shadow&width=50pc)
 
 #### RQT

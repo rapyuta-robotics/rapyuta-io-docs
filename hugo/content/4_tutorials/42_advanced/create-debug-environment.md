@@ -62,8 +62,7 @@ Follow these steps to create a cloud routed network.
 3. Enter a name for routed network. For this tutorial, type `routed_network_1` as the routed network.
 4. Select **ROS Distro** as Melodic.
 5. Select the **Runtime** as **Cloud**.
-6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
-7. Click **CONTINUE**.
+6. Click **CONTINUE**.
 
 Deploying a routed network is identical to deploying any other package and has identical corresponding phases and errors.
 Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
@@ -120,7 +119,7 @@ To modify the code using IDE capability, do the following.
 
 ![IDE](/images/core-concepts/deployments/debug-ide.png?classes=border,shadow&width=50pc)  
 
-4. Edit the source code, navigate to the directory and click the file to edit your executable. For this tutorial, change the source code to `welcome to rapyuta.io` in the *talker.py* file.
+4.  By default, the IDE opens */* of your deployment, navigate to the file that you want to edit. In this case, * /opt/catkin_ws/src/talk/talker/talker.py* and change the source code to `welcome to rapyuta.io` in the *talker.py* file.
 
 5. Open a terminal from the IDE, click the hamburger menu in the VS code editor and click **Terminal > New Terminal**.
 
