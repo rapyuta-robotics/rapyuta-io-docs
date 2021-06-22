@@ -9,43 +9,41 @@ tags:
     - Deep Dive
 ---
 ## Phases
-The deployment details page describes the detail of each phases a deployment. Mainly the the deployment undergoes into the 3 following phase after a deployment is initiated.
-
-1. Submitted: This is the first stage of a deployment. The label **Submitted** indicates that the deployment is accepted by the platform and moves to the second stage.
-
-2. In progress: After the deployment is submitted successfully and , and if there are no errors, it moves to the final stage. If the platform encounters any error, the following error status are displayed.
-
-* Provisioning error
-* Failed to Start
-* Unknown
-
-3. Running: After successfully completing the **In Progress** phase, and if there are no errors, the final status is displayed as **Running**. At this stage, your deployment is running successfully on the platform. If the platform encounters any error at this stage, the following errors status are displayed.
-
-* Failed to Update
-* Runtime error
-* Device offline
-* Partially de-provisioned
-
-The lifecycle of a deployment consists of multiple phases. The **DEPLOYMENT PHASE**
-indicates the current phase of the deployment in its lifecycle.
-
-The below table lists the phases of deployment as they appear in the lifecycle:
-
-
-| Deployment phase | Description |
-| ---------------- | ----------- |
-| Submitted | accepts request to deploy a package and starts deployment process |
-| In progress | pulls a docker image and creates a running instance of the image (docker container) for each executable of the component |
-| Succeeded | each executable of every component is successfully started |
-| Failed to start | error occurred during In progress phase |
-| Partially deprovisioned | you deprovisioned a deployment, but there is at least one component that could not be deprovisioned |
-| Deployment stopped | you deprovisioned a deployment, and all of its components are stopped |
-| Failed To Update | One or more component failed while updating the deployment |
+The lifecycle of a deployment consists of mainly 3 phases and the platform displays the status of the deployment at each phase. 
 
 ![Deployment](/images/core-concepts/deployments/deployment-phase.png?classes=border,shadow&width=60pc)
 
+1. **First Phase**: In the first phase of deployment, the status is displayed as **Submitted** after the deployment is accepted by the platform and moves to the second phase.
+
+2. **Second Phase**: In the second phase, one the following status is displayed.
+
+* **In Progress**: This status is displayed if no errors are encountered and the deployment process moves to the 3rd phase.
+* **Provisioning error**: This status is displayed if any error is encountered during the provisioning of the deployment.
+* **Failed to Start**:  This status is displayed if the platform encounters an error while processing a deployment.
+* **Unknown**: This status is displayed if the platform is unaware of the current status.
+
+The following image displayed the status of the deployment when the deployment encounters an error in the second phase.
+![Deployment](/images/core-concepts/deployments/second-stage-error.png?classes=border,shadow&width=60pc) 
+
+3. **Third Phase**: If no errors are encountered in the second phase, the deployment process moves to the third phase and one of the following statuses is displayed.
+
+* **Running**: This status is displayed if no errors are encountered and the deployment is successful.
+* **Failed to Update**: This status is displayed if an error is encountered during the update process. 
+* **Runtime error**: This status is displayed if any component or platform encounters an error while running a deployment. 
+* **Device offline**: This status is displayed if the device goes offline due to some error.
+* **Partially de-provisioned**: This status is displayed if you have deprovisioned a deployment, but there is at least one component that could not be deprovisioned.
+
+![Deployment](/images/core-concepts/deployments/third-stage-error.png?classes=border,shadow&width=60pc) 
+
+
+{{%notice note%}}
+To know more or troubleshoot the errors encountered during the deployment phase, [click here](/6_troubleshoot/611_deployment-error-codes/#error-codes).
+{{%/notice%}}
+
+
+
 ## Status
-rapyuta.io allows you to view the current status of all the available deployments in a list form. If any deployment encounters any errors or failures, you can also view the details with the error codes just by hovering over the respective statuses. 
+rapyuta.io allows you to view the current status of all the available deployments in a list form. If any deployment encounters any errors or failures, you can also view the details with the error codes just by hovering over the *i* icon next to the error statuses. 
 
 The following image displays the list view of deployments available on the platform.
 
