@@ -13,25 +13,27 @@ The lifecycle of a deployment consists of mainly 3 phases and the platform displ
 
 ![Deployment](/images/core-concepts/deployments/deployment-phase.png?classes=border,shadow&width=60pc)
 
-1. **First Phase**: In the first phase of deployment, the status is displayed as **Submitted** after the deployment is accepted by the platform and moves to the second phase.
+1. **First Phase**: In the first phase of deployment, the status is displayed as **Submitted** that refers to the deployment request is getting submitted. After successful submission, the deployment moves to the second phase.
 
 2. **Second Phase**: In the second phase, one the following status is displayed.
 
-* **In Progress**: This status is displayed if no errors are encountered and the deployment process moves to the 3rd phase.
+* **In Progress**: This status is displayed when the deployment is getting provisioned  and if there are no errors, it goes to the next stage else the status changes to one of the following errors. 
 * **Provisioning error**: This status is displayed if any error is encountered during the provisioning of the deployment.
-* **Failed to Start**:  This status is displayed if the platform encounters an error while processing a deployment.
+* **Failed to Start**:  This status is displayed if the platform encounters an error while processing a deployment and fails to start the deployment.
 * **Unknown**: This status is displayed if the platform is unaware of the current status.
 
-The following image displayed the status of the deployment when the deployment encounters an error in the second phase.
+The following image displays the status of the deployment when the deployment encounters an error in the second phase.
 ![Deployment](/images/core-concepts/deployments/second-stage-error.png?classes=border,shadow&width=60pc) 
 
 3. **Third Phase**: If no errors are encountered in the second phase, the deployment process moves to the third phase and one of the following statuses is displayed.
 
 * **Running**: This status is displayed if no errors are encountered and the deployment is successful.
-* **Failed to Update**: This status is displayed if an error is encountered during the update process. 
+* **Failed to Update**: This status is displayed if an error is encountered while updating the deployment. 
 * **Runtime error**: This status is displayed if any component or platform encounters an error while running a deployment. 
-* **Device offline**: This status is displayed if the device goes offline due to some error.
+* **Device offline**: This status is displayed if the device goes offline.
 * **Partially de-provisioned**: This status is displayed if you have deprovisioned a deployment, but there is at least one component that could not be deprovisioned.
+
+The following image displays the status of the deployment when the deployment encounters an error in the third phase.
 
 ![Deployment](/images/core-concepts/deployments/third-stage-error.png?classes=border,shadow&width=60pc) 
 
@@ -43,7 +45,7 @@ To know more or troubleshoot the errors encountered during the deployment phase,
 
 
 ## Status
-rapyuta.io allows you to view the current status of all the available deployments in a list form. If any deployment encounters any errors or failures, you can also view the details with the error codes just by hovering over the *i* icon next to the error statuses. 
+rapyuta.io allows you to view the current status of all the available deployments in a list form. If any deployment encounters any errors or failures, you can also view the details with the error codes just by hovering over the **i** icon next to the error statuses. 
 
 The following image displays the list view of deployments available on the platform.
 
