@@ -9,7 +9,7 @@ tags:
     - Tutorials
 ---
 ## Learning objectives
-The tutorial will show you how to create and use a debug environment in the rapyuta.io platform.
+The tutorial will show you how to create and use a debug environment and use IDE capability to modify your executable.
 
 ## Estimated time
 25 minutes
@@ -124,8 +124,20 @@ To modify the code using IDE capability, do the following.
 
 5. Open a terminal from the IDE, click the hamburger menu in the VS code editor and click **Terminal > New Terminal**.
 
-5. After you make the required changes, to restart your executable using catkin build recipe, type `restart-deployment-executable` in the terminal. It takes few minutes to restart and the updated changes are reflected in the deployment.
+6. After you make the required changes, to restart your executable using catkin build recipe, type `restart-deployment-executable` in the terminal. It takes few minutes to restart and the updated changes are reflected in the deployment.
 
 ![IDE](/images/core-concepts/deployments/update-ide.png?classes=border,shadow&width=50pc) 
+
+7. If you want to add the changes to your version control system like git, do the following.
+
+    a. Install git by running `apt-get install git` in the terminal if you are using a ubuntu machine or use `apk add git` if you are using alpine.
+
+    b. Run the git commands to add and commit your changes.
+
+    c. Push your changes to the version control system. 
+
+{{%notice note%}}
+When you try to push your changes through the terminal, it prompts you to enter your git authorization token. Ensure that you have the token handy while trying to push your changes.
+{{%/notice%}}
 
 

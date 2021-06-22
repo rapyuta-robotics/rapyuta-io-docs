@@ -26,18 +26,18 @@ You can run a debug environment to any cloud runtime component of a running depl
 
 The debug environment installs openssh-server in your running deployment with one-time shared ssh-rsa keys thus making it secure, we install other required utilities like  rviz/rqt if required based on capability selected.
 
-##### CPU Usage of a Debug Environment
+#### CPU Usage of a Debug Environment
 
 The debug environment uses 1 CPU core, and contributes to the cloud cost only for the time the environment is connected. Creating a debug environment to a running deployment for 1 hour will be charged as 0.10(cloud cost) *1 core * 1 hour = 0.10USD for the debug environment.
 
 
-##### Docker Image Support for Debug Environment
+#### Docker Image Support for Debug Environment
 
 The rapyuta.io platform supports connecting a debug environment with the following types of docker images.
 
 * Docker image built using [Catkin build recipe](/5_deep-dives/52_software-development/527_build-recipe/#catkin-recipe): Debug environment is fully supported for docker images build with rapyuta.io build. You can modify your code via IDE and run restart-deployment-executable command to restart your executable process.
 
-* Docker image built using [docker recipe](/5_deep-dives/52_software-development/527_build-recipe/#docker-recipe) or [custom docker image](): Ubuntu/Alpine based docker images are supported, please reach out to us if you have any other operating system, or you are facing any other issues. If you want to modify your code via IDE, and restart your application, make sure your process is running under [supervisor](http://supervisord.org/) or [s6-overlay](https://github.com/just-containers/s6-overlay) so that the container doesn’t die after you restart your executable. After that, you can use supervisor restart to restart your executable process.
+* Docker image built using [docker recipe](/5_deep-dives/52_software-development/527_build-recipe/#docker-recipe) or [custom docker image](https://docs.docker.com/develop/develop-images/baseimages/): Ubuntu/Alpine based docker images are supported, please reach out to us if you have any other operating system, or you are facing any other issues. If you want to modify your code via IDE, and restart your application, make sure your process is running under [supervisor](http://supervisord.org/) or [s6-overlay](https://github.com/just-containers/s6-overlay) so that the container doesn’t die after you restart your executable. After that, you can use supervisor restart to restart your executable process.
 
 {{%notice note%}}
 Since the deployment is already running, and if no persistent storage is attached to your deployment, updating or restarting your deployment will lead to losing your changes. So ensure that you push your changes to your source version control system carefully.
