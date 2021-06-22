@@ -55,9 +55,7 @@ The build takes about two to five minutes to build the source code in the *io_tu
 
 ### Create Cloud Routed Network
 
-Follow these steps to create a device routed network. Make sure you have a rapyuta.io registered
-device with docker runtime and AMD64 architecture available.
-
+Follow these steps to create a cloud routed network.
 
 1. On the left navigation bar, click **NETWORKS**.
 2. Click **ADD NEW ROUTED NETWORK**.
@@ -69,13 +67,11 @@ device with docker runtime and AMD64 architecture available.
 
 Deploying a routed network is identical to deploying any other package and has identical corresponding phases and errors.
 Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
-![goo](/images/tutorials/routed-networks/routed-network-details.png?classes=border,shadow&width=40pc)
-
 
 ## Deploying the package
 1. Click **Development>Catalog** > select **ROS Publisher** package > click **Deploy package**.
 2. In the **Name of deployment** box, enter a name for the deployment
-   , for example, `ROS Publisher Deployment`
+   , for example, `dep11`
 3. Click **Add** next to the **Routed Network** field.
 4. From the **Network** drop-down menu, select `routed_network_1` as the routed network.
 5. Click **CREATE DEPLOYMENT** > **Confirm**.
@@ -87,24 +83,22 @@ and the **STATUS** is **Running**.
 
 ## Creating a Debug Environment
 
-1. In the deployment details page, click the **Debug Environment** drop-down menu, select the component and then select the executable for which you want to create a debug environment.
-  The **Create New Debug Environment** page is displayed.
+1. In the deployment details page, click the **Debug Environment** drop-down menu, select the component and then select the executable for which you want to create a debug environment. The **Create New Debug Environment** page is displayed.
+  
 
-2. In the **Create New Debug Environment** page, do the following.
-
-3. In the **Name** field, type `debugenv-1`as the name for the debug environment.
+2. In the **Name** field, type `debugenv-1`as the name for the debug environment.
 {{%notice note%}}
 The same debug environment with different names throws an error in the same project.
 {{%/notice%}}
 
-4. Click the following capabilities.
+3. Click the following capabilities.
 
     * **IDE** 
     * **Shell**
     * **Rviz**
     * **RQT**
 
-5. Click **Connect**. It takes few minutes and the debug environment is created.
+4. Click **Connect**. It takes few minutes and the debug environment is created.
 
   {{%notice note%}}
   After the debug environment is created, copy the **Access Key**. You will need the access key as the password to access any capability of this debug environment.
@@ -122,16 +116,16 @@ To modify the code using IDE capability, do the following.
 
 2. Click **IDE** as the capability.
 
-![debug-capability](/images/core-concepts/deployments/debug-environment.png?classes=border,shadow&width=25pc)
+3. Enter the access key as the password when prompted. An online VS code editor is displayed. The browser-based editor allows you to do the following.
 
-2. Enter the access Key as the password when prompted. An online VS code editor is displayed. The browser-based editor allows you to do the following.
+![IDE](/images/core-concepts/deployments/debug-ide.png?classes=border,shadow&width=50pc)  
 
-![IDE](/images/core-concepts/deployments/ide.png?classes=border,shadow&width=50pc)
+4. Edit the source code, navigate to the directory and click the file to edit your executable. For this tutorial, change the source code to `welcome to rapyuta.io` in the *talker.py* file.
 
-3. Edit the source code, navigate to the directory and click the file to edit your executable. For this tutorial, change the source code to `welcome to rapyuta.io`.
-
-4. Open a terminal from the IDE, click the hamburger menu in the VS code editor and click **Terminal > New Terminal**.
+5. Open a terminal from the IDE, click the hamburger menu in the VS code editor and click **Terminal > New Terminal**.
 
 5. After you make the required changes, to restart your executable using catkin build recipe, type `restart-deployment-executable` in the terminal. It takes few minutes to restart and the updated changes are reflected in the deployment.
 
-![IDE](/images/core-concepts/deployments/debug-ide.png?classes=border,shadow&width=50pc)  
+![IDE](/images/core-concepts/deployments/update-ide.png?classes=border,shadow&width=50pc) 
+
+

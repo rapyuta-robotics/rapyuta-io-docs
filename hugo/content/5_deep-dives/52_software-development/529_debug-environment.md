@@ -12,7 +12,7 @@ The rapyuta.io provides you a debug environment to debug your application, modif
 
 The debug environment allows you to select the following capabilities.
 
-* **IDE**: A browser-based [VS Code editor](https://github.com/cdr/code-server) that uses the open-source tool, You can use the editor to modify your source code, and also provides you a terminal to push your changes to the source version control like git.
+* **IDE**: A browser-based [VS Code editor](https://github.com/cdr/code-server) that uses the open-source tool, you can use the editor to modify your source code, and also provides you a terminal to push your changes to the source version control like git.
 
 * **Shell**: A GUI-based Shell that is useful for running any command or tool. You can execute any command with a custom variable, for example, rviz -d `rospack find custompkg`/rviz/path_planning.rviz. It can also be used to open RQT tool with custom parameters.
 
