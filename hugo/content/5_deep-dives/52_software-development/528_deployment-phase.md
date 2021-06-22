@@ -9,6 +9,23 @@ tags:
     - Deep Dive
 ---
 ## Phases
+The deployment details page describes the detail of each phases a deployment. Mainly the the deployment undergoes into the 3 following phase after a deployment is initiated.
+
+1. Submitted: This is the first stage of a deployment. The label **Submitted** indicates that the deployment is accepted by the platform and moves to the second stage.
+
+2. In progress: After the deployment is submitted successfully and , and if there are no errors, it moves to the final stage. If the platform encounters any error, the following error status are displayed.
+
+* Provisioning error
+* Failed to Start
+* Unknown
+
+3. Running: After successfully completing the **In Progress** phase, and if there are no errors, the final status is displayed as **Running**. At this stage, your deployment is running successfully on the platform. If the platform encounters any error at this stage, the following errors status are displayed.
+
+* Failed to Update
+* Runtime error
+* Device offline
+* Partially de-provisioned
+
 The lifecycle of a deployment consists of multiple phases. The **DEPLOYMENT PHASE**
 indicates the current phase of the deployment in its lifecycle.
 
@@ -17,8 +34,8 @@ The below table lists the phases of deployment as they appear in the lifecycle:
 
 | Deployment phase | Description |
 | ---------------- | ----------- |
-| In progress | accepts request to deploy a package and starts deployment process |
-| Provisioning | pulls a docker image and creates a running instance of the image (docker container) for each executable of the component |
+| Submitted | accepts request to deploy a package and starts deployment process |
+| In progress | pulls a docker image and creates a running instance of the image (docker container) for each executable of the component |
 | Succeeded | each executable of every component is successfully started |
 | Failed to start | error occurred during In progress phase |
 | Partially deprovisioned | you deprovisioned a deployment, but there is at least one component that could not be deprovisioned |
