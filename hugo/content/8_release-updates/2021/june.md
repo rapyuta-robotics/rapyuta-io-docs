@@ -24,3 +24,22 @@ are some significant updates in this release that we hope you will like.
 * The download link to download a log file under the **Manage** tab is fixed now.
 
 
+## June 23
+Welcome to the June 23, 2021 release of the rapyuta.io platform. There
+are some significant updates in this release that we hope you will like.
+
+#### Feature
+
+* **Cloud Debug Environment**
+
+
+#### Improvement
+
+* **List Deployment View**
+
+    T).
+
+
+#### Bugfix
+
+* The download link to download a log file under the **Manage** tab is fixed now.
