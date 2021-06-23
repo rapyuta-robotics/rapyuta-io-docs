@@ -88,9 +88,9 @@ To debug using the Shell capability, do the following.
 2. Click **Shell** as the capability.
 
 3. Enter the access key as the password when prompted. A GUI based Shell is displayed and allows you to run custom commands or open tools like RQT and RVIZ.
-{{%notice info%}}
-The shell interface also allows you to copy any text inside the shell. Click the clipboard icon to copy the text as displayed in the following image.
-{{%/notice%}}
+
+4. The shell interface also allows you to copy a command from a different Window and paste the command in the shell. First, use the clipbard icon to paste the command from the window and from the clipboard you can copy and paste the command to the shell. If you want to copy any text from the shell, use the clipbard icon to paste the text and from the clipboard you can copy the text and use it in other interfaces.
+
 ![shell](/images/core-concepts/deployments/shell.png?classes=border,shadow&width=50pc)
 
 #### RQT

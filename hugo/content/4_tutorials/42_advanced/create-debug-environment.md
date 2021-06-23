@@ -21,7 +21,8 @@ To create the build, follow the below steps. Skip the following steps if you hav
 1. On the left navigation bar, click **Development>Builds**.
 2. Click on **ADD NEW BUILD**
 3. In the Build Name box, enter a name for the build, for example, `io-tutorials`
-4. In the Git repository box, enter the URL address: `https://github.com/rapyuta/io_tutorials` and select **Build Recipe** as Catkin.
+4. In the Git repository box, enter the URL address: `https://github.com/rapyuta/io_tutorials`, select **Build Recipe** as Catkin and click **Next**.
+5. Select the ROS version as **Melodic** .
 5. Go to the next step and click on next, the build will be created.
 
 The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding build logs, which helps in debugging failed builds. After you create the build, create the *Talker* package.
@@ -57,8 +58,8 @@ The build takes about two to five minutes to build the source code in the *io_tu
 
 Follow these steps to create a cloud routed network.
 
-1. On the left navigation bar, click **NETWORKS**.
-2. Click **ADD NEW ROUTED NETWORK**.
+1. On the left navigation bar, click **Networking>Networks**.
+2. Click **ADD NEW NETWORK** and select **Routed Network**.
 3. Enter a name for routed network. For this tutorial, type `routed_network_1` as the routed network.
 4. Select **ROS Distro** as Melodic.
 5. Select the **Runtime** as **Cloud**.
@@ -68,7 +69,8 @@ Deploying a routed network is identical to deploying any other package and has i
 Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
 
 ## Deploying the package
-1. Click **Development>Catalog** > select **ROS Publisher** package > click **Deploy package**.
+1. Click **Development>Catalog** > and select **Talker** package.
+2. Click **Deploy package**.
 2. In the **Name of deployment** box, enter a name for the deployment
    , for example, `dep11`
 3. Click **Add** next to the **Routed Network** field.
