@@ -121,7 +121,7 @@ To modify the code using IDE capability, do the following.
 
 ![IDE](/images/core-concepts/deployments/debug-ide.png?classes=border,shadow&width=50pc)  
 
-4.  By default, the IDE opens */* of your deployment, navigate to the file that you want to edit. In this case, * /opt/catkin_ws/src/talk/talker/talker.py* and change the source code to `welcome to rapyuta.io` in the *talker.py* file.
+4.  By default, the IDE opens */* of your deployment, navigate to the file that you want to edit. In this case, */opt/catkin_ws/src/talk/talker/talker.py* and change the source code to `welcome to rapyuta.io` in the *talker.py* file.
 
 5. Open a terminal from the IDE, click the hamburger menu in the VS code editor and click **Terminal > New Terminal**.
 
