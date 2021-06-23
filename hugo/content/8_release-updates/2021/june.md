@@ -48,7 +48,3 @@ The rapyuta.io platform allows you to view the current status of all the availab
 
     
 
-
-#### Bugfix
-
-* The download link to download a log file under the **Manage** tab is fixed now.
