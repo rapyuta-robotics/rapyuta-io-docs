@@ -13,9 +13,9 @@ The lifecycle of a deployment consists of mainly 3 phases and the platform displ
 
 ![Deployment](/images/core-concepts/deployments/deployment-phase.png?classes=border,shadow&width=60pc)
 
-1. **First Phase**: In the first phase of deployment, the status is displayed as **Submitted** that refers to the deployment request is getting submitted. After successful submission, the deployment moves to the second phase.
+1. **First Phase**: In the first phase of deployment, the status is displayed as **Submitted** that refers to the deployment request is submitted. After successful submission, the deployment moves to the second phase.
 
-2. **Second Phase**: In the second phase, one the following status is displayed.
+2. **Second Phase**: In the second phase, one of the following status is displayed.
 
 * **In Progress**: This status is displayed when the deployment is getting provisioned  and if there are no errors, it goes to the next stage else the status changes to one of the following errors. 
 * **Provisioning error**: This status is displayed if any error is encountered during the provisioning of the deployment.
