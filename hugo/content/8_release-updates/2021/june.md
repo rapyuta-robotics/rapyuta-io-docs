@@ -42,7 +42,7 @@ The rapyuta.io platform allows you to view the current status of all the availab
  
 **rapyuta.io Python SDK [0.27.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
 
-* Added SDK support for trigger and tag name for a build.
+* Added SDK support for trigger and tag name while creating a build.
 
 
 
