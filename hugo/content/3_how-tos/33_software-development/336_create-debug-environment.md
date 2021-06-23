@@ -128,6 +128,14 @@ The update functionality of a debug environment allows you to add or remove debu
 
 3. Click **Update**. The debug environment is updated.
 
+## Viewing Cloud Debug Environments
+
+You can view all the available debug environments in a list view. Do the following to view all the environments.
+
+1. In the left pane, click **Development>Debug Environment**. All the available debug environments are displayed in a list view.
+
+![list-view-debugenv](/images/core-concepts/deployments/debug-env-view.png?classes=border,shadow&width=50pc)
+
 ## Deleting a Cloud Debug Environment
 
 To delete a cloud debug environment, do the following.
