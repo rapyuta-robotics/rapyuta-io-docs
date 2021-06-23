@@ -17,7 +17,7 @@ The lifecycle of a deployment consists of mainly 3 phases and the platform displ
 
 2. **Second Phase**: In the second phase, one of the following status is displayed.
 
-* **In Progress**: This status is displayed when the deployment is getting provisioned  and if there are no errors, it goes to the next stage else the status changes to one of the following errors. 
+* **In Progress**: This status is displayed when the deployment is getting provisioned  and if there are no errors, it goes to the next phase else the status changes to one of the following errors. 
 * **Provisioning error**: This status is displayed if any error is encountered during the provisioning of the deployment.
 * **Failed to Start**:  This status is displayed if the platform encounters an error while processing a deployment and fails to start the deployment.
 * **Unknown**: This status is displayed if the platform is unaware of the current status.
