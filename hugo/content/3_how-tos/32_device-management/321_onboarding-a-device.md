@@ -35,16 +35,17 @@ on rapyuta.io
 * Mandatory
    * Python >=2.7.8, <3
    * [Ubuntu 16.04](http://releases.ubuntu.com/16.04/) (Xenial Xerus)
- or [Ubuntu 18.04](http://releases.ubuntu.com/18.04/) (Bionic Beaver)
+   * [Ubuntu 18.04](http://releases.ubuntu.com/18.04/) (Bionic Beaver)
+ or [Ubuntu 20.04](https://releases.ubuntu.com/20.04/) (Focal Fossa)
 * Optional
     * [curl](https://curl.haxx.se/)
     * Robot Operating System (ROS)
-    * [Kinetic Kame](http://wiki.ros.org/kinetic) or [Melodic Morenia](http://wiki.ros.org/melodic)
+    * [Kinetic Kame](http://wiki.ros.org/kinetic), [Melodic Morenia](http://wiki.ros.org/melodic), or [Noetic Ninjemys](http://wiki.ros.org/noetic)
 
 Ubuntu(16.04 and 18.04) by default resolves the hostname to localhost. If you do change this behavior on the host OS, roscore **will** not be able to start. A simple way to check if roscore can be started is to do `nslookup $(hostname)` if it returns a DNS record you are probably good to go.
 
 {{%notice note%}}
-As Kinetic has reached the EOL, it is suggested to select **Melodic** as the ROS version.
+As Kinetic has reached the EOL, it is suggested to select either  **Melodic** or **Neotic** as the ROS version.
 {{%/notice%}}
 
 ### Register a New Device
@@ -61,7 +62,7 @@ To register a new device on rapyuta.io, follow the below steps:
    {{% notice info %}}
    The **ROS Catkin Workspace** can be empty, and you can provide this value on the device's **Details** page.
    {{% /notice %}}
-    2. If you want to build the application source code in the rapyuta.io platform and push the build to the device remotely, select **Use docker compose as default runtime** option. On selecting this option, you will be asked to choose the version of ROS installed on the device. You can either select **Kinetic** or **Melodic** based on the ROS version of your device.</br>
+    2. If you want to build the application source code in the rapyuta.io platform and push the build to the device remotely, select **Use docker compose as default runtime** option. On selecting this option, you will be asked to choose the version of ROS installed on the device. You can either select **Kinetic**, **Melodic**, or **Neotic** based on the ROS version of your device.</br>
    ![Select ROS version](/images/getting-started/add-new-device/select-ROS-version.png?classes=border,shadow&width=40pc)
    3. If you have selected **Use docker compose as default runtime** option, provide the path to store the ROS bag files on the device in the **Rosbag mount path** field. By default, the path is `/opt/rapyuta/volumes/rosbag`.
    {{% notice note %}}
