@@ -69,7 +69,7 @@ After you onboard a device, you cannot change the mount path to store the ROS ba
    {{% /notice %}}
 
 6. In the **Description** box, enter a summary of the device.
-7. Select the python version for the device from the **Python Version** drop-down menu.
+7. Select the python version for the device from the **Python Version** drop-down menu. 
 8. Click **CONTINUE**.
 9.  To copy the generated token (a unique device setup link), click **COPY**.    
    You must copy the token before it expires in *ten* minutes. To generate
