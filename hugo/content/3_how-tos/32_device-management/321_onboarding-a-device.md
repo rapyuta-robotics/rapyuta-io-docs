@@ -33,7 +33,7 @@ The following is the list of requirements for registering devices
 on rapyuta.io
 
 * Mandatory
-   * Python >=2.7.8=<3.9
+   * Python >=2.7.8, < 3 or Python >=3.6, <=3.9
    * [Ubuntu 16.04](http://releases.ubuntu.com/16.04/) (Xenial Xerus)
  or [Ubuntu 18.04](http://releases.ubuntu.com/18.04/) (Bionic Beaver)
 * Optional
