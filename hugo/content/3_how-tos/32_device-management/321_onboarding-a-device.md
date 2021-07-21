@@ -33,7 +33,7 @@ The following is the list of requirements for registering devices
 on rapyuta.io
 
 * Mandatory
-   * Python >=2.7.8, <3
+   * Python >=2.7.8, < 3 or Python >=3.6, <=3.9
    * [Ubuntu 16.04](http://releases.ubuntu.com/16.04/) (Xenial Xerus)
  or [Ubuntu 18.04](http://releases.ubuntu.com/18.04/) (Bionic Beaver)
 * Optional
@@ -69,14 +69,16 @@ After you onboard a device, you cannot change the mount path to store the ROS ba
    {{% /notice %}}
 
 6. In the **Description** box, enter a summary of the device.
-7. Click **CONTINUE**.
-8.  To copy the generated token (a unique device setup link), click **COPY**.    
+7. Select the python version for the device from the **Python Version** drop-down menu. 
+8. Click **CONTINUE**.
+9.  To copy the generated token (a unique device setup link), click **COPY**.    
    You must copy the token before it expires in *ten* minutes. To generate
    the token again, click **Token** on the **Devices** page.
    ![Device Token](/images/getting-started/add-new-device/device-token.png?classes=border,shadow&width=40pc)
 
 
-**What to do next:** Adding a device to the rapyuta.io platform does not mean that the device is connected. To connect your device to the platform, you must set up the device.
+**What to do next:** Adding a device to the rapyuta.io platform does not mean that the device is connected. To connect your device to the platform, you must [set up the device](/3_how-tos/32_device-management/321_onboarding-a-device/#setting-up-your-device).
+
 
 ### Setting Up Your Device
 
@@ -138,6 +140,18 @@ device's name, which indicates that the device is online.
 
 ![Registered Status of Device](/images/getting-started/add-new-device/demo-device.png?classes=border,shadow&width=40pc)
 
+### Upgrade Your Device
+
+The rapyuta.io platform allows you to upgrade your python 2 devices to python 3. Do the following to upgrade your device.
+
+1. On the device details page, click **Upgrade Device**.
+![Upgrade device](/images/getting-started/add-new-device/upgrade-device.png?classes=border,shadow&width=40pc)
+2. A confirmation pop-up message is displayed. Click **Confirm**. The device is successfully upgraded to python 3.
+![set up upgraded device](/images/getting-started/add-new-device/set-up-upgraded-device.png?classes=border,shadow&width=40pc)
+
+{{%notice note%}}
+After you upgrade your device to python 3, you must [set up the device](/3_how-tos/32_device-management/321_onboarding-a-device/#setting-up-your-device) for the changes to take place.
+{{%/notice%}} 
 
 ## Related Links
 * [About Devices](/1_understanding-rio/12_core-concepts/#device-management)
