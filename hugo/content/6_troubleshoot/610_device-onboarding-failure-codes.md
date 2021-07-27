@@ -162,12 +162,14 @@ If the issue still persists, please <a href="#" onclick="javascript:FreshWidget.
 
 ### Check for active internet connection
 
-  To check if a device has an active internet connection, execute the command: `ping -c 4 8.8.8.8` at the device's terminal. The **[**ping**]**(*https://linux.die.net/man/8/ping*) command will try to reach [Google Public DNS](https://en.wikipedia.org/wiki/Google_Public_DNS). If successful, you should see an output as:
+  To check if a device has an active internet connection, execute the command: `ping -c 4 8.8.8.8` at the device's terminal. The [ping](https://linux.die.net/man/8/ping) command will try to reach [Google Public DNS](https://en.wikipedia.org/wiki/Google_Public_DNS). If successful, you should see an output as:
 
-  **4 packets transmitted, 4 received, 0% packet loss.**
+```bash
+4 packets transmitted, 4 received, 0% packet loss.
+```
 
 
 
 ### Check for disk space
 
-  To check if there is adequate disk space on device, run the command: `df -h` at the device's terminal. The **[**df**]**(*https://linux.die.net/man/1/df*) command will display your disk usage. Ensure the value of percentage used for your main filesystem is not nearly 100%.
+  To check if there is adequate disk space on device, run the command: `df -h` at the device's terminal. The [df](https://linux.die.net/man/1/df) command will display your disk usage. Ensure the value of percentage used for your main filesystem is not nearly 100%.
