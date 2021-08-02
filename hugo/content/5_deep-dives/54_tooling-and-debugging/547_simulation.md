@@ -41,8 +41,32 @@ The following sample-walkthrough demonstrates how to create such a setup keeping
 {{% /notice %}}
 
 {{% notice note %}}
-As of now, rapyuta.io supports **Gazebo version 9**, and only for executables with Catkin recipe. Users are expected to use gazebo9 ROS packages for their corresponding ROS distros. For instance, `ros-melodic-gazebo-ros-pkgs` on ROS melodic, and `ros-kinetic-gazebo9-ros-pkgs` on ROS kinetic.
+rapyuta.io supports **Gazebo version 9** for both kinetic and melodic ROS distros. Users are expected to use gazebo9 ROS packages for these distros. For instance, `ros-melodic-gazebo-ros-pkgs` on ROS melodic, and `ros-kinetic-gazebo9-ros-pkgs` on ROS kinetic.
 {{% /notice %}}
+
+
+### Supported Gazebo versions for Catkin Builds
+
+These are the supported Gazebo versions for [Catkin Builds](/5_deep-dives/52_software-development/527_build-recipe/#catkin-recipe):
+
+
+| Build ROS version | Gazebo version |
+| ----------------- | -------------- | 
+| kinetic           | gazebo9        |
+| melodic           | gazebo9        |
+| noetic            | gazebo11       |
+
+
+### gazebo9 ROS kinetic packages on Ubuntu 16.04 (xenial)
+
+For ROS kinetic builds, rapyuta.io supports Gazebo version 9. When using Gazebo ROS packages, it assumes those to be gazebo9. When working on Ubuntu xenial, specifying Gazebo ROS dependencies in *package.xml* will fetch gazebo7 ROS packages. For instance, `<depend>gazebo_ros</depend>` in *package.xml* will fetch `ros-kinetic-gazebo-ros`, which is a package for gazebo7. To install gazebo9 packages, the user will need to add the rosdep source-list from https://github.com/osrf/osrf-rosdep/blob/master/gazebo9/00-gazebo9.list. On the local machine execute in terminal:
+
+```bash
+wget -qP /etc/ros/rosdep/sources.list.d/ https://raw.githubusercontent.com/osrf/osrf-rosdep/master/gazebo9/00-gazebo9.list
+rosdep update
+```
+
+After this, installing `<depend>gazebo_ros</depend>` should fetch you `ros-kinetic-gazebo9-ros`. While building your simulation application, this is what rapyuta.io does too.
 
 
 ### Using robot_description and other parameters for both Simulation and Application
@@ -74,18 +98,6 @@ When communicating over the public internet through ROS interfaces, communicatio
 - If a ROS package provides parameters to modify tolerance for message delays, then they might help too. For instance, [costmap_2d](http://wiki.ros.org/costmap_2d) has a parameter *transform_tolerance* for message delays.
 
 If none of this helps and sharing ROS master is the only way, then simulation and the application must be run in the same Package Component.
-
-
-### gazebo9 ROS kinetic packages on Ubuntu 16.04 (xenial)
-
-rapyuta.io only supports Gazebo version 9. When using Gazebo ROS packages, it assumes those to be gazebo9. When working on Ubuntu xenial, specifying Gazebo ROS dependencies in *package.xml* will fetch gazebo7 ROS packages. For instance, `<depend>gazebo_ros</depend>` in *package.xml* will fetch `ros-kinetic-gazebo-ros`, which is a package for gazebo7. To install gazebo9 packages, the user will need to add the rosdep source-list from https://github.com/osrf/osrf-rosdep/blob/master/gazebo9/00-gazebo9.list. On the local machine execute in terminal:
-
-```bash
-wget -qP /etc/ros/rosdep/sources.list.d/ https://raw.githubusercontent.com/osrf/osrf-rosdep/master/gazebo9/00-gazebo9.list
-rosdep update
-```
-
-After this, installing `<depend>gazebo_ros</depend>` should fetch you `ros-kinetic-gazebo9-ros`. While building your simulation application, this is what rapyuta.io does too.
 
 
 {{% notice info %}}

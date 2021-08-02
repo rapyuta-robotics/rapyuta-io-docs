@@ -1,5 +1,9 @@
 # CHANGELOG
-## [unreleased]
+
+## [Unreleased]
+### Added
+- Supported Gazebo versions, including ROS noetic
+
 
 ## [4.6.0 - 2021-05-26]
 ### Added
