@@ -36,7 +36,6 @@ using **pip**(the most popular tool for installing python packages).
 
 ```bash
 pip install rapyuta-io
-
 ```
 
 
