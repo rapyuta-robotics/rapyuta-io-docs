@@ -1,9 +1,15 @@
 # CHANGELOG
 
 ## [Unreleased]
+
+
+## [5.1.0 - 2021-08-04]
 ### Added
 - Supported Gazebo versions, including ROS noetic
 
+## [5.0.0 - 2021-07-21]
+### Added
+- Python3 support on devices
 
 ## [4.6.0 - 2021-05-26]
 ### Added
