@@ -42,7 +42,7 @@ A native network allows you to communicate between different ROS environments as
 Native networks  eliminate the need of creating a separate routed network for the local communication and significantly decreases the latency as the communication doesn't involve a cloud bridge for individual ROS environments for communication.
 {{%/notice%}}
 
-In case of native network, all the connected ROS environments can discover each other and the communication happens in a peer-to-peer manner. Each ROS environment has its own ROS master and the rapyuta.io platform uses a sub-component based on the open-source [FKIE multimaster](https://github.com/fkie/multimaster_fkie) to achieve it.
+In case of native network, multiple ROS environments (all ros nodes sharing the same ROS_MASTER_URI are considered a single ROS environment) can discover each other (these could be filtered based on the list of topics/services provided) and the communication happens in a peer-to-peer manner. Each ROS environment has its own ROS master and the rapyuta.io platform uses a sub-component based on the open-source [FKIE multimaster](https://github.com/fkie/multimaster_fkie) to achieve it.
 
 ### Native Networks Internals
 
@@ -77,7 +77,7 @@ We want to establish communication between these 3 ROS packages.  To simplify th
 
 The result is as follows
 
-* We have established communication between the packages deployment in the cloud (as they are  considered as being in the same local area network)
+* We have established communication between the packages deployed in the cloud (as they are in the same local area network)
 
 
 {{%notice info%}}
@@ -121,10 +121,10 @@ You can connect your deployments to more than one cloud native networks for redu
 
 When you deploy a native network to a device, it is considered as a device native network. THis allows for ultra low latency peer-to-peer connections between ros nodes in a Local Area Network(LAN) i.e **ONLY** deployments on devices on the same LAN can bind to it.
 
-Native networks can be deployed to a device with the following parameters:
+Native networks can be deployed to devices that fulfill the following requirements:
 
-* **Device**: Any online device with docker runtime and AMD64 architecture
-* **Device IP Interface**: network interface (i.e., an IP address) that will be used by other deployments for communication to this native network.
+* Any online device with docker runtime and AMD64 architecture
+* The **network_interface**  configuration variable must be set to a valid network interface name eg *enp1s0* that will be used by other deployments for communication to this native network.
 * **Restart policy**: Kindly refer to the [restart policy](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
 
 
@@ -138,7 +138,7 @@ For instance use native networks with a Raspberry-Pi consider adding the followi
 
 
 {{%notice info%}}
-On reboot, devices configured using DHCP may boot up with a new IP address and the network configuration of a deployed routed network becomes invalid. This can be avoided by assigning a static IP to the device you intend to deploy a routed network to esp in production systems.
+On reboot, devices configured using DHCP may boot up with a new IP address and the network configuration of a deployed native network becomes invalid. This can be avoided by assigning a static IP to the device you intend to deploy a routed network to esp in production systems.
 {{%/notice%}}
 
 
