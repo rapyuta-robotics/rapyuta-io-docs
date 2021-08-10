@@ -1,5 +1,5 @@
 ---
-title: "Local Communication Using Device Native Network"
+title: "Device Native Network for Local Communication"
 description:
 type: build-solutions
 date: 2019-10-24T13:47:47+05:30
@@ -411,7 +411,7 @@ You may analyze the corresponding [deployment logs](/3_how-tos/35_tooling_and_de
 if the deployment fails.
 
 The corresponding dependency graph of **ROS Publisher Deployment** looks like:
-![Dependency graph](/images/tutorials/native-networks/graph-pkg1-nn-dev.png?classes=border,shadow&width=50pc)
+![Dependency graph](/images/tutorials/native-networks/graph-pub-nn-dev.png?classes=border,shadow&width=50pc)
 
 ## Deploy ROS Subscriber package
 
@@ -437,15 +437,7 @@ You may analyze the corresponding [deployment logs](/3_how-tos/35_tooling_and_de
 if the deployment fails.
 
 The corresponding dependency graph of **ROS Subscriber Deployment** looks like:
-![Dependency graph](/images/tutorials/local-comm-broker/dgraph-sub-broker.png?classes=border,shadow&width=50pc)
+![Dependency graph](/images/tutorials/native-networks/graph-sub-nn-dev.png?classes=border,shadow&width=50pc)
 
 If all of the above three deployments are successfully running, the
 logs of **ROS Subscriber Deployment** will print ***hello_world***.
-
-
-Since the device native network is deployed on the **Device Native Network** locally,
-and the bindable attribute is not selected (value is set to false) for both
-the **ROS Publisher** package and the **ROS Subscriber** package, the ROS topic
-(***/telemetry***) and in general, the data is transferred within the same
-local network. Thus, the application's latency is comparatively reduced
-provided the **device_rn** is in the same network as the **Publisher Device**, and **Subscriber Device**.
