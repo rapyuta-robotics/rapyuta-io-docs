@@ -1,19 +1,17 @@
 ---
-title: "Local Communication Using Device Routed Network"
+title: "Local Communication Using Device Native Network"
 description:
 type: build-solutions
 date: 2019-10-24T13:47:47+05:30
 # pre: "6. "
-weight: 640
+weight: 641
 tags:
     - Tutorials
 ---
-Complex robotic applications involving multi-device communication can be
-latent when the service is distributed across WAN. This tutorial demonstrates
-how to have multi-device communication within the same LAN.
+This tutorial demonstrates how to have multi-device communication within the same LAN using the device native network
 
 ## Learning objectives
-This tutorial will show you how to deploy a device routed network locally for inter-device communication using [rapyuta.io console](https://console.rapyuta.io).
+This tutorial will show you how to deploy a device native network locally for inter-device communication using [rapyuta.io console](https://console.rapyuta.io).
 
 ## Prerequisites
 1. Device requirements
@@ -31,7 +29,7 @@ This tutorial will show you how to deploy a device routed network locally for in
 
 ## Tutorial walkthrough
 
-In this tutorial, you will add three devices namely _device_rn,
+In this tutorial, you will add three devices namely _Native_Network_Device_,
 _Publisher Device_ and _Subscriber Device_. You will also create and deploy
 _ROS Publisher_ and _ROS Subscriber_ packages.
 
@@ -39,11 +37,11 @@ _ROS Publisher_ and _ROS Subscriber_ packages.
 Ensure that the device must be of **amd64** CPU architecture.
 
 1. Click **Devices>All Devices** > **ADD NEW DEVICE**.
-2. In the **Device Name** box, enter the name of the device, for example, `device_rn`
+2. In the **Device Name** box, enter the name of the device, for example, `Native_Network_Device`
 3. Use **docker compose as the default runtime** option.
 4. Ensure the ROS Version is Melodic.
 4. In the **Description** box, provide a summary of the device, for example,
-   `I am a Device Routed Network`
+   `I am a Device Native Network`
 5. Click **CONTINUE**.
 6. Click **COPY** to copy the generated **Token**. 
 
@@ -59,8 +57,17 @@ Initializing the Rapyuta Platform
 Successfully Installed!
 ```
 
+
 Ensure that there's a <span style="color:green">**green**</span> dot next to
 the ***Publisher Device***, which indicates that it is online on rapyuta.io.
+
+Once setup head to the device page on the rapyuta.io console and set the `network_interface` variable to one of the interface you intend to use eg: **enp1s0**
+![addifacevar](/images/tutorials/native-networks/set-device-iface-var.png?classes=border,shadow&width=40pc)
+
+{{%notice warning%}}
+Ensure that cpuset and memory cgroups are enabled.
+For instance on a Raspberry-Pi consider adding the following in /boot/cmdline.txt. `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1` 
+{{%/notice%}}
 
 #### Prepare Publisher Device
 The _Publisher Device_ is:
@@ -162,9 +169,19 @@ Initializing the Rapyuta Platform
 ############(100%)
 Successfully Installed!
 ```
-
 Ensure that there's a <span style="color:green">**green**</span> dot next to
 the ***Publisher Device***, which indicates that it is online on rapyuta.io.
+
+
+Once setup head to the device page on the rapyuta.io console and set the `network_interface` variable to one of the interface you intend to use eg: **enp1s0**
+![addifacevar](/images/tutorials/native-networks/set-device-iface-var.png?classes=border,shadow&width=40pc)
+
+{{%notice warning%}}
+Ensure that cpuset and memory cgroups are enabled.
+For instance on a Raspberry-Pi consider adding the following in /boot/cmdline.txt. `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1` 
+{{%/notice%}}
+
+
 
 ## Prepare Subscriber Device
 The _Subscriber Device_ is a:
@@ -279,6 +296,14 @@ Successfully Installed!
 Ensure that there's a <span style="color:green">**green**</span> dot next to
 the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 
+Once setup head to the device page on the rapyuta.io console and set the `network_interface` variable to one of the interface you intend to use eg: **enp1s0**
+![addifacevar](/images/tutorials/native-networks/set-device-iface-var.png?classes=border,shadow&width=40pc)
+
+{{%notice warning%}}
+Ensure that cpuset and memory cgroups are enabled.
+For instance on a Raspberry-Pi consider adding the following in /boot/cmdline.txt. `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1` 
+{{%/notice%}}
+
 ## Create ROS Publisher package
 
 1. Click **Development>Catalog** > **ADD NEW PACKAGE**.
@@ -341,24 +366,24 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
    command, because the ROS Master will fail to start on _rosrun_, and eventually, the deployment will fail as well.
 9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
-## Create a Device Routed Network
-Follow these steps to create a device routed network. Make sure you have a rapyuta.io registered
+## Create a Device Native Network
+Follow these steps to create a device native network. Make sure you have a rapyuta.io registered
 device with docker runtime.
 
 
 1. On the left navigation bar, click **NETWORKS**.
-2. Click **ADD NETWORK**. Select **Routed network** in the pop-up..
-3. Enter  `device_routed_network_1` as the name for the routed network.
+2. Click **ADD NETWORK**. Select **Native network** in the pop-up.
+3. Enter  `device_native_network_1` as the name for the native network.
 4. Select **ROS Distro** as Melodic.
 5. Select the **Runtime** as **Device**.
 6. You will see a list of online device with docker runtime and AMD64 architecture in the drop-down list. 
-Select the **Device** as  `Routed_Network_Device` and its **IP Interface**. 
+Select the **Device** as  `Native_Network_Device` and its **IP Interface**. 
 7. Select the [Restart policy](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
-![goo](/images/tutorials/routed-networks/create-device-routed-network.png?classes=border,shadow&width=40pc)
+![goo](/images/tutorials/native-networks/create-dev-native-nw.png?classes=border,shadow&width=40pc)
 8. Click **CONTINUE**.
 
-The routed network is getting deployed and is identical to the deployment of any other package and has identical corresponding phases and errors.
-Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
+The native network is getting deployed and is identical to the deployment of any other package and has identical corresponding phases and errors.
+Once the native network deployment succeeds, other ROS package deployments can bind to it and communicate.
 
 ## Deploy ROS Publisher package
 
@@ -370,8 +395,8 @@ updated list of online devices.
 4. Select **Publisher Device** from **Select device for deploying the component** drop-down list.
 5. Under **Device Config Variables**, ensure that the **ros_workspace** and
    **ros_distro** are selected.
-6. Click **Add** next to the **Routed Network** field.
-7. From the **Network** drop-down menu, select `device_routed_network_1` as the device routed network.
+6. Click **Add** next to the **native Network** field.
+7. From the **Network** drop-down menu, select `device_native_network_1` as the device native network.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the **Details** tab of the newly created deployment. The package is successfully deployed when the green colored bar moves from
@@ -396,7 +421,7 @@ The corresponding dependency graph of **ROS Publisher Deployment** looks like:
 updated list of online devices.
 4. Select **Subscriber Device** from the **Select device for deploying the component** drop-down list.
 5. Ensure that **ros_workspace** and **ros_distro** are selected.
-6. From the **Network** drop-down menu, select `device_routed_network_1` as the device routed network.
+6. From the **Network** drop-down menu, select `device_native_network_1` as the device native network.
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** tab.
@@ -416,7 +441,7 @@ If all of the above three deployments are successfully running, the
 logs of **ROS Subscriber Deployment** will print ***hello_world***.
 
 
-Since the device routed network is deployed on the **device_rn** locally,
+Since the device native network is deployed on the **Device Native Network** locally,
 and the bindable attribute is not selected (value is set to false) for both
 the **ROS Publisher** package and the **ROS Subscriber** package, the ROS topic
 (***/telemetry***) and in general, the data is transferred within the same
