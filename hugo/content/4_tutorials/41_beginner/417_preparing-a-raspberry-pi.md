@@ -93,6 +93,12 @@ ssh rapyuta@1.2.3.0
 
 Alternatively, you may use a serial terminal to achieve the same result.
 
+{{%notice warning%}}
+SOme platform services such as "native networks" require that cpuset and memory cgroups are enabled.
+
+To achieve tis add the following in /boot/cmdline.txt. `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1` 
+{{%/notice%}}
+
 ### What to do Next
 
 After you successfully prepare the Raspberry PI device, you can onboard the device to the rapyuta.io platform. For more information about onboarding a device, [click here](/3_how-tos/32_device-management/321_onboarding-a-device)
