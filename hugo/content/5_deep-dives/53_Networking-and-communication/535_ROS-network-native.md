@@ -132,8 +132,7 @@ Native networks can be deployed to devices that fulfill the following requiremen
 To use device native networks the user needs to re-onboard the device (to install and enable the new services). 
 Also ensure that cpuset and memory cgroups are enabled.
 
-If the user reonboards the device the user needs to go and ensure the `network_interface` config variable is set.
-
+If the user reonboards the device the user needs to go and reset the `network_interface` config variable.
 
 
 For instance use native networks with a Raspberry-Pi consider adding the following in /boot/cmdline.txt. `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1` 
