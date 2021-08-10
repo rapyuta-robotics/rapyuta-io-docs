@@ -411,7 +411,7 @@ You may analyze the corresponding [deployment logs](/3_how-tos/35_tooling_and_de
 if the deployment fails.
 
 The corresponding dependency graph of **ROS Publisher Deployment** looks like:
-![Dependency graph](/images/tutorials/local-comm-broker/dgraph-pub-broker.png?classes=border,shadow&width=50pc)
+![Dependency graph](/images/tutorials/native-networks/graph-pkg1-nn-dev.png?classes=border,shadow&width=50pc)
 
 ## Deploy ROS Subscriber package
 
