@@ -395,8 +395,9 @@ updated list of online devices.
 4. Select **Publisher Device** from **Select device for deploying the component** drop-down list.
 5. Under **Device Config Variables**, ensure that the **ros_workspace** and
    **ros_distro** are selected.
-6. Click **Add** next to the **native Network** field.
-7. From the **Network** drop-down menu, select `device_native_network_1` as the device native network.
+6. Click **Add** next to the **Native Network** field.
+7. From the **Network** drop-down menu, select `device_native_network_1` as the network and in the **IP Interfaces** dropdown select the interface that was used while creating the native network.
+![select native network on deploy](/images/tutorials/native-networks/select-native-iface-bind.png?classes=border,shadow&width=50pc)
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the **Details** tab of the newly created deployment. The package is successfully deployed when the green colored bar moves from
@@ -421,7 +422,8 @@ The corresponding dependency graph of **ROS Publisher Deployment** looks like:
 updated list of online devices.
 4. Select **Subscriber Device** from the **Select device for deploying the component** drop-down list.
 5. Ensure that **ros_workspace** and **ros_distro** are selected.
-6. From the **Network** drop-down menu, select `device_native_network_1` as the device native network.
+6. From the **Network** drop-down menu, select `device_native_network_1` as the network and in the **IP Interfaces** dropdown select the interface that was used while creating the native network.
+![select native network on deploy](/images/tutorials/native-networks/select-native-iface-bind.png?classes=border,shadow&width=50pc)
 8. Click **CREATE DEPLOYMENT** > **Confirm**.
 
 You will be redirected to the newly created deployment's **Details** tab.
