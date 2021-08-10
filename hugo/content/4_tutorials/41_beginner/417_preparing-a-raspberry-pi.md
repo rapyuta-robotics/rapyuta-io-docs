@@ -96,7 +96,7 @@ Alternatively, you may use a serial terminal to achieve the same result.
 {{%notice info%}}
 Some platform services such as "native networks" require that cpuset and memory cgroups are enabled.
 
-To achieve tis add the following in /boot/cmdline.txt. `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1` 
+To achieve this add the following in /boot/cmdline.txt. `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1` 
 {{%/notice%}}
 
 ### What to do Next
