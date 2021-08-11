@@ -40,23 +40,7 @@ In latency sensitive applications, when all the ROS environments are in  (For ex
 
 In case of routed network, the rapyuta.io platform relies on a sub-component called the cloud bridge for implicitly establishing a communication channel between two or more ROS environments. It is an application-level bridge that offers many compelling features to ROS developers including augmented ROS over the public internet and dedicated features for dynamic multi-robot ROS communication. 
 
-### Cloud Routed Network
-
-When a user deploys a routed network to the cloud it is considered a cloud routed network. Any compute resources (CPU/memory) consumed by this routed network deployment count against your cloud deployment hours quota.
-
-Package deployments in the cloud __OR__ device can connect to a cloud routed network.
-
-#### Resource Limit
-
-When creating a cloud routed network, the **Resource limit** field defines the memory allocation and computational capability of the routed network. These resources are reserved in the platform for effective ROS communication. You can choose the resource limit of a routed network based on the following requirements.
-
-* size of ROS messages
-* frequency of ROS messages
-* number of topics/services/actions
-* QOS of ROS message
-* number of publishers/subscribers that will be active under a particular routed network
-
-#### Use Case
+### Use Case
 
 For the use case, let's take an example of 3 ROS packages: 
 
@@ -80,6 +64,24 @@ The result is as follows
 #### Cons
 
 * The cloud routed network doesn't serve well in latency-sensitive communications. 
+
+### Cloud Routed Network
+
+When a user deploys a routed network to the cloud it is considered a cloud routed network. Any compute resources (CPU/memory) consumed by this routed network deployment count against your cloud deployment hours quota.
+
+Package deployments in the cloud __OR__ device can connect to a cloud routed network.
+
+#### Resource Limit
+
+When creating a cloud routed network, the **Resource limit** field defines the memory allocation and computational capability of the routed network. These resources are reserved in the platform for effective ROS communication. You can choose the resource limit of a routed network based on the following requirements.
+
+* size of ROS messages
+* frequency of ROS messages
+* number of topics/services/actions
+* QOS of ROS message
+* number of publishers/subscribers that will be active under a particular routed network
+
+
 
 ### Device Routed Network
 
