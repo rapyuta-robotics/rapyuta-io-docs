@@ -94,7 +94,7 @@ We can establish this communication by using a cloud routed network. However, us
 
 #### Cons
 
-* The native network is only applicable only for local communication - i.e withing the cloud or withing a LAN network of a deployment site (eg warehouse).
+* The native network is only applicable only for local communication - i.e within the cloud or within a LAN network of a deployment site (eg warehouse).
 
 
 {{%notice note%}}
@@ -103,7 +103,7 @@ When you subscribe to a topic from a different ROS environment, this subscriber 
 
 ### Cloud Native Network
 
-When you deploy a native network to the cloud, it is considered as a cloud native network. Any compute resources (CPU/memory) consumed by this routed network deployment count against your cloud deployment hours quota.
+When you deploy a native network to the cloud, it is considered as a cloud native network. Any compute resources (CPU/memory) consumed by this native network deployment count against your cloud deployment hours quota.
 
 #### Resource Limit 
 
@@ -119,7 +119,7 @@ You can connect your deployments to more than one cloud native networks for redu
 
 ### Device Native Network
 
-When you deploy a native network to a device, it is considered as a device native network. THis allows for ultra low latency peer-to-peer connections between ros nodes in a Local Area Network(LAN) i.e **ONLY** deployments on devices on the same LAN can bind to it.
+When you deploy a native network to a device, it is considered as a device native network. This allows for ultra low latency peer-to-peer connections between ros nodes in a Local Area Network(LAN) i.e **ONLY** deployments on devices on the same LAN can bind to it.
 
 Native networks can be deployed to devices that fulfill the following requirements:
 
@@ -141,7 +141,7 @@ For instance use native networks with a Raspberry-Pi consider adding the followi
 
 
 {{%notice info%}}
-On reboot, devices configured using DHCP may boot up with a new IP address and the network configuration of a deployed native network becomes invalid. This can be avoided by assigning a static IP to the device you intend to deploy a routed network to esp in production systems.
+On reboot, devices configured using DHCP may boot up with a new IP address and the network configuration of a deployed native network becomes invalid. This can be avoided by assigning a static IP to the device you intend to deploy a native network to esp in production systems.
 {{%/notice%}}
 
 
