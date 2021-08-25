@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [6.1.0 - 2021-08-25]
+
 ## [6.0.0 - 2021-08-11]
 ### Added
 - Added support for device native networks

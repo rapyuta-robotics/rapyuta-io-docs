@@ -36,3 +36,20 @@ Welcome to the August 11, 2021 release of the rapyuta.io platform.
  
 **rapyuta.io Python SDK [0.31.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
 * Support for device native network.
+
+
+## August 25
+
+Welcome to the August 25, 2021 release of the rapyuta.io platform.
+ 
+#### Bugfixes
+
+- Graceful handling of update deployment failure when package not present.
+- Fixed continuous loading bug in network list page on setting the "show" filter option.
+
+#### SDK
+ 
+**rapyuta.io Python SDK [0.32.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
+- Added support for name and version filters in Client.get_all_packages()
+- Added support for Client.get_authenticated_user()
+- Fixed ProvisionConfiguration.provision() to set ROSBag Jobs of the package.
