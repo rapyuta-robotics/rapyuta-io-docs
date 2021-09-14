@@ -1,6 +1,7 @@
 # CHANGELOG
 
-## [Unreleased]
+## [6.1.1 - 2021-09-14]
+- added spetember 15 changelog
 
 ## [6.1.0 - 2021-08-25]
 
