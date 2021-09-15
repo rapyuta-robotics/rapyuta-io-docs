@@ -2,14 +2,14 @@
 title: "September"
 description:
 type: release-updates
-date: 2021-08-04T00:00:46+05:30
+date: 2021-09-15T00:00:46+05:30
 weight: 907
 ---
  
  
 ## September 15
 
-Welcome to the August 04, 2021 release of the rapyuta.io platform.
+Welcome to the September 15, 2021 release of the rapyuta.io platform.
  
 #### Features
 
