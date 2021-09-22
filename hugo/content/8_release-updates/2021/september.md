@@ -6,7 +6,20 @@ date: 2021-09-15T00:00:46+05:30
 weight: 907
 ---
  
+## September 22
+
+Welcome to the September 22, 2021 release of the rapyuta.io platform.
  
+#### Improvements
+
+* Device SSH -  SSH to device is now allowed in initializing and failed states.
+* Device Config Variables - Config variables are now retained across device re-onboardings
+ 
+#### Bugfixes
+* Device Deployment Deprovision - Fixed internal server error during deprovision
+* Historical Logs -  Load Next button disappear on loading of all previous logs
+* Historical Logs - Restricted the number of tabs in historical logs ui to allow only 10M log lines download
+
 ## September 15
 
 Welcome to the September 15, 2021 release of the rapyuta.io platform.
