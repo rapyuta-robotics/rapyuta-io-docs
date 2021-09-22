@@ -18,6 +18,7 @@ Welcome to the September 22, 2021 release of the rapyuta.io platform.
 #### Bugfixes
 * DeviceDeployment Deprovision - Fixed internal server error during deprovision
 * HistoricalLogs -  Load Next button disappear on loading of all previous logs
+* HistoricalLogs - Restricted the number of tabs in historical logs ui to allow only 10M log lines download
 
 ## September 15
 
