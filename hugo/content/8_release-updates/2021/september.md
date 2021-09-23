@@ -14,6 +14,7 @@ Welcome to the September 22, 2021 release of the rapyuta.io platform.
 
 * Device SSH -  SSH to device is now allowed in initializing and failed states.
 * Device Config Variables - Config variables are now retained across device re-onboardings
+* Historical Logs - Loglines metrics now show fetched and the total number of lines with the corresponding start and end dates
  
 #### Bugfixes
 * Device Deployment Deprovision - Fixed internal server error during deprovision
