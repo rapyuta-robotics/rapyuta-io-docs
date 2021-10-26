@@ -1,5 +1,7 @@
 # CHANGELOG
 
+## [6.1.4 - 2021-10-27]
+
 ## [6.1.3 - 2021-09-21]
 - added missed historical log improvement update
 
