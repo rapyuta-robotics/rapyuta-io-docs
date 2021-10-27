@@ -22,7 +22,7 @@ Welcome to the October 27, 2021 release of the rapyuta.io platform.
 This will mount:  
     * `executable1/data` directory of volume, to `/mount/path` of `executable1`  
     *  `executable2/data` directory of volume, to `/mount/path` of `executable2`
-* While uploading a ROS bag if the device goes offline, the upload fails. You can now use the retry option under **Actions** to resume ROS bag uploads.
+* While uploading a ROS bag if the device goes offline, the upload fails and status becomes error. You can now use the retry option under **Actions** to resume ROS bag uploads.
 
 #### SDK
  
