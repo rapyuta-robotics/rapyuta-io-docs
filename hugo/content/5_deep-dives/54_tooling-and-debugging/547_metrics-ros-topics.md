@@ -3,7 +3,7 @@
 title: "Metrics from ROS Topics"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 
-weight: 545
+weight: 547
 
 versions:
   free-pro-team: '*'
@@ -28,7 +28,7 @@ introLinks: {}
 tags:
     - Deep Dive
 ---
-### Metrics from ROS Topics
+### Metrics from ROS Topics (Old)
 
 Once a device is onboarded on to rapyuta.io, deploy a package on it to get
 the ROS Master up and running. Now, you can subscribe to the ROS topic
