@@ -30,6 +30,10 @@ tags:
 ---
 ### Metrics from ROS Topics (Old)
 
+{{% notice note%}}
+rapyuta.io now supports [User Metrics](/5_deep-dives/54_tooling-and-debugging/545_user_metrics/) to send custom metrics.
+{{% /notice %}}
+
 Once a device is onboarded on to rapyuta.io, deploy a package on it to get
 the ROS Master up and running. Now, you can subscribe to the ROS topic
 for collecting the metrics data published by the topic.
