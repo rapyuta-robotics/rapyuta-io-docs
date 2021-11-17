@@ -28,5 +28,5 @@ This will mount:
  
 **rapyuta.io Python SDK [0.35.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
 
-* Support for mounting subpaths of a volume at different mount paths.
+* Support for mounting subpaths of a volume at different mount paths. 
 
