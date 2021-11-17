@@ -26,9 +26,4 @@ Welcome to the November 17, 2021 release of the rapyuta.io platform.
 **rapyuta.io Python SDK [0.36.0](/3_how-tos/36_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
 * Added delete() method for the ROSBagBlob object.
 * Added retry support for ROSBagBlob object.
-* isinstance validations has been added for the following methods:
-    * create_build
-    * create_rosbag_job
-    * create_project
-    * create_secret
-* The secret name length and other validations are now in accordance with the Openshift validations.
+* Validations are fixed for Build, ROSBagJob, Project and Secret objects.
