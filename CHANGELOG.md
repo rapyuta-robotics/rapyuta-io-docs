@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## [6.1.5 - 2021-11-17]
+- added release updates
+
 ## [6.1.4 - 2021-10-27]
 - added release updates
 
