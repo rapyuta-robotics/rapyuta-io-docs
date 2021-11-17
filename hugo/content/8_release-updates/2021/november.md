@@ -13,8 +13,7 @@ Welcome to the November 17, 2021 release of the rapyuta.io platform.
 #### Improvements
 
 * Downloads are now optimized by reducing the number of lines from 100k to 10k for each historical log chunk.
-* Historical logs now supports the following date format consistently:<br>
- **DATE_FORMAT_TZ=dd/MM/yyyy, HH:mm:ss XXX**
+* Historical logs now supports **DD-MM-YYYY** date format consistently.
 * Width of the search logs input box has been increased.
 
 #### Bugfixes
