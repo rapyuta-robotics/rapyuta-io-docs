@@ -76,6 +76,24 @@ The following table describes the message format:
 | time_stamp | It is automatically set using device’s time before sending it to the cloud. |  
 | dimensions | Key-value pairs to augment metric with relevant data. For example, charge cycle can be set for the metric robot.battery_charge.|
 
-These metrics can be visualized using the Grafana data sources. For more information, see <add link>
+These metrics can be visualized using the Grafana data source. For more information, see <add link>
 
+### Install packaged Grafana data source
 
+Use the following steps to install the packaged Grafana data source.
+
+1. Execute the following commands to fetch the packaged data source:
+   ```bash
+   sudo mkdir -p /var/lib/grafana-plugins
+   sudo chown $USER:$USER /var/lib/grafana-plugins
+   wget -P /tmp https://storage.googleapis.com/grafana-datasource/rr-io-datasource-v0.0.0.zip
+   unzip /tmp/rr-io-datasource-v0.0.0.zip -d /var/lib/grafana-plugins
+   ```
+2. Add the following to grafana-server's config (See [Config file locations](https://grafana.com/docs/grafana/latest/administration/configuration/#config-file-locations)):
+   ```bash
+   [paths]
+   plugins = /var/lib/grafana-plugins
+   [plugins]
+   allow_loading_unsigned_plugins = rr-io-datasource
+   ```
+3. Restart Grafana.
