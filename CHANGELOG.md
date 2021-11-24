@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## [6.1.8 - 2021-11-24]
+- added release notes
+
 ## [6.1.6 - 2021-11-17]
 - fixed broker link on release notes
 
