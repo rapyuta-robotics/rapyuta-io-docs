@@ -2,9 +2,22 @@
 title: "November"
 description:
 type: release-updates
-date: 2021-11-17T00:00:46+05:30
+date: 2021-11-24T00:00:46+05:30
 weight: 909
 ---
+
+## November 24 
+
+Welcome to the November 24, 2021 release of the rapyuta.io platform.
+ 
+#### Improvements
+
+* In addition to the **Get Auth Token**, you can now access the **Project ID** and **Organization ID** in the Get Auth Page.
+
+#### Bugfixes
+
+* On adding the binary files to the configuration map, the apply configuration modal was crashing. This issue is now fixed.
+* On deploying the Edge Logging Client public package, the deploy modal was crashing. This issue is now fixed.
 
 ## November 17 
 
