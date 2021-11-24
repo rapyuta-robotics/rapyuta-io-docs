@@ -86,7 +86,7 @@ Use the following steps to install the packaged Grafana data source.
    ```bash
    sudo mkdir -p /var/lib/grafana-plugins
    sudo chown $USER:$USER /var/lib/grafana-plugins
-   wget -P /tmp https://storage.googleapis.com/grafana-datasource/rr-io-datasource-v0.0.0.zip
+   wget -P /tmp https://grafanadatasource.blob.core.windows.net/grafanadatasource/rr-io-datasource-v0.0.0.zip
    unzip /tmp/rr-io-datasource-v0.0.0.zip -d /var/lib/grafana-plugins
    ```
 2. Add the following to grafana-server's config (See [Config file locations](https://grafana.com/docs/grafana/latest/administration/configuration/#config-file-locations)):
