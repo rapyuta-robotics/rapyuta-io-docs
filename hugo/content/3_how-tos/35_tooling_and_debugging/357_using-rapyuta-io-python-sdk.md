@@ -95,6 +95,16 @@ To determine the unique identifier of the project in **rapyuta.io**:
 
 
 
+### Organization ID
+
+To determine the unique identifier of the organization in **rapyuta.io**:
+
+1. In the left navigation menu, select **Account** > **Organization**.
+3. Copy the organization ID as shown in the figure.
+
+![Find organization ID](/images/python-sdk-images/org-id.png?classes=border,shadow&width=40pc)
+
+
 ### Package ID
 
 To determine a rapyuta.io package's unique identifier:

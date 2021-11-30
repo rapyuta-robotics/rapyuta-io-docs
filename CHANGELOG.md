@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### Added
+- Grafana tutorial
+
 ## [6.1.8 - 2021-11-24]
 - added release notes
 
