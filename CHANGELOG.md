@@ -1,5 +1,17 @@
 # CHANGELOG
 
+### Added
+- Grafana tutorial
+
+## [6.1.8 - 2021-11-24]
+- added release notes
+
+## [6.1.6 - 2021-11-17]
+- fixed broker link on release notes
+
+## [6.1.5 - 2021-11-17]
+- added release updates
+
 ## [6.1.4 - 2021-10-27]
 - added release updates
 

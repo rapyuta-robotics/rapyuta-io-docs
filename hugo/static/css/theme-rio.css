@@ -84,12 +84,9 @@ h6 {
 }
 
 #body-inner b, strong {
-    font-weight: 500;
-    color: gray;
+    font-weight: 600;
     letter-spacing: 0px;
-    margin: 0 4px;
-    background: #fff5e4;
-    padding: 0px 9px;
+    color: var(--MAIN-TITLES-TEXT-color);
 }
 
 #navigation strong {
