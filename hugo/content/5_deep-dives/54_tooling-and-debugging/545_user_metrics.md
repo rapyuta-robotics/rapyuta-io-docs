@@ -34,13 +34,24 @@ Metrics help you to monitor applications. rapyuta.io platform can now collect cu
 Suppose a user application requires monitoring, additional metrics apart from the existing system metrics can now be collected to monitor their application.
 <br>For example, a robot.battery_charge metric provides information on the amount of charge present in the battery of the robot and a robot.distance_traveled metric provides information on the distance travelled across the warehouse. Suppose the application fails to send the robot to the charging station in case of low battery, additional information will not be present as the robot might shut itself down. In such a situation you can view the metric robot.battery_charge to conclude the reason for failure. rapyuta.io also provides Grafana with its custom data source to visualize such metrics.
 
+<!--
+TODO: remove comment after user metrics GA release. also, remove "Rapyuta IO Metrics Collector" section after that
+
 {{% notice note%}}
-Currently, user metrics is only supported on docker devices. For more information, see [Containerized: Docker Runtime](https://userdocs.rapyuta.io/5_deep-dives/51_managing-devices/511_device-runtime/#containerized-docker-runtime)
+Currently, user metrics is only supported on docker devices. For more information, see [Containerized: Docker Runtime](/5_deep-dives/51_managing-devices/511_device-runtime/#containerized-docker-runtime)
 {{% /notice %}}
 
 ### /io_metrics ROS topic
 
-A ROS deployment automatically starts the [ROS master](https://user-v12docs.apps.okd4v2.okd4beta.rapyuta.io/5_deep-dives/52_software-development/526_package-ros-support/#implicit-ros-master) and the **io_metrics_collector** ROS node which subscribes and listens to the **/io_metrics** ROS topic. Messages are sent from this ROS topic to the metrics pipeline which in turn is stored in the cloud. The metrics can be visualized using the Grafana data source.
+A ROS deployment automatically starts the [ROS master](/5_deep-dives/52_software-development/526_package-ros-support/#implicit-ros-master) and the **io_metrics_collector** ROS node which subscribes and listens to the **/io_metrics** ROS topic. Messages are sent from this ROS topic to the metrics pipeline which in turn is stored in the cloud. The metrics can be visualized using the Grafana data source.
+-->
+
+### Rapyuta IO Metrics Collector
+
+The following package can be imported and then deployed to run the metrics collector:
+
+{{< importpackage manifest="https://raw.githubusercontent.com/rapyuta-robotics/io_tutorials/master/io_manifests/io_metrics_collector/io_metrics_collector_v0.0.0_manifest.json" >}}
+Once deployed successfully on an AMD64 [Docker device](/5_deep-dives/51_managing-devices/511_device-runtime/#containerized-docker-runtime), **io_metrics_collector** ROS node will try to contact ROS master, and expose **/io_metrics** topic. Messages are sent from this ROS topic to the metrics pipeline which in turn is stored in the cloud. The metrics can be visualized using the Grafana data source.
 
 ### ROS Message Types
 
