@@ -48,7 +48,7 @@ A ROS deployment automatically starts the [ROS master](/5_deep-dives/52_software
 
 ### Rapyuta IO Metrics Collector
 
-The following package can be imported and then deployed to run the metrics collector:
+Import and deploy the following package to run the metrics collector:
 
 {{< importpackage manifest="https://raw.githubusercontent.com/rapyuta-robotics/io_tutorials/master/io_manifests/io_metrics_collector/io_metrics_collector_v0.0.0_manifest.json" >}}
 Once deployed successfully on an AMD64 [Docker device](/5_deep-dives/51_managing-devices/511_device-runtime/#containerized-docker-runtime), **io_metrics_collector** ROS node will try to contact ROS master, and expose **/io_metrics** topic. Messages are sent from this ROS topic to the metrics pipeline which in turn is stored in the cloud. The metrics can be visualized using the Grafana data source.
@@ -91,7 +91,7 @@ These metrics can be visualized using the Grafana data source. For more informat
 
 ### Install packaged Grafana data source
 
-Use the following steps to install the packaged Grafana data source.
+To install the packaged Grafana data source:
 
 1. Execute the following commands to fetch the packaged data source:
    ```bash
@@ -100,7 +100,7 @@ Use the following steps to install the packaged Grafana data source.
    wget -P /tmp https://grafanadatasource.blob.core.windows.net/grafanadatasource/rr-io-datasource-v0.0.0.zip
    unzip /tmp/rr-io-datasource-v0.0.0.zip -d /var/lib/grafana-plugins
    ```
-2. Add the following to grafana-server's config (See [Config file locations](https://grafana.com/docs/grafana/latest/administration/configuration/#config-file-locations)):
+2. Add the following to grafana-server's config. For more information, see [Config file locations](https://grafana.com/docs/grafana/latest/administration/configuration/#config-file-locations).
    ```bash
    [paths]
    plugins = /var/lib/grafana-plugins
