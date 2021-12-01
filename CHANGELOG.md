@@ -2,6 +2,7 @@
 
 ### Added
 - Grafana tutorial
+- User metrics (limited release)
 
 ## [6.1.8 - 2021-11-24]
 - added release notes
