@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## [6.1.9 - 2021-12-01]
+- added release notes
+
 ### Added
 - Grafana tutorial
 
