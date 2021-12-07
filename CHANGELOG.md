@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Unreleased
+
+### Added
+- added CLI website link in the sidebar
+
 ## [6.1.9 - 2021-12-01]
 - added release notes
 
