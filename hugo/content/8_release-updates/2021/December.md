@@ -12,11 +12,11 @@ Welcome to the December 08, 2021 release of the rapyuta.io platform.
  
 ### Improvements
 
-The following improvements have been made in the deployments list page:
+The following improvements have been made to the *Started* field in the deployments list page:
 
-* Only the time is displayed for deployments created in the last 24 hours. For example, *03:16 PM [about 2 hours ago]*
+* Only the time is displayed for deployments created in the last 24 hours. For example, *03:16 PM [about 2 hours ago]*. 
 
-* Only the date is displayed for deployments that are older than a day. For example, *30th Nov [7 days ago]*.
+* Only the date is displayed for deployments that are older than a day. For example, *30th Nov [7 days ago]*. Hover over the value to view the date and time details. For example, *30/11/2021, 6:10:00 PM*
 
 * To view the start and finish date for a particular deployment, hover your mouse over the value.
 
