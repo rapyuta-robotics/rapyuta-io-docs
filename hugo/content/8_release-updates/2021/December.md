@@ -12,15 +12,19 @@ Welcome to the December 08, 2021 release of the rapyuta.io platform.
  
 ### Improvements
 
-* Hover your mouse over the timestamp field to view the start and finish date for deployments.
+The following improvements have been made in the deployments list page:
 
-* The Improved the created at time column in deployment list (need to update this with more info)
+* Only the time is displayed for deployments created in the last 24 hours. For example, *03:16 PM [about 2 hours ago]*
+
+* Only the date is displayed for deployments that are older than a day. For example, *30th Nov [7 days ago]*.
+
+* To view the start and finish date for a particular deployment, hover your mouse over the value.
 
 ### Announcement
 
 * You can now access the [CLI Documentation](https://cli.rapyuta.io/) from the rapyuta.io documentation sidebar.
 
-* Checkout this [blog]() for more information on Rapyuta’s new Command Line Interface (CLI).
+* Checkout this [blog](https://www.rapyuta-robotics.com/2021/12/08/rapyutas-new-command-line-interface-cli/) for more information on Rapyuta’s new Command Line Interface (CLI).
 
 ### Bug Fixes
 
