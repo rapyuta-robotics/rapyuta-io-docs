@@ -50,12 +50,16 @@ disableSearch = false
     weight = 10
 
 [[menu.shortcuts]]
+    name = "<i class='fas fa-atlas'></i> CLI Reference"
+    url = "https://cli.rapyuta.io/"
+    weight = 11
+
+[[menu.shortcuts]]
     identifier = "freshdesk"
     name = "<i class='fas fa-envelope'></i> Contact support"
-    weight = 11
+    weight = 12
 
 [[menu.shortcuts]]
     name = "<i class='fas fa-globe'></i> Rapyuta Robotics"
     url = "https://www.rapyuta-robotics.com/"
-    weight = 12
-
+    weight = 13
