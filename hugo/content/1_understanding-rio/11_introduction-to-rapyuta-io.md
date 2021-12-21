@@ -34,8 +34,10 @@ It also provides platform-as-a-service to manage cloud services that solve techn
 
 It enables developers to develop robot-enabled solutions that can be more complex, encompass a variety of robots, scale further and operate in multiple geographic locations.
 
+## rapyuta.io Overview
 
-### Overview Map
+![ rapyuta.io Overview](/images/getting-started/rapyuta.io_overview.png "Overview")
+<!--### Overview Map
 
 > {{%expand "Secure onboarding and management of robots" %}}
 
@@ -72,7 +74,7 @@ To view the different layers of the rapyuta.io platform, [click here](/images/ch
 Get started with a [quick walkthrough](/2_getting-started/23_turtlesim_on_cloud). 
 
 
-## Vision
+<!--## Vision
 
 Our mission is to empower lives with connected machines. Machine - from
 robots, automation equipment, servers to network devices - connected and
