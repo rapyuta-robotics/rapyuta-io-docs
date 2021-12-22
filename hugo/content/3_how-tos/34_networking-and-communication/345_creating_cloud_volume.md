@@ -17,7 +17,7 @@ gettingStartedLinks: []
 popularLinks: []
 guideLinks: []
 introLinks: {}
-slug: '[ros]-creating-routed-networks'
+slug: 'managing disks'
 tags:
   - How to
 ---
