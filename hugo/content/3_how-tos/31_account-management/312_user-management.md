@@ -56,8 +56,8 @@ changes to **Activated**.
 ## Adding or Removing Users from a Project
 
 {{%notice note%}}
- Only the project creator can add or remove users from the project.
- However, the project’s creator cannot remove himself.
+ - Only the project creator can add or remove users from the project.
+ - However, the project’s creator cannot remove himself.
 {{%/notice %}}
 
 To add/remove users from the project, do the following:
