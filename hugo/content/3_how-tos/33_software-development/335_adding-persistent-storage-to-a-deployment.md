@@ -41,16 +41,7 @@ To preserve data files saved on the file server, deploy a persistent volume and 
 2. Click **Deploy package**.
 3. In the **Name of deployment** field, type a name for the volume storage package.
 4. By default, the **diskType** is SSD. It provisions an SSD for block storage.
-5. From the **Capacity** drop-down menu, select the disk memory requirement of the package. It refers to the size of block storage. You can select one of the following memories for the package.
-  * 4 GB
-  * 8 GB
-  * 16 GB
-  * 32 GB
-  * 64 GB
-  * 128 GB
-  * 256 GB
-  * 512 GB
-6. Click **CREATE DEPLOYMENT > Confirm**. The storage package is deployed.
+5. Click **CREATE DEPLOYMENT > Confirm**. The storage package is deployed.
 
 ## Adding Storage to a Deployment
 You can add the storage package as a dependent deployment. To add storage to a deployment, do the following.
