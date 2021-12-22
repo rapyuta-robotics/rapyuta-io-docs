@@ -6,6 +6,18 @@ date: 2021-12-01T00:00:46+05:30
 weight: 913
 ---
 
+## December 29
+
+Welcome to the December 29, 2021 release of the rapyuta.io platform.
+ 
+### Features
+
+* rapyuta.io now offers a unified storage management experience. You can now manage volumes using the **Disk** option present on the console. For more information, see [Managing disks](/3_how-tos/34_networking-and-communication/managing-disks/).
+
+### Announcement
+
+Support for the **Rapyuta IO Local Communication Broker** package will be stopped due to the introduction of routed networks. Kindly upgrade your existing package to avail it.
+
 ## December 08
 
 Welcome to the December 08, 2021 release of the rapyuta.io platform.
