@@ -16,7 +16,7 @@ Welcome to the December 29, 2021 release of the rapyuta.io platform.
 
 ### Announcement
 
-Support for the **Rapyuta IO Local Communication Broker** package will be stopped due to the introduction of routed networks. Kindly upgrade your existing package to avail it.
+Support for the **Rapyuta IO Local Communication Broker** package will be suspended due to the introduction of routed networks. Kindly upgrade your existing package to avail it.
 
 ## December 08
 
