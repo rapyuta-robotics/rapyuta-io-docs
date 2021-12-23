@@ -46,10 +46,11 @@ To preserve data files saved on the file server, deploy a persistent volume and 
 ## Adding Storage to a Deployment
 You can add the storage package as a dependent deployment. To add storage to a deployment, do the following.
 
-1. Deploy the package where you want to add the storage package as a dependent deployment. For more information, [click here](/3_how-tos/33_software-development/334_deploy-packages).
+1. Deploy the package where you want to add the storage package as a dependent deployment. For more information, see [Deploying Packages](/3_how-tos/33_software-development/334_deploy-packages).
 
-2. On the deployment page, click **Add Volume** and do the following.
+2. Add volume to manage your storage. For more information, see [Managing Disks](/3_how-tos/33_software-development/336_creating-cloud-volume)
 
+<!--
 ![add-volume](/images/core-concepts/deployments/adding-volume.png?classes=border,shadow&width=40pc)
 
 3. Select the package deployment from the **Deployment** drop-down menu.
@@ -57,7 +58,7 @@ You can add the storage package as a dependent deployment. To add storage to a d
 5. Add the path where you want to add the volume package in the **Mount Path** field.
 6. To create a deployment, click **Create Deployment>Confirm**. The storage deployment is added to the deployment.
 
-
+-->
 ## Related Links
 * [About Persistent Storage](/1_understanding-rio/12_core-concepts/#storage)
 * [Deploying a Package](/3_how-tos/33_software-development/334_deploy-packages)

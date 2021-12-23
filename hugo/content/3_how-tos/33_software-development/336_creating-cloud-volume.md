@@ -1,7 +1,7 @@
 ---
 title: Managing Disks
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
-weight: 345
+weight: 336
 versions:
   free-pro-team: '*'
   enterprise-server: '*'
@@ -17,7 +17,6 @@ gettingStartedLinks: []
 popularLinks: []
 guideLinks: []
 introLinks: {}
-slug: 'managing disks'
 tags:
   - How to
 ---
@@ -50,6 +49,6 @@ A disk cannot be deleted if the status is **Bound**. It is recommended to not de
 | Pending | The disk is trying to be deployed. |
 | Available | The disk is available to be deployed. |
 | Bound | The disk is attached to a deployment. |
-| Released |  |
+| Released | The disk is available to be deployed. |
 | Failed | The attachment has failed due to some errors. |
 
