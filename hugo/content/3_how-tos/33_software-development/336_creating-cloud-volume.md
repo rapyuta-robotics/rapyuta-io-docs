@@ -32,7 +32,7 @@ To create or delete a disk/volume instance:.
     1. Click **Create new disk**. The **Create new disk** page appears. Enter:
         | Field | Description |
         | --- | -------|
-        | Name | Specify a disk name. <need to add the criteria for disk name> |
+        | Name | Specify a disk name. The name should only contain alphanumeric characters, underscore and hyphen. The length should be between 3 and 75 characters.|
         | Capacity | Select the disk memory requirement of the package. It refers to the size of block storage. You can select from the displayed list. |
         | Labels | A set of key value pairs used to filter out resources. To add a label, click **Add label**.|
     2. Click **Create new disk**. The disk is created and it can be viewed in the disk dashboard.
