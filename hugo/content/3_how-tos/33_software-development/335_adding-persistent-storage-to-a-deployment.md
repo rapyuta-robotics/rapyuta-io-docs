@@ -48,7 +48,7 @@ You can add the storage package as a dependent deployment. To add storage to a d
 
 1. Deploy the package where you want to add the storage package as a dependent deployment. For more information, see [Deploying Packages](/3_how-tos/33_software-development/334_deploy-packages).
 
-2. Add volume to manage your storage. For more information, see [Managing Disks](/3_how-tos/33_software-development/336_creating-cloud-volume)
+2. Add volume to manage your storage. For more information, see [Managing Disks](/3_how-tos/33_software-development/336_creating-cloud-volume).
 
 <!--
 ![add-volume](/images/core-concepts/deployments/adding-volume.png?classes=border,shadow&width=40pc)
@@ -61,4 +61,3 @@ You can add the storage package as a dependent deployment. To add storage to a d
 -->
 ## Related Links
 * [About Persistent Storage](/1_understanding-rio/12_core-concepts/#storage)
-* [Deploying a Package](/3_how-tos/33_software-development/334_deploy-packages)
