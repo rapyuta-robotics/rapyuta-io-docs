@@ -12,7 +12,9 @@ Welcome to the December 29, 2021 release of the rapyuta.io platform.
  
 ### Features
 
-* rapyuta.io now offers a unified storage management experience. You can now manage volumes using the **Disk** option present on the console. For more information, see [Managing disks](/3_how-tos/34_networking-and-communication/managing-disks/).
+* rapyuta.io now offers a unified storage management experience. You can now manage volumes using the **Disk** option present on the console. For more information, see [Managing disks](/3_how-tos/34_networking-and-communication/336_managing-disks/).
+
+* You can now add volumes on devices by providing the mountPath and subPath for each required executable. For more information, see [Deploying Packages](/3_how-tos/33_software-development/334_deploy-packages).
 
 ### Announcement
 
