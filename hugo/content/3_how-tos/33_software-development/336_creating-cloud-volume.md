@@ -52,3 +52,4 @@ A disk cannot be deleted if the status is **Bound**. It is recommended to not de
 | Released | The disk is available to be deployed. |
 | Failed | The attachment has failed due to some errors. |
 
+For information on how to add mount paths for disks, see [Deploying Packages](/3_how-tos/33_software-development/334_deploy-packages).
