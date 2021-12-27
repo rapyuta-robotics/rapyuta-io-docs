@@ -35,20 +35,14 @@ The *Rapyuta IO Persistent Volume* is a storage package. A storage package is a 
 
 
 ## Creating Storage
-To preserve data files saved on the file server, deploy a persistent volume and add it to the package deployment.
-
-1. Select the public package, **Rapyuta IO Persistent Volume** from storage packages.
-2. Click **Deploy package**.
+To preserve data files saved on the file server, deploy a disk and add it to the package deployment. For more information, see [Managing Disks](/3_how-tos/33_software-development/336_creating-cloud-volume).
+<!--2. Click **Deploy package**.
 3. In the **Name of deployment** field, type a name for the volume storage package.
 4. By default, the **diskType** is SSD. It provisions an SSD for block storage.
-5. Click **CREATE DEPLOYMENT > Confirm**. The storage package is deployed.
+5. Click **CREATE DEPLOYMENT > Confirm**. The storage package is deployed.-->
 
 ## Adding Storage to a Deployment
-You can add the storage package as a dependent deployment. To add storage to a deployment, do the following.
-
-1. Deploy the package where you want to add the storage package as a dependent deployment. For more information, see [Deploying Packages](/3_how-tos/33_software-development/334_deploy-packages).
-
-2. Add volume to manage your storage. For more information, see [Managing Disks](/3_how-tos/33_software-development/336_creating-cloud-volume).
+You can add the storage package as a dependent deployment. For more information, see [Deploying Packages](/3_how-tos/33_software-development/334_deploy-packages).
 
 <!--
 ![add-volume](/images/core-concepts/deployments/adding-volume.png?classes=border,shadow&width=40pc)
