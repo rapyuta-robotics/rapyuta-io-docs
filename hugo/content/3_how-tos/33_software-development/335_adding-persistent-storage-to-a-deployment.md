@@ -29,10 +29,7 @@ tags:
 
 Applications running on the cloud de-allocate any resources consumed when they stop, scale down, or fail. This implies that the working storage associated with them is ephemeral. To get around this problem rapyuta.io provides a mechanism to consume persistent block storage for your applications running in the cloud. This storage can be associated with at most one running deployment at any given point in time. A user is typically required to manage the lifecycle of the application code independently from the associated storage.
 
-
-
-The *Rapyuta IO Persistent Volume* is a storage package. A storage package is a public package that is available to all users out of the box. You cannot delete or modify storage packages, and they are available to every user.
-
+rapyuta.io provides disk resources for managing persistent storage.
 
 ## Creating Storage
 To preserve data files saved on the file server, deploy a disk and add it to the package deployment. For more information, see [Managing Disks](/3_how-tos/33_software-development/336_creating-cloud-volume).
