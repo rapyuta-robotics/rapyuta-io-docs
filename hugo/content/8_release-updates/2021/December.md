@@ -16,10 +16,6 @@ Welcome to the December 29, 2021 release of the rapyuta.io platform.
 
 * You can now add volumes on devices by providing the mountPath and subPath for each required executable. For more information, see [Deploying Packages](/3_how-tos/33_software-development/334_deploy-packages). 
 
-### Announcement
-
-Support for the **Rapyuta IO Local Communication Broker** package will be suspended. You may alternatively use Routed/Native networks. Kindly upgrade your existing package to avail it.
-
 ## December 08
 
 Welcome to the December 08, 2021 release of the rapyuta.io platform.
