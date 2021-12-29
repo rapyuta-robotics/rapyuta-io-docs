@@ -29,53 +29,64 @@ tags:
 
 To deploy a package in rapyuta.io, follow the steps:
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Catalog**.
 2. Select the package you want to deploy.
-3. Click **Deploy package**.
+3. Click **Deploy package** and enter:
 
-4. In the **Name of deployment** box, enter a name for the specific deployment that you are creating for the package.
+    | Field | Description |
+    | ---   | --- |  
+    | Name | Specify the deployment name. |
+    | Labels | A set of key value pairs used to filter out resources. To add a label, click **Add label**.|
+    |Refresh the list of online devices | Click to retrieve an updated list of online devices.|
+    | Component Details | The component of the package can have either device or cloud runtime. If the runtime component is device, select the device from the **Select device for deploying the component** dropdown list. |
 
-5. A **LABEL** is a key-value pair. If you want to add a label, click **Add label**.
+{{%notice info%}}    
+The list of devices is a set of online devices, which are pre-filtered to match the architecture (amd64, arm32v7, arm64v8) and device runtime (docker or preinstalled) required by the component in question.
+{{% /notice %}}
 
-6. If a component of the package has **cloud** runtime, skip to instruction 9.
+4. Adding Volumes
+* Ensure that a running volume deployment is available before you add one.
+* Add device volume if the package has **device** runtime. To add **Device Volumes**, enter:
+  | Field | Description |
+  | --- | -------|
+  | Applicable Component | Select the package component to attach the volume package from the dropdown list. |
+  | Applicable executable | Select the executable from the dropdown list. |
+  | MountPath | Specify the path in the container where the referenced volume should be mounted. |
+  | SubPath | Specify the SubPath to mount only specific directory instead of the whole volume as root. SubPath allows you to share one volume for multiple uses. |
+* Add volume if the package has **cloud** runtime. To add **Volume**, enter:
+  | Field | Description |
+  | --- | -------|
+  | Disk | Select the disk to be mounted from the dropdown list. |
+  |Applicable Component | Select the package component to attach the volume package from the dropdown list. |
 
-7. If a component of the package has **device** runtime, you must select the device
+5. Adding Dependency  
+  To add a dependent deployment:
+    1. Click **Add dependency**.
+    2. Select a deployment ID from the dropdown list to add as a dependency.
 
-    you want to deploy the component on. Click **Refresh the list of online devices** to retrieve an updated list of online devices.
+6. ROS Bag Jobs
+  If the package has a component with `Is ROS` true, select a **Routed/Native Network** from the dropdown list
+  {{%notice info%}}
+  - If there are no **Routed/Native Network** successfully running, you cannot deploy the package. Please create a [Routed Network](/3_how-tos/34_networking-and-communication/ros-creating-routed-networks/) or a [Native Network](/5_deep-dives/53_networking-and-communication/535_ros-network-native/). 
+  - If you have a cloud component in your package, you can select only cloud routed networks.
+  - You cannot add a native network for a package with hybrid runtime.
+  {{%/notice%}}
 
-8. Select the device from the **Select device for deploying the component** drop-down list.
-{{%notice info%}}
-   The list of devices is a set of online devices, which are pre-filtered to match the architecture (amd64, arm32v7, arm64v8) and device runtime (docker or preinstalled) required by the component in question.
-{{%/notice%}}
-
-9. If the package has a component with `Is ROS` true, then you will need to select **Routed Network** from the drop-down list
-   1. ​	If there are no **Routed Network** successfully running, you would not be able to deploy the package. Please create a [Routed Network](/3_how-tos/34_networking-and-communication/ros-creating-routed-networks/) first. 
-   2. ​    If you have a cloud component in your package, you will be able to select only cloud routed networks.
-
-10. If you want to add a dependent deployment, click **Add dependency**, and select a deployment you want to add as a dependency from the drop-down list of deployment IDs.
-
-11. If you want to add a volume, click **Add volume**. Ensure that a running volume deployment is available before you add one.
-
-12. If you want to modify the initial setting of the restart policy of components with **device runtime**, click **Modify**.
-
-![Modify restart policy](/images/dev-guide/deployments/modify-restart-policy.png?classes=border,shadow&width=40pc)
-
-13.  Click **CREATE DEPLOYMENT** > **Confirm**.
-
-![Deploy demo package](/images/dev-guide/manage-software-lifecycle/deployment-routed-network.png?classes=border,shadow&width=40pc)
+7. Restart Policies
+    If you want to modify the initial setting of the restart policy of components with **device runtime**, click **Modify**.
+8. Click **CREATE DEPLOYMENT** and  **Confirm**.
 
 You will be redirected to the **Details** page of the newly created deployment.
 
-The package is successfully deployed when the green-colored bar moves from **In progress** to **Provisioning** to **Succeeded** indicating that the **DEPLOYMENT PHASE** has **succeeded** and the deployment **STATUS** is **Running**.
+On successful deployment, the Status changes to Running and the Deployment Phase changes to Succeeded.
 
-
-![Deployment example](/images/getting-started/deploy-pkg/demo-deployment.png?classes=border,shadow&width=50pc)
-
-Furthermore, if dependent deployments are added then each dependency's **STATUS** must read **Running**.
+Furthermore, if dependent deployments are added, the status of each should be **Running**.
 
 You may analyze the corresponding [deployment logs]({{< ref "/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs" >}}) generated while deploying a package.
 
+{{%notice info%}}
 If a deployment fails, the **DEPLOYMENT PHASE** will read **Failed to start**. You may have to click **Deprovision Deployment**, delete the package, create the package all over again, and try deploying it.
+{{%/notice%}}
 
 ## Update/Re-Deploy In-Place
 
