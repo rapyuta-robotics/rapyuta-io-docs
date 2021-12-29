@@ -6,6 +6,23 @@ date: 2021-12-01T00:00:46+05:30
 weight: 913
 ---
 
+## December 29
+
+Welcome to the December 29, 2021 release of the rapyuta.io platform.
+ 
+### Features
+
+* rapyuta.io now offers a unified storage management experience. You can now manage volumes using the **Disk** option present on the console. For more information, see [Managing Disks](/3_how-tos/33_software-development/336_creating-cloud-volume).
+
+* You can now add volumes on devices and also provide the mountPath and subPath for each required executable. For more information, see [Deploying Packages](/3_how-tos/33_software-development/334_deploy-packages). 
+
+* You can now login to rapyuta.io platform using google account.
+
+### SDK
+
+**rapyuta.io Python SDK [0.38.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**.
+* You can now manage device volumes using SDK.
+
 ## December 08
 
 Welcome to the December 08, 2021 release of the rapyuta.io platform.
