@@ -16,6 +16,8 @@ Welcome to the December 29, 2021 release of the rapyuta.io platform.
 
 * You can now add volumes on devices by providing the mountPath and subPath for each required executable. For more information, see [Deploying Packages](/3_how-tos/33_software-development/334_deploy-packages). 
 
+* You can now login to rapyuta.io platform using google account.
+
 ## December 08
 
 Welcome to the December 08, 2021 release of the rapyuta.io platform.
