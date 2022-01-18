@@ -51,6 +51,7 @@ In case of native network, multiple ROS environments (all ros nodes sharing the 
 * The platform only whitelists the topics/service mentioned in the package component, and the platform doesn't interpret or listen to the data flowing between them unlike in case of a routed network thus reducing the latency. It only shares publisher/service information on the network.
 * Scoped or targeted topics (service or action) are the functionalities of a routed network. In the case of a native network, topics are whitelisted in the form of **/*/topics** and you can use remap or add namespaces to these topics for communication. For more information on remapping, [click here](http://wiki.ros.org/roslaunch/XML/remap).
 * While deploying a package, you can mention [ROS Environment Alias](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/#ros-environment-aliases-runtime-identity-assignment) and [ROS Namespace](http://wiki.ros.org/ROS/EnvironmentVariables#ROS_NAMESPACE) in case of native network. You can click the ROS **Namespace** check box and the platform automatically sets the value of ROS_NAMESPACE environment variable same as the ROS environment alias to help you in doing namespacing.
+* If there is no ROS Endpoint configured in the package then Native Network will default to propagating everything
 
 
 {{%notice warning%}}
@@ -124,7 +125,6 @@ When you deploy a native network to a device, it is considered as a device nativ
 Native networks can be deployed to devices that fulfill the following requirements:
 
 * Any online device with docker runtime and AMD64 architecture
-* The **network_interface**  configuration variable must be set to a valid network interface name eg *enp1s0* that will be used by other deployments for communication to this native network.
 * **Restart policy**: Kindly refer to the [restart policy](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
 
 
@@ -132,7 +132,6 @@ Native networks can be deployed to devices that fulfill the following requiremen
 To use device native networks the user needs to re-onboard the device (to install and enable the new services). 
 Also ensure that cpuset and memory cgroups are enabled.
 
-If the user re-onboards the device the user needs to go and reset the `network_interface` config variable.
 
 
 For instance use native networks with a Raspberry-Pi consider adding the following in /boot/cmdline.txt. `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1` 
