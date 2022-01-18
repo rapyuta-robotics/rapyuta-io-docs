@@ -13,7 +13,7 @@ are significant updates in this release that we hope you will like.
 
 #### Improvements
 
-The following improvements have been made to the *Started* field in the deployments list page:
+The following improvements have been made related to native networks operational experience:
 
 * If there is no ROS Endpoint configured in the package then Native Network will now default to propagating everything
 * Mandatory prerequisite of setting config variable network_interface on device for native network is removed
