@@ -124,7 +124,6 @@ When you deploy a native network to a device, it is considered as a device nativ
 Native networks can be deployed to devices that fulfill the following requirements:
 
 * Any online device with docker runtime and AMD64 architecture
-* The **network_interface**  configuration variable must be set to a valid network interface name eg *enp1s0* that will be used by other deployments for communication to this native network.
 * **Restart policy**: Kindly refer to the [restart policy](/5_deep-dives/52_software-development/528_deployment-phase/#restart-policy).
 
 
@@ -132,7 +131,6 @@ Native networks can be deployed to devices that fulfill the following requiremen
 To use device native networks the user needs to re-onboard the device (to install and enable the new services). 
 Also ensure that cpuset and memory cgroups are enabled.
 
-If the user re-onboards the device the user needs to go and reset the `network_interface` config variable.
 
 
 For instance use native networks with a Raspberry-Pi consider adding the following in /boot/cmdline.txt. `cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1` 
