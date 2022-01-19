@@ -11,18 +11,18 @@ weight: 898
 Welcome to the January 19, 2022 release of the rapyuta.io platform. There
 are significant updates in this release that we hope you will like.
 
-#### Improvements
+### Improvements
 
 The following improvements have been made related to native networks operational experience:
 
 * If there is no ROS Endpoint configured in the package then Native Network will now default to propagating everything
 * Mandatory prerequisite of setting config variable network_interface on device for native network is removed
 
-#### Announcement
+### Announcement
 
 * Local communication broker package is deprecated now
 
-#### SDK
+### SDK
 
 **rapyuta.io Python SDK [0.39.0](/3_how-tos/35_tooling_and_debugging/rapyuta-io-python-sdk/#installation) released**
 
