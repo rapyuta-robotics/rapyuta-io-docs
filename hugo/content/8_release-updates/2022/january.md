@@ -13,7 +13,7 @@ are significant updates in this release that we hope you will like.
 
 ### Improvements
 
-The following improvements have been made to Native Networks(/5_deep-dives/53_networking-and-communication/535_ros-network-native):
+The following improvements have been made to [Native Networks](/5_deep-dives/53_networking-and-communication/535_ros-network-native):
 
 * If the package has no ROS settings then Native Network will now default to propagating everything
 * Mandatory prerequisite of setting config variable `network_interface` on device for native network is removed
