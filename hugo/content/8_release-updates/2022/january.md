@@ -2,7 +2,7 @@
 title: "January"
 description:
 type: release-updates
-date: 2022-01-19T17:52:46+05:30
+date: 2022-01-18T17:52:46+05:30
 weight: 898
 ---
 
