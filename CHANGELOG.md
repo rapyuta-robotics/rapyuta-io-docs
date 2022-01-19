@@ -1,7 +1,10 @@
 # CHANGELOG
 
 ## Unreleased
+
+## [6.2.0 - 2022-01-18]
 - added updates for native network improvements
+- added release notes
 
 ## [6.1.11 - 2021-12-29]
 - added release notes
