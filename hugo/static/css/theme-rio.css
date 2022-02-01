@@ -791,10 +791,60 @@ div.notices.warning p {
     background: #f2eeee!important;
 }
 
-
-
-
 div#freshwidget-overlay {
     background: black;
     opacity: 0.8;
+}
+
+h2 + * {
+    margin-top: 0 !important;
+}
+
+div.notices {
+    margin-bottom: 0;
+}
+
+div.notices > * {
+    margin: 0;
+    font-size: 14px;
+}
+
+div.notices > *:first-child:before {
+    position: absolute;
+    top: 2px;
+    color: #fff;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f06a";
+    left: 10px;
+}
+div.notices > *:first-child:after {
+    position: absolute;
+    top: 2px;
+    color: #fff;
+    left: 2rem;
+}
+div.notices.info > *:first-child:after {
+    content: 'Info';
+}
+div.notices.warning > *:first-child:after {
+    content: 'Warning';
+}
+div.notices.note > *:first-child:after {
+    content: 'Note';
+}
+div.notices.tip > *:first-child:after {
+    content: 'Tip';
+}
+div.notices > * {
+    border-top: 30px solid #71b0ff;
+    background: #E7F2FA;
+}
+div.notices.warning > * {
+    border-top: 30px solid #f87a30 ;
+    background: #f2eeee;
+}
+
+td > * {
+    margin: 0;
 }
