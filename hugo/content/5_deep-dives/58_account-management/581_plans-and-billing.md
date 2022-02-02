@@ -1,4 +1,4 @@
----
+<!--
 title: "Find a Plan"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 
@@ -77,3 +77,4 @@ The enterprise plan offers enterprise clients unfettered access to the platform,
 ## Related Links
 
 * [FAQ on Account Management]({{< ref "/7_FAQ/76_account-management">}})
+-->
