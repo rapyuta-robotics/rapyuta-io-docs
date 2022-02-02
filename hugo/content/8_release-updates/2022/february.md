@@ -1,9 +1,9 @@
 ---
-title: "January"
+title: "February"
 description:
 type: release-updates
 date: 2022-01-18T17:52:46+05:30
-weight: 898
+weight: 899
 ---
 
 New features enhancements, announcements and bug fixes in rapyuta.io.
