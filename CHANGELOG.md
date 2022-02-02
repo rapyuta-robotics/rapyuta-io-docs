@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## [6.2.1 - 2022-02-02]
+- removed pricing data
+- added release notes
+
 ## [6.2.0 - 2022-01-18]
 - added updates for native network improvements
 - added release notes
