@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## [6.2.2 - 2022-02-03]
+- resolved errors 
+
 ## [6.2.1 - 2022-02-02]
 - removed pricing data
 - added release notes
