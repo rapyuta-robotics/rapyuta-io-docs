@@ -28,37 +28,24 @@ introLinks: {}
 tags:
     - Deep Dive
 ---
+Monitoring metrics is important as it enables you to utilize, manage, and optimize resource usage. You can now visualize the following resource metrics in the rapyuta.io console: 
+  * CPU Usage - Displays the percentage of the CPU used.
+  * Memory Usage - Displays the total memory being used.
+  * Disk Usage - Displays the total disk space being used.
+  * Network In and Out - Displays the amount of data being sent and received in bytes.
+  * Disk IO - Displays the amount of data being read and written. 
 
-To view the metric data in the forms of a graph, do the following:
+To visualize the graphical representation of the metrics data:
 
-1. Click **Devices>All Devices** > select the device which is publishing ***/random*** topic > click **Metrics**.
-2. To visualize the data being published by a ROS topic, you will have to first subscribe to the ROS topic by clicking **Subscribe**. In this example, subscribe to the ***/random*** ROS topic.
-![Subscribe topic](/images/chapters/developer-guide/tooling-automation/metrics/click-subscribe.png?classes=border,shadow&width=50pc)
-![Subscribed topic](/images/chapters/developer-guide/tooling-automation/metrics/subscribe-rostopic.png?classes=border,shadow&width=50pc)
-1. To add a new visualization, click **Add Cell**.
-![Add Cell](/images/getting-started/add-cell.png?classes=border,shadow&width=70pc)
-1. Click **Add a Query**.
-![Add Query](/images/getting-started/add-query.png?classes=border,shadow&width=70pc)
-5. Select the ROS topic whose metrics need to be plotted on a graph. In this example, select the ***/random*** topic.
-![Select topic](/images/chapters/developer-guide/tooling-automation/metrics/select-random.png?classes=border,shadow&width=50pc)
-6. Select the topic's field like **data** in this example.
-![Select Data](/images/chapters/developer-guide/tooling-automation/metrics/select-data.png?classes=border,shadow&width=50pc)
-7. You may plot multiple functions such as mean, sum, the median in the same graph. Click on **1Function** button to open the list of functions available. Select the functions you want to visualize on the graph like *mean* in this example, and then click **Apply**.
-![Plot Function](/images/chapters/developer-guide/tooling-automation/metrics/select-function.png?classes=border,shadow&width=50pc)
-8. You may change the type of the graph by selecting one of the available graph forms like ***line***, ***stacked***, ***step-plot***, or ***bar***. In this example, a **Bar** graph is selected. To confirm the current settings, click the red-colored checkmark at the top-right corner.
-![Bar graph](/images/chapters/developer-guide/tooling-automation/metrics/bar-graph.png?classes=border,shadow&width=50pc)
-9. To edit the ***title*** of the graph, click the pencil icon at the top right corner of the cell as indicated by 1 in the below image.
-10. To modify the ***current graph settings***, click the wheel icon at the top right corner of the cell as indicated by 2 in the below image.
-11. To ***delete*** the cell, click on the cross mark at the top right corner of the cell as indicated by 3 in the below picture.
-![Graph Window Options](/images/getting-started/graph-window.png?classes=border,shadow&width=70pc)
-12. To change the refresh interval, click **Every 60 seconds** drop-down list and select your desired interval.
-13. To change the time range, click **Past 5 minutes** drop-down list and select your desired range.
-14. The final graph may look like the one below:
-![Final graph](/images/chapters/developer-guide/tooling-automation/metrics/graph-1.png?classes=border,shadow&width=50pc)
+1. In the rapyuta.io console, click **Devices > All Devices**, select the device and click the **Metrics** tab.  
+2. To change the time range, click **Past 5 minutes** drop-down menu and select the range. You can also set a **Custom interval** by specifying the time and date range.
+3. To change the refresh interval, select **Every minute** drop-down menu and select the interval.
+4. You can also customize the options that can be viewed in the graph. For example, in the image below, you can view the total amount of memory present and the amount used, to view only the usage, simply click on the **total** option to unselect it.
+5. You can use the slider below the graph to zoom in and view a sub section of the graph.
 
+![Metrics Graph](/images/chapters/developer-guide/tooling-automation/metrics/metrics-graph.png?classes=border,shadow&width=50pc)
 
 {{% notice note %}}
-The procedure to visualize the system metrics is the same as
-the procedure to visualize metrics from a ROS topic as explained
-above.
+To visualize more system metric, see [Deploying Grafana to Visualize Metrics](/4_tutorials/42_advanced/deploy-grafana/#deploying-grafana-to-visualize-metrics). 
 {{% /notice %}}
+
