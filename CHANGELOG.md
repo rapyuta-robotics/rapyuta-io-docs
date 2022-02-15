@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## [6.2.2 - 2022-02-16]
+- added release notes
+
 ## [6.2.2 - 2022-02-03]
 - resolved errors 
 
