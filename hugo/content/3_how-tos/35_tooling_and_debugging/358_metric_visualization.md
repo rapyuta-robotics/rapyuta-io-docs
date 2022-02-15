@@ -28,7 +28,7 @@ introLinks: {}
 tags:
     - Deep Dive
 ---
-Monitoring metrics is important as it enables you to utilize, manage, and optimize resource usage. You can now visualize the following resource metrics in the rapyuta.io console: 
+Monitoring metrics is important as it helps you understand resource usage in your devices. You can now visualize the following resource metrics in the rapyuta.io console: 
   * CPU Usage - Displays the percentage of the CPU used.
   * Memory Usage - Displays the total memory being used.
   * Disk Usage - Displays the total disk space being used.
@@ -46,6 +46,6 @@ To visualize the graphical representation of the metrics data:
 ![Metrics Graph](/images/chapters/developer-guide/tooling-automation/metrics/metrics-graph.png?classes=border,shadow&width=50pc)
 
 {{% notice note %}}
-To visualize more system metric, see [Deploying Grafana to Visualize Metrics](/4_tutorials/42_advanced/deploy-grafana/#deploying-grafana-to-visualize-metrics). 
+To visualize more system metrics, see [Deploying Grafana to Visualize Metrics](/4_tutorials/42_advanced/deploy-grafana/#deploying-grafana-to-visualize-metrics). 
 {{% /notice %}}
 
