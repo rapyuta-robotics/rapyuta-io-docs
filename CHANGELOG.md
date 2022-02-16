@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## [6.2.3 - 2022-02-16]
+- added release notes
+- updated common metrics topic
+
 ## [6.2.2 - 2022-02-03]
 - resolved errors 
 
