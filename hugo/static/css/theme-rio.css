@@ -848,3 +848,41 @@ div.notices.warning > * {
 td > * {
     margin: 0;
 }
+
+
+details {
+    margin: 20px 0;
+    max-height: 30px;
+    transition: max-height ease-in-out 0.5s;
+    overflow: hidden;
+}
+
+details summary {
+    position: relative;
+    padding-left: 40px;
+    font-size: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+
+details summary::before {
+    display: block;
+    width: 30px;
+    height: 30px;
+    content: '';
+    background: url('/images/expand-chevron.svg');
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+    transition: transform ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+details[open] {
+    max-height: 1000px;
+}
+
+details[open] summary::before {
+    transform: rotate(0);
+}
