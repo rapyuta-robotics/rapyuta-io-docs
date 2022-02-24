@@ -28,8 +28,7 @@ categories:
 
 Managing projects include creating and deleting projects as well as adding and removing users from the project.
 
-  > Any user in **Activated** state can create a new project. 
-  >
+  > Any activated user can create a new project. 
   > Only the project creator can delete a project.
  
  ## Creating or Deleting a Project

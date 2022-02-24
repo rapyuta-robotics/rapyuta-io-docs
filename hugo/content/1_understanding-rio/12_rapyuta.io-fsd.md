@@ -23,5 +23,6 @@ guideLinks: []
 introLinks: {}
 
 ---
+This feature scope description highlights the features offered by rapyuta.io.
 
 ![Feature Scope Description](/images/getting-started/fsd.png "FSD")

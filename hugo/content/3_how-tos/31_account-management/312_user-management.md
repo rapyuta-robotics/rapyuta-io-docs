@@ -30,14 +30,14 @@ categories:
 ## Adding Users to an Organization
 
 {{%notice note%}}
- Only the  **Admin** of an organization can invite users to the rapyuta.io console.
+ Only the  **Admin** of an organization can invite users to their organization.
 {{%/notice %}}
 
 To invite or add users to the rapyuta.io platform, do the following:
 
 1. On the left navigation bar, click **Account > Organization**. The panel displays a list of users.
 
-2. On **Users** tab, enter a valid email address of the user you want to invite to the rapyuta.io console.
+2. On **Users** tab, enter a valid email address of the user you want to invite to rapyuta.io.
 
 3. Click **ADD USER**.
 
