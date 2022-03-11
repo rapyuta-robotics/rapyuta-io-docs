@@ -37,14 +37,10 @@ tags:
     * Robot Operating System (ROS)
     * [Kinetic Kame](http://wiki.ros.org/kinetic), [Melodic Morenia](http://wiki.ros.org/melodic), or [Noetic Ninjemys](http://wiki.ros.org/noetic)
 
-
 {{%notice note%}}
-* By default, Ubuntu(16.04 and 18.04) resolves the hostname to localhost. If this is changed on the host OS, roscore will not start. 
-* To check if roscore starts, do `nslookup $(hostname)`, this should return a DNS record.
+ * By default, Ubuntu(16.04 and 18.04) resolves the hostname to localhost. If this is changed on the host OS, roscore will not start. 
+ * To check if roscore starts, do `nslookup $(hostname)`, this should return a DNS record.
 {{%/notice%}}
-
-
-
 
 ### Register a New Device
 To register a new device on rapyuta.io:
@@ -52,24 +48,25 @@ To register a new device on rapyuta.io:
 1. In the left navigation bar, click **Devices > All Devices**.
 2. Click **ADD NEW DEVICE** and enter:
 
-| Field | Description |
-| ----- | ---------- |
-| Device Name | Enter a name for the device. |
-| Use docker compose as default runtime | You can choose to build the application's source code inside the device or outside it. <br> Select this option if you want to build the application's source code in rapyuta.io platform and push the build to the device remotely and specify:<br> * ROS version - From the dropdown, select the version based on the ROS version of your device. <br> * Rosbag mount path - Provide the path to store the ROS bag files on the device. The default path is `/opt/rapyuta/volumes/rosbag`. <br> **Note:** After you onboard a device, you cannot change the mount path to store the ROS bag files. If you want to change the mount path after adding the device, you can re-onboard the device and change the mount path.<br> 
-Do not select this option if the application's source code is locally built on the device, and specify: <br> * ROS Catkin Workspace - Provide the absolute path of your catkin workspace. If you are using a custom rapyuta.io image on the device, your catkin workspace will be `/home/rapyuta/catkin_ws` where *catkin_ws* is the name of the catkin workspace. Otherwise, you will have a different absolute path for your catkin workspace. <br> **Note:**  The **ROS Catkin Workspace** value can be empty, and you can provide this value on the device's **Details** page. |
+   | Field | Description |
+   | ------- | ---------- |
+   | Device Name | Enter a name for the device. |
+   | Use docker compose as default runtime | You can choose to build the application's source code inside the device or outside it. <br> If you want to build the application's source code in rapyuta.io platform and push the build to the device remotely, select this option and specify the **ROS version** and **ROS mount path**. <br> If the application's source code is locally built on the device, deselect this option and specify the **ROS Catkin Workspace** {{%notice note%}}
+ * By default, Ubuntu(16.04 and 18.04) resolves the hostname to localhost. If this is changed on the host OS, roscore will not start. 
+ * To check if roscore starts, do `nslookup $(hostname)`, this should return a DNS record.
+{{%/notice%}} |
+   | ROS version | From the drop-down, select the version based on the ROS version of your device. |
+   | Rosbag mount path | Enter the path to store the ROS bag files on the device. The default path is `/opt/rapyuta/volumes/rosbag`. <br> **Note:** After you onboard a device, you cannot change the mount path to store the ROS bag files. If you want to change the mount path after adding the device, you can re-onboard the device and change the mount path. |
+   | ROS Catkin Workspace | Enter the absolute path of your catkin workspace. If you are using a custom rapyuta.io image on the device, your catkin workspace will be `/home/rapyuta/catkin_ws` where *catkin_ws* is the name of the catkin workspace. Otherwise, you will have a different absolute path for your catkin workspace. <br> **Note:**  The **ROS Catkin Workspace** value can be empty, and you can provide this value on the device's **Details** page. |
+   | Description | Enter a summary of the device. |
+   | Python Version | Select the device's python version from the drop-down menu. |
 
-
-  
-
-6. In the **Description** box, enter a summary of the device.
-7. Select the python version for the device from the **Python Version** drop-down menu. 
-8. Click **CONTINUE**.
-9.  To copy the generated token (a unique device setup link), click **COPY**.    
-   You must copy the token before it expires in *ten* minutes. To generate
-   the token again, click **Token** on the **Devices** page.
-   ![Device Token](/images/getting-started/add-new-device/device-token.png?classes=border,shadow&width=40pc)
-
-
+3. Click **CONTINUE**.
+4. Click **COPY**, to copy the generated token (a unique device setup link).  
+   {{%notice note%}}
+   The token expires in **10** minutes. To re-generate the token, click **Token** on the **Devices** page.
+   {{%/notice%}}
+   
 **What to do next:** Adding a device to the rapyuta.io platform does not mean that the device is connected. To connect your device to the platform, you must [set up the device](/3_how-tos/32_device-management/321_onboarding-a-device/#setting-up-your-device).
 
 
