@@ -38,7 +38,7 @@ You can create packages using the source code from a private git repository. A s
 
 ## Creating Source Secret
 
-To create a source secret for the private git repository, do the following:
+To create a source secret for the private git repository:
 
 1. On the left navigation bar, click **Account > Secrets**.
 
