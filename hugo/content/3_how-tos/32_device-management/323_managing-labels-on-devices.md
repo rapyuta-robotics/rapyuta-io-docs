@@ -1,7 +1,6 @@
 ---
 
 title: "Managing Labels on devices"
-intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 weight: 323
 versions:
   free-pro-team: '*'
@@ -27,18 +26,17 @@ tags:
   - How to
 ---
 
-Labels are key-value pairs that help you associate configuration parameters with
-a group of devices or a particular device.
+Labels are key-value pairs that help you associate configuration parameters with a group of devices or a particular device.
 
-You can **tag** your **Devices>All Devices** with as many labels as you need. 
+You can **tag** your **Devices > All Devices** with as many labels as you need. 
 {{%notice note%}}
-Ensure that the keys of all the labels of a device are **unique**.
+Ensure that the keys of all the device labels are **unique**.
 {{%/notice%}}
 
 ## Adding Labels
-To add a new label to a device, do the following 
+To add a new label to a device:
 
-1. In the left navigation bar, click **Devices>All Devices**. A list of added devices is displayed.
+1. In the left navigation bar, click **Devices > All Devices**. A list of added devices is displayed.
 
 2. On the **Details** tab, find the **LABELS** section.
 
@@ -53,7 +51,7 @@ In this example, the value is **Japan**
 ![apply configuration parameters](/images/getting-started/apply-config-paramas/add-device-label.png?classes=border,shadow&width=70pc)
 
 
-## Modifying Labels
+## Managing Labels
 
 * You can **Modify existing labels** by changing their keys or/and values and clicking **Save**.
 
