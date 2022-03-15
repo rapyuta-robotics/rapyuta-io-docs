@@ -41,29 +41,57 @@ You can create packages using the source code from a private git repository. A s
 
 {{< tabs >}}
 {{% tab name="UI" %}}
-To create a source secret for the private git repository, do the following:
+To create a source secret for the private git repository:
 
 1. On the left navigation bar, click **Account > Secrets**.
+
 2. Click **ADD NEW SECRET**.
+
 3. In the **Create new secret** dialog, select **Source secret**.
+
 4. In the **Name** field, enter a name for the source secret. For example, *_source-secret-name_*.
-   {{%notice info%}}
+
+  {{%notice info%}}
    The name should be less than 253 characters.
    It must consist of lower case alphanumeric characters or hyphen(-).
    It must begin and end with an alphanumeric character.
-   {{%/notice%}}
+  {{%/notice%}}
 5. From the **Authentication** drop-down menu, select either one of the following.
+
    1. **Basic authentication**: Select this option if you want to authenticate a user with either a git access token or username and password.
+
       1. **Password**: If you have selected this option, type your git username and password in the **Username**, and **Password** fields respectively.
+
       2. **Token**: If you have selected this option, type the corresponding git access token in the **Token** field.
+
    2. **SSH authentication**: Select this option if you want to authenticate a user with a private SSH key of a git repository.
+
       1. Enter the SSH key of your git repository in the **SSH Key** fields.
+
 7. Click **Submit**. The secret source is created.
 
 {{% /tab %}}
 {{% tab name="CLI" %}}
+
+To gain Git Access:
 ```Bash
-rio project select <project_name>
+rio secret create –t source <secret_name>
 ```
+Select the source secret type, if you select `basic-auth`, specify the *username* and *password*.
+```Bash
+Source secret type[basic-auth, ssh]: basic-auth
+git username: <user_name>
+git password: <password>
+```
+If you select `ssh`, specify the *ssh key path*.
+```Bash
+Source secret type[basic-auth, ssh]: ssh
+ssh key path: <path to key-file>
+```
+To import the secret:
+```Bash
+rio secret import ssh
+```
+
 {{% /tab %}}
 {{< /tabs >}}
