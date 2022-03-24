@@ -29,51 +29,44 @@ tags:
 
 ## Creating Device Configuration
 
- **rapyuta.io** allows you to create a dynamic configuration that holds the parameter files into a tree-like hierarchical structure called a **configuration hierarchy**. These configuration parameters are applied to the robots to achieve the desired behavior for the robot. 
+ **rapyuta.io** allows you to create a dynamic configuration that holds the parameter files in a tree-like hierarchical structure known as a **configuration hierarchy**. These configuration parameters are applied to the robots to achieve their desired behavior.
 
-To create a dynamic configuration, do the following.
+To create a dynamic configuration:
 
-1. Click **CONFIGURATIONS > ADD NEW CONFIGURATION**.
+1. In the rapyuta.io console, select **Development > Configurations > ADD NEW CONFIGURATION**.
   
-2. In the **Add new configuration** pop-up window,
-   type a name for the configuration and click **Confirm**.
+2. In the **Add new configuration** pop-up window, enter the configuration name and click **CONFIRM**
    The new configuration name is added to the **Configuration Name** list. 
 
-3. To configure the root node (configuration name), click the configuration name.
+3. To configure the root node, select the configuration name.
 
-4. Hover over the root node. It allows you to create an attribute node and base configuration file.
+4. Hover over the root node to view the additional actions that can be performed.
+
+    a. To create an attribute node:
+      * Select **Add attribute**, enter the attribute name and click **CONFIRM**.
+
+    b. To Add/upload a base configuration file:
+      * Select **Add file**. The **Create new file** window is displayed. In the **Create new file** window, enter:
+        | Field | Description |
+        | ------- | ---------- |
+        | File type | Select either YAML or Binary as the file type from the drop-down menu.  |
+        | File name | If the file type is YAML, enter the name for the file and click **CONFIRM**. You can add You can add the configuration in the File Contents section. For example, see [click here](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-yaml-file-format). <br> If the file type is Binary, upload or drag a binary configuration file from the local machine and click **CONFIRM**. For example, [click here](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-binary-file-format).   |
+      
+    c. To apply the configuration, select the devices to apply configuration and click **CONFIRM**.
+
+    d. To Delete the configuration, select the delete icon and click **CONFIRM**.
 
   ![YAML file](/images/core-concepts/configurations/root-node-actions.png?classes=border,shadow&width=25pc)
 
-  
-   {{% notice info %}}
-  You can add only one attribute node but multiple base configuration files 
-  from the root node.
-     {{% /notice %}}
-
-5. Click **Add file**. The **Create new file** window is displayed. In the **Create new file** window, do the following.
-
-6. From the **File type** drop-down menu, select either YAML or Binary file.<br/>
-
-7. If you have selected the file type as YAML, in the File name field, type a name for the file and click **Confirm**. You can add the configuration in the File Contents area. To see an example, [click here](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-yaml-file-format). 
-
-  ![YAML file](/images/core-concepts/configurations/yaml-file.png?classes=border,shadow&width=30pc)
-
-8. If you have selected the file type as Binary, in the File type field, you can upload or drag a binary configuration file from the local machine. To see an example, [click here](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-binary-file-format).
-
-  ![Binary file](/images/core-concepts/configurations/binary-file.png?classes=border,shadow&width=30pc)
-
-9. Click **Confirm**. The device configuration is created.
-
-  The configuration parameter hierarchy is created. You can apply the configurations to a device now. For more information, see [Applying Dynamic Configurations](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#applying-configuration-to-devices)
-
-  
+  {{% notice info %}}
+  You can add only one attribute node but multiple base configuration files from the root node.
+  {{% /notice %}}
 
   ### Rules for writing YAML configuration parameters
 
-  There are a set of rules that you must adhere to when writing a configuration parameters file. They are:
+  Following are a set of rules that you must adhere to when writing a configuration parameters file:
 
-   * A space character always follows a colon (:) and a hyphen (-). For instance,
+   * A space character always follows a colon (:) and a hyphen (-). For example,
 
      ```yaml
 
@@ -117,6 +110,7 @@ To create a dynamic configuration, do the following.
       f:
          - g
          - h
+    ```     
   
    
 * If you add a new item to a default list parameter, it is appended to the list.
@@ -151,14 +145,10 @@ To create a dynamic configuration, do the following.
 
 ## Creating a configuration parameter in YAML file format 
 
-
   rapyuta.io allows you to add the configuration parameters at every value node including the root node. When you hover and click the value node to add a configuration file, you get an option to choose to write the configuration parameter in YAML format or upload the configurations directly from your local machine.
 
   
-
   In the following procedure, the configuration parameter for a RGV robot is written in YAML format.
-
-  
 
   1. Log on to **rapyuta.io** console and on the left navigation bar, click **Configurations>Add New Configuration**.
 

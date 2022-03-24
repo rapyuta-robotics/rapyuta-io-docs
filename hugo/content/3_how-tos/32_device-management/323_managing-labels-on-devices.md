@@ -28,36 +28,28 @@ tags:
 
 Labels are key-value pairs that help you associate configuration parameters with a group of devices or a particular device.
 
-You can **tag** your **Devices > All Devices** with as many labels as you need. 
+You can tag your devices with multiple labels. 
 {{%notice note%}}
-Ensure that the keys of all the device labels are **unique**.
+The keys of all the device labels must be **unique**.
 {{%/notice%}}
-
-## Adding Labels
-To add a new label to a device:
-
-1. In the left navigation bar, click **Devices > All Devices**. A list of added devices is displayed.
-
-2. On the **Details** tab, find the **LABELS** section.
-
-3. Enter the **key** of the label to the left of the **:**     
- In this example, the key is **country**
-
-4. Enter the value of the label to the right of **:**     
-In this example, the value is **Japan**
-
-5. Click **Add label**. The labels are added to the device.
-
-![apply configuration parameters](/images/getting-started/apply-config-paramas/add-device-label.png?classes=border,shadow&width=70pc)
-
 
 ## Managing Labels
 
-* You can **Modify existing labels** by changing their keys or/and values and clicking **Save**.
+1. To add a new label:
 
-* You can **Delete a label** by clicking on the delete icon next to it. 
+    a. In the left navigation bar, select **Devices > All Devices**. 
+      A list of devices is displayed.
 
+    b. Select a device and click the **Details** tab.
+    
+    c. Under **Labels**, enter the **key** and **value**.   
+      For example, if the key is **Country**, the value can be **Japan**.
+    
+    d.Click **Add label**. The labels are added to the device.
 
+2. To modify an existing label, edit the keys or/and values.
+
+3. To delete a label, click on the delete icon.  
 
 ## Related Links
 
