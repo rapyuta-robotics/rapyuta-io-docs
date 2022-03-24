@@ -1,8 +1,6 @@
 ---
 
 title: "User Metrics"
-intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
-
 weight: 545
 
 versions:
@@ -29,28 +27,46 @@ tags:
     - Deep Dive
 ---
 
-Metrics help you to monitor applications. rapyuta.io platform can now collect custom metrics based on user requirement.
+Metrics help you to monitor applications. rapyuta.io platform can now collect custom metrics based on user requirement. rapyuta.io also provides Grafana with its custom data source to visualize such metrics.
 
 Suppose a user application requires monitoring, additional metrics apart from the existing system metrics can now be collected to monitor their application.
 
 ## Device User Metrics
-Device metrics are the logs of data collected to monitor your applications. <br>For example, a robot.battery_charge metric provides information on the amount of charge present in the battery of the robot and a robot.distance_traveled metric provides information on the distance traveled across the warehouse. Suppose the application fails to send the robot to the charging station in case of low battery, additional information will not be present as the robot might shut itself down. In such a situation you can view the metric robot.battery_charge to conclude the reason for failure. rapyuta.io also provides Grafana with its custom data source to visualize such metrics.
+Device user metrics are custom metrics collected from devices to monitor your applications. <br>For example, a robot.battery_charge metric provides information on the amount of charge present in the battery of the robot and a robot.distance_traveled metric provides information on the distance traveled across the warehouse. Suppose the application fails to send the robot to the charging station in case of low battery, additional information will not be present as the robot might shut itself down. In such a situation you can view the metric robot.battery_charge to conclude the reason for failure. 
 
 ### Rapyuta IO Metrics Collector
 Import and deploy the following package to run the metrics collector:
-{{< importpackage manifest="https://raw.githubusercontent.com/rapyuta-robotics/io_tutorials/master/io_manifests/io_metrics_collector/io_metrics_collector_v0.0.0_manifest.json" >}}
-Once deployed successfully on an AMD64 [Docker device](/5_deep-dives/51_managing-devices/511_device-runtime/#containerized-docker-runtime), **io_metrics_collector** ROS node will try to contact ROS master, and expose **/io_metrics** topic. Messages are sent from this ROS topic to the metrics pipeline, which is stored in the cloud. The metrics can be visualized using the Grafana data source.
+{{< importpackage manifest="https://raw.githubusercontent.com/rapyuta-robotics/io_tutorials/master/io_manifests/io_metrics_collector/io_metrics_collector_v0.1.0_manifest.json" >}}
+Once deployed successfully on an AMD64 [Docker device](/5_deep-dives/51_managing-devices/511_device-runtime/#containerized-docker-runtime), **/io_metrics_collector** ROS node will try to contact ROS master, and expose **/io_metrics** topic. Messages are sent from this ROS topic to the metrics pipeline, which is stored in the cloud. The metrics can be visualized using the Grafana data source.
+For more information on **/io_metrics topic**, see [/io_metrics ROS topic](/5_deep-dives/54_tooling-and-debugging/545_user_metrics/#io_metrics-ros-topic)
 
 ## Cloud User Metrics
-Cloud metrics are the logs of data that a cloud infrastructure or application generates. It helps you analyze your system, to determine when your servers are under load and requires provisioning. <br>For example, an HTTP server application uses the request_duration metric to collect information about the number of requests and the request duration. 
+Cloud user metrics are custom metrics collected from Cloud Deployments. They help you analyze your applications that are running on the Cloud. <br>For example, an HTTP server application uses the request_duration metric to collect information about the number of requests and the request duration. The *Deployment ID* and *Name* are automatically added as tags to these metrics. This helps you distinguish metrics of different deployments.
+
+### ROS Endpoint
+ROS deployments can use the /io_metrics ROS topic for publishing metrics. For more information, see [/io_metrics ROS topic](/5_deep-dives/54_tooling-and-debugging/545_user_metrics/#io_metrics-ros-topic).
 
 ### UDP Endpoint
-Use UDP endpoint in applications where speed is more critical when no connection needs to be established between the source and destination before you transmit data. UDP provides low overhead data transport.
-You can send UDP messages to host `$IO_METRICS_HOST` and port `$IO_METRICS_UDP_PORT`.
+Use UDP endpoint in applications where speed is more critical and when no connection needs to be established between the source and destination before you transmit data. UDP provides low overhead data transport.<br>
+You can send UDP messages to host `$IO_METRICS_HOST` at port `$IO_METRICS_UDP_PORT`.
+
+Following is a sample UDP request using netcat:
+
+```bash
+echo -n '{"name": "http_duration", "tags": {"method": "GET", "path": "/api/v0"}, "fields": {"seconds": 1.2}}' | netcat -u  $IO_METRICS_HOST $IO_METRICS_UDP_PORT
+```
+You can view a complete sample Python application [here](https://github.com/rapyuta-robotics/io_tutorials/tree/master/talk/cloud_metrics_publisher). 
 
 ### HTTP Endpoint
-Use HTTP endpoint for reliable data transfer. You can send HTTP request to host `$IO_METRICS_HOST` and port `$IO_METRICS_UDP_PORT`.
+Use HTTP endpoint for reliable data transfer. <br>
+You can send HTTP request to host `$IO_METRICS_HOST` at port `$IO_METRICS_UDP_PORT`.
 
+Following is a sample HTTP request using curl:
+
+```sh
+curl -XPOST $IO_METRICS_HOST:$IO_METRICS_HTTP_PORT/io_metrics --data '{"name": "http_duration", "tags": {"method": "GET", "path": "/api/v0"}, "fields": {"seconds": 1.2}}'
+```
+You can view a complete sample Python application [here](https://github.com/rapyuta-robotics/io_tutorials/tree/master/talk/cloud_metrics_publisher). 
 <!--
 TODO: remove comment after user metrics GA release. also, remove "Rapyuta IO Metrics Collector" section after that
 
@@ -63,7 +79,7 @@ Currently, user metrics is only supported on docker devices. For more informatio
 A ROS deployment automatically starts the [ROS master](/5_deep-dives/52_software-development/526_package-ros-support/#implicit-ros-master) and the **io_metrics_collector** ROS node which subscribes and listens to the **/io_metrics** ROS topic. Messages are sent from this ROS topic to the metrics pipeline which in turn is stored in the cloud. The metrics can be visualized using the Grafana data source.
 -->
 
-## io_metrics ROS topic
+## /io_metrics ROS topic
 ### ROS Message Types
 
 The ROS message type for **/io_metric** uses the [ros_monitoring_msgs](https://github.com/aws-robotics/monitoringmessages-ros1) package, which also has binary Ubuntu packages. <br>
