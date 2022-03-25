@@ -48,7 +48,7 @@ ROS deployments can use the /io_metrics ROS topic for publishing metrics. For mo
 
 ### UDP Endpoint
 Use UDP endpoint in applications where speed is more critical and when no connection needs to be established between the source and destination before you transmit data. UDP provides low overhead data transport.<br>
-You can send UDP messages to host `$IO_METRICS_HOST` at port `$IO_METRICS_UDP_PORT`, which are environment variables automatically available to your Deployment Executables. .
+You can send UDP messages to host `$IO_METRICS_HOST` at port `$IO_METRICS_UDP_PORT`, where the $IO_METRICS_HOST and $IO_METRICS_UDP_PORT are environment variables that are automatically available for your Deployment Executables.
 
 Following is a sample UDP request using netcat:
 
@@ -59,7 +59,7 @@ You can view a complete sample Python application [here](https://github.com/rapy
 
 ### HTTP Endpoint
 Use HTTP endpoint for reliable data transfer. <br>
-You can send HTTP request to host `$IO_METRICS_HOST` at port `$IO_METRICS_HTTP_PORT`, which are environment variables automatically available to your Deployment Executables..
+You can send HTTP request to host `$IO_METRICS_HOST` at port `$IO_METRICS_HTTP_PORT`, where the $IO_METRICS_HOST and $IO_METRICS_UDP_PORT are environment variables that are automatically available for your Deployment Executables.
 
 Following is a sample HTTP request using curl:
 
