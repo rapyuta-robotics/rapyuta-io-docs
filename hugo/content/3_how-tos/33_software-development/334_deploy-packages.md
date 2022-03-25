@@ -29,7 +29,7 @@ tags:
 
 To deploy a package in rapyuta.io, follow the steps:
 
-1. On the left navigation bar, click **Development > Catalog**.
+1. In the rapyuta.io console, select **Development > Catalog**.
 2. Select the package you want to deploy.
 3. Click **Deploy package** and enter:
 
@@ -65,25 +65,30 @@ The list of devices is a set of online devices, which are pre-filtered to match 
     2. Select a deployment ID from the dropdown list to add as a dependency.
 
 6. ROS Bag Jobs
-  If the package has a component with `Is ROS` true, select a **Routed/Native Network** from the dropdown list
+  To add a ROS Bag Jobs:
+    1. Click **Add ROS Bag Job**.
+    2. Specify the required details. For more information, see [Working with ROS Bag Jobs](/3_how-tos/35_tooling_and_debugging/working-with-rosbags/#adding-ros-bag-jobs)
+
+7. Routed or Native Network
+   To add a Routed or Native Network:
+   1. Click **Add**
+   2. Select a routed/native network from the **Network** dropdown list. 
+   3. Select the topics to be configured with each network from the **Topics** dropdown list.
   {{%notice info%}}
-  - If there are no **Routed/Native Network** successfully running, you cannot deploy the package. Please create a [Routed Network](/3_how-tos/34_networking-and-communication/ros-creating-routed-networks/) or a [Native Network](/5_deep-dives/53_networking-and-communication/535_ros-network-native/). 
+  - For information on how to create a routed or native network, see [Routed Network](/3_how-tos/34_networking-and-communication/ros-creating-routed-networks/) or [Native Network](/5_deep-dives/53_networking-and-communication/535_ros-network-native/). 
   - If you have a cloud component in your package, you can select only cloud routed networks.
   - You cannot add a native network for a package with hybrid runtime.
   {{%/notice%}}
+   You can also view the details related to topic configuration in the dependency composition graph on the **Deployment Details** page. For more information, see [Dependency Composition](/4_tutorials/42_advanced/dependency-composition/).
 
-7. Restart Policies
+8. Restart Policies
     If you want to modify the initial setting of the restart policy of components with **device runtime**, click **Modify**.
-8. Click **CREATE DEPLOYMENT** and  **Confirm**.
 
-You will be redirected to the **Details** page of the newly created deployment.
-
-On successful deployment, the Status changes to Running and the Deployment Phase changes to Succeeded.
-
-Furthermore, if dependent deployments are added, the status of each should be **Running**.
-
-You may analyze the corresponding [deployment logs]({{< ref "/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs" >}}) generated while deploying a package.
-
+9. Click **CREATE DEPLOYMENT** and  **Confirm**.
+  You will be redirected to the **Details** page of the newly created deployment.
+  On successful deployment, the Status changes to Running and the Deployment Phase changes to Succeeded.
+  Additionally, if dependent deployments are added, the status of each should be **Running**.
+  You may analyze the corresponding [deployment logs]({{< ref "/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs" >}}) generated while deploying a package.
 {{%notice info%}}
 If a deployment fails, the **DEPLOYMENT PHASE** will read **Failed to start**. You may have to click **Deprovision Deployment**, delete the package, create the package all over again, and try deploying it.
 {{%/notice%}}
