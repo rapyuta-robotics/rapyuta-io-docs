@@ -74,11 +74,13 @@ The list of devices is a set of online devices, which are pre-filtered to match 
    1. Click **Add**
    2. Select a routed/native network from the **Network** dropdown list. 
    3. Select the topics to be configured with each network from the **Topics** dropdown list.
-  {{%notice info%}}
-  - For information on how to create a routed or native network, see [Routed Network](/3_how-tos/34_networking-and-communication/ros-creating-routed-networks/) or [Native Network](/5_deep-dives/53_networking-and-communication/535_ros-network-native/). 
-  - If you have a cloud component in your package, you can select only cloud routed networks.
-  - You cannot add a native network for a package with hybrid runtime.
-  {{%/notice%}}
+
+{{%notice Note%}}
+For information on how to create a routed or native network, see [Routed Network](/3_how-tos/34_networking-and-communication/ros-creating-routed-networks/) or [Native Network](/5_deep-dives/53_networking-and-communication/535_ros-network-native/). <br>
+If you have a cloud component in your package, you can select only cloud routed networks.<br>
+You cannot add a native network for a package with hybrid runtime.
+{{%/notice%}}
+
    You can also view the details related to topic configuration in the dependency composition graph on the **Deployment Details** page. For more information, see [Dependency Composition](/4_tutorials/42_advanced/dependency-composition/).
 
 8. Restart Policies
