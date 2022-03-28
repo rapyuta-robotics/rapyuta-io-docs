@@ -53,7 +53,6 @@ To switch from *example-0* to *example-3*, you will follow the below instruction
 
 > Only the creator of a project can delete the project. To delete a project, do the following.
 
-
 1. In the left navigation bar, click **Account>Project**. The project dashboard is displayed.
 2. In the project dashboard, click **Delete** against the project that you want to delete.   
 

@@ -118,3 +118,41 @@ After you upgrade your device to python 3, you must [set up the device](/3_how-t
 ## Related Links
 * [About Devices](/1_understanding-rio/12_core-concepts/#device-management)
 * [About Docker Runtime](/5_deep-dives/51_managing-devices/511_device-runtime/#dockercompose-runtime-for-device)
+
+### Register a New Device
+To register a new device on rapyuta.io:
+
+{{< tabs >}}
+{{% tab name="UI" %}}
+1. In the left navigation bar, click **Devices > All Devices**.
+2. Click **ADD NEW DEVICE** and enter:
+
+   | Field | Description |
+   | ------- | ---------- |
+   | Device Name | Enter a name for the device. |
+   | Use docker compose as default runtime | You can choose to build the application's source code inside the device or outside it. <br> If you want to build the application's source code in rapyuta.io platform and push the build to the device remotely, select this option and specify the **ROS version** and **ROS mount path**. <br> If the application's source code is locally built on the device, deselect this option and specify the **ROS Catkin Workspace** |
+   | ROS version | From the drop-down, select the version based on the ROS version of your device. |
+   | Rosbag mount path | Enter the path to store the ROS bag files on the device. The default path is `/opt/rapyuta/volumes/rosbag`.{{%notice note%}}
+   After you onboard a device, you cannot change the mount path to store the ROS bag files. If you want to change the mount path after adding the device, you can re-onboard the device and change the mount path. 
+   {{%/notice%}} |
+   | ROS Catkin Workspace | Enter the absolute path of your catkin workspace. If you are using a custom rapyuta.io image on the device, your catkin workspace will be `/home/rapyuta/catkin_ws` where *catkin_ws* is the name of the catkin workspace. Otherwise, you will have a different absolute path for your catkin workspace. {{%notice note%}}
+   The **ROS Catkin Workspace** value can be empty, and you can provide this value on the device's **Details** page. 
+   {{%/notice%}} |
+   | Description | Enter a summary of the device. |
+   | Python Version | Select the device's python version from the drop-down menu. |
+3. Click **CONTINUE**.
+4. Click **COPY**, to copy the generated token (a unique device setup link).  
+   {{%notice note%}}
+   The token expires in **10** minutes. To re-generate the token, click **Token** on the **Devices** page.
+   {{%/notice%}}
+{{% /tab %}}
+{{% tab name="CLI" %}}
+To create a project:
+```Bash
+rio device create <device_name> 
+--runtime <device_runtime> 
+--ros <ros_distro> 
+--python <python_version>
+```
+{{% /tab %}}
+{{< /tabs >}}

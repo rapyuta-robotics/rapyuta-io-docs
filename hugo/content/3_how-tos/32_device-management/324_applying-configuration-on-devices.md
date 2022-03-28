@@ -42,17 +42,16 @@ To create a dynamic configuration:
 
 4. Hover over the root node to view the additional actions that can be performed.
 
-    a. To create an attribute node:
-      * Select **Add attribute**, enter the attribute name and click **CONFIRM**.
+    a. To create an attribute node, select **Add attribute**, enter the attribute name and click **CONFIRM**. For more information, see []()
 
-    b. To Add/upload a base configuration file:
-      * Select **Add file**. The **Create new file** window is displayed. In the **Create new file** window, enter:
+    b. To Add/upload a base configuration file, select **Add file**. You can create the configuration parameters in YAML or Binary file format. For more information see, []().
+    The **Create new file** window is displayed. In the **Create new file** window, enter:
         | Field | Description |
         | ------- | ---------- |
         | File type | Select either YAML or Binary as the file type from the drop-down menu.  |
         | File name | If the file type is YAML, enter the name for the file and click **CONFIRM**. You can add You can add the configuration in the File Contents section. For example, see [click here](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-yaml-file-format). <br> If the file type is Binary, upload or drag a binary configuration file from the local machine and click **CONFIRM**. For example, [click here](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-binary-file-format).   |
       
-    c. To apply the configuration, select the devices to apply configuration and click **CONFIRM**.
+    c. To apply the configuration, select the devices to apply configuration and click **CONFIRM**. For more information, see []().
 
     d. To Delete the configuration, select the delete icon and click **CONFIRM**.
 
@@ -145,14 +144,11 @@ To create a dynamic configuration:
 
 ## Creating a configuration parameter in YAML file format 
 
-  rapyuta.io allows you to add the configuration parameters at every value node including the root node. When you hover and click the value node to add a configuration file, you get an option to choose to write the configuration parameter in YAML format or upload the configurations directly from your local machine.
+  rapyuta.io allows you to add the configuration parameters at every value node including the root node. You can either write the configuration parameter in YAML format or upload the configurations directly from your local machine. 
 
-  
-  In the following procedure, the configuration parameter for a RGV robot is written in YAML format.
-
-  1. Log on to **rapyuta.io** console and on the left navigation bar, click **Configurations>Add New Configuration**.
-
-  2. In the **Add new configuration** pop-up window, type a name for the configuration and click **Confirm**. For this example, type the name **config_1**.
+ To create the configuration parameter for a RGV robot in YAML format, create a config parameter, as described [here](). For example, create a parameter named **config_1** and perform the following steps:
+ 
+  1. In the **Add new configuration** pop-up window, type a name for the configuration and click **Confirm**. For this example, type the name **config_1**.
     The new configuration name is added to the **Configuration Name** list. To configure the root node (configuration name), click **Config_1** from the list.
 
   3. Hover over **Config_1** and add an attribute as **country**.
