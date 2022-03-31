@@ -37,12 +37,19 @@ To deploy the **Rapyuta IO Grafana** package:
 2. Select the package **Rapyuta IO Grafana**, and click **Deploy package**.
 3. In the **Name of deployment** field, type ```Grafana```.
 4. Under **VOLUMES**, select **Add volume**. 
+
    a. Select **Disks** from the **Deployments** dropdown.
+
    b. Select **grafana** from the **Applicable component** dropdown.
+
 5. Under **VOLUMES**, select **Add mount path**.
+
     a. Select **grafana** from the **Applicable executable** dropdown.
+
     b. Enter ```/var/lib/grafana``` in the **Mount path fields**.
+
     c. The **Subpath** field remains empty.
+    
 6. Click **Create Deployment** to proceed.
    On successful deployment, the **Status** changes to *Running* and the **Deployment Phase** changes to *Succeeded*.
  
