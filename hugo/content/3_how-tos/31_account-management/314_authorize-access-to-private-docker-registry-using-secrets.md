@@ -64,14 +64,17 @@ To create a docker secret for a private docker registry, do the following:
 {{% /tab %}}
 {{% tab name="CLI" %}}
 To gain Git Access:
-```Bash
+```bash
 rio secret create -t docker <secret_name>
 ```
 Specify the username, password, email id, and import docker.
-```Bash
+```bash
 docker username: <user_name>
 docker password: <password>
 docker email: <email>	
+```
+To automatically import Docker credentials from the environment:
+```bash
 rio secret import docker
 ```
 {{% /tab %}}

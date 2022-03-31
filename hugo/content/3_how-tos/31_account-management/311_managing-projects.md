@@ -68,7 +68,7 @@ Consider two projects, *example-0* and *example-3*. To switch from *example-0* t
 3. Now you are in *example-3* project namespace.
 {{% /tab %}}
 {{% tab name="CLI" %}}
-```Bash
+```bash
 rio project select <project_name>
 ```
 {{% /tab %}}

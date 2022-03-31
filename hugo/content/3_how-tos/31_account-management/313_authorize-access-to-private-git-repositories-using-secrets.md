@@ -73,7 +73,7 @@ To create a source secret for the private git repository:
 {{% /tab %}}
 {{% tab name="CLI" %}}
 
-To gain Git Access:
+To access the private source repositories:
 ```Bash
 rio secret create –t source <secret_name>
 ```
