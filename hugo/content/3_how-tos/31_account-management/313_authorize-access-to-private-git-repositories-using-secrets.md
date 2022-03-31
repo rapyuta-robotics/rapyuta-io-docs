@@ -88,7 +88,7 @@ If you select `ssh`, specify the path to the SSH Private key.
 Source secret type[basic-auth, ssh]: ssh
 ssh key path: <path to key-file>
 ```
-To import the secret:
+To automatically import secrets from the environment:
 ```Bash
 rio secret import ssh
 ```
