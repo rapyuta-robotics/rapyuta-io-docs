@@ -74,22 +74,22 @@ To create a source secret for the private git repository:
 {{% tab name="CLI" %}}
 
 To access the private source repositories:
-```Bash
+```bash
 rio secret create –t source <secret_name>
 ```
 Select the source secret type, if you select `basic-auth`, specify the *username* and *password*.
-```Bash
+```bash
 Source secret type[basic-auth, ssh]: basic-auth
 git username: <user_name>
 git password: <password>
 ```
 If you select `ssh`, specify the path to the SSH Private key.
-```Bash
+```bash
 Source secret type[basic-auth, ssh]: ssh
 ssh key path: <path to key-file>
 ```
 To automatically import secrets from the environment:
-```Bash
+```bash
 rio secret import ssh
 ```
 
