@@ -42,7 +42,7 @@ On successful deployment, the **Status** changes to *Running* and the **Deployme
 To deploy the **Rapyuta IO Grafana** package:
 
 1. On the left navigation menu, select **Development** >  **Catalog**.
-2. Select the package **Rapyuta IO IO Grafana**, and click **Deploy package**.
+2. Select the package **Rapyuta IO Grafana**, and click **Deploy package**.
 3. In the **Name of deployment** field, type ```Grafana```.
 4. Under **VOLUMES**, select **Add volume**. 
 
