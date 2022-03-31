@@ -63,7 +63,7 @@ To create a docker secret for a private docker registry, do the following:
 
 {{% /tab %}}
 {{% tab name="CLI" %}}
-To gain Git Access:
+To access private Docker registries:
 ```Bash
 rio secret create -t docker <secret_name>
 ```
