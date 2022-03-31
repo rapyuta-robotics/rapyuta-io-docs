@@ -83,12 +83,12 @@ Source secret type[basic-auth, ssh]: basic-auth
 git username: <user_name>
 git password: <password>
 ```
-If you select `ssh`, specify the *ssh key path*.
+If you select `ssh`, specify the path to the SSH Private key.
 ```Bash
 Source secret type[basic-auth, ssh]: ssh
 ssh key path: <path to key-file>
 ```
-To import the secret:
+To automatically import secrets from the environment:
 ```Bash
 rio secret import ssh
 ```
