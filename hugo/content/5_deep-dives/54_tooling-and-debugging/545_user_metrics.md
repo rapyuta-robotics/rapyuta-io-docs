@@ -59,7 +59,7 @@ You can view a complete sample Python application [here](https://github.com/rapy
 
 ### HTTP Endpoint
 Use HTTP endpoint for reliable data transfer. <br>
-You can send HTTP request to host `$IO_METRICS_HOST` at port `$IO_METRICS_HTTP_PORT`, where the $IO_METRICS_HOST and $IO_METRICS_UDP_PORT are environment variables that are automatically available for your Deployment Executables.
+You can send HTTP request to host `$IO_METRICS_HOST` at port `$IO_METRICS_HTTP_PORT`, where the $IO_METRICS_HOST and $IO_METRICS_HTTP_PORT are environment variables that are automatically available for your Deployment Executables.
 
 Following is a sample HTTP request using curl:
 
@@ -82,7 +82,7 @@ A ROS deployment automatically starts the [ROS master](/5_deep-dives/52_software
 ## /io_metrics ROS topic
 ### ROS Message Types
 
-The ROS message type for **/io_metric** uses the [ros_monitoring_msgs](https://github.com/aws-robotics/monitoringmessages-ros1) package, which also has binary Ubuntu packages. <br>
+The ROS message type for **/io_metrics** uses the [ros_monitoring_msgs](https://github.com/aws-robotics/monitoringmessages-ros1) package, which also has binary Ubuntu packages. <br>
 To use them in your ROS applications, add  `<depend>ros_monitoring_msgs</depend>` to the package.xml file as shown in this [sample application](https://github.com/shivamMg/io_tutorials/blob/feature/user_metrics/talk/metrics_publisher/package.xml).  
 Alternatively, you can manually install it using the following commands.
 
