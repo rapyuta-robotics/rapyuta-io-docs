@@ -44,7 +44,7 @@ To deploy a package in rapyuta.io, follow the steps:
 The list of devices is a set of online devices, which are pre-filtered to match the architecture (amd64, arm32v7, arm64v8) and device runtime (docker or preinstalled) required by the component in question.
 {{% /notice %}}
 
-4. Adding Volumes
+4. Adding Volumes <br>
 * Ensure that a running volume deployment is available before you add one.
 * Add device volume if the package has **device** runtime. To add **Device Volumes**, enter:
   | Field | Description |
@@ -59,17 +59,17 @@ The list of devices is a set of online devices, which are pre-filtered to match 
   | Disk | Select the disk to be mounted from the dropdown list. |
   |Applicable Component | Select the package component to attach the volume package from the dropdown list. |
 
-5. Adding Dependency  
+5. Adding Dependency <br>
   To add a dependent deployment:
     1. Click **Add dependency**.
     2. Select a deployment ID from the dropdown list to add as a dependency.
 
-6. ROS Bag Jobs
+6. ROS Bag Jobs <br>
   To add a ROS Bag Jobs:
     1. Click **Add ROS Bag Job**.
     2. Specify the required details. For more information, see [Working with ROS Bag Jobs](/3_how-tos/35_tooling_and_debugging/working-with-rosbags/#adding-ros-bag-jobs)
 
-7. Routed or Native Network
+7. Routed or Native Network <br>
    To add a Routed or Native Network:
    1. Click **Add**
    2. Select a routed/native network from the **Network** dropdown list. 
@@ -91,7 +91,7 @@ You cannot add a native network for a package with hybrid runtime.
   On successful deployment, the Status changes to Running and the Deployment Phase changes to Succeeded.
   Additionally, if dependent deployments are added, the status of each should be **Running**.
   You may analyze the corresponding [deployment logs]({{< ref "/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs" >}}) generated while deploying a package.
-  
+
 {{%notice info%}}
 If a deployment fails, the **DEPLOYMENT PHASE** will read **Failed to start**. You may have to click **Deprovision Deployment**, delete the package, create the package all over again, and try deploying it.
 {{%/notice%}}
