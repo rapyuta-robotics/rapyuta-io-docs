@@ -91,6 +91,7 @@ You cannot add a native network for a package with hybrid runtime.
   On successful deployment, the Status changes to Running and the Deployment Phase changes to Succeeded.
   Additionally, if dependent deployments are added, the status of each should be **Running**.
   You may analyze the corresponding [deployment logs]({{< ref "/3_how-tos/35_tooling_and_debugging/354_view-deployment-logs" >}}) generated while deploying a package.
+  
 {{%notice info%}}
 If a deployment fails, the **DEPLOYMENT PHASE** will read **Failed to start**. You may have to click **Deprovision Deployment**, delete the package, create the package all over again, and try deploying it.
 {{%/notice%}}
