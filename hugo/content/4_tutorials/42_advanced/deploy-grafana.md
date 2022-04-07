@@ -27,7 +27,7 @@ Let's begin by importing the Rapyuta IO Grafana package into your account.
 
 Deploy a disk with a capacity of 4GB. For more information, see [Managing Disks](/3_how-tos/33_software-development/336_creating-cloud-volume/#creating-or-deleting-disks)
 
-Disk can be deployed only when the disk status is **Available**. For more information, see [Disk Status](/3_how-tos/33_software-development/336_creating-cloud-volume/#disk-status)
+Disk has been successfully deployed only when the disk status is **Available**. For more information, see [Disk Status](/3_how-tos/33_software-development/336_creating-cloud-volume/#disk-status)
 
 ## Step 3: Deploy Rapyuta IO Grafana Package
 
