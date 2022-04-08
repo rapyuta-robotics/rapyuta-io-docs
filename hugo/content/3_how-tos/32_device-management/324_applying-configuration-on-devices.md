@@ -47,7 +47,7 @@ To create a dynamic configuration:
     b. To Add/upload a base configuration file, select **Add file**. You can create the configuration parameters in YAML or Binary file format. For more information see, []().
     The **Create new file** window is displayed. In the **Create new file** window, enter:
         | Field | Description |
-        | ------- | ---------- |
+        | -------   | ---------- |
         | File type | Select either YAML or Binary as the file type from the drop-down menu.  |
         | File name | If the file type is YAML, enter the name for the file and click **CONFIRM**. You can add You can add the configuration in the File Contents section. For example, see [click here](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-yaml-file-format). <br> If the file type is Binary, upload or drag a binary configuration file from the local machine and click **CONFIRM**. For example, [click here](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-binary-file-format).   |
       
