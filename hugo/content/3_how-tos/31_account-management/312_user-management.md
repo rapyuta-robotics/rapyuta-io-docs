@@ -86,4 +86,5 @@ To remove a user from a project, do the following.
 ## Related Links
 
 * [About Project](/1_understanding-rio/12_core-concepts/#projects)
+* [Resetting Password](/how-to-guides/account-management/managing-user-profiles/#editing-profiles)
 
