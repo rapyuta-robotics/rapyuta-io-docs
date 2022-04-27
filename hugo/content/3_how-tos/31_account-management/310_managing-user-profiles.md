@@ -1,6 +1,6 @@
 ---
 title: Managing User Profiles
-weight: 311
+weight: 310
 versions:
   free-pro-team: '*'
   enterprise-server: '*'
@@ -33,12 +33,13 @@ To edit user profiles:
 
 1. In the rapyuta.io console, click your profile name present on the top right corner. 
 2. Select your profile to navigate to the **Manage profile** page.
-3. Under **Profile details**, update the **First name**, **Last name** and click **Update**.
-4. Click **Change** to update the email. In the Update email dialog, enter the **Current password**, **New email** and click **Update**.
-{{%notice info%}}
-If you update your email, you will be logged out of your current session. A verification mail will be sent to your new email id. Verify your email id and login with your new credentials. 
-{{%/notice%}}
-5. Click **Change Password** to change your password.
+3. You could perform the following updates:
+  * Under **Profile details**, update the **First name**, **Last name** and click **Update**.
+  * Click **Change** to update the email. In the Update email dialog, enter the **Current password**, **New email** and click **Update**.
+  {{%notice info%}}
+  If you update your email, you will be logged out of your current session. A verification mail will be sent to your new email id. Verify your email id and login with your new credentials. 
+  {{%/notice%}}
+  * Click **Change Password** to change your password.
 
 
 ## Switch Between Organizations
