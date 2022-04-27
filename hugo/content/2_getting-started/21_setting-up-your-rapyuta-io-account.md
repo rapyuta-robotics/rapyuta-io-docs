@@ -38,6 +38,10 @@ To set up your rapyuta.io account:
    a. Enter your **Email address**.
    b. Enter the **Password** and confirm the same.
    c. Click **SIGN UP**.
+5. A verification email is sent to your email address. Click the **Verify Email**  to complete your registration process.
+   > If you can't see an invitation email in your inbox, check your spam folder. 
+6. The rapyuta.io platform opens, and the **Term and Conditions of Use** message is displayed. Click **I have read and agree to the terms of this Agreement** to acknowledge the message and click **Continue**.
+
 
 2. Click sign-up and do the following.
   1. From the **Plan** drop-down, select either **Community** or **Professional** as per your usage. 
@@ -58,11 +62,8 @@ To set up your rapyuta.io account:
 
 After you successfully activate your plan, Your account is now ready to be used.
 
-
-### Creating your First Project
-
 All resources on rapyuta.io reside within projects. 
-To begin using the platform, create your project by complete the following steps.
+To begin using the platform, create your project. For more information on creating your project, see [Creating a Project](/how-to-guides/account-management/managing-projects/#creating-a-project).
 
 
 1. In the left navigation bar, click **Account>Project**. The project dashboard is displayed.
