@@ -36,7 +36,7 @@ Device user metrics are custom metrics collected from devices to monitor your ap
 
 ### Rapyuta IO Metrics Collector
 Import and deploy the following package to run the metrics collector:
-{{< importpackage manifest="https://raw.githubusercontent.com/rapyuta-robotics/io_tutorials/master/io_manifests/io_metrics_collector/io_metrics_collector_v0.1.0_manifest.json" >}}
+{{< importpackage manifest="https://raw.githubusercontent.com/rapyuta-robotics/io_tutorials/master/io_manifests/io_metrics_collector/io_metrics_collector_v0.2.0_manifest.json" >}}
 Once deployed successfully on an AMD64 [Docker device](/5_deep-dives/51_managing-devices/511_device-runtime/#containerized-docker-runtime), **/io_metrics_collector** ROS node will try to contact ROS master, and expose **/io_metrics** topic. Messages are sent from this ROS topic to the metrics pipeline, which is stored in the cloud. The metrics can be visualized using the Grafana data source.
 For more information on **/io_metrics topic**, see [/io_metrics ROS topic](/5_deep-dives/54_tooling-and-debugging/545_user_metrics/#io_metrics-ros-topic)
 
