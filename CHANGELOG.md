@@ -7,7 +7,7 @@
 - Grafana tutorial: importing dashboard
 
 
-## [6.2.8 - 2022-05-05]
+## [6.2.8 - 2022-05-09]
 - added release notes
 
 ## [6.2.7 - 2022-04-12]
