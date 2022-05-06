@@ -67,6 +67,10 @@ To create a docker secret for a private docker registry, do the following:
 
 8. Click **SUBMIT**. The docker secret for the rapyuta.io platform is created.
 
+{{%notice info%}}
+  To edit a secret, click the edit icon under **Action**.
+{{%/notice%}}
+
 ## Authorization Token
 
 When you create a docker pull secret for a private registry, rapyuta.io stores your docker credentials (that is, username and password) in base64-encoded format. This encoded data is the *_ authorization token_* which gives access to rapyuta.io to pull private docker images while deploying a package.
