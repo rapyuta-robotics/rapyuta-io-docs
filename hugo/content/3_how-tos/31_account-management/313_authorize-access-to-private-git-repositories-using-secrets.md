@@ -66,4 +66,8 @@ To create a source secret for the private git repository, do the following:
 7. If you select **SSH Authentication** from the **Authentication Type** drop-down list, type the SSH key of your git repository in the **SSH Key** fields.
 ​    ![SSH authentication](/images/core-concepts/source-secret/sshauth.png?classes=border,shadow&width=40pc) 
 
-7. Click **Submit**. The secret source is created.
+8. Click **Submit**. The secret source is created.
+
+{{%notice info%}}
+  To edit the secret, click the edit icon under **Action**.
+{{%/notice%}}

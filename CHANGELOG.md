@@ -1,6 +1,26 @@
 # CHANGELOG
 
 ## Unreleased
+### Added
+- Cloud user metrics docs
+### Changed
+- Grafana tutorial: importing dashboard
+
+
+## [6.2.8 - 2022-05-09]
+- added release notes
+
+## [6.2.7 - 2022-04-12]
+- added release notes
+
+## [6.2.6 - 2022-04-05]
+- added release notes
+
+## [6.2.5 - 2022-03-16]
+- added release notes
+
+## [6.2.4 - 2022-02-24]
+- added an announcement in release notes
 
 ## [6.2.3 - 2022-02-16]
 - added release notes
