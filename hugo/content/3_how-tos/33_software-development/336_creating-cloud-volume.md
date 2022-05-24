@@ -25,7 +25,7 @@ tags:
 
 Manage your storage by creating disks on the rapyuta.io console.
 
-To create or delete a disk/volume instance:.
+To create or delete a disk/volume instance:
 
 1. On the left navigation bar, click **Development> Disks**.
 2. To create a disk:
