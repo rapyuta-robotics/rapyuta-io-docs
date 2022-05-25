@@ -3,6 +3,7 @@
 ## Unreleased
 ### Added
 - Cloud user metrics docs
+- Switch Organization docs
 ### Changed
 - Grafana tutorial: importing dashboard
 
