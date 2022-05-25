@@ -1,5 +1,5 @@
 ---
-title: Common Use cases
+title: Tools and Services at a Glance
 versions:
   free-pro-team: '*'
   enterprise-server: '*'
