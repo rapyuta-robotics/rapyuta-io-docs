@@ -41,4 +41,14 @@ To edit user profiles:
   {{%/notice%}}
   * Click **Change Password** to change your password.
 
+## Switch Between Organizations
 
+To switch between organizations:
+
+1. In the rapyuta.io console, click your profile name present on the top right corner. 
+2. Select the organization you want to switch to from the **Selected organization** dropdown.
+3. Alternatively, under **Organization**, click the tick present next to the organization you want to select. 
+{{%notice info%}}
+Once the organization is changed, the project list is updated too.
+{{%/notice%}}
+For more information on how to switch between projects, see [Switch between Projects]/how-to-guides/account-management/managing-projects/#switch-between-projects)

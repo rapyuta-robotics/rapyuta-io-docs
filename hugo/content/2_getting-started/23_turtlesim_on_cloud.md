@@ -86,7 +86,7 @@ This communication pattern works well on a single machine, or in a local area ne
 
 A key limitation of the ROS1 communication mechanism comes from the fragility of a single ROS Master shared between nodes both on the same device or on the same LAN.  This makes the system especially susceptible to network fluctuations and ROS Master failures. 
 
-ROS Routed networks are a key component in this seamless communication scheme. For more information about routed network, [click here](/5_deep-dives/53_networking-and-communication/531_ros-network/)
+ROS Routed networks are a key component in this seamless communication scheme. For more information about routed network, [click here](/5_deep-dives/53_networking-and-communication/531_ros-network-routed)
 {{%/expand%}}
 
 ## Step 2: Import Packages
