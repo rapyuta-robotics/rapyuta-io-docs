@@ -69,7 +69,7 @@ To register a new device on rapyuta.io:
          </tr>
          <tr>
             <td> Rosbag mount path </td>
-            <td>Enter the path to store the ROS bag files on the device. The default path is `/opt/rapyuta/volumes/rosbag`. {{%notice note%}} After you onboard a device, you cannot change the mount path to store the ROS bag files. If you want to change the mount path after adding the device, you can re-onboard the device 	and change the mount path. 
+            <td> Enter the path to store the ROS bag files on the device. The default path is `/opt/rapyuta/volumes/rosbag`. {{%notice note%}} After you onboard a device, you cannot change the mount path to store the ROS bag files. If you want to change the mount path after adding the device, you can re-onboard the device 	and change the mount path. 
       {{%/notice%}}  </td>
          </tr>
          <tr>
