@@ -38,11 +38,15 @@ To set up your rapyuta.io account:
    a. Enter your **Email address**.
    b. Enter the **Password** and confirm the same.
    c. Click **SIGN UP**.
-5. A verification email is sent to your email address. Click the **Verify Email**  to complete your registration process.
+5. A verification email is sent to your email address. Click **Verify Email** to complete your registration process.
    > If you can't see an invitation email in your inbox, check your spam folder. 
-6. The rapyuta.io platform opens, and the **Term and Conditions of Use** message is displayed. Click **I have read and agree to the terms of this Agreement** to acknowledge the message and click **Continue**.
+6. Enter your login credentials to Sign In.
 
+{{%notice note%}}
+rapyuta.io offers customized enterprise plans, you can meet our representatives to understand the plan that best suits you. To schedule a call, click [here](https://meetings.hubspot.com/krishna-r).
+{{%/notice %}}
 
+<!-->
 2. Click sign-up and do the following.
   1. From the **Plan** drop-down, select either **Community** or **Professional** as per your usage. 
   2. In the **Name**, **Email**, **Password**, and **Confirm Password** fields, enter your details in the respective fields.
@@ -60,14 +64,9 @@ To set up your rapyuta.io account:
    5. **Postal code** 
 8. The plan detail page is displayed. Click the plan of your choice and follow the instructions to activate the plan. 
 
-After you successfully activate your plan, Your account is now ready to be used.
+After you successfully activate your plan, Your account is now ready to be used. -->
 
 All resources on rapyuta.io reside within projects. 
 To begin using the platform, create your project. For more information on creating your project, see [Creating a Project](/how-to-guides/account-management/managing-projects/#creating-a-project).
 
-
-1. In the left navigation bar, click **Account>Project**. The project dashboard is displayed.
-2. In the project dashboard, click **Create New Project**. The **Create new project** dialog box appears.
-3. In the **Project Name** field, type a name for the project and click **Continue**.
-  The project is created, and you can see the project in the project dashboard.
 
