@@ -42,7 +42,8 @@ To create a build using the Catkin or Docker recipe:
   | Name | Enter a build name. The name should only contain alphanumeric characters, underscore and hyphen. It should not start with a digit and the length should be between 3 and 75  characters.|
   | Build Recipe | Select **Catkin** or **Docker**.|
   | Repository (URL) | Enter the URL of the git repository from which you want to create a build. For example, `https://github.com/rapyuta/io_tutorials`.|
-  | Branch | Enter the branch name of the repository for the build. <br> **Note:**<br>In the Branch field, you can also provide any Git reference as valid input. For example, Commit ID, Tag name, or Branch name. If you don’t specify any branch name in the Branch field, then the default branch name of the repository is considered. |
+  | Branch | Enter the branch name of the repository for the build. <br> {{%notice note%}} In the Branch field, you can also provide any Git reference as valid input. For example, Commit ID, Tag name, or Branch name. If you don’t specify any branch name in the Branch field, then the default branch name of the repository is considered.
+  {{%/notice%}}|
   | Private Git | Enable the **Private Git** toggle button if it is a private git repository. Additionally, select the **Credentials** from the dropdown list. To create a secret for the repository, see [Create a Source Secret](/how-to-guides/account-management/setup-private-git-access/#creating-source-secret). |
   | Context Directory | Enter the directory path to create the build.|
 
