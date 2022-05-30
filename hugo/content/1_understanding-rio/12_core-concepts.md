@@ -38,7 +38,7 @@ Each project has:
 You may create multiple projects and use them to organize rapyuta.io resources.
 
 
-For more information about projects, [click here]({{< ref "3_how-tos/31_account-management/311_managing-projects.md" >}})
+For more information about projects, [click here]({{< ref "3_how-tos/31_account-management/312_managing-projects.md" >}})
 
 
 ### Secrets
