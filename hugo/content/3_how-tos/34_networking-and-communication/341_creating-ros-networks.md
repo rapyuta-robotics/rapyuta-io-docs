@@ -21,6 +21,34 @@ slug: '[ros]-creating-routed-networks'
 tags:
   - How to
 ---
+
+## Creating Routed Network
+
+## Creating a Routed/Native Network
+
+To create a routed network:
+
+1. In the rapyuta.io console, on the left navigation bar, select **Networking > Networks**.
+2. Click **Add Network** and select **Routed network** or **Native network** and enter:
+
+|Field|Description|
+|-----|-----------|
+|**Name**| Enter a name for the routed network.|
+|**ROS version**| Based on ROS version of the package component, select the ROS version from the dropdown. {{%notice note%}}
+As Kinetic has reached the EOL, it is suggested to select **Melodic** as the ROS version while creating a build.
+{{%/notice%}} |
+|**Runtime**| Select the runtime as **Device** or **Cloud**. If you create a device runtime, ensure you have a rapyuta.io registered device with docker runtime and AMD64 architecture available.<br> If you select the device runtime: <br> <ul><li> Select the **Device** and its **IP Interface** from the dropdown list.</li> <li> Select the device restart policy. </li> |
+|**Resource limit** (applicable only for cloud runtime)| Select the memory allocation and computational ability of the routed network from the dropdown list. These resources are reserved in the platform for effective ROS communication. You can select the resource limits based on your requirement.|
+
+3. Click **CONTINUE**. The routed/native network is created.
+
+{{%notice note%}}
+Deploying a routed network is identical to deploying any other package and has identical corresponding phases and errors.
+Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
+{{%/notice%}}
+
+
+
 ## Creating Cloud Routed Network 
 Follow these steps to create a cloud routed network.
 
@@ -28,6 +56,7 @@ Follow these steps to create a cloud routed network.
 2. Click **ADD NEW NETWORK** and select the network type as **Routed Network**. The **Create New Routed Network** page appears. 
 3. Enter a name for the routed network.
 4. Select **ROS Distro**, as either **Kinetic** or **Melodic** based on ROS version of package components it will be binding to.
+
 
 {{%notice note%}}
 As Kinetic has reached the EOL, it is suggested to select **Melodic** as the ROS version while creating a build.
