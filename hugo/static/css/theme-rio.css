@@ -893,7 +893,7 @@ details summary::before {
 }
 
 details[open] {
-    max-height: 1000px;
+    max-height: 5000px;
 }
 
 details[open] summary::before {

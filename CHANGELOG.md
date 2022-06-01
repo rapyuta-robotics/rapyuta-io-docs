@@ -7,6 +7,10 @@
 ### Changed
 - Grafana tutorial: importing dashboard
 
+## [6.2.10 - 2022-06-01]
+- added release notes
+- updated IO metric Collector topic
+
 ## [6.2.9 - 2022-05-25]
 - added release notes
 
