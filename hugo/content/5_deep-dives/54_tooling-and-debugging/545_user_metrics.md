@@ -35,9 +35,7 @@ Suppose a user application requires monitoring, additional metrics apart from th
 Device user metrics are custom metrics collected from devices to monitor your applications. <br>For example, a robot.battery_charge metric provides information on the amount of charge present in the battery of the robot and a robot.distance_traveled metric provides information on the distance traveled across the warehouse. Suppose the application fails to send the robot to the charging station in case of low battery, additional information will not be present as the robot might shut itself down. In such a situation you can view the metric robot.battery_charge to conclude the reason for failure. 
 
 ### Rapyuta IO Metrics Collector
-Import and deploy the following package to run the metrics collector:
-{{< importpackage manifest="https://raw.githubusercontent.com/rapyuta-robotics/io_tutorials/master/io_manifests/io_metrics_collector/io_metrics_collector_v0.2.0_manifest.json" >}}
-Once deployed successfully on an AMD64 [Docker device](/5_deep-dives/51_managing-devices/511_device-runtime/#containerized-docker-runtime), **/io_metrics_collector** ROS node will try to contact ROS master, and expose **/io_metrics** topic. Messages are sent from this ROS topic to the metrics pipeline, which is stored in the cloud. The metrics can be visualized using the Grafana data source.
+For collecting user metrics, the **Rapyuta IO Metrics Collector** is enabled by default on all ROS device deployments. **/io_metrics_collector** ROS node will try to contact ROS master, and expose **/io_metrics** topic. Messages are sent from this ROS topic to the metrics pipeline, which is stored in the cloud. The metrics can be visualized using the Grafana data source.
 For more information on **/io_metrics topic**, see [/io_metrics ROS topic](/5_deep-dives/54_tooling-and-debugging/545_user_metrics/#io_metrics-ros-topic)
 
 ## Cloud User Metrics
