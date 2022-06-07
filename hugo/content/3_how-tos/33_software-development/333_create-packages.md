@@ -25,7 +25,7 @@ introLinks: {}
 tags:
   - How to
 ---
-A package is a fundamental rapyuta.io resource that represents a declaration of your application. It is the smallest unit of deployment in rapyuta.io, and it can be deployed either on a device or the cloud or both.
+Package is a fundamental rapyuta.io resource that represents a declaration of your application. It is the smallest unit of deployment in rapyuta.io, and it can be deployed either on a device or the cloud or both.
 
 Creating a software package consists of the following high-level procedures.
 
@@ -45,10 +45,10 @@ To add the metadata of the package:
 
 |Field|Description|
 |-----|-----------|
-|Package Name| Enter a package name. |
+|Package Name| Enter the package name. |
 |Package Version| Enter the package version. |
-|IS Singleton package| Select this option if a package is not dependent on another package. |
-|Is a bindable package| Select this option if a package depends on another package or deployment of another package, the package bindings link the package to its dependencies. |
+|IS Singleton | Select this option if the package is not dependent on another package. |
+|Is a bindable| Select this option if the package depends on another package or deployment of another package, the package bindings link the package to its dependencies. |
 |Description| Enter a brief description about the package. |
 
 3. Click **Next**.
@@ -80,8 +80,8 @@ To create components:
 |Choose Build (applicable only for type Build)| Select the build from the dropdown list. |
 |Docker image (applicable only for type Docker)| Enter the docker image  to be used. For more information, see [Creating a Build](/3_how-tos/33_software-development/331_create-builds/#creating-build-by-docker-recipe). |
 |Private Image (applicable only for type Docker)| Select this option if the docker image is private and also select the credentials from the **Credentials** dropdown list.  |
-|Run command from bash shell (applicable only for type Docker)| |
-|Simulation| |
+|Run command from bash shell (applicable only for type Docker)| Command to run in the docker container.|
+|Simulation| Enable this option  |
 |Resource Limit| Select the CPU and memory requirement for the executable from the dropdown list. |
 
 
@@ -136,8 +136,8 @@ To add configuration parameter to the executable, click **Add Parameter** and en
 |Field|Description|
 |-----|-----------|
 |Name| Enter the parameter name. |
-|Default value | |
-|Description| |
+|Default value | Default value of the parameter. |
+|Description| Description of the parameter. |
 |This parameter is exposed externally| Select this option if this parameter is publicly exposed.  |
 
 10. Click **Next**.
@@ -153,9 +153,9 @@ The Rapyuta IO Persistent Volume is a storage package. A storage package is a pu
 
 **Dependent Deployment**: If your package has a dependency on a deployment, you must define the dependent deployment. 
 
-**Inbound ROS interface**: While having provider semantics provides flexibility but can potentially lead to a case where a user may deploy a package that depends on a previously deployed one without sufficient knowledge of the internal workings of the parent package. Cross talk between topics/services/actions in such cases can cause unintended hard to debug errors and failure of application code.
+**Inbound ROS interface**: While having provider semantics provides flexibility but can potentially lead to a case where a user may deploy the package that depends on a previously deployed one without sufficient knowledge of the internal workings of the parent package. Cross talk between topics/services/actions in such cases can cause unintended hard to debug errors and failure of application code.
 
-To prevent such unintentional cross-communication between deployments of two packages, rapyuta.io requires a package to declare a whitelist of ROS inbound topics/services/interfaces it can receive from a child dependent on it.
+To prevent such unintentional cross-communication between deployments of two packages, rapyuta.io requires the package to declare a whitelist of ROS inbound topics/services/interfaces it can receive from a child dependent on it.
 
 To add additional information to the package.
 
