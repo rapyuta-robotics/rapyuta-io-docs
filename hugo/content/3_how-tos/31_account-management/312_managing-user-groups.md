@@ -52,7 +52,7 @@ To create/delete a user group:
     |**Add Members**| Click to add group members.|
 
   2. Click **Submit**.
-4. To leave a group, click the exit icon below the group.
+4. To leave a group, the user can click the exit icon below the group.
 5. To delete a group, click the delete icon under the group.
 6. To edit group details, click the edit icon under the group.
 7. To view the projects/members assigned to a group, click **View**.
