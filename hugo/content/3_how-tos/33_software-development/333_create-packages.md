@@ -101,7 +101,11 @@ Perform the following procedure to create components.
 
     a. In the **Endpoint Name** field, type a name for the endpoint.
 
-    b. If the endpoint is exposed publicly, click the Exposed externally radio button and do the following.
+    b. If the endpoint is exposed publicly, click the Exposed externally radio button.
+{{%notice info%}}
+  - **rapyuta.io** generates a **random URL/route** that is exposed on the public internet for the exposed endpoints when the deployment is created. You can view the Fully Qualified Domain Name (FQDN) of an endpoint on the details page of deployments.
+  - rapyuta.io injects environment variables corresponding to linked network endpoints when there is a dependent deployment. For more information, see [Link Injection]({{< ref "/5_deep-dives/53_networking-and-communication/532_standard-web-protocol">}})
+{{%/notice%}}
 
     c. From the protocol section, select one of the following available protocols. 
 
