@@ -91,7 +91,11 @@ To add an end-point, under **Endpoints**,  click **Add Endpoint** and enter:
 |Field|Description|
 |-----|-----------|
 |Endpoint Name| Enter the endpoint name. |
-|Exposed externally| Enable if the endpoint is exposed publicly and select one of the available protocols:<ul><li>. **HTTP/Websocket exposed on port 80**</li><li>**HTTP/Websocket exposed on port 443**</li><li>**Secure TCP (TLS/SNI) exposed on port 443**</li> |
+|Exposed externally| Enable if the endpoint is exposed publicly and select one of the available protocols:<ul><li>. **HTTP/Websocket exposed on port 80**</li><li>**HTTP/Websocket exposed on port 443**</li><li>**Secure TCP (TLS/SNI) exposed on port 443**</li> {{%notice info%}}
+  - **rapyuta.io** generates a **random URL/route** that is exposed on the public internet for the exposed endpoints when the deployment is created. <br> You can view the Fully Qualified Domain Name (FQDN) of an endpoint on the details page of deployments.
+  - rapyuta.io injects environment variables corresponding to linked network endpoints when there is a dependent deployment. For more information, see [Link Injection]({{< ref "/5_deep-dives/53_networking-and-communication/532_standard-web-protocol">}})
+{{%/notice%}}
+|
 |Port| Enter the port number for the endpoint. Port is where the application’s service is made visible to other services.|
 |Target Port|Enter the target port. The target port is where the application needs to be listening for network requests for the service to work. {{%notice info%}}
  The Secure TCP (TLS/SNI) protocol uses SNI headers for routing the request to the desired backend.
