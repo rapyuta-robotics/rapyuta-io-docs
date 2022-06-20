@@ -27,7 +27,12 @@ categories:
 
 ## User Groups
 
-You can add users to groups and provide them access to projects and resources. Following are the features of a user group:
+User groups enable the org admin and the group’s creator to manage access to projects. They can add/ remove people from groups and that automatically manages their associations with the group.  
+
+For example, if you are an SRE team lead, you can create an SRE user group and add members of your team to the group. By linking projects to the SRE group, you can give access to all the group members at once. If you remove an individual from the SRE group, he/she will lose access to all the projects linked to the group, unless they have access to those projects outside the group or in another group or individually.
+
+Following are the features of a user group:
+
 * Any registered user of an organization can create a user group.
 * Every group will have a unique group ID.
 * A user can be a part of multiple groups.
