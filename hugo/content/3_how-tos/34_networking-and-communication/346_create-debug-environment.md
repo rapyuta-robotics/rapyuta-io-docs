@@ -44,7 +44,7 @@ Debug environment works best if your cloud runtime component is above 1 core i.e
 3. In the **Create New Debug Environment** page: 
 
   - Enter the **Name** for the debug environment.
-  - Select the capability to debug the executable. The available options are; IDE, SHELL,Rviz, RQT <!-- rviz and rqt not available, confirm -->
+  - Select the capability to debug the executable. The available options are; IDE, SHELL,Rviz, and RQT.
   
 4. Click **Connect**. 
 It takes a few minutes to connect. Once the connection status is **Complete**, the debug environment is created successfully. <!-- where to check connection status ?>
