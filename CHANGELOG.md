@@ -4,7 +4,6 @@
 
 ### Added
 - ROS2 Native Networks
-- foxy option in dropdown
 
 ### Added
 - Cloud user metrics docs
