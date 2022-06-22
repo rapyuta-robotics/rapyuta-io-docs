@@ -45,7 +45,6 @@ In the case of a native network, multiple ROS environments (all ROS nodes sharin
 
 ### Native Networks Internals
 
-
 * Communication happens in a peer-peer manner, which means different ROS masters or environments are connected via a platform using a sub-component based on [FKIE multi-master nodes](https://github.com/fkie/multimaster_fkie) ([master-discovery](http://fkie.github.io/multimaster_fkie/master_discovery.html) and [master-sync](http://fkie.github.io/multimaster_fkie/master_sync.html)). These two nodes are responsible for exchanging information about the ROS graph which is used to establish the communication between nodes associated with each of the "ROS masters" that are connected to the same native network.
 * Native network does **NOT** share the parameters between different "ROS environments" (All nodes connected to a single ROSMaster URI comprise a ROS Environment )
 * The platform only whitelists the topic/service mentioned in the package component, and the platform doesn't interpret or listen to the data flowing between them unlike in the case of a routed network, thus reducing latency. It only shares publisher/service information on the network.
@@ -71,7 +70,8 @@ In the case of a native network, multiple ROS environments (all ROS nodes sharin
 - By default, all topics/services/actions are whitelisted in a package component.
 
 {{%notice note%}}
-Native networks for ROS2 only work with applications where the underlying ros2 middleware implementation is Fast RTPS. If the user application is using any other ros2 middleware implementation like Cyclone DDS, Connext, or GurumDDS then communication will not work. To use Fast RTPS middleware implementation, export an environment variable `RMW_IMPLEMENTATION` with the value set as `rmw_fastrtps_cpp` before launching your application. 
+- If a user deploys two or more native networks with the same server id and uses all/few of them as a dependency in the user package, then any one of the native network will be used for communication.
+- Native networks for ROS2 only work with applications where the underlying ros2 middleware implementation is Fast RTPS. - If the user application is using any other ros2 middleware implementation like Cyclone DDS, Connext, or GurumDDS then communication will not work. To use Fast RTPS middleware implementation, export an environment variable `RMW_IMPLEMENTATION` with the value set as `rmw_fastrtps_cpp` before launching your application. 
 {{%/notice%}}
 
 
