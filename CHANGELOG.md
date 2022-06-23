@@ -3,6 +3,7 @@
 ## Unreleased
 
 ## [6.3.0 - 2022-06-23]
+- added release notes
 - added ROS2 Native Networks
 
 ## [6.2.10 - 2022-06-01]
