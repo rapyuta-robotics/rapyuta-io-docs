@@ -3,12 +3,7 @@
 ## Unreleased
 
 ## [6.3.0 - 2022-06-23]
-### Added
-- ROS2 Native Networks
-- Cloud user metrics docs
-- Switch Organization docs
-### Changed
-- Grafana tutorial: importing dashboard
+- added ROS2 Native Networks
 
 ## [6.2.10 - 2022-06-01]
 - added release notes
@@ -19,9 +14,12 @@
 
 ## [6.2.8 - 2022-05-09]
 - added release notes
+- Switch Organization docs
+- Cloud user metrics docs
 
 ## [6.2.7 - 2022-04-12]
 - added release notes
+- Grafana tutorial: importing dashboard
 
 ## [6.2.6 - 2022-04-05]
 - added release notes
