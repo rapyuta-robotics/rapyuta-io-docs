@@ -2,10 +2,9 @@
 
 ## Unreleased
 
+## [6.3.0 - 2022-06-23]
 ### Added
 - ROS2 Native Networks
-
-### Added
 - Cloud user metrics docs
 - Switch Organization docs
 ### Changed
