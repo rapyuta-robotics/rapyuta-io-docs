@@ -46,7 +46,9 @@ To create/delete a user group:
 
 1. In the rapyuta.io console, click **Account > Organization**. 
 2. Click the **User Groups** tab.
-3. To create a group, click **Create User Group**, and enter:
+3. To create a user group:
+
+  3.1. click **Create User Group**, and enter:
     |Field|Description|
     |-----|-----------|
     |**Group Name**| Enter the name of the group.|
@@ -54,7 +56,7 @@ To create/delete a user group:
     |**Add Projects**| Click to add projects to the group.|
     |**Add Users**| Click to add group members.|
 
-  2. Click **Submit**.
+  3.2. Click **Submit**.
 
 4. To leave a group, click the exit icon below the group.
 5. To delete a group, click the delete icon under the group.
