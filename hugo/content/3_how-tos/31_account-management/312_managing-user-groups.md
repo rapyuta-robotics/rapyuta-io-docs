@@ -48,7 +48,7 @@ To create/delete a user group:
 2. Click the **User Groups** tab.
 3. To create a user group:
 
-  1. Click **Create User Group**, and enter:
+  * Click **Create User Group**, and enter:
 
     |Field|Description|
     |-----|-----------|
@@ -56,7 +56,7 @@ To create/delete a user group:
     |**Group Description**| Enter the description. |
     |**Add Projects**| Click to add projects to the group.|
     |**Add Users**| Click to add group members.|
-  2. Click **Submit**.
+  * Click **Submit**.
 
 4. To leave a group, click the exit icon below the group.
 5. To delete a group, click the delete icon under the group.
