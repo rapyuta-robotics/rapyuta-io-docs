@@ -61,7 +61,7 @@ To register a new device on rapyuta.io:
          </tr>
          <tr>
             <td> Use docker compose as default runtime </td>
-            <td>  You can choose to build the application's source code inside the device or outside it. <br> If you want to build the application's source code in rapyuta.io platform and push 	the build to the device remotely, select this option and specify the **ROS version** and **ROS mount path**. <br> If the application's source code is locally built on the device, 	deselect this option and specify the **ROS Catkin Workspace** </td> 
+            <td>  You can choose to build the application's source code inside the device or outside it. <br> If you want to build the application's source code in rapyuta.io platform and push 	the build to the device remotely, select this option and specify the **ROS version** and <b>ROS mount path</b>. <br> If the application's source code is locally built on the device, 	deselect this option and specify the **ROS Catkin Workspace** </td> 
          </tr>
          <tr>
             <td> ROS version </td>
@@ -74,7 +74,7 @@ To register a new device on rapyuta.io:
          </tr>
          <tr>
             <td> ROS Catkin Workspace </td>
-            <td> Enter the absolute path of your catkin workspace. If you are using a custom rapyuta.io image on the device, your catkin workspace will be <i>/home/rapyuta/catkin_ws</i> where 	*catkin_ws* is the name of the catkin workspace. Otherwise, you will have a different absolute path for your catkin workspace. {{%notice note%}}The **ROS Catkin Workspace** value can be empty, and you can provide this value on the device's **Details** page. 
+            <td> Enter the absolute path of your catkin workspace. If you are using a custom rapyuta.io image on the device, your catkin workspace will be <i>/home/rapyuta/catkin_ws</i>  where *catkin_ws* is the name of the catkin workspace. Otherwise, you will have a different absolute path for your catkin workspace. {{%notice note%}}The <b>ROS Catkin Workspace</b> value can be empty, and you can provide this value on the device's <b>Details</b> page. 
       {{%/notice%}}</td>
          </tr>
          <tr>
