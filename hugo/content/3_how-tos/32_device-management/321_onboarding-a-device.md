@@ -69,12 +69,12 @@ To register a new device on rapyuta.io:
          </tr>
          <tr>
             <td> Rosbag mount path </td>
-            <td> Enter the path to store the ROS bag files on the device. The default path is `/opt/rapyuta/volumes/rosbag`. {{%notice note%}} After you onboard a device, you cannot change the mount path to store the ROS bag files. If you want to change the mount path after adding the device, you can re-onboard the device 	and change the mount path. 
+            <td> Enter the path to store the ROS bag files on the device. The default path is <i>/opt/rapyuta/volumes/rosbag</i>. {{%notice note%}} After you onboard a device, you cannot change the mount path to store the ROS bag files. If you want to change the mount path after adding the device, you can re-onboard the device 	and change the mount path. 
       {{%/notice%}}  </td>
          </tr>
          <tr>
             <td> ROS Catkin Workspace </td>
-            <td> Enter the absolute path of your catkin workspace. If you are using a custom rapyuta.io image on the device, your catkin workspace will be */home/rapyuta/catkin_ws* where 	*catkin_ws* is the name of the catkin workspace. Otherwise, you will have a different absolute path for your catkin workspace. {{%notice note%}}The **ROS Catkin Workspace** value can be empty, and you can provide this value on the device's **Details** page. 
+            <td> Enter the absolute path of your catkin workspace. If you are using a custom rapyuta.io image on the device, your catkin workspace will be <i>/home/rapyuta/catkin_ws</i> where 	*catkin_ws* is the name of the catkin workspace. Otherwise, you will have a different absolute path for your catkin workspace. {{%notice note%}}The **ROS Catkin Workspace** value can be empty, and you can provide this value on the device's **Details** page. 
       {{%/notice%}}</td>
          </tr>
          <tr>
