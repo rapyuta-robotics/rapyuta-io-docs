@@ -74,7 +74,7 @@ To register a new device on rapyuta.io:
          </tr>
          <tr>
             <td> ROS Catkin Workspace </td>
-            <td> Enter the absolute path of your catkin workspace. If you are using a custom rapyuta.io image on the device, your catkin workspace will be `/home/rapyuta/catkin_ws` where 	*catkin_ws* is the name of the catkin workspace. Otherwise, you will have a different absolute path for your catkin workspace. {{%notice note%}}The **ROS Catkin Workspace** value can be empty, and you can provide this value on the device's **Details** page. 
+            <td> Enter the absolute path of your catkin workspace. If you are using a custom rapyuta.io image on the device, your catkin workspace will be */home/rapyuta/catkin_ws* where 	*catkin_ws* is the name of the catkin workspace. Otherwise, you will have a different absolute path for your catkin workspace. {{%notice note%}}The **ROS Catkin Workspace** value can be empty, and you can provide this value on the device's **Details** page. 
       {{%/notice%}}</td>
          </tr>
          <tr>
