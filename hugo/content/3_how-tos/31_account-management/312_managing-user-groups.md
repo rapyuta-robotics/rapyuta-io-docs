@@ -29,9 +29,7 @@ categories:
 
 User groups enable the org admin and the group’s creator to manage access to projects. They can add/ remove people from groups and that automatically manages their associations with the group.  
 
-{{% notice Example %}}
-If you are an SRE team lead, you can create an SRE user group and add members of your team to the group. By linking projects to the SRE group, you can give access to all the group members at once. If you remove an individual from the SRE group, he/she will lose access to all the projects linked to the group, unless they have access to those projects outside the group or in another group or individually.
-{{% /notice %}}
+For example, if you are an SRE team lead, you can create an SRE user group and add members of your team to the group. By linking projects to the SRE group, you can give access to all the group members at once. If you remove an individual from the SRE group, he/she will lose access to all the projects linked to the group, unless they have access to those projects outside the group or in another group or individually.
 
 Following are the features of a user group:
 
@@ -50,7 +48,6 @@ To create/delete a user group:
 2. Click the **User Groups** tab.
 3. To create a user group:
   * Click **Create User Group**, and enter:
-
     |Field|Description|
     |-----|-----------|
     |**Group Name**| Enter the name of the group.|
@@ -64,7 +61,7 @@ To create/delete a user group:
 7. To view the projects/members assigned to a group, click **View**.
 
 {{% notice info %}}
-When you create, update, or delete a user group, you may experience a UI lag for a brief period. 
+When you create, update, or delete a user group, you may experience UI lag for a brief period. 
 {{% /notice %}}
 
 
