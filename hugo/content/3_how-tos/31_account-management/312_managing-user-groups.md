@@ -61,7 +61,7 @@ To create/delete a user group:
 7. To view the projects/members assigned to a group, click **View**.
 
 {{% notice info %}}
-When you create, update, or delete a user group, you may experience UI lag for a brief period. 
+When you create, update, or delete a user group, you may experience slowness or lags for a brief period while working with the UI.
 {{% /notice %}}
 
 
