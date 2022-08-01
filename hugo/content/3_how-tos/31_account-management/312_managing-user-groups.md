@@ -34,7 +34,6 @@ For example, if you are an SRE team lead, you can create an SRE user group and a
 Following are the features of a user group:
 
 * Any registered user of an organization can create a user group.
-* Every group will have a unique group ID.
 * A user can be a part of multiple groups.
 * Only group/org admins can add or remove users from a group.
 * Users can voluntarily leave groups.
@@ -52,11 +51,11 @@ To create/delete a user group:
     |-----|-----------|
     |**Group Name**| Enter the name of the group.|
     |**Group Description**| Enter the description. |
-    |**Projects**| Click to add projects to the group.|
-    |**Users**| Click to add group members.|
+    |**Projects**| Click to link projects to the group.|
+    |**Users**| Click to link group members.|
   * Click **Submit**.
-4. To leave a group, click the exit icon below the group.
-5. To delete a group, click the delete icon under the group.
+4. To leave a group, click the exit icon below the group. On leaving, you will lose access to all the projects linked to the group. 
+5. To delete a group, click the delete icon below the group. On deleting, all the group members will lose access to all the projects linked to the group.
 6. To edit group details, click the edit icon under the group.
 7. To view the projects/members assigned to a group, click **View**.
 
