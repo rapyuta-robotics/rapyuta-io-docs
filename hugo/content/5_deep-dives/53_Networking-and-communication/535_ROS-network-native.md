@@ -53,7 +53,7 @@ In the case of a native network, multiple ROS environments (all ROS nodes sharin
 * If there is no ROS Endpoint configured in the package then by default the Native Network will propagate everything
 
 {{%notice warning%}}
-*for tf topic*: if you don’t add the tf_prefix, don’t expose the topic as there is a possibility of mixing tf’s.
+If your ROS package uses the tf topic, and if you don't add the tf_prefix, don't expose the topic as there is a possibility of mixing the tf’s. For more information on tf topics, see [tf_prefix](http://wiki.ros.org/geometry/CoordinateFrameConventions#geometry.2FCoordinateFrameConventions.2FNaming.tf_prefix)
 {{%/notice%}}
 
 {{%notice note%}}

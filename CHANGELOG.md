@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Unreleased
+- added info on tf topics
 
 ## [6.3.0 - 2022-06-23]
 - added release notes
