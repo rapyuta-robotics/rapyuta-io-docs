@@ -56,7 +56,7 @@ To create/delete a user group:
   * Click **Submit**.
 4. To leave a group, click the exit icon below the group. On leaving, you will lose access to all the projects linked to the group. 
 5. To delete a group, click the delete icon below the group. On deleting, all the group members will lose access to all the projects linked to the group.
-6. To edit group details, click the edit icon under the group.
+6. To edit group details, click the edit icon, make the changes and click **Update**.
 7. To view the projects/members assigned to a group, click **View**.
 
 {{% notice info %}}
