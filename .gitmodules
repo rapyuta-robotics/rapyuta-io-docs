@@ -1,4 +1,4 @@
 [submodule "hugo/themes/learn"]
 	path = hugo/themes/hugo-theme-learn
-	url = git@github.com:rapyuta-robotics/hugo-theme-learn.git
+	url = ssh://git@github.com/rapyuta-robotics/hugo-theme-learn.git
 	branch = feature/tab-views 

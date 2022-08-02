@@ -37,6 +37,7 @@ To create a docker secret for a private docker registry, do the following:
 
 {{< tabs >}}
 {{% tab name="UI" %}}
+
 1. On the left navigation bar, click **Account > Secrets**.
 
 2. Click **ADD NEW SECRET**.
@@ -59,7 +60,11 @@ To create a docker secret for a private docker registry, do the following:
 
    b. Additionally, if your executable type is **Private Registry**, provide the registry URL in the **Registry Url** field.
 
-8. Click **SUBMIT**. The docker secret for the rapyuta.io platform is created.
+6. Click **SUBMIT**. The docker secret for the rapyuta.io platform is created.
+
+{{%notice info%}}
+  To edit a secret, click the edit icon under **Action**.
+{{%/notice%}}
 
 {{% /tab %}}
 {{% tab name="CLI" %}}
