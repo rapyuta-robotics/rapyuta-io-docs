@@ -64,10 +64,6 @@ To register a new device on rapyuta.io:
             <td>  You can choose to build the application's source code inside the device or outside it. <br> If you want to build the application's source code in rapyuta.io platform and push 	the build to the device remotely, select this option and specify the <b>ROS version</b> and <b>ROS mount path</b>. <br> If the application's source code is locally built on the device, 	deselect this option and specify the <b>ROS Catkin Workspace</b> </td> 
          </tr>
          <tr>
-            <td> ROS version </td>
-            <td> From the dropdown, select the version based on the ROS version of your device. </td>
-         </tr>
-         <tr>
             <td> Rosbag mount path </td>
             <td> Enter the path to store the ROS bag files on the device. The default path is <i>/opt/rapyuta/volumes/rosbag</i>. {{%notice note%}} After you onboard a device, you cannot change the mount path to store the ROS bag files. If you want to change the mount path after adding the device, you can re-onboard the device 	and change the mount path. 
       {{%/notice%}}  </td>
@@ -80,10 +76,6 @@ To register a new device on rapyuta.io:
          <tr>
             <td>Description  </td>
             <td>Enter a summary of the device. </td>
-         </tr>
-         <tr>
-            <td>Python Version </td>
-            <td> Select the device's python version from the dropdown menu. </td>
          </tr>
       </tbody>
    </table>
