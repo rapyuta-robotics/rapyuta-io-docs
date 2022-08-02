@@ -52,7 +52,7 @@ To create/delete a user group:
     |**Group Name**| Enter the name of the group.|
     |**Group Description**| Enter the description. |
     |**Projects**| Click to link projects to the group.|
-    |**Users**| Click to link group members.|
+    |**Members**| Click to link group members.|
   * Click **Submit**.
 4. To leave a group, click the exit icon below the group. On leaving, you will lose access to all the projects linked to the group. 
 5. To delete a group, click the delete icon below the group. On deleting, all the group members will lose access to all the projects linked to the group.
