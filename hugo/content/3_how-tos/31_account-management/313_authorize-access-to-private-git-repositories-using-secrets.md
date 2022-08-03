@@ -1,3 +1,4 @@
+
 ---
 title: Setup Private Git Access
 description: null
@@ -38,6 +39,9 @@ You can create packages using the source code from a private git repository. A s
 
 ## Creating Source Secret
 
+{{< tabs >}}
+{{% tab name="UI" %}}
+
 To create a source secret for the private git repository:
 
 1. On the left navigation bar, click **Account > Secrets**.
@@ -53,7 +57,6 @@ To create a source secret for the private git repository:
    It must consist of lower case alphanumeric characters or hyphen(-).
    It must begin and end with an alphanumeric character.
 {{%/notice%}}
- 
 
 5. From the **Authentication** drop-down menu, select either one of the following.
 
@@ -67,8 +70,35 @@ To create a source secret for the private git repository:
 
       1. Enter the SSH key of your git repository in the **SSH Key** fields.
 
-8. Click **Submit**. The secret source is created.
-
+6. Click **Submit**. The source secret is created.
 {{%notice info%}}
   To edit the secret, click the edit icon under **Action**.
 {{%/notice%}}
+
+{{% /tab %}}
+{{% tab name="CLI" %}}
+
+To access the private source repositories:
+```bash
+rio secret create –t source <secret_name>
+```
+Select the source secret type, if you select `basic-auth`, specify the *username* and *password*.
+```bash
+Source secret type[basic-auth, ssh]: basic-auth
+git username: <user_name>
+git password: <password>
+```
+If you select `ssh`, specify the path to the SSH Private key.
+```bash
+Source secret type[basic-auth, ssh]: ssh
+ssh key path: <path to key-file>
+```
+To automatically import secrets from the environment:
+```bash
+rio secret import ssh
+```
+
+{{% /tab %}}
+{{< /tabs >}}
+
+

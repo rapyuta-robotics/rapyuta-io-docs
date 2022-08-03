@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Unreleased
+- added info on tf topics
 
 ## [6.3.0 - 2022-06-23]
 - added release notes
@@ -27,6 +28,9 @@
 
 ## [6.2.5 - 2022-03-16]
 - added release notes
+
+## [6.2.4 - 2022-02-24]
+- added an announcement in release notes
 
 ## [6.2.4 - 2022-02-24]
 - added an announcement in release notes
