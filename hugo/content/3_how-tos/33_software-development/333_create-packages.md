@@ -85,7 +85,7 @@ To create components:
 |Resource Limit| Select the CPU and memory requirement for the executable from the dropdown list. |
 
 
-4. (Optional) You can add an end-point. For more information on endpoint configuration, [Standard Web Protocols](/5_deep-dives/53_networking-and-communication/532_standard-web-protocol/).
+4. (Optional) You can add an end-point. For more information on endpoint configuration, see [Standard Web Protocols](/5_deep-dives/53_networking-and-communication/532_standard-web-protocol/). 
 To add an end-point, under **Endpoints**,  click **Add Endpoint** and enter: 
 
 |Field|Description|
@@ -104,6 +104,8 @@ To add an end-point, under **Endpoints**,  click **Add Endpoint** and enter:
 |Port Range| Enable this option to open multiple ports on a single DNS hostname. {{%notice note%}}
 A maximum of 50 ports is allowed for an endpoint. The allowed format is comma-separated Port Ranges. Each Port Range is either a single port or a range of port mentioning the from port and to port separated by a hyphen (-). Examples: 5000 or 443-445 or 3446-3449,3500,3510-3530
 {{%/notice%}} |
+
+For more information, see [Exposing Endpoints Externally](/3_how-tos/34_networking-and-communication/342_exposing-cloud-services-using-endpoints/).
 
  5. (Optional) ROS topic is intended for unidirectional, streaming communication.  For more information, see [Package: ROS Support](/5_deep-dives/52_software-development/526_package-ros-support). 
  To add a ROS topic to the package, under **ROS Services**, click **Add ROS topic** and enter:
