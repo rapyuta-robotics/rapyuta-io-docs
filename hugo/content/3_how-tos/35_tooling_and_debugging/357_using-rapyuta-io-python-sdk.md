@@ -22,11 +22,7 @@ tags:
   - How to
 ---
 
-rapyuta.io Python SDK enables you to provision packages
-either on the cloud or on a device, add a dependent
-deployment, and access various rapyuta.io resources and
-services in your python applications.
-
+rapyuta.io Python SDK enables you to provision packages either on the cloud or on a device, add a dependent deployment, and access various rapyuta.io resources and services in your python applications.
 
 
 ## Installation
