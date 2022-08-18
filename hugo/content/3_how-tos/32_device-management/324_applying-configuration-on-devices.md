@@ -215,7 +215,7 @@ Labels of a device help in associating it with a set of configuration parameters
 
 {{% notice note %}}
 
-Devices must be online
+Devices must be online.
 
 {{% /notice%}}
 
