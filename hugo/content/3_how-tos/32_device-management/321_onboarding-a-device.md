@@ -40,9 +40,18 @@ tags:
 {{%notice note%}}
  * By default, Ubuntu(16.04 and 18.04) resolves the hostname to localhost. If this is changed on the host OS, roscore will not start. 
  * To check if roscore starts, do `nslookup $(hostname)`, this should return a DNS record.
+ * 
 {{%/notice%}}
 
+### rapyuta.io Runtimes
+
+rapyuta.io supports docker and preinstalled runtime. By default, the docker runtime is enabled. You can also enable both the runtimes for a device. You can disable/enable the runtime during the lifetime of a device. 
+{{%notice note%}} 
+A device should always have one runtime enabled.
+{{%/notice%}} 
+
 ### Register a New Device
+
 To register a new device on rapyuta.io:
 
 {{< tabs >}}
@@ -63,9 +72,14 @@ To register a new device on rapyuta.io:
             <td>Description  </td>
             <td>Enter a summary of the device. </td>
          </tr>
+           <tr>
+            <td>Advanced  </td>
+            <td>Expand this option to view additional configurations.</td>
+         </tr>
          <tr>
             <td> Docker </td>
-            <td>If you want to build the application's source code in rapyuta.io platform and push the build to the device remotely, select this option and specify the <b>ROS mount path</b>.</td> 
+            <td>If you want to build the application's source code in rapyuta.io platform and push the build to the device remotely, select this option and specify the <b>ROS mount path</b>. {{%notice note%}} By default, docker runtime is enabled for a device.
+      {{%/notice%}} </td> 
          </tr>
           <tr>
             <td> Preinstalled</td>
@@ -79,16 +93,15 @@ To register a new device on rapyuta.io:
          </tr>
          <tr>
             <td> ROS Catkin Workspace </td>
-            <td> Enter the absolute path of your catkin workspace. If you are using a custom rapyuta.io image on the device, your catkin workspace will be <i>/home/rapyuta/catkin_ws</i> where <i>catkin_ws</i> is the name of the catkin workspace. Otherwise, you will have a different absolute path for your catkin workspace. {{%notice note%}}The <b>ROS Catkin Workspace</b> value can be empty, and you can provide this value on the device's <b>Details</b> page. 
+            <td> Enter the absolute path of your catkin workspace. If you are using a custom rapyuta.io image on the device, your catkin workspace will be <i>/home/rapyuta/catkin_ws</i> where <i>catkin_ws</i> is the name of the catkin workspace. Otherwise, you will have a different absolute path for your catkin workspace. {{%notice note%}}The <b>ROS Catkin Workspace</b> value can be empty, and you can provide this value on the device's details page. 
       {{%/notice%}}</td>
          </tr>
-        
       </tbody>
    </table>
 
 3. Click **Add device**.
    {{%notice note%}}
-   On clicking <b>Add device</b>, a script is copied to your clipboard and it expires in **10** minutes. Run the script on the device to onboard the device.
+   On clicking <b>Add device</b>, a script is copied to your clipboard. This script is valid for 10minutes. You can run this script to set up the device. For more information, see [Setting Up your Device](/3_how-tos/32_device-management/321_onboarding-a-device/#setting-up-your-device)
    {{%/notice%}}
 {{% /tab %}}
 
@@ -107,17 +120,16 @@ rio device create <device_name>
 
 1. Select the onboarded device and navigate to the device details page.
 2. Under the config variables section:
-   * For preinstalled device: Set the value of the **runtime_preinstalled** variable to True.
-   * For a ros based preinstalled runtime deployments: Set the value of the **ros_distro** variable to the value of the ros distro present in your device.
-   * For a docker device: Set the value of the **runtime_docker** variable to True.
-3. SSH into the device and run `sudo systemctl restart rapyuta-agent`.
-4. After a few mins, check the status on the device details page.
-5. Once it completes, you should be able to do preinstalled deployments
+   * For preinstalled device: set the value of the **runtime_preinstalled** variable to True.
+   * For a ros-based preinstalled runtime deployment: set the value of the **ros_distro** variable to the value of the ros distro present in your device.
+   * For a docker device: set the value of the **runtime_docker** variable to True.
+3. SSH into the device and run `sudo systemctl restart rapyuta-agent`. You can check the status on the device details page.
+4. Once re-onboarded, you should be able to deploy the docker/preinstalled runtime-based packages.
 
 
-### Setting Up Your Device
+### Setting Up your Device
 
-Set up your device to connect it to the rapyuta.io platform. To set up your device, open the command terminal and run the previously copied device's token.
+Set up your device to connect it to the rapyuta.io platform. To set up your device, open the command terminal and run the previously copied script.
 The token sets up the rapyuta.io device client on the device. 
 {{%notice note%}}
 * Sometimes, you may need root permission to execute the token on the device.
