@@ -40,15 +40,16 @@ tags:
 {{%notice note%}}
  * By default, Ubuntu(16.04 and 18.04) resolves the hostname to localhost. If this is changed on the host OS, roscore will not start. 
  * To check if roscore starts, do `nslookup $(hostname)`, this should return a DNS record.
- * 
 {{%/notice%}}
 
 ### rapyuta.io Runtimes
 
-rapyuta.io supports docker and preinstalled runtime. By default, the docker runtime is enabled. You can also enable both the runtimes for a device. You can disable/enable the runtime during the lifetime of a device. 
-{{%notice note%}} 
-A device should always have one runtime enabled.
-{{%/notice%}} 
+* rapyuta.io supports docker and preinstalled runtime. 
+* By default, the docker runtime is enabled. 
+* You can enable both the runtimes for a device at once.
+* You can enable/disable the runtime during the lifetime of a device. 
+* A device should always have one runtime enabled.
+
 
 ### Register a New Device
 
