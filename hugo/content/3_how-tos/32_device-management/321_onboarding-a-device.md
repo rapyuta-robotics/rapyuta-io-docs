@@ -100,9 +100,10 @@ To register a new device on rapyuta.io:
       </tbody>
    </table>
 
-3. Click **Add device**.
+3. Click **Add device**.  
+   On clicking <b>Add device</b>, a script is copied to your clipboard. You can run this script to set up the device. For more information, see [Setting Up your Device](/3_how-tos/32_device-management/321_onboarding-a-device/#setting-up-your-device).
    {{%notice note%}}
-   On clicking <b>Add device</b>, a script is copied to your clipboard. This script is valid for 10 minutes. You can run this script to set up the device. For more information, see [Setting Up your Device](/3_how-tos/32_device-management/321_onboarding-a-device/#setting-up-your-device).
+   The copied script is valid only for 10 minutes.
    {{%/notice%}}
 {{% /tab %}}
 
