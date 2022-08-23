@@ -49,7 +49,7 @@ tags:
 * You can enable both the runtimes for a device at once.
 * You can enable/disable the runtime during the lifetime of a device. 
 * A device should always have one runtime enabled.
-
+For more information, see [Undertsand Runtimes](/5_deep-dives/51_managing-devices/511_device-runtime/).
 
 ### Register a New Device
 
