@@ -79,7 +79,7 @@ To register a new device on rapyuta.io:
          </tr>
          <tr>
             <td> Docker </td>
-            <td>If you want to build the application's source code in rapyuta.io platform and push the build to the device remotely, select this option and specify the <b>ROS mount path</b>. {{%notice note%}} By default, docker runtime is enabled for a device.
+            <td>If you want to build the application's source code in rapyuta.io platform and push the build to the device remotely, select this option and specify the <b>ROSBag mount path</b>. {{%notice note%}} By default, docker runtime is enabled for a device.
       {{%/notice%}} </td> 
          </tr>
           <tr>
