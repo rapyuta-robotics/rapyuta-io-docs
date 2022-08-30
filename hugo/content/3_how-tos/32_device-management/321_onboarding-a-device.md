@@ -84,7 +84,7 @@ To register a new device on rapyuta.io:
          </tr>
           <tr>
             <td> Preinstalled</td>
-            <td>The secondary runtime available for managing pre-installed runtime on the device. Select this option and specify the <b>ROS Catkin Workspace</b>. {{%notice note%}} Preinstalled devices can now be created even if ros distro is not available on the device, but the ros communication packages for preinstalled runtime will not be installed and you will not be able to create a network. 
+            <td>The secondary runtime available for managing pre-installed software on the device. Select this option and specify the <b>ROS Catkin Workspace</b>. {{%notice note%}} Preinstalled devices can now be created even if ros distro is not available on the device, but the ros communication packages for preinstalled runtime will not be installed and you will not be able to create a network. 
       {{%/notice%}} </td> 
          </tr>
          <tr>
