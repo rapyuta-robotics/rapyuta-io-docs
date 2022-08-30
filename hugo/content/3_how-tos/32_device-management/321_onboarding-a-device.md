@@ -79,12 +79,12 @@ To register a new device on rapyuta.io:
          </tr>
          <tr>
             <td> Docker </td>
-            <td>If you want to build the application's source code in rapyuta.io platform and push the build to the device remotely, select this option and specify the <b>ROSBag mount path</b>. {{%notice note%}} By default, docker runtime is enabled for a device.
+            <td>The primary runtime for managing applications through Docker. Select this option and specify the <b>ROSBag mount path</b>. {{%notice note%}} By default, docker runtime is enabled for a device.
       {{%/notice%}} </td> 
          </tr>
           <tr>
             <td> Preinstalled</td>
-            <td>If the application's source code is locally built on the device, select this option and specify the <b>ROS Catkin Workspace</b>. {{%notice note%}} Preinstalled devices can now be created even if ros distro is not available on the device, but the ros communication packages for preinstalled runtime will not be installed and you will not be able to create a network. 
+            <td>The secondary runtime available for managing pre-installed runtime on the device. Select this option and specify the <b>ROS Catkin Workspace</b>. {{%notice note%}} Preinstalled devices can now be created even if ros distro is not available on the device, but the ros communication packages for preinstalled runtime will not be installed and you will not be able to create a network. 
       {{%/notice%}} </td> 
          </tr>
          <tr>
@@ -124,6 +124,9 @@ rio device create <device_name>
 2. Under the config variables section:
    * For preinstalled device: set the value of the **runtime_preinstalled** variable to True.
    * For a ros-based preinstalled runtime deployment: set the value of the **ros_distro** variable to the value of the ros distro present in your device.
+   {{%notice note%}}
+   If the ros distro variable is not set, communication over the network (native network or routed network) will not happen and deployments that depend on these networks will fail.
+   {{%/notice%}}
    * For a docker device: set the value of the **runtime_docker** variable to True.
 3. SSH into the device and run `sudo systemctl restart rapyuta-agent`. You can check the status on the device details page.
 4. Once re-onboarded, you should be able to deploy the docker/preinstalled runtime-based packages.
