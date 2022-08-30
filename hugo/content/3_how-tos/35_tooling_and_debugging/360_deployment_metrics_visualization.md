@@ -29,7 +29,7 @@ introLinks: {}
 ---
 Monitoring deployment metrics is important as it helps you understand the resource usage in your deployments. You can now visualize the following resource metrics on the rapyuta.io console: 
   * CPU Usage - Displays the percentage of the CPU used.
-  * CPU Throttle - Displays the 
+  * CPU Throttle - Displays the CPU throttle percentage.
   * Memory Usage - Displays the total memory being used.
   * Network - Displays the amount of data being sent and received in bytes.
   * Packets - Displays the number of packets being sent and received.
