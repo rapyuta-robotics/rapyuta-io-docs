@@ -3,6 +3,11 @@
 ## Unreleased
 - added info on tf topics
 
+## [6.5.0 - 2022-09-01]
+- added release notes
+- merge device runtime updates
+- added cloud deployment metrics topic
+
 ## [6.3.0 - 2022-06-23]
 - added release notes
 - added ROS2 Native Networks
