@@ -3,6 +3,9 @@
 ## Unreleased
 - added info on tf topics
 
+## [6.5.1 - 2022-09-14]
+- added release notes
+
 ## [6.5.0 - 2022-09-01]
 - added release notes
 - merge device runtime updates
