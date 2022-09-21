@@ -100,7 +100,7 @@ If a deployment fails, the **DEPLOYMENT PHASE** will read **Failed to start**. Y
 
 This feature allows users to re-deploy a running deployment without stopping and while retaining its ID, dependencies, configuration, and endpoints. The advantages f this feature are as follows:
 * During the development phase, it enables the developers to switch between a newer or an older build version in a package without having to recreate a new package resource.
-* When a developer fixes and pushes a new image of the software to the docker repository with an identical tag and wants to pull in the version with all the changes and fixes into the running deployment. <need to verify>
+* When a developer fixes and pushes a new image of the software to the docker repository with an identical tag and wants to pull the same into running deployment.
 * It is useful in the case of a dependent deployment, as you needn't deprovision all the deployments when a single deployment needs an update and thus saves time.
 
 {{% notice info %}}
@@ -122,10 +122,11 @@ It takes a few minutes and the deployment is updated. You can view the details o
 
 **Update Deployment** can be done when the [DEPLOYMENT PHASE](/5_deep-dives/52_software-development/528_deployment-phase/#phases) is either **Succeeded** or **Failed To Update**.
 The **Update Deployment** button will be disabled for other deployment phases.
-In case of **Failed To Update**, you can check the **Historical Logs** but the **Live Logs** and **Shell Access** tabs will be disabled. <need to verify>
+In case of **Failed To Update**, you can check the historical logs for debugging.
 
 {{% notice info %}}
-In case your deployment goes to **Failed To Update**, it will show an appropriate error code like 
+* When in failed to update state, the other tabs will be disabled.
+* In case your deployment goes to **Failed To Update**, it will show an appropriate error code like 
 [DEP_E151] (/6_troubleshoot/611_deployment-error-codes/) 
 which means **device is either offline or not reachable**.
 If you are not sure about the Error, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
