@@ -113,9 +113,9 @@ For more information, see [Exposing Endpoints Externally](/3_how-tos/34_networki
 |Field|Description|
 |-----|-----------|
 |Name| Enter the ROS topic name. |
-|Compressed| |
-|Scoped| |
-|Targeted| |
+|Compressed | Compression to use for the topic messages.|
+|Scoped| A scoped topic is a mapping from a /topic to /robot-peer-name/topic. |
+|Targeted| A targeted topic is a mapping from /robot-alias/topic to /topic. |
 |QoS|Select one of the available QoS types to ensure reliability of the ROS topics in the transport layer even over the public internet.|
 
  6. (Optional) To add a ROS service to the package. Under **ROS Services**, click **Add ROS service** and enter: 
@@ -125,14 +125,7 @@ For more information, see [Exposing Endpoints Externally](/3_how-tos/34_networki
 |Name| Enter the ROS service name. |
 |Timeout| Enter the timeout in seconds.|
 
-7. (Optional) To add a ROS actions to the package. Under **ROS Actions**, click **Add ROS action** and enter: 
-
-|Field|Description|
-|-----|-----------|
-|Name| Enter the ROS service name. |
-|Compressed | |
-|Scoped| |
-|Targeted| |
+7. (Optional) To add a ROS actions to the package. Under **ROS Actions**, click **Add ROS action** and enter the ROS service name.
 
 8. (Optional) To add a ROS bag job to the package. Under **Record ROS Bag Job**, click **Add ROS action**. For more information on the fields, see [Working with Rosbags](/3_how-tos/35_tooling_and_debugging/working-with-rosbags)
  
