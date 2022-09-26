@@ -48,13 +48,13 @@ The newly invited user is added to the existing list of **USERS**. The **Account
 * **Suspended**: A user can be in the suspended state due to non-payment. |
 
 {{%notice info%}}
- The admin of an organization can view **Invited** and **Deactivated** users. All other users can only view **Activated** users.
+An org admin can view users in any state. Non-admins cannot view the users in invited state.
 {{%/notice%}}
 
 ## Adding or Removing Users from a Project
 
 {{%notice note%}}
- - Only the project creator can add or remove users from the project.
+ - The project creator or the organization admin can add or remove users from the project.
  - However, the project’s creator cannot remove himself.
 {{%/notice %}}
 
