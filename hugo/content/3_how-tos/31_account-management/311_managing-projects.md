@@ -28,7 +28,7 @@ categories:
 Managing projects include creating and deleting projects as well as adding and removing users from the project.
 
   > Any activated user can create a new project. 
-  > Only the project creator can delete a project.
+  > The project creator or the organization admin can delete a project.
  
 ## Creating or Deleting a Project
 
