@@ -1,8 +1,7 @@
 # CHANGELOG
 
 ## Unreleased
-- added info on tf topics
-
+- toggle user state feature added
 ## [6.5.1 - 2022-09-14]
 - added release notes
 
