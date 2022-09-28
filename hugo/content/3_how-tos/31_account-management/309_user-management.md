@@ -41,22 +41,20 @@ To invite or add users to the rapyuta.io platform, do the following:
 
 3. Click **ADD USER**.
 
-The newly invited user is added to the existing list of **USERS**.
-
-Initially, the state of the user is **Invited**. 
-The invited user will receive an invitation email to join rapyuta.io.
-
-Once the invited user has registered and signed into rapyuta.io, their state
-changes to **Activated**.
+The newly invited user is added to the existing list of **USERS**. The **Account State** field displays the state of a user. A user can be in one of the following states:
+* **Invited**: The initial state of the user. The invited user will receive an invitation email to join rapyuta.io.
+* **Activated**: Once the invited user has registered and signed into rapyuta.io, their state automatically changes to **Activated**. Only an org admin can activate a deactivated user by selecting the activate icon under **Actions**. 
+* **Deactivated**: A user/organization admin can deactivate a user by selecting the deactivate icon under **Actions**.
+* **Suspended**: A user can be in the suspended state due to non-payment. |
 
 {{%notice info%}}
- The admin of an organization can view **Invited** users. All other users can only view **Activated** users.
+An org admin can view users in any state. Non-admins cannot view the users in invited state.
 {{%/notice%}}
 
 ## Adding or Removing Users from a Project
 
 {{%notice note%}}
- - Only the project creator can add or remove users from the project.
+ - The project creator or the organization admin can add or remove users from the project.
  - However, the project’s creator cannot remove himself.
 {{%/notice %}}
 
