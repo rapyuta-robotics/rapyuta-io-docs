@@ -1,3 +1,4 @@
+
 ---
 title: Setup Private Git Access
 description: null
@@ -36,38 +37,68 @@ You can create packages using the source code from a private git repository. A s
 > * While cloning a git repository, ensure that you provide the appropriate protocol (HTTP/HTTPS). The HTTP to HTTPS redirection does not work while cloning the repositories.
 
 
-## Creating source secret
+## Creating Source Secret
 
-To create a source secret for the private git repository, do the following:
+{{< tabs >}}
+{{% tab name="UI" %}}
 
-1. On the left navigation bar, click **Account>Secrets**.
+To create a source secret for the private git repository:
+
+1. On the left navigation bar, click **Account > Secrets**.
 
 2. Click **ADD NEW SECRET**.
 
-3. Under **SELECT SECRET TYPE**, click **Source secret**.
+3. In the **Create new secret** dialog, select **Source secret**.
 
-4. In the **Name** box, enter a name for the source secret.
+4. In the **Name** field, enter a name for the source secret. For example, *_source-secret-name_*.
 
-   For instance, you may name the source secret as *_source-secret-name_*. Ensure that the name should be no greater than 253 characters. It must consist of lower case alphanumeric characters or hyphen -, and it must begin and end with an alphanumeric character.
+  {{%notice info%}}
+   The name should be less than 253 characters.
+   It must consist of lower case alphanumeric characters or hyphen(-).
+   It must begin and end with an alphanumeric character.
+{{%/notice%}}
 
 5. From the **Authentication** drop-down menu, select either one of the following.
 
-   * **Basic authentication**: Select this option if you want to authenticate a user with either a git access token or username and password.
+   1. **Basic authentication**: Select this option if you want to authenticate a user with either a git access token or username and password.
 
-   * **SSH authentication**: Select this option if you want to authenticate a user with a private SSH key of a git repository.
-   
-6. If you select **Basic Authentication** from the **Authentication Type** drop-down list, you can select either of the following authentication methods.
+      1. **Password**: If you have selected this option, type your git username and password in the **Username**, and **Password** fields respectively.
 
-   * **Password**: If you have selected this option, type your git username and password in the **Username**, and **Password** fields respectively.
+      2. **Token**: If you have selected this option, type the corresponding git access token in the **Token** field.
 
-   * **Token**: If you have selected this option, type the corresponding git access token in the **Token** field.
-      ![Basic auth via password](/images/core-concepts/source-secret/basicauth-password.png?classes=border,shadow&width=40pc)
+   2. **SSH authentication**: Select this option if you want to authenticate a user with a private SSH key of a git repository.
 
-7. If you select **SSH Authentication** from the **Authentication Type** drop-down list, type the SSH key of your git repository in the **SSH Key** fields.
-​    ![SSH authentication](/images/core-concepts/source-secret/sshauth.png?classes=border,shadow&width=40pc) 
+      1. Enter the SSH key of your git repository in the **SSH Key** fields.
 
-8. Click **Submit**. The secret source is created.
-
+6. Click **Submit**. The source secret is created.
 {{%notice info%}}
   To edit the secret, click the edit icon under **Action**.
 {{%/notice%}}
+
+{{% /tab %}}
+{{% tab name="CLI" %}}
+
+To access the private source repositories:
+```bash
+rio secret create –t source <secret_name>
+```
+Select the source secret type, if you select `basic-auth`, specify the *username* and *password*.
+```bash
+Source secret type[basic-auth, ssh]: basic-auth
+git username: <user_name>
+git password: <password>
+```
+If you select `ssh`, specify the path to the SSH Private key.
+```bash
+Source secret type[basic-auth, ssh]: ssh
+ssh key path: <path to key-file>
+```
+To automatically import secrets from the environment:
+```bash
+rio secret import ssh
+```
+
+{{% /tab %}}
+{{< /tabs >}}
+
+

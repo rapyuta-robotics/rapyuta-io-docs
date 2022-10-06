@@ -24,7 +24,7 @@ tags:
    - How to
 ---
 
-**rapyuta.io** uses your docker pull secret during **Development>Builds** as well as **package deployment** . When you want to use a **docker image** from your private (docker) registry, you grant rapyuta.io access to your private registry by creating a docker secret.
+**rapyuta.io** uses your docker pull secret during **Development Builds** as well as **Package Deployment**. When you want to use a **docker image** from your private (docker) registry, you grant rapyuta.io access to your private registry by creating a docker secret.
 
 The two types of docker pull secrets that you can create are:
 
@@ -35,41 +35,55 @@ The two types of docker pull secrets that you can create are:
 
 To create a docker secret for a private docker registry, do the following:
 
-1. On the left navigation bar, click **Accounts>Secrets**.
+{{< tabs >}}
+{{% tab name="UI" %}}
+
+1. On the left navigation bar, click **Account > Secrets**.
 
 2. Click **ADD NEW SECRET**.
 
-3. Under **SELECT SECRET TYPE**, click **Docker secret**.
+3. In the **Create new secret** dialog, select **Docker secret**.
 
-4. In the **Name** box, enter a name for the docker secret. 
+4. In the **Name** field, enter a name for the docker secret. 
 
 {{%notice info%}}
- The name should be **less than 253 characters**, **contain a-z 0-9 and hyphen**,  and **must begin and end with a-z**.
+   The name should be less than 253 characters.
+   It must consist of lower case alphanumeric characters and hyphen(-).
+   It must begin and end with an alphanumeric character.
 {{%/notice%}}
  
 5. You can select the executable type as one of the following.
    * Dockerhub
    * Private Registry
 
-6. If your executable type is [**Docker Hub**](https://hub.docker.com/), do the following.
+   a. Enter your **Username**, specify your password, and Email ID in the respective fields.
 
-   a. Type your user name, password, and Email ID in the respective fields.
+   b. Additionally, if your executable type is **Private Registry**, provide the registry URL in the **Registry Url** field.
 
-7. If your executable type is a private registry, do the following in the respective fields.
-
-   a. **Private registry**: Provide the private (docker) registry URL.
-
-   b. **Registry Url** box: It is mandatory to provide the registry URL.
-
-   c. In the **Username** box: Type in your docker username.
-
-   d. In the **Email** box: Enter the valid email address associated with your docker registry.
-
-8. Click **SUBMIT**. The docker secret for the rapyuta.io platform is created.
+6. Click **SUBMIT**. The docker secret for the rapyuta.io platform is created.
 
 {{%notice info%}}
   To edit a secret, click the edit icon under **Action**.
 {{%/notice%}}
+
+{{% /tab %}}
+{{% tab name="CLI" %}}
+To access private Docker registries:
+```bash
+rio secret create -t docker <secret_name>
+```
+Specify the username, password, email id, and import docker.
+```bash
+docker username: <user_name>
+docker password: <password>
+docker email: <email>	
+```
+To automatically import Docker credentials from the environment:
+```bash
+rio secret import docker
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 ## Authorization Token
 
