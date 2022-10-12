@@ -35,16 +35,27 @@ To deploy a package in rapyuta.io, follow the steps:
 
     | Field | Description |
     | ---   | --- |  
-    | Name | Specify the deployment name. |
+    | Name of deployment | Specify the deployment name. |
     | Labels | A set of key value pairs used to filter out resources. To add a label, click **Add label**.|
-    |Refresh the list of online devices | Click to retrieve an updated list of online devices.|
-    | Component Details | The component of the package can have either device or cloud runtime. If the runtime component is device, select the device from the **Select device for deploying the component** dropdown list. |
 
-{{%notice info%}}    
-The list of devices is a set of online devices, which are pre-filtered to match the architecture (amd64, arm32v7, arm64v8) and device runtime (docker or preinstalled) required by the component in question.
-{{% /notice %}}
+4. Adding Configurations <br>
+   Auto sync the configuration parameters present on rapyuta.io with their corresponding configs in the cloud deployments. 
+   {{%notice info%}}    
+The deployment labels are used for filtering the correct configuration files inside the configuration tree.
+{{% /notice %}} 
+   Click **Add Configuration** and enter:
+    
+    | Field | Description |
+    | ---   | --- |  
+    | Apply to all executables | Enable this toggle button to select all the executables. |
+    | Executables | Select the list of executables to be synced. |
+    | Configuration trees | Specify the list of configuration trees to be synced. |
+    | Set a custom param directory | An optional directory where the synced configuration parameter files are present. This folder is created inside the executable. By default, the directory is created in `/tmp/paramsync`. <br> {{%notice info%}}    
+This step may silently fail if the executable does not have the required permissions to create the folder.
+{{% /notice %}} <br> |
+    | Disable param sync | Enable this toggle button to disable the sync. |
 
-4. Adding Volumes <br>
+5. Adding Volumes <br>
 * Ensure that a running volume deployment is available before you add one.
 * Add device volume if the package has **device** runtime. To add **Device Volumes**, enter:
   | Field | Description |
@@ -59,17 +70,17 @@ The list of devices is a set of online devices, which are pre-filtered to match 
   | Disk | Select the disk to be mounted from the dropdown list. |
   |Applicable Component | Select the package component to attach the volume package from the dropdown list. |
 
-5. Adding Dependency <br>
+6. Adding Dependency <br>
   To add a dependent deployment:
     1. Click **Add dependency**.
     2. Select a deployment ID from the dropdown list to add as a dependency.
 
-6. ROS Bag Jobs <br>
+7. ROS Bag Jobs <br>
   To add a ROS Bag Jobs:
     1. Click **Add ROS Bag Job**.
     2. Specify the required details. For more information, see [Working with ROS Bag Jobs](/3_how-tos/35_tooling_and_debugging/working-with-rosbags/#adding-ros-bag-jobs)
 
-7. Routed or Native Network <br>
+8. Routed or Native Network <br>
    To add a Routed or Native Network:
    1. Click **Add**
    2. Select a routed/native network from the **Network** dropdown list. 
@@ -83,10 +94,10 @@ You cannot add a native network for a package with hybrid runtime.
 
    You can also view the details related to topic configuration in the dependency composition graph on the **Deployment Details** page. For more information, see [Dependency Composition](/4_tutorials/42_advanced/dependency-composition/).
 
-8. Restart Policies
+9. Restart Policies
     If you want to modify the initial setting of the restart policy of components with **device runtime**, click **Modify**.
 
-9. Click **CREATE DEPLOYMENT** and  **Confirm**.
+10. Click **CREATE DEPLOYMENT** and  **Confirm**.
   You will be redirected to the **Details** page of the newly created deployment.
   On successful deployment, the Status changes to Running and the Deployment Phase changes to Succeeded.
   Additionally, if dependent deployments are added, the status of each should be **Running**.
