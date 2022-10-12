@@ -39,7 +39,7 @@ To deploy a package in rapyuta.io, follow the steps:
     | Labels | A set of key value pairs used to filter out resources. To add a label, click **Add label**.|
 
 4. Adding Configurations <br>
-   Auto sync the configuration parameters present on rapyuta.io with their corresponding configs in the cloud deployments. 
+   Auto sync the configuration parameters present on rapyuta.io with cloud deployment configs.
    {{%notice info%}}    
 The deployment labels are used for filtering the correct configuration files inside the configuration tree.
 {{% /notice %}} 
