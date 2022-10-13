@@ -39,21 +39,22 @@ To deploy a package in rapyuta.io, follow the steps:
     | Labels | A set of key value pairs used to filter out resources. To add a label, click **Add label**.|
 
 4. Adding Configurations <br>
-   Auto sync the configuration parameters present on rapyuta.io with cloud deployment configs.
+   At an executable level you can auto sync the configuration parameters present on rapyuta.io with cloud deployment configs.
    {{%notice info%}}    
-The deployment labels are used for filtering the correct configuration files inside the configuration tree.
+* The deployment labels are used for filtering the correct configuration files inside the configuration tree.<br>
+* The executables for which the syncing has to be enabled has to have either 'wget' or 'curl' baked in the image/build.
 {{% /notice %}} 
    Click **Add Configuration** and enter:
     
     | Field | Description |
     | ---   | --- |  
     | Apply to all executables | Enable this toggle button to select all the executables. |
-    | Executables | Select the list of executables to be synced. |
-    | Configuration trees | Specify the list of configuration trees to be synced. |
-    | Set a custom param directory | An optional directory where the synced configuration parameter files are present. This folder is created inside the executable. By default, the directory is created in `/tmp/paramsync`. <br> {{%notice info%}}    
+    | Executables | Select the list of executables that need to be synced. |
+    | Configuration trees | Specify the list of configuration trees to be synced from. |
+    | Set a custom param directory | An optional directory where the synced configuration parameter files are present. This folder is created inside the executable. `/tmp/paramsync` directory is created for the same purpose. <br> {{%notice info%}}    
 This step may silently fail if the executable does not have the required permissions to create the folder.
 {{% /notice %}} <br> |
-    | Disable param sync | Enable this toggle button to disable the sync. |
+    | Disable param sync | Enable this toggle button to disable the sync for the selected executable. |
 
 5. Adding Volumes <br>
 * Ensure that a running volume deployment is available before you add one.
