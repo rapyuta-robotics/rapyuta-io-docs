@@ -71,7 +71,7 @@ a valid logs output is displayed in **stdout** window.
 
 ### Indexed Logs
 
-To view the corresponding deployment logs in real-time, click **Live Logs** tab. They are streamed in a terminal-like window and can be useful to view and debug your application in the cloud as it generates new logs. The rapyuta.io platform allows you to view the live <!-- Incomplete--> 
+To view the corresponding deployment logs in real-time, click **Live Logs** tab. They are streamed in a terminal-like window and can be useful to view and debug your application in the cloud as it generates new logs. 
 
 It is similar to the **tail -f** functionality one is used to in a UNIX terminal console.
 
