@@ -129,7 +129,7 @@ Build logs are generated when rapyuta.io converts the source code of a git repos
 
 To view build logs of a build:
 
-1. In rhe rapyuta.io console, on the left navigation bar, click **Development>Builds**.  
+1. In the rapyuta.io console, on the left navigation bar, click **Development>Builds**.  
 
 2. Select a build from the build list page. Click **SHOW MORE** and go to **Build history** tab.  
 
