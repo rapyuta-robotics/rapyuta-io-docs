@@ -33,7 +33,6 @@ To Upload logs:
 2. Click **Upload** to start uploading the files.
 
 {{%notice note%}}
-You can:
 * Choose the table or card option to view the log file.
 * Download the log lines per page, select either 10, 20, 30, or 40 lines of logs to be downloaded per page.
 {{%/notice%}}
