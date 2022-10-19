@@ -26,7 +26,7 @@ rapyuta.io Python SDK enables you to provision packages either on the cloud or o
 
 ## Installation
 
-It is recommended you install the latest Python SDK using **pip**(the most popular tool for installing python packages).
+It is recommended you install the latest Python SDK using **pip** (the most popular tool for installing python packages).
 
 ```bash
 pip install rapyuta-io
