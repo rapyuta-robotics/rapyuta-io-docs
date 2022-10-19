@@ -24,7 +24,7 @@ tags:
 
 ## Deployment Logs
 
-rapyuta.io provides historical logs for components, executables, and associated cloud bridges for deployment in the cloud and on a device.
+rapyuta.io provides historical logs for components, executables, and associated cloud bridges and native network clients for deployment in the cloud and on a device.
 Additionally, rapyuta.io offers to stream (**live logs**) and follow stdout/stderr for components deployed on the cloud.
 
 Add a ROS package to rapyuta.io, which will have a component with cloud runtime. It will publish the ROS topic *_/telemetry_* with **Maximum** **QoS** and print debug information to **stdout**. Deploy the package on the cloud, and name the deployment as **ROS publisher exclusive deployment**.
