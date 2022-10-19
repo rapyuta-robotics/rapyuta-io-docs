@@ -37,7 +37,7 @@ To view the deployment logs:
 
    In this example, select **ROS publisher exclusive deployment**.
 
-3. On the deployment's **DETAILS** tab, ensure the green progress bar is at **Succeeded** and **Status: Running** point.
+3. On the deployment's **DETAILS** tab, ensure the green progress bar is at **Succeeded** and **Status: Running**.
 
 
 ### Stdout Logs
@@ -71,7 +71,7 @@ a valid logs output is displayed in **stdout** window.
 
 ### Indexed Logs
 
-To view the corresponding deployment logs in real-time, click **Live Logs** tab. They are streamed in a terminal-like window and can be useful to view and debug your application in the cloud as it generates new logs. The rapyuta.io platform allows you to view the live 
+To view the corresponding deployment logs in real-time, click **Live Logs** tab. They are streamed in a terminal-like window and can be useful to view and debug your application in the cloud as it generates new logs. The rapyuta.io platform allows you to view the live <!-- Incomplete--> 
 
 It is similar to the **tail -f** functionality one is used to in a UNIX terminal console.
 
