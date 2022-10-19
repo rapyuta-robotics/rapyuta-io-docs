@@ -34,13 +34,12 @@ If you want to record the topics for any ROS component of a package, you can fol
 | ---   | --- |  
 | Name | Enter a name for the ROS bag job. |
 | Topic Names | Enter the name of the topic that you want to record.|
-| All Topics | Enable this toggle button if you want to record all the topics available in the component.|
+| All Topics? | Enable this toggle button if you want to record all the topics available in the component.|
 | Include Regex | To record a series of topics that should match a regular expression value or regex, enter the regex here. |
 | Exclude Regex | to exclude the recording of a series of topics that should match a regular expression value or regex, enter the regex here. {{% notice info %}}
 If you have enabled the **All Topics?** toggle-button, **Topic Name** and  **Include Regex** fields are disabled.
 {{% /notice %}}|
-| BZ2 or LZ4 | You can also provide either **BZ2** or **LZ4** compression to the recorded topics based on your requirement and available disk sizes.
-BZ2 generally produces smaller bags than LZ4. For more information about ROS compression, [click here](http://wiki.ros.org/rosbag/command-line#compress).  <!--link is not working, check the link-->|
+| BZ2 or LZ4 | You can also provide either **BZ2** or **LZ4** compression to the recorded topics based on your requirement and available disk sizes. BZ2 generally produces smaller bags than LZ4. For more information about ROS compression, [click here](http://wiki.ros.org/rosbagcommand-line#compress).  <!--link is not working, check the link-->|
 | Advanced Options | The advanced option allows you to record the topics with a more granular report. Click **Show Advanced Option** to view the options.|
 | Node Name | Enter the node for which you want to record all the topics subscribed by the specific node. <validate> |
 | No. of Message | Enter the number of messages that you want to store for each topic.|
