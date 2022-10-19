@@ -45,6 +45,6 @@ sudo systemctl status ssh
 
 To perform remote SSH on a device using the rapyuta.io console:
 
-1. Inthe rapyuta.io console, on the left navigation bar, click **Devices > All Devices**.
+1. In the rapyuta.io console, on the left navigation bar, click **Devices > All Devices**.
 2. Select the device you want to initiate an SSH session on.
 3. Select the **SSH** tab to view a live remote SSH session.
