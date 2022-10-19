@@ -34,22 +34,12 @@ If you want to record the topics for any ROS component of a package, you can fol
 | ---   | --- |  
 | Name | Enter a name for the ROS bag job. |
 | Topic Names | Enter the name of the topic that you want to record.|
-<<<<<<< HEAD
-| All Topics | Enable this toggle button if you want to record all the topics available in the component.|
-| Include Regex | To record a series of topics that should match a regular expression value or regex, enter the regex here. |
-| Exclude Regex | to exclude the recording of a series of topics that should match a regular expression value or regex, enter the regex here. {{% notice info %}}
-If you have enabled the **All Topics?** toggle-button, **Topic Name** and  **Include Regex** fields are disabled.
-{{% /notice %}}|
-| Compression | You can also provide either **BZ2** or **LZ4** compression to the recorded topics based on your requirement and available disk sizes.
-BZ2 generally produces smaller bags than LZ4. For more information about ROS compression, [click here](http://wiki.ros.org/rosbag/command-line#compress).  <!--link is not working, check the link-->|
-=======
 | All Topics? | Enable this toggle button if you want to record all the topics available in the component.|
 | Include Regex | To record a series of topics that should match a regular expression value or regex, enter the regex here. |
 | Exclude Regex | To exclude the recording of a series of topics that should match a regular expression value or regex, enter the regex here. {{% notice info %}}
 If you have enabled the **All Topics** toggle-button, **Topic Name** and  **Include Regex** fields are disabled.
 {{% /notice %}}|
-| BZ2 or LZ4 | You can also provide either **BZ2** or **LZ4** compression to the recorded topics based on your requirement and available disk sizes. BZ2 generally produces smaller bags than LZ4. For more information about ROS compression, [click here](http://wiki.ros.org/rosbagcommand-line#compress).  <!--link is not working, check the link-->|
->>>>>>> fix/doc-improvement-tools-debugging
+| BZ2 or LZ4 | You can also provide either **BZ2** or **LZ4** compression to the recorded topics based on your requirement and available disk sizes. BZ2 generally produces smaller bags than LZ4. For more information about ROS compression, see [rosbag compress](http://wiki.ros.org/rosbag/Commandline#rosbag_compress). |
 | Advanced Options | The advanced option allows you to record the topics with a more granular report. Click **Show Advanced Option** to view the options.|
 | Node Name | Enter the node for which you want to record all the topics subscribed by the specific node. <validate> |
 | No. of Message | Enter the number of messages that you want to store for each topic.|
@@ -63,17 +53,14 @@ For example, you can configure 10 splits and each split can store up to 500 MB (
 | Upload Rate | (Applicable only for device runtime) Specify the upload rate for the ROS bag file to be uploaded in the rapyuta.io platform.|
 | Rate Units | (Applicable only for device runtime) Specify the unit for the upload rate from the drop-down menu. You can select **Bytes/s**, **KB/s**, or**MB/s**.|
 | Purge After | (Applicable only for device runtime) Enable the toggle button if you want to delete the ROS bag file after it has been successfully uploaded to the rapyuta.io platform. |
-<<<<<<< HEAD
-| Upload mode | Select one of the upload mode to define the frequency of ROS bag job uploads: <br> * **Continuous** - The recorded ROS bags will get uploaded continuously. <br> * **On-demand** - ROS bags recorded during the specified time period will get uploaded.<br> * **On-stop** - The ROS bags will get uploaded only after the recording stops.|
-| Configure latching and throttling | Latching enables us to persist the last message published on a channel in every split of the bag file and throttling enables the recorder to record messages at a lower frequency, for example, 5 msgs/sec. To configure latching and throttling:<br> * Topic - Specify the topic name. <br> * **Latch** - Click to enable. <br> * **Throttle** - Click to enable. <br> * **Throttle frequency** - Specify the frequency at which messages should be recorded. |
-=======
- 
-2. To add the ROS bag job and start recording the defined topics, click **Add**.
+| Upload mode | Select one of the upload modes to define the frequency of ROS bag job uploads: <br> * **Continuous** - The recorded ROS bags will get uploaded continuously. <br> * **On-demand** - ROS bags recorded during the specified time period will get uploaded.<br> * **On-stop** - The ROS bags will get uploaded only after the recording stops.|
+| Configure latching and throttling | Latching enables us to persist the last message published on a channel in every split of the bag file and throttling enables the recorder to record messages at a lower frequency, for example, 5 msgs/sec. To configure latching and throttling:<br> * **Topic** - Specify the topic name. <br> * **Latch** - Click enable to enable latching. <br> * **Throttle** - Click enable to enable throttling. <br> * **Throttle frequency** - Specify the frequency at which messages should be recorded. |
+
+2. To add the ROS bag job on a running deployment and start recording the defined topics, click **Add**.
 {{% notice info %}}
 You can also update the value of the ROS bag jobs during the time of deployment. The values added during the deployments override the values added during the package creation. 
-{{% /notice %}}
->>>>>>> fix/doc-improvement-tools-debugging
-    
+{{% /notice %}}    
+
 ## Viewing ROS Bag Job
 
 The rapyuta.io platform lists all the available ROS bag jobs under each component. To view the details of a ROS bag job, click the ROS bag job and then click the **Job Details** tab. You can view the ROS bag details, for example, the topics that are being recorded by the job or the message compression detail as displayed in the following image.
@@ -81,8 +68,6 @@ The rapyuta.io platform lists all the available ROS bag jobs under each componen
 
 You can also view all the ROS bag jobs running on the device on the device's details page. The **ROS Bags Jobs** tab displays all the ROS bag jobs running on the device and you can download the ROS bag files.
 ![rosbag-job-details](/images/dev-guide/rosbag-jobs/rosbag-job-device-details.png?classes=border,shadow&width=60pc)
-
-
 
 ## Access ROS Bag Files
 
