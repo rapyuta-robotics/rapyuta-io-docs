@@ -216,7 +216,7 @@ $ python talker-listener.py
 ```
 
 The output is an object of the class
-[***DeploymentStatus***](https://sdkdocs.apps.rapyuta.io/#rapyuta_io.clients.deployment.DeploymentStatus),
+[***DeploymentStatus***](https://sdk.rapyuta.io/deployment.html#rapyuta_io.clients.deployment.DeploymentStatus),
 which contains values such as:
 
 * deployment ID

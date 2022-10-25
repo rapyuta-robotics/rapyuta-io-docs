@@ -106,7 +106,7 @@ To determine a package's plan id in rapyuta.io:
 
 ## SDK reference
 
-For more detailed information about any class in the SDK, see [full SDK reference](https://sdkdocs.apps.rapyuta.io/).
+For more detailed information about any class in the SDK, see [full SDK reference](https://sdk.rapyuta.io/).
 
 ## Related Links
 
