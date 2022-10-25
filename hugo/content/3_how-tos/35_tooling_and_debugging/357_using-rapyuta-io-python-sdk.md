@@ -37,11 +37,8 @@ For python client for rapyuta.io, [click here](https://pypi.org/project/rapyuta-
 
 ## Requirements
 
-The rapyuta.io Python SDK is compatible with python applications supporting Python2.7
-
-{{% notice info %}}
-We have added Python3.9 support to the rapyuta.io python SDK. Note that this is still in the alpha stage.
-{{% /notice %}}
+The Python SDK supports Python 3.6+. For older Python 2.x support, you can use
+the 0.x.x [releases](https://pypi.org/project/rapyuta-io/#history) from Pypi.
 
 ### Auth Token
 
