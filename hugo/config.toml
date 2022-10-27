@@ -46,7 +46,7 @@ disableSearch = false
 
 [[menu.shortcuts]]
     name = "<i class='fas fa-atlas'></i> SDK Reference"
-    url = "https://sdkdocs.apps.rapyuta.io/"
+    url = "https://sdk.rapyuta.io/"
     weight = 10
 
 [[menu.shortcuts]]

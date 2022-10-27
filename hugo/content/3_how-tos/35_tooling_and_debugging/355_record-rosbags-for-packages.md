@@ -57,6 +57,7 @@ For example, you can configure 10 splits and each split can store up to 500 MB (
 | Configure latching and throttling | Latching enables us to persist the last message published on a channel in every split of the bag file and throttling enables the recorder to record messages at a lower frequency, for example, 5 msgs/sec. To configure latching and throttling:<br> * **Topic** - Specify the topic name. <br> * **Latch** - Click enable to enable latching. <br> * **Throttle** - Click enable to enable throttling. <br> * **Throttle frequency** - Specify the frequency at which messages should be recorded. |
 
 2. To add the ROS bag job on a running deployment and start recording the defined topics, click **Add**.
+
 {{% notice info %}}
 You can also update the value of the ROS bag jobs during the time of deployment. The values added during the deployments override the values added during the package creation. 
 {{% /notice %}}    
