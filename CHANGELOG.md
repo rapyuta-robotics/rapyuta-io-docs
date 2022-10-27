@@ -1,7 +1,10 @@
 # CHANGELOG
 
-## Unreleased
-- toggle user state feature added
+## [6.7 - 2022-10-27]
+- added release notes
+- added cloud param feature
+- added rosbag upload, latching and throttling feature update
+
 ## [6.5.1 - 2022-09-14]
 - added release notes
 
