@@ -37,4 +37,4 @@ Welcome to the January 16, 2020 release of rapyuta.io Python SDK **0.10.2**
 * Bug fix: **poll_deployment_till_ready()** raises **DeploymentNotRunningException** in invalid cases.
 
 #### Documentation
-Updated the [SDK Reference](https://sdkdocs.apps.rapyuta.io/) with more usage examples.
+Updated the [SDK Reference](https://sdk.rapyuta.io/) with more usage examples.
