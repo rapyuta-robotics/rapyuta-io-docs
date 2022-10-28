@@ -29,8 +29,7 @@ tags:
 ## Error Codes
 
 If the overall deployment **STATUS** is **Error**, rapyuta.io displays an error code along with a brief description of the error.
-
-The following table lists available error codes, short descriptions, and the recommendations you should take:
+Listed below are the error codes and the recommended actions to resolve them:
 
 | Error code         | Description | Recommended action |
 | ------------------ | ----------- | ------------------ |
