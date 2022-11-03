@@ -27,7 +27,7 @@ categories:
    - Projects
 ---
 
-## Adding/Removing Users from an Organization
+## Adding or Deleting Users from an Organization
 
 {{%notice note%}}
  Only the  **Admin** of an organization can invite users to their organization.
@@ -37,7 +37,7 @@ To add or remove users to the rapyuta.io platform, do the following:
 
 1. On the left navigation bar, click **Account > Organization**. The panel displays a list of users.
 
-2. To Add users:
+2. To add users:
 
    1. On **Users** tab, enter a valid email address of the user you want to invite to rapyuta.io.
 
@@ -53,16 +53,16 @@ To add or remove users to the rapyuta.io platform, do the following:
    An org admin can view users in any state. Non-admins cannot view the users in invited state.
    {{%/notice%}}
 
-   3. To remove users:
+3. To delete users:
 
-      1. Under **Actions**, click **Remove** against the user that you want to remove. A confirmation page appears.
-       2. Click **Confirm**. 
+   1. Under **Actions**, click **Remove** against the user you want to remove. A confirmation page appears.
+   2. Click **Confirm**. 
       The user is removed from the organization.
      
-      {{%notice note%}}
-      - If the deleted user is a project admin, then the ownership of that project will be transferred to the organization admin.
-      - If the user is a part of one or more projects/groups, they will be removed from all those projects/groups.
-      {{%/notice %}}
+   {{%notice note%}}
+   - If the deleted user is a project admin, then the ownership of that project will be transferred to the organization admin.
+   - If the user is a part of one or more projects/groups, they will be removed from all those projects/groups.
+   {{%/notice %}}
 
 ## Adding or Removing Users from a Project
 
