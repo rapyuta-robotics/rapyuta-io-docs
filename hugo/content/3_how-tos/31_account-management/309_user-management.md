@@ -59,10 +59,10 @@ To add or remove users to the rapyuta.io platform, do the following:
    2. Click **Confirm**. 
       The user is removed from the organization.
      
-   {{%notice note%}}
-   - If the deleted user is a project admin, then the ownership of that project will be transferred to the organization admin.
-   - If the user is a part of one or more projects/groups, they will be removed from all those projects/groups.
-   {{%/notice %}}
+      {{%notice note%}}
+      - If the deleted user is a project admin, then the ownership of that project will be transferred to the organization admin.
+      - If the user is a part of one or more projects/groups, they will be removed from all those projects/groups.
+      {{%/notice %}}
 
 ## Adding or Removing Users from a Project
 
