@@ -69,22 +69,30 @@ The rapyuta.io platform lists all the available rosbag jobs under each component
 You can also view all the rosbag jobs running on the device on the device's details page. The **ROS Bags Jobs** tab displays all the rosbag jobs running on the device and you can download the rosbag files.
 ![rosbag-job-details](/images/dev-guide/rosbag-jobs/rosbag-job-device-details.png?classes=border,shadow&width=60pc)
 
-## Access Rosbag Files
+## Rosbag Files
 
- A rosbag file is uploaded to the platform automatically if the rosbag job is stopped or if the deployment is de-provisioned. To stop the rosbag job, click **Stop** next to the rosbag job name. A pop-up warning message appears. Click **Yes**. The platform takes some time and the details of the recorded topics are available. You can view the following details.
-The **ROS Bag Jobs** tab lists all the running rosbag jobs for the deployment. 
+A rosbag file is uploaded to the platform automatically if the rosbag job is stopped or if the deployment is de-provisioned. 
+You can access the rosbag files on the deployments page. The **ROS Bag Jobs** tab lists all the running rosbag jobs for the deployment. 
+
+### To stop a rosbag job:
+
+1. In the rapyuta.io console, navigate to the **Deployments** page, select the deployment, and click **ROSBag Jobs** tab.
+2. Click **Stop**. A pop-up warning message appears. Click **Yes**.
+
+### You can view the following details:
+ 
 ![rosbag-jobs](/images/dev-guide/rosbag-jobs/rosbag-jobs.png?classes=border,shadow&width=55pc)
 
-* **Bag Name**: Displays the name of the rosbag file.
-* **Status**: Displays whether the recorded rosbag file is uploading, uploaded, or in the error state. If the status is **Uploading**, it implies that the rosbag file is getting uploaded to the platform after the rosbag job is stopped or the deployment is de-provisioned. If the status is **Uploaded**, it implies that the file is uploaded to the platform successfully and you can download the file to your local system for further analysis and troubleshooting. If the status is in **Error** state, it implies that the recording of the rosbag file is not successful and the rosbag file is not available. If the rosbag job goes into error state, click the **Error** link to raise a support ticket for a resolution.
-
-* **Messages**: Displays the number of recorded messages.
-* **Size**: Displays the file size.
-* **Start**: Displays the start time of the recording.
-* **End**: Displays when the recording is stopped.
-* **Duration**: Displays the total time duration for the rosbag job that was run.
-* **Indexed**: If the **Indexed** field is marked with a green tick icon, it implies that the rosbag file is indexed and contains valid recordings of topics. If the **Indexed** field is marked with a red cross icon, it implies that the rosbag file is not indexed and does not contain valid recordings of topics.
-* **Actions**: You can either download the rosbag file or delete the file.
+| Field | Description |
+| ---   | --- |  
+| Bag Name | Displays the name of the rosbag file. |
+| Status | Displays whether the recorded rosbag file is uploading, uploaded, or in the error state. The rosbag file can be in any one of the following states: <br> * Uploading: The rosbag file is getting uploaded to the platform after the rosbag job is stopped or the deployment is de-provisioned. <br> * Uploaded:  The file is uploaded to the platform successfully and you can download the file to your local system for further analysis and troubleshooting. <br> * Error:The recording of the rosbag file is not successful and the rosbag file is not available. You can click the **Error** link to raise a support ticket for a resolution. |
+| Messages | Displays the number of recorded messages.|
+| Size | Displays the file size.|
+| End | Displays when the recording is stopped.|
+| Duration | Displays the total running time of the rosbag jobs. <!-- verify --> |
+| Indexed | If the **Indexed** field is marked with a green tick icon, it implies that the rosbag file is indexed and contains valid recordings of topics. If the **Indexed** field is marked with a red cross icon, it implies that the rosbag file is not indexed and does not contain valid recordings of topics. |
+| Actions | You can either download or delete the rosbag file. |
 
 ### Available Actions on a Rosbag File
 
