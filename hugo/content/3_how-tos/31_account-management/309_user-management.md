@@ -50,7 +50,7 @@ To add or remove users to the rapyuta.io platform, do the following:
    * **Suspended**: A user can be in a suspended state if their trial has ended.
 
    {{%notice info%}}
-   An org admin can view users in any state. Users other than org admin cannot view the users in invited state.
+   An org admin can view users in any state. Users other than the org admin cannot view the users in invited state.
    {{%/notice%}}
 
 3. To delete users:
