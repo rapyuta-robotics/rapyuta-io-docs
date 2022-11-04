@@ -39,7 +39,7 @@ To add or remove users to the rapyuta.io platform, do the following:
 
 2. To add users:
 
-   1. On **Users** tab, enter a valid email address of the user you want to invite to rapyuta.io.
+   1. Under the **Users** tab, enter a valid email address of the user you want to invite to rapyuta.io.
 
    2. Click **ADD USER**.
 
@@ -47,15 +47,15 @@ To add or remove users to the rapyuta.io platform, do the following:
    * **Invited**: The initial state of the user. The invited user will receive an invitation email to join rapyuta.io.
    * **Activated**: Once the invited user has registered and signed into rapyuta.io, their state automatically changes to **Activated**. Only an org admin can activate a deactivated user by selecting the activate icon under **Actions**. 
    * **Deactivated**: A user/organization admin can deactivate a user by selecting the deactivate icon under **Actions**.
-   * **Suspended**: A user can be in the suspended state due to non-payment.
+   * **Suspended**: A user can be in a suspended state if their trial has ended.
 
    {{%notice info%}}
-   An org admin can view users in any state. Non-admins cannot view the users in invited state.
+   An org admin can view users in any state. Users other than org admin cannot view the users in invited state.
    {{%/notice%}}
 
 3. To delete users:
 
-   1. Under **Actions**, click **Remove** against the user you want to remove. A confirmation page appears.
+   1. Under **Actions**, click **Remove** against the user you want to remove. A confirmation pop-up appears.
    2. Click **Confirm**. 
       The user is removed from the organization.
      
