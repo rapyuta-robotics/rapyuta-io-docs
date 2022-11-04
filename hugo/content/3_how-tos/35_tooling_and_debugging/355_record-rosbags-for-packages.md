@@ -74,19 +74,19 @@ You can also view all the rosbag jobs running on the device on the device's deta
 A rosbag file is uploaded to the platform automatically if the rosbag job is stopped or if the deployment is de-provisioned. 
 You can access the rosbag files on the deployments page. The **ROS Bag Jobs** tab lists all the running rosbag jobs for the deployment. 
 
-### To stop a rosbag job:
+To stop a rosbag job:
 
 1. In the rapyuta.io console, navigate to the **Deployments** page, select the deployment, and click **ROSBag Jobs** tab.
 2. Click **Stop**. A pop-up warning message appears. Click **Yes**.
 
-### You can view the following details:
+You can view the following details:
  
 ![rosbag-jobs](/images/dev-guide/rosbag-jobs/rosbag-jobs.png?classes=border,shadow&width=55pc)
 
 | Field | Description |
 | ---   | --- |  
 | Bag Name | Displays the name of the rosbag file. |
-| Status | Displays whether the recorded rosbag file is uploading, uploaded, or in the error state. The rosbag file can be in any one of the following states: <br> * Uploading: The rosbag file is getting uploaded to the platform after the rosbag job is stopped or the deployment is de-provisioned. <br> * Uploaded:  The file is uploaded to the platform successfully and you can download the file to your local system for further analysis and troubleshooting. <br> * Error:The recording of the rosbag file is not successful and the rosbag file is not available. You can click the **Error** link to raise a support ticket for a resolution. |
+| Status | Displays whether the recorded rosbag file is uploading, uploaded, or in the error state. The rosbag file can be in any one of the following states: <br> * Uploading: The rosbag file is getting uploaded to the platform after the rosbag job is stopped or the deployment is de-provisioned. <br> * Uploaded:  The file is uploaded to the platform successfully and you can download the file to your local system for further analysis and troubleshooting. <br> * Error: The recording of the rosbag file is not successful and the rosbag file is not available. You can click the **Error** link to raise a support ticket for a resolution. |
 | Messages | Displays the number of recorded messages.|
 | Size | Displays the file size.|
 | End | Displays when the recording is stopped.|
