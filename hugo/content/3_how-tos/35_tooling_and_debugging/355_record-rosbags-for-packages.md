@@ -74,12 +74,16 @@ You can also view all the rosbag jobs running on the device on the device's deta
 A rosbag file is uploaded to the platform automatically if the rosbag job is stopped or if the deployment is de-provisioned. 
 You can access the rosbag files on the deployments page. The **ROS Bag Jobs** tab lists all the running rosbag jobs for the deployment. 
 
-To stop a rosbag job:
+1. Click **Add new ROS Bag job** to add a new rosbag job.
 
-1. In the rapyuta.io console, navigate to the **Deployments** page, select the deployment, and click **ROSBag Jobs** tab.
-2. Click **Stop**. A pop-up warning message appears. Click **Yes**.
+2. To stop a rosbag job:
 
-You can view the following details:
+  *. In the rapyuta.io console, navigate to the **Deployments** page, select the deployment, and click **ROSBag Jobs** tab.
+  *. Click **Stop**. A pop-up warning message appears. Click **Yes**.
+
+3. To view the rosbags within a time frame, in the start and end time field select the date and time frame.
+
+4. You can also view the following details:
  
 ![rosbag-jobs](/images/dev-guide/rosbag-jobs/rosbag-jobs.png?classes=border,shadow&width=55pc)
 
@@ -90,7 +94,7 @@ You can view the following details:
 | Messages | Displays the number of recorded messages.|
 | Size | Displays the file size.|
 | End | Displays when the recording is stopped.|
-| Duration | Displays the total running time of the rosbag jobs. <!-- verify --> |
+| Duration | Displays the total running time of the rosbag jobs.|
 | Indexed | If the **Indexed** field is marked with a green tick icon, it implies that the rosbag file is indexed and contains valid recordings of topics. If the **Indexed** field is marked with a red cross icon, it implies that the rosbag file is not indexed and does not contain valid recordings of topics. |
 | Actions | You can either download or delete the rosbag file. |
 
