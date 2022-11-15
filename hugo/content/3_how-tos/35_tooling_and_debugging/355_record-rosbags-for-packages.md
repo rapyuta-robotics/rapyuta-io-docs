@@ -72,18 +72,19 @@ You can also view all the rosbag jobs running on the device on the device's deta
 ## Rosbag Files
 
 A rosbag file is uploaded to the platform automatically if the rosbag job is stopped or if the deployment is de-provisioned. 
-You can access the rosbag files on the deployments page. The **ROS Bag Jobs** tab lists all the running rosbag jobs for the deployment. 
+You can access the rosbag files on the deployments page. 
+
+In the rapyuta.io console, navigate to the **Deployments** page, select the deployment, and click **ROSBag Jobs** tab to view all the running rosbag jobs for the deployment. You can also perform the following operations:
 
 1. Click **Add new ROS Bag job** to add a new rosbag job.
 
-2. To stop a rosbag job:
+2. Click **Stop** to stop a rosbag job. A pop-up warning message appears. Click **Yes**.
 
-  * In the rapyuta.io console, navigate to the **Deployments** page, select the deployment, and click **ROSBag Jobs** tab.<br>
-  * Click **Stop**. A pop-up warning message appears. Click **Yes**.
+3. To view the rosbags within a specific time frame, select the date, time in the start and end date fields and click **Ok**.
 
-3. To view the rosbags within a time frame, in the start and end time field select the date and time frame.
+4. For on-demand upload mode, click the **Get rosbags** icon to initiate the collection of rosbags.
 
-4. You can also view the following details:
+5. You can also view the following details:
  
 ![rosbag-jobs](/images/dev-guide/rosbag-jobs/rosbag-jobs.png?classes=border,shadow&width=55pc)
 
@@ -96,7 +97,7 @@ You can access the rosbag files on the deployments page. The **ROS Bag Jobs** ta
 | End | Displays when the recording is stopped.|
 | Duration | Displays the total running time of the rosbag jobs.|
 | Indexed | If the **Indexed** field is marked with a green tick icon, it implies that the rosbag file is indexed and contains valid recordings of topics. If the **Indexed** field is marked with a red cross icon, it implies that the rosbag file is not indexed and does not contain valid recordings of topics. |
-| Actions | You can either download or delete the rosbag file. |
+| Actions | You can either download or delete the rosbag file. Click the **webviz icon to visualize the rosbags in the webviz app. |
 
 ### Available Actions on a Rosbag File
 
