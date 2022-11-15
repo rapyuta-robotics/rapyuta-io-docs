@@ -78,8 +78,8 @@ You can access the rosbag files on the deployments page. The **ROS Bag Jobs** ta
 
 2. To stop a rosbag job:
 
-  *. In the rapyuta.io console, navigate to the **Deployments** page, select the deployment, and click **ROSBag Jobs** tab.
-  *. Click **Stop**. A pop-up warning message appears. Click **Yes**.
+  * In the rapyuta.io console, navigate to the **Deployments** page, select the deployment, and click **ROSBag Jobs** tab.<br>
+  * Click **Stop**. A pop-up warning message appears. Click **Yes**.
 
 3. To view the rosbags within a time frame, in the start and end time field select the date and time frame.
 
