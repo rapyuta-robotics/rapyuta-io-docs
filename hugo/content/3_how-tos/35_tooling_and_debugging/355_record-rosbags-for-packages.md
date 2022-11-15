@@ -80,7 +80,7 @@ In the rapyuta.io console, navigate to the **Deployments** page, select the depl
 
 2. Click **Stop** to stop a rosbag job. A pop-up warning message appears. Click **Yes**.
 
-3. To view the rosbags within a specific time frame, select the date, time in the start and end date fields and click **Ok**.
+3. To view the rosbags within a specific time frame, select the date and time in the start and end date fields and click **Ok**.
 
 4. For on-demand upload mode, click the **Get rosbags** icon to initiate the collection of rosbags.
 
@@ -97,7 +97,7 @@ In the rapyuta.io console, navigate to the **Deployments** page, select the depl
 | End | Displays when the recording is stopped.|
 | Duration | Displays the total running time of the rosbag jobs.|
 | Indexed | If the **Indexed** field is marked with a green tick icon, it implies that the rosbag file is indexed and contains valid recordings of topics. If the **Indexed** field is marked with a red cross icon, it implies that the rosbag file is not indexed and does not contain valid recordings of topics. |
-| Actions | You can either download or delete the rosbag file. Click the **webviz icon to visualize the rosbags in the webviz app. |
+| Actions | You can either download or delete the rosbag file. Click the **webviz** icon to visualize the rosbags in the webviz app. |
 
 ### Available Actions on a Rosbag File
 
