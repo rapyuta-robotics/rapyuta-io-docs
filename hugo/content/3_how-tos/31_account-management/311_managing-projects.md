@@ -58,6 +58,13 @@ rio project delete <project_name>
 {{% /tab %}}
 {{< /tabs >}}
 
+## Nominate the Project Admin
+
+The org or the project admin can nominate another project member as the admin of that project.
+
+1. In the left navigation bar, click **Account > Projects**. The project dashboard is displayed.
+2. Select the project for which you want to nominate a new admin.
+3. Under **Existing users**, hover over the username and click **Admin** to nominate the project member as the new admin.
 
 ## Switching between Projects
 
