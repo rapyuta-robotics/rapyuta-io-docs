@@ -1,6 +1,10 @@
 # CHANGELOG
 
-## [6.7 - 2022-10-27]
+## [6.8 - 2022-11-23]
+- added release notes
+- added nominate project admin feature doc
+
+## [6.7.2 - 2022-11-16]
 - added release notes
 - added deployment error code DEP_317
 
