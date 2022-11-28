@@ -67,7 +67,7 @@ curl -XPOST $IO_METRICS_HOST:$IO_METRICS_HTTP_PORT/io_metrics --data '{"name": "
 You can view a complete sample Python application [here](https://github.com/rapyuta-robotics/io_tutorials/tree/master/talk/cloud_metrics_publisher). 
 
 {{% notice note%}}
-rapyuta.io now supports django middleware. It collects the duration metrics for an HTTP request.
+rapyuta.io now supports django middleware. It collects the duration metrics for an HTTP request. For more information see, [django-riometrics-middleware](https://pypi.org/project/django-riometrics-middleware/)
 {{% /notice %}}
 <!--
 TODO: remove comment after user metrics GA release. also, remove "Rapyuta IO Metrics Collector" section after that
