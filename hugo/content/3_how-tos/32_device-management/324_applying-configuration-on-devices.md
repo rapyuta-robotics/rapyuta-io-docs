@@ -175,39 +175,39 @@ To create a dynamic configuration:
 
    *  The key-value pairs should be enclosed in curly braces. For example,
 
-       ```yaml
+       ```javascript
       
-       \# Invalid parameters 
+       Invalid parameters 
       
         {a}
       
-       \# Valid parameters
+       Valid parameters
       
         {"a": "b"}
         ```
 
   * Only key-value pairs are supported. For example,
 
-      ```yaml
+      ```javascript
 
-      \# Invalid parameters 
+      Invalid parameters 
 
       [2,3]
 
-      \# Valid parameters 
+      Valid parameters 
 
       {"2": "3"}
       ```     
     
   * You cannot add an array as the key. For example,
 
-       ```yaml
+       ```javascript
       
-       \# Invalid parameters 
+       Invalid parameters 
       
         {[2,3]: 5}
       
-       \# Valid parameters
+       Valid parameters
       
         {"5": [2,3]}
        ```
