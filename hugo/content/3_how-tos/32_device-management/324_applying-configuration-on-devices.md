@@ -214,7 +214,11 @@ To create a dynamic configuration:
 ## Creating a Configuration Parameter in JSON File Format 
 
   rapyuta.io allows you to add the configuration parameters at every value node including the root node. You can add the configuration parameter in JSON format as a key-value pairs. 
-
+  
+  {{% notice info %}}
+  Currently, we do not support nested JSON.
+  {{% /notice %}}
+  
   To create the configuration parameter for a package in JSON format, create a config parameter, as described here. For example, create a parameter named JSON_Config and perform the following steps:
   
   1. To configure the root node, select the newly added configuration parameter **JSON_Config** from the Configuration Name list.
