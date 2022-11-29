@@ -86,8 +86,6 @@ In the rapyuta.io console, navigate to the **Deployments** page, select the depl
 
 5. You can also view the following details:
  
-![rosbag-jobs](/images/dev-guide/rosbag-jobs/rosbag-jobs.png?classes=border,shadow&width=55pc)
-
 | Field | Description |
 | ---   | --- |  
 | Bag Name | Displays the name of the rosbag file. |
@@ -99,9 +97,11 @@ In the rapyuta.io console, navigate to the **Deployments** page, select the depl
 | Indexed | If the **Indexed** field is marked with a green tick icon, it implies that the rosbag file is indexed and contains valid recordings of topics. If the **Indexed** field is marked with a red cross icon, it implies that the rosbag file is not indexed and does not contain valid recordings of topics. |
 | Actions | You can either download or delete the rosbag file. Click the **webviz** icon to visualize the rosbags in the webviz app. |
 
+![rosbag-jobs](/images/dev-guide/rosbag-jobs/rosbag-jobs.png?classes=border,shadow&width=55pc)
+
 6. To change the upload mode, click **Job Details** and select the mode.
 
-![rosbag-upload](/images/dev-guide/rosbag-jobs/rosbag-upload.png?classes=border,shadow&width=55pc)
+![rosbag-upload](/images/dev-guide/rosbag-jobs/rosbags-upload.png?classes=border,shadow&width=55pc)
 
 
 ### Available Actions on a Rosbag File
