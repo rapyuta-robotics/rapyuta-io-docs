@@ -223,7 +223,7 @@ To create a dynamic configuration:
    
   3. In the File Contents section, enter the package parameter values, as shown below, and click **Save**.
 
-  ![json config](/images/core-concepts/configurations/config-file-json.png?classes=border,shadow&width=40pc)
+  ![json config](/images/core-concepts/configurations/congif-file-json.png?classes=border,shadow&width=40pc)
 
   3. Hover over JSON_Config and click **Add attribute**. 
 
