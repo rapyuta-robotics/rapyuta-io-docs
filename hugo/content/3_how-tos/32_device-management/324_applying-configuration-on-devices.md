@@ -184,6 +184,34 @@ To create a dynamic configuration:
       
         {"a": "b"}
         ```
+   
+   *  Only key-value pairs are supported. For example,
+
+      ```javascript
+
+      Invalid parameters 
+
+      [2,3]
+
+      Valid parameters 
+
+      {"2": "3"}
+      ```     
+    
+   *  You cannot add an array as the key. For example,
+
+       ```javascript
+      
+       Invalid parameters 
+      
+        {[2,3]: 5}
+      
+       Valid parameters
+      
+        {"5": [2,3]}
+       ```
+       
+## Creating a Configuration Parameter in JSON File Format 
 
   ## Creating a configuration parameter in Binary file format 
   
