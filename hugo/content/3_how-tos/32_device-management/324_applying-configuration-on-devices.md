@@ -168,49 +168,7 @@ To create a dynamic configuration:
 
   ​    ![sample file of Japan](/images/core-concepts/configurations/japan-sample.png?classes=border,shadow&width=65pc)
 
-
   ### Rules for writing JSON configuration parameters
-
-  Following are a set of rules that you must adhere to when writing a JSON configuration parameters file:
-
-   *  The key-value pairs should be enclosed in curly braces. For example,
-
-       ```javascript
-      
-       Invalid parameters 
-      
-        {a}
-      
-       Valid parameters
-      
-        {"a": "b"}
-        ```
-
-  * Only key-value pairs are supported. For example,
-
-      ```javascript
-
-      Invalid parameters 
-
-      [2,3]
-
-      Valid parameters 
-
-      {"2": "3"}
-      ```     
-    
-  * You cannot add an array as the key. For example,
-
-       ```javascript
-      
-       Invalid parameters 
-      
-        {[2,3]: 5}
-      
-       Valid parameters
-      
-        {"5": [2,3]}
-       ```
 
   ## Creating a configuration parameter in Binary file format 
   
