@@ -177,11 +177,11 @@ To create a dynamic configuration:
 
        ```json
       
-       \# Invalid parameters 
+       # Invalid parameters 
       
         {a}
       
-       \# Valid parameters
+       # Valid parameters
       
         {"a": "b"}
         ```
@@ -190,7 +190,7 @@ To create a dynamic configuration:
 
       ```json
 
-      \# Invalid parameters 
+      # Invalid parameters 
 
       [2,3]
 
@@ -203,11 +203,11 @@ To create a dynamic configuration:
 
        ```json
       
-       \# Invalid parameters 
+       # Invalid parameters 
       
         {[2,3]: 5}
       
-       \# Valid parameters
+       # Valid parameters
       
         {"5": [2,3]}
        ```
@@ -221,7 +221,7 @@ To create a dynamic configuration:
 
  Currently we do not support nested JSON.
 
-{{% /notice%}
+  {{% /notice%}
 
  To create the configuration parameter for a package in JSON format, create a config parameter, as described here. For example, create a parameter named JSON_Config and perform the following steps:
  
