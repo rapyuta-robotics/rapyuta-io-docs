@@ -71,7 +71,7 @@ You can also view all the rosbag jobs running on the device on the device's deta
 
 ## Rosbag Files
 
-A rosbag file is uploaded to the platform automatically if the rosbag job is stopped, if the deployment is de-provisioned, or if the upload mode is continuous. 
+A rosbag file is uploaded to the platform automatically if the rosbag job is stopped, if the deployment is de-provisioned or if the upload mode is continuous. In case the upload mode is on-demand, the file is uploaded upon request. 
 You can access the rosbag files and change the upload mode on the deployments page. 
 
 In the rapyuta.io console, navigate to the **Deployments** page, select the deployment, and click **ROSBag Jobs** tab to view all the running rosbag jobs for the deployment. You can also perform the following operations:
