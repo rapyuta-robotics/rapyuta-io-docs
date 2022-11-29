@@ -166,9 +166,24 @@ To create a dynamic configuration:
 
   9.  Suppose the regulation in Japan requires you to limit the maximum velocity of a RGV from **5m/s** to **3m/s**. You can override the **max_velocity** of the RGV by assigning a new value to it. You will have to define **sample.yaml** file for the country value **Japan**. This should include the **max_velocity** parameter, but with its default overridden. The final parameters file is a result of merging the base parameters (**config_1/RGV_config.yaml**) and the overridden parameters (**Japan/RGV_config.yaml**).
 
-  ​    ![sample file of Japan](/images/core-concepts/configurations/japan-sample.png?classes=border,shadow&width=65pc)
+  ​![sample file of Japan](/images/core-concepts/configurations/japan-sample.png?classes=border,shadow&width=65pc)
 
   ### Rules for writing JSON configuration parameters
+
+  Following are a set of rules that you must adhere to when writing a JSON configuration parameters file:
+
+   *  The key-value pairs should be enclosed in curly braces. For example,
+
+       ```javascript
+      
+       Invalid parameters 
+      
+        {a}
+      
+       Valid parameters
+      
+        {"a": "b"}
+        ```
 
   ## Creating a configuration parameter in Binary file format 
   
