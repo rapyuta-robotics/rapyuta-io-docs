@@ -216,6 +216,36 @@ To create a dynamic configuration:
   rapyuta.io allows you to add the configuration parameters at every value node including the root node. You can add the configuration parameter in JSON format as a key-value pairs. 
 
   To create the configuration parameter for a package in JSON format, create a config parameter, as described here. For example, create a parameter named JSON_Config and perform the following steps:
+  
+  1. To configure the root node, select the newly added configuration parameter **JSON_Config** from the Configuration Name list.
+
+  2. Hover over JSON_Config and click Add file and select JSON. By default, the file type is selected as YAML. Enter the file name, for example, Cars.json, and click **Confirm**. 
+   
+  3. In the File Contents section, enter the package parameter values, as shown below, and click **Save**.
+
+  ![json config](/images/core-concepts/configurations/config-file-json.png?classes=border,shadow&width=40pc)
+
+  3. Hover over JSON_Config and click **Add attribute**. 
+
+  4. In the **Create new attribute** window, enter the Attribute name, for example *Manufacturer* and click **Confirm**.
+
+  {{% notice info %}}
+  While writing or editing the configuration parameter files, ensure you adhere to the rules specified [here](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#rules-for-writing-json-configuration-parameters).
+  {{% /notice %}}
+
+  5. Hover over the **Manufacturer** attribute to view the options. Click **Add manufacturers value** to add new value nodes.
+
+  6. In the **Create new value** window, enter a name, for example, *Suzuki* and click **CONFIRM**. Similarly, add another manufacturer value and name it *Tesla*. 
+  
+  7. Hover over *Suzuki* and click **Add file**. In the **Create new file** window, select **json** from the **File type** dropdown list. Enter the **File name** as Cars.json.
+  
+  8.  In the File Contents section, enter the package parameter value as {"seater":"5","type":"diesel"}, and click **Save**. 
+
+  9.  Similarly, hover over *Tesla* and add a file with the package parameter value as {"seater":"4","type":"electric"}
+
+  10. View the merged results for Suzuki which has inherited the key-value pair wheels and and overridden the key-value pair seater from the base parameter file *Cars.json* 
+  
+  ![sample file of suzuki](/images/core-concepts/configurations/suzuki-sample.png?classes=border,shadow&width=65pc)
 
 
   ## Creating a configuration parameter in Binary file format 
