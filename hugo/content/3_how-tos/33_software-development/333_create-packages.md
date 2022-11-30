@@ -81,12 +81,12 @@ To create components:
 |Docker image (applicable only for type Docker)| Enter the docker image  to be used. For more information, see [Creating a Build](/3_how-tos/33_software-development/331_create-builds/#creating-build-by-docker-recipe). |
 |Private Image (applicable only for type Docker)| Select this option if the docker image is private and also select the credentials from the **Credentials** dropdown list.  |
 |Run command from bash shell (applicable only for type Docker)| Command to run in the docker container.|
-|Simulation| Enable this option  |
-|Resource Limit| Select the CPU and memory requirement for the executable from the dropdown list. You also choose or enter custom resource limits for the component executables. For example, 1.025 vCPU and 2.5 GiB Memory. {{%notice info%}} 
-* Max Executable Cpu: 8 cores
-* Min Executable Cpu: 0.025 cores
-* Executable Cpu Granularity: 0.025 cores
-* Max Executable Memory: 32768 GB
+|Simulation| Select to enable simulation.  |
+|Resource Limit| Select the CPU and memory requirement for the executable from the dropdown list. You can also choose or enter the custom resource limits for the component executables. For example, 1.025 vCPU and 2.5 GiB Memory. {{%notice info%}} 
+* Max Executable CPU: 8 cores
+* Min Executable CPU: 0.025 cores
+* Executable CPU Granularity: 0.025 cores
+* Max Executable Memory: 32768 MB
 * Min Executable Memory: 128 MB
 * Executable Memory Granularity: 128 MB
 {{%/notice%}} |
