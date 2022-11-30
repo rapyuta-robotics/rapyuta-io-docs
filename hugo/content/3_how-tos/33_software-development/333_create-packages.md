@@ -82,7 +82,14 @@ To create components:
 |Private Image (applicable only for type Docker)| Select this option if the docker image is private and also select the credentials from the **Credentials** dropdown list.  |
 |Run command from bash shell (applicable only for type Docker)| Command to run in the docker container.|
 |Simulation| Enable this option  |
-|Resource Limit| Select the CPU and memory requirement for the executable from the dropdown list. You also choose finer Cpu and Memory limits for the component executables. For example, 1.025 vCPU and 2.5 GiB Memory |
+|Resource Limit| Select the CPU and memory requirement for the executable from the dropdown list. You also choose or enter custom resource limits for the component executables. For example, 1.025 vCPU and 2.5 GiB Memory. {{%notice info%}} 
+* Max Executable Cpu: 8 cores
+* Min Executable Cpu: 0.025 cores
+* Executable Cpu Granularity: 0.025 cores
+* Max Executable Memory: 32768 
+* Min xecutable Memory: 128
+* Executable Memory Granularity: 128
+{{%/notice%}} |
 
 4. (Optional) You can add an end-point. For more information on endpoint configuration, see [Standard Web Protocols](/5_deep-dives/53_networking-and-communication/532_standard-web-protocol/). 
 To add an end-point, under **Endpoints**,  click **Add Endpoint** and enter: 
