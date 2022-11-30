@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [7.0 - 2022-12-01]
+- added content for fractional resources
+- added content for rosbag jobs discovery
+- added content for django middleware support
+
 ## [6.8 - 2022-11-23]
 - added release notes
 - added nominate project admin feature doc
