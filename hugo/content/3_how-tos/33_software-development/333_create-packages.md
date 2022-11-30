@@ -86,9 +86,9 @@ To create components:
 * Max Executable Cpu: 8 cores
 * Min Executable Cpu: 0.025 cores
 * Executable Cpu Granularity: 0.025 cores
-* Max Executable Memory: 32768 
-* Min xecutable Memory: 128
-* Executable Memory Granularity: 128
+* Max Executable Memory: 32768 GB
+* Min Executable Memory: 128 MB
+* Executable Memory Granularity: 128 MB
 {{%/notice%}} |
 
 4. (Optional) You can add an end-point. For more information on endpoint configuration, see [Standard Web Protocols](/5_deep-dives/53_networking-and-communication/532_standard-web-protocol/). 
