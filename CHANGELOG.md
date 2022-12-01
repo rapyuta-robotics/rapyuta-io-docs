@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## [7.0 - 2022-12-01]
+- added release notes
 - added content for fractional resources
 - added content for rosbag jobs discovery
 - added content for django middleware support
