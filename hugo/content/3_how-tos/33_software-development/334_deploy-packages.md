@@ -29,7 +29,7 @@ tags:
 
 To deploy a package in rapyuta.io, follow the steps:
 
-1. In the rapyuta.io console, select **Development > Catalog**.
+1. In the rapyuta.io console, on the left navigation bar, select **Development > Catalog**.
 2. Select the package you want to deploy.
 3. Click **Deploy package** and enter:
 
@@ -110,23 +110,20 @@ If a deployment fails, the **DEPLOYMENT PHASE** will read **Failed to start**. Y
 
 ## Update/Re-Deploy In-Place
 
-This feature allows users to re-deploy a running deployment without stopping and while retaining its ID, dependencies, configuration, and endpoints. 
-During the development phase, this enables developers to switch between newer or older build 
-version in a package without having to recreate a new package resource.
-It is also useful in scenarios when a developer fixes and pushes a new image of the software to docker repository with an identical tag 
-and wants to pull in the version with all the changes and fixes into the running deployment. 
-
-This is particularly useful in the case of a dependent deployment, as you do not need to deprovision all the deployments when a single deployment needs an update thus saving time.
+This feature allows users to re-deploy a running deployment without stopping and while retaining its ID, dependencies, configuration, and endpoints. The advantages f this feature are as follows:
+* During the development phase, it enables the developers to switch between a newer or an older build version in a package without having to recreate a new package resource.
+* When a developer fixes and pushes a new image of the software to the docker repository with an identical tag and wants to pull the same into running deployment.
+* It is useful in the case of a dependent deployment, as you needn't deprovision all the deployments when a single deployment needs an update and thus saves time.
 
 {{% notice info %}}
 The "in-place" Update/Redeploy feature is currently supported only on containers leveraging a [containerized device runtime](/5_deep-dives/51_managing-devices/511_device-runtime/#containerized-docker-runtime) 
 and in the cloud. This feature is unavailable for Device components powered by the [pre-installed](/5_deep-dives/51_managing-devices/511_device-runtime/#preinstalled). 
-{{% /notice %}}
+{{% /notice %}} <need to verify>
 
-To update/re-deploy a deployment, follow the steps:
+To update/re-deploy a deployment:
 
-1. On the left navigation bar, click **Developments>Deployments**.
-2. Select the deployment that you want to update, and click Update Deployment.
+1. In the rapyuta.io console, on the left navigation bar, click **Developments > Deployments**.
+2. Select the deployment that you want to update, and click **Update Deployment**.
 The **Update Deployment** page appears.
 3. The **Update Deployment** page lists all the components added to the package. Click the **Update** field next to the component that you want to update.
 You can select at least one or more than one component to update.
@@ -135,36 +132,26 @@ You can select at least one or more than one component to update.
 It takes a few minutes and the deployment is updated. You can view the details of updated deployment in the **Details** tab.
 
 
-**Update Deployment** can be done when [DEPLOYMENT PHASE](/5_deep-dives/52_software-development/528_deployment-phase/#phases) is either **Succeeded** or **Failed To Update**, 
-on any other Deployment Phase, the **Update Deployment** button will be disabled. 
-In case of **Failed To Update**, you can check the **Historical Logs** but the **Live Logs** and **Shell Access** tabs will be disabled. 
+**Update Deployment** can be done when the [DEPLOYMENT PHASE](/5_deep-dives/52_software-development/528_deployment-phase/#phases) is either **Succeeded** or **Failed To Update**.
+The **Update Deployment** button will be disabled for other deployment phases.
+In case of **Failed To Update**, you can check the historical logs for debugging.
 
 {{% notice info %}}
-In case your deployment goes to **Failed To Update**, it will show an appropriate error code like 
+* When in failed to update state, the other tabs will be disabled.
+* In case your deployment goes to **Failed To Update**, it will show an appropriate error code like 
 [DEP_E151] (/6_troubleshoot/611_deployment-error-codes/) 
 which means **device is either offline or not reachable**.
 If you are not sure about the Error, please <a href="#" onclick="javascript:FreshWidget.show();">contact support</a>.
 {{% /notice %}} 
 
 
-You can see the **Deployment Generation** in the **Details** tab of the deployment. The generation increments by 1 for each update deployment. 
+You can view the **Deployment Generation** in the **Details** tab of the deployment. The generation increments by 1 for each update deployment. 
 Suppose the current deployment generation is _i_ and if the user does Update Deployment then the new deployment generation will be _(i+1)_.
 
 
-![Update deployment](/images/dev-guide/deployments/update-deployment.png?classes=border,shadow&width=55pc)
+You can view the updated deployment history in the **History** tab.  For a successful update, it shows a _green success icon_ under **Deployment Status**. 
+In case of a failure (due to network issue or device being offline), it shows a _red failure icon_ under **Deployment Status**.  
 
-
-
-![Update deployment component](/images/dev-guide/deployments/update-deployment-component.png?classes=border,shadow&width=35pc)
-
-
-You can click the **History** tab to view the updated deployment history. It shows information like Time, Generation, 
-User who updated the deployment and Deployment Status. For a successful update, it shows a _green success icon_ in **Deployment Status**. 
-While in case of update deployment failure (due to network issue or device being offline), it shows a _red failure icon_ in **Deployment Status**.  
-
-
-
-![Update deployment history](/images/dev-guide/deployments/update-deployment-history.png?classes=border,shadow&width=60pc)
 
 {{% notice info %}}
 When **Update Deployment** is triggered, all the _replicas_ are deleted gracefully and the rapyuta.io platform automatically re-creates new replicas for the _component_.
