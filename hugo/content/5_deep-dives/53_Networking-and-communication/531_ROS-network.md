@@ -81,18 +81,23 @@ On reboot, devices configured using DHCP may boot up with a new IP address and t
 
 ROS2 Routed Network internally uses eProsima DDS Router for communication.  DDS Router runs a FastDDS discovery server for peer-to-peer communication between cloud deployments and routers.  The router runs in repeater mode so that multiple devices can communicate with each other from one local network to another local network at a different geographic location.
 
-For device-to-device communication, the DDS Router client runs on each device edge and the DDS Router Server running in the cloud exchanges data and makes communication possible.
+**ServerID** - The DDS Router runs discovery server on the Server ID. By default, the ServerID is set to 0.
+**ServerPort** - The DDS Router runs discovery server on the Server Port. By default, ServerPort is set to 11811.
+
+**DomainID** - DDS Router Client used the DomainID on the device components to ensure it only listens to the ros2 nodes running on this domain ID. By default, the DomainID is set to 0. We may explicitly set environment variable `ROS_DOMAIN_ID=0` in the user executables to make sure it runs on domain id 0.
+
+For device-to-device communication, the DDS Router client running on each device edge exchanges data via DDS Router Server running in cloud. 
 
 For cloud-to-cloud communication, since they are present in the  same network, FastDDS discovery server is used to discover and establish the communication between two cloud deployments. 
 
-For cloud-to-device communication, the cloud has a peer-to-peer communication with the router using the FastDDS discovery server. The DDS Router then establishes communication with the device on a different network using the DDS Router client running on them. <need more clarity>
+For cloud-to-device communication, the cloud has a peer-to-peer communication with the router using the FastDDS discovery server. The DDS Router then establishes communication with the device on a different network using the DDS Router client.
 
-By default, all topics/services/actions are whitelisted in a package component. The ros2 nodes use shared memory to communicate with other nodes on same system. So a config is mounted and the environment variable `FASTRTPS_DEFAULT_PROFILES_FILE` is set on user containers (cloud/device) to make sure it runs with UDP protocol.
+By default, all topics/services/actions are whitelisted in a package component.
+By default, ros2 nodes use shared memory to communicate with other nodes on the same system. So a config is mounted and the environment variable `FASTRTPS_DEFAULT_PROFILES_FILE` is set on user containers (cloud/device) to make sure it runs with UDP protocol.
 
 {{%notice info%}}
-1.	Currently we are not taking backup of FastDDS discovery server communication state data. Suppose the discovery server is restarted, then cloud-to-cloud or cloud-to-device communication can't be re-established. But device-to-device communication gets established eventually.
-2.	Unlike ROS1 routed network, **ROS2 Routed Network Server** runs only on the cloud.
-3.	Make sure user deployments runs ros2 nodes on ROS_DOMAIN_ID=0 for communication. By default, nodes communicate on domain id 0. We explicitly set environment variable ROS_DOMAIN_ID=0 to make sure it runs on domain id 0.
-4.	It is recommended to use a single routed network for communication. But if a user deploys two or more routed networks with the same server id and uses all/few of them as a dependency in the user package, then any one of the routed networks will be used for cloud side communication.
-5.	If a user uses both ROS2 routed and native network in a deployment, then the routed network overrides the native network ROS_DISCOVERY_SERVER environment variable for cloud side communication.
+1.	Currently we are not backing up the FastDDS discovery server communication state data. Suppose the discovery server is restarted, then cloud-to-cloud or cloud-to-device communication can't be re-established. But device-to-device communication gets established eventually. 
+2.	Unlike ROS1, **ROS2 Routed Network Server** runs only on the cloud.
+3.	It is recommended to use a single routed network for communication. But if a user deploys two or more routed networks with the same server id and uses all/few of them as a dependency in the user package, then any one of the routed networks will be used for cloud side communication.
+4.	If a user uses both ROS2 routed and native network in a deployment, then the routed network overrides the native network's environment variable `ROS_DISCOVERY_SERVER` for cloud side communication.
 {{%/notice%}}
