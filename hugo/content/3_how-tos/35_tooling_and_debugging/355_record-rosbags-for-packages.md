@@ -43,7 +43,7 @@ If you have enabled the **All Topics** toggle-button, **Topic Name** and  **Incl
 | Advanced Options | The advanced option allows you to record the topics with a more granular report. Click **Show Advanced Option** to view the options.|
 | Node Name | Enter the node for which you want to record all the topics subscribed by the specific node. <validate> |
 | No. of Message | Enter the number of messages that you want to store for each topic.|
-| Max Splits | Defines the maximum number of rosbag file splits that are saved. Older splits are deleted after the **Max Splits** count is reached. It is mandatory to specify the S{{% notice info %}}
+| Max Splits | Defines the maximum number of rosbag file splits that are saved. Older splits are deleted after the **Max Splits** count is reached. {{% notice info %}}
 Maximum 10 splits are allowed for each rosbag job. After the message recording reaches the maximum allowed splits, the older split files are deleted to maintain the specified memory limit. 
 {{% /notice %}} |
 | Split Size | Enter the memory size for each split of the recorded messages in MB.{{% notice info %}}
