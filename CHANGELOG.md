@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [7.1 - 2022-12-14]
+- added release notes
+- added user metric content for non-ros deployments
+- added split duration content
+
 ## [7.0 - 2022-12-01]
 - added release notes
 - added content for fractional resources
