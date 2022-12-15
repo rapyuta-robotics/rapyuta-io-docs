@@ -84,13 +84,13 @@ ROS2 Routed Network internally uses eProsima DDS Router for communication.  DDS 
 **ServerID** - The DDS Router runs discovery server on the Server ID. By default, the ServerID is set to 0.
 **ServerPort** - The DDS Router runs discovery server on the Server Port. By default, ServerPort is set to 11811.
 
-**DomainID** - DDS Router Client uses the DomainID on the device components to ensure it only listens to the ros2 nodes running on this DomainID. By default, the DomainID is set to 0. We may explicitly set environment variable `ROS_DOMAIN_ID=0` in the user executables to make sure it runs on domain id 0.
+**DomainID** - DDS Router Client uses device components DomainID to ensure it only listens to the ros2 nodes running on this DomainID. It also sets environment variable ROS_DOMAIN_ID in the user executables. We may override it by explicitly setting the environment variable ROS_DOMAIN_ID=0 in the user executables to make sure it runs on domain id 0.
 
-For device-to-device communication, the DDS Router client running on each device edge exchanges data via DDS Router Server running in cloud. 
+For device-to-device communication, the DDS Router Client running on each device edge exchanges data via DDS Router Server running in cloud. 
 
-For cloud-to-cloud communication, since they are present in the  same network, FastDDS discovery server is used to discover and establish the communication between two cloud deployments. 
+For cloud-to-cloud communication, since they are present in the  same network, FastDDS Discovery Server is used to discover and establish the communication between two cloud deployments. 
 
-For cloud-to-device communication, the cloud has a peer-to-peer communication with the router using the FastDDS discovery server. The DDS Router then establishes communication with the device on a different network using the DDS Router client.
+For cloud-to-device communication, the cloud has a peer-to-peer communication with the router using the FastDDS Discovery Server. The DDS Router then establishes communication with the device on the same or different network using the DDS Router Client.
 
 By default, all topics/services/actions are whitelisted in a package component.
 By default, ros2 nodes use shared memory to communicate with other nodes on the same system. So a config is mounted and the environment variable `FASTRTPS_DEFAULT_PROFILES_FILE` is set on user containers (cloud/device) to make sure it runs with UDP protocol.
