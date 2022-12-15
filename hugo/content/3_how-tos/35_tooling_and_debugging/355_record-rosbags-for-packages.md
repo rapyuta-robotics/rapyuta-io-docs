@@ -50,6 +50,9 @@ Maximum 10 splits are allowed for each rosbag job. After the message recording r
 Each split size must be more than 10 MB and less than 1024 MB or 1GB. </br> Maximum 10 splits are allowed with the split size of more than 10 MB and less than 1 GB. However, the disk storage for the rosbag file can not go beyond 5120 MB (5 GB).</br>
 For example, you can configure 10 splits and each split can store up to 500 MB (10X500 MB=5 GB)  of recorded data or you configure 5 splits and each split can store up to 1024 MB (5x1024 MB=5 GB)  of recorded data. After the message recording reaches the maximum allowed splits, the older splits are deleted to maintain the specified memory limit. 
 {{% /notice %}}|
+| Duration | Specify the time duration for each split of the recorded messages in HH/MM format. The minimum time duration is 1 minute. {{% notice info %}}
+If the size and duration are specified, the bags are split based on the first met condition. For example, you specify the **Size** as 1 MB and the **Duration** as 2 mins, if within 30 secs the size has reached 1 MB, it would split based on the size. Suppose the first bag doesn't reach 1 MB within 2 mins, then the bags are split at 2 mins and the 2nd bag would be split when it reaches 1 MB or 2 mins, whichever occurs first.
+{{% /notice %}} |
 | Upload Rate | (Applicable only for device runtime) Specify the upload rate for the rosbag file to be uploaded in the rapyuta.io platform.|
 | Rate Units | (Applicable only for device runtime) Specify the unit for the upload rate from the drop-down menu. You can select **Bytes/s**, **KB/s**, or**MB/s**.|
 | Purge After | (Applicable only for device runtime) Enable the toggle button if you want to delete the rosbag file after it has been successfully uploaded to the rapyuta.io platform. |
