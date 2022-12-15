@@ -47,8 +47,8 @@ echo -n '{"name": "http_duration", "tags": {"method": "GET", "path": "/api/v0", 
 ```
 
 {{% notice note%}}
-The user application needs to set the mandatory tag "is_user_metric" to "true" while publishing metrics. 
-The user application can also use the environment variable `RIO_DeploymentId` as tags to identify the user metrics based on the deployment id.
+The user application needs to set the mandatory tag **is_user_metric** to **true** while publishing metrics. 
+The user application can also use the environment variable **RIO_DeploymentId** as tags to identify the user metrics based on the deployment id.
 {{% /notice %}}
 
 ## Cloud User Metrics
