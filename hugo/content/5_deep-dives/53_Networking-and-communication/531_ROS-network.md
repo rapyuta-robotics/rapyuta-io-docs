@@ -77,7 +77,7 @@ Routed networks can be deployed to a device with the following parameters:
 * **Restart policy**: Kindly refer to the restart policy.
 On reboot, devices configured using DHCP may boot up with a new IP address and the network configuration of a deployed routed network becomes invalid. This can be avoided by assigning a static IP to the device you intend to deploy a routed network to esp in production systems.
 
-## ROS2 Routed Networks Internal
+## ROS2 Routed Network Internal
 
 ROS2 Routed Network internally uses eProsima DDS Router for communication.  DDS Router runs a FastDDS discovery server for peer-to-peer communication between cloud deployments and routers.  The router runs in repeater mode so that multiple devices can communicate with each other from one local network to another local network at a different geographic location.
 
