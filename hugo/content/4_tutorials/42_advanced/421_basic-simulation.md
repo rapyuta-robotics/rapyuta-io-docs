@@ -92,7 +92,7 @@ Please proceed to the creation of the package once the builds are complete.
 You will create two packages in the tutorial.
 ### Turtlebot3 Robot Simulation Package
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Package**.
 2. Click **ADD NEW PACKAGE**.
 3. The name of the package is `Turtlebot3 Robot Simulation`.
 4. Make sure **Is a singleton package** is ***not selected***.
@@ -163,7 +163,7 @@ You will deploy all the packages created in the previous step.
 
 ### Robot Simulation
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Package**.
 2. Select **Turtlebot3 Robot Simulation** package.
 3. Click **Deploy Package**.
 4. The name of the deployment is `ROBOT SIMULATION`
@@ -175,7 +175,7 @@ You will be redirected to the **Details** tab of the newly created deployment. T
 
 ### Keyboard Teleoperation
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Package**.
 2. Select **Turtlebot3 Keyboard Teleoperation** package.
 3. Click **Deploy Package**.
 4. The name of the deployment is `KEYBOARD TELEOPERATION`
