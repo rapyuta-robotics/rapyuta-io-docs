@@ -281,7 +281,7 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 
 ## Create ROS Publisher package
 
-1. Click **Development>Catalog** > **ADD NEW PACKAGE**.
+1. Click **Development > Package** > **ADD NEW PACKAGE**.
 2. You should provide information about the package such as the name of the package, its version, whether it is a singleton package, and a
    description.
    1. In the **Package Name** box, enter the name of the package, for example, `ROS Publisher`
@@ -362,7 +362,7 @@ Once the routed network deployment succeeds, other ROS package deployments can b
 
 ## Deploy ROS Publisher package
 
-1. Click **Development>Catalog** > select **ROS Publisher** package > click **Deploy package**.
+1. Click **Development > Package** > select **ROS Publisher** package > click **Deploy package**.
 2. In the **Name of deployment** box, enter a name for the deployment
    , for example, `ROS Publisher Deployment`
 3. Since **Publisher** has **Device runtime**, select the device you want to deploy on by clicking **Refresh the list of online devices**. It retrieves an
