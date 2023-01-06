@@ -4,7 +4,7 @@ title: "Traditional Network"
 intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 draft: true
 
-weight: 533
+weight: 535
 
 versions:
   free-pro-team: '*'
