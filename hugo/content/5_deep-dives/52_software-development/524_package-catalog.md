@@ -1,5 +1,5 @@
 ---
-title: "Catalog"
+title: "Package"
 description:
 type: developer-guide
 date: 2019-10-25T17:46:54+09:00
@@ -8,13 +8,13 @@ weight: 524
 tags:
     - Deep Dive
 ---
-### Package Catalog
-The catalog serves as the portal in rapyuta.io to streamline the software lifecycle management allowing you to spawn deployments, create new packages, and maintain package versions and updates. Additionally, it features a built-in collection of storage, communication, and curated platform packages that you can put together to build your solution.
+### Package 
+Packages serve as the portal in rapyuta.io to streamline the software lifecycle management allowing you to spawn deployments, create new packages, and maintain package versions and updates. Additionally, it features a built-in collection of storage, communication, and curated platform packages that you can put together to build your solution.
 
 It is also responsible for implementing design patterns that allow a user to leverage powerful build-time or run-time semantics to combine multiple packages and compose new behavior.
 
 #### Packages Categories
-rapyuta.io divides all packages in _Catalog_ into the following categories:
+rapyuta.io divides packages into the following categories:
 
 1. **Public packages**     
    rapyuta.io provides public packages to its users. They are available to every user for deployment. You cannot delete or clone public packages.
