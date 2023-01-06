@@ -223,7 +223,7 @@ To create a dynamic configuration:
   
   1. To configure the root node, select the newly added configuration parameter **JSON_Config** from the Configuration Name list.
 
-  2. Hover over JSON_Config and click Add file and select JSON. By default, the file type is selected as YAML. Enter the file name, for example, Cars.json, and click **Confirm**. 
+  2. Hover over JSON_Config, click **Add file** and select JSON. By default, the file type is selected as YAML. Enter the file name, for example, Cars.json, and click **Confirm**. 
    
   3. In the File Contents section, enter the package parameter values, as shown below, and click **Save**.
 
