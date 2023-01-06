@@ -148,7 +148,7 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 
 #### Navigation Application Package
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Package**.
 2. Click **ADD NEW PACKAGE**.
 3. The name of the package: `Navigation Application`
 4. Make sure **Is a singleton package** is ***not selected***.
@@ -206,7 +206,7 @@ You will first deploy the Simulation package, and then the Navigation Applicatio
 
 #### Deploy Simulation Package
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Package**.
 2. Select **Simulation** package.
 3. Click **Deploy package**.
 4. The name of deployment: `SIMULATION`
@@ -219,7 +219,7 @@ if the progress bar reaches **Succeeded**, and the status is **Running**.
 
 #### Deploy Navigation Application Package
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Package**.
 2. Select **Navigation Application** package.
 3. Click **Deploy package**.
 4. The name of deployment: `NAVIGATION`
