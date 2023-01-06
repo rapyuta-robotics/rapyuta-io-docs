@@ -137,7 +137,7 @@ You can remotely access **RIO_CONFIGS_DIR** by [SSH-ing into the device via rapy
 ## Creating the package
 To create the *Publisher for Configured Devices* package, follow the steps:
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Package**.
 2. Click **ADD NEW PACKAGE**.
 3. Provide a name for the package, for example, `Publisher for Configured Devices` in the **Package Name** box.
 4. Make sure **Is singleton package** is ***not selected***.
