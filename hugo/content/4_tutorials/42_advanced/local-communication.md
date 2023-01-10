@@ -313,7 +313,7 @@ the ***Subscriber Device***, which indicates that it is online on rapyuta.io.
 
 ## Create ROS Subscriber package
 
-1. Click **Development>Catalog** > **ADD NEW PACKAGE**.
+1. Click **Development > Package** > **ADD NEW PACKAGE**.
 2. You should provide information about the package such as the name of the
    package, its version, whether it is a singleton package, and a
    short description.
