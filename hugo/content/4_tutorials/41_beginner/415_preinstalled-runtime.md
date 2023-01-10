@@ -187,7 +187,7 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 To deploy a package using the [console](https://console.rapyuta.io),
 follow the steps:
 
-1. On the left navigation bar, click **DEvelopment>Catalog**.
+1. On the left navigation bar, click **DEvelopment > Package**.
 2. Select the **ROS publisher subscriber** package.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, enter a name for the deployment you are
