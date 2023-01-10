@@ -148,7 +148,7 @@ By default, ros2 nodes use shared memory to communicate with other nodes on the 
 
 ### Multi-Robot Communication
 
-To read the scenarios of multi-robot communication, [click here](/5_deep-dives/53_networking-and-communication/534_ros-communication/#illustrating-a-multi-robot-scenario).
+To read the scenarios of multi-robot communication, [click here](/5_deep-dives/53_networking-and-communication/530_ros-communication/#illustrating-a-multi-robot-scenario).
 
 Avoid complex hardcoded logic in launchfiles that lives with the source code
 or binary and automatically add/remove prefixes to ROS interfaces(topics/services/actions).
