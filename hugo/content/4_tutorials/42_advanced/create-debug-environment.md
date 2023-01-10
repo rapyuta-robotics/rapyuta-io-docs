@@ -69,7 +69,7 @@ Deploying a routed network is identical to deploying any other package and has i
 Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
 
 ## Deploying the package
-1. Click **Development>Catalog** > and select **Talker** package.
+1. Click **Development > Package** > and select **Talker** package.
 2. Click **Deploy package**.
 2. In the **Name of deployment** box, enter a name for the deployment
    , for example, `dep11`
