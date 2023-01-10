@@ -306,7 +306,7 @@ For instance on a Raspberry-Pi consider adding the following in /boot/cmdline.tx
 
 ## Create ROS Publisher package
 
-1. Click **Development>Catalog** > **ADD NEW PACKAGE**.
+1. Click **Development > Package** > **ADD NEW PACKAGE**.
 2. You should provide information about the package such as the name of the package, its version, whether it is a singleton package, and a
    description.
    1. In the **Package Name** box, enter the name of the package, for example, `ROS Publisher`
