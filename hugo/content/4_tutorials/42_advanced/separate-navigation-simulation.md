@@ -170,7 +170,7 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 
 #### Simulation Package
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Package**.
 2. Click **ADD NEW PACKAGE**.
 3. The name of the package: `Simulation`
 4. Make sure **Is a singleton package** is ***not selected***.
