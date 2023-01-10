@@ -121,7 +121,7 @@ For simulation, the resource limit should either be **Medium** or **Large**. Sim
 
 ### Turtlebot3 Keyboard Teleoperation Package
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Package**.
 2. Click **ADD NEW PACKAGE**.
 3. The name of the package is `Turtlebot3 Keyboard Teleoperation`
 4. The version number of the package is `1.0.0`
