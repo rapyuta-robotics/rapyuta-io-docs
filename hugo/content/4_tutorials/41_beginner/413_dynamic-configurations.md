@@ -158,7 +158,7 @@ To create the *Publisher for Configured Devices* package, follow the steps:
 ## Deploying the package
 To deploy the *Publisher for Configured Devices* package, follow the steps:
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Package**.
 2. Select the **Publisher for Configured Devices** package.
 3. Click **Deploy package**.
 4. Provide a name for the deployment you are creating, for example, `Configurations Publisher` in the **Name of deployment** box.
