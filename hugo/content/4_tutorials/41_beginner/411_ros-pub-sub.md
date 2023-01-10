@@ -150,7 +150,7 @@ Perform the following procedure to create a routed network.
 To deploy a package using the [console](https://console.rapyuta.io),
 follow the steps:
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Package**.
 2. Select the _Docker publisher subscriber_ package.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, enter a name for the deployment you are
