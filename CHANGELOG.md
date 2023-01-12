@@ -1,11 +1,43 @@
 # CHANGELOG
 
-## Unreleased
-### Added
-- Cloud user metrics docs
-- Switch Organization docs
-### Changed
-- Grafana tutorial: importing dashboard
+## [7.2 - 2022-12-28]
+- added release notes
+
+## [7.1 - 2022-12-14]
+- added release notes
+- added user metric content for non-ros deployments
+- added split duration content
+
+## [7.0 - 2022-12-01]
+- added release notes
+- added content for fractional resources
+- added content for rosbag jobs discovery
+- added content for django middleware support
+
+## [6.8 - 2022-11-23]
+- added release notes
+- added nominate project admin feature doc
+
+## [6.7.2 - 2022-11-16]
+- added release notes
+- added deployment error code DEP_317
+
+## [6.7 - 2022-10-27]
+- added release notes
+- added cloud param feature
+- added rosbag upload, latching and throttling feature update
+
+## [6.5.1 - 2022-09-14]
+- added release notes
+
+## [6.5.0 - 2022-09-01]
+- added release notes
+- merge device runtime updates
+- added cloud deployment metrics topic
+
+## [6.3.0 - 2022-06-23]
+- added release notes
+- added ROS2 Native Networks
 
 ## [6.2.10 - 2022-06-01]
 - added release notes
@@ -16,15 +48,21 @@
 
 ## [6.2.8 - 2022-05-09]
 - added release notes
+- Switch Organization docs
+- Cloud user metrics docs
 
 ## [6.2.7 - 2022-04-12]
 - added release notes
+- Grafana tutorial: importing dashboard
 
 ## [6.2.6 - 2022-04-05]
 - added release notes
 
 ## [6.2.5 - 2022-03-16]
 - added release notes
+
+## [6.2.4 - 2022-02-24]
+- added an announcement in release notes
 
 ## [6.2.4 - 2022-02-24]
 - added an announcement in release notes

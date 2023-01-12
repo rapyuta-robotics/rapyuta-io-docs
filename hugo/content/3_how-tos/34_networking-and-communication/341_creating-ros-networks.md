@@ -21,6 +21,53 @@ slug: '[ros]-creating-routed-networks'
 tags:
   - How to
 ---
+
+
+## Creating a Routed/Native Network
+
+To create a routed/native network:
+
+1. In the rapyuta.io console, on the left navigation bar, select **Networking > Networks**.
+2. Click **Add Network** and select **Routed network** or **Native network** and enter:
+
+|Field|Description|
+|-----|-----------|
+|**Name**| Enter a name for the routed network.|
+|**ROS version**| Based on ROS version of the package component, select the ROS version from the dropdown.<br> If you select the ROS version as **Foxy**, you can expand the advanced options to view or modify the **Discovery server ID** and **Discovery server port**{{%notice note%}}
+As Kinetic has reached the EOL, it is suggested to select **Melodic** as the ROS version while creating a build.
+{{%/notice%}} |
+|**Runtime**| Select the runtime as **Device** or **Cloud**. If you create a device runtime, ensure you have a rapyuta.io registered device with docker runtime and AMD64 architecture available.<br> If you select the device runtime: <br> <ul><li> Select the **Device** and its **IP Interface** from the dropdown list.</li> <li> Select the device restart policy. </li></ul> |
+|**Resource limit** (applicable only for cloud runtime)| Select the memory allocation and computational ability of the routed network from the dropdown list. These resources are reserved in the platform for effective ROS communication. You can select the resource limits based on your requirement.|
+
+3. Click **CONTINUE**. The routed/native network is created.
+
+{{%notice note%}}
+Deploying a routed network is identical to deploying any other package and has identical corresponding phases and errors.
+Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
+{{%/notice%}}
+
+## Deleting a Network
+
+Only networks not bound to any running deployments can be deleted. To delete a network:
+
+1. On the left navigation bar, click **Networking > Networks**. A list of available networks is displayed.
+2. Under **Actions**, click the delete icon.
+
+{{% notice warning %}}
+An attempt to deprovision a network that is currently being used will result in an error.
+{{% /notice %}}
+
+
+
+## Related Links
+
+* [About ROS Routed Networks](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/)
+
+* [About ROS Native Networks](/5_deep-dives/53_networking-and-communication/535_ros-network-native/)
+
+
+< The below content will be deleted>
+<!-->
 ## Creating Cloud Routed Network 
 To create a cloud routed network.
 
@@ -28,6 +75,7 @@ To create a cloud routed network.
 2. Click **ADD NEW NETWORK** and select the network type as **Routed Network**. The **Create New Routed Network** page appears. 
 3. Enter a name for the routed network.
 4. Select **ROS Distro**, as either **Kinetic** or **Melodic** based on ROS version of package components it will be binding to.
+
 
 {{%notice note%}}
 As Kinetic has reached the EOL, it is suggested to select **Melodic** as the ROS version while creating a build.
@@ -77,22 +125,5 @@ Follow these steps to create a native network.
   * **Large**: 4cpu core, 16 GiB memory
 
 7. Click **CONTINUE**. The native network is created.
+<-->
 
-## Deleting a Network
-
-Only networks not bound to any running deployments can be deleted.
-
-1. On the left navigation bar, click **Networking>Networks**. A list of available networks is displayed.
-2. Click **Delete** against the network that you want to delete.
-4. Confirm the network deletion message. After confirmation, the network is deleted.
-{{% notice warning %}}
-An attempt to deprovision a network that is currently being used will result in an error.
-{{% /notice %}}
-
-
-
-## Related Links
-
-* [About ROS Routed Networks](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/)
-
-* [About ROS Native Networks](/5_deep-dives/53_networking-and-communication/535_ros-network-native/)

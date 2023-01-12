@@ -23,23 +23,27 @@ tags:
 ---
 
 ### Batch Upload
-You can upload logs collected from a device (like dmesg,
-journalctl, rosbags etc.) to rapyuta.io. It allows you to do the following:
+You can upload logs collected from a device (like dmesg, journalctl, rosbags etc.) to rapyuta.io. The log data can be text, images, or videos. This enables you to:
 
-* *Save* logs for future reference. The logs are saved to cloud storage.
+* *Save* logs in the cloud for future reference. 
 * *Process* and *analyze* logs for insights as per your requirements.
 
+To Upload logs:
+1. In the rapyuta.io console, select a device and click the **Manage** tab.
+2. Click **Upload** to start uploading the files.
 
-The log data can be text, images, or videos. You can upload
-log files by clicking on the **Upload** button under the **Manage** tab. You can select either **Table** or **Card** options to view the log files. The rapyuta.io platform also allows you to download the log lines per page. You can select either 10, 20, 30, or 40 lines of logs to be downloaded per page.
-![Manage Tab](/images/core-concepts/logging/device-logs/upload-logs/manage-tab.png?classes=border,shadow&width=40pc)
+{{%notice note%}}
+* Choose the table or card option to view the log file.
+* Download the log lines per page, select either 10, 20, 30, or 40 lines of logs to be downloaded per page.
+{{%/notice%}}
 
+An upload can be in any one of the following states:
 
-A list of statuses indicates the progress of an ongoing upload.
-They are:
+| Field | Description |
+| ---   | --- |  
+| In Progress | Upload is in progress.|
+| Failed | Upload failed due to an error.|
+| Complete | Upload successful.|
 
-* **In Progress**: uploading a log file (to the cloud storage) is underway.
-* **Failed**: uploading a log file failed due to an error.
-* **Complete**: uploading a log file (to the storage) is succeeded.
 
 

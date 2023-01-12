@@ -1,7 +1,6 @@
 ---
 
 title: "On-boarding a Device"
-intro: rapyuta.io is a platform that enables robotics solution development by providing the necessary software infrastructure and facilitating the interaction between multiple stakeholders who contribute to the solution development.
 weight: 321
 versions:
   free-pro-team: '*'
@@ -29,74 +28,121 @@ tags:
 
 ### Pre-requisites
 
-The following is the list of requirements for registering devices
-on rapyuta.io
-
 * Mandatory
    * Python >=2.7.8, < 3 or Python >=3.6, <=3.9
    * [Ubuntu 16.04](http://releases.ubuntu.com/16.04/) (Xenial Xerus)
-   * [Ubuntu 18.04](http://releases.ubuntu.com/18.04/) (Bionic Beaver)
- or [Ubuntu 20.04](https://releases.ubuntu.com/20.04/) (Focal Fossa)
+   * [Ubuntu 18.04](http://releases.ubuntu.com/18.04/) (Bionic Beaver) or [Ubuntu 20.04](https://releases.ubuntu.com/20.04/) (Focal Fossa)
 * Optional
     * [curl](https://curl.haxx.se/)
     * Robot Operating System (ROS)
     * [Kinetic Kame](http://wiki.ros.org/kinetic), [Melodic Morenia](http://wiki.ros.org/melodic), or [Noetic Ninjemys](http://wiki.ros.org/noetic)
 
-Ubuntu(16.04 and 18.04) by default resolves the hostname to localhost. If you do change this behavior on the host OS, roscore **will** not be able to start. A simple way to check if roscore can be started is to do `nslookup $(hostname)` if it returns a DNS record you are probably good to go.
-
 {{%notice note%}}
-As Kinetic has reached the EOL, it is suggested to select either  **Melodic** or **Noetic** as the ROS version.
+ * By default, Ubuntu(16.04 and 18.04) resolves the hostname to localhost. If this is changed on the host OS, roscore will not start. 
+ * To check if roscore starts, do `nslookup $(hostname)`, this should return a DNS record.
 {{%/notice%}}
 
+### rapyuta.io Runtimes
+
+* rapyuta.io supports docker and preinstalled runtime. 
+* By default, the docker runtime is enabled. 
+* You can enable both the runtimes for a device at once.
+* You can enable/disable the runtime during the lifetime of a device. 
+* A device should always have one runtime enabled.
+For more information, see [Understand Runtimes](/5_deep-dives/51_managing-devices/511_device-runtime/).
+
 ### Register a New Device
-To register a new device on rapyuta.io, follow the below steps:
 
-1. On the left navigation bar, click **Devices>All Devices**.
-2. Click **ADD NEW DEVICE**.
-3. Type a name for the device in the **Device Name** box.
-4. You can choose to build the application's source code inside the device or outside it.
-   1. If the application source code is already built locally in the device, do ***not*** select **Use docker compose as default runtime** option.
+To register a new device on rapyuta.io:
 
-      If you have not selected **Use docker compose as default runtime** option, provide the absolute path of your catkin workspace as the **ROS Catkin Workspace** value. If you are using a custom rapyuta.io image on the device, your catkin workspace will be `/home/rapyuta/catkin_ws` where *catkin_ws* is the name of the catkin workspace. Otherwise, you will have a different absolute path for your catkin workspace.
-     ![Device Details](/images/getting-started/add-new-device/device-details.png?classes=border,shadow&width=40pc)
-   {{% notice info %}}
-   The **ROS Catkin Workspace** can be empty, and you can provide this value on the device's **Details** page.
-   {{% /notice %}}
-    2. If you want to build the application source code in the rapyuta.io platform and push the build to the device remotely, select **Use docker compose as default runtime** option. On selecting this option, you will be asked to choose the version of ROS installed on the device. You can either select **Kinetic**, **Melodic**, or **Noetic** based on the ROS version of your device.</br>
-   ![Select ROS version](/images/getting-started/add-new-device/select-ROS-version.png?classes=border,shadow&width=40pc)
-   3. If you have selected **Use docker compose as default runtime** option, provide the path to store the ROS bag files on the device in the **Rosbag mount path** field. By default, the path is `/opt/rapyuta/volumes/rosbag`.
-   {{% notice note %}}
-After you onboard a device, you cannot change the mount path to store the ROS bag files. If you want to change the mount path after adding the device, you can re-onboard the device and change the mount path.
-   {{% /notice %}}
+{{< tabs >}}
+{{% tab name="UI" %}}
+1. In the left navigation bar, click **Devices > All Devices**.
+2. Click **ADD NEW DEVICE** and enter:
+   <table>
+      <tr style="background-color:#F8F8F8;">
+         <td> <b>Field</b></td>
+         <td> <b>Description</b></td>
+      </tr>
+      <tbody>
+         <tr>
+            <td>Device Name</td>
+            <td>Enter a name for the device.</td>
+         </tr>
+          <tr>
+            <td>Description  </td>
+            <td>Enter a summary of the device. </td>
+         </tr>
+           <tr>
+            <td>Advanced  </td>
+            <td>Expand this option to view additional configurations.</td>
+         </tr>
+         <tr>
+            <td> Docker </td>
+            <td>The primary runtime for managing applications through Docker. Select this option and specify the <b>ROSBag mount path</b>. {{%notice note%}} By default, docker runtime is enabled for a device.
+      {{%/notice%}} </td> 
+         </tr>
+          <tr>
+            <td> Preinstalled</td>
+            <td>The secondary runtime available for managing pre-installed software on the device. Select this option and specify the <b>ROS Catkin Workspace</b>. {{%notice note%}} Preinstalled devices can now be created even if ros distro is not available on the device, but the ros communication packages for preinstalled runtime will not be installed and you will not be able to create a network. 
+      {{%/notice%}} </td> 
+         </tr>
+         <tr>
+            <td> Rosbag mount path </td>
+            <td> Enter the path to store the ROS bag files on the device. The default path is <i>/opt/rapyuta/volumes/rosbag</i>. {{%notice note%}} After you onboard a device, you cannot change the mount path to store the ROS bag files. If you want to change the mount path after adding the device, you can re-onboard the device 	and change the mount path. 
+      {{%/notice%}}  </td>
+         </tr>
+         <tr>
+            <td> ROS Catkin Workspace </td>
+            <td> Enter the absolute path of your catkin workspace. If you are using a custom rapyuta.io image on the device, your catkin workspace will be <i>/home/rapyuta/catkin_ws</i> where <i>catkin_ws</i> is the name of the catkin workspace. Otherwise, you will have a different absolute path for your catkin workspace. {{%notice note%}}The <b>ROS Catkin Workspace</b> value can be empty, and you can provide this value on the device's details page. 
+      {{%/notice%}}</td>
+         </tr>
+      </tbody>
+   </table>
 
-6. In the **Description** box, enter a summary of the device.
-7. Select the python version for the device from the **Python Version** drop-down menu. 
-8. Click **CONTINUE**.
-9.  To copy the generated token (a unique device setup link), click **COPY**.    
-   You must copy the token before it expires in *ten* minutes. To generate
-   the token again, click **Token** on the **Devices** page.
-   ![Device Token](/images/getting-started/add-new-device/device-token.png?classes=border,shadow&width=40pc)
+3. Click **Add device**.  
+   On clicking <b>Add device</b>, a script is copied to your clipboard. You can run this script to set up the device. For more information, see [Setting Up your Device](/3_how-tos/32_device-management/321_onboarding-a-device/#setting-up-your-device).
+   {{%notice note%}}
+   The copied script is valid only for 10 minutes.
+   {{%/notice%}}
+{{% /tab %}}
+
+{{% tab name="CLI" %}}
+To create a project:
+```Bash
+rio device create <device_name> 
+--runtime <device_runtime> 
+--ros <ros_distro> 
+--python <python_version>
+```
+{{% /tab %}}
+{{< /tabs >}}
+ 
+### Enable a Preinstalled/Docker Runtime for an Onboarded Device
+
+1. Select the onboarded device and navigate to the device details page.
+2. Under the config variables section:
+   * For preinstalled device: set the value of the **runtime_preinstalled** variable to True.
+   * For a ros-based preinstalled runtime deployment: set the value of the **ros_distro** variable to the value of the ros distro present in your device.
+   {{%notice note%}}
+   If the ros distro variable is not set, communication over the network (native network or routed network) will not happen and deployments that depend on these networks will fail.
+   {{%/notice%}}
+   * For a docker device: set the value of the **runtime_docker** variable to True.
+3. SSH into the device and run `sudo systemctl restart rapyuta-agent`. You can check the status on the device details page.
+4. Once re-onboarded, you should be able to deploy the docker/preinstalled runtime-based packages.
 
 
-**What to do next:** Adding a device to the rapyuta.io platform does not mean that the device is connected. To connect your device to the platform, you must [set up the device](/3_how-tos/32_device-management/321_onboarding-a-device/#setting-up-your-device).
+### Setting Up your Device
 
+Set up your device to connect it to the rapyuta.io platform. To set up your device, open the command terminal and run the previously copied script.
+The token sets up the rapyuta.io device client on the device. 
+{{%notice note%}}
+* Sometimes, you may need root permission to execute the token on the device.
+* Access the command terminal of the device physically using a screen and keyboard, through SSH, or any other serial TTY method available. 
+{{%/notice%}}
 
-### Setting Up Your Device
-
-Copy, paste, and run the device's token in the command terminal
-of the device. The token sets up the rapyuta.io device client on
-the device. Sometimes, you may need root permission to execute
-the token on the device.
-
->  You may access the command terminal of the device physically using a screen and keyboard, through SSH, or any other serial TTY method available.
-
-
-
-If the device is set up successfully, you should see the following output
-on the command terminal:
-
+Once the device is set up successfully, you should see the following output on the command terminal:
 ```bash
-
 Initializing the Rapyuta Platform
 
 ########(100%)
@@ -104,54 +150,33 @@ Initializing the Rapyuta Platform
 Successfully installed!
 
 root@ubuntu:/home/ubuntu#
-
 ```
 
-The process of installing a device consists of different stages towards
-successful completion of onboarding the device onto rapyuta.io.
-These stages are described below:
-
-* Checking and installing required python or apt packages.
+Following are the different stages involved in installing and onboarding the device onto rapyuta.io platform:
+<!--The process of installing a device consists of different stages towards successful completion of onboarding the device onto rapyuta.io.
+These stages are described below: -->
+* Checking and installing the required python or apt packages.
 * Installing ROS messages collector package.
 * Installing communication package.
 * Installing metrics collector package.
 * Installing monitoring package.
 * Pulling ROS base image.
 
-
-
-Not all devices go through all of the stages in the device initialization
-process. For example, while devices with docker-compose option set will
-have ROS base image installed on them, those with preinstalled runtime
-will have monitoring package installed on them.
-
-
-
-
+Not all devices go through all of the stages in the device initialization process. For example, devices with docker-compose option set will have ROS base image installed on them, those with preinstalled runtime will have monitoring package installed on them.
 
 In case you face issues onboarding the device. Please refer to the [section on failure codes]({{< ref "/6_troubleshoot/610_device-onboarding-failure-codes.md" >}}) to help you troubleshoot.
 
-
-
-
-When the device is successfully registered, you will see a
-<span style="color:green">*green*</span> dot next to the
-device's name, which indicates that the device is online.
-
-
-![Registered Status of Device](/images/getting-started/add-new-device/demo-device.png?classes=border,shadow&width=40pc)
+When the device is successfully registered, you will see a <span style="color:green">*green*</span> dot beside the device's name, this indicates that the device is online.
 
 ### Upgrade Your Device
 
-The rapyuta.io platform allows you to upgrade your python 2 devices to python 3. Do the following to upgrade your device.
+The rapyuta.io platform allows you to upgrade your python 2 devices to python 3. To upgrade your device:
 
 1. On the device details page, click **Upgrade Device**.
-![Upgrade device](/images/getting-started/add-new-device/upgrade-device.png?classes=border,shadow&width=40pc)
-2. A confirmation pop-up message is displayed. Click **Confirm**. The device is successfully upgraded to python 3.
-![set up upgraded device](/images/getting-started/add-new-device/set-up-upgraded-device.png?classes=border,shadow&width=40pc)
+2. Click **Confirm**. The device is successfully upgraded to python 3.
 
 {{%notice note%}}
-After you upgrade your device to python 3, you must [set up the device](/3_how-tos/32_device-management/321_onboarding-a-device/#setting-up-your-device) for the changes to take place.
+After you upgrade your device to python 3, you must [set up the device](/3_how-tos/32_device-management/321_onboarding-a-device/#setting-up-your-device) for the changes to reflect.
 {{%/notice%}} 
 
 ## Related Links

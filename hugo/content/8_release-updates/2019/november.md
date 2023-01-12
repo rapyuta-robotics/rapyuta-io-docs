@@ -13,7 +13,7 @@ Welcome to the November 27, 2019 release of rapyuta.io SDK.
 **rapyuta.io SDK 0.9.1 released**    
 
 * Improved ***poll_deployment_till_ready*** method for ***Deployment*** and ***VolumeInstance*** classes.
-* Fixed minor formatting issues in [SDK reference](https://sdkdocs.apps.rapyuta.io/).
+* Fixed minor formatting issues in [SDK reference](https://sdk.rapyuta.io/).
 
 #### Documentation
 

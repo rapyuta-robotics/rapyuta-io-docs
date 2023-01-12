@@ -23,7 +23,7 @@ disableSearch = false
     themeVariant = "rio"
     author = "Rapyuta Robotics"
     description = "Making robots more accessible to enterprise-level customers"
-    editURL = "https://bitbucket.org/rapyutians/rapyuta-io-docs/src/4522d2772bce35e459b176fe87e82bc1e8a72f8e/hugo/content/"
+    editURL = "https://github.com/rapyuta-robotics/rapyuta-io-docs/blob/devel/hugo/content/"
 
 [outputFormats.Algolia]
   baseName = "algolia"
@@ -46,7 +46,7 @@ disableSearch = false
 
 [[menu.shortcuts]]
     name = "<i class='fas fa-atlas'></i> SDK Reference"
-    url = "https://sdkdocs.apps.rapyuta.io/"
+    url = "https://sdk.rapyuta.io/"
     weight = 10
 
 [[menu.shortcuts]]
