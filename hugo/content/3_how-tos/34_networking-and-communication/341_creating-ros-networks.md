@@ -69,9 +69,9 @@ An attempt to deprovision a network that is currently being used will result in 
 < The below content will be deleted>
 <!-->
 ## Creating Cloud Routed Network 
-Follow these steps to create a cloud routed network.
+To create a cloud routed network.
 
-1. On the left navigation bar, click **Networking>Networks**.
+1. In the rapyuta.io console, on the left navigation bar, click **Networking > Networks**.
 2. Click **ADD NEW NETWORK** and select the network type as **Routed Network**. The **Create New Routed Network** page appears. 
 3. Enter a name for the routed network.
 4. Select **ROS Distro**, as either **Kinetic** or **Melodic** based on ROS version of package components it will be binding to.
