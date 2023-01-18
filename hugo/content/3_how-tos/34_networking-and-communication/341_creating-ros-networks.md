@@ -37,11 +37,7 @@ To create a routed/native network:
 As Kinetic has reached the EOL, it is suggested to select **Melodic** as the ROS version while creating a build.
 {{%/notice%}} |
 |**Runtime**| Select the runtime as **Device** or **Cloud**. If you create a device runtime, ensure you have a rapyuta.io registered device with docker runtime and AMD64 architecture available.<br> If you select the device runtime: <br> <ul><li> Select the **Device** and its **IP Interface** from the dropdown list.</li> <li> Select the device restart policy. </li></ul> |
-|**Resource limit** (applicable only for cloud runtime)|  Select the CPU and memory requirement of the network from the dropdown list. These resources are reserved in the platform for effective ROS communication. You can also choose or enter the custom resource limits. For example, 1.025 vCPU and 2.5 GiB Memory. 
-
-**Upper limit for all types of cloud networks**
-  * MaxCloudNetworkCPU: 4
-  * MaxCloudNetworkMemory: 16384
+|**Resource limit** (applicable only for cloud runtime)|  Select the CPU and memory requirement of the network from the dropdown list. These resources are reserved in the platform for effective ROS communication. You can also choose or enter the custom resource limits. For example, 1.025 vCPU and 2.5 GiB Memory.  <br> **Upper limit for all types of cloud networks**<br> * MaxCloudNetworkCPU: 4 <br> * MaxCloudNetworkMemory: 16384
 
 **Lower limit for cloud routed networks**
   * MinCloudRoutedNetworkCPU: 0.5
@@ -53,9 +49,7 @@ As Kinetic has reached the EOL, it is suggested to select **Melodic** as the ROS
 
 **Granularity**
   * CPU Granularity: 0.025 cores
-  * Memory Granularity: 128 MB
-|
-
+  * Memory Granularity: 128 MB |
 3. Click **CONTINUE**. The routed/native network is created.
 
 {{%notice note%}}
