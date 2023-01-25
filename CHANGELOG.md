@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## [7.3 - 2023-01-25]
+- added release notes
+
 ## [7.2 - 2022-12-28]
 - added release notes
 
