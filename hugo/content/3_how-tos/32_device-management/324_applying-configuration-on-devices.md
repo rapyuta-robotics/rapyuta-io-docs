@@ -166,9 +166,88 @@ To create a dynamic configuration:
 
   9.  Suppose the regulation in Japan requires you to limit the maximum velocity of a RGV from **5m/s** to **3m/s**. You can override the **max_velocity** of the RGV by assigning a new value to it. You will have to define **sample.yaml** file for the country value **Japan**. This should include the **max_velocity** parameter, but with its default overridden. The final parameters file is a result of merging the base parameters (**config_1/RGV_config.yaml**) and the overridden parameters (**Japan/RGV_config.yaml**).
 
-  ​    ![sample file of Japan](/images/core-concepts/configurations/japan-sample.png?classes=border,shadow&width=65pc)
+  ​![sample file of Japan](/images/core-concepts/configurations/japan-sample.png?classes=border,shadow&width=65pc)
 
+  ### Rules for writing JSON configuration parameters
+
+  Following are a set of rules that you must adhere to when writing a JSON configuration parameters file:
+
+   *  The key-value pairs should be enclosed in curly braces. For example,
+
+       ```javascript
+      
+       Invalid parameters 
+      
+        {a}
+      
+       Valid parameters
+      
+        {"a": "b"}
+        ```
+   
+   *  Only key-value pairs are supported. For example,
+
+      ```javascript
+
+      Invalid parameters 
+
+      [2,3]
+
+      Valid parameters 
+
+      {"2": "3"}
+      ```     
+    
+   *  You cannot add an array as the key. For example,
+
+       ```javascript
+      
+       Invalid parameters 
+      
+        {[2,3]: 5}
+      
+       Valid parameters
+      
+        {"5": [2,3]}
+       ```
+
+## Creating a Configuration Parameter in JSON File Format 
+
+  rapyuta.io allows you to add the configuration parameters at every value node including the root node. You can add the configuration parameter in JSON format as a key-value pairs. 
   
+  To create the configuration parameter for a package in JSON format, create a config parameter, as described here. For example, create a parameter named JSON_Config and perform the following steps:
+  
+  1. To configure the root node, select the newly added configuration parameter **JSON_Config** from the Configuration Name list.
+
+  2. Hover over JSON_Config, click **Add file** and select JSON. By default, the file type is selected as YAML. Enter the file name, for example, Cars.json, and click **Confirm**. 
+   
+  3. In the File Contents section, enter the package parameter values, as shown below, and click **Save**.
+
+  ![json config](/images/core-concepts/configurations/congif-file-json.png?classes=border,shadow&width=40pc)
+
+  3. Hover over JSON_Config and click **Add attribute**. 
+
+  4. In the **Create new attribute** window, enter the Attribute name, for example *Manufacturer* and click **Confirm**.
+
+  {{% notice info %}}
+  While writing or editing the configuration parameter files, ensure you adhere to the rules specified [here](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#rules-for-writing-json-configuration-parameters).
+  {{% /notice %}}
+
+  5. Hover over the **Manufacturer** attribute to view the options. Click **Add manufacturers value** to add new value nodes.
+
+  6. In the **Create new value** window, enter a name, for example, *Suzuki* and click **CONFIRM**. Similarly, add another manufacturer value and name it *Tesla*. 
+  
+  7. Hover over *Suzuki* and click **Add file**. In the **Create new file** window, select **json** from the **File type** dropdown list. Enter the **File name** as Cars.json.
+  
+  8.  In the File Contents section, enter the package parameter value as {"seater":"5","type":"diesel"}, and click **Save**. 
+
+  9.  Similarly, hover over *Tesla* and add a file with the package parameter value as {"seater":"4","type":"electric"}
+
+  10. View the merged results for Suzuki which has inherited the key-value pair wheels and and overridden the key-value pair seater from the base parameter file *Cars.json* 
+  
+  ![sample file of suzuki](/images/core-concepts/configurations/suzuki-sample.png?classes=border,shadow&width=65pc)
+
+
   ## Creating a configuration parameter in Binary file format 
   
   A binary file can be in any format, for example, .png, .json, .txt, .jpg, etc. **rapyuta.io** allows you to upload the configuration file as a binary file. You can upload the configuration file if the configuration file cannot be written in YAML format, for example, a map image.
