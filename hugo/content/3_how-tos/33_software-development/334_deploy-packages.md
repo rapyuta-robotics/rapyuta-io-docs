@@ -29,7 +29,7 @@ tags:
 
 To deploy a package in rapyuta.io, follow the steps:
 
-1. In the rapyuta.io console, on the left navigation bar, select **Development > Catalog**.
+1. In the rapyuta.io console, on the left navigation bar, select **Development > Packages**.
 2. Select the package you want to deploy.
 3. Click **Deploy package** and enter:
 

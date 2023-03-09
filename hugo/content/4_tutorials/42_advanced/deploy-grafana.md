@@ -33,7 +33,7 @@ Disk has been successfully deployed only when the disk status is **Available**. 
 
 To deploy the **Rapyuta IO Grafana** package:
 
-1. On the left navigation menu, select **Development** >  **Catalog**.
+1. On the left navigation menu, select **Development** >  **Package**.
 2. Select the package **Rapyuta IO Grafana**, and click **Deploy package**.
 3. In the **Name of deployment** field, type ```Grafana```.
 4. Under **CLOUD VOLUMES**, select **Add Cloud Volume**. 

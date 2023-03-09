@@ -153,7 +153,7 @@ On the detail page, you should try and find the following definitions.-->
 Deployments are instances of running packages. Begin by deploying the **Turtle-World** package.
 
 
-1. On the left navigation menu, click **Development** >  **Catalog**
+1. On the left navigation menu, click **Development** >  **Package**
 2. Click the package **Turtle-World**, and click **Deploy package**.
 3. In the **Name of deployment** field, type ```turtlesim-cloud```.
 4. Optionally, to add a new ROS bag job to the deployment, click **Add ROS bag Job**. In the **Name** field, type ```rosbag-all``` and select **All Topics** to record.
