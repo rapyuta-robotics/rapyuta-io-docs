@@ -58,7 +58,7 @@ repository into a running docker container. You may analyze the corresponding
 Please proceed to the creation of the package once the build is complete.
 
 #### Create dynamic_map_server package
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Packages**.
 2. Click **ADD NEW PACKAGE**.
 3. You should provide information about the package, such as the name of the
 package, its version, whether it is a singleton package, and a short description.
@@ -208,7 +208,7 @@ To create the package, follow the instructions:
 #### Deploy dynamic_map_server package
 To deploy *dynamic_map_server* package, follow the steps:
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Packages**.
 2. Select *dynamic_map_server* package.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, provide a name for the specific deployment
@@ -224,7 +224,7 @@ colored progress bar moves to **Succeeded** and **Status:Running**, indicating t
 #### Deploy map_listener package
 To deploy *map_listener* package, follow the steps:
 
-1. Click **Development>Catalog** > select *map_listener* package > click **Deploy package**.
+1. Click **Development > Packages** > select *map_listener* package > click **Deploy package**.
 2. In the **Name of deployment** box, provide a name for the specific deployment
    , for example, `Map Listener Deployment`
 3. Since *map_listener_executable* has device runtime, you must select the device you want to deploy the component on. Click **Refresh the list of online devices** to retrieve an updated list of online devices.

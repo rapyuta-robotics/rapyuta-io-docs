@@ -85,7 +85,7 @@ To determine the organization's unique identifier in **rapyuta.io**:
 
 To determine the package's unique identifier in rapyuta.io:
 
-1. In the rapyuta.io console, on the left navigation bar, click **Development > Catalogs**.
+1. In the rapyuta.io console, on the left navigation bar, click **Development > Package**.
 2. Select the package whose ID you want to obtain.
 3. Copy the package's ID as shown in the figure.
 

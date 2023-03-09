@@ -49,7 +49,7 @@ Please proceed to the creation of the package once the build is complete.
 You will add and deploy ***simple-hello-world*** package. To create a new package,
 follow the below instructions in sequence:
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Packages**.
 2. Click **ADD NEW PACKAGE**.
 3. You should provide information about the package such as the name of the package, its version, whether it's a singleton or bindable package, and a short description.
    1. In the **Package Name** box, type in a name for the package like `simple-hello-world`

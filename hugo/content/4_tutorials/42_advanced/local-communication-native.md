@@ -306,7 +306,7 @@ For instance on a Raspberry-Pi consider adding the following in /boot/cmdline.tx
 
 ## Create ROS Publisher package
 
-1. Click **Development>Catalog** > **ADD NEW PACKAGE**.
+1. Click **Development > Packages** > **ADD NEW PACKAGE**.
 2. You should provide information about the package such as the name of the package, its version, whether it is a singleton package, and a
    description.
    1. In the **Package Name** box, enter the name of the package, for example, `ROS Publisher`
@@ -338,7 +338,7 @@ For instance on a Raspberry-Pi consider adding the following in /boot/cmdline.tx
 
 ## Create ROS Subscriber package
 
-1. Click **Development>Catalog** > **ADD NEW PACKAGE**.
+1. Click **Development > Packages** > **ADD NEW PACKAGE**.
 2. You should provide information about the package such as the name of the
    package, its version, whether it is a singleton package, and a
    short description.
@@ -415,7 +415,7 @@ The corresponding dependency graph of **ROS Publisher Deployment** looks like:
 
 ## Deploy ROS Subscriber package
 
-1. Click **Development>Catalog** > select **ROS Subscriber** package > click **Deploy package**.
+1. Click **Development > Packages** > select **ROS Subscriber** package > click **Deploy package**.
 2. In the **Name of deployment** box, enter a name for the deployment, for example,
    `ROS Subscriber Deployment`
 3. Since **Subscriber** has **Device runtime**, select the device you want to deploy on by clicking **Refresh the list of online devices**. This retrieves an

@@ -29,7 +29,7 @@ The build takes about two to five minutes to build the source code in the *io_tu
 
 ### Create Talker Package
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Packages**.
 2. Click **ADD PACKAGE**.
 3. In the **Package Name** box, type in a name for the package like `Talker`.
 4. In the **Package Verison** box, enter the version of the package you are creating. The default value is *1.0.0*
@@ -69,7 +69,7 @@ Deploying a routed network is identical to deploying any other package and has i
 Once the routed network deployment succeeds, other ROS package deployments can bind to it and communicate.
 
 ## Deploying the package
-1. Click **Development>Catalog** > and select **Talker** package.
+1. Click **Development > Packages** > and select **Talker** package.
 2. Click **Deploy package**.
 2. In the **Name of deployment** box, enter a name for the deployment
    , for example, `dep11`

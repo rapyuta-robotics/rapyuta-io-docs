@@ -48,7 +48,7 @@ The build takes about two to five minutes to build the source code in the *io_tu
 To create the _native publisher subscriber_ package using the
 [console](https://console.rapyuta.io), follow the steps:
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Packages**.
 2. Click **ADD NEW PACKAGE**.
 3. In the **Package Name** box, type in a name for the package say `Native publisher subscriber`
 4. In the **Package Version** box, enter the version of the package you are creating.

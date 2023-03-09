@@ -34,7 +34,7 @@ Learn how to [prepare your Raspberry PI](/4_tutorials/41_beginner/417_preparing-
 ## Creating the package
 To create ***led_trigger*** package, follow the steps:
 
-1. On the left navigation bar, click **Development>Catalog**.
+1. On the left navigation bar, click **Development > Package**.
 2. Click **ADD NEW PACKAGE**.
 3. In the **Package Name** box, enter the name for the package as `led_trigger`
 4. In the **Package Version** box, type in the version of the package. By default, it is set to _1.0.0_
