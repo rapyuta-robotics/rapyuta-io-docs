@@ -39,7 +39,7 @@ Creating a software package consists of the following high-level procedures.
 
 To add the metadata of the package:
 
-1. In the rapyuta.io console, on the left navigation bar, click **Development > Package**. 
+1. In the rapyuta.io console, on the left navigation bar, click **Development > Packages**. 
 
 2. In the **Create New Package** dialog, select the **Package Information** and enter: 
 

@@ -116,7 +116,7 @@ Please proceed to the creation of the package once the build is complete.
 To create a package using the [console](https://console.rapyuta.io), follow
 the steps:
 
-1. On the left navigation bar, click **Development > Package**.
+1. On the left navigation bar, click **Development > Packages**.
 2. Click **ADD NEW PACKAGE**.
 3. In the **Package Name** box, type in a name for the package, for example, `ROS publisher subscriber`.
 4. In the **Package Version** box, enter the version of the package you are creating.
@@ -187,7 +187,7 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
 To deploy a package using the [console](https://console.rapyuta.io),
 follow the steps:
 
-1. On the left navigation bar, click **DEvelopment > Package**.
+1. On the left navigation bar, click **DEvelopment > Packages**.
 2. Select the **ROS publisher subscriber** package.
 3. Click **Deploy package**.
 4. In the **Name of deployment** box, enter a name for the deployment you are
