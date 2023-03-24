@@ -60,7 +60,7 @@ spec:
     vpn: true
 ```
 
-Apply the maifest
+To apply the maifest:
 
 ```Bash
 rio apply project.yaml
