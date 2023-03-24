@@ -130,27 +130,27 @@ rio apply deployment.yaml
 
 1. Select the project that you want to connect to
 
-```Bash
-rio project select <project_name>
-```
+  ```Bash
+  rio project select <project_name>
+  ```
 
 2. Connect to the VPN
 
-```Bash
-rio vpn connect
-```
+  ```Bash
+  rio vpn connect
+  ```
 
 3. Check status
 
-```Bash
-rio vpn status
-```
+  ```Bash
+  rio vpn status
+  ```
 
-4. Check the status of the `tailscale` client
+4. Check the status of the *tailscale* client
 
-```Bash
-tailscale status
-```
+  ```Bash
+  tailscale status
+  ```
 
 5. To disconnect, run
 
