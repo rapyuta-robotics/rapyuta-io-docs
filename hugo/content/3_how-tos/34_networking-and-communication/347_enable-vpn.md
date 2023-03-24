@@ -61,8 +61,8 @@ spec:
 ```
 
 Apply the maifest
-`
-``Bash
+
+```Bash
 rio apply project.yaml
 ```
 
