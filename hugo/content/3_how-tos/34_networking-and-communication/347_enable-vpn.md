@@ -122,7 +122,7 @@ spec:
 
 To apply the maifest:
 
-```bash
+```Bash
 rio apply deployment.yaml
 ```
 
@@ -154,9 +154,9 @@ rio apply deployment.yaml
 
 5. To disconnect, run
 
-```Bash
-rio vpn disconnect
-```
+  ```Bash
+  rio vpn disconnect
+  ```
 
 {{% /tab %}}
 {{< /tabs >}}
