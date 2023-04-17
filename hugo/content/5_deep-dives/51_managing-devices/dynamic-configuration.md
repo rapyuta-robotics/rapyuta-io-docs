@@ -61,7 +61,7 @@ To view an example of how you may leverage configuration hierarchies please refe
 The RootNode is the root of the configuration hierarchy tree. There
 is only one RootNode per configuration hierarchy. Its name is
 the same as the name you provide while creating the configuration
-hierarchy. The RootNode allows you to add an attribute, add/upload
+hierarchy. The RootNode allows you to add an attribute,folders, add/upload
  configuration files, and apply the base label configuration parameters to a device.
 
  It might contain multiple file nodes and exactly one
