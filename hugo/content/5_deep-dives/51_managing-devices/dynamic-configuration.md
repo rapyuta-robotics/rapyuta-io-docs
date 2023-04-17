@@ -43,11 +43,11 @@ Every configuration hierarchy consists of the following four kinds of nodes:
 
 - [RootNode](/5_deep-dives/51_managing-devices/dynamic-configuration/#rootnode)
 - [AttributeNode](/5_deep-dives/51_managing-devices/dynamic-configuration/#attributenode)
+- [FolderNode](/5_deep-dives/51_managing-devices/dynamic-configuration/#foldernode)
 - [ValueNode](/5_deep-dives/51_managing-devices/dynamic-configuration/#valuenode)
 - [FileNode](/5_deep-dives/51_managing-devices/dynamic-configuration/#filenode)
 
- Consider the sample
-configuration hierarchy, ***example***, as shown in the following figure.
+ Consider the sample configuration hierarchy, ***example***, as shown in the following figure.
 The parameters of ***example*** are arranged in a specific order. The
 hierarchy allows you to override the default parameters(or base parameters)
 or extend existing parameters based on the country of operation.
@@ -88,6 +88,18 @@ AttributeNodes can contain only value nodes, each corresponding to a
 branch that you wish to represent. In the case of ***example*** 
 configuration, attributes are ***country***, ***motor_controller***.
 ![attribute node](/images/core-concepts/configurations/attribute-nodes.png?classes=border,shadow&width=20pc)
+
+#### Folder Node
+Folder nodes typically refer to a hierarchical organization of configuration settings that are grouped together. They help users navigate and manage large sets of configuration parameters more easily. When the configuration is applied, all the folders and files within them will be synchronized with the device or cloud deployments.
+Devices in rapyuta.io allow the user to create multiple folders from the root node. Multiple sub-folders can be created inside a folder, and each of the folders and sub-folders can contain multiple files.
+For example, the root node ``example`` has the country folder has two sub folders, USA and Japan, and each of these sub folders contain the yaml files.
+
+{{%notice note%}}
+You can either add a folder node or an attribute node form the root node. 
+Overriding configuration parametrs 
+{{%/notice%}}
+
+![folder node](/images/core-concepts/configurations/folder-nodes.png?classes=border,shadow&width=20pc)
 
 #### ValueNode
 Each value node corresponds to one particular value that is of the type of the parent attribute node (eg device *country=**Japan***)  corresponding to a particular branch of the configuration hierarchy that will be used to override the more general configuration values.
