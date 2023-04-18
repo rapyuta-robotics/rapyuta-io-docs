@@ -43,10 +43,14 @@ To create a dynamic configuration:
 4. Hover over the root node to view the following additional actions that can be performed:
 
   a. Add attribute - To create an attribute node, select **Add attribute**, enter the attribute name and click **CONFIRM**.
-  b. Add folder - To create a attribute node, select **Add folder**, enter the folder name and click **CONFIRM**. For more information, see [Folder Node](https://userdocs.rapyuta.io/5_deep-dives/51_managing-devices/dynamic-configuration/#foldernode)
-  c. Add file - To Add/upload a base configuration file, select **Add file**. You can create the configuration parameters in [YAML](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-yaml-file-format) or [Binary file](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-binary-file-format) format.
-  d. Apply - To apply the configuration, select the devices to apply configuration and click **CONFIRM**. For more information, see [Applying Configurations to Devices](http://localhost:1184/3_how-tos/32_device-management/324_applying-configuration-on-devices/#applying-configuration-to-devices). 
-  e. Delete - To Delete the configuration, select the delete icon and click **CONFIRM**.
+
+  b. Add folder - To create a attribute node, select **Add folder**, enter the folder name and click **CONFIRM**. For more information, see [Folder Node](https://userdocs.rapyuta.io/5_deep-dives/51_managing-devices/dynamic-configuration/#foldernode) <br>
+
+  c. Add file - To Add/upload a base configuration file, select **Add file**. You can create the configuration parameters in [YAML](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-yaml-file-format) or [Binary file](/3_how-tos/32_device-management/324_applying-configuration-on-devices/#creating-a-configuration-parameter-in-binary-file-format) format. <br>
+
+  d. Apply - To apply the configuration, select the devices to apply configuration and click **CONFIRM**. For more information, see [Applying Configurations to Devices](http://localhost:1184/3_how-tos/32_device-management/324_applying-configuration-on-devices/#applying-configuration-to-devices). <br>
+
+  e. Delete - To Delete the configuration, select the delete icon and click **CONFIRM**. <br>
   
   ![YAML file](/images/core-concepts/configurations/root-node-actions.png?classes=border,shadow&width=25pc)
 
