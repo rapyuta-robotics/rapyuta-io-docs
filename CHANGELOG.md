@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [8.1 - 2023-04-19]
+- added release notes
+- added folder sync feature documentation
+
 ## [8.0 - 2023-03-09]
 - added release notes
 
