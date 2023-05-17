@@ -161,6 +161,6 @@ rio apply deployment.yaml
 {{% /tab %}}
 {{< /tabs >}}
 
-#### Related Links
+## Related Links
 
-[VPN Services Troubleshooting](/6_troubleshoot/613_vpn-services/)
+- [VPN Services Troubleshooting](/6_troubleshoot/613_vpn-services/)
