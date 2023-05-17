@@ -50,7 +50,7 @@ Switching projects in the CLI does not automatically update the VPN configuratio
 
 ### Solution
 
-If you aren't able to automatically connect to a previously connected device over the VPN network, enable VPN on the device after it reboots.
+Suppose you are unable to establish an automatic connection to a previously connected device over the VPN network, you will need to re-enable the VPN on the device after it reboots.
 
 To re-establish the connection:
 
