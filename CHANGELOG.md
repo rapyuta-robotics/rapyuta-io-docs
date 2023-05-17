@@ -1,4 +1,6 @@
 # CHANGELOG
+## [8.1 - 2023-05-17]
+- added documentation for native VPN usage with CLI
 
 ## [8.1 - 2023-04-19]
 - added release notes
