@@ -163,4 +163,4 @@ rio apply deployment.yaml
 
 ## Related Links
 
-- [VPN Services Troubleshooting](/6_troubleshoot/613_vpn-services/)
+ [VPN Services Troubleshooting](/6_troubleshoot/613_vpn-services/)
