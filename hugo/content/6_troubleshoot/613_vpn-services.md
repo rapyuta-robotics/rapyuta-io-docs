@@ -50,7 +50,7 @@ Switching projects in the CLI does not automatically update the VPN configuratio
 
 ### Solution
 
-If you aren't able to connect to a previously connected device over the VPN network, enable VPN on the device after each reboot: Disabling and enabling the VPN connection on the device is necessary to restore access over the VPN network. 
+If you aren't able to connect to a previously connected device over the VPN network, enable VPN on the device after each reboot.
 
 To re-establish the connection:
 
