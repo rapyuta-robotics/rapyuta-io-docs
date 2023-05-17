@@ -46,7 +46,7 @@ Switching projects in the CLI does not automatically update the VPN configuratio
     rio vpn status
     ```
 
-## Problem: A device that was already connected over VPN rebooted (robot, edge, etc.) and now I can't connect to it
+## Problem: Unable to access a previously connected rebooted device (robot/edge etc).
 
 ### Solution
 
