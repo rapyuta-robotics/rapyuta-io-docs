@@ -28,27 +28,27 @@ tags:
 
 ## Problem: VPN network does not get updated when switching projects in RioCLI
 
-If you have switched projects in the CLI using the rio project select command but are still seeing machines from the previously selected project when running rio vpn status, there might be an issue with the VPN connection not being updated correctly.
+If you have switched projects in the CLI using the rio project select command but are still seeing machines from the previously selected project when running `rio vpn status`, there might be an issue with the VPN connection not being updated correctly.
 
-## Solution
+### Solution
 
 Switching projects in the CLI does not automatically update the VPN configuration on your local device. Therefore, it's necessary to manually establish a connection to the VPN network associated with the current project and verify the status of your VPN connection. To do so:
 
 1. After switching projects, reconnect to the VPN network of the current project by running the following command:
 
-```Bash
-rio vpn connect
-```
+    ```Bash
+    rio vpn connect
+    ```
 
 2. To confirm the status of your VPN connection, use the command:
 
-```Bash
-rio vpn status
-```
+    ```Bash
+    rio vpn status
+    ```
 
 ## Problem: A device that was already connected over VPN rebooted (robot, edge, etc.) and now I can't connect to it
 
-## Solution
+### Solution
 
 If you aren't able to connect to a previously connected device over the VPN network, enable VPN on the device after each reboot: Disabling and enabling the VPN connection on the device is necessary to restore access over the VPN network. 
 
@@ -56,27 +56,27 @@ To re-establish the connection:
 
 1. Confirm your current project in the CLI, use the command:
 
-```Bash
-rio project list -w 
-```
+    ```Bash
+    rio project list -w 
+    ```
 
 2. If you have verified that you are in the correct project, proceed to disable and enable VPN on the specific device using one of the following commands:
 
-```Bash
-rio device vpn false --devices=<devicename>
-```
+    ```Bash
+    rio device vpn false --devices=<devicename>
+    ```
 
-```Bash
-rio device vpn enable --devices=<devicename>
-```
+    ```Bash
+    rio device vpn enable --devices=<devicename>
+    ```
 
 Replace <devicename> with the name of the device that you are troubleshooting.
 
 3. After enabling VPN on the device, verify the VPN status to ensure that the device is properly connected to the VPN network, use the command:
 
-```Bash
-rio vpn status
-```
+    ```Bash
+    rio vpn status
+    ```
 
 
 
