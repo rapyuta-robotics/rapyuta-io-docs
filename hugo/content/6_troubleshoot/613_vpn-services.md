@@ -28,7 +28,7 @@ tags:
 
 ## Problem: VPN network does not get updated when switching projects in RioCLI
 
-If you have switched projects in the CLI using the rio project select command but are still seeing machines from the previously selected project when running `rio vpn status`, there might be an issue with the VPN connection not being updated correctly.
+If you have switched projects in the CLI using the rio project select command but are still seeing machines from the previously selected project there might be an issue with the VPN connection not being updated correctly.
 
 ### Solution
 
@@ -46,7 +46,7 @@ Switching projects in the CLI does not automatically update the VPN configuratio
     rio vpn status
     ```
 
-## Problem: Unable to access a previously connected rebooted device (robot/edge etc).
+## Problem: Unable to access a previously connected device (robot/edge etc) after a reboot
 
 ### Solution
 
@@ -69,8 +69,7 @@ To re-establish the connection:
     ```Bash
     rio device vpn enable --devices=<devicename>
     ```
-
-Replace <devicename> with the name of the device that you are troubleshooting.
+    Replace <devicename> with the name of the device that you are troubleshooting.
 
 3. After enabling VPN on the device, verify the VPN status to ensure that the device is properly connected to the VPN network, use the command:
 
