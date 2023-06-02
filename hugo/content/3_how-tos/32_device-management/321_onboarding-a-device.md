@@ -138,7 +138,7 @@ rio device create <device_name>
 
 2. To enable/disable VPN, click the **Enabled/Disabled** button. For more information, see [Enabling VPN Services](/3_how-tos/34_networking-and-communication/347_enable-vpn/)
 
-![vpn_devices](/images/core-concepts/vpn/vpn_devices.png?classes=border,shadow&width=25pc)
+![vpn_devices](/images/core-concepts/vpn/vpn_devices.png)
 
 
 ### Setting Up your Device

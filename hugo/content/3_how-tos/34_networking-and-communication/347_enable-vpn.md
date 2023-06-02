@@ -63,14 +63,13 @@ You can use the CLI to enable VPN on projects, devices, and cloud deployments.
 
   1. Navigate to the right navigation pane and click **Devices**.
   2. Select the specific device for which you want to enable VPN.
-  3. On the device details page, click **Enabled** next to the VPN option. For more information, see [VPN Services Troubleshooting](/6_troubleshoot/613_vpn-services/)
-
-
-   ![](/images/core-concepts/vpn/vpn_devices.png?classes=border,shadow&width=25pc)
+  3. On the device details page, click **Enabled** next to the VPN option. For more information, see [Enable VPN for an Online Device](/3_how-tos/32_device-management/321_onboarding-a-device/#enable-vpn-for-an-online-device)
 
   {{%notice info%}}
    VPN can be enabled on devices only if VPN is enabled for the selected project and if the device is online.
   {{%/notice%}}
+
+  ![vpn_devices](/images/core-concepts/vpn/vpn_devices.png)
 
 
  ### Enabling VPN on Cloud Deployments
