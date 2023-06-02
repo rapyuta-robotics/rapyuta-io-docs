@@ -45,10 +45,10 @@ You can use the CLI to enable VPN on projects, devices, and cloud deployments.
  1. To enable VPN while creating a new project, in the create a new project modal, click the **Enabled** button. For more information, see [Managing Projects](/how-to-guides/account-management/managing-projects/)
  2. To enable VPN for an existing project, select the project from the list of projects, in the project details modal, click the **Enabled** button.
 
-    {{%notice info%}}
-    * Only an org admin or a project creator can enable/disable VPN on projects.
-    * When you create your first project, you cannot view the VPN option. However, you can enable it after creating the project (refer to step 2).
-    {{%/notice%}}
+  {{%notice info%}}
+  * Only an org admin or a project creator can enable/disable VPN on projects.
+  * When you create your first project, you cannot view the VPN option. However, you can enable it after creating the project (refer to step 2).
+  {{%/notice%}}
 
 
  3. The VPN status is displayed alongside the project list, and it can have various statuses, including:
@@ -66,7 +66,7 @@ You can use the CLI to enable VPN on projects, devices, and cloud deployments.
   3. On the device details page, click **Enabled** next to the VPN option. For more information, see [VPN Services Troubleshooting](/6_troubleshoot/613_vpn-services/)
 
 
-   ![vpn_devices](images/core-concepts/vpn/vpn_devices.png?classes=border,shadow&width=25pc)
+   ![](/images/core-concepts/vpn/vpn_devices.png?classes=border,shadow&width=25pc)
 
   {{%notice info%}}
    VPN can be enabled on devices only if VPN is enabled for the selected project and if the device is online.
