@@ -132,6 +132,15 @@ rio device create <device_name>
 4. Once re-onboarded, you should be able to deploy the docker/preinstalled runtime-based packages.
 
 
+### Enable VPN for an online Device
+
+1. Select the device and navigate to the device details page.
+
+2. To enable/disable VPN, click the **Enabled/Disabled** button. For more information, see [Enabling VPN Services](/3_how-tos/34_networking-and-communication/347_enable-vpn/)
+
+![Device_VPN](images/core-concepts/vpn/vpn_devices.png?classes=border,shadow&width=25pc)
+
+
 ### Setting Up your Device
 
 Set up your device to connect it to the rapyuta.io platform. To set up your device, open the command terminal and run the previously copied script.
