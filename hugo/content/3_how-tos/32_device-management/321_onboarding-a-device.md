@@ -132,7 +132,7 @@ rio device create <device_name>
 4. Once re-onboarded, you should be able to deploy the docker/preinstalled runtime-based packages.
 
 
-### Enable VPN for an online Device
+### Enable VPN for Online Devices
 
 1. Select the device and navigate to the device details page.
 

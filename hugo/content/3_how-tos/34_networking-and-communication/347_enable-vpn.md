@@ -57,7 +57,7 @@ You can use the CLI to enable VPN on projects, devices, and cloud deployments.
   * **VPN Error** - This message indicates that there was an error during the VPN connection process, resulting in a failed connection. For more information, see [VPN Services Troubleshooting](/6_troubleshoot/613_vpn-services/)
 
   
-  ### Enabling VPN on devices
+  ### Enabling VPN on Devices
 
   To enable VPN on devices:
 
