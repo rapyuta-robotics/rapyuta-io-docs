@@ -42,16 +42,16 @@ You can use the CLI to enable VPN on projects, devices, and cloud deployments.
  
  To enable VPN on projects:
 
- 1. To enable VPN while creating a new project, in the create a new project modal, click the **Enabled** button. For more information, see
+ 1. To enable VPN while creating a new project, in the create a new project modal, click the **Enabled** button. For more information, see [Managing Projects](/how-to-guides/account-management/managing-projects/)
  2. To enable VPN for an existing project, select the project from the list of projects, in the project details modal, click the **Enabled** button.
 
-  {{%notice info%}}
-  * Only an org admin or a project creator can enable/disable VPN on projects.
-  * When you create your first project, you cannot view the VPN option. However, you can enable it after creating the project (refer to step 2).
-  {{%/notice%}}
+    {{%notice info%}}
+    * Only an org admin or a project creator can enable/disable VPN on projects.
+    * When you create your first project, you cannot view the VPN option. However, you can enable it after creating the project (refer to step 2).
+    {{%/notice%}}
+
 
  3. The VPN status is displayed alongside the project list, and it can have various statuses, including:
-
   * **VPN Enabled** - This message indicates that VPN is successfully enabled for the project.
   * **VPN Disabled** - This message indicates that VPN is currently disabled for the project.
   * **VPN Error** - This message indicates that there was an error during the VPN connection process, resulting in a failed connection. For more information, see [VPN Services Troubleshooting](/6_troubleshoot/613_vpn-services/)
@@ -61,12 +61,12 @@ You can use the CLI to enable VPN on projects, devices, and cloud deployments.
 
   To enable VPN on devices:
 
-  1. Navigate to the right navigation pane and click on "Devices."
+  1. Navigate to the right navigation pane and click **Devices**.
   2. Select the specific device for which you want to enable VPN.
-  3. On the device details page, locate the VPN option.
-  4. Click the "Enabled" button next to the VPN option.
+  3. On the device details page, click **Enabled** next to the VPN option. For more information, see [VPN Services Troubleshooting](/6_troubleshoot/613_vpn-services/)
 
-   ![Device_VPN](images/core-concepts/vpn/vpn_devices.png?classes=border,shadow&width=25pc)
+
+   ![vpn_devices](images/core-concepts/vpn/vpn_devices.png?classes=border,shadow&width=25pc)
 
   {{%notice info%}}
    VPN can be enabled on devices only if VPN is enabled for the selected project and if the device is online.
