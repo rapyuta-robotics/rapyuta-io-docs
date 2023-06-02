@@ -77,7 +77,7 @@ You can use the CLI to enable VPN on projects, devices, and cloud deployments.
   VPN can be enabled on cloud deployments while depolying the package. To enable VPN on cloud deployments:
 
   1. Select the package, and click **Deploy Package**.
-  2. In the deploy package modal, beside **VPN Client** click **Enabled** . For ore information, see [Deploying Packages](/3_how-tos/33_software-development/334_deploy-packages/)
+  2. In the deploy package modal, beside **VPN Client** click **Enabled** . For more information, see [Deploying Packages](/3_how-tos/33_software-development/334_deploy-packages/)
 
   {{%notice info%}}
    VPN can be enabled for cloud deplyments only if VPN is enabled for the selected project.
