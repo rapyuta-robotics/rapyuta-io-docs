@@ -36,18 +36,19 @@ Managing projects include creating and deleting projects as well as adding and r
 {{% tab name="UI" %}}
  1. In the left navigation bar, click **Account > Projects**. The project dashboard is displayed.
  2. To create a new project:
-    a. Click **Create New**. 
+    1. Click **Create New**. 
        **Create new project** modal appears.
-    b. In the **Name** field, enter the project name.
-    c. To enable/disable VPN for the project, click the **Enabled/Disabled** button. For more information, see [Enabling VPN Services](/3_how-tos/34_networking-and-communication/347_enable-vpn/)
+    2. In the **Name** field, enter the project name.
+    3. To enable/disable VPN for the project, click the **Enabled/Disabled** button. 
+    Only an org admin or a project creator can enable/disable VPN on projects. For more information, see [Enabling VPN Services](/3_how-tos/34_networking-and-communication/347_enable-vpn/)
+    When you create your first project, you cannot view the VPN option. However, you can enable it after creating the project.
+    4. (Optional) Select the **Users** tab to add user to the project.
+    5. (Optional) Select the **User groups** tab to add user groups to the project.
+    6. Click **Create Project**. The newly created project can be viewed in the project dashboard.
 
-{{% notice info %}}
-  Only an org admin or a project creator can enable/disable VPN on projects.
-  When you create your first project, you cannot view the VPN option. However, you can enable it after creating the project.
-{{% /notice %}}
-    d. (Optional) Select the **Users** tab to add user to the project.
-    e. (Optional) Select the **User groups** tab to add user groups to the project.
-    f. Click **Create Project**. The newly created project can be viewed in the project dashboard.
+
+
+   
  3. To delete a project:
     1. In the project dashboard, click the delete icon under **Actions**.
     2. A confirmation page appears, click **Yes, Delete**.
