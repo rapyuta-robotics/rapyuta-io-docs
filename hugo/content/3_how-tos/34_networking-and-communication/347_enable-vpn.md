@@ -35,6 +35,56 @@ rapyuta.io supports the native VPN. It now provides the capability to connect de
 You can use the CLI to enable VPN on projects, devices, and cloud deployments.
 
 {{< tabs >}}
+
+{{% tab name="UI" %}}
+ 
+ ### Enabling VPN on projects
+ 
+ To enable VPN on projects:
+
+ 1. To enable VPN while creating a new project, in the create a new project modal, click the **Enabled** button. For more information, see [Managing Projects](/how-to-guides/account-management/managing-projects/)
+ 2. To enable VPN for an existing project, select the project from the list of projects, in the project details modal, click the **Enabled** button.
+
+  {{%notice info%}}
+  * Only an org admin or a project creator can enable/disable VPN on projects.
+  * When you create your first project, you cannot view the VPN option. However, you can enable it after creating the project (refer to step 2).
+  {{%/notice%}}
+
+
+ 3. The VPN status is displayed alongside the project list, and it can have various statuses, including:
+  * **VPN Enabled** - This message indicates that VPN is successfully enabled for the project.
+  * **VPN Disabled** - This message indicates that VPN is currently disabled for the project.
+  * **VPN Error** - This message indicates that there was an error during the VPN connection process, resulting in a failed connection. For more information, see [VPN Services Troubleshooting](/6_troubleshoot/613_vpn-services/)
+
+  
+  ### Enabling VPN on Devices
+
+  To enable VPN on devices:
+
+  1. Navigate to the right navigation pane and click **Devices**.
+  2. Select the specific device for which you want to enable VPN.
+  3. On the device details page, click **Enabled** next to the VPN option. For more information, see [Enable VPN for an Online Device](/3_how-tos/32_device-management/321_onboarding-a-device/#enable-vpn-for-an-online-device)
+
+  {{%notice info%}}
+   VPN can be enabled on devices only if VPN is enabled for the selected project and if the device is online.
+  {{%/notice%}}
+
+  ![vpn_devices](/images/core-concepts/vpn/vpn_devices.png)
+
+
+ ### Enabling VPN on Cloud Deployments
+
+  VPN can be enabled on cloud deployments while depolying the package. To enable VPN on cloud deployments:
+
+  1. Select the package, and click **Deploy Package**.
+  2. In the deploy package modal, beside **VPN Client** click **Enabled** . For more information, see [Deploying Packages](/3_how-tos/33_software-development/334_deploy-packages/)
+
+  {{%notice info%}}
+   VPN can be enabled for cloud deplyments only if VPN is enabled for the selected project.
+  {{%/notice%}}
+
+{{% /tab %}}
+
 {{% tab name="CLI" %}}
 
 ### Enabling VPN on projects

@@ -56,7 +56,9 @@ This step may silently fail if the executable does not have the required permiss
 {{% /notice %}} <br> |
     | Disable param sync | Enable this toggle button to disable the sync for the selected executable. |
 
-5. Adding Volumes <br>
+5. To enable/disable VPN client for cloud deployments, click the **Enabled/Disabled** button. For more information, see [Enabling VPN Services](/3_how-tos/34_networking-and-communication/347_enable-vpn/)
+
+6. Adding Volumes <br>
 * Ensure that a running volume deployment is available before you add one.
 * Add device volume if the package has **device** runtime. To add **Device Volumes**, enter:
   | Field | Description |
@@ -71,17 +73,17 @@ This step may silently fail if the executable does not have the required permiss
   | Disk | Select the disk to be mounted from the dropdown list. |
   |Applicable Component | Select the package component to attach the volume package from the dropdown list. |
 
-6. Adding Dependency <br>
+7. Adding Dependency <br>
   To add a dependent deployment:
     1. Click **Add dependency**.
     2. Select a deployment ID from the dropdown list to add as a dependency.
 
-7. ROS Bag Jobs <br>
+8. ROS Bag Jobs <br>
   To add a ROS Bag Jobs:
     1. Click **Add ROS Bag Job**.
     2. Specify the required details. For more information, see [Working with ROS Bag Jobs](/3_how-tos/35_tooling_and_debugging/working-with-rosbags/#adding-ros-bag-jobs)
 
-8. Routed or Native Network <br>
+9. Routed or Native Network <br>
    To add a Routed or Native Network:
    1. Click **Add**
    2. Select a routed/native network from the **Network** dropdown list. 
@@ -95,10 +97,10 @@ You cannot add a native network for a package with hybrid runtime.
 
    You can also view the details related to topic configuration in the dependency composition graph on the **Deployment Details** page. For more information, see [Dependency Composition](/4_tutorials/42_advanced/dependency-composition/).
 
-9. Restart Policies
+10. Restart Policies
     If you want to modify the initial setting of the restart policy of components with **device runtime**, click **Modify**.
 
-10. Click **CREATE DEPLOYMENT** and  **Confirm**.
+11. Click **CREATE DEPLOYMENT** and  **Confirm**.
   You will be redirected to the **Details** page of the newly created deployment.
   On successful deployment, the Status changes to Running and the Deployment Phase changes to Succeeded.
   Additionally, if dependent deployments are added, the status of each should be **Running**.
