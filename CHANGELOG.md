@@ -1,6 +1,13 @@
 # CHANGELOG
-## [8.1 - 2023-05-17]
+
+## [8.3 - 2023-06-14]
+- added documentation for native VPN usage with UI
+- added documentation for device deployments resource limits 
+- updated the release notes
+
+## [8.2 - 2023-05-17]
 - added documentation for native VPN usage with CLI
+- updated release notes
 
 ## [8.1 - 2023-04-19]
 - added release notes
