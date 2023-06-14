@@ -90,7 +90,7 @@ To create components:
 * Min Executable Memory: 128 MB
 * Executable Memory Granularity: 128 MB
 {{%/notice%}} |
-|Device Resource Limit (optional) | Users now have the option to apply CPU and memory limits for devices using the following command in the CLI:<br> ``rio apply <manifest.yaml file>``. <br> For example, *rio apply riocli/apply/manifests/package-nonros-device.yaml*. <br> {{%notice info%}} Max Executable CPU is 256 cores {{%/notice%}} |
+|Device Resource Limit (optional) | Users now have the option to apply CPU and memory limits for devices using the following command in the CLI:<br> ``rio apply <manifest.yaml file>``. <br> For example, *rio apply [riocli/apply/manifests/package-nonros-device.yaml](https://github.com/rapyuta-robotics/rapyuta-io-cli/blob/devel/riocli/apply/manifests/package-nonros-device.yaml)*. <br> {{%notice info%}} Max Executable CPU is 256 cores {{%/notice%}} |
 
 4. (Optional) You can add an end-point. For more information on endpoint configuration, see [Standard Web Protocols](/5_deep-dives/53_networking-and-communication/532_standard-web-protocol/). 
 To add an end-point, under **Endpoints**,  click **Add Endpoint** and enter: 
