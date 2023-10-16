@@ -14,7 +14,7 @@ miniTocMaxHeadingLevel: 4
 
 allowTitleToDifferFromFilename: false
 mapTopic: false
-hidden: false
+hidden: true
 
 
 redirect_from: []
