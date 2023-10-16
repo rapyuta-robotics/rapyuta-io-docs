@@ -12,20 +12,7 @@ tags:
 The tutorial will show you how to create and use a debug environment and use IDE capability to modify your executable.
 
 ## Estimated time
-25 minutes
-
-### Creating the **io-tutorial** build
- 
-To create the build, follow the below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
-
-1. On the left navigation bar, click **Development>Builds**.
-2. Click on **ADD NEW BUILD**
-3. In the Build Name box, enter a name for the build, for example, `io-tutorials`
-4. In the Git repository box, enter the URL address: `https://github.com/rapyuta/io_tutorials`, select **Build Recipe** as Catkin and click **Next**.
-5. Select the ROS version as **Melodic** .
-5. Go to the next step and click on next, the build will be created.
-
-The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding build logs, which helps in debugging failed builds. After you create the build, create the *Talker* package.
+2 minutes
 
 ### Create Talker Package
 
@@ -44,7 +31,7 @@ The build takes about two to five minutes to build the source code in the *io_tu
 12. Select **Melodic** for **ROS Version**.
 13. The default value of **Replicas to run the component** is set to 1
 14. In the **Executable Name** box, enter a name for an executable, for example, `talker_executable`.
-15. Click **Development>Builds** for **Executable Type**.
+15. EnterFor the **Docker Image** value, enter: ` quay.io/rapyuta/io_tutorials:latest`.
 16. Select **io-tutorials** builds from the dropdown
 17. In the **Command to run in the docker container** box, enter the command:
     `roslaunch talker talker.launch`
