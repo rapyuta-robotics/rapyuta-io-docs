@@ -144,7 +144,7 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 12. Choose **Melodic** for **ROS Version**.
 13. Set **Restart Policy** to **Never**.
 14. The name of the executable: `navigation_executable`
-15. For the **Docker Image** value, enter: `io-tutorials`.
+15. For the **Docker Image** value, enter: `quay.io/rapyuta/io_tutorials`.
 16. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup app.launch`
 17. Click on **Add ROS topic**. The name of the ROS topic is `/cmd_vel`, and it is set **QoS** to **Low**.
 18. Add a configuration parameter by clicking on **Add Parameter**. The name of the parameter is `SPAWN_TURTLEBOT_ROBOT`. The **Default** value is `true`.
@@ -166,7 +166,7 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 12. Choose **Melodic** for **ROS Version**.
 13. The number of **Replicas to run the component** is **1**
 14. The name of the executable: `simulation_executable`
-15. For the Docker Image value, enter: `io-simulation-navigation`.
+15. For the Docker Image value, enter: `quay.io/rapyuta/io_tutorials`.
 16. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup sim.launch gui:=true`
 17. Set **Resource Limit** to **Medium:2 CPU cores, 8 GiB memory**
 {{% notice warning %}}

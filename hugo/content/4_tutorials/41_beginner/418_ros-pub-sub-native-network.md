@@ -60,7 +60,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-    7. For the **Docker Image** value, enter: `io-tutorials`.
+    7. For the **Docker Image** value, enter: `quay.io/rapyuta/io_tutorials`.
     8. In the **Command to run in the docker container** box, enter the command:
         ```bash
         roslaunch talker talker.launch
@@ -86,7 +86,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-    6. For the Docker Image value, enter: `io-tutorials`.
+    6. For the Docker Image value, enter: `quay.io/rapyuta/io_tutorials`.
     7. In the **Command to run in the docker container** box, enter the command:
         ```bash
         roslaunch listener listener.launch

@@ -78,7 +78,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-    7. For the **Docker Image** value, enter: `io-tutorials`.
+    7. For the **Docker Image** value, enter: `quay.io/rapyuta/io_tutorials`.
     9. In the **Command to run in the docker container** box, enter the command:
         ```bash
         roslaunch talker talker.launch
@@ -101,11 +101,11 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
     4. Ensure the **ROS Version** is **Melodic**.
     5. Select **arm32v7** as **Architecture**.
     6. In the **Executable Name** box, type in a name for the executable , for example,
-       `listenerExecutable`   
+       `listenerExecutable`
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-    7. For the **Docker Image** value, enter: `io-tutorials`.
+    7. For the **Docker Image** value, enter: `quay.io/rapyuta/io_tutorials`.
     8. In the **Command to run in the docker container** box, enter the command:
         ```bash
         roslaunch listener listener.launch
