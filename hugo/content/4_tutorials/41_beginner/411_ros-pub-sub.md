@@ -47,19 +47,6 @@ It also shows how to use dockercompose runtime on a device.
 While onboarding the device, ensure that you have selected **Use docker-compose as default runtime** check box. 
 {{%/notice%}}
 
-## Creating the **io-tutorial** build
- 
-To create the build, follow the below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
-
-1. On the left navigation bar, click **Development>Builds**.
-2. Click on **ADD NEW BUILD**
-3. In the **Build Name** box, enter a name for the build , for example, `io-tutorials`
-4. In the Git repository box, enter the URL address: `https://github.com/rapyuta/io_tutorials` 
-and select **Build Recipe** as Catkin.
-5. Go to the next step and click on next, the build will be created.
-
-The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding build logs, which helps in debugging failed builds. Please proceed to the creation of package once the build is complete.
-
 ## Creating the Package
 
 To create the _Docker publisher subscriber_ package using the
@@ -91,8 +78,7 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-    7. For **Executable Type**, click on **Development>Builds**.
-    8. In the **Choose Build** select the first Build `io-tutorials` from the drop-down list.   
+    7. For the **Docker Image** value, enter: `quay.io/rapyuta/io_tutorials`.
     9. In the **Command to run in the docker container** box, enter the command:
         ```bash
         roslaunch talker talker.launch
@@ -115,13 +101,12 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
     4. Ensure the **ROS Version** is **Melodic**.
     5. Select **arm32v7** as **Architecture**.
     6. In the **Executable Name** box, type in a name for the executable , for example,
-       `listenerExecutable`   
+       `listenerExecutable`
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-    7. For **Executable Type**, click on **Development>Builds**.
-    8. In the **Choose Build** select the second Build `io-tutorials-arm32v7` from the drop-down list.
-    9. In the **Command to run in the docker container** box, enter the command:
+    7. For the **Docker Image** value, enter: `quay.io/rapyuta/io_tutorials`.
+    8. In the **Command to run in the docker container** box, enter the command:
         ```bash
         roslaunch listener listener.launch
         ```
@@ -129,7 +114,7 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
         Ensure you always execute the command *roslaunch* to explicitly start the
         [ROS Master](https://wiki.ros.org/Master) instead of running the *rosrun*
         command, because the ROS Master will fail to start on _rosrun_, and eventually, the deployment will fail as well.
-    10. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+    9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ## Create a Cloud Routed Network
 If you have already created a routed network, you can skip this procedure. For more information about routed network, [click here](/5_deep-dives/53_networking-and-communication/531_ros-network-routed/)

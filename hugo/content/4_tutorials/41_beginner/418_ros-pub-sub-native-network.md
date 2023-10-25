@@ -28,20 +28,7 @@ _ROS subscriber_ components running on the cloud by using a native network.
     4. [ROS services](https://wiki.ros.org/Services)
 
 ### Estimated time
-15 minutes
-
-## Creating the **io-tutorial** build
- 
-To create the build, follow below steps. Skip the following steps if you have already created an *io-tutorials* build earlier.
-
-1. On the left navigation bar, click **Development>Builds**.
-2. Click on **ADD NEW BUILD**
-3. In the **Build Name** box, enter a name for the build say `io-tutorials`
-4. In the Git repository box, enter the URL address : `https://github.com/rapyuta/io_tutorials` 
-and select **Build Recipe** as Catkin.
-5. Go to the next step and click on next, the build will be created.
-
-The build takes about two to five minutes to build the source code in the *io_tutorials* repository into a running docker container. You may analyze the corresponding build logs, which helps in debugging failed builds. Please proceed to creation of package once the build is complete.
+12 minutes
 
 ## Creating the Package
 
@@ -73,9 +60,8 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyphen - and an underscore _ character, and must not start with a digit.
 {{% /notice %}}
-    7. For **Executable Type**, click on **Builds**.
-    8. In the **Choose Build** select the first Build `io-tutorials` from the drop-down list.   
-    9. In the **Command to run in the docker container** box, enter the command:
+    7. For the **Docker Image** value, enter: `quay.io/rapyuta/io_tutorials`.
+    8. In the **Command to run in the docker container** box, enter the command:
         ```bash
         roslaunch talker talker.launch
         ```
@@ -85,10 +71,10 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits[0-9], hyp
         command, because the ROS Master will fail to start on _rosrun_, and
         eventually, the deployment will fail as well.
         ![talkerExecutable](/images/tutorials/docker-pub-sub/docker-pubsub-talker-exec.png?classes=border,shadow&width=50pc)
-    10. The _talkerExecutable_ publishes a ROS topic, `/telemetry`    
+    9. The _talkerExecutable_ publishes a ROS topic, `/telemetry`
        To add a ROS topic, click **Add ROS topic**. In the **Name** box, enter the name of the ROS topic. Select **Maximum** for **QoS**.
 2. Listener component (aka _ROS subscriber_)
-    1. In the **Component Name** box, type in a name for the component, say `listener`      
+    1. In the **Component Name** box, type in a name for the component, say `listener`
 {{% notice info %}}
 The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
@@ -96,13 +82,12 @@ The name of a component must consist of alphabets [A-Z, a-z], digits [0-9], hyph
     3. Ensure **Is ROS Component** is selected.
     4. Ensure the **ROS Version** is **Melodic**.
     5. In the **Executable Name** box, type in a name for the executable, for example,
-       `listenerExecutable`   
+       `listenerExecutable`
 {{% notice info %}}
 The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hyphen - and an underscore _ character, and must not begin with a digit.
 {{% /notice %}}
-    6. For **Executable Type**, click on **Builds**.
-    7. In the **Choose Build** select the second Build `io-tutorials` from the drop-down list.
-    8. In the **Command to run in the docker container** box, enter the command:
+    6. For the Docker Image value, enter: `quay.io/rapyuta/io_tutorials`.
+    7. In the **Command to run in the docker container** box, enter the command:
         ```bash
         roslaunch listener listener.launch
         ```
@@ -111,7 +96,7 @@ The name of an executable must consist of alphabets [A-Z, a-z], digits [0-9], hy
         [ROS Master](https://wiki.ros.org/Master) instead of running the *rosrun*
         command, because the ROS Master will fail to start on _rosrun_, and
         eventually, the deployment will fail as well.
-    9. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
+    8. Click **NEXT** > **CONFIRM PACKAGE CREATION**.
 
 ## Create a Native Network
 If you have already created a native network, you can skip this procedure. For more information about native network, [click here](/5_deep-dives/53_networking-and-communication/535_ros-network-native/)
