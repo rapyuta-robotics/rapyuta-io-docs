@@ -51,10 +51,7 @@ docker images so that the platform can build source code in
 private git repositories or use private docker images.
 
 
-There are two types of secrets available for you on rapyuta.io:
-
-1. [Docker secret]({{< ref "/3_how-tos/31_account-management/314_authorize-access-to-private-docker-registry-using-secrets" >}})
-2. [Source secret]({{< ref "/3_how-tos/31_account-management/313_authorize-access-to-private-git-repositories-using-secrets" >}})
+rapyuta.io support [Docker secret]({{< ref "/3_how-tos/31_account-management/314_authorize-access-to-private-docker-registry-using-secrets" >}})
 
 
 ## Device Management

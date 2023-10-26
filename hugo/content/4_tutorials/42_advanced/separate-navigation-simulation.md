@@ -125,24 +125,6 @@ source devel/setup.bash
 7. Click **COPY** to copy the generated device token.
 8. Execute the token at the device's terminal to set up rapyuta.io's device agent on the device.
 
-## Create build
-To create the build, follow the below steps: 
-
-1. On the left navigation bar, click **Development>Build**.
-2. Click on **ADD NEW BUILD**
-3. In the Build Name box, enter a name for the build, for example, `io-simulation-navigation` 
-4. In the **Git repository** box, enter the URL address : 
-`https://github.com/rapyuta-robotics/io_simulation_tutorials` and select **Build Recipe** as Catkin.
-5. In the context directory, enter `turtlebot_navigation`
-6. Click on next, select **ROS Version** as **Melodic** and select the **Has Simulation** option.  
-7. Click on next, the build will be created.
-
-The build takes about two to five minutes to build the source code in the ***io_simulation_tutorials***
-repository into a running docker container. You may analyze the corresponding
-[build logs](/3_how-tos/35_tooling_and_debugging/debugging-logs/#build-logs), which help debug failing builds.
-
-Please proceed to the creation of the package once the build is complete.
-
 ## Create Packages
 You will create and add two packages, namely, Navigation Application and Turtlebot3 Simulation.
 
@@ -162,7 +144,7 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 12. Choose **Melodic** for **ROS Version**.
 13. Set **Restart Policy** to **Never**.
 14. The name of the executable: `navigation_executable`
-15. The **Executable Type** is **Default**.
+15. For the **Docker Image** value, enter: `quay.io/rapyuta/io_simulation_tutorials`.
 16. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup app.launch`
 17. Click on **Add ROS topic**. The name of the ROS topic is `/cmd_vel`, and it is set **QoS** to **Low**.
 18. Add a configuration parameter by clicking on **Add Parameter**. The name of the parameter is `SPAWN_TURTLEBOT_ROBOT`. The **Default** value is `true`.
@@ -184,21 +166,20 @@ You will create and add two packages, namely, Navigation Application and Turtleb
 12. Choose **Melodic** for **ROS Version**.
 13. The number of **Replicas to run the component** is **1**
 14. The name of the executable: `simulation_executable`
-15. For **Executable Type**, click on **Builds**.
-16. From the **Choose Build** drop-down menu, select the Build `io-simulation-navigation`.
-17. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup sim.launch gui:=true`
-18. Set **Resource Limit** to **Medium:2 CPU cores, 8 GiB memory**
+15. For the Docker Image value, enter: `quay.io/rapyuta/io_simulation_tutorials`.
+16. In the **Command to run in the docker container** box, enter the command: `roslaunch io_gazebo_turtlebot_bringup sim.launch gui:=true`
+17. Set **Resource Limit** to **Medium:2 CPU cores, 8 GiB memory**
 {{% notice warning %}}
 For simulation, the resource limit should either be **Medium** or **Large**. Simulation has issues with **Small** resource limits.
 {{% /notice %}}
-19. Add the following **ROS topics**:
+18. Add the following **ROS topics**:
     1.  **Name**: `/joint_states`, **QoS**: Low
     2.  **Name**: `/tf`, **QoS**: Low
     3.  **Name**: `/scan`, **QoS**: Low
     4.  **Name**: `/odom`, **QoS**: Low
-20. Click **NEXT**.
-21. Under **Inbound ROS Interfaces**, Click on **Add Topic** to add the ROS topic `/cmd_vel` as an inbound ROS topic.
-22. Click **CONFIRM PACKAGE CREATION**.
+19. Click **NEXT**.
+20. Under **Inbound ROS Interfaces**, Click on **Add Topic** to add the ROS topic `/cmd_vel` as an inbound ROS topic.
+21. Click **CONFIRM PACKAGE CREATION**.
 
 ## Deploy Packages
 
