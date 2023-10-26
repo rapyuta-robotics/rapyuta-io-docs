@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [10 - 2023-09-21]
+- added release notes
+- removed and updated (where necessary) all references and topic related to build, debug environment andsource secrets
+
+## [9.1 - 2023-09-21]
+- added release notes
+
 ## [9.0 - 2023-08-03]
 - added release notes
 
