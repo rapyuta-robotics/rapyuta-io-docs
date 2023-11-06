@@ -43,18 +43,20 @@ Following are the features of a user group:
 
 To create/delete a user group:
 
-1. In the rapyuta.io console, click **Account > Organization**. 
+1. In the rapyuta.io console, click **Account > Organization**.
 2. Click the **User Groups** tab.
 3. To create a user group:
-  * Click **Create User Group**, and enter:
-    |Field|Description|
-    |-----|-----------|
-    |**Group Name**| Enter the name of the group.|
-    |**Group Description**| Enter the description. |
-    |**Projects**| Click to link projects to the group.|
-    |**Members**| Click to link group members.|
-  * Click **Submit**.
-4. To leave a group, click the exit icon below the group. On leaving, you will lose access to all the projects linked to the group. 
+    * Click **Create User Group**, and enter:
+
+      |Field|Description|
+      |-----|-----------|
+      |**Group Name**| Enter the name of the group.|
+      |**Group Description**| Enter the description. |
+      |**Projects**| Click to link projects to the group. Additionally, you can choose their role by selecting either **Viewer** or **Admin** from the dropdown menu.|
+      |**Members**| Click to link group members. Additionally, you have the option to designate the user as an admin. |
+
+    * Click **Submit**.
+4. To leave a group, click the exit icon below the group. On leaving, you will lose access to all the projects linked to the group.
 5. To delete a group, click the delete icon below the group. On deleting, all the group members will lose access to all the projects linked to the group.
 6. To edit group details, click the edit icon, make the changes and click **Update**.
 7. To view the projects/members assigned to a group, click **View**.
@@ -65,6 +67,26 @@ When you create, update, or delete a user group, you may experience slowness or 
 
 
 
+## Adding or Removing User Groups from a Project
+
+{{%notice note%}}
+ - The project creator or the organization admin can add or remove user groups from the project.
+ - However, the project’s creator cannot remove himself.
+{{%/notice %}}
+
+To add/remove user groups from the project:
+
+1. On the left navigation bar, click **Account > Project**. The panel displays a list of projects.
+
+2. Under **Actions**, select the **Edit** icon.
+
+3. To add user groups:
+
+   * Select the **User groups** tab, enter a user group name in the serach field.
+
+   * Click the checkbox next to their **Group name**. Additionally, you can choose their role by selecting either **Viewer** or **Admin** from the dropdown menu. The newly invited user group is added.
+
+ 4. To remove a user group, uncheck the box next to the **Group name**.
 
 
 
