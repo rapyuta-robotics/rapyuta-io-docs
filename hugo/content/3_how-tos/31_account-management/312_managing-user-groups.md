@@ -53,7 +53,7 @@ To create/delete a user group:
       |**Group Name**| Enter the name of the group.|
       |**Group Description**| Enter the description. |
       |**Projects**| Click to link projects to the group. Additionally, you can choose their role by selecting either **Viewer** or **Admin** from the dropdown menu.|
-      |**Members**| Click to link group members. Additionally, you have the option to designate the user as an admin. |
+      |**Members**| Click to link group members. Additionally, you have the option to designate the user as a **Group Admin**.|
 
     * Click **Submit**.
 4. To leave a group, click the exit icon below the group. On leaving, you will lose access to all the projects linked to the group.
