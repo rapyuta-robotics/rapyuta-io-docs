@@ -79,7 +79,7 @@ To add/remove users from the project:
 
 3. To add users:
 
-   1. Select the **Users** tab, enter a valid email address of the user you want to invite to the project.
+   1. Select the **Users** tab, where you can use the search field to search for the user by username or email address.
 
    2. Click the checkbox next to their **User name**. Additionally, you can choose their role by selecting either **Viewer** or **Admin** from the dropdown menu.
 
