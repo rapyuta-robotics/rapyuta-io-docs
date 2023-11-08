@@ -1,6 +1,10 @@
 # CHANGELOG
 
-## [10 - 2023-09-21]
+## [10.1 - 2023-11-08]
+- added release notes
+- updated RBAC content
+
+## [10 - 2023-10-21]
 - added release notes
 - removed and updated (where necessary) all references and topic related to build, debug environment andsource secrets
 
