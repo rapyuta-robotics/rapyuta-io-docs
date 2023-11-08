@@ -46,7 +46,7 @@ Managing projects include creating and deleting projects as well as adding and r
     4. (Optional) Select the **Users** tab to add user to the project.
     5. (Optional) Select the **User groups** tab to add user groups to the project.
     6. Click **Create Project**. The newly created project can be viewed in the project dashboard.
-   
+
  3. To delete a project:
     1. In the project dashboard, click the delete icon under **Actions**.
     2. A confirmation page appears, click **Yes, Delete**.

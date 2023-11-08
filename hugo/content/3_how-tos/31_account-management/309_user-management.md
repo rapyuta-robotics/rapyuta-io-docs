@@ -56,9 +56,9 @@ To add or remove users to the rapyuta.io platform, do the following:
 3. To delete users:
 
    1. Under **Actions**, click **Remove** against the user you want to remove. A confirmation pop-up appears.
-   2. Click **Confirm**. 
+   2. Click **Confirm**.
       The user is removed from the organization.
-     
+
    {{%notice note%}}
    - If the deleted user is a project admin, then the ownership of that project will be transferred to the organization admin.
    - If the user is a part of one or more projects/groups, they will be removed from all those projects/groups.
@@ -75,22 +75,17 @@ To add/remove users from the project:
 
 1. On the left navigation bar, click **Account > Project**. The panel displays a list of projects.
 
-2. Select the project to which users need to be added/removed.
+2. Under **Actions**, select the **Edit** icon.
 
 3. To add users:
-   
-   1. On **Users** tab, enter a valid email address of the user you want to invite to the project.
 
-   2. Click **ADD USER**.
+   1. Select the **Users** tab, enter a valid email address of the user you want to invite to the project.
 
-   The newly invited user is added to the existing list of **USERS**.
+   2. Click the checkbox next to their **User name**. Additionally, you can choose their role by selecting either **Viewer** or **Admin** from the dropdown menu.
 
-4. To remove users:
+   The newly invited user is added to the existing list of users.
 
-   1. Under **Actions**, click **Remove** against the user that you want to remove. A confirmation page appears.
-   2. Click **Confirm**. 
-   
-   The user is removed from the project.
+4. To remove a user, uncheck the box next to their username.
 
 
 ## Resetting the Password 
