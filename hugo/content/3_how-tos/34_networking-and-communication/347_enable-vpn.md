@@ -69,7 +69,7 @@ To enable or disable VPN for an existing project, follow these steps:
 
   1. Navigate to the right navigation pane and click **Devices**.
   2. Select the specific device for which you want to enable VPN.
-  3. On the device details page, click **Enabled** next to the VPN option. For more information, see [Enable VPN for an Online Device](/3_how-tos/32_device-management/321_onboarding-a-device/#enable-vpn-for-an-online-device)
+  3. On the device details page, click **Enable VPN**.  A pop-up will appear with the **Advertise Routes** field. To advertise your device on the subnets specified during project creation, mark the checkbox. For more information, see [Enable VPN for an Online Device](/3_how-tos/32_device-management/321_onboarding-a-device/#enable-vpn-for-an-online-device)
 
   {{%notice info%}}
    VPN can be enabled on devices only if VPN is enabled for the selected project and if the device is online.
@@ -135,7 +135,7 @@ rio apply project.yaml
 
 To update an existing project:
 
-Before proceeding with any project updates, ensure that you retrieve the current manifest to prevent unintentional overwrites of any essential configurations. Review the changes and then apply the updates accordingly. 
+Before proceeding with any project updates, ensure that you fetch the current manifest to prevent unintentional overwrites of any essential configurations. Review the changes and then apply the updates accordingly. 
 
 To fetch the project:
 
@@ -160,12 +160,6 @@ spec:
  users:
    - emailID: qa.rapyuta+e2e@gmail.com
      role: admin
-```
-
-To enable VPN on an existing projects:
-
-```Bash
-rio project features vpn <project_name> true
 ```
 
 ### Enabling VPN client on devices
