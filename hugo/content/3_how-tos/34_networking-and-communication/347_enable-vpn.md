@@ -69,7 +69,7 @@ To enable or disable VPN for an existing project, follow these steps:
 
   1. Navigate to the right navigation pane and click **Devices**.
   2. Select the specific device for which you want to enable VPN.
-  3. On the device details page, if VPN is disabled, click **Enable VPN**. If subnets are specified during project creation, a pop-up will appear with the **Advertise Routes** field. To advertise your device on the subnets specified during project creation, mark the checkbox. For more information, see [Enable VPN for an Online Device](/3_how-tos/32_device-management/321_onboarding-a-device/#enable-vpn-for-an-online-device).
+  3. On the device details page, if VPN is disabled, click **Enable VPN**. If subnets are specified during project creation, a pop-up appears with the **Advertise Routes** field. To advertise your device on the subnets specified during project creation, mark the checkbox. For more information, see [Enable VPN for an Online Device](/3_how-tos/32_device-management/321_onboarding-a-device/#enable-vpn-for-an-online-device).
 
   {{%notice info%}}
    VPN can be enabled on devices only if VPN is enabled for the selected project and if the device is online.
@@ -190,7 +190,7 @@ rio device vpn true --devices=amr01 --devices=edge01
 
 **Restoring VPN Connectivity with Updated Subnet Ranges: Re-enabling VPN on Devices**
 
-To enable VPN with the *--advertise-routes flag*:
+To enable VPN with the *- -advertise-routes flag*:
 
 ```Bash
 rio device vpn true --devices=edge01 --advertise-routes -f
