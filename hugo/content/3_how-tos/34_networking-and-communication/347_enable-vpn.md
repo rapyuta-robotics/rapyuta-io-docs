@@ -69,7 +69,7 @@ To enable or disable VPN for an existing project, follow these steps:
 
   1. Navigate to the right navigation pane and click **Devices**.
   2. Select the specific device for which you want to enable VPN.
-  3. On the device details page, click **Enable VPN**.  A pop-up will appear with the **Advertise Routes** field. To advertise your device on the subnets specified during project creation, mark the checkbox. For more information, see [Enable VPN for an Online Device](/3_how-tos/32_device-management/321_onboarding-a-device/#enable-vpn-for-an-online-device)
+  3. On the device details page, if VPN is disabled, click **Enable VPN**. If subnets are specified during project creation, a pop-up will appear with the **Advertise Routes** field. To advertise your device on the subnets specified during project creation, mark the checkbox. For more information, see [Enable VPN for an Online Device](/3_how-tos/32_device-management/321_onboarding-a-device/#enable-vpn-for-an-online-device).
 
   {{%notice info%}}
    VPN can be enabled on devices only if VPN is enabled for the selected project and if the device is online.
@@ -103,7 +103,7 @@ To list projects with features:
 rio project list -w
 ```
 
-To create a new project you will have to first create a project maifest, set the attribute `vpn.enabled` to `true` and then apply the manifest. 
+To create a new project you will have to first create a project manifest, set the attribute `vpn.enabled` to `true` and then apply the manifest. 
 For example, create a project manifest `project.yaml` as below:
 
 ```yaml
@@ -119,7 +119,7 @@ spec:
      subnets:
        - 10.81.0.0/16
  users:
-   - emailID: qa.rapyuta+e2e@gmail.com
+   - emailID: admin@rapyuta-robotics.com
      role: admin
 
 ```
@@ -133,7 +133,7 @@ To apply the maifest:
 rio apply project.yaml
 ```
 
-To update an existing project:
+**To update an existing project**
 
 Before proceeding with any project updates, ensure that you fetch the current manifest to prevent unintentional overwrites of any essential configurations. Review the changes and then apply the updates accordingly. 
 
@@ -158,7 +158,7 @@ spec:
      subnets:
        - 10.81.0.0/18
  users:
-   - emailID: qa.rapyuta+e2e@gmail.com
+   - emailID: admin@rapyuta-robotics.com
      role: admin
 ```
 
@@ -190,18 +190,18 @@ rio device vpn true --devices=amr01 --devices=edge01
 
 **Restoring VPN Connectivity with Updated Subnet Ranges: Re-enabling VPN on Devices**
 
+To enable VPN with the *--advertise-routes flag*:
+
+```Bash
+rio device vpn true --devices=edge01 --advertise-routes -f
+```
+
 If your project already has VPN enabled and devices are running, the process to reflect these changes at the device level involves disabling the VPN at the project level, re-enabling it with the updated subnets, and subsequently enabling it on the individual devices.
 
 To disable active VPN on devices:
 
 ```Bash
 rio device vpn false --devices=edge01 -f
-```
-
-To enable VPN with the *advertise routes flag*:
-
-```Bash
-rio device vpn true --devices=edge01 --advertise-routes -f
 ```
 
 
