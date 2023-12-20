@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [10.2 - 2023-12-]
+- added release notes
+- updated content on subnet routers
+
 ## [10.1 - 2023-11-08]
 - added release notes
 - updated RBAC content
