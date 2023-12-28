@@ -71,7 +71,7 @@ When you create, update, or delete a user group, you may experience slowness or 
 
 {{%notice note%}}
  - The project creator or the organization admin can add or remove user groups from the project.
- - However, the project’s creator cannot remove himself.
+ - However, the project’s creator or org admin cannot be removed.
 {{%/notice %}}
 
 To add/remove user groups from the project:
