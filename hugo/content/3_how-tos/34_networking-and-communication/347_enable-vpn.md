@@ -69,7 +69,7 @@ To enable or disable VPN for an existing project, follow these steps:
 
   1. Navigate to the right navigation pane and click **Devices**.
   2. Select the specific device for which you want to enable VPN.
-  3. On the device details page, click **Enabled** next to the VPN option. For more information, see [Enable VPN for an Online Device](/3_how-tos/32_device-management/321_onboarding-a-device/#enable-vpn-for-an-online-device)
+  3. On the device details page, if VPN is disabled, click **Enable VPN**. If subnets are specified during project creation, a pop-up appears with the **Advertise Routes** field. To advertise your device on the subnets specified during project creation, mark the checkbox. For more information, see [Enable VPN for an Online Device](/3_how-tos/32_device-management/321_onboarding-a-device/#enable-vpn-for-an-online-device).
 
   {{%notice info%}}
    VPN can be enabled on devices only if VPN is enabled for the selected project and if the device is online.
@@ -103,18 +103,29 @@ To list projects with features:
 rio project list -w
 ```
 
-To create a new project you will have to first create a project maifest, set the attribute `vpn.enabled` to `true` and then apply the manifest.
+To create a new project you will have to first create a project manifest, set the attribute `vpn.enabled` to `true` and then apply the manifest. 
 For example, create a project manifest `project.yaml` as below:
 
 ```yaml
 apiVersion: api.rapyuta.io/v2
 kind: Project
 metadata:
-  name: demo-project
+ name: dev-tst-001
+ organizationGUID: org-wvnwcmvfkbajavjetttcutga
 spec:
-  features:
-    vpn: true
+ features:
+   vpn:
+     enabled: True
+     subnets:
+       - 10.81.0.0/16
+ users:
+   - emailID: admin@rapyuta-robotics.com
+     role: admin
+
 ```
+{{%notice note%}}
+The **subnets** attribute is optional; if you wish for any devices within the warehouse to broadcast a particular subnet, configure this at the project level.
+{{%/notice %}}
 
 To apply the maifest:
 
@@ -122,10 +133,33 @@ To apply the maifest:
 rio apply project.yaml
 ```
 
-To enable VPN on an existing projects:
+**To update an existing project**
+
+Before proceeding with any project updates, ensure that you fetch the current manifest to prevent unintentional overwrites of any essential configurations. Review the changes and then apply the updates accordingly. 
+
+To fetch the project:
 
 ```Bash
-rio project features vpn <project_name> true
+rio project inspect dev-tst-001 > project.yaml
+```
+
+To update the manifest:
+
+```yaml
+apiVersion: api.rapyuta.io/v2
+kind: Project
+metadata:
+ name: dev-tst-002
+ organizationGUID: org-wvnwcmvfkbajavjetttcutga
+spec:
+ features:
+   vpn:
+     enabled: True
+     subnets:
+       - 10.81.0.0/18
+ users:
+   - emailID: admin@rapyuta-robotics.com
+     role: admin
 ```
 
 ### Enabling VPN client on devices
@@ -153,6 +187,23 @@ For example, if you want to enable VPN for the devices amr01 and edge02,
 ```Bash
 rio device vpn true --devices=amr01 --devices=edge01
 ```
+
+To enable VPN with the *- -advertise-routes flag*:
+
+```Bash
+rio device vpn true --devices=edge01 --advertise-routes -f
+```
+
+**Restoring VPN Connectivity with Updated Subnet Ranges: Re-enabling VPN on Devices**
+
+If your project already has VPN enabled and devices are running, the process to reflect these changes at the device level involves disabling the VPN at the project level, re-enabling it with the updated subnets, and subsequently enabling it on the individual devices.
+
+To disable active VPN on devices:
+
+```Bash
+rio device vpn false --devices=edge01 -f
+```
+
 
 ### Run VPN client in cloud deployments
 
