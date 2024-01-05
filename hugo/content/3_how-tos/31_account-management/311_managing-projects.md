@@ -43,7 +43,7 @@ Managing projects include creating and deleting projects as well as adding and r
        Only an org admin or a project creator can enable/disable VPN on projects. <br>
        When you create your first project, you cannot view the VPN option. However, you can enable it after creating the project.<br>
        For more information, see [Enabling VPN Services](/3_how-tos/34_networking-and-communication/347_enable-vpn/)
-    4. Enter the values for the subnets. This option is displayed only when VPN is enabled. You can input a single value or multiple values as a comma-separated list. This field is optional. If multiple values are provided, they will be advertised on all the routes.
+    4. Enter the values for the subnets. This option is displayed only when VPN is enabled. Use the **Add Subnet** button to input values for multiple subnets. To delete a subnet, simply click the delete icon next to the corresponding value.  This field is optional. If multiple values are provided, they will be advertised on all the routes.
     5. (Optional) Select the **Users** tab to add user to the project.
     6. (Optional) Select the **User groups** tab to add user groups to the project.
     7. Click **Create Project**. The newly created project can be viewed in the project dashboard.
