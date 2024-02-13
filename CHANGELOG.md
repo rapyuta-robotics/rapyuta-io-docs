@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## [11.0 - 2024-2-13]
+- added release notes
+
 ## [10.2 - 2023-12-]
 - added release notes
 - updated content on subnet routers
