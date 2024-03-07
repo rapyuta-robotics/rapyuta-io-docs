@@ -196,7 +196,7 @@ rio device vpn true --devices=edge01 --advertise-routes -f
 
 **Restoring VPN Connectivity with Updated Subnet Ranges: Re-enabling VPN on Devices**
 
-If you have updated the subnet ranges, re-enable the VPN with the `advertise-routes` parameter set to true on devices where VPN was already enabled.
+If you have updated the subnet ranges, re-enable the VPN with the *advertise-routes* parameter set to *true* on devices where VPN was already enabled.
 
 ```Bash
 rio device vpn true --devices=edge01 --advertise-routes -t
