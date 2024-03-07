@@ -202,6 +202,8 @@ If you have updated the subnet ranges, re-enable the VPN with the `advertise-rou
 rio device vpn true --devices=edge01 --advertise-routes -t
 ```
 
+## Disabling VPN client on devices
+
 To disable active VPN on devices:
 
 ```Bash
