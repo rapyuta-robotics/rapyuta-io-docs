@@ -194,12 +194,12 @@ To enable VPN with the *- -advertise-routes flag*:
 rio device vpn true --devices=edge01 --advertise-routes -f
 ```
 
-**Restoring VPN Connectivity with Updated Subnet Ranges: Re-enabling VPN on Devices**
+### Restoring VPN Connectivity with Updated Subnet Ranges: Re-enabling VPN on Devices
 
 If you have updated the subnet ranges, re-enable the VPN with the *advertise-routes* parameter set to *true* on devices where VPN was already enabled.
 
 ```Bash
-rio device vpn true --devices=edge01 --advertise-routes -t
+rio device vpn true --devices=<device_name> --advertise-routes -t
 ```
 
 ### Disabling VPN client on devices
