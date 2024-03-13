@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [11.01 - 2024-3-13]
+- added release notes
+- updated content on vpn connectivity restoration
+
 ## [11.0 - 2024-2-13]
 - added release notes
 
