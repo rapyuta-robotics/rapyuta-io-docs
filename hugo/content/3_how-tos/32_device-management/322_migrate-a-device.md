@@ -1,7 +1,7 @@
 ---
 
 title: "Migrating a Device Across Projects"
-weight: 321
+weight: 322
 versions:
   free-pro-team: '*'
   enterprise-server: '*'
