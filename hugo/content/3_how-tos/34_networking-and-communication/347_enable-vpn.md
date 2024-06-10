@@ -274,6 +274,39 @@ rio apply deployment.yaml
 {{% /tab %}}
 {{< /tabs >}}
 
+
+### Enabling/Disabling VPN on Android Devices
+
+VPN can be enabled or disabled on Android devices using the Tailscale app and a custom Headscale server. To enable VPN:
+
+1. Install the Tailscale App from the Google Play Store.
+
+2. Open the Tailscale app and click the kebab menu icon at the top right corner andselect **Chnage Server** and enter the Headscale URL.
+
+   If the **Change server** option is not visible, continue opening and closing this menu until it appears.
+
+3. Configure the coordination server to the fixed Headscale server value.
+
+4. Choose the **Sign in with other** option, which opens a webpage containing the node key.
+
+5. Copy the node key from the webpage and run the following command to register the device:
+
+    ```bash
+    rio vpn machines register android-tablet nodekey:<your-node-key>
+    ```
+    Replace `<your-node-key>` with the actual node key obtained.
+
+6. Close the webpage. The Tailscale client should now confirm the connection.
+
+
+To disbale VPN on an android device:
+
+1. Run the following command to deregister the device:
+
+    ```bash
+    rio vpn machines deregister android-tablet
+    ```
+
 ## Related Links
 
  [VPN Services Troubleshooting](/6_troubleshoot/613_vpn-services/)
