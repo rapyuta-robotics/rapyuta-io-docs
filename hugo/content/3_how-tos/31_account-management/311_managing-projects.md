@@ -64,12 +64,12 @@ rio project delete <project_name>
 {{% /tab %}}
 {{< /tabs >}}
 
-## Transer Project Ownership
+## Transfer Project Ownership
 
 The project owner can transfer ownership to another member. This solves the issue of restricted modification rights if the original owner leaves the company or is unavailable.
 
 {{% notice info %}}
-If you're part of a project through a user group, you can't become the project owner. You need to be directly added to the project to bbecome an owner.
+If you're part of a project through a user group, you can't become the project owner. You need to be directly added to the project to become an owner.
 {{% /notice %}}
 
 To transfer project ownership:
@@ -77,10 +77,11 @@ To transfer project ownership:
 {{< tabs >}}
 {{% tab name="UI" %}}
 
-1. Click **Account > Projects** in the left navigation bar to access the project dashboard.
-2. Select the project you wish to transfer ownership for.
+1. In the left navigation bar, click **Account > Projects** to access the project dashboard.
+2. Select the project for which you want to transfer ownership.
 3. Click the **user icon** under **Actions**.
 4. From the drop-down menu, select the user to transfer ownership to, then click **Update**.
+
    A notification message appears confirming that the project owner has been successfully updated.
 
 {{% /tab %}}
