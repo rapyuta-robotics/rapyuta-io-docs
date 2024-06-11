@@ -66,16 +66,18 @@ rio project delete <project_name>
 
 ## Transer Project Ownership
 
-After creating a project, the owner can transfer ownership to another member. This solves the issue of restricted modification rights if the original owner leaves the company or is unavailable. To transfer project ownership:
+The project owner can transfer ownership to another member. This solves the issue of restricted modification rights if the original owner leaves the company or is unavailable.
+
+To transfer project ownership:
 
 {{< tabs >}}
 {{% tab name="UI" %}}
 
-1. In the left navigation bar, click **Account > Projects**. The project dashboard is displayed.
-2. Select the project for which you want to transfer the ownership.
-3. Under **Actions**, click the user icon.
-4. Select the user to whom you want to transfer ownership from the drop-down menu and click **Update**.
-5. A notification message appears confirming that the project owner has been successfully updated.
+1. Click **Account > Projects** in the left navigation bar to access the project dashboard.
+2. Select the project you wish to transfer ownership for.
+3. Click the **user icon** under **Actions**.
+4. From the drop-down menu, select the user to transfer ownership to, then click **Update**.
+   A notification message appears confirming that the project owner has been successfully updated.
 
 {{% notice info %}}
 If you're part of a project through a user group, you can't become the project owner. You need to be directly added to the project to bbecome an owner.
@@ -85,13 +87,16 @@ If you're part of a project through a user group, you can't become the project o
 
 {{% tab name="CLI" %}}
 
-To update the owner of the specified project to the user with the provided email address. If "--user-email" is not specified, it prompts an interactive list of project users to select the new owner.
+To update the owner of the specified project to the user with the provided email address.
 
 ```Bash
 rio project update-owner <project_name> --user-email <new_owner_email>
 ```
+{{% notice info %}}
+If "--user-email" is not specified, it prompts an interactive list of project users to select the new owner.
+{{% /notice %}}
 
-For information on how toupdate the owner of a project:
+For information on how to update the owner of a project:
 
 ```Bash
 rio project update-owner --help
