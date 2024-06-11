@@ -26,13 +26,13 @@ gittags:
   - How to
 ---
 
-This feature allows administrators to migrate online devices from one project to another using the Command Line Interface (CLI). This is useful for reallocating devices quickly without the need for re-onboarding, thus saving time and enhancing operational efficiency.
+This feature allows administrators to migrate online devices from one project to another using the Command Line Interface (CLI). This is useful for reallocating devices quickly without the need for re-onboarding.
 
 ## Use Cases
 
 ### Production Environment
 
-A number of R-AFL devices will be placed in a warehouse, such as Monaka, for calibration and trial runs before being shipped to customers. Once an R-AFL device is ready to be shipped, it can be migrated to another project without needing to go through the re-onboarding process again. This streamlines the workflow, making the transition faster and more efficient.
+A number of R-AFL devices will be placed in a warehouse for calibration and trial runs before being shipped to customers. OOnce an R-AFL device is ready to be shipped, it can be moved to another project without re-onboarding. This streamlines the workflow, making the transition faster and more efficient.
 
 ### Staging Environment
 
@@ -54,4 +54,5 @@ To migrate a device from Project A to Project B, use the following CLI command:
 
 ```bash
 rio device migrate <device-name> Project_B --enable-vpn
+```
 
