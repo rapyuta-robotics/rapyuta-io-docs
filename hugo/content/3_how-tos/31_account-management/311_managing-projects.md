@@ -87,7 +87,7 @@ To transfer project ownership:
 
 {{% tab name="CLI" %}}
 
-To update the owner of the specified project to the user with the provided email address.
+To update the owner of the specified project to the user with the provided email address:
 
 ```Bash
 rio project update-owner <project_name> --user-email <new_owner_email>
