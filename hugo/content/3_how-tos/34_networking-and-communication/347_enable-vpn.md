@@ -301,9 +301,9 @@ If the **Change server** option is not visible, continue opening and closing thi
 
 To disable VPN on an Android device, run the following command:
 
- ```bash
- rio vpn machines deregister android-tablet
- ```
+```bash
+rio vpn machines deregister android-tablet
+```
 
 ## Related Links
 
