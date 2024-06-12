@@ -69,7 +69,7 @@ rio project delete <project_name>
 The project owner can transfer ownership to another member. This solves the issue of restricted modification rights if the original owner leaves the company or is unavailable.
 
 {{% notice info %}}
-To transfer ownership to a user, add them directly to the project. Project access through a user group is insufficient.
+Users need to be directly added to the project to transfer ownership; joining through a user group prevents ownership transfer.
 {{% /notice %}}
 
 To transfer project ownership:
