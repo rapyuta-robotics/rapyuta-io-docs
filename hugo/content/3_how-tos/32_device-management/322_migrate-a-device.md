@@ -32,7 +32,7 @@ This feature allows administrators to migrate online devices from one project to
 
 ### Production Environment
 
-A number of R-AFL devices will be placed in a warehouse for calibration and trial runs before being shipped to customers. OOnce an R-AFL device is ready to be shipped, it can be moved to another project without re-onboarding. This streamlines the workflow, making the transition faster and more efficient.
+A number of R-AFL devices will be placed in a warehouse for calibration and trial runs before being shipped to customers. Once an R-AFL device is ready to be shipped, it can be moved to another project without re-onboarding. This streamlines the workflow, making the transition faster and more efficient.
 
 ### Staging Environment
 
