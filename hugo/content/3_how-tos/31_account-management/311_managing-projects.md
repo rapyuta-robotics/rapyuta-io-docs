@@ -64,6 +64,48 @@ rio project delete <project_name>
 {{% /tab %}}
 {{< /tabs >}}
 
+## Transfer Project Ownership
+
+The project or organization owner can transfer the project ownership to another member. This solves the issue of restricted modification rights if the original owner leaves the company or becomes unavailable.
+
+{{% notice info %}}
+Users need to be directly added to the project to transfer ownership; joining through a user group prevents ownership transfer.
+{{% /notice %}}
+
+To transfer project ownership:
+
+{{< tabs >}}
+{{% tab name="UI" %}}
+
+1. In the left navigation bar, click **Account > Projects** to access the project dashboard.
+2. Select the project for which you want to transfer ownership.
+3. Click the **user icon** under **Actions**.
+4. From the drop-down menu, select the user to transfer ownership to, then click **Update**.
+
+   A notification message appears confirming that the project owner has been successfully updated.
+
+{{% /tab %}}
+
+{{% tab name="CLI" %}}
+
+To update the owner of the specified project to the user with the provided email address:
+
+```Bash
+rio project update-owner <project_name> --user-email <new_owner_email>
+```
+{{% notice info %}}
+If "--user-email" is not specified, it prompts an interactive list of project users to select the new owner.
+{{% /notice %}}
+
+For information on how to update the owner of a project:
+
+```Bash
+rio project update-owner --help
+```
+
+{{% /tab %}}
+{{< /tabs >}}
+
 ## Nominate the Project Admin
 
 The org or the project admin can nominate another project member as the admin of that project.
@@ -71,6 +113,7 @@ The org or the project admin can nominate another project member as the admin of
 1. In the left navigation bar, click **Account > Projects**. The project dashboard is displayed.
 2. Select the project for which you want to nominate a new admin.
 3. Under **Existing users**, hover over the username and click **Admin** to nominate the project member as the new admin.
+
 
 ## Switching between Projects
 
