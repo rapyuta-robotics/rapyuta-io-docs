@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [12.0 - 2024-6-12]
+- added the following feature updates: migrating a device, vpn support on android and project ownership transfer.
+- added release notes
+
 ## [11.02 - 2024-3-13]
 - added release notes
 
